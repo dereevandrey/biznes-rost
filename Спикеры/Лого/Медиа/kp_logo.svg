@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <rect x="10" y="10" width="40" height="40" rx="8" fill="#ea580c"/>
+  <text x="30" y="38" font-family="'Arial Black', sans-serif" font-weight="900" font-size="22" fill="#ffffff" text-anchor="middle">КП</text>
+  <text x="60" y="28" font-family="'Arial Black', sans-serif" font-weight="900" font-size="13" fill="#ffffff" letter-spacing="0.5">КОМСОМОЛЬСКАЯ</text>
+  <text x="60" y="44" font-family="'Arial Black', sans-serif" font-weight="900" font-size="14" fill="#f97316" letter-spacing="1.5">ПРАВДА</text>
+</svg>

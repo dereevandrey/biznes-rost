@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <g transform="translate(10, 10)">
+    <rect width="40" height="40" rx="10" fill="#059669"/>
+    <path d="M20 28 C12 20 10 14 15 11 C18 9 20 12 20 12 C20 12 22 9 25 11 C30 14 28 20 20 28 Z" fill="#ffffff"/>
+  </g>
+  <text x="60" y="29" font-family="'Inter', sans-serif" font-weight="900" font-size="18" fill="#ffffff" letter-spacing="1">ДОБРО<tspan fill="#10b981">.LIVE</tspan></text>
+  <text x="60" y="44" font-family="'Inter', sans-serif" font-weight="600" font-size="9" fill="#94a3b8" letter-spacing="1.5">МЕДИАПЛАТФОРМА</text>
+</svg>
