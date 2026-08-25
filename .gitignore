@@ -1,0 +1,12 @@
+# Media & Archive raw dumps
+Photos/
+Фото с зала/
+Фотозона/
+Партнеры/
+Видео/
+*.zip
+*.rar
+*.tar.gz
+*.7z
+.DS_Store
+Thumbs.db

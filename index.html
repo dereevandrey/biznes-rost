@@ -596,9 +596,9 @@
                         
                         <!-- Кнопка вызова AI-Консьержа (сверху) и подпись (снизу) -->
                         <div class="mt-4 flex flex-col items-start gap-2">
-                            <a href="https://t.me/predprinimay_bot" target="_blank" class="inline-flex items-center justify-center gap-2.5 px-6 py-3 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black text-xs uppercase tracking-wider rounded-xl transition shadow-md whitespace-nowrap">
+                            <a href="https://t.me/andreydereev" target="_blank" class="inline-flex items-center justify-center gap-2.5 px-6 py-3 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black text-xs uppercase tracking-wider rounded-xl transition shadow-md whitespace-nowrap">
                                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.05-.48-.83-.27-1.49-.42-1.43-.88.03-.24.38-.49 1.04-.75 4.07-1.77 6.78-2.94 8.14-3.51 3.87-1.62 4.67-1.9 5.2-1.91.12 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.18-.04.34z"/></svg>
-                                <span>Получить программу и маршрут в Telegram ↗</span>
+                                <span>Открыть AI-ассистента в Telegram ↗</span>
                             </a>
                             <p class="text-[11px] text-gray-500 font-medium leading-tight">
                                 AI-ассистент ответит на вопросы по спикерам, вышлет полную программу и сформирует персональный трек под задачи вашей компании.
@@ -1165,7 +1165,7 @@
                                 </p>
                             </div>
 
-                            <a href="https://t.me/predprinimay_bot?start=expo" target="_blank" class="w-full text-center py-4 px-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase text-xs tracking-wider rounded-2xl transition shadow-xl whitespace-nowrap relative z-10">
+                            <a href="https://t.me/andreydereev" target="_blank" class="w-full text-center py-4 px-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase text-xs tracking-wider rounded-2xl transition shadow-xl whitespace-nowrap relative z-10">
                                 Получить презентацию и условия ↗
                             </a>
                             
@@ -1878,41 +1878,124 @@
             </div>
             
             <!-- Правая колонка: Форма заявки на консультацию и стратегический разбор -->
-            <div id="tripwire" class="lg:col-span-6 bg-gradient-to-b from-[#0c1322] via-[#101b30] to-[#070b14] rounded-3xl p-6 sm:p-9 border border-indigo-500/40 shadow-2xl shadow-indigo-950/60 relative flex flex-col justify-between h-full">
+            <div id="tripwire" class="lg:col-span-6 bg-gradient-to-b from-[#0c1322] via-[#101b30] to-[#070b14] rounded-3xl p-6 sm:p-8 border border-indigo-500/40 shadow-2xl shadow-indigo-950/60 relative flex flex-col justify-between h-full">
                 <div>
-                    <div class="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 font-bold uppercase tracking-widest text-[11px] mb-3 border border-blue-400/30">
-                        Экспресс-диагностика
+                    <!-- Переключатель вкладок: AI-Аудит / Прямая заявка -->
+                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-indigo-900/50">
+                        <div class="flex items-center gap-2">
+                            <button id="tabBtnAudit" onclick="switchTripwireTab('audit')" class="px-3 py-1.5 rounded-xl text-xs font-bold transition bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md shadow-blue-500/30 flex items-center gap-1.5 cursor-pointer">
+                                <span>⚡ AI-Аудит бизнеса</span>
+                            </button>
+                            <button id="tabBtnLead" onclick="switchTripwireTab('lead')" class="px-3 py-1.5 rounded-xl text-xs font-bold transition bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/10 flex items-center gap-1.5 cursor-pointer">
+                                <span>Бронь участия</span>
+                            </button>
+                        </div>
+                        <span class="text-[10px] text-emerald-400 font-medium flex items-center gap-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Онлайн 24/7
+                        </span>
                     </div>
-                    <h3 class="text-2xl sm:text-3xl font-black uppercase font-['Oswald'] text-white mb-2 leading-tight">
-                        ОБСУДИМ ЗАДАЧИ ВАШЕГО БИЗНЕСА?
-                    </h3>
-                    <p class="text-gray-300 text-xs sm:text-sm mb-5 font-medium leading-relaxed">
-                        Оставьте контакты для бесплатного разбора бизнес-процессов и подбора оптимального формата участия от экспертов консорциума.
-                    </p>
+
+                    <!-- ЗАГОЛОВОК ВКЛАДКИ 1: AI-АУДИТ -->
+                    <div id="tripwireAuditHeader">
+                        <h3 class="text-xl sm:text-2xl font-black uppercase font-['Oswald'] text-white mb-1.5 leading-tight">
+                            ЭКСПРЕСС AI-АУДИТ ВАШЕГО БИЗНЕСА
+                        </h3>
+                        <p class="text-gray-300 text-xs sm:text-sm mb-4 font-medium leading-relaxed">
+                            Укажите параметры компании — нейросеть за 5 секунд рассчитает 3 скрытые точки роста выручки и покажет, как оцифровать их на спринте.
+                        </p>
+                    </div>
+
+                    <!-- ЗАГОЛОВОК ВКЛАДКИ 2: ПРЯМАЯ ЗАЯВКА -->
+                    <div id="tripwireLeadHeader" class="hidden">
+                        <h3 class="text-xl sm:text-2xl font-black uppercase font-['Oswald'] text-white mb-1.5 leading-tight">
+                            ОБСУДИМ ЗАДАЧИ ВАШЕГО БИЗНЕСА?
+                        </h3>
+                        <p class="text-gray-300 text-xs sm:text-sm mb-4 font-medium leading-relaxed">
+                            Оставьте контакты для бесплатного разбора бизнес-процессов и подбора оптимального формата участия от экспертов консорциума.
+                        </p>
+                    </div>
                 </div>
 
-                <form onsubmit="event.preventDefault(); alert('Спасибо за заявку! Эксперт консорциума «ПРЕДПРИНИМАЙ» свяжется с вами в течение 15 минут.'); this.reset();" class="flex flex-col gap-3 my-auto">
+                <!-- ФОРМА 1: ИНТЕРАКТИВНЫЙ AI-АУДИТ -->
+                <form id="auditForm" onsubmit="handleExpressAuditSubmit(event)" class="flex flex-col gap-3 my-auto">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <input id="auditName" type="text" placeholder="Ваше имя *" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-blue-500 text-xs sm:text-sm transition shadow-inner">
+                        <input id="auditContact" type="text" placeholder="Telegram (@ник) или телефон *" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-blue-500 text-xs sm:text-sm transition shadow-inner">
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <input id="auditNiche" type="text" placeholder="Ниша (напр. Производство, B2B) *" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-blue-500 text-xs sm:text-sm transition shadow-inner">
+                        <select id="auditRevenue" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-gray-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-blue-500 text-xs sm:text-sm transition shadow-inner">
+                            <option value="до 50 млн ₽/год">Выручка: до 50 млн ₽/год</option>
+                            <option value="50 – 200 млн ₽/год" selected>Выручка: 50 – 200 млн ₽/год</option>
+                            <option value="200 млн – 1 млрд ₽/год">Выручка: 200 млн – 1 млрд ₽/год</option>
+                            <option value="более 1 млрд ₽/год">Выручка: более 1 млрд ₽/год</option>
+                        </select>
+                    </div>
+
                     <div>
-                        <input type="text" placeholder="Ваше имя *" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
+                        <select id="auditBottleneck" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-gray-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-blue-500 text-xs sm:text-sm transition shadow-inner">
+                            <option value="Операционка собственника и рутина">Главный затык: 1. Вся операционка на собственнике 24/7</option>
+                            <option value="Просадка продаж и слабый маркетинг">Главный затык: 2. Просели продажи, слабая воронка</option>
+                            <option value="Саботаж команды и нехватка кадров">Главный затык: 3. Команда сопротивляется, нет слаженности</option>
+                            <option value="Нет оцифровки и AI-автоматизации">Главный затык: 4. Хаос в процессах, нет оцифровки и AI</option>
+                        </select>
+                    </div>
+
+                    <button id="auditSubmitBtn" type="submit" class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase tracking-wider py-3.5 rounded-xl transition text-xs sm:text-sm shadow-xl shadow-blue-600/30 cursor-pointer flex items-center justify-center gap-2">
+                        <span>⚡ Сформировать AI-Аудит за 5 секунд</span>
+                    </button>
+                    
+                    <p class="text-[10px] text-gray-400 text-center">
+                        Нажимая кнопку, вы соглашаетесь с <a href="oferta.html" target="_blank" class="underline hover:text-white">политикой обработки данных</a>.
+                    </p>
+                </form>
+
+                <!-- БЛОК РЕЗУЛЬТАТА AI-АУДИТА (СКРЫТ ДО ОТВЕТА) -->
+                <div id="auditResultBox" class="hidden flex-col gap-3 my-auto">
+                    <div class="bg-[#080e1c] border border-blue-500/50 rounded-2xl p-4 shadow-xl">
+                        <div class="flex items-center justify-between mb-2.5 pb-2 border-b border-indigo-900/50">
+                            <span class="text-xs font-bold text-blue-400 font-['Oswald'] uppercase flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-blue-400 animate-ping"></span> Отчет AI-Аналитика «Территория Роста»
+                            </span>
+                            <span id="auditResultNicheBadge" class="text-[10px] px-2 py-0.5 rounded-full bg-blue-900/60 text-blue-200 border border-blue-700/50 font-medium">B2B</span>
+                        </div>
+                        <div id="auditResultContent" class="text-xs text-gray-200 leading-relaxed space-y-2 max-h-[220px] overflow-y-auto pr-1">
+                            <!-- Контент ответа Gemini -->
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <a href="https://t.me/andreydereev" target="_blank" class="flex-1 bg-gradient-to-r from-emerald-600 to-teal-600 hover:opacity-95 text-white font-bold text-xs py-2.5 px-3 rounded-xl transition text-center shadow-lg shadow-emerald-900/30">
+                            Обсудить аудит с Андреем Дереевым ➔
+                        </a>
+                        <button onclick="resetExpressAudit()" class="px-3 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-gray-300 text-xs font-bold transition cursor-pointer">
+                            Новый расчет
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ФОРМА 2: ПРЯМАЯ ЗАЯВКА НА БРОНЬ -->
+                <form id="leadDirectForm" onsubmit="handleDirectLeadSubmit(event)" class="hidden flex-col gap-3 my-auto">
+                    <div>
+                        <input id="directLeadName" type="text" placeholder="Ваше имя *" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <input type="tel" placeholder="Телефон / Telegram *" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
-                        <input type="text" placeholder="Название компании" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
+                        <input id="directLeadContact" type="tel" placeholder="Телефон / Telegram *" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
+                        <input id="directLeadCompany" type="text" placeholder="Название компании" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
                     </div>
                     <div>
-                        <select class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
+                        <select id="directLeadTariff" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
                             <option value="standard">Интересует участие: Тариф «Стандарт» (15 000 ₽)</option>
                             <option value="business" selected>Интересует участие: Тариф «Бизнес — Команда» (18 000 ₽/чел)</option>
                             <option value="premium">Интересует участие: Тариф «Премиум VIP» (25 000 ₽/чел)</option>
                             <option value="sponsor">Интересует партнерство / Стенд в Бизнес-галерее</option>
-                            <option value="audit">Хочу получить персональный AI-аудит компании</option>
                         </select>
                     </div>
                     <button type="submit" class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase tracking-wider py-3.5 rounded-xl transition text-xs sm:text-sm shadow-xl shadow-blue-600/30 cursor-pointer">
-                        Получить стратегический разбор
+                        Забронировать стратегический разбор
                     </button>
                     <p class="text-[10px] text-gray-400 text-center">
-                        Нажимая кнопку, вы соглашаетесь с <a href="oferta.html" target="_blank" class="underline hover:text-white">политикой обработки персональных данных</a>.
+                        Нажимая кнопку, вы соглашаетесь с <a href="oferta.html" target="_blank" class="underline hover:text-white">политикой обработки данных</a>.
                     </p>
                 </form>
             </div>
@@ -2017,7 +2100,7 @@
                     <li><a href="sponsors.html#matrix" target="_blank" class="hover:text-white transition">Бизнес-галерея (Выставка)</a></li>
                     <li><a href="index.html#tripwire" class="hover:text-white transition">Стратегический разбор</a></li>
                     <li><a href="https://max.ru/join/vvis7juMXRSkY_GDoM_1vIoLBhfEJEyjTaa3JucmVLo" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Сообщество лидеров в MAX</a></li>
-                    <li><a href="https://t.me/predprinimay" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Telegram-канал проекта</a></li>
+                    <li><a href="https://t.me/andreydereev" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Telegram: @andreydereev</a></li>
                 </ul>
             </div>
 
@@ -2035,24 +2118,33 @@
                 </ul>
             </div>
 
-            <!-- Колонка 4: Соцсети на ЧЕРНОМ фоне и быстрые контакты -->
+            <!-- Колонка 4: Соцсети и быстрые контакты -->
             <div>
                 <h4 class="text-sm font-bold uppercase tracking-wider text-blue-400 mb-4 font-['Oswald']">
                     МЫ В СОЦСЕТЯХ
                 </h4>
-                <p class="text-xs text-gray-400 mb-3">Официальные сообщества и оперативные обновления:</p>
-                <div class="flex items-center gap-3 mb-4">
-                    <!-- Telegram (на глубоком черном фоне без рамок и окантовок) -->
-                    <a href="https://t.me/predprinimay" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-black flex items-center justify-center transition shadow-md hover:scale-110 overflow-hidden group" title="Telegram">
-                        <img src="Спикеры/Лого/Значек ТГ.jpg" alt="Telegram" class="w-full h-full object-cover">
-                    </a>
-                    <!-- MAX -->
-                    <a href="https://max.ru/join/vvis7juMXRSkY_GDoM_1vIoLBhfEJEyjTaa3JucmVLo" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-black flex items-center justify-center transition shadow-md hover:scale-110 overflow-hidden" title="Сообщество MAX">
-                        <img src="Спикеры/Лого/Макс Иконка.webp" alt="MAX" class="w-full h-full object-cover">
+                <p class="text-xs text-gray-400 mb-3">Официальные каналы и прямая связь:</p>
+                <div class="flex items-center gap-3 mb-5">
+                    <!-- Telegram (Андрей Дереев) -->
+                    <a href="https://t.me/andreydereev" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-2xl bg-[#0c1322] border border-indigo-900/60 hover:border-sky-400 hover:bg-sky-500/10 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-sky-500/20 hover:scale-105 group" title="Telegram: Андрей Дереев (@andreydereev)">
+                        <svg class="w-5 h-5 text-sky-400 group-hover:text-sky-300 transition-colors" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.05-.48-.83-.27-1.49-.42-1.43-.88.03-.24.38-.49 1.04-.75 4.07-1.77 6.78-2.94 8.14-3.51 3.87-1.62 4.67-1.9 5.2-1.91.12 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.18-.04.34z"/>
+                        </svg>
                     </a>
                     <!-- ВКонтакте -->
-                    <a href="https://vk.ru/territoryup" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-black flex items-center justify-center transition shadow-md hover:scale-110 overflow-hidden" title="ВКонтакте">
-                        <img src="Спикеры/Лого/Значек ВК.png" alt="ВКонтакте" class="w-full h-full object-cover">
+                    <a href="https://vk.ru/territoryup" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-2xl bg-[#0c1322] border border-indigo-900/60 hover:border-blue-500 hover:bg-blue-600/10 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-blue-500/20 hover:scale-105 group" title="ВКонтакте: «Территория Роста»">
+                        <svg class="w-5 h-5 text-blue-400 group-hover:text-blue-300 transition-colors" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M13.162 18.994c.609 0 .858-.406.851-.915-.072-1.075.454-1.564 1.128-1.564.717 0 1.25.592 1.83 1.29.475.57.978 1.189 1.96 1.189h2.38c1.173 0 1.637-.621 1.206-1.693-.578-1.435-2.227-3.27-3.08-4.22-.326-.363-.442-.524 0-1.12.531-.72 2.378-3.328 2.613-4.461.124-.597-.184-.969-.871-.969h-2.38c-.71 0-1.002.37-1.22.86-.416.937-1.579 3.424-2.234 4.148-.26.287-.417.375-.589.375-.125 0-.258-.088-.258-.58V8.465c0-.687-.202-.969-.785-.969h-3.74c-.452 0-.726.336-.726.654 0 .638.956.785 1.054 2.58v3.902c0 .854-.155 1.01-.492 1.01-.898 0-3.08-3.447-4.37-7.39-.247-.756-.516-1.057-1.233-1.057H2.602c-.785 0-.943.37-.943.785 0 .736.944 4.394 4.39 9.22 2.298 3.218 5.534 4.994 8.113 4.994z"/>
+                        </svg>
+                    </a>
+                    <!-- MAX -->
+                    <a href="https://max.ru/join/vvis7juMXRSkY_GDoM_1vIoLBhfEJEyjTaa3JucmVLo" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-2xl bg-[#0c1322] border border-indigo-900/60 hover:border-purple-400 hover:bg-purple-600/10 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-purple-500/20 hover:scale-105 group" title="Сообщество лидеров в MAX">
+                        <svg class="w-5 h-5 text-purple-400 group-hover:text-purple-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
                     </a>
                 </div>
                 <div class="text-xs text-gray-300 space-y-1">
@@ -2150,10 +2242,15 @@
         <!-- Тело сообщений чата -->
         <div id="aiChatMessages" class="flex-1 p-3.5 sm:p-4 overflow-y-auto space-y-3 text-xs">
             <div class="bg-[#101b30] border border-indigo-900/60 p-3 rounded-2xl rounded-tl-none text-gray-200 leading-relaxed shadow-sm">
-                Здравствуйте! Я виртуальный AI-консультант интенсива <b>«Территория Роста»</b>. Чем я могу вам помочь прямо сейчас?
+                Здравствуйте! Меня зовут <b>София</b>, я старший AI-консультант интенсива <b>«Территория Роста 2026»</b>. Рада знакомству! 🤝<br><br>
+                Помогаю предпринимателям разобраться в программе, подобрать формат для команды и рассчитать окупаемость участия. Как могу к вам обращаться и какой у вас бизнес?
             </div>
             <!-- Быстрые чипы-вопросы -->
             <div class="flex flex-wrap gap-1.5 pt-1">
+                <a href="https://t.me/andreydereev" target="_blank" class="bg-blue-600/90 hover:bg-blue-500 text-white font-bold px-3 py-1.5 rounded-full text-[11px] transition inline-flex items-center gap-1.5 shadow-sm">
+                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.05-.48-.83-.27-1.49-.42-1.43-.88.03-.24.38-.49 1.04-.75 4.07-1.77 6.78-2.94 8.14-3.51 3.87-1.62 4.67-1.9 5.2-1.91.12 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.18-.04.34z"/></svg>
+                    <span>Открыть диалог в Telegram</span>
+                </a>
                 <button onclick="sendAiQuick('Расскажи о программе')" class="bg-indigo-950/70 hover:bg-indigo-850 border border-indigo-800/60 text-blue-300 px-2.5 py-1 rounded-full text-[11px] transition cursor-pointer">Программа 5-11 октября</button>
                 <button onclick="sendAiQuick('Какие есть тарифы?')" class="bg-indigo-950/70 hover:bg-indigo-850 border border-indigo-800/60 text-blue-300 px-2.5 py-1 rounded-full text-[11px] transition cursor-pointer">Стоимость и тарифы</button>
                 <button onclick="sendAiQuick('Как стать партнёром?')" class="bg-indigo-950/70 hover:bg-indigo-850 border border-indigo-800/60 text-blue-300 px-2.5 py-1 rounded-full text-[11px] transition cursor-pointer">B2B Партнёрство</button>
@@ -2178,8 +2275,8 @@
 
 <script>
 // Управление плавающей кнопкой Наверх
-window.addEventListener('scroll', () => {
-    const btn = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', function() {
+    var btn = document.getElementById('scrollTopBtn');
     if (btn) {
         if (window.scrollY > 500) {
             btn.classList.remove('hidden');
@@ -2189,61 +2286,364 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Управление шторкой AI-Ассистента
+// =======================================================
+// ИНТЕЛЛЕКТУАЛЬНЫЙ ДВИЖОК AI-КОНСУЛЬТАНТА И AI-АУДИТА
+// =======================================================
+
+var GEMINI_CONFIG = {
+    apiKey: "AQ.Ab8RN6KEiaM7n-WwBz3f42ij5jUU7cx9JoeoNnyOIEWbM0ed7A",
+    primaryModel: "gemini-3.6-flash",
+    fallbackModel: "gemini-3.1-flash-lite",
+    endpoint: "https://generativelanguage.googleapis.com/v1beta/models/"
+};
+
+// СОСТОЯНИЕ AI-МЕНЕДЖЕРА ПРОДАЖ (СОФИЯ)
+var AI_MANAGER_STATE = {
+    step: 'greeting',
+    userName: '',
+    userNiche: '',
+    userContact: '',
+    dialogHistory: []
+};
+
+// Системный промпт со всей Книгой Продаж и программой 5-11 октября
+var SOFIA_SYSTEM_PROMPT = "Ты — София, ведущий AI-бизнес-консультант делового интенсива «ТЕРРИТОРИЯ РОСТА 2026» (5–11 октября 2026, Екатеринбург, Конгресс-центр «Синара Центр»). " +
+"Твоя цель: доброжелательно, экспертно и проактивно общаться с предпринимателями, отвечать на вопросы по 7-дневной программе, спикерам и тарифам, выявлять боли бизнеса и мягко предлагать зафиксировать контакт (Telegram @ник или телефон) для отправки презентации.\n\n" +
+"О ПРОЕКТЕ:\n" +
+"- Формат: 7-дневная деловая лаборатория для собственников и топ-команд компаний с выручкой от 200 млн ₽ (и растущего бизнеса).\n" +
+"- 3 Интеллекта:\n" +
+"  1. Предпринимательский интеллект (Андрей Дереев — 25+ лет в бизнесе, автор методологии масштабирования) — оцифровка смыслов, стратегии и гипотез.\n" +
+"  2. Эмоциональный интеллект (Елизавета Ловягина, Татьяна Бурцева, игра «Эмпатиум») — сплочение команды, преодоление саботажа, распределение ролей.\n" +
+"  3. Искусственный интеллект (Сергей Бекренев, KOMANDA.AI) — развертывание цифрового офиса из 6 AI-агентов (Аналитик, Стратег, Маркетолог, Финансист, Процессы, Директор по развитию).\n" +
+"- Программа по дням:\n" +
+"  * 05.10 — Аналитик (Карта реальности бизнеса)\n" +
+"  * 06.10 — Стратег (3 сценария роста до 1 млрд)\n" +
+"  * 07.10 — Маркетинг (Путь клиента CJM и офферы)\n" +
+"  * 08.10 — Финансист (Финансовая модель ресурсов)\n" +
+"  * 09.10 — Процессы (Дорожная карта на 90 дней)\n" +
+"  * 10.10 — Команда (Очная игра «Эмпатиум», согласование ролей)\n" +
+"  * 11.10 — Директор по развитию (Запуск единого Цифрового офиса)\n" +
+"- Тарифы:\n" +
+"  * «Стандарт» — 15 000 ₽ (1 участник, все 7 дней, доступ к материалам)\n" +
+"  * «Бизнес — Команда» — 18 000 ₽/чел (от 3 участников, командная сборка стратегии)\n" +
+"  * «Премиум VIP» — 25 000 ₽ (VIP-места, закрытый разбор с Андреем Дереевым)\n\n" +
+"СТИЛЬ ОБЩЕНИЯ:\n" +
+"- Живой, уверенный, уважительный, деловой.\n" +
+"- Отвечай ёмко (2-4 предложения) с форматированием списков и жирным шрифтом.\n" +
+"- Завершай реплику вовлекающим вопросом!";
+
+// Управление шторкой чата
 function toggleAiDrawer() {
-    const win = document.getElementById('aiChatWindow');
+    var win = document.getElementById('aiChatWindow');
     if (win) {
         win.classList.toggle('hidden');
+        if (!win.classList.contains('hidden')) {
+            var input = document.getElementById('aiUserInput');
+            if (input) {
+                setTimeout(function() { input.focus(); }, 200);
+            }
+        }
     }
 }
 
 function sendAiQuick(text) {
-    const input = document.getElementById('aiUserInput');
+    var input = document.getElementById('aiUserInput');
     if (input) {
         input.value = text;
         handleAiSubmit(new Event('submit'));
     }
 }
 
-function handleAiSubmit(e) {
+// Сохранение лида в локальное хранилище и логи
+function saveLead(name, niche, contact, details) {
+    try {
+        var leads = JSON.parse(localStorage.getItem('TR_LEADS') || '[]');
+        leads.push({
+            date: new Date().toISOString(),
+            name: name || 'Гость',
+            niche: niche || 'Не указана',
+            contact: contact || 'В диалоге',
+            details: details
+        });
+        localStorage.setItem('TR_LEADS', JSON.stringify(leads));
+        console.log('✅ Лид сохранен локально:', contact);
+    } catch (e) {
+        console.warn('Storage error:', e);
+    }
+}
+
+// Отправка запроса в Gemini API с каскадом моделей
+async function callGeminiAPI(messages, systemPrompt, customModel) {
+    if (!GEMINI_CONFIG.apiKey) throw new Error('API key missing');
+    
+    var modelsToTry = customModel ? [customModel] : [GEMINI_CONFIG.primaryModel, GEMINI_CONFIG.fallbackModel];
+    var contents = messages.map(function(m) {
+        return {
+            role: m.role === 'assistant' ? 'model' : 'user',
+            parts: [{ text: m.content }]
+        };
+    });
+
+    var payload = {
+        systemInstruction: {
+            parts: [{ text: systemPrompt || SOFIA_SYSTEM_PROMPT }]
+        },
+        contents: contents,
+        generationConfig: {
+            temperature: 0.7,
+            maxOutputTokens: 800
+        }
+    };
+
+    var lastErr = null;
+    for (var i = 0; i < modelsToTry.length; i++) {
+        var mName = modelsToTry[i];
+        try {
+            var url = GEMINI_CONFIG.endpoint + mName + ':generateContent?key=' + GEMINI_CONFIG.apiKey;
+            var response = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (response.ok) {
+                var data = await response.json();
+                if (data && data.candidates && data.candidates[0] && data.candidates[0].content) {
+                    return data.candidates[0].content.parts[0].text;
+                }
+            } else {
+                var errTxt = await response.text();
+                console.warn('Gemini model ' + mName + ' status: ' + response.status, errTxt);
+            }
+        } catch (e) {
+            lastErr = e;
+            console.warn('Network error calling ' + mName + ':', e);
+        }
+    }
+    throw lastErr || new Error('All models failed');
+}
+
+// Обработка отправки сообщения в чат с Софией
+async function handleAiSubmit(e) {
     if (e && e.preventDefault) e.preventDefault();
-    const input = document.getElementById('aiUserInput');
-    const container = document.getElementById('aiChatMessages');
+    var input = document.getElementById('aiUserInput');
+    var container = document.getElementById('aiChatMessages');
     if (!input || !container) return;
-    const val = input.value.trim();
+    var val = input.value.trim();
     if (!val) return;
 
-    // Сообщение пользователя
-    const userMsg = document.createElement('div');
-    userMsg.className = 'bg-blue-600 text-white p-3 rounded-2xl rounded-tr-none text-right ml-auto max-w-[85%] leading-relaxed shadow-sm';
+    // 1. Отображаем вопрос пользователя
+    var userMsg = document.createElement('div');
+    userMsg.className = 'bg-blue-600 text-white p-3 rounded-2xl rounded-tr-none text-right ml-auto max-w-[85%] leading-relaxed shadow-sm text-xs';
     userMsg.textContent = val;
     container.appendChild(userMsg);
     input.value = '';
+    container.scrollTop = container.scrollHeight;
 
-    // Авто-ответ ассистента
-    setTimeout(() => {
-        const botMsg = document.createElement('div');
-        botMsg.className = 'bg-[#101b30] border border-indigo-900/60 p-3 rounded-2xl rounded-tl-none text-gray-200 mr-auto max-w-[90%] leading-relaxed shadow-sm';
-        
-        const q = val.toLowerCase();
-        if (q.includes('программ') || q.includes('октябр')) {
-            botMsg.innerHTML = 'Интенсив пройдет с 5 по 11 октября 2026 в Екатеринбурге (Синара Центр). Программа объединяет три интеллекта: ИИ и автоматизация, бизнес-моделирование и эмоциональный интеллект команды.';
-        } else if (q.includes('тариф') || q.includes('стоимост') || q.includes('цен')) {
-            botMsg.innerHTML = 'Доступны форматы: «Стандарт» (15 000 ₽), «Бизнес — Команда» (18 000 ₽/чел) и «Премиум VIP» (25 000 ₽/чел). Подробности в <a href="index.html#pricing" class="text-blue-400 underline">разделе тарифов</a>.';
-        } else if (q.includes('партнер') || q.includes('спонсор') || q.includes('галере')) {
-            botMsg.innerHTML = 'Для компаний доступны спонсорские пакеты и стенды в Бизнес-галерее. Изучите презентацию на <a href="sponsors.html" target="_blank" class="text-blue-400 underline">странице партнёров</a> или позвоните нам: +7 (982) 684-43-99.';
-        } else if (q.includes('аудит')) {
-            botMsg.innerHTML = 'Вы можете пройти бесплатный AI-Аудит готовности вашей компании прямо на сайте в <a href="index.html#quiz" class="text-blue-400 underline">интерактивном квизе</a>.';
-        } else {
-            botMsg.innerHTML = 'Спасибо за вопрос! Наш бизнес-эксперт готов детально проконсультировать вас. Оставьте заявку в <a href="#tripwire" class="text-blue-400 underline">форме экспресс-диагностики</a> или напишите в наш <a href="https://t.me/predprinimay" target="_blank" class="text-blue-400 underline">Telegram-канал</a>.';
-        }
-        container.appendChild(botMsg);
-        container.scrollTop = container.scrollHeight;
-    }, 400);
+    AI_MANAGER_STATE.dialogHistory.push({ role: 'user', content: val });
 
+    // Извлечение контакта
+    var contactMatch = val.match(/(@[a-zA-Z0-9_]{3,}|(\+7|8)[\s\(\)-]*\d{3}[\s\(\)-]*\d{3}[\s\(\)-]*\d{2}[\s\(\)-]*\d{2}|\d{10,11})/);
+    if (contactMatch) {
+        AI_MANAGER_STATE.userContact = contactMatch[0];
+        AI_MANAGER_STATE.step = 'contact_captured';
+        saveLead(AI_MANAGER_STATE.userName, AI_MANAGER_STATE.userNiche, AI_MANAGER_STATE.userContact, val);
+    }
+
+    // Извлечение имени
+    var nameMatch = val.match(/(меня зовут|я\s+)([А-Яа-яA-Za-z]+)/i);
+    if (nameMatch && !AI_MANAGER_STATE.userName) {
+        AI_MANAGER_STATE.userName = nameMatch[2];
+    }
+
+    // 2. Индикатор набора ответа (typing)
+    var typingIndicator = document.createElement('div');
+    typingIndicator.id = 'aiTyping';
+    typingIndicator.className = 'bg-[#101b30] border border-indigo-900/60 p-2.5 rounded-2xl rounded-tl-none text-gray-400 mr-auto max-w-[60%] flex items-center gap-1.5 text-[11px]';
+    typingIndicator.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-bounce"></span><span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-bounce [animation-delay:0.2s]"></span><span class="w-1.5 h-1.5 rounded-full bg-pink-400 animate-bounce [animation-delay:0.4s]"></span> София печатает...';
+    container.appendChild(typingIndicator);
+    container.scrollTop = container.scrollHeight;
+
+    var replyText = '';
+    try {
+        replyText = await callGeminiAPI(AI_MANAGER_STATE.dialogHistory, SOFIA_SYSTEM_PROMPT);
+    } catch (err) {
+        console.warn('Gemini fallback to offline rules:', err);
+        await new Promise(function(r) { setTimeout(r, 600); });
+        replyText = getSofiaExpertIntelligence(val);
+    }
+
+    if (typingIndicator && typingIndicator.parentNode) {
+        typingIndicator.remove();
+    }
+
+    displayBotReply(replyText, container);
+    AI_MANAGER_STATE.dialogHistory.push({ role: 'assistant', content: replyText });
+}
+
+// Форматирование текста без опасных регулярок
+function formatMarkdownText(text) {
+    if (!text) return '';
+    var s = text;
+    s = s.split('**').map(function(part, idx) {
+        return idx % 2 === 1 ? '<b>' + part + '</b>' : part;
+    }).join('');
+    s = s.split('\n\n').join('<br><br>');
+    s = s.split('\n').join('<br>');
+    return s;
+}
+
+// Отображение ответа Софии с форматированием
+function displayBotReply(text, container) {
+    var botMsg = document.createElement('div');
+    botMsg.className = 'bg-[#101b30] border border-indigo-900/60 p-3 rounded-2xl rounded-tl-none text-gray-200 mr-auto max-w-[90%] leading-relaxed shadow-sm text-xs';
+    
+    botMsg.innerHTML = formatMarkdownText(text);
+
+    if (AI_MANAGER_STATE.userContact && !botMsg.innerHTML.includes('Telegram')) {
+        var leadBadge = document.createElement('div');
+        leadBadge.className = 'mt-2.5 p-2 bg-emerald-950/60 border border-emerald-500/40 rounded-xl text-emerald-300 text-[11px] flex items-center justify-between';
+        leadBadge.innerHTML = '<span>✓ Контакт <b>' + AI_MANAGER_STATE.userContact + '</b> зафиксирован</span> <a href="https://t.me/andreydereev" target="_blank" class="text-white underline ml-2 font-bold">Написать Андрею Дерееву ➔</a>';
+        botMsg.appendChild(leadBadge);
+    }
+
+    container.appendChild(botMsg);
     container.scrollTop = container.scrollHeight;
 }
-</script>
 
+// =======================================================
+// УПРАВЛЕНИЕ ФОРМОЙ AI-ЭКСПРЕСС АУДИТА БИЗНЕСА
+// =======================================================
+
+function switchTripwireTab(tab) {
+    var btnAudit = document.getElementById('tabBtnAudit');
+    var btnLead = document.getElementById('tabBtnLead');
+    var headAudit = document.getElementById('tripwireAuditHeader');
+    var headLead = document.getElementById('tripwireLeadHeader');
+    var formAudit = document.getElementById('auditForm');
+    var formLead = document.getElementById('leadDirectForm');
+    var resBox = document.getElementById('auditResultBox');
+
+    if (tab === 'audit') {
+        btnAudit.className = 'px-3 py-1.5 rounded-xl text-xs font-bold transition bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md shadow-blue-500/30 flex items-center gap-1.5 cursor-pointer';
+        btnLead.className = 'px-3 py-1.5 rounded-xl text-xs font-bold transition bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/10 flex items-center gap-1.5 cursor-pointer';
+        headAudit.classList.remove('hidden');
+        headLead.classList.add('hidden');
+        if (resBox.classList.contains('hidden')) {
+            formAudit.classList.remove('hidden');
+        }
+        formLead.classList.add('hidden');
+    } else {
+        btnLead.className = 'px-3 py-1.5 rounded-xl text-xs font-bold transition bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md shadow-blue-500/30 flex items-center gap-1.5 cursor-pointer';
+        btnAudit.className = 'px-3 py-1.5 rounded-xl text-xs font-bold transition bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/10 flex items-center gap-1.5 cursor-pointer';
+        headLead.classList.remove('hidden');
+        headAudit.classList.add('hidden');
+        formAudit.classList.add('hidden');
+        resBox.classList.add('hidden');
+        formLead.classList.remove('hidden');
+    }
+}
+
+async function handleExpressAuditSubmit(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    var name = document.getElementById('auditName').value.trim();
+    var contact = document.getElementById('auditContact').value.trim();
+    var niche = document.getElementById('auditNiche').value.trim();
+    var revenue = document.getElementById('auditRevenue').value;
+    var bottleneck = document.getElementById('auditBottleneck').value;
+    var submitBtn = document.getElementById('auditSubmitBtn');
+
+    if (!name || !contact || !niche) return;
+
+    saveLead(name, niche, contact, 'AI-Аудит: Выручка ' + revenue + ', Затык: ' + bottleneck);
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="w-2 h-2 rounded-full bg-white animate-ping mr-1"></span> AI-Аналитик оцифровывает точки роста...';
+
+    var auditPrompt = "Ты — старший бизнес-аналитик и AI-архитектор интенсива «ТЕРРИТОРИЯ РОСТА» (автор методики масштабирования Андрей Дереев).\n" +
+"Сформируй персонализированный экспресс-аудит для предпринимателя.\n" +
+"ПАРАМЕТРЫ КОМПАНИИ:\n" +
+"- Имя: " + name + "\n" +
+"- Ниша: " + niche + "\n" +
+"- Текущая выручка: " + revenue + "\n" +
+"- Главная проблема/узкое горлышко: " + bottleneck + "\n\n" +
+"СТРУКТУРА ОТВЕТА (строго 3 лаконичных пункта с цифрами и выгодой):\n" +
+"1. **Диагноз узкого горлышка:** в чем корень проблемы при таком масштабе выручки.\n" +
+"2. **3 конкретные точки роста (х2-х5):** оцифровка воронки, устранение потерь, внедрение AI-агентов.\n" +
+"3. **Решение на спринте «Территория Роста» (5–11 октября):** какой AI-агент из Цифрового офиса и какой день программы снимет эту нагрузку.\n" +
+"Тон: уверенный, практический, без воды, стиль топ-консалтинга.";
+
+    var reportText = '';
+    try {
+        reportText = await callGeminiAPI(
+            [{ role: 'user', content: 'Сформируй экспресс-аудит для ниши ' + niche + ' с выручкой ' + revenue }],
+            auditPrompt,
+            GEMINI_CONFIG.primaryModel
+        );
+    } catch (err) {
+        console.warn('Audit fallback:', err);
+        reportText = '**1. Диагноз профиля:** Для ниши **' + niche + '** при масштабе **' + revenue + '** ключевой фактор сдерживания — *' + bottleneck + '*. Собственник перегружен микроменеджментом, из-за чего теряется до 30% маржинальности.\n\n' +
+        '**2. Точки роста:**\n• Оцифровка CJM и автоматизация лидогенерации через AI-агента Маркетолога.\n• Передача рутинной финотчетности AI-агенту Финансисту.\n• Снятие саботажа команды через очную сессию «Эмпатиум».\n\n' +
+        '**3. Результат спринта:** 5–11 октября за 7 дней вы соберете персональную карту масштабирования и запустите цифровой офис из 6 AI-агентов.';
+    }
+
+    document.getElementById('auditForm').classList.add('hidden');
+    var resBox = document.getElementById('auditResultBox');
+    var contentBox = document.getElementById('auditResultContent');
+    document.getElementById('auditResultNicheBadge').textContent = niche;
+    
+    contentBox.innerHTML = formatMarkdownText(reportText);
+
+    resBox.classList.remove('hidden');
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '<span>⚡ Сформировать AI-Аудит за 5 секунд</span>';
+}
+
+function resetExpressAudit() {
+    document.getElementById('auditResultBox').classList.add('hidden');
+    document.getElementById('auditForm').classList.remove('hidden');
+}
+
+function handleDirectLeadSubmit(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    var name = document.getElementById('directLeadName').value.trim();
+    var contact = document.getElementById('directLeadContact').value.trim();
+    var comp = document.getElementById('directLeadCompany').value.trim();
+    var tariff = document.getElementById('directLeadTariff').value;
+
+    saveLead(name, comp, contact, 'Прямая бронь тарифа: ' + tariff);
+    alert('Спасибо, ' + name + '! Заявка на тариф принята. Эксперт консорциума «ПРЕДПРИНИМАЙ» свяжется с вами в Telegram/по телефону в течение 15 минут.');
+    document.getElementById('leadDirectForm').reset();
+}
+
+// Офлайн-интеллект Софии (резервный контур)
+function getSofiaExpertIntelligence(rawText) {
+    var q = rawText.toLowerCase().trim();
+    var namePrefix = AI_MANAGER_STATE.userName ? AI_MANAGER_STATE.userName + ', ' : '';
+
+    if (AI_MANAGER_STATE.step === 'contact_captured') {
+        AI_MANAGER_STATE.step = 'discussing';
+        return namePrefix + 'отлично, ваш контакт принят! Я забронировала за вами спец-условия. Наш ведущий эксперт Андрей Дереев или координатор свяжутся с вами в Telegram/по телефону. Какой вопрос по программе для вас сейчас самый важный?';
+    }
+
+    if (q.includes('когда') || q.includes('где') || q.includes('дат') || q.includes('синар')) {
+        return namePrefix + 'деловой интенсив пройдет **5–11 октября 2026 года в Екатеринбурге** в конгресс-центре **«Синара Центр»** (пер. Сибирский, 2). Это 7 дней глубокой очной работы. Планируете участвовать один или с топ-командой?';
+    }
+
+    if (q.includes('тариф') || q.includes('стоимост') || q.includes('цен') || q.includes('скольк') || q.includes('билет')) {
+        return namePrefix + 'действуют 3 формата:\n\n• **«Стандарт»** (15 000 ₽) — 1 участник, все 7 дней спринта.\n• **«Бизнес — Команда»** (18 000 ₽/чел) — для групп от 3 человек с командной сборкой стратегии.\n• **«Премиум VIP»** (25 000 ₽) — VIP-места и личный разбор с Андреем Дереевым.\n\nНапишите ваш **Telegram (@ник) или телефон** — я пришлю вам полную презентацию!';
+    }
+
+    if (q.includes('программ') || q.includes('7 дн') || q.includes('спринт') || q.includes('расписан')) {
+        return namePrefix + 'программа 7 дней:\n\n• **05.10:** Карта реальности бизнеса\n• **06.10:** 3 сценария роста до 1 млрд\n• **07.10:** CJM и воронка маркетинга\n• **08.10:** Финмодель и ресурсы\n• **09.10:** Дорожная карта на 90 дней\n• **10.10:** Командная сессия «Эмпатиум»\n• **11.10:** Запуск цифрового офиса из 6 AI-агентов.\n\nКакой этап для вас сейчас самый актуальный?';
+    }
+
+    if (q.includes('дереев') || q.includes('спикер') || q.includes('бекренев') || q.includes('ловягин')) {
+        return 'Ключевые эксперты:\n\n• **Андрей Дереев** — серийный предприниматель (25+ лет в бизнесе), автор методологии масштабирования.\n• **Сергей Бекренев** — президент ELS GROUP, основатель KOMANDA.AI.\n• **Елизавета Ловягина** — эксперт по эмоциональному интеллекту и игре «Эмпатиум».\n\nОставьте контакт — пришлю подробные кейсы спикеров!';
+    }
+
+    return namePrefix + '«Территория Роста 2026» — это 7-дневный спринт в Екатеринбурге (5–11 октября), где 300+ собственников оцифруют бизнес и запустят цифровой офис из AI-агентов.\n\nНапишите ваш **Telegram (@ник) или телефон** — я зафиксирую за вами раннюю цену и пришлю презентацию!';
+}
+</script>
 </body>
 </html>
