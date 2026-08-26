@@ -121,19 +121,20 @@
                 <span class="font-black text-sm sm:text-base tracking-wider uppercase font-['Oswald'] text-white whitespace-nowrap">ТЕРРИТОРИЯ РОСТА</span>
             </a>
 
-            <!-- Основные пункты меню с Организаторами -->
-            <div class="hidden md:flex items-center space-x-5 lg:space-x-7 text-[12px] lg:text-[13px] font-semibold text-gray-300 uppercase tracking-wider whitespace-nowrap">
-                <a href="#context" class="hover:text-white transition">О проекте</a>
-                <a href="#program" class="hover:text-white transition">Программа</a>
-                <a href="speakers.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Эксперты</a>
-                <a href="#locations" class="hover:text-white transition">Локации</a>
-                <a href="#pricing" class="hover:text-white transition">Билеты</a>
-                <a href="#consortium" class="hover:text-white transition">Организаторы</a>
+            <!-- Основные пункты меню с активным скролл-шпионом -->
+            <div id="navMenuLinks" class="hidden md:flex items-center space-x-5 lg:space-x-7 text-[12px] lg:text-[13px] font-semibold text-gray-300 uppercase tracking-wider whitespace-nowrap">
+                <a href="#context" class="nav-item hover:text-white transition">О проекте</a>
+                <a href="#program" class="nav-item hover:text-white transition">Программа</a>
+                <a href="speakers.html" class="nav-item hover:text-white transition">Эксперты</a>
+                <a href="#locations" class="nav-item hover:text-white transition">Локации</a>
+                <a href="#pricing" class="nav-item hover:text-white transition">Билеты</a>
+                <a href="#consortium" class="nav-item hover:text-white transition">Организаторы</a>
+                <a href="sponsors.html" class="nav-item hover:text-white transition">Партнеры</a>
             </div>
 
             <!-- Крайняя кнопка действия: AI-АУДИТ -->
             <div class="flex items-center flex-shrink-0">
-                <a href="audit.html" class="bg-gradient-to-r from-orange-500 via-rose-500 to-pink-500 hover:opacity-95 text-white font-black px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm tracking-wide whitespace-nowrap shadow-md shadow-orange-500/25 transition transform hover:scale-[1.02]">
+                <a href="#tripwire" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-black px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm tracking-wide whitespace-nowrap shadow-md shadow-sky-500/25 transition transform hover:scale-[1.02]">
                     AI-Аудит
                 </a>
             </div>
@@ -151,7 +152,6 @@
         <div class="z-10 w-full max-w-5xl mx-auto px-6 flex flex-col items-center">
             <!-- Плашка даты -->
             <div class="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white/10 border border-white/20 text-white text-sm md:text-base font-bold uppercase tracking-widest mb-6 backdrop-blur-md">
-                <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
                 ЕКАТЕРИНБУРГ • 5-11 ОКТЯБРЯ
             </div>
             
@@ -211,7 +211,6 @@
     <!-- ЭКРАН 2: ОБНОВЛЕНИЕ ОПЕРАЦИОННОЙ СИСТЕМЫ БИЗНЕСА -->
     <section id="context" class="py-24 px-6 max-w-7xl mx-auto bg-black">
         <div class="inline-flex items-center gap-2 text-blue-500 font-bold uppercase tracking-widest text-xs mb-4">
-            <span class="w-2 h-2 rounded-full bg-blue-500"></span>
             О лаборатории
         </div>
         <h2 class="title-massive text-4xl md:text-5xl lg:text-6xl text-white mb-12">
@@ -1068,7 +1067,6 @@
                 <div class="relative z-10">
                     <!-- Заголовок блока Галереи -->
                     <div class="inline-flex items-center gap-2 text-blue-300 font-bold uppercase tracking-widest text-xs mb-3">
-                        <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
                         Интерактивное бизнес-галерея-пространство • 11 Октября • Синара Центр
                     </div>
                     <h3 class="text-3xl sm:text-4xl lg:text-5xl font-black font-['Oswald'] uppercase mb-6 text-white">
@@ -1181,31 +1179,29 @@
             </div>
         </section>
 
-        <!-- ЭКРАН 7: ДЛЯ КОГО БИЗНЕС-ИНТЕНСИВ И ЭКСПРЕСС-ДИАГНОСТИКА ФОРМАТА -->
-        <!-- ЭКРАН 7: ПАКЕТЫ УЧАСТИЯ И ИНТЕРАКТИВНЫЙ AI-АУДИТ -->
         <!-- ЭКРАН 7: ИНТЕРАКТИВНЫЙ ЭКСПРЕСС-АУДИТ (ПОДБОР ФОРМАТА УЧАСТИЯ ЗА 60 СЕКУНД) -->
-        <section id="quiz" class="py-16 px-6 max-w-7xl mx-auto relative z-10 mb-20">
+        <section id="quiz" class="py-8 sm:py-10 px-4 sm:px-6 max-w-7xl mx-auto relative z-10 mb-10 sm:mb-12">
             <!-- Фоновое свечение -->
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-200/30 via-indigo-200/30 to-purple-200/30 rounded-full filter blur-[100px] pointer-events-none -z-10"></div>
 
-            <div class="bg-white rounded-[2.5rem] p-8 sm:p-12 lg:p-14 border-2 border-indigo-100 shadow-2xl relative overflow-hidden">
-                <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-[2.5rem] p-6 sm:p-10 lg:p-12 border-2 border-indigo-100 shadow-2xl relative overflow-hidden">
+                <div class="max-w-5xl mx-auto">
                     
-                    <div class="text-center mb-10">
-                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-100 text-purple-900 font-bold text-xs uppercase tracking-widest mb-4">
-                            <span class="w-2 h-2 rounded-full bg-purple-600"></span>
+                    <div class="text-center mb-8 sm:mb-10">
+                        <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-purple-100 text-purple-900 font-bold text-xs uppercase tracking-widest mb-3">
                             Интерактивный экспресс-аудит
                         </div>
-                        <h2 class="title-massive text-3xl sm:text-4xl lg:text-5xl text-gray-900 uppercase mb-3">
-                            ПОДБЕРИТЕ <span class="text-gradient-magic">ФОРМАТ УЧАСТИЯ</span> ЗА 60 СЕКУНД
+                        <h2 class="title-massive text-3xl sm:text-4xl lg:text-5xl text-gray-900 uppercase mb-3 leading-tight">
+                            ПОДБЕРИТЕ ФОРМАТ УЧАСТИЯ<br>
+                            <span class="text-gradient-magic">ЗА 60 СЕКУНД</span>
                         </h2>
-                        <p class="text-gray-600 text-sm sm:text-base font-medium">
+                        <p class="text-gray-600 text-sm sm:text-base font-medium max-w-2xl mx-auto">
                             Ответьте на 3 вопроса о ваших бизнес-задачах и получите индивидуальный расчет потенциала роста
                         </p>
                     </div>
 
                     <!-- Интерактивный контейнер квиза -->
-                    <div id="quiz-container" class="bg-gray-50 rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-inner">
+                    <div id="quiz-container" class="bg-gray-50/90 rounded-3xl p-6 sm:p-10 border border-gray-200 shadow-inner max-w-4xl mx-auto">
                         <!-- Прогресс бар -->
                         <div class="mb-6">
                             <div class="flex justify-between items-center text-xs font-bold text-gray-400 uppercase mb-2">
@@ -1490,7 +1486,6 @@
             <div class="mb-20">
                 <div class="mb-8 pb-3">
                     <div class="inline-flex items-center gap-2 text-xs font-bold text-indigo-600 uppercase tracking-widest mb-1">
-                        <span class="w-2 h-2 rounded-full bg-indigo-600"></span>
                         Цифровая инфраструктура & Стек
                     </div>
                     <h3 class="text-2xl sm:text-3xl font-black font-['Oswald'] uppercase text-gray-900">
@@ -1604,7 +1599,6 @@
                 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4 pb-3">
                     <div>
                         <div class="inline-flex items-center gap-2 text-xs font-bold text-gray-600 uppercase tracking-widest mb-1">
-                            <span class="w-2 h-2 rounded-full bg-gray-600"></span>
                             Экспертиза & Локации
                         </div>
                         <h3 class="text-2xl sm:text-3xl font-black font-['Oswald'] uppercase text-gray-900">
@@ -1704,7 +1698,6 @@
                 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4 pb-3">
                     <div>
                         <div class="inline-flex items-center gap-2 text-purple-600 uppercase tracking-widest font-bold text-xs mb-1">
-                            <span class="w-2 h-2 rounded-full bg-purple-600"></span>
                             Информационная поддержка
                         </div>
                         <h3 class="text-2xl sm:text-3xl font-black font-['Oswald'] uppercase text-gray-900">
@@ -1813,7 +1806,6 @@
             <div class="lg:col-span-6 flex flex-col justify-between">
                 <div>
                     <div class="inline-flex items-center gap-2 text-blue-400 font-bold uppercase tracking-widest text-xs mb-3">
-                        <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
                         Организатор проекта
                     </div>
 
@@ -2096,9 +2088,9 @@
                     УЧАСТНИКАМ
                 </h4>
                 <ul class="space-y-2.5 text-xs text-gray-300">
-                    <li><a href="audit.html" class="hover:text-white transition">Стратегический AI-Аудит</a></li>
+                    <li><a href="#tripwire" class="hover:text-white transition">Экспресс AI-Аудит</a></li>
                     <li><a href="sponsors.html#matrix" target="_blank" class="hover:text-white transition">Бизнес-галерея (Выставка)</a></li>
-                    <li><a href="index.html#tripwire" class="hover:text-white transition">Стратегический разбор</a></li>
+                    <li><a href="#tripwire" class="hover:text-white transition">Стратегический разбор</a></li>
                     <li><a href="https://max.ru/join/vvis7juMXRSkY_GDoM_1vIoLBhfEJEyjTaa3JucmVLo" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Сообщество лидеров в MAX</a></li>
                     <li><a href="https://t.me/andreydereev" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Telegram: @andreydereev</a></li>
                 </ul>
@@ -2139,11 +2131,8 @@
                     </a>
                     <!-- MAX -->
                     <a href="https://max.ru/join/vvis7juMXRSkY_GDoM_1vIoLBhfEJEyjTaa3JucmVLo" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-2xl bg-[#0c1322] border border-indigo-900/60 hover:border-purple-400 hover:bg-purple-600/10 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-purple-500/20 hover:scale-105 group" title="Сообщество лидеров в MAX">
-                        <svg class="w-5 h-5 text-purple-400 group-hover:text-purple-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        <svg class="w-5 h-5 text-purple-400 group-hover:text-purple-300 transition-colors" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2.5 18V6h2.2l2.3 5.8L9.3 6h2.2v12H9.8v-7.2L7.9 15.5H6.6L4.7 10.8V18H2.5zm10.2 0l2.7-12h2.2l2.7 12h-1.9l-.6-2.5h-2.5l-.6 2.5h-2zm2.3-4.2h1.8L16 9.8l-.8 4z"/>
                         </svg>
                     </a>
                 </div>
@@ -2660,8 +2649,8 @@ function getSofiaExpertIntelligence(rawText) {
 
     // 2. ИИ-АУДИТ БИЗНЕСА (Прямая ссылка на диагностику)
     if (q.includes('аудит') || q.includes('fslbn') || q.includes('диагностик') || q.includes('тест') || q.includes('проверит') || q.includes('анкет')) {
-        return namePrefix + 'вы можете пройти наш многофакторный **Стратегический ИИ-Аудит** прямо на сайте за 60 секунд:\n\n' +
-            '👉 <a href="audit.html" class="text-sky-400 font-bold underline hover:text-sky-300">Открыть страницу ИИ-Аудита ➔</a>\n\n' +
+        return namePrefix + 'вы можете пройти наш интерактивный **Экспресс AI-Аудит** прямо на сайте за 60 секунд:\n\n' +
+            '👉 <a href="#tripwire" class="text-sky-400 font-bold underline hover:text-sky-300">Пройти экспресс AI-аудит ➔</a>\n\n' +
             'ИИ-аналитик рассчитает индекс потенциала роста вашей компании (0–100%) и подготовит данные для живого разбора с ведущим экспертом консорциума.';
     }
 
@@ -2729,6 +2718,38 @@ function getSofiaExpertIntelligence(rawText) {
     return namePrefix + '«Территория Роста 2026» — это 7-дневный бизнес-спринт в Екатеринбурге (5–11 октября), где собственники оцифруют стратегию роста до 1 млрд ₽ и запустят Цифровой офис из 6 AI-агентов.\n\n' +
         'Напишите ваш **Telegram (@ник) или телефон** — я пришлю вам полную программу и закреплю спецусловия участия!';
 }
+
+// Активная подсветка пунктов меню при скролле (Scroll Spy)
+document.addEventListener('DOMContentLoaded', () => {
+    const navItems = document.querySelectorAll('#navMenuLinks a.nav-item');
+    const sections = ['context', 'program', 'locations', 'pricing', 'consortium'];
+    
+    function updateActiveNav() {
+        const scrollPos = window.scrollY + 220;
+        let currentSection = '';
+        
+        sections.forEach(id => {
+            const el = document.getElementById(id);
+            if (el && el.offsetTop <= scrollPos) {
+                currentSection = id;
+            }
+        });
+        
+        navItems.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === '#' + currentSection) {
+                link.classList.add('text-sky-400', 'font-bold');
+                link.classList.remove('text-gray-300');
+            } else if (href && href.startsWith('#')) {
+                link.classList.remove('text-sky-400', 'font-bold');
+                link.classList.add('text-gray-300');
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    updateActiveNav();
+});
 </script>
 </body>
 </html>

@@ -43,24 +43,25 @@
     <nav class="fixed top-0 w-full z-50 bg-[#070b14]/95 backdrop-blur-md border-b border-indigo-900/40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between text-sm font-medium tracking-wide text-gray-300">
             <!-- Логотип бренда -->
-            <a href="index_force.html" class="flex items-center gap-3 text-white hover:opacity-90 transition flex-shrink-0">
+            <a href="index.html" class="flex items-center gap-3 text-white hover:opacity-90 transition flex-shrink-0">
                 <img src="ЛОГО ТР.png" alt="Территория Роста" class="h-8 sm:h-9 w-auto object-contain flex-shrink-0">
                 <span class="font-black text-sm sm:text-base tracking-wider uppercase font-['Oswald'] text-white whitespace-nowrap">ТЕРРИТОРИЯ РОСТА</span>
             </a>
 
-            <!-- Основные пункты меню (Главная + Организаторы) -->
+            <!-- Основные пункты меню с активной подсветкой Эксперты -->
             <div class="hidden md:flex items-center space-x-5 lg:space-x-7 text-[12px] lg:text-[13px] font-semibold text-gray-300 uppercase tracking-wider whitespace-nowrap">
-                <a href="index_force.html" class="text-blue-400 hover:text-blue-300 transition font-bold">Главная</a>
-                <a href="index_force.html#program" class="hover:text-white transition">Программа</a>
-                <a href="speakers.html" class="hover:text-white transition">Эксперты</a>
-                <a href="index_force.html#locations" class="hover:text-white transition">Локации</a>
-                <a href="index_force.html#pricing" class="hover:text-white transition">Билеты</a>
-                <a href="index_force.html#consortium" class="hover:text-white transition">Организаторы</a>
+                <a href="index.html" class="hover:text-white transition">Главная</a>
+                <a href="index.html#program" class="hover:text-white transition">Программа</a>
+                <a href="speakers.html" class="text-sky-400 font-bold transition">Эксперты</a>
+                <a href="index.html#locations" class="hover:text-white transition">Локации</a>
+                <a href="index.html#pricing" class="hover:text-white transition">Билеты</a>
+                <a href="index.html#consortium" class="hover:text-white transition">Организаторы</a>
+                <a href="sponsors.html" class="hover:text-white transition">Партнеры</a>
             </div>
 
             <!-- Крайняя кнопка действия: AI-АУДИТ -->
             <div class="flex items-center flex-shrink-0">
-                <a href="audit.html" class="bg-gradient-to-r from-orange-500 via-rose-500 to-pink-500 hover:opacity-95 text-white font-black px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm tracking-wide whitespace-nowrap shadow-md shadow-orange-500/25 transition transform hover:scale-[1.02]">
+                <a href="index.html#tripwire" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-black px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm tracking-wide whitespace-nowrap shadow-md shadow-sky-500/25 transition transform hover:scale-[1.02]">
                     AI-Аудит
                 </a>
             </div>
@@ -68,20 +69,31 @@
     </nav>
 
     <!-- ГЛАВНЫЙ ЭКРАН СПИКЕРОВ (Сквозной Hero стиль) -->
-    <section class="relative min-h-[55vh] flex flex-col justify-center items-center text-center pt-28 pb-16 overflow-hidden bg-black">
-        <div class="absolute inset-0 bg-gradient-to-b from-blue-950/20 via-black to-black z-0"></div>
+    <section class="relative min-h-[60vh] flex flex-col justify-center items-center text-center pt-32 pb-20 overflow-hidden bg-black">
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-30 z-0">
+            <source src="hero.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black z-0"></div>
         <div class="z-10 w-full max-w-5xl mx-auto px-6 flex flex-col items-center">
             <div class="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs sm:text-sm font-bold uppercase tracking-widest mb-6 backdrop-blur-md">
-                <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
                 ПРАКТИКИ И ЛИДЕРЫ РЫНКА
             </div>
             <h1 class="title-massive text-4xl sm:text-6xl md:text-7xl font-black tracking-tight mb-6 text-white">
                 ЭКСПЕРТЫ И СПИКЕРЫ <br>
                 <span class="text-gradient-magic">ТЕРРИТОРИИ РОСТА 2026</span>
             </h1>
-            <p class="text-gray-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+            <p class="text-gray-300 text-base sm:text-lg max-w-2xl leading-relaxed mb-8 font-medium">
                 Синтез предпринимательского опыта, корпоративной психологии и прикладных AI-технологий от признанных лидеров отраслей.
             </p>
+            <!-- Унифицированные кнопки действия -->
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
+                <a href="index.html#pricing" class="bg-white text-black font-black uppercase tracking-wider py-3.5 px-8 rounded-full hover:bg-gray-200 transition shadow-[0_0_30px_rgba(255,255,255,0.2)] text-xs sm:text-sm text-center">
+                    Забронировать билет
+                </a>
+                <a href="sponsors.html" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold uppercase tracking-wider py-3.5 px-8 rounded-full shadow-lg shadow-sky-500/25 transition transform hover:scale-[1.02] text-xs sm:text-sm text-center">
+                    Стать партнером
+                </a>
+            </div>
         </div>
     </section>
 
@@ -198,14 +210,14 @@
             <h3 class="text-2xl sm:text-4xl font-black font-['Oswald'] uppercase text-white mb-4">
                 ГОТОВЫ ПЕРЕСОБРАТЬ ПРОЦЕССЫ С ЭКСПЕРТАМИ?
             </h3>
-            <p class="text-gray-300 text-sm sm:text-base max-w-2xl mb-8">
+            <p class="text-gray-300 text-sm sm:text-base max-w-2xl mb-8 font-medium">
                 Забронируйте участие для себя или команды по специальным условиям раннего бронирования.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4">
-                <a href="index_force.html#pricing" class="bg-gradient-to-r from-orange-500 via-rose-500 to-pink-500 text-white font-black uppercase px-8 py-4 rounded-full text-sm tracking-wider shadow-lg shadow-orange-500/30 hover:opacity-95 transition">
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
+                <a href="index.html#pricing" class="bg-white text-black font-black uppercase tracking-wider px-8 py-4 rounded-full text-xs sm:text-sm hover:bg-gray-200 transition shadow-[0_0_30px_rgba(255,255,255,0.2)] text-center">
                     Выбрать тариф участия
                 </a>
-                <a href="sponsors.html" class="bg-gradient-to-r from-sky-500 to-blue-600 text-white font-bold uppercase px-8 py-4 rounded-full text-sm tracking-wider shadow-lg shadow-sky-500/20 hover:opacity-95 transition">
+                <a href="sponsors.html" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold uppercase tracking-wider px-8 py-4 rounded-full text-xs sm:text-sm shadow-lg shadow-sky-500/25 transition transform hover:scale-[1.02] text-center">
                     Стать партнером
                 </a>
             </div>
@@ -235,7 +247,6 @@
             <div class="lg:col-span-6 flex flex-col justify-between">
                 <div>
                     <div class="inline-flex items-center gap-2 text-blue-400 font-bold uppercase tracking-widest text-xs mb-3">
-                        <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
                         Организатор проекта
                     </div>
 
@@ -478,11 +489,8 @@
                     </a>
                     <!-- MAX -->
                     <a href="https://max.ru/join/vvis7juMXRSkY_GDoM_1vIoLBhfEJEyjTaa3JucmVLo" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-2xl bg-[#0c1322] border border-indigo-900/60 hover:border-purple-400 hover:bg-purple-600/10 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-purple-500/20 hover:scale-105 group" title="Сообщество лидеров в MAX">
-                        <svg class="w-5 h-5 text-purple-400 group-hover:text-purple-300 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        <svg class="w-5 h-5 text-purple-400 group-hover:text-purple-300 transition-colors" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2.5 18V6h2.2l2.3 5.8L9.3 6h2.2v12H9.8v-7.2L7.9 15.5H6.6L4.7 10.8V18H2.5zm10.2 0l2.7-12h2.2l2.7 12h-1.9l-.6-2.5h-2.5l-.6 2.5h-2zm2.3-4.2h1.8L16 9.8l-.8 4z"/>
                         </svg>
                     </a>
                 </div>
