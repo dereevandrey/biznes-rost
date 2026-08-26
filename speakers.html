@@ -69,11 +69,11 @@
     </nav>
 
     <!-- ГЛАВНЫЙ ЭКРАН СПИКЕРОВ (Сквозной Hero стиль) -->
-    <section class="relative min-h-[60vh] flex flex-col justify-center items-center text-center pt-32 pb-20 overflow-hidden bg-black">
-        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-30 z-0">
+    <section class="relative min-h-[75vh] sm:min-h-[80vh] flex flex-col justify-center items-center text-center pt-32 pb-24 overflow-hidden bg-black">
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-40 z-0">
             <source src="hero.mp4" type="video/mp4">
         </video>
-        <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black z-0"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black z-0"></div>
         <div class="z-10 w-full max-w-5xl mx-auto px-6 flex flex-col items-center">
             <div class="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs sm:text-sm font-bold uppercase tracking-widest mb-6 backdrop-blur-md">
                 ПРАКТИКИ И ЛИДЕРЫ РЫНКА
@@ -82,16 +82,16 @@
                 ЭКСПЕРТЫ И СПИКЕРЫ <br>
                 <span class="text-gradient-magic">ТЕРРИТОРИИ РОСТА 2026</span>
             </h1>
-            <p class="text-gray-300 text-base sm:text-lg max-w-2xl leading-relaxed mb-8 font-medium">
+            <p class="text-gray-300 text-base sm:text-lg max-w-3xl leading-relaxed mb-8 font-medium">
                 Синтез предпринимательского опыта, корпоративной психологии и прикладных AI-технологий от признанных лидеров отраслей.
             </p>
             <!-- Унифицированные кнопки действия -->
             <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
-                <a href="index.html#pricing" class="bg-white text-black font-black uppercase tracking-wider py-3.5 px-8 rounded-full hover:bg-gray-200 transition shadow-[0_0_30px_rgba(255,255,255,0.2)] text-xs sm:text-sm text-center">
-                    Забронировать билет
+                <a href="sponsors.html" class="bg-white text-black font-black uppercase tracking-wider py-4 px-8 rounded-full hover:bg-gray-200 transition shadow-[0_0_30px_rgba(255,255,255,0.2)] text-xs sm:text-sm text-center">
+                    Получить предложение
                 </a>
-                <a href="sponsors.html" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold uppercase tracking-wider py-3.5 px-8 rounded-full shadow-lg shadow-sky-500/25 transition transform hover:scale-[1.02] text-xs sm:text-sm text-center">
-                    Стать партнером
+                <a href="#tripwire" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold uppercase tracking-wider py-4 px-8 rounded-full shadow-lg shadow-sky-500/25 transition transform hover:scale-[1.02] text-xs sm:text-sm text-center">
+                    Стать спикером
                 </a>
             </div>
         </div>
@@ -102,104 +102,140 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
             <!-- Спикер 1: Андрей Дереев -->
-            <div class="expert-card rounded-3xl p-8 flex flex-col justify-between">
+            <div class="expert-card rounded-3xl p-7 flex flex-col justify-between border border-blue-500/30 hover:border-blue-400 transition shadow-xl bg-gradient-to-b from-[#0c1322] to-[#070b14]">
                 <div>
-                    <div class="h-64 rounded-2xl overflow-hidden mb-6 border border-blue-500/30">
-                        <img src="Спикеры/Дереев.png" alt="Андрей Дереев" class="w-full h-full object-cover">
+                    <div class="h-80 sm:h-96 w-full rounded-2xl overflow-hidden mb-6 border border-blue-500/30 bg-gradient-to-b from-[#101b30] via-[#0b1220] to-[#060a12] relative flex items-center justify-center group">
+                        <img src="Спикеры/Дереев.png" alt="Андрей Дереев" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="inline-block px-3 py-1 rounded bg-blue-500/10 text-blue-400 font-bold uppercase tracking-widest text-[11px] mb-3 border border-blue-500/20">
+                    <div class="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 font-bold uppercase tracking-widest text-[11px] mb-3 border border-blue-500/20">
                         Предпринимательский интеллект
                     </div>
-                    <h3 class="text-2xl font-black text-white font-['Oswald'] uppercase mb-2">Андрей Дереев</h3>
-                    <div class="text-blue-300 text-sm font-semibold mb-3">Предприниматель, эксперт по масштабированию бизнеса</div>
-                    <p class="text-gray-400 text-xs leading-relaxed">
-                        Основатель консорциума «ПРЕДПРИНИМАЙ». Эксперт по стратегическому развитию компаний, антикризисному менеджменту и построению системных масштабируемых бизнес-моделей.
+                    <h3 class="text-2xl font-black text-white font-['Oswald'] uppercase mb-1">Андрей Дереев</h3>
+                    <div class="text-blue-300 text-sm font-semibold mb-3">Основатель консорциума «ПРЕДПРИНИМАЙ»</div>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-5">
+                        Эксперт по стратегическому развитию компаний, антикризисному менеджменту и построению системных масштабируемых бизнес-моделей.
                     </p>
+                </div>
+                <div class="pt-4 border-t border-indigo-900/50">
+                    <div class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Ключевая тема:</div>
+                    <div class="text-xs font-semibold text-sky-200 leading-snug">
+                        «Целеполагание и масштабирование: декомпозиция целей на 12 месяцев и переход от операционного хаоса к системе»
+                    </div>
                 </div>
             </div>
 
             <!-- Спикер 2: Сергей Бекренев -->
-            <div class="expert-card rounded-3xl p-8 flex flex-col justify-between">
+            <div class="expert-card rounded-3xl p-7 flex flex-col justify-between border border-blue-500/30 hover:border-blue-400 transition shadow-xl bg-gradient-to-b from-[#0c1322] to-[#070b14]">
                 <div>
-                    <div class="h-64 rounded-2xl overflow-hidden mb-6 border border-blue-500/30">
-                        <img src="Спикеры/Бекренев.png" alt="Сергей Бекренев" class="w-full h-full object-cover">
+                    <div class="h-80 sm:h-96 w-full rounded-2xl overflow-hidden mb-6 border border-blue-500/30 bg-gradient-to-b from-[#101b30] via-[#0b1220] to-[#060a12] relative flex items-center justify-center group">
+                        <img src="Спикеры/Бекренев.png" alt="Сергей Бекренев" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="inline-block px-3 py-1 rounded bg-blue-500/10 text-blue-400 font-bold uppercase tracking-widest text-[11px] mb-3 border border-blue-500/20">
+                    <div class="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 font-bold uppercase tracking-widest text-[11px] mb-3 border border-blue-500/20">
                         Масштабирование и Стратегия
                     </div>
-                    <h3 class="text-2xl font-black text-white font-['Oswald'] uppercase mb-2">Сергей Бекренев</h3>
-                    <div class="text-blue-300 text-sm font-semibold mb-3">Основатель и владелец ELS GROUP</div>
-                    <p class="text-gray-400 text-xs leading-relaxed">
+                    <h3 class="text-2xl font-black text-white font-['Oswald'] uppercase mb-1">Сергей Бекренев</h3>
+                    <div class="text-blue-300 text-sm font-semibold mb-3">Основатель и президент ELS GROUP</div>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-5">
                         Серийный предприниматель, канд. экон. наук. Лидер юридических и цифровых сервисов федерального масштаба с охватом миллионов пользователей.
                     </p>
+                </div>
+                <div class="pt-4 border-t border-indigo-900/50">
+                    <div class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Ключевая тема:</div>
+                    <div class="text-xs font-semibold text-sky-200 leading-snug">
+                        «Стратегия национального лидерства и экосистемный бизнес: создание сервисов с миллионным охватом»
+                    </div>
                 </div>
             </div>
 
             <!-- Спикер 3: Инга Яппарова -->
-            <div class="expert-card rounded-3xl p-8 flex flex-col justify-between">
+            <div class="expert-card rounded-3xl p-7 flex flex-col justify-between border border-blue-500/30 hover:border-blue-400 transition shadow-xl bg-gradient-to-b from-[#0c1322] to-[#070b14]">
                 <div>
-                    <div class="h-64 rounded-2xl overflow-hidden mb-6 border border-blue-500/30">
-                        <img src="Спикеры/Яппарова.png" alt="Инга Яппарова" class="w-full h-full object-cover">
+                    <div class="h-80 sm:h-96 w-full rounded-2xl overflow-hidden mb-6 border border-blue-500/30 bg-gradient-to-b from-[#101b30] via-[#0b1220] to-[#060a12] relative flex items-center justify-center group">
+                        <img src="Спикеры/Яппарова.png" alt="Инга Яппарова" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="inline-block px-3 py-1 rounded bg-blue-500/10 text-blue-400 font-bold uppercase tracking-widest text-[11px] mb-3 border border-blue-500/20">
+                    <div class="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 font-bold uppercase tracking-widest text-[11px] mb-3 border border-blue-500/20">
                         Маркетинг и Социальная Архитектура
                     </div>
-                    <h3 class="text-2xl font-black text-white font-['Oswald'] uppercase mb-2">Инга Яппарова</h3>
+                    <h3 class="text-2xl font-black text-white font-['Oswald'] uppercase mb-1">Инга Яппарова</h3>
                     <div class="text-blue-300 text-sm font-semibold mb-3">Социальный архитектор, маркетолог</div>
-                    <p class="text-gray-400 text-xs leading-relaxed">
+                    <p class="text-gray-400 text-xs leading-relaxed mb-5">
                         Эксперт по маркетинговым стратегиям, формированию сообществ и продвижению сложных B2B и B2G проектов в регионах РФ.
                     </p>
+                </div>
+                <div class="pt-4 border-t border-indigo-900/50">
+                    <div class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Ключевая тема:</div>
+                    <div class="text-xs font-semibold text-sky-200 leading-snug">
+                        «Маркетинг как экосистема доверия: ценностное предложение и сильные сообщества вокруг бренда»
+                    </div>
                 </div>
             </div>
 
             <!-- Спикер 4: Елизавета Ловягина -->
-            <div class="expert-card rounded-3xl p-8 flex flex-col justify-between">
+            <div class="expert-card rounded-3xl p-7 flex flex-col justify-between border border-purple-500/30 hover:border-purple-400 transition shadow-xl bg-gradient-to-b from-[#0c1322] to-[#070b14]">
                 <div>
-                    <div class="h-64 rounded-2xl overflow-hidden mb-6 border border-purple-500/30">
-                        <img src="Спикеры/Ловягина.png" alt="Елизавета Ловягина" class="w-full h-full object-cover">
+                    <div class="h-80 sm:h-96 w-full rounded-2xl overflow-hidden mb-6 border border-purple-500/30 bg-gradient-to-b from-[#101b30] via-[#0b1220] to-[#060a12] relative flex items-center justify-center group">
+                        <img src="Спикеры/Ловягина.png" alt="Елизавета Ловягина" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="inline-block px-3 py-1 rounded bg-purple-500/10 text-purple-400 font-bold uppercase tracking-widest text-[11px] mb-3 border border-purple-500/20">
+                    <div class="inline-block px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 font-bold uppercase tracking-widest text-[11px] mb-3 border border-purple-500/20">
                         Эмоциональный интеллект
                     </div>
-                    <h3 class="text-2xl font-black text-white font-['Oswald'] uppercase mb-2">Елизавета Ловягина</h3>
+                    <h3 class="text-2xl font-black text-white font-['Oswald'] uppercase mb-1">Елизавета Ловягина</h3>
                     <div class="text-purple-300 text-sm font-semibold mb-3">Лаборатория Empatium</div>
-                    <p class="text-gray-400 text-xs leading-relaxed">
+                    <p class="text-gray-400 text-xs leading-relaxed mb-5">
                         Создатель методики деловых эмоциональных игр и оценки некогнитивных навыков. Эксперт по вовлечению команд и преодолению барьеров.
                     </p>
+                </div>
+                <div class="pt-4 border-t border-indigo-900/50">
+                    <div class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Ключевая тема:</div>
+                    <div class="text-xs font-semibold text-purple-200 leading-snug">
+                        «Эмоциональный интеллект лидеров: деловые игры Empatium и снятие барьеров в топ-команде»
+                    </div>
                 </div>
             </div>
 
             <!-- Спикер 5: Татьяна Бурцева -->
-            <div class="expert-card rounded-3xl p-8 flex flex-col justify-between">
+            <div class="expert-card rounded-3xl p-7 flex flex-col justify-between border border-purple-500/30 hover:border-purple-400 transition shadow-xl bg-gradient-to-b from-[#0c1322] to-[#070b14]">
                 <div>
-                    <div class="h-64 rounded-2xl overflow-hidden mb-6 border border-purple-500/30">
-                        <img src="Спикеры/Бурцева.png" alt="Татьяна Бурцева" class="w-full h-full object-cover">
+                    <div class="h-80 sm:h-96 w-full rounded-2xl overflow-hidden mb-6 border border-purple-500/30 bg-gradient-to-b from-[#101b30] via-[#0b1220] to-[#060a12] relative flex items-center justify-center group">
+                        <img src="Спикеры/Бурцева.png" alt="Татьяна Бурцева" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="inline-block px-3 py-1 rounded bg-purple-500/10 text-purple-400 font-bold uppercase tracking-widest text-[11px] mb-3 border border-purple-500/20">
+                    <div class="inline-block px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 font-bold uppercase tracking-widest text-[11px] mb-3 border border-purple-500/20">
                         Корпоративное здоровье & Well-being
                     </div>
-                    <h3 class="text-2xl font-black text-white font-['Oswald'] uppercase mb-2">Татьяна Бурцева</h3>
+                    <h3 class="text-2xl font-black text-white font-['Oswald'] uppercase mb-1">Татьяна Бурцева</h3>
                     <div class="text-purple-300 text-sm font-semibold mb-3">Добросервис (Экосистема Ростех IT)</div>
-                    <p class="text-gray-400 text-xs leading-relaxed">
+                    <p class="text-gray-400 text-xs leading-relaxed mb-5">
                         Руководитель направления корпоративного благополучия и психологической поддержки персонала в крупнейших холдингах России.
                     </p>
+                </div>
+                <div class="pt-4 border-t border-indigo-900/50">
+                    <div class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Ключевая тема:</div>
+                    <div class="text-xs font-semibold text-purple-200 leading-snug">
+                        «Психологическая устойчивость и профилактика выгорания ключевых сотрудников в эпоху изменений»
+                    </div>
                 </div>
             </div>
 
             <!-- Спикер 6: Дмитрий Рассохин -->
-            <div class="expert-card rounded-3xl p-8 flex flex-col justify-between">
+            <div class="expert-card rounded-3xl p-7 flex flex-col justify-between border border-purple-500/30 hover:border-purple-400 transition shadow-xl bg-gradient-to-b from-[#0c1322] to-[#070b14]">
                 <div>
-                    <div class="h-64 rounded-2xl overflow-hidden mb-6 border border-purple-500/30">
-                        <img src="Спикеры/Рассохин.png" alt="Дмитрий Рассохин" class="w-full h-full object-cover">
+                    <div class="h-80 sm:h-96 w-full rounded-2xl overflow-hidden mb-6 border border-purple-500/30 bg-gradient-to-b from-[#101b30] via-[#0b1220] to-[#060a12] relative flex items-center justify-center group">
+                        <img src="Спикеры/Рассохин.png" alt="Дмитрий Рассохин" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="inline-block px-3 py-1 rounded bg-purple-500/10 text-purple-400 font-bold uppercase tracking-widest text-[11px] mb-3 border border-purple-500/20">
+                    <div class="inline-block px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 font-bold uppercase tracking-widest text-[11px] mb-3 border border-purple-500/20">
                         Психология управления
                     </div>
-                    <h3 class="text-2xl font-black text-white font-['Oswald'] uppercase mb-2">Дмитрий Рассохин</h3>
+                    <h3 class="text-2xl font-black text-white font-['Oswald'] uppercase mb-1">Дмитрий Рассохин</h3>
                     <div class="text-purple-300 text-sm font-semibold mb-3">Ректор Института психологии управления</div>
-                    <p class="text-gray-400 text-xs leading-relaxed">
+                    <p class="text-gray-400 text-xs leading-relaxed mb-5">
                         Доктор философии (Ph.D.), канд. психол. наук. Ведущий эксперт по психологии принятия управленческих решений и лидерскому потенциалу.
                     </p>
+                </div>
+                <div class="pt-4 border-t border-indigo-900/50">
+                    <div class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Ключевая тема:</div>
+                    <div class="text-xs font-semibold text-purple-200 leading-snug">
+                        «Психология управленческих решений: устойчивость лидера и стресс-менеджмент первых лиц»
+                    </div>
                 </div>
             </div>
 
@@ -208,17 +244,17 @@
         <!-- Баннер призыва к участию -->
         <div class="mt-16 bg-gradient-to-r from-blue-900/60 via-indigo-900/60 to-purple-900/60 rounded-3xl p-8 sm:p-12 border border-blue-500/30 text-center flex flex-col items-center">
             <h3 class="text-2xl sm:text-4xl font-black font-['Oswald'] uppercase text-white mb-4">
-                ГОТОВЫ ПЕРЕСОБРАТЬ ПРОЦЕССЫ С ЭКСПЕРТАМИ?
+                ГОТОВЫ ПЕРЕСОБРАТЬ БИЗНЕС-ПРОЦЕССЫ С ЭКСПЕРТАМИ?
             </h3>
             <p class="text-gray-300 text-sm sm:text-base max-w-2xl mb-8 font-medium">
-                Забронируйте участие для себя или команды по специальным условиям раннего бронирования.
+                Забронируйте участие для себя и своей команды по специальным условиям.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
-                <a href="index.html#pricing" class="bg-white text-black font-black uppercase tracking-wider px-8 py-4 rounded-full text-xs sm:text-sm hover:bg-gray-200 transition shadow-[0_0_30px_rgba(255,255,255,0.2)] text-center">
-                    Выбрать тариф участия
+                <a href="index.html#program" class="bg-white text-black font-black uppercase tracking-wider px-8 py-4 rounded-full text-xs sm:text-sm hover:bg-gray-200 transition shadow-[0_0_30px_rgba(255,255,255,0.2)] text-center">
+                    Смотреть программу
                 </a>
-                <a href="sponsors.html" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold uppercase tracking-wider px-8 py-4 rounded-full text-xs sm:text-sm shadow-lg shadow-sky-500/25 transition transform hover:scale-[1.02] text-center">
-                    Стать партнером
+                <a href="#tripwire" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold uppercase tracking-wider px-8 py-4 rounded-full text-xs sm:text-sm shadow-lg shadow-sky-500/25 transition transform hover:scale-[1.02] text-center">
+                    Стать спикером
                 </a>
             </div>
         </div>
@@ -226,12 +262,9 @@
 
     <!-- ЕДИНЫЙ СКВОЗНОЙ ФУТЕР -->
     <!-- ========================================== -->
-<!-- ЕДИНЫЙ МАСТЕР-ФУТЕР ТМ «ПРЕДПРИНИМАЙ» 2026 -->
-<!-- ========================================== -->
-<!-- ========================================== -->
-<!-- ЕДИНЫЙ МАСТЕР-ФУТЕР ТМ «ПРЕДПРИНИМАЙ» 2026 -->
-<!-- ========================================== -->
-<footer class="bg-gradient-to-b from-black via-[#070b14] to-[#04070d] text-white pt-20 sm:pt-24 pb-10 sm:pb-12 border-t border-indigo-900/40 relative overflow-hidden">
+    <!-- ЕДИНЫЙ МАСТЕР-ФУТЕР ТМ «ПРЕДПРИНИМАЙ» 2026 -->
+    <!-- ========================================== -->
+    <footer class="bg-gradient-to-b from-black via-[#070b14] to-[#04070d] text-white pt-20 sm:pt-24 pb-10 sm:pb-12 border-t border-indigo-900/40 relative overflow-hidden">
     <!-- Фоновые градиентные свечения -->
     <div class="absolute top-0 left-1/4 w-[600px] h-[300px] bg-blue-600/10 rounded-full filter blur-[140px] pointer-events-none -z-10"></div>
     <div class="absolute bottom-10 right-10 w-[500px] h-[300px] bg-purple-600/10 rounded-full filter blur-[140px] pointer-events-none -z-10"></div>
@@ -334,8 +367,9 @@
                     </div>
                     <div>
                         <select class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
+                            <option value="speaker" selected>Хочу стать спикером / экспертом события</option>
                             <option value="standard">Интересует участие: Тариф «Стандарт» (15 000 ₽)</option>
-                            <option value="business" selected>Интересует участие: Тариф «Бизнес — Команда» (18 000 ₽/чел)</option>
+                            <option value="business">Интересует участие: Тариф «Бизнес — Команда» (18 000 ₽/чел)</option>
                             <option value="premium">Интересует участие: Тариф «Премиум VIP» (25 000 ₽/чел)</option>
                             <option value="sponsor">Интересует партнерство / Стенд в Бизнес-галерее</option>
                             <option value="audit">Хочу получить персональный AI-аудит компании</option>
