@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стратегический ИИ-Аудит Бизнеса | Территория Роста 2026</title>
+    <meta name="description" content="Интерактивный ИИ-аудит бизнес-модели, стратегии и уровня автоматизации компании. Получите персональную диагностику точек роста и план трансформации.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        oswald: ['Oswald', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#0284c7',
+                            light: '#38bdf8',
+                            dark: '#030712',
+                            card: '#0B132B',
+                            accent: '#F59E0B'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #030712; color: #f3f4f6; }
+        .font-oswald { font-family: 'Oswald', sans-serif; }
+        .glass-panel { background: rgba(11, 19, 43, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(56, 189, 248, 0.15); }
+        .glass-card-active { background: rgba(14, 165, 233, 0.12); border-color: rgba(56, 189, 248, 0.6); box-shadow: 0 0 25px rgba(56, 189, 248, 0.2); }
+        .glow-blue { box-shadow: 0 0 35px rgba(14, 165, 233, 0.25); }
+        .gradient-text { background: linear-gradient(135deg, #ffffff 0%, #38bdf8 50%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-[#040711] text-gray-100 selection:bg-sky-500 selection:text-white">
+
+    <!-- ФОНОВЫЕ ЭФФЕКТЫ -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-sky-500/10 rounded-full blur-[140px]"></div>
+        <div class="absolute bottom-10 -right-40 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]"></div>
+    </div>
+
+    <!-- НАВИГАЦИОННЫЙ ХЕДЕР -->
+    <header class="relative z-30 border-b border-gray-800/80 bg-[#070c18]/90 backdrop-blur-md sticky top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="logo.png" alt="Территория Роста" class="h-10 w-auto object-contain brightness-110 group-hover:scale-105 transition-transform">
+                <div class="flex flex-col">
+                    <span class="font-oswald text-lg font-bold tracking-wider text-white uppercase leading-none">ТЕРРИТОРИЯ РОСТА</span>
+                    <span class="text-[10px] text-sky-400 uppercase tracking-widest font-semibold mt-1">Стратегический ИИ-Аудит</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="index.html" class="hover:text-sky-400 transition">Главная</a>
+                <a href="speakers.html" class="hover:text-sky-400 transition">Спикеры</a>
+                <a href="sponsors.html" class="hover:text-sky-400 transition">Партнерам</a>
+                <a href="index.html#programm" class="hover:text-sky-400 transition">Программа</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="https://t.me/andreydereev" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-950/60 border border-sky-500/40 text-sky-300 hover:bg-sky-500/20 hover:border-sky-400 transition">
+                    <svg class="w-4 h-4 text-sky-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.05-.48-.83-.27-1.49-.42-1.43-.88.03-.24.38-.49 1.04-.75 4.07-1.77 6.78-2.94 8.14-3.51 3.87-1.62 4.67-1.9 5.2-1.91.12 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.18-.04.34z"/></svg>
+                    <span>Связь с Андреем Дереевым</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ АУДИТА -->
+    <main class="relative z-10 flex-grow py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full">
+        
+        <!-- Заголовок страницы -->
+        <div class="text-center mb-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/30 text-sky-400 text-xs font-semibold uppercase tracking-wider mb-4">
+                <span class="w-2 h-2 rounded-full bg-sky-400 animate-ping"></span>
+                Диагностический ИИ-модуль «Территория Роста»
+            </div>
+            <h1 class="font-oswald text-3xl sm:text-5xl font-bold uppercase tracking-tight gradient-text mb-4">
+                Экспресс-Аудит Бизнеса и Стратегии 2026
+            </h1>
+            <p class="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+                Ответьте на 5 ключевых вопросов о вашей компании. ИИ-аналитик моментально выявит узкие горлышки, оценит потенциал роста и сформирует пошаговые рекомендации.
+            </p>
+        </div>
+
+        <!-- ПРОГРЕСС-БАР -->
+        <div id="progressContainer" class="mb-8">
+            <div class="flex justify-between items-center text-xs text-gray-400 mb-2">
+                <span id="stepCounter" class="font-semibold text-sky-400 uppercase tracking-wider">Шаг 1 из 5</span>
+                <span id="stepPercent">20% пройдено</span>
+            </div>
+            <div class="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
+                <div id="progressBar" class="h-full bg-gradient-to-r from-sky-500 to-indigo-500 transition-all duration-500 ease-out" style="width: 20%;"></div>
+            </div>
+        </div>
+
+        <!-- КАРТОЧКА ФОРМЫ АУДИТА -->
+        <div id="quizCard" class="glass-panel rounded-3xl p-6 sm:p-10 border border-indigo-900/40 glow-blue transition-all duration-300">
+            
+            <form id="auditForm" onsubmit="return false;">
+                
+                <!-- ШАГ 1: Ниша бизнеса -->
+                <div id="step1" class="step-pane">
+                    <h3 class="font-oswald text-xl sm:text-2xl font-bold text-white mb-2">
+                        1. В какой отрасли работает ваша компания?
+                    </h3>
+                    <p class="text-xs sm:text-sm text-gray-400 mb-6">Выберите основной сегмент деятельности:</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                        <button type="button" onclick="selectOption('niche', 'Производство и промышленность', this)" class="opt-btn text-left p-4 rounded-2xl bg-[#0b1326] border border-gray-800 hover:border-sky-400 hover:bg-sky-500/10 transition flex items-center justify-between group">
+                            <span class="font-medium text-sm text-gray-200 group-hover:text-white">🏭 Производство / Промышленность</span>
+                            <span class="w-5 h-5 rounded-full border border-gray-600 flex items-center justify-center opt-check group-hover:border-sky-400"></span>
+                        </button>
+                        <button type="button" onclick="selectOption('niche', 'Оптовая торговля и дистрибуция', this)" class="opt-btn text-left p-4 rounded-2xl bg-[#0b1326] border border-gray-800 hover:border-sky-400 hover:bg-sky-500/10 transition flex items-center justify-between group">
+                            <span class="font-medium text-sm text-gray-200 group-hover:text-white">📦 Оптовая торговля / B2B Дистрибуция</span>
+                            <span class="w-5 h-5 rounded-full border border-gray-600 flex items-center justify-center opt-check group-hover:border-sky-400"></span>
+                        </button>
+                        <button type="button" onclick="selectOption('niche', 'Ритейл и e-Commerce', this)" class="opt-btn text-left p-4 rounded-2xl bg-[#0b1326] border border-gray-800 hover:border-sky-400 hover:bg-sky-500/10 transition flex items-center justify-between group">
+                            <span class="font-medium text-sm text-gray-200 group-hover:text-white">🛒 Ритейл / E-Commerce / Маркетплейсы</span>
+                            <span class="w-5 h-5 rounded-full border border-gray-600 flex items-center justify-center opt-check group-hover:border-sky-400"></span>
+                        </button>
+                        <button type="button" onclick="selectOption('niche', 'B2B услуги, IT и Консалтинг', this)" class="opt-btn text-left p-4 rounded-2xl bg-[#0b1326] border border-gray-800 hover:border-sky-400 hover:bg-sky-500/10 transition flex items-center justify-between group">
+                            <span class="font-medium text-sm text-gray-200 group-hover:text-white">💼 B2B Услуги / IT / Консалтинг</span>
+                            <span class="w-5 h-5 rounded-full border border-gray-600 flex items-center justify-center opt-check group-hover:border-sky-400"></span>
+                        </button>
+                        <button type="button" onclick="selectOption('niche', 'Строительство и девелопмент', this)" class="opt-btn text-left p-4 rounded-2xl bg-[#0b1326] border border-gray-800 hover:border-sky-400 hover:bg-sky-500/10 transition flex items-center justify-between group">
+                            <span class="font-medium text-sm text-gray-200 group-hover:text-white">🏗️ Строительство / Недвижимость</span>
+                            <span class="w-5 h-5 rounded-full border border-gray-600 flex items-center justify-center opt-check group-hover:border-sky-400"></span>
+                        </button>
+                        <button type="button" onclick="selectOption('niche', 'Сфера услуг и HoReCa', this)" class="opt-btn text-left p-4 rounded-2xl bg-[#0b1326] border border-gray-800 hover:border-sky-400 hover:bg-sky-500/10 transition flex items-center justify-between group">
+                            <span class="font-medium text-sm text-gray-200 group-hover:text-white">🍽️ HoReCa / Сетевой сервис / Медицина</span>
+                            <span class="w-5 h-5 rounded-full border border-gray-600 flex items-center justify-center opt-check group-hover:border-sky-400"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ШАГ 2: Выручка и масштаб -->
+                <div id="step2" class="step-pane hidden">
+                    <h3 class="font-oswald text-xl sm:text-2xl font-bold text-white mb-2">
+                        2. Каков текущий годовой оборот компании?
+                    </h3>
+                    <p class="text-xs sm:text-sm text-gray-400 mb-6">Масштаб определяет архитектуру внедрения AI и инструментов:</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                        <button type="button" onclick="selectOption('revenue', 'До 50 млн руб / год', this)" class="opt-btn text-left p-4 rounded-2xl bg-[#0b1326] border border-gray-800 hover:border-sky-400 hover:bg-sky-500/10 transition flex items-center justify-between group">
+                            <div>
+                                <div class="font-semibold text-sm text-white">До 50 млн ₽ / год</div>
+                                <div class="text-xs text-gray-400">Малый бизнес, активный поиск точек роста</div>
+                            </div>
+                            <span class="w-5 h-5 rounded-full border border-gray-600 flex items-center justify-center opt-check"></span>
+                        </button>
+                        <button type="button" onclick="selectOption('revenue', '50 – 200 млн руб / год', this)" class="opt-btn text-left p-4 rounded-2xl bg-[#0b1326] border border-gray-800 hover:border-sky-400 hover:bg-sky-500/10 transition flex items-center justify-between group">
+                            <div>
+                                <div class="font-semibold text-sm text-white">50 – 200 млн ₽ / год</div>
+                                <div class="text-xs text-gray-400">Устойчивый бизнес, потребность в структуре</div>
+                            </div>
+                            <span class="w-5 h-5 rounded-full border border-gray-600 flex items-center justify-center opt-check"></span>
+                        </button>
+                        <button type="button" onclick="selectOption('revenue', '200 – 500 млн руб / год', this)" class="opt-btn text-left p-4 rounded-2xl bg-[#0b1326] border border-gray-800 hover:border-sky-400 hover:bg-sky-500/10 transition flex items-center justify-between group">
+                            <div>
+                                <div class="font-semibold text-sm text-white">200 – 500 млн ₽ / год</div>
+                                <div class="text-xs text-gray-400">Средний бизнес, масштабирование и автоматизация</div>
+                            </div>
+                            <span class="w-5 h-5 rounded-full border border-gray-600 flex items-center justify-center opt-check"></span>
+                        </button>
+                        <button type="button" onclick="selectOption('revenue', 'Свыше 500 млн руб / год', this)" class="opt-btn text-left p-4 rounded-2xl bg-[#0b1326] border border-gray-800 hover:border-sky-400 hover:bg-sky-500/10 transition flex items-center justify-between group">
+                            <div>
+                                <div class="font-semibold text-sm text-white">500 млн – 1+ млрд ₽ / год</div>
+                                <div class="text-xs text-gray-400">Крупный бизнес, корпоративный AI-контур</div>
+                            </div>
+                            <span class="w-5 h-5 rounded-full border border-gray-600 flex items-center justify-center opt-check"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ШАГ 3: Главное узкое горлышко -->
+                <div id="step3" class="step-pane hidden">
+                    <h3 class="font-oswald text-xl sm:text-2xl font-bold text-white mb-2">
+                        3. Какое ключевое препятствие сдерживает рост прямо сейчас?
+                    </h3>
+                    <p class="text-xs sm:text-sm text-gray-400 mb-6">Выберите главный фактор, отнимающий больше всего ресурсов:</p>
+                    <div class="space-y-3">
+                        <button type="button" onclick="selectOption('bottleneck', 'Операционка и рутина собственника', this)" class="opt-btn w-full text-left p-4 rounded-2xl bg-[#0b1326] border border-gray-800 hover:border-sky-400 hover:bg-sky-500/10 transition flex items-center justify-between group">
+                            <div>
+                                <div class="font-semibold text-sm text-white">🌪️ Собственник замкнут в операционке и тушении пожаров</div>
+                                <div class="text-xs text-gray-400">Нет времени на стратегию, бизнес не работает автономно</div>
+                            </div>
+                            <span class="w-5 h-5 rounded-full border border-gray-600 flex items-center justify-center opt-check"></span>
+                        </button>
+                        <button type="button" onclick="selectOption('bottleneck', 'Нестабильные продажи и дорогие лиды', this)" class="opt-btn w-full text-left p-4 rounded-2xl bg-[#0b1326] border border-gray-800 hover:border-sky-400 hover:bg-sky-500/10 transition flex items-center justify-between group">
+                            <div>
+                                <div class="font-semibold text-sm text-white">📉 Нестабильные продажи и зависимость от ключевых менеджеров</div>
+                                <div class="text-xs text-gray-400">Лиды дорожают, конверсия проседает, нет системной воронки</div>
+                            </div>
+                            <span class="w-5 h-5 rounded-full border border-gray-600 flex items-center justify-center opt-check"></span>
+                        </button>
+                        <button type="button" onclick="selectOption('bottleneck', 'Саботаж команды и сопротивление новшествам', this)" class="opt-btn w-full text-left p-4 rounded-2xl bg-[#0b1326] border border-gray-800 hover:border-sky-400 hover:bg-sky-500/10 transition flex items-center justify-between group">
+                            <div>
+                                <div class="font-semibold text-sm text-white">👥 Сопротивление сотрудников и дефицит сильных топов</div>
+                                <div class="text-xs text-gray-400">Команда саботирует регламенты и новые ИТ-инструменты</div>
+                            </div>
+                            <span class="w-5 h-5 rounded-full border border-gray-600 flex items-center justify-center opt-check"></span>
+                        </button>
+                        <button type="button" onclick="selectOption('bottleneck', 'Отсутствие оцифровки и кассовые разрывы', this)" class="opt-btn w-full text-left p-4 rounded-2xl bg-[#0b1326] border border-gray-800 hover:border-sky-400 hover:bg-sky-500/10 transition flex items-center justify-between group">
+                            <div>
+                                <div class="font-semibold text-sm text-white">📊 Непрозрачные финансы и риск кассовых разрывов</div>
+                                <div class="text-xs text-gray-400">Оборот растет, а чистая прибыль падает, решения принимаются интуитивно</div>
+                            </div>
+                            <span class="w-5 h-5 rounded-full border border-gray-600 flex items-center justify-center opt-check"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ШАГ 4: Уровень автоматизации и ИИ -->
+                <div id="step4" class="step-pane hidden">
+                    <h3 class="font-oswald text-xl sm:text-2xl font-bold text-white mb-2">
+                        4. Как сейчас в компании используются AI и автоматизация?
+                    </h3>
+                    <p class="text-xs sm:text-sm text-gray-400 mb-6">Оцените уровень технологической зрелости:</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                        <button type="button" onclick="selectOption('ai_level', 'Уровень 0: Ручные процессы и таблицы', this)" class="opt-btn text-left p-4 rounded-2xl bg-[#0b1326] border border-gray-800 hover:border-sky-400 hover:bg-sky-500/10 transition flex items-center justify-between group">
+                            <div>
+                                <div class="font-semibold text-sm text-white">Уровень 0: Ручной труд</div>
+                                <div class="text-xs text-gray-400">Excel/таблицы, мессенджеры, минимум систем</div>
+                            </div>
+                            <span class="w-5 h-5 rounded-full border border-gray-600 flex items-center justify-center opt-check"></span>
+                        </button>
+                        <button type="button" onclick="selectOption('ai_level', 'Уровень 1: Точечные тесты нейросетей', this)" class="opt-btn text-left p-4 rounded-2xl bg-[#0b1326] border border-gray-800 hover:border-sky-400 hover:bg-sky-500/10 transition flex items-center justify-between group">
+                            <div>
+                                <div class="font-semibold text-sm text-white">Уровень 1: Тесты ChatGPT</div>
+                                <div class="text-xs text-gray-400">Сотрудники пишут тексты или пробуют промпты</div>
+                            </div>
+                            <span class="w-5 h-5 rounded-full border border-gray-600 flex items-center justify-center opt-check"></span>
+                        </button>
+                        <button type="button" onclick="selectOption('ai_level', 'Уровень 2: Внедрена CRM и автоворонки', this)" class="opt-btn text-left p-4 rounded-2xl bg-[#0b1326] border border-gray-800 hover:border-sky-400 hover:bg-sky-500/10 transition flex items-center justify-between group">
+                            <div>
+                                <div class="font-semibold text-sm text-white">Уровень 2: Базовая CRM</div>
+                                <div class="text-xs text-gray-400">Есть CRM, аналитика, но нет системных ИИ-агентов</div>
+                            </div>
+                            <span class="w-5 h-5 rounded-full border border-gray-600 flex items-center justify-center opt-check"></span>
+                        </button>
+                        <button type="button" onclick="selectOption('ai_level', 'Уровень 3: Защищенный корпоративный ИИ-контур', this)" class="opt-btn text-left p-4 rounded-2xl bg-[#0b1326] border border-gray-800 hover:border-sky-400 hover:bg-sky-500/10 transition flex items-center justify-between group">
+                            <div>
+                                <div class="font-semibold text-sm text-white">Уровень 3: AI-пайплайны</div>
+                                <div class="text-xs text-gray-400">Спецагенты, автоматизация процессов и аналитики</div>
+                            </div>
+                            <span class="w-5 h-5 rounded-full border border-gray-600 flex items-center justify-center opt-check"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ШАГ 5: Контакты и генерация -->
+                <div id="step5" class="step-pane hidden">
+                    <h3 class="font-oswald text-xl sm:text-2xl font-bold text-white mb-2">
+                        5. Куда отправить персональный стратегический отчёт?
+                    </h3>
+                    <p class="text-xs sm:text-sm text-gray-400 mb-6">ИИ-модель сформирует многофакторный анализ и рассчитает индекс потенциала:</p>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-1.5">Ваше имя</label>
+                            <input type="text" id="leadName" placeholder="Иван Иванов" class="w-full px-4 py-3 rounded-xl bg-[#080e1c] border border-gray-700 focus:border-sky-400 focus:outline-none text-white text-sm" required>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-1.5">Телефон для связи (WhatsApp / звонок)</label>
+                            <input type="tel" id="leadPhone" placeholder="+7 (999) 000-00-00" class="w-full px-4 py-3 rounded-xl bg-[#080e1c] border border-gray-700 focus:border-sky-400 focus:outline-none text-white text-sm" required>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-1.5">Telegram (@username для отправки PDF-отчета)</label>
+                            <input type="text" id="leadTelegram" placeholder="@username" class="w-full px-4 py-3 rounded-xl bg-[#080e1c] border border-gray-700 focus:border-sky-400 focus:outline-none text-white text-sm">
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <button type="button" onclick="generateDiagnosticReport()" class="w-full py-4 rounded-2xl bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-bold text-base shadow-xl shadow-sky-500/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                            <span>Сформировать Стратегический ИИ-Аудит</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- КНОПКИ НАВИГАЦИИ -->
+                <div id="navButtons" class="flex justify-between items-center mt-8 pt-6 border-t border-gray-800">
+                    <button type="button" id="prevBtn" onclick="prevStep()" class="hidden px-5 py-2.5 rounded-xl border border-gray-700 hover:border-gray-500 text-gray-300 text-xs font-semibold uppercase tracking-wider transition">
+                        ← Назад
+                    </button>
+                    <div class="ml-auto text-xs text-gray-400 italic">
+                        Безопасный конфиденциальный контур
+                    </div>
+                </div>
+
+            </form>
+
+            <!-- ЭКРАН ЗАГРУЗКИ / АНАЛИЗА ИИ -->
+            <div id="loadingScreen" class="hidden text-center py-12">
+                <div class="relative w-24 h-24 mx-auto mb-6">
+                    <div class="absolute inset-0 rounded-full border-4 border-sky-500/20 animate-ping"></div>
+                    <div class="w-24 h-24 rounded-full border-4 border-t-sky-400 border-r-indigo-500 border-b-transparent border-l-transparent animate-spin flex items-center justify-center"></div>
+                    <div class="absolute inset-0 flex items-center justify-center font-oswald text-xl font-bold text-sky-400">AI</div>
+                </div>
+                <h4 id="loadingTitle" class="font-oswald text-2xl font-bold text-white mb-2">Анализ бизнес-модели...</h4>
+                <p id="loadingSubtitle" class="text-xs text-gray-400 max-w-sm mx-auto">Сопоставление данных ниши с матрицей синектики и бенчмарками 2026 года</p>
+            </div>
+
+            <!-- ЭКРАН РЕЗУЛЬТАТОВ АУДИТА -->
+            <div id="resultScreen" class="hidden space-y-8 animate-fade-in">
+                
+                <!-- Скоринг и заголовок -->
+                <div class="p-6 rounded-2xl bg-gradient-to-br from-indigo-950/80 via-[#0a1226] to-[#040814] border border-sky-500/30">
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pb-6 border-b border-indigo-900/50">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-2">
+                                ✓ Анализ завершен
+                            </div>
+                            <h3 id="resultLeadTitle" class="font-oswald text-2xl sm:text-3xl font-bold text-white uppercase">
+                                Стратегический отчёт для вашей компании
+                            </h3>
+                            <p id="resultMeta" class="text-xs text-gray-400 mt-1">Отрасль: Производство | Оборот: 200–500 млн ₽</p>
+                        </div>
+                        <div class="text-center sm:text-right bg-[#0d162e] px-6 py-4 rounded-2xl border border-indigo-800/60">
+                            <div class="text-xs text-gray-400 uppercase tracking-wider font-semibold">Индекс Потенциала Роста</div>
+                            <div id="growthScore" class="font-oswald text-4xl sm:text-5xl font-extrabold text-sky-400 tracking-tight">84%</div>
+                            <div class="text-[11px] text-emerald-400 font-medium">Высокий потенциал ускорения</div>
+                        </div>
+                    </div>
+
+                    <!-- 4 БЛОКА ДИАГНОСТИКИ -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6" id="diagnosticBlocks">
+                        <!-- Блоки будут сгенерированы динамически -->
+                    </div>
+                </div>
+
+                <!-- БЛОК ДОРОЖНОЙ КАРТЫ СПРИНТА -->
+                <div class="p-6 rounded-2xl bg-[#091024] border border-indigo-900/60">
+                    <h4 class="font-oswald text-xl font-bold text-sky-400 uppercase tracking-wide mb-3">
+                        Рекомендуемая дорожная карта на 7-дневный спринт:
+                    </h4>
+                    <div class="space-y-3 text-xs sm:text-sm text-gray-300" id="sprintRoadmap">
+                        <!-- Динамическая дорожная карта -->
+                    </div>
+                </div>
+
+                <!-- ГЛАВНЫЙ CTA БЛОК: Запись к Андрею Дерееву -->
+                <div class="p-8 rounded-3xl bg-gradient-to-r from-blue-900/50 via-indigo-950 to-slate-900 border-2 border-sky-400/60 shadow-2xl shadow-sky-500/20 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-400/40 text-amber-400 text-xs font-bold uppercase tracking-wider mb-2">
+                            ⚡ Персональное предложение
+                        </div>
+                        <h4 class="font-oswald text-2xl sm:text-3xl font-bold text-white uppercase leading-tight">
+                            Живой стратегический разбор с Андреем Дереевым
+                        </h4>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-2 max-w-xl">
+                            Обсудите результаты вашего аудита лично с основателем «Территории Роста» и получите точечную архитектуру AI-контура под масштаб вашего бизнеса.
+                        </p>
+                    </div>
+                    <div class="flex-shrink-0 w-full sm:w-auto">
+                        <a id="ctaTelegramLink" href="https://t.me/andreydereev" target="_blank" rel="noopener noreferrer" class="block w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-sky-400 to-blue-600 hover:from-sky-300 hover:to-blue-500 text-slate-950 font-extrabold text-sm uppercase tracking-wider text-center shadow-lg shadow-sky-400/30 transition-all transform hover:scale-105">
+                            Записаться на разбор 1-на-1
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="button" onclick="resetAudit()" class="text-xs text-gray-400 hover:text-sky-400 underline transition">
+                        Пройти аудит заново с другими параметрами
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- ФУТЕР -->
+    <footer class="relative z-20 border-t border-gray-800/80 bg-[#040711] py-10 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-gray-400">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="Территория Роста" class="h-8 w-auto">
+                <span>© 2026 «Территория Роста» | Консорциум «ПРЕДПРИНИМАЙ» & КОМАНДА.AI</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://t.me/andreydereev" target="_blank" class="hover:text-sky-400 transition">Telegram: @andreydereev</a>
+                <span>•</span>
+                <a href="tel:+79826844399" class="hover:text-sky-400 transition">+7 (982) 684-43-99</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ЛОГИКА ДИАГНОСТИЧЕСКОГО ИНТЕРФЕЙСА -->
+    <script>
+        var currentStep = 1;
+        var totalSteps = 5;
+        var auditData = {
+            niche: '',
+            revenue: '',
+            bottleneck: '',
+            ai_level: '',
+            name: '',
+            phone: '',
+            telegram: ''
+        };
+
+        function selectOption(key, value, btnElem) {
+            auditData[key] = value;
+            var parent = btnElem.parentElement;
+            var buttons = parent.querySelectorAll('.opt-btn');
+            buttons.forEach(function(b) {
+                b.classList.remove('glass-card-active', 'border-sky-400');
+                var check = b.querySelector('.opt-check');
+                if (check) check.innerHTML = '';
+            });
+            btnElem.classList.add('glass-card-active', 'border-sky-400');
+            var myCheck = btnElem.querySelector('.opt-check');
+            if (myCheck) myCheck.innerHTML = '<span class="w-2.5 h-2.5 rounded-full bg-sky-400"></span>';
+
+            setTimeout(function() {
+                if (currentStep < totalSteps) {
+                    goToStep(currentStep + 1);
+                }
+            }, 300);
+        }
+
+        function goToStep(step) {
+            document.querySelectorAll('.step-pane').forEach(function(el) { el.classList.add('hidden'); });
+            var target = document.getElementById('step' + step);
+            if (target) target.classList.remove('hidden');
+
+            currentStep = step;
+            updateProgress();
+
+            var prevBtn = document.getElementById('prevBtn');
+            if (currentStep > 1 && currentStep <= totalSteps) {
+                prevBtn.classList.remove('hidden');
+            } else {
+                prevBtn.classList.add('hidden');
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                goToStep(currentStep - 1);
+            }
+        }
+
+        function updateProgress() {
+            var percent = Math.round((currentStep / totalSteps) * 100);
+            document.getElementById('stepCounter').innerText = 'Шаг ' + currentStep + ' из ' + totalSteps;
+            document.getElementById('stepPercent').innerText = percent + '% пройдено';
+            document.getElementById('progressBar').style.width = percent + '%';
+        }
+
+        async function generateDiagnosticReport() {
+            var nameInput = document.getElementById('leadName');
+            var phoneInput = document.getElementById('leadPhone');
+            var tgInput = document.getElementById('leadTelegram');
+
+            if (!nameInput.value.trim() || !phoneInput.value.trim()) {
+                alert('Пожалуйста, укажите ваше имя и контактный телефон.');
+                return;
+            }
+
+            auditData.name = nameInput.value.trim();
+            auditData.phone = phoneInput.value.trim();
+            auditData.telegram = tgInput.value.trim() || '@andreydereev';
+
+            document.getElementById('auditForm').classList.add('hidden');
+            document.getElementById('progressContainer').classList.add('hidden');
+            document.getElementById('loadingScreen').classList.remove('hidden');
+
+            var loadingTitles = [
+                'Анализ бизнес-модели и ниши...',
+                'Сопоставление с матрицей синектики 2026...',
+                'Расчет точек утечки маржинальности...',
+                'Формирование архитектуры AI-контура...'
+            ];
+            
+            for (var i = 0; i < loadingTitles.length; i++) {
+                document.getElementById('loadingTitle').innerText = loadingTitles[i];
+                await new Promise(function(r) { setTimeout(r, 600); });
+            }
+
+            document.getElementById('loadingScreen').classList.add('hidden');
+            renderAuditResult();
+            document.getElementById('resultScreen').classList.remove('hidden');
+        }
+
+        function renderAuditResult() {
+            document.getElementById('resultLeadTitle').innerText = 'Стратегический отчёт для ' + (auditData.name || 'компании');
+            document.getElementById('resultMeta').innerText = 'Отрасль: ' + (auditData.niche || 'B2B') + ' | Выручка: ' + (auditData.revenue || 'Масштабирование');
+            
+            var score = 82;
+            if (auditData.ai_level && auditData.ai_level.indexOf('Уровень 0') !== -1) score = 88;
+            if (auditData.revenue && auditData.revenue.indexOf('500 млн') !== -1) score = 94;
+            document.getElementById('growthScore').innerText = score + '%';
+
+            var blocksHtml = '' +
+                '<div class="p-4 rounded-xl bg-[#080d1a] border border-gray-800">' +
+                    '<div class="text-xs font-bold text-sky-400 uppercase mb-1">🎯 1. Стратегия и тупики роста</div>' +
+                    '<div class="text-xs text-gray-300 leading-relaxed">' +
+                        'В нише «' + (auditData.niche || 'бизнеса') + '» узким местом определена проблема: <b>' + (auditData.bottleneck || 'операционная рутина') + '</b>. Метод синектики снимает инерцию и выводит собственника из замкнутого круга за счёт оцифровки ключевого рычага точки А.' +
+                    '</div>' +
+                '</div>' +
+                '<div class="p-4 rounded-xl bg-[#080d1a] border border-gray-800">' +
+                    '<div class="text-xs font-bold text-sky-400 uppercase mb-1">⚡ 2. Продажи и конверсия</div>' +
+                    '<div class="text-xs text-gray-300 leading-relaxed">' +
+                        'При масштабе «' + (auditData.revenue || 'компании') + '» критично устранить зависимость от человеческого фактора через бесшовную AI-воронку и квалификацию лидов ботами первой линии.' +
+                    '</div>' +
+                '</div>' +
+                '<div class="p-4 rounded-xl bg-[#080d1a] border border-gray-800">' +
+                    '<div class="text-xs font-bold text-sky-400 uppercase mb-1">🤖 3. AI-автоматизация и агенты</div>' +
+                    '<div class="text-xs text-gray-300 leading-relaxed">' +
+                        'Текущий статус: <b>' + (auditData.ai_level || 'Базовый') + '</b>. Рекомендуется внедрение 3 специализированных агентов на базе КОМАНДА.AI (Лидогенератор, Фин-прогнозист, HR-онбординг).' +
+                    '</div>' +
+                '</div>' +
+                '<div class="p-4 rounded-xl bg-[#080d1a] border border-gray-800">' +
+                    '<div class="text-xs font-bold text-sky-400 uppercase mb-1">👥 4. Команда и Эмоциональный интеллект</div>' +
+                    '<div class="text-xs text-gray-300 leading-relaxed">' +
+                        'Технологии без синхронизации команды вызывают саботаж. Протокол Empatium формирует эмоциональный контракт между СЕО и топами, исключая скрытое сопротивление внедрению.' +
+                    '</div>' +
+                '</div>';
+            document.getElementById('diagnosticBlocks').innerHTML = blocksHtml;
+
+            var roadmapHtml = '' +
+                '<div class="flex items-start gap-3 p-2.5 rounded-lg bg-[#060b17] border border-gray-800/80">' +
+                    '<span class="px-2 py-0.5 rounded bg-sky-500/20 text-sky-400 font-bold text-[11px]">День 1–2</span>' +
+                    '<div><b>Синектическая разборка и AI-воронка:</b> Снятие ограничений собственника, проектирование архитектуры лидогенерации.</div>' +
+                '</div>' +
+                '<div class="flex items-start gap-3 p-2.5 rounded-lg bg-[#060b17] border border-gray-800/80">' +
+                    '<span class="px-2 py-0.5 rounded bg-sky-500/20 text-sky-400 font-bold text-[11px]">День 3–5</span>' +
+                    '<div><b>Оцифровка финансов и развертывание AI-контура:</b> Автоматизация юнит-экономики и запуск агентов первой линии.</div>' +
+                '</div>' +
+                '<div class="flex items-start gap-3 p-2.5 rounded-lg bg-[#060b17] border border-gray-800/80">' +
+                    '<span class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-400 font-bold text-[11px]">День 6–7</span>' +
+                    '<div><b>Офлайн в Синара Центре (Екатеринбург):</b> Эмоциональный контракт Empatium + Защита стратегии на Саммите.</div>' +
+                '</div>';
+            document.getElementById('sprintRoadmap').innerHTML = roadmapHtml;
+
+            var tgMsg = encodeURIComponent('Здравствуйте, Андрей! Прошел ИИ-аудит на сайте Территории Роста. Моя ниша: ' + auditData.niche + ', выручка: ' + auditData.revenue + '. Хочу обсудить стратегический разбор.');
+            document.getElementById('ctaTelegramLink').href = 'https://t.me/andreydereev?text=' + tgMsg;
+        }
+
+        function resetAudit() {
+            auditData = { niche: '', revenue: '', bottleneck: '', ai_level: '', name: '', phone: '', telegram: '' };
+            document.querySelectorAll('.opt-btn').forEach(function(b) {
+                b.classList.remove('glass-card-active', 'border-sky-400');
+                var c = b.querySelector('.opt-check');
+                if (c) c.innerHTML = '';
+            });
+            document.getElementById('leadName').value = '';
+            document.getElementById('leadPhone').value = '';
+            document.getElementById('leadTelegram').value = '';
+            document.getElementById('resultScreen').classList.add('hidden');
+            document.getElementById('auditForm').classList.remove('hidden');
+            document.getElementById('progressContainer').classList.remove('hidden');
+            goToStep(1);
+        }
+    </script>
+</body>
+</html>
