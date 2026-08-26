@@ -280,7 +280,16 @@
             const data = await resp.json();
             botMsg.innerText = data.response;
         } catch (e) {
-            botMsg.innerText = "Мероприятие проходит 11 октября в Синара Центре (Верх-Исетский бульвар, 15/4). Гардероб и санузлы — на 1 этаже у входа.";
+            const mLow = msg.toLowerCase();
+            if (mLow.includes("дорого") || mLow.includes("скидк") || mLow.includes("цен") || mLow.includes("стоимост")) {
+                botMsg.innerText = "Экономика простая: освобождение 1.5–2 часов рутины топ-менеджера в день окупает участие команды за 2–3 недели. До 1 сентября действуют спеццены раннего бронирования.";
+            } else if (mLow.includes("время") || mLow.includes("график") || mLow.includes("когда")) {
+                botMsg.innerText = "5–9 октября работаем онлайн по 2–2.5 часа/день без отрыва от бизнеса. 10–11 октября — очный интенсив в Екатеринбурге (Синара Центр и SOK).";
+            } else if (mLow.includes("туалет") || mLow.includes("гардероб") || mLow.includes("санузел")) {
+                botMsg.innerText = "Гардероб и санузлы находятся на 1 этаже Синара Центра у главного входа. Дополнительные санузлы — на 2 этаже восточного крыла.";
+            } else {
+                botMsg.innerText = "Саммит и практикум проходят 5–11 октября 2026 в Екатеринбурге (Синара Центр и SOK). Наш эксперт готов ответить в Telegram: @andreydereev";
+            }
         }
         history.scrollTop = history.scrollHeight;
     };

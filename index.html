@@ -437,7 +437,7 @@
             <button onclick="openAssistantModal()" type="button" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-bold tracking-wide transition shadow-[0_4px_25px_rgba(99,102,241,0.3)] cursor-pointer group">
                 <span class="text-sm sm:text-base uppercase tracking-wider font-['Oswald']">ОТКРЫТЬ AI-АССИСТЕНТА</span>
                 <div class="flex items-center -space-x-1 pl-1">
-                    <img src="png-transparent-telegram-macos-bigsur-icon.png" alt="Telegram" class="w-6 h-6 rounded-full ring-2 ring-indigo-900 bg-white object-contain shadow">
+                    <img src="Спикеры/Лого/Значек ТГ.jpg" alt="Telegram" class="w-6 h-6 rounded-full ring-2 ring-indigo-900 bg-white object-contain shadow">
                     <img src="vk-icon-blue-512x512.png" alt="ВКонтакте" class="w-6 h-6 rounded-full ring-2 ring-indigo-900 bg-white object-contain shadow">
                     <img src="Спикеры/Лого/Макс Иконка.webp" alt="MAX" class="w-6 h-6 rounded-full ring-2 ring-indigo-900 bg-white object-contain shadow">
                 </div>
@@ -738,9 +738,9 @@
                             <div class="whitespace-nowrap">
                                 <svg class="w-4 h-4 text-blue-600 shrink-0 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg><span class="font-bold text-gray-900">Адрес:</span> ул. Горького, 67 (SOK)
                             </div>
-                            <a href="https://yandex.ru/maps/-/CDuWvQ1K" target="_blank" class="px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold uppercase tracking-wider rounded-xl transition shadow text-xs whitespace-nowrap">
+                            <button onclick="openMapModal('sok')" type="button" class="px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-bold uppercase tracking-wider rounded-xl transition shadow text-xs whitespace-nowrap cursor-pointer">
                                 Открыть на карте ↗
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -809,7 +809,7 @@
                             <div class="whitespace-nowrap">
                                 <svg class="w-4 h-4 text-blue-600 shrink-0 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg><span class="font-bold text-gray-900">Адрес:</span> Верх-Исетский бульвар, 15/4
                             </div>
-                            <button onclick="openMapModal()" type="button" class="px-5 py-2.5 bg-gray-900 hover:bg-black text-white font-bold uppercase tracking-wider rounded-xl transition shadow text-xs whitespace-nowrap cursor-pointer">
+                            <button onclick="openMapModal('sinara')" type="button" class="px-5 py-2.5 bg-gray-900 hover:bg-black text-white font-bold uppercase tracking-wider rounded-xl transition shadow text-xs whitespace-nowrap cursor-pointer">
                                 Открыть на карте ↗
                             </button>
                         </div>
@@ -1189,18 +1189,18 @@
         </section>
 
         <!-- ЭКРАН 7: ИНТЕРАКТИВНЫЙ ЭКСПРЕСС-АУДИТ (ПОДБОР ФОРМАТА УЧАСТИЯ ЗА 60 СЕКУНД) -->
-        <section id="quiz" class="py-20 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto relative z-10 my-10 sm:my-14">
+        <section id="quiz" class="py-24 sm:py-32 px-4 sm:px-6 max-w-7xl mx-auto relative z-10 my-12 sm:my-16">
             <!-- Фоновое свечение -->
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-blue-200/30 via-indigo-200/30 to-purple-200/30 rounded-full filter blur-[120px] pointer-events-none -z-10"></div>
 
-            <div class="bg-white rounded-[2.5rem] p-8 sm:p-14 lg:p-16 border-2 border-indigo-100 shadow-2xl relative overflow-hidden">
+            <div class="bg-white rounded-[2.5rem] p-8 sm:p-16 lg:p-20 pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-24 border-2 border-indigo-100 shadow-2xl relative overflow-hidden">
                 <div class="max-w-5xl mx-auto">
                     
-                    <div class="text-center mb-8 sm:mb-10">
-                        <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-purple-100 text-purple-900 font-bold text-xs uppercase tracking-widest mb-3">
+                    <div class="text-center mb-12 sm:mb-16 pt-2 sm:pt-4">
+                        <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-purple-100 text-purple-900 font-bold text-xs uppercase tracking-widest mb-4">
                             Интерактивный экспресс-аудит
                         </div>
-                        <h2 class="title-massive text-3xl sm:text-4xl lg:text-5xl text-gray-900 uppercase mb-3 leading-tight">
+                        <h2 class="title-massive text-3xl sm:text-4xl lg:text-5xl text-gray-900 uppercase mb-4 leading-tight">
                             ПОДБЕРИТЕ ФОРМАТ УЧАСТИЯ<br>
                             <span class="text-gradient-magic">ЗА 60 СЕКУНД</span>
                         </h2>
@@ -1210,9 +1210,9 @@
                     </div>
 
                     <!-- Интерактивный контейнер квиза -->
-                    <div id="quiz-container" class="bg-gray-50/90 rounded-3xl p-6 sm:p-10 border border-gray-200 shadow-inner max-w-4xl mx-auto">
+                    <div id="quiz-container" class="bg-gray-50/90 rounded-3xl p-8 sm:p-12 border border-gray-200 shadow-inner max-w-4xl mx-auto mb-6">
                         <!-- Прогресс бар -->
-                        <div class="mb-6">
+                        <div class="mb-8">
                             <div class="flex justify-between items-center text-xs font-bold text-gray-400 uppercase mb-2">
                                 <span id="quiz-step-title">Вопрос 1 из 4</span>
                                 <span id="quiz-progress-text" class="text-blue-600 font-extrabold">25%</span>
@@ -1224,10 +1224,10 @@
 
                         <!-- Вопрос 1 -->
                         <div id="quiz-step-1" class="quiz-step">
-                            <h4 class="text-lg sm:text-xl font-bold text-gray-900 mb-4 font-['Oswald'] uppercase">
+                            <h4 class="text-lg sm:text-xl font-bold text-gray-900 mb-6 font-['Oswald'] uppercase">
                                 1. Какова ваша роль в бизнесе?
                             </h4>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <button type="button" onclick="selectQuizOption(1, 'Собственник / СЕО', 'owner')" class="quiz-btn text-left p-4 rounded-2xl bg-white border border-gray-200 hover:border-blue-500 hover:shadow-md transition text-sm font-semibold text-gray-800 flex items-center justify-between">
                                     <span>Собственник / СЕО</span>
                                     <span class="text-blue-500 font-bold">&rarr;</span>
@@ -1915,13 +1915,9 @@
                     </div>
 
                     <div>
-                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Интересующий формат / Задача</label>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Формат участия / Разбор</label>
                         <select id="analysisInterest" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
-                            <option value="analysis" selected>Бесплатный бизнес-разбор с экспертом</option>
-                            <option value="standard">Тариф «Стандарт» (15 000 ₽)</option>
-                            <option value="business">Тариф «Бизнес — Команда» (18 000 ₽/чел)</option>
-                            <option value="premium">Тариф «Премиум VIP» (25 000 ₽/чел)</option>
-                            <option value="expo">Стенд в Бизнес-галерее / Партнерство</option>
+                            <option value="analysis" selected>Записаться на Бизнес-разбор (20 минут с экспертом)</option>
                         </select>
                     </div>
 
@@ -2070,7 +2066,7 @@
                 <div class="flex items-center gap-3 mb-5">
                     <!-- Telegram Pro Icon -->
                     <a href="https://t.me/andreydereev" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-2xl bg-[#0c1322] border border-indigo-900/60 hover:border-sky-400 p-2 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-sky-500/20 hover:scale-105 group" title="Telegram: Служба экспертного сопровождения">
-                        <img src="png-transparent-telegram-macos-bigsur-icon.png" alt="Telegram" class="w-full h-full object-contain">
+                        <img src="Спикеры/Лого/Значек ТГ.jpg" alt="Telegram" class="w-full h-full object-contain rounded-xl">
                     </a>
                     <!-- ВКонтакте Pro Icon -->
                     <a href="https://vk.ru/territoryup" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-2xl bg-[#0c1322] border border-indigo-900/60 hover:border-blue-500 p-2 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-blue-500/20 hover:scale-105 group" title="ВКонтакте: «Территория Роста»">
@@ -2571,7 +2567,7 @@ function fixKeyboardLayout(text) {
     return res;
 }
 
-// Офлайн-интеллект Софии (резервный контур с базой знаний методологии)
+// Офлайн-интеллект Софии (резервный контур с базой знаний книги продаж и методологии)
 function getSofiaExpertIntelligence(rawText) {
     var fixed = fixKeyboardLayout(rawText);
     var q = (rawText + " " + fixed).toLowerCase().trim();
@@ -2579,7 +2575,67 @@ function getSofiaExpertIntelligence(rawText) {
 
     if (AI_MANAGER_STATE.step === 'contact_captured') {
         AI_MANAGER_STATE.step = 'discussing';
-        return namePrefix + 'отлично, ваш контакт принят! Я забронировала за вами спец-условия. Ведущий эксперт консорциума или старший трекер свяжутся с вами в Telegram/по телефону. Какой вопрос по программе для вас сейчас самый важный?';
+        return namePrefix + 'отлично, ваш контакт принят! Я забронировала за вами спецусловия. Ведущий эксперт консорциума или старший трекер свяжутся с вами в Telegram/по телефону. Какой вопрос по программе для вас сейчас самый важный?';
+    }
+
+    // ВОЗРАЖЕНИЕ 1: ДОРОГО / СКИДКИ / ОКУПАЕМОСТЬ
+    if (q.includes('дорог') || q.includes('ljhju') || q.includes('скидк') || q.includes('crblr') || q.includes('дисконт') || q.includes('уступк') || q.includes('дешевл') || q.includes('окупаем') || q.includes('бюджет') || q.includes('нет денег')) {
+        return namePrefix + 'давайте посчитаем окупаемость на пальцах 📊\n\n' +
+            'Средняя зарплата топ-менеджера или ключевого спеца — 150 000–250 000 ₽. Если после внедрения AI-ассистентов каждый топ начнет экономить хотя бы 1.5–2 часа рутины в день (на отчетах, регламентах, проверках и воронках), вы окупаете стоимость участия всей команды (от 15 000 ₽) уже в первые 2–3 недели только за счет экономии ФОТ и высвобождения времени на генерацию выручки.\n\n' +
+            'Плюс сейчас действует закрытая скидка раннего бронирования до 1 сентября (до -20%).\n\n' +
+            'Предлагаю согласовать 20-минутный стратегический разбор с Андреем Дереевым, где он покажет окупаемость на ваших цифрах. Напишите ваш **Telegram или телефон**?';
+    }
+
+    // ВОЗРАЖЕНИЕ 2: НЕТ ВРЕМЕНИ / НЕКОГДА / ЗАНЯТЫ
+    if (q.includes('нет врем') || q.includes('ytn dhtv') || q.includes('некогда') || q.includes('занят') || q.includes('времени нет') || q.includes('загружен') || q.includes('много задач')) {
+        return namePrefix + 'понимаю вас — у собственника всегда операционный перегруз. Именно поэтому спринт сконструирован без отрыва от бизнеса:\n\n' +
+            '• **Будни (5–9 октября):** Онлайн-лаборатория всего 2–2.5 часа в день. Причем вы работаете не над абстрактной теорией, а прямо над реальными задачами своей компании с трекером.\n' +
+            '• **Выходные (10–11 октября):** Очный интенсив в Екатеринбурге (Синара Центр / SOK), где за 2 дня собирается готовая дорожная карта и разворачивается цифровой офис.\n\n' +
+            'Вы инвестируете 2 часа в день, чтобы навсегда освободить от 10 часов рутины в неделю. Оставьте ваш **Telegram (@ник) или телефон** — я пришлю вам тайминг и формат подключения!';
+    }
+
+    // ВОЗРАЖЕНИЕ 3: МЫ ПРОБОВАЛИ CHATGPT — ЭТО ИГРУШКА / ЕРУНДА
+    if (q.includes('chatgpt') || q.includes('чатгпт') || q.includes('игрушк') || q.includes('пробовали') || q.includes('не сработа') || q.includes('баловств') || q.includes('генератор текста')) {
+        return namePrefix + 'вы абсолютно правы: обычный диалог с ChatGPT без архитектуры и контекста дает водянистые тексты и разочарование.\n\n' +
+            'В «Территории Роста» мы внедряем принципиально другое решение — **автономных AI-агентов на защищенной платформе КОМАНДА.AI** (Сергей Бекренев):\n' +
+            '1. Агент подключается к вашим базам знаний, регламентам, 1С и CRM.\n' +
+            '2. Действует по строгим бизнес-ролям (AI-маркетолог, AI-финдиректор, AI-лидген, AI-HR).\n' +
+            '3. Выдает оцифрованный результат, а не просто текст.\n\n' +
+            'Хотите увидеть живое демо внедрения на вашей отрасли? Напишите ваш **Telegram или телефон**!';
+    }
+
+    // ВОЗРАЖЕНИЕ 4: БЕЗОПАСНОСТЬ / УТЕЧКА ДАННЫХ / 152-ФЗ
+    if (q.includes('безопасн') || q.includes('утечк') || q.includes('152-фз') || q.includes('152 фз') || q.includes('сервер') || q.includes('конфиденц') || q.includes('слив') || q.includes('закрытый контур')) {
+        return namePrefix + 'это ключевой вопрос корпоративной безопасности. Мы разворачиваем **закрытый защищенный контур на серверах в РФ**:\n\n' +
+            '• Полное соответствие требованиям **152-ФЗ** о персональных данных.\n' +
+            '• Коммерческая тайна и базы клиентов не уходят в открытые зарубежные нейросети.\n' +
+            '• Персональные ключи шифрования и разграничение прав доступа для сотрудников.\n\n' +
+            'Оставьте контакт — вышлем технический паспорт безопасности платформы!';
+    }
+
+    // ВОЗРАЖЕНИЕ 5: САБОТАЖ КОМАНДЫ / СОТРУДНИКИ БОЯТСЯ
+    if (q.includes('саботаж') || q.includes('боятся') || q.includes('сопротивлен') || q.includes('уволят') || q.includes('персонал боится') || q.includes('не хотят учиться')) {
+        return namePrefix + '80% внедрений ИИ проваливаются именно из-за скрытого саботажа и страха сотрудников, что их «заменят».\n\n' +
+            'Именно поэтому 10 октября в SOK Смарт-Офисе мы проводим закрытый практикум **«Эмпатиум»** (Елизавета Ловягина, Татьяна Бурцева):\n' +
+            '• Снимаем тревогу команды и объясняем, что ИИ забирает рутину, а не рабочие места.\n' +
+            '• Заключаем эмоциональный контракт: сотрудники становятся соавторами изменений.\n' +
+            '• Выстраиваем синхронизацию лидеров вокруг стратегии.\n\n' +
+            'Рекомендуем участвовать в составе 3+ человек (тариф «Бизнес — Команда»). Напишите контакт — забронируем командную квоту!';
+    }
+
+    // ВОЗРАЖЕНИЕ 6: ПРИШЛИТЕ КП / МАТЕРИАЛЫ / ПРЕЗЕНТАЦИЮ
+    if (q.includes('кп') || q.includes('коммерческ') || q.includes('презентаци') || q.includes('вышлите') || q.includes('пришлите') || q.includes('pdf') || q.includes('буклет')) {
+        return namePrefix + 'с удовольствием отправлю вам расширенное коммерческое предложение, презентацию с программой по дням и расчет окупаемости.\n\n' +
+            'Куда вам удобнее получить файл: в **Telegram (@ник)**, **WhatsApp** или на **email**? Напишите, пожалуйста, контакт ниже 👇';
+    }
+
+    // ВОЗРАЖЕНИЕ 7: ГАРАНТИИ / КЕЙСЫ / ОТЗЫВЫ
+    if (q.includes('гаранти') || q.includes('кейсы') || q.includes('отзыв') || q.includes('доказательств') || q.includes('кто уже')) {
+        return namePrefix + 'результат программы подкреплен 25-летним опытом консорциума «ПРЕДПРИНИМАЙ» и спикерами федерального уровня (Сергей Бекренев, Андрей Дереев, Елизавета Ловягина):\n\n' +
+            '• 500+ участников федеральных бизнес-программ консорциума.\n' +
+            '• Документированный прирост эффективности топ-команд на 30–40% за счет AI-агентов.\n' +
+            '• На выходе у вас не просто знания, а утвержденная дорожная карта на 90 дней и развернутый цифровой офис.\n\n' +
+            'Оставьте ваш **Telegram или телефон** — я пришлю видеоотзывы и кейсы участников прошлых потоков!';
     }
 
     // 1. СТРАТЕГИЯ И МАСШТАБИРОВАНИЕ (Синектика, Точка А, Преодоление потолка)
@@ -2600,7 +2656,7 @@ function getSofiaExpertIntelligence(rawText) {
     }
 
     // 3. ЦИФРОВОЙ ОФИС И AI-АГЕНТЫ (КОМАНДА.AI)
-    if (q.includes('агент') || q.includes('futy') || q.includes('ии') || q.includes('ai') || q.includes('нейро') || q.includes('автоматиз') || q.includes('бот') || q.includes('команда.ai') || q.includes('контур') || q.includes('безопасн')) {
+    if (q.includes('агент') || q.includes('futy') || q.includes('ии') || q.includes('ai') || q.includes('нейро') || q.includes('автоматиз') || q.includes('бот') || q.includes('команда.ai')) {
         return namePrefix + 'на интенсиве мы разворачиваем для каждого участника **Цифровой офис из 6 AI-агентов** на защищенной платформе КОМАНДА.AI (Сергей Бекренев):\n\n' +
             '1. **AI-Маркетолог:** генерация контента и связок.\n' +
             '2. **AI-Лидогенератор:** квалификация лидов 24/7 без менеджеров.\n' +
@@ -2611,9 +2667,9 @@ function getSofiaExpertIntelligence(rawText) {
             'В какой процесс бизнеса хотите внедрить ИИ в первую очередь?';
     }
 
-    // 4. КОМАНДА, ЭМПАТИУМ И САБОТАЖ
-    if (q.includes('команд') || q.includes('rjvfh') || q.includes('rjvfk') || q.includes('эмпати') || q.includes('саботаж') || q.includes('сопротивлен') || q.includes('ловягин') || q.includes('бурцев') || q.includes('персонал') || q.includes('сотрудник')) {
-        return namePrefix + '80% внедрений новых стратегий проваливаются из-за скрытого сопротивления людей. Поэтому День 6 (10 октября) посвящен очной сессии **«Эмпатиум»** (Елизавета Ловягина, Татьяна Бурцева):\n\n' +
+    // 4. КОМАНДА И ЭМПАТИУМ
+    if (q.includes('команд') || q.includes('rjvfh') || q.includes('rjvfk') || q.includes('эмпати') || q.includes('ловягин') || q.includes('бурцев') || q.includes('персонал') || q.includes('сотрудник')) {
+        return namePrefix + 'День 6 (10 октября) посвящен очной сессии **«Эмпатиум»** (Елизавета Ловягина, Татьяна Бурцева):\n\n' +
             '• Диагностика эмоционального климата и скрытых конфликтов в топ-команде.\n' +
             '• Заключение эмоционального контракта между собственником и ключевыми руководителями.\n' +
             '• Превращение саботажа в соавторство трансформации бизнеса.\n\n' +
@@ -2621,9 +2677,11 @@ function getSofiaExpertIntelligence(rawText) {
     }
 
     // 5. ДАТЫ, МЕСТО И ФОРМАТ
-    if (q.includes('когда') || q.includes('rjukf') || q.includes('где') || q.includes('ult') || q.includes('дат') || q.includes('синар') || q.includes('екатеринбург') || q.includes('адрес') || q.includes('онлайн') || q.includes('формат')) {
-        return namePrefix + 'деловой интенсив пройдет **5–11 октября 2026 года в Екатеринбурге** в конгресс-центре премиум-класса **«Синара Центр»** (пер. Сибирский, 2).\n\n' +
-            '• Формат: 5 дней онлайн-лаборатории + 2 дня очной практической работы и VIP-саммита в Екатеринбурге (с гибридным онлайн-подключением для регионов).\n\n' +
+    if (q.includes('когда') || q.includes('rjukf') || q.includes('где') || q.includes('ult') || q.includes('дат') || q.includes('синар') || q.includes('сок') || q.includes('екатеринбург') || q.includes('адрес') || q.includes('онлайн') || q.includes('формат')) {
+        return namePrefix + 'деловой интенсив пройдет **5–11 октября 2026 года в Екатеринбурге**:\n\n' +
+            '• **5–9 октября:** Онлайн-практикум (2–2.5 часа в день).\n' +
+            '• **10 октября:** SOK Смарт-Офис (ул. Горького, 67) — игра «Эмпатиум».\n' +
+            '• **11 октября:** Конгресс-центр «Синара Центр» (Верх-Исетский б-р, 15/4) — Гранд-Финал и саммит лидеров.\n\n' +
             'Оставьте ваш Telegram или телефон — я пришлю схему проезда и тайминг!';
     }
 
@@ -2644,8 +2702,8 @@ function getSofiaExpertIntelligence(rawText) {
             '• **07.10 (День 3):** CJM, путь клиента и AI-воронка маркетинга.\n' +
             '• **08.10 (День 4):** Финансовая модель, юнит-экономика и ресурсы.\n' +
             '• **09.10 (День 5):** Дорожная карта внедрения на 90 дней.\n' +
-            '• **10.10 (День 6, Офлайн):** Командный практикум «Эмпатиум» в Синара Центре.\n' +
-            '• **11.10 (День 7, Офлайн):** Саммит лидеров и запуск Цифрового офиса AI-агентов.\n\n' +
+            '• **10.10 (День 6, Офлайн):** Командный практикум «Эмпатиум» в SOK Смарт-Офисе.\n' +
+            '• **11.10 (День 7, Офлайн):** Саммит лидеров в Синара Центре и запуск Цифрового офиса AI-агентов.\n\n' +
             'Какой из дней программы наиболее актуален для вашего бизнеса?';
     }
 
@@ -2702,7 +2760,29 @@ function openAssistantModal() {
     openModal('assistantModal');
 }
 
-function openMapModal() {
+function openMapModal(loc = 'sinara') {
+    const badge = document.getElementById('mapModalBadge');
+    const title = document.getElementById('mapModalTitle');
+    const address = document.getElementById('mapModalAddress');
+    const iframe = document.getElementById('mapModalIframe');
+    const routeBtn = document.getElementById('mapModalRouteBtn');
+    const note = document.getElementById('mapModalNote');
+
+    if (loc === 'sok') {
+        if (badge) badge.textContent = 'Локация практикума';
+        if (title) title.textContent = 'SOK СМАРТ-ОФИС';
+        if (address) address.textContent = '📍 Екатеринбург, ул. Горького, 67 (Центр)';
+        if (iframe) iframe.src = 'https://yandex.ru/map-widget/v1/?ll=60.606342%2C56.833541&z=17&pt=60.606342,56.833541,pm2vlm';
+        if (routeBtn) routeBtn.href = 'https://yandex.ru/maps/-/CDuWvQ1K';
+        if (note) note.textContent = 'Инновационный смарт-офис бизнес-класса в центре Екатеринбурга';
+    } else {
+        if (badge) badge.textContent = 'Локация саммита';
+        if (title) title.textContent = 'КОНГРЕСС-ЦЕНТР «СИНАРА ЦЕНТР»';
+        if (address) address.textContent = '📍 Екатеринбург, Верх-Исетский бульвар, 15/4 (Исторический центр)';
+        if (iframe) iframe.src = 'https://yandex.ru/map-widget/v1/?ll=60.575020%2C56.839655&z=17&pt=60.575020,56.839655,pm2rdm';
+        if (routeBtn) routeBtn.href = 'https://yandex.ru/maps/?rtext=~56.839655,60.575020';
+        if (note) note.textContent = 'Удобная парковка на территории конгресс-центра';
+    }
     openModal('mapModal');
 }
 
@@ -2780,7 +2860,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ТАРИФ: <span id="modalTariffName" class="text-sky-400">СТАНДАРТ</span>
                 </h3>
                 <p class="text-gray-300 text-xs sm:text-sm mt-1">
-                    Стоимость: <strong id="modalTariffPrice" class="text-white text-base">15 000 ₽</strong>. Заполните форму — бот София согласует с вами встречу с менеджером.
+                    Стоимость: <strong id="modalTariffPrice" class="text-white text-base">15 000 ₽</strong>. Заполните форму — AI-ассистент София согласует с вами встречу с менеджером.
                 </p>
             </div>
 
@@ -2811,9 +2891,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
             </div>
             <h4 class="text-xl font-bold font-['Oswald'] uppercase text-white mb-2">Заявка успешно отправлена!</h4>
-            <p class="text-gray-300 text-xs sm:text-sm mb-4">Бот София и наш эксперт свяжутся с вами для фиксации спецусловий.</p>
+            <p class="text-gray-300 text-xs sm:text-sm mb-4">AI-ассистент София и наш эксперт свяжутся с вами для фиксации спецусловий.</p>
             <a href="https://t.me/andreydereev" target="_blank" class="inline-block bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs py-2.5 px-6 rounded-xl transition">
-                Перейти в диалог с куратором в Telegram ➔
+                Перейти в диалог с экспертом в Telegram ➔
             </a>
         </div>
     </div>
@@ -2874,7 +2954,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
             </div>
             <h4 class="text-xl font-bold font-['Oswald'] uppercase text-white mb-2">Презентация отправляется!</h4>
-            <p class="text-gray-300 text-xs sm:text-sm mb-4">Бот София направил материалы в выбранный канал.</p>
+            <p class="text-gray-300 text-xs sm:text-sm mb-4">AI-ассистент София направил материалы в выбранный канал.</p>
             <button onclick="closeModal('presentationModal')" class="bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs py-2.5 px-6 rounded-xl transition">
                 Понятно
             </button>
@@ -2905,9 +2985,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <!-- Telegram -->
             <a href="https://t.me/andreydereev" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3.5 bg-[#080e1c] hover:bg-sky-500/10 border border-indigo-900/60 hover:border-sky-400 rounded-2xl transition group shadow-md">
                 <div class="flex items-center gap-3">
-                    <img src="png-transparent-telegram-macos-bigsur-icon.png" alt="Telegram" class="w-10 h-10 object-contain">
+                    <img src="Спикеры/Лого/Значек ТГ.jpg" alt="Telegram" class="w-10 h-10 object-contain rounded-xl">
                     <div class="text-left">
-                        <div class="font-bold text-sm text-white group-hover:text-sky-300">Telegram Бот София</div>
+                        <div class="font-bold text-sm text-white group-hover:text-sky-300">AI-ассистент София в Telegram</div>
                         <div class="text-[11px] text-gray-400">Мгновенный ответ 24/7</div>
                     </div>
                 </div>
@@ -2919,7 +2999,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="flex items-center gap-3">
                     <img src="vk-icon-blue-512x512.png" alt="VK" class="w-10 h-10 object-contain">
                     <div class="text-left">
-                        <div class="font-bold text-sm text-white group-hover:text-blue-300">ВКонтакте София</div>
+                        <div class="font-bold text-sm text-white group-hover:text-blue-300">AI-ассистент София во ВКонтакте</div>
                         <div class="text-[11px] text-gray-400">Диалог в официальном сообществе</div>
                     </div>
                 </div>
@@ -2931,7 +3011,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="flex items-center gap-3">
                     <img src="Спикеры/Лого/Макс Иконка.webp" alt="MAX" class="w-10 h-10 object-contain rounded-xl">
                     <div class="text-left">
-                        <div class="font-bold text-sm text-white group-hover:text-purple-300">Сообщество лидеров в MAX</div>
+                        <div class="font-bold text-sm text-white group-hover:text-purple-300">AI-ассистент София в MAX</div>
                         <div class="text-[11px] text-gray-400">Канал участников и ассистент</div>
                     </div>
                 </div>
@@ -2947,31 +3027,31 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 
 <!-- ======================================================= -->
-<!-- МОДАЛЬНОЕ ОКНО 4: СИНАРА ЦЕНТР НА ЯНДЕКС.КАРТАХ          -->
+<!-- МОДАЛЬНОЕ ОКНО 4: ИНТЕРАКТИВНАЯ КАРТА ЛОКАЦИЙ             -->
 <!-- ======================================================= -->
 <div id="mapModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4 transition-all duration-300" onclick="if(event.target === this) closeModal('mapModal')">
     <div class="relative w-full max-w-3xl bg-[#0c1322] border border-blue-500/50 rounded-3xl p-5 sm:p-7 shadow-2xl shadow-blue-950/80 text-white">
         <button onclick="closeModal('mapModal')" class="absolute top-5 right-5 text-gray-400 hover:text-white text-2xl font-bold transition">✕</button>
         
         <div class="mb-4">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600/20 border border-blue-400/40 text-blue-300 text-xs font-bold uppercase tracking-wider mb-2">
+            <span id="mapModalBadge" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600/20 border border-blue-400/40 text-blue-300 text-xs font-bold uppercase tracking-wider mb-2">
                 Локация саммита
             </span>
-            <h3 class="text-xl sm:text-2xl font-black uppercase font-['Oswald'] text-white">
+            <h3 id="mapModalTitle" class="text-xl sm:text-2xl font-black uppercase font-['Oswald'] text-white">
                 КОНГРЕСС-ЦЕНТР «СИНАРА ЦЕНТР»
             </h3>
-            <p class="text-gray-300 text-xs sm:text-sm mt-0.5">
+            <p id="mapModalAddress" class="text-gray-300 text-xs sm:text-sm mt-0.5">
                 📍 Екатеринбург, Верх-Исетский бульвар, 15/4 (Исторический центр)
             </p>
         </div>
 
         <div class="w-full h-[360px] sm:h-[420px] rounded-2xl overflow-hidden border border-indigo-900/60 relative bg-[#060a14]">
-            <iframe src="https://yandex.ru/map-widget/v1/?ll=60.575020%2C56.839655&z=17&pt=60.575020,56.839655,pm2rdm" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="position:relative; border-radius: 14px;"></iframe>
+            <iframe id="mapModalIframe" src="https://yandex.ru/map-widget/v1/?ll=60.575020%2C56.839655&z=17&pt=60.575020,56.839655,pm2rdm" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="position:relative; border-radius: 14px;"></iframe>
         </div>
 
         <div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <span class="text-xs text-gray-400">Удобная парковка на территории конгресс-центра</span>
-            <a href="https://yandex.ru/maps/?rtext=~56.839655,60.575020" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-95 text-white font-bold text-xs py-2.5 px-6 rounded-xl transition text-center shadow-lg shadow-blue-600/20">
+            <span id="mapModalNote" class="text-xs text-gray-400">Удобная парковка на территории конгресс-центра</span>
+            <a id="mapModalRouteBtn" href="https://yandex.ru/maps/?rtext=~56.839655,60.575020" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-95 text-white font-bold text-xs py-2.5 px-6 rounded-xl transition text-center shadow-lg shadow-blue-600/20">
                 Построить маршрут в Яндекс.Картах ➔
             </a>
         </div>

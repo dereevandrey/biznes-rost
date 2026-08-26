@@ -38,7 +38,7 @@
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            min-width: max-content;
+            min-width: 100%;
             animation: marqueeSeamless 30s linear infinite;
         }
         .marquee-track:hover {
@@ -46,7 +46,7 @@
         }
         @keyframes marqueeSeamless {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            100% { transform: translateX(-100%); }
         }
         .package-card {
             background: linear-gradient(135deg, #0c1322 0%, #101b30 50%, #080d1a 100%);
@@ -585,13 +585,13 @@
                         </button>
                     </div>
 
-                    <!-- 3. Эксклюзивный Art Lounge (15+ м²) -->
+                    <!-- 3. Эксклюзивный Бизнес-Лаунж (до 60 человек) -->
                     <div class="bg-white rounded-3xl p-8 border border-purple-300 shadow-xl flex flex-col justify-between hover:border-purple-500 transition">
                         <div>
                             <div class="text-xs font-bold uppercase tracking-widest text-purple-600 mb-2">Премиум-пространство</div>
-                            <h4 class="text-2xl font-black uppercase font-['Oswald'] text-gray-900 mb-2">ART LOUNGE (15+ м²)</h4>
+                            <h4 class="text-2xl font-black uppercase font-['Oswald'] text-gray-900 mb-2">ЭКСКЛЮЗИВНЫЙ БИЗНЕС-ЛАУНЖ (ДО 60 ЧЕЛОВЕК)</h4>
                             <p class="text-gray-600 text-xs leading-relaxed mb-6">
-                                Авторская лаунж-зона в центре атриума для глубоких переговоров и закрытых презентаций.
+                                Отдельное премиальное пространство в конгресс-центре «Синара Центр» вместимостью до 60 человек для статусных закрытых переговоров, приватных презентаций и VIP-нетворкинга.
                             </p>
 
                             <ul class="space-y-3 text-xs text-gray-700 mb-8">
@@ -618,8 +618,8 @@
                             </ul>
                         </div>
 
-                        <button onclick="openPresentationModal('Эксклюзивный Art Lounge')" class="w-full bg-gradient-to-r from-purple-600 to-indigo-700 hover:from-purple-500 hover:to-indigo-600 text-white font-black uppercase text-xs tracking-wider py-4 rounded-2xl text-center transition shadow-md cursor-pointer">
-                            Запросить расчет Lounge
+                        <button onclick="openPresentationModal('Эксклюзивный Бизнес-Лаунж (до 60 человек)')" class="w-full bg-gradient-to-r from-purple-600 to-indigo-700 hover:from-purple-500 hover:to-indigo-600 text-white font-black uppercase text-xs tracking-wider py-4 rounded-2xl text-center transition shadow-md cursor-pointer">
+                            Запросить расчет Бизнес-Лаунжа
                         </button>
                     </div>
 
@@ -739,13 +739,13 @@
                 <div id="tripwire" class="lg:col-span-6 bg-gradient-to-b from-[#0c1322] via-[#101b30] to-[#070b14] rounded-3xl p-6 sm:p-9 border border-indigo-500/40 shadow-2xl shadow-indigo-950/60 relative flex flex-col justify-between h-full">
                     <div>
                         <div class="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 font-bold uppercase tracking-widest text-[11px] mb-3 border border-blue-400/30">
-                            Экспресс-диагностика
+                            Бизнес-разбор
                         </div>
                         <h3 class="text-2xl sm:text-3xl font-black uppercase font-['Oswald'] text-white mb-2 leading-tight">
-                            ОБСУДИМ ЗАДАЧИ ВАШЕГО БИЗНЕСА?
+                            ЗАПИСАТЬСЯ НА БИЗНЕС-РАЗБОР
                         </h3>
                         <p class="text-gray-300 text-xs sm:text-sm mb-5 font-medium leading-relaxed">
-                            Оставьте контакты для бесплатного разбора бизнес-процессов и подбора оптимального формата участия от экспертов консорциума.
+                            Оставьте контакты для бесплатного 20-минутного разбора бизнес-процессов и оцифровки точек роста от экспертов консорциума.
                         </p>
                     </div>
 
@@ -759,17 +759,11 @@
                         </div>
                         <div>
                             <select class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
-                                <option value="sponsor_general">Интересует спонсорство: Генеральный партнёр</option>
-                                <option value="sponsor_official" selected>Интересует спонсорство: Официальный партнёр</option>
-                                <option value="sponsor_gallery">Интересует стенд в Бизнес-галерее (4 м² / 8 м² / Art Lounge)</option>
-                                <option value="standard">Интересует участие: Тариф «Стандарт» (15 000 ₽)</option>
-                                <option value="business">Интересует участие: Тариф «Бизнес — Команда» (18 000 ₽/чел)</option>
-                                <option value="premium">Интересует участие: Тариф «Премиум VIP» (25 000 ₽/чел)</option>
-                                <option value="audit">Хочу получить персональный AI-аудит компании</option>
+                                <option value="analysis" selected>Записаться на Бизнес-разбор (20 минут с экспертом)</option>
                             </select>
                         </div>
                         <button type="submit" class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase tracking-wider py-3.5 rounded-xl transition text-xs sm:text-sm shadow-xl shadow-blue-600/30 cursor-pointer">
-                            Получить стратегический разбор
+                            ЗАПИСАТЬСЯ НА БИЗНЕС-РАЗБОР
                         </button>
                         <p class="text-[10px] text-gray-400 text-center">
                             Нажимая кнопку, вы подтверждаете согласие на <a href="oferta.html#privacy" target="_blank" class="underline hover:text-white">обработку персональных данных</a>.
@@ -912,7 +906,7 @@
                     <div class="flex items-center gap-3 mb-5">
                         <!-- Telegram Pro Icon -->
                         <a href="https://t.me/andreydereev" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-2xl bg-[#0c1322] border border-indigo-900/60 hover:border-sky-400 p-2 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-sky-500/20 hover:scale-105 group" title="Telegram: Служба экспертного сопровождения">
-                            <img src="png-transparent-telegram-macos-bigsur-icon.png" alt="Telegram" class="w-full h-full object-contain">
+                            <img src="Спикеры/Лого/Значек ТГ.jpg" alt="Telegram" class="w-full h-full object-contain rounded-xl">
                         </a>
                         <!-- ВКонтакте Pro Icon -->
                         <a href="https://vk.ru/territoryup" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-2xl bg-[#0c1322] border border-indigo-900/60 hover:border-blue-500 p-2 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-blue-500/20 hover:scale-105 group" title="ВКонтакте: «Территория Роста»">
@@ -1091,9 +1085,9 @@
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
                 </div>
                 <h4 class="text-xl font-bold font-['Oswald'] uppercase text-white mb-2">Заявка успешно отправлена!</h4>
-                <p class="text-gray-300 text-xs sm:text-sm mb-4">Бот София и наш эксперт свяжутся с вами для фиксации спецусловий.</p>
+                <p class="text-gray-300 text-xs sm:text-sm mb-4">AI-ассистент София и наш эксперт свяжутся с вами для фиксации спецусловий.</p>
                 <a href="https://t.me/andreydereev" target="_blank" class="inline-block bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs py-2.5 px-6 rounded-xl transition">
-                    Перейти в диалог с куратором в Telegram ➔
+                    Перейти в диалог с экспертом в Telegram ➔
                 </a>
             </div>
         </div>
@@ -1155,7 +1149,7 @@
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
                 </div>
                 <h4 class="text-xl font-bold font-['Oswald'] uppercase text-white mb-2">Презентация сформирована!</h4>
-                <p class="text-gray-300 text-xs sm:text-sm mb-4">Бот София и служба B2B-партнёрства направят материалы в выбранный канал.</p>
+                <p class="text-gray-300 text-xs sm:text-sm mb-4">AI-ассистент София и служба B2B-партнёрства направят материалы в выбранный канал.</p>
                 <button onclick="closeModal('presentationModal')" class="bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs py-2.5 px-6 rounded-xl transition cursor-pointer">
                     Понятно
                 </button>
@@ -1186,9 +1180,9 @@
                 <!-- Telegram -->
                 <a href="https://t.me/andreydereev" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3.5 bg-[#080e1c] hover:bg-sky-500/10 border border-indigo-900/60 hover:border-sky-400 rounded-2xl transition group shadow-md">
                     <div class="flex items-center gap-3">
-                        <img src="png-transparent-telegram-macos-bigsur-icon.png" alt="Telegram" class="w-10 h-10 object-contain">
+                        <img src="Спикеры/Лого/Значек ТГ.jpg" alt="Telegram" class="w-10 h-10 object-contain rounded-xl">
                         <div class="text-left">
-                            <div class="font-bold text-sm text-white group-hover:text-sky-300">Telegram Бот София</div>
+                            <div class="font-bold text-sm text-white group-hover:text-sky-300">AI-ассистент София в Telegram</div>
                             <div class="text-[11px] text-gray-400">Мгновенный ответ 24/7</div>
                         </div>
                     </div>
@@ -1200,7 +1194,7 @@
                     <div class="flex items-center gap-3">
                         <img src="vk-icon-blue-512x512.png" alt="VK" class="w-10 h-10 object-contain">
                         <div class="text-left">
-                            <div class="font-bold text-sm text-white group-hover:text-blue-300">ВКонтакте София</div>
+                            <div class="font-bold text-sm text-white group-hover:text-blue-300">AI-ассистент София во ВКонтакте</div>
                             <div class="text-[11px] text-gray-400">Диалог в официальном сообществе</div>
                         </div>
                     </div>
@@ -1212,7 +1206,7 @@
                     <div class="flex items-center gap-3">
                         <img src="Спикеры/Лого/Макс Иконка.webp" alt="MAX" class="w-10 h-10 object-contain rounded-xl">
                         <div class="text-left">
-                            <div class="font-bold text-sm text-white group-hover:text-purple-300">Сообщество лидеров в MAX</div>
+                            <div class="font-bold text-sm text-white group-hover:text-purple-300">AI-ассистент София в MAX</div>
                             <div class="text-[11px] text-gray-400">Канал участников и ассистент</div>
                         </div>
                     </div>
