@@ -132,10 +132,10 @@
                 <a href="sponsors.html" class="nav-item hover:text-white transition">Партнеры</a>
             </div>
 
-            <!-- Крайняя кнопка действия: AI-АУДИТ -->
+            <!-- Крайняя кнопка действия: БИЗНЕС-РАЗБОР -->
             <div class="flex items-center flex-shrink-0">
                 <a href="#tripwire" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-black px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm tracking-wide whitespace-nowrap shadow-md shadow-sky-500/25 transition transform hover:scale-[1.02]">
-                    AI-Аудит
+                    Бизнес-разбор
                 </a>
             </div>
         </div>
@@ -277,7 +277,8 @@
             Методология и экспертиза
         </div>
         <h2 class="title-massive text-4xl md:text-5xl lg:text-6xl text-white mb-8">
-            ТРИ ИНТЕЛЛЕКТА — <span class="text-gradient-magic">ОДНА ТЕРРИТОРИЯ</span>
+            БИЗНЕС-САММИТ:<br>
+            <span class="text-gradient-magic">СИНТЕЗ ТРЕХ ИНТЕЛЛЕКТОВ</span>
         </h2>
         
         <!-- Подзаголовок в едином стиле с главным тезисом экрана 2 -->
@@ -425,14 +426,22 @@
             </div>
         </div>
 
-        <!-- Кнопка перехода ко всем спикерам и экспертам -->
-        <div class="mt-14 text-center">
-            <a href="speakers.html" class="inline-flex items-center gap-3.5 px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-950/60 via-indigo-950/60 to-purple-950/60 border border-blue-500/40 hover:border-blue-400 text-white font-bold tracking-wide transition shadow-[0_4px_25px_rgba(37,99,235,0.2)] group">
-                <span class="text-base sm:text-lg">Смотреть всех спикеров и экспертов</span>
-                <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-purple-500 group-hover:text-white transition">
-                    <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+        <!-- Кнопки перехода: Спикеры и AI-Ассистент -->
+        <div class="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="speakers.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-3.5 px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-950/60 via-indigo-950/60 to-purple-950/60 border border-blue-500/40 hover:border-blue-400 text-white font-bold tracking-wide transition shadow-[0_4px_25px_rgba(37,99,235,0.2)] group">
+                <span class="text-sm sm:text-base">Смотреть всех спикеров и экспертов</span>
+                <div class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-purple-500 group-hover:text-white transition">
+                    <svg class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
                 </div>
             </a>
+            <button onclick="openAssistantModal()" type="button" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-bold tracking-wide transition shadow-[0_4px_25px_rgba(99,102,241,0.3)] cursor-pointer group">
+                <span class="text-sm sm:text-base uppercase tracking-wider font-['Oswald']">ОТКРЫТЬ AI-АССИСТЕНТА</span>
+                <div class="flex items-center -space-x-1 pl-1">
+                    <img src="png-transparent-telegram-macos-bigsur-icon.png" alt="Telegram" class="w-6 h-6 rounded-full ring-2 ring-indigo-900 bg-white object-contain shadow">
+                    <img src="vk-icon-blue-512x512.png" alt="ВКонтакте" class="w-6 h-6 rounded-full ring-2 ring-indigo-900 bg-white object-contain shadow">
+                    <img src="Спикеры/Лого/Макс Иконка.webp" alt="MAX" class="w-6 h-6 rounded-full ring-2 ring-indigo-900 bg-white object-contain shadow">
+                </div>
+            </button>
         </div>
     </section>
 
@@ -800,9 +809,9 @@
                             <div class="whitespace-nowrap">
                                 <svg class="w-4 h-4 text-blue-600 shrink-0 inline-block mr-1 -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg><span class="font-bold text-gray-900">Адрес:</span> Верх-Исетский бульвар, 15/4
                             </div>
-                            <a href="https://yandex.ru/maps/-/CDuWvQ1K" target="_blank" class="px-5 py-2.5 bg-gray-900 hover:bg-black text-white font-bold uppercase tracking-wider rounded-xl transition shadow text-xs whitespace-nowrap">
+                            <button onclick="openMapModal()" type="button" class="px-5 py-2.5 bg-gray-900 hover:bg-black text-white font-bold uppercase tracking-wider rounded-xl transition shadow text-xs whitespace-nowrap cursor-pointer">
                                 Открыть на карте ↗
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -942,9 +951,9 @@
                         </ul>
                     </div>
 
-                    <a href="https://predprinimay.timepad.ru/" target="_blank" class="w-full text-center py-4 bg-gray-900 hover:bg-black text-white font-black uppercase tracking-wider text-xs rounded-2xl transition shadow-lg">
+                    <button onclick="openTariffModal('Стандарт', '15 000 ₽')" type="button" class="w-full text-center py-4 bg-gray-900 hover:bg-black text-white font-black uppercase tracking-wider text-xs rounded-2xl transition shadow-lg cursor-pointer">
                         Забронировать место ↗
-                    </a>
+                    </button>
                 </div>
                 
                 <!-- 2. Бизнес (ХИТ) в едином сине-индиго-фиолетовом стиле -->
@@ -1002,9 +1011,9 @@
                         </ul>
                     </div>
 
-                    <a href="https://predprinimay.timepad.ru/" target="_blank" class="w-full text-center py-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase tracking-wider text-xs rounded-2xl transition shadow-xl">
+                    <button onclick="openTariffModal('Бизнес — Команда', '18 000 ₽/чел')" type="button" class="w-full text-center py-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase tracking-wider text-xs rounded-2xl transition shadow-xl cursor-pointer">
                         Забронировать место ↗
-                    </a>
+                    </button>
                 </div>
                 
                 <!-- 3. Премиум VIP -->
@@ -1056,9 +1065,9 @@
                         </ul>
                     </div>
 
-                    <a href="https://predprinimay.timepad.ru/" target="_blank" class="w-full text-center py-4 bg-gray-900 hover:bg-black text-white font-black uppercase tracking-wider text-xs rounded-2xl transition shadow-lg">
+                    <button onclick="openTariffModal('Премиум VIP', '25 000 ₽/чел')" type="button" class="w-full text-center py-4 bg-gray-900 hover:bg-black text-white font-black uppercase tracking-wider text-xs rounded-2xl transition shadow-lg cursor-pointer">
                         Забронировать место ↗
-                    </a>
+                    </button>
                 </div>
             </div>
 
@@ -1067,7 +1076,7 @@
                 <div class="relative z-10">
                     <!-- Заголовок блока Галереи -->
                     <div class="inline-flex items-center gap-2 text-blue-300 font-bold uppercase tracking-widest text-xs mb-3">
-                        Интерактивное бизнес-галерея-пространство • 11 Октября • Синара Центр
+                        Интерактивное выставочное пространство • 11 Октября • Синара Центр
                     </div>
                     <h3 class="text-3xl sm:text-4xl lg:text-5xl font-black font-['Oswald'] uppercase mb-6 text-white">
                         БИЗНЕС-ГАЛЕРЕЯ <br>
@@ -1084,8 +1093,8 @@
                         <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group h-64 sm:h-72">
                             <img src="Спикеры/выставка.webp" alt="Выставка B2B решений Территория Роста" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex flex-col justify-end p-6">
-                                <span class="px-3 py-1 bg-blue-600/80 text-white font-bold text-xs uppercase tracking-widest rounded-full w-fit mb-2">Бизнес-галереяненты</span>
-                                <h4 class="text-lg font-bold text-white leading-snug">Прямой диалог со 200+ ЛПР и собственниками</h4>
+                                <span class="px-3 py-1 bg-blue-600/80 text-white font-bold text-xs uppercase tracking-widest rounded-full w-fit mb-2">БИЗНЕС-ГАЛЕРЕЯ</span>
+                                <h4 class="text-lg font-bold text-white leading-snug">Прямой диалог с 300+ ЛПР и собственниками</h4>
                                 <p class="text-gray-300 text-xs mt-1">Демонстрация IT-продуктов, сервисов, франшиз и консалтинга</p>
                             </div>
                         </div>
@@ -1101,12 +1110,12 @@
                         </div>
                     </div>
 
-                    <!-- 4 Ключевых преимущества для Бизнес-галереянента (без верхних смайликов, узкие и аккуратные) -->
+                    <!-- 4 Ключевых преимущества для экспонентов -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
                         <div class="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-5 backdrop-blur-sm">
                             <h5 class="text-white font-bold text-sm sm:text-base uppercase font-['Oswald'] mb-1.5 text-blue-300">Горячий B2B-трафик</h5>
                             <p class="text-gray-300 text-xs leading-relaxed">
-                                200+ собственников и топ-менеджеров с выручкой 200 млн – 5 млрд ₽ с реальным запросом на оптимизацию.
+                                300+ собственников и топ-менеджеров с выручкой от 100 млн до 5+ млрд ₽ с реальным запросом на оптимизацию.
                             </p>
                         </div>
 
@@ -1127,12 +1136,12 @@
                         <div class="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-5 backdrop-blur-sm">
                             <h5 class="text-white font-bold text-sm sm:text-base uppercase font-['Oswald'] mb-1.5 text-blue-300">Защита от конкуренции</h5>
                             <p class="text-gray-300 text-xs leading-relaxed">
-                                Не более 3 участник выставкиов в одном рыночном сегменте для обеспечения максимального внимания к бренду.
+                                Не более 3 экспонентов в одном рыночном сегменте для обеспечения максимального внимания к бренду.
                             </p>
                         </div>
                     </div>
 
-                    <!-- 2 РАЗДЕЛЬНЫХ БЛОКА ВЗАИМОДЕЙСТВИЯ (БИЛЕТ ГОСТЯ И СТАТЬ Бизнес-галереяНЕНТОМ) -->
+                    <!-- 2 РАЗДЕЛЬНЫХ БЛОКА ВЗАИМОДЕЙСТВИЯ (БИЛЕТ ГОСТЯ И СТАТЬ ЭКСПОНЕНТОМ) -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- Блок 1: Билет гостя -->
                         <div class="bg-white/10 border border-white/20 rounded-3xl p-6 sm:p-8 flex flex-col justify-between backdrop-blur-md hover:border-white/30 transition">
@@ -1142,30 +1151,30 @@
                                     БИЛЕТ ГОСТЯ В ГАЛЕРЕЮ
                                 </h4>
                                 <p class="text-gray-300 text-sm leading-relaxed mb-6">
-                                    Билет дает полный доступ к Бизнес-галерее, лекторию и активностям в рамках Бизнес-галереи в Синара Центре 11 октября.
+                                    Билет дает полный доступ к Бизнес-галерее, лекторию и выставочным активностям в Синара Центре 11 октября.
                                 </p>
                             </div>
 
-                            <a href="#pricing" class="w-full text-center py-4 px-6 bg-white hover:bg-gray-100 text-gray-900 font-black uppercase text-xs tracking-wider rounded-2xl transition shadow-lg whitespace-nowrap">
-                                Получить билет гостя ↗
+                            <a href="https://predprinimay.timepad.ru/" target="_blank" class="w-full text-center py-4 px-6 bg-white hover:bg-gray-100 text-gray-900 font-black uppercase text-xs tracking-wider rounded-2xl transition shadow-lg whitespace-nowrap">
+                                Получить билет гостя на Timepad ↗
                             </a>
                         </div>
 
-                        <!-- Блок 2: Как стать участник выставкиом -->
+                        <!-- Блок 2: Как стать экспонентом -->
                         <div class="bg-white/10 border border-blue-400/30 rounded-3xl p-6 sm:p-8 flex flex-col justify-between backdrop-blur-md hover:border-blue-400/50 transition relative overflow-hidden">
                             <div class="relative z-10">
                                 <span class="text-pink-400 font-bold text-xs uppercase tracking-widest block mb-2">Для компаний и B2B-сервисов</span>
                                 <h4 class="text-2xl font-black text-white font-['Oswald'] uppercase mb-3">
-                                    КАК СТАТЬ Бизнес-галереяНЕНТОМ
+                                    КАК СТАТЬ ЭКСПОНЕНТОМ?
                                 </h4>
                                 <p class="text-gray-300 text-sm leading-relaxed mb-6">
-                                    Выставочное место в историческом зале. Все подробности и условия застройки будут предоставлены в презентации куратором галереи.
+                                    Выставочное место в историческом зале Синара Центра. Все подробности, схемы застройки и условия участия придут вам в презентации.
                                 </p>
                             </div>
 
-                            <a href="https://t.me/andreydereev" target="_blank" class="w-full text-center py-4 px-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase text-xs tracking-wider rounded-2xl transition shadow-xl whitespace-nowrap relative z-10">
+                            <button onclick="openPresentationModal()" type="button" class="w-full text-center py-4 px-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase text-xs tracking-wider rounded-2xl transition shadow-xl whitespace-nowrap relative z-10 cursor-pointer">
                                 Получить презентацию и условия ↗
-                            </a>
+                            </button>
                             
                             <!-- Деликатный внутренний градиентный акцент -->
                             <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-blue-500/10 blur-3xl rounded-full pointer-events-none"></div>
@@ -1180,11 +1189,11 @@
         </section>
 
         <!-- ЭКРАН 7: ИНТЕРАКТИВНЫЙ ЭКСПРЕСС-АУДИТ (ПОДБОР ФОРМАТА УЧАСТИЯ ЗА 60 СЕКУНД) -->
-        <section id="quiz" class="py-8 sm:py-10 px-4 sm:px-6 max-w-7xl mx-auto relative z-10 mb-10 sm:mb-12">
+        <section id="quiz" class="py-20 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto relative z-10 my-10 sm:my-14">
             <!-- Фоновое свечение -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-200/30 via-indigo-200/30 to-purple-200/30 rounded-full filter blur-[100px] pointer-events-none -z-10"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-blue-200/30 via-indigo-200/30 to-purple-200/30 rounded-full filter blur-[120px] pointer-events-none -z-10"></div>
 
-            <div class="bg-white rounded-[2.5rem] p-6 sm:p-10 lg:p-12 border-2 border-indigo-100 shadow-2xl relative overflow-hidden">
+            <div class="bg-white rounded-[2.5rem] p-8 sm:p-14 lg:p-16 border-2 border-indigo-100 shadow-2xl relative overflow-hidden">
                 <div class="max-w-5xl mx-auto">
                     
                     <div class="text-center mb-8 sm:mb-10">
@@ -1869,138 +1878,80 @@
                 </div>
             </div>
             
-            <!-- Правая колонка: Форма заявки на консультацию и стратегический разбор -->
-            <div id="tripwire" class="lg:col-span-6 bg-gradient-to-b from-[#0c1322] via-[#101b30] to-[#070b14] rounded-3xl p-6 sm:p-8 border border-indigo-500/40 shadow-2xl shadow-indigo-950/60 relative flex flex-col justify-between h-full">
-                <div>
-                    <!-- Переключатель вкладок: AI-Аудит / Прямая заявка -->
-                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-indigo-900/50">
-                        <div class="flex items-center gap-2">
-                            <button id="tabBtnAudit" onclick="switchTripwireTab('audit')" class="px-3 py-1.5 rounded-xl text-xs font-bold transition bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md shadow-blue-500/30 flex items-center gap-1.5 cursor-pointer">
-                                <span>⚡ AI-Аудит бизнеса</span>
-                            </button>
-                            <button id="tabBtnLead" onclick="switchTripwireTab('lead')" class="px-3 py-1.5 rounded-xl text-xs font-bold transition bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/10 flex items-center gap-1.5 cursor-pointer">
-                                <span>Бронь участия</span>
-                            </button>
-                        </div>
-                        <span class="text-[10px] text-emerald-400 font-medium flex items-center gap-1">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Онлайн 24/7
+            <!-- Правая колонка: Единая форма «Бизнес-разбор» -->
+            <div id="tripwire" class="lg:col-span-6 bg-gradient-to-b from-[#0c1322] via-[#101b30] to-[#070b14] rounded-3xl p-6 sm:p-8 border border-indigo-500/40 shadow-2xl shadow-indigo-950/60 relative flex flex-col justify-between">
+                <div class="mb-5">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600/20 border border-blue-400/40 text-blue-300 text-xs font-bold uppercase tracking-wider">
+                            <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span> Бизнес-разбор
                         </span>
+                        <span class="text-[11px] text-emerald-400 font-medium">Бесплатно • Эксперты саммита</span>
                     </div>
 
-                    <!-- ЗАГОЛОВОК ВКЛАДКИ 1: AI-АУДИТ -->
-                    <div id="tripwireAuditHeader">
-                        <h3 class="text-xl sm:text-2xl font-black uppercase font-['Oswald'] text-white mb-1.5 leading-tight">
-                            ЭКСПРЕСС AI-АУДИТ ВАШЕГО БИЗНЕСА
-                        </h3>
-                        <p class="text-gray-300 text-xs sm:text-sm mb-4 font-medium leading-relaxed">
-                            Укажите параметры компании — нейросеть за 5 секунд рассчитает 3 скрытые точки роста выручки и покажет, как оцифровать их на спринте.
-                        </p>
-                    </div>
-
-                    <!-- ЗАГОЛОВОК ВКЛАДКИ 2: ПРЯМАЯ ЗАЯВКА -->
-                    <div id="tripwireLeadHeader" class="hidden">
-                        <h3 class="text-xl sm:text-2xl font-black uppercase font-['Oswald'] text-white mb-1.5 leading-tight">
-                            ОБСУДИМ ЗАДАЧИ ВАШЕГО БИЗНЕСА?
-                        </h3>
-                        <p class="text-gray-300 text-xs sm:text-sm mb-4 font-medium leading-relaxed">
-                            Оставьте контакты для бесплатного разбора бизнес-процессов и подбора оптимального формата участия от экспертов консорциума.
-                        </p>
-                    </div>
+                    <h3 class="text-xl sm:text-2xl lg:text-3xl font-black uppercase font-['Oswald'] text-white mb-2 leading-tight">
+                        ОБСУДИМ ЗАДАЧИ ВАШЕГО БИЗНЕСА?
+                    </h3>
+                    <p class="text-gray-300 text-xs sm:text-sm font-medium leading-relaxed">
+                        Оставьте контакты для бесплатного разбора бизнес-процессов и подбора оптимального формата участия в «Территории Роста» от экспертов.
+                    </p>
                 </div>
 
-                <!-- ФОРМА 1: ИНТЕРАКТИВНЫЙ AI-АУДИТ -->
-                <form id="auditForm" onsubmit="handleExpressAuditSubmit(event)" class="flex flex-col gap-3 my-auto">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <input id="auditName" type="text" placeholder="Ваше имя *" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-blue-500 text-xs sm:text-sm transition shadow-inner">
-                        <input id="auditContact" type="text" placeholder="Telegram (@ник) или телефон *" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-blue-500 text-xs sm:text-sm transition shadow-inner">
+                <!-- ЕДИНАЯ ФОРМА БИЗНЕС-РАЗБОРА -->
+                <form id="businessAnalysisForm" onsubmit="handleBusinessAnalysisSubmit(event)" class="flex flex-col gap-3.5">
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Ваше имя *</label>
+                        <input id="analysisName" type="text" placeholder="Иван Иванов" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
                     </div>
                     
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <input id="auditNiche" type="text" placeholder="Ниша (напр. Производство, B2B) *" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-blue-500 text-xs sm:text-sm transition shadow-inner">
-                        <select id="auditRevenue" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-gray-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-blue-500 text-xs sm:text-sm transition shadow-inner">
-                            <option value="до 50 млн ₽/год">Выручка: до 50 млн ₽/год</option>
-                            <option value="50 – 200 млн ₽/год" selected>Выручка: 50 – 200 млн ₽/год</option>
-                            <option value="200 млн – 1 млрд ₽/год">Выручка: 200 млн – 1 млрд ₽/год</option>
-                            <option value="более 1 млрд ₽/год">Выручка: более 1 млрд ₽/год</option>
-                        </select>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Телефон / Telegram *</label>
+                            <input id="analysisContact" type="text" placeholder="+7 (999) 000-00-00 / @username" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Название компании</label>
+                            <input id="analysisCompany" type="text" placeholder="ООО «Компания»" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
+                        </div>
                     </div>
 
                     <div>
-                        <select id="auditBottleneck" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-gray-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-blue-500 text-xs sm:text-sm transition shadow-inner">
-                            <option value="Операционка собственника и рутина">Главный затык: 1. Вся операционка на собственнике 24/7</option>
-                            <option value="Просадка продаж и слабый маркетинг">Главный затык: 2. Просели продажи, слабая воронка</option>
-                            <option value="Саботаж команды и нехватка кадров">Главный затык: 3. Команда сопротивляется, нет слаженности</option>
-                            <option value="Нет оцифровки и AI-автоматизации">Главный затык: 4. Хаос в процессах, нет оцифровки и AI</option>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Интересующий формат / Задача</label>
+                        <select id="analysisInterest" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
+                            <option value="analysis" selected>Бесплатный бизнес-разбор с экспертом</option>
+                            <option value="standard">Тариф «Стандарт» (15 000 ₽)</option>
+                            <option value="business">Тариф «Бизнес — Команда» (18 000 ₽/чел)</option>
+                            <option value="premium">Тариф «Премиум VIP» (25 000 ₽/чел)</option>
+                            <option value="expo">Стенд в Бизнес-галерее / Партнерство</option>
                         </select>
                     </div>
 
-                    <button id="auditSubmitBtn" type="submit" class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase tracking-wider py-3.5 rounded-xl transition text-xs sm:text-sm shadow-xl shadow-blue-600/30 cursor-pointer flex items-center justify-center gap-2">
-                        <span>⚡ Сформировать AI-Аудит за 5 секунд</span>
+                    <button id="analysisSubmitBtn" type="submit" class="w-full mt-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase tracking-wider py-4 rounded-xl transition text-xs sm:text-sm shadow-xl shadow-blue-600/30 cursor-pointer flex items-center justify-center gap-2">
+                        <span>ЗАПИСАТЬСЯ НА БИЗНЕС-РАЗБОР</span>
                     </button>
                     
                     <p class="text-[10px] text-gray-400 text-center">
-                        Нажимая кнопку, вы соглашаетесь с <a href="oferta.html" target="_blank" class="underline hover:text-white">политикой обработки данных</a>.
+                        Нажимая кнопку, вы подтверждаете согласие на обработку персональных данных.
                     </p>
                 </form>
 
-                <!-- БЛОК РЕЗУЛЬТАТА AI-АУДИТА (СКРЫТ ДО ОТВЕТА) -->
-                <div id="auditResultBox" class="hidden flex-col gap-3 my-auto">
-                    <div class="bg-[#080e1c] border border-blue-500/50 rounded-2xl p-4 shadow-xl">
-                        <div class="flex items-center justify-between mb-2.5 pb-2 border-b border-indigo-900/50">
-                            <span class="text-xs font-bold text-blue-400 font-['Oswald'] uppercase flex items-center gap-1.5">
-                                <span class="w-2 h-2 rounded-full bg-blue-400 animate-ping"></span> Отчет AI-Аналитика «Территория Роста»
-                            </span>
-                            <span id="auditResultNicheBadge" class="text-[10px] px-2 py-0.5 rounded-full bg-blue-900/60 text-blue-200 border border-blue-700/50 font-medium">B2B</span>
-                        </div>
-                        <div id="auditResultContent" class="text-xs text-gray-200 leading-relaxed space-y-2 max-h-[220px] overflow-y-auto pr-1">
-                            <!-- Контент ответа Gemini -->
-                        </div>
+                <!-- Сообщение об успешной отправке -->
+                <div id="analysisSuccessBox" class="hidden text-center py-6">
+                    <div class="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-3">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <a href="https://t.me/andreydereev" target="_blank" class="flex-1 bg-gradient-to-r from-emerald-600 to-teal-600 hover:opacity-95 text-white font-bold text-xs py-2.5 px-3 rounded-xl transition text-center shadow-lg shadow-emerald-900/30">
-                            Обсудить аудит с ведущим экспертом ➔
-                        </a>
-                        <button onclick="resetExpressAudit()" class="px-3 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-gray-300 text-xs font-bold transition cursor-pointer">
-                            Новый расчет
-                        </button>
-                    </div>
+                    <h4 class="text-xl font-bold font-['Oswald'] uppercase text-white mb-1">Заявка принята!</h4>
+                    <p class="text-gray-300 text-xs">Эксперт консорциума свяжется с вами в течение 15 минут.</p>
                 </div>
-
-                <!-- ФОРМА 2: ПРЯМАЯ ЗАЯВКА НА БРОНЬ -->
-                <form id="leadDirectForm" onsubmit="handleDirectLeadSubmit(event)" class="hidden flex-col gap-3 my-auto">
-                    <div>
-                        <input id="directLeadName" type="text" placeholder="Ваше имя *" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <input id="directLeadContact" type="tel" placeholder="Телефон / Telegram *" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
-                        <input id="directLeadCompany" type="text" placeholder="Название компании" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
-                    </div>
-                    <div>
-                        <select id="directLeadTariff" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
-                            <option value="standard">Интересует участие: Тариф «Стандарт» (15 000 ₽)</option>
-                            <option value="business" selected>Интересует участие: Тариф «Бизнес — Команда» (18 000 ₽/чел)</option>
-                            <option value="premium">Интересует участие: Тариф «Премиум VIP» (25 000 ₽/чел)</option>
-                            <option value="sponsor">Интересует партнерство / Стенд в Бизнес-галерее</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase tracking-wider py-3.5 rounded-xl transition text-xs sm:text-sm shadow-xl shadow-blue-600/30 cursor-pointer">
-                        Забронировать стратегический разбор
-                    </button>
-                    <p class="text-[10px] text-gray-400 text-center">
-                        Нажимая кнопку, вы соглашаетесь с <a href="oferta.html" target="_blank" class="underline hover:text-white">политикой обработки данных</a>.
-                    </p>
-                </form>
             </div>
         </div>
 
         <!-- ======================================================= -->
         <!-- СЕКЦИЯ 2: ФЕДЕРАЛЬНЫЕ СМИ С ОРИГИНАЛЬНЫМИ ЛОГОТИПАМИ    -->
-        <!-- (Без дублирующего логотипа — только лаконичный заголовок) -->
         <!-- ======================================================= -->
         <div class="mb-16 sm:mb-20 pt-8 border-t border-indigo-900/40">
-            <div class="text-center max-w-4xl mx-auto mb-10">
-                <h3 class="text-sm sm:text-base md:text-lg font-bold uppercase tracking-wider text-gray-200 font-['Oswald']">
-                    Федеральные СМИ о ключевых инициативах и практических результатах консорциума «ПРЕДПРИНИМАЙ»
+            <div class="text-center w-full mx-auto mb-8">
+                <h3 class="text-xs sm:text-sm md:text-base lg:text-lg font-bold uppercase tracking-wider text-gray-200 font-['Oswald'] whitespace-normal">
+                    ФЕДЕРАЛЬНЫЕ СМИ О КЛЮЧЕВЫХ ИНИЦИАТИВАХ И ПРАКТИЧЕСКИХ РЕЗУЛЬТАТАХ КОНСОРЦИУМА «ПРЕДПРИНИМАЙ»
                 </h3>
             </div>
 
@@ -2088,9 +2039,9 @@
                     УЧАСТНИКАМ
                 </h4>
                 <ul class="space-y-2.5 text-xs text-gray-300">
-                    <li><a href="#tripwire" class="hover:text-white transition">Экспресс AI-Аудит</a></li>
+                    <li><a href="#tripwire" class="hover:text-white transition">Бизнес-разбор</a></li>
                     <li><a href="sponsors.html#matrix" target="_blank" class="hover:text-white transition">Бизнес-галерея (Выставка)</a></li>
-                    <li><a href="#tripwire" class="hover:text-white transition">Стратегический разбор</a></li>
+                    <li><a href="#quiz" class="hover:text-white transition">Экспресс-аудит</a></li>
                     <li><a href="https://max.ru/join/vvis7juMXRSkY_GDoM_1vIoLBhfEJEyjTaa3JucmVLo" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Сообщество лидеров в MAX</a></li>
                     <li><a href="https://t.me/andreydereev" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Telegram: @andreydereev</a></li>
                 </ul>
@@ -2110,30 +2061,24 @@
                 </ul>
             </div>
 
-            <!-- Колонка 4: Соцсети и быстрые контакты -->
+            <!-- Колонка 4: Соцсети и быстрые контакты с Pro-иконками -->
             <div>
                 <h4 class="text-sm font-bold uppercase tracking-wider text-blue-400 mb-4 font-['Oswald']">
                     МЫ В СОЦСЕТЯХ
                 </h4>
                 <p class="text-xs text-gray-400 mb-3">Официальные каналы и прямая связь:</p>
                 <div class="flex items-center gap-3 mb-5">
-                    <!-- Telegram -->
-                    <a href="https://t.me/andreydereev" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-2xl bg-[#0c1322] border border-indigo-900/60 hover:border-sky-400 hover:bg-sky-500/10 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-sky-500/20 hover:scale-105 group" title="Telegram: Служба экспертного сопровождения">
-                        <svg class="w-5 h-5 text-sky-400 group-hover:text-sky-300 transition-colors" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.05-.48-.83-.27-1.49-.42-1.43-.88.03-.24.38-.49 1.04-.75 4.07-1.77 6.78-2.94 8.14-3.51 3.87-1.62 4.67-1.9 5.2-1.91.12 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.18-.04.34z"/>
-                        </svg>
+                    <!-- Telegram Pro Icon -->
+                    <a href="https://t.me/andreydereev" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-2xl bg-[#0c1322] border border-indigo-900/60 hover:border-sky-400 p-2 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-sky-500/20 hover:scale-105 group" title="Telegram: Служба экспертного сопровождения">
+                        <img src="png-transparent-telegram-macos-bigsur-icon.png" alt="Telegram" class="w-full h-full object-contain">
                     </a>
-                    <!-- ВКонтакте -->
-                    <a href="https://vk.ru/territoryup" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-2xl bg-[#0c1322] border border-indigo-900/60 hover:border-blue-500 hover:bg-blue-600/10 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-blue-500/20 hover:scale-105 group" title="ВКонтакте: «Территория Роста»">
-                        <svg class="w-5 h-5 text-blue-400 group-hover:text-blue-300 transition-colors" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M13.162 18.994c.609 0 .858-.406.851-.915-.072-1.075.454-1.564 1.128-1.564.717 0 1.25.592 1.83 1.29.475.57.978 1.189 1.96 1.189h2.38c1.173 0 1.637-.621 1.206-1.693-.578-1.435-2.227-3.27-3.08-4.22-.326-.363-.442-.524 0-1.12.531-.72 2.378-3.328 2.613-4.461.124-.597-.184-.969-.871-.969h-2.38c-.71 0-1.002.37-1.22.86-.416.937-1.579 3.424-2.234 4.148-.26.287-.417.375-.589.375-.125 0-.258-.088-.258-.58V8.465c0-.687-.202-.969-.785-.969h-3.74c-.452 0-.726.336-.726.654 0 .638.956.785 1.054 2.58v3.902c0 .854-.155 1.01-.492 1.01-.898 0-3.08-3.447-4.37-7.39-.247-.756-.516-1.057-1.233-1.057H2.602c-.785 0-.943.37-.943.785 0 .736.944 4.394 4.39 9.22 2.298 3.218 5.534 4.994 8.113 4.994z"/>
-                        </svg>
+                    <!-- ВКонтакте Pro Icon -->
+                    <a href="https://vk.ru/territoryup" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-2xl bg-[#0c1322] border border-indigo-900/60 hover:border-blue-500 p-2 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-blue-500/20 hover:scale-105 group" title="ВКонтакте: «Территория Роста»">
+                        <img src="vk-icon-blue-512x512.png" alt="ВКонтакте" class="w-full h-full object-contain">
                     </a>
-                    <!-- MAX -->
-                    <a href="https://max.ru/join/vvis7juMXRSkY_GDoM_1vIoLBhfEJEyjTaa3JucmVLo" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-2xl bg-[#0c1322] border border-indigo-900/60 hover:border-purple-400 hover:bg-purple-600/10 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-purple-500/20 hover:scale-105 group" title="Сообщество лидеров в MAX">
-                        <svg class="w-5 h-5 text-purple-400 group-hover:text-purple-300 transition-colors" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M2.5 18V6h2.2l2.3 5.8L9.3 6h2.2v12H9.8v-7.2L7.9 15.5H6.6L4.7 10.8V18H2.5zm10.2 0l2.7-12h2.2l2.7 12h-1.9l-.6-2.5h-2.5l-.6 2.5h-2zm2.3-4.2h1.8L16 9.8l-.8 4z"/>
-                        </svg>
+                    <!-- MAX Pro Icon -->
+                    <a href="https://max.ru/join/vvis7juMXRSkY_GDoM_1vIoLBhfEJEyjTaa3JucmVLo" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-2xl bg-[#0c1322] border border-indigo-900/60 hover:border-purple-400 p-2 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-purple-500/20 hover:scale-105 group" title="Сообщество лидеров в MAX">
+                        <img src="Спикеры/Лого/Макс Иконка.webp" alt="MAX" class="w-full h-full object-contain rounded-xl">
                     </a>
                 </div>
                 <div class="text-xs text-gray-300 space-y-1">
@@ -2719,6 +2664,73 @@ function getSofiaExpertIntelligence(rawText) {
         'Напишите ваш **Telegram (@ник) или телефон** — я пришлю вам полную программу и закреплю спецусловия участия!';
 }
 
+// Управление модальными окнами (Тарифы, Презентация, Карта, AI-Ассистент)
+function openModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+    }
+}
+
+function openTariffModal(name, price) {
+    document.getElementById('modalTariffName').innerText = name;
+    document.getElementById('modalTariffPrice').innerText = price;
+    document.getElementById('modalTariffHidden').value = name + ' (' + price + ')';
+    document.getElementById('tariffFormContainer').classList.remove('hidden');
+    document.getElementById('tariffSuccessContainer').classList.add('hidden');
+    openModal('tariffModal');
+}
+
+function openPresentationModal() {
+    document.getElementById('presentationFormContainer').classList.remove('hidden');
+    document.getElementById('presentationSuccessContainer').classList.add('hidden');
+    openModal('presentationModal');
+}
+
+function openAssistantModal() {
+    openModal('assistantModal');
+}
+
+function openMapModal() {
+    openModal('mapModal');
+}
+
+function handleBusinessAnalysisSubmit(e) {
+    e.preventDefault();
+    document.getElementById('businessAnalysisForm').classList.add('hidden');
+    document.getElementById('analysisSuccessBox').classList.remove('hidden');
+}
+
+function handleTariffSubmit(e) {
+    e.preventDefault();
+    document.getElementById('tariffFormContainer').classList.add('hidden');
+    document.getElementById('tariffSuccessContainer').classList.remove('hidden');
+}
+
+function handlePresentationSubmit(e) {
+    e.preventDefault();
+    document.getElementById('presentationFormContainer').classList.add('hidden');
+    document.getElementById('presentationSuccessContainer').classList.remove('hidden');
+}
+
+// Закрытие модальных окон по Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        ['tariffModal', 'presentationModal', 'assistantModal', 'mapModal'].forEach(closeModal);
+    }
+});
+
 // Активная подсветка пунктов меню при скролле (Scroll Spy)
 document.addEventListener('DOMContentLoaded', () => {
     const navItems = document.querySelectorAll('#navMenuLinks a.nav-item');
@@ -2751,5 +2763,219 @@ document.addEventListener('DOMContentLoaded', () => {
     updateActiveNav();
 });
 </script>
+
+<!-- ======================================================= -->
+<!-- МОДАЛЬНОЕ ОКНО 1: БРОНИРОВАНИЕ ТАРИФА                   -->
+<!-- ======================================================= -->
+<div id="tariffModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4 transition-all duration-300" onclick="if(event.target === this) closeModal('tariffModal')">
+    <div class="relative w-full max-w-lg bg-[#0c1322] border border-indigo-500/50 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-indigo-950/80 text-white">
+        <button onclick="closeModal('tariffModal')" class="absolute top-5 right-5 text-gray-400 hover:text-white text-2xl font-bold transition">✕</button>
+        
+        <div id="tariffFormContainer">
+            <div class="mb-5">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600/20 border border-blue-400/40 text-blue-300 text-xs font-bold uppercase tracking-wider mb-2">
+                    Бронирование участия
+                </span>
+                <h3 class="text-xl sm:text-2xl font-black uppercase font-['Oswald'] text-white leading-tight">
+                    ТАРИФ: <span id="modalTariffName" class="text-sky-400">СТАНДАРТ</span>
+                </h3>
+                <p class="text-gray-300 text-xs sm:text-sm mt-1">
+                    Стоимость: <strong id="modalTariffPrice" class="text-white text-base">15 000 ₽</strong>. Заполните форму — бот София согласует с вами встречу с менеджером.
+                </p>
+            </div>
+
+            <form onsubmit="handleTariffSubmit(event)" class="space-y-3.5">
+                <input type="hidden" id="modalTariffHidden" value="">
+                <div>
+                    <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Ваше имя *</label>
+                    <input type="text" placeholder="Константин" required class="w-full bg-[#060a14] border border-indigo-900/70 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Телефон / TG *</label>
+                        <input type="text" placeholder="+7 (999) 000-00-00" required class="w-full bg-[#060a14] border border-indigo-900/70 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Компания</label>
+                        <input type="text" placeholder="ООО «ПромТех»" class="w-full bg-[#060a14] border border-indigo-900/70 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm">
+                    </div>
+                </div>
+                <button type="submit" class="w-full mt-3 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase tracking-wider py-4 rounded-xl transition text-xs sm:text-sm shadow-xl shadow-blue-600/30 cursor-pointer">
+                    Отправить заявку менеджеру
+                </button>
+            </form>
+        </div>
+
+        <div id="tariffSuccessContainer" class="hidden text-center py-6">
+            <div class="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-3">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <h4 class="text-xl font-bold font-['Oswald'] uppercase text-white mb-2">Заявка успешно отправлена!</h4>
+            <p class="text-gray-300 text-xs sm:text-sm mb-4">Бот София и наш эксперт свяжутся с вами для фиксации спецусловий.</p>
+            <a href="https://t.me/andreydereev" target="_blank" class="inline-block bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs py-2.5 px-6 rounded-xl transition">
+                Перейти в диалог с куратором в Telegram ➔
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- ======================================================= -->
+<!-- МОДАЛЬНОЕ ОКНО 2: ПРЕЗЕНТАЦИЯ БИЗНЕС-ГАЛЕРЕИ            -->
+<!-- ======================================================= -->
+<div id="presentationModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4 transition-all duration-300" onclick="if(event.target === this) closeModal('presentationModal')">
+    <div class="relative w-full max-w-lg bg-[#0c1322] border border-purple-500/50 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-purple-950/80 text-white">
+        <button onclick="closeModal('presentationModal')" class="absolute top-5 right-5 text-gray-400 hover:text-white text-2xl font-bold transition">✕</button>
+        
+        <div id="presentationFormContainer">
+            <div class="mb-5">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-600/20 border border-purple-400/40 text-purple-300 text-xs font-bold uppercase tracking-wider mb-2">
+                    Бизнес-галерея • Выставка
+                </span>
+                <h3 class="text-xl sm:text-2xl font-black uppercase font-['Oswald'] text-white leading-tight">
+                    КАК СТАТЬ ЭКСПОНЕНТОМ?
+                </h3>
+                <p class="text-gray-300 text-xs sm:text-sm mt-1">
+                    Получите PDF-презентацию, схемы расположения стендов и партнерские пакеты участия в Бизнес-галерее.
+                </p>
+            </div>
+
+            <form onsubmit="handlePresentationSubmit(event)" class="space-y-3.5">
+                <div>
+                    <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Ваше имя *</label>
+                    <input type="text" placeholder="Иван" required class="w-full bg-[#060a14] border border-purple-900/70 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 text-sm">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Телефон / TG *</label>
+                        <input type="text" placeholder="+7 (999) 000-00-00" required class="w-full bg-[#060a14] border border-purple-900/70 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Компания</label>
+                        <input type="text" placeholder="Название бренда" class="w-full bg-[#060a14] border border-purple-900/70 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 text-sm">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Куда прислать презентацию?</label>
+                    <select class="w-full bg-[#060a14] border border-purple-900/70 text-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 text-sm">
+                        <option>В Telegram</option>
+                        <option>В ВКонтакте</option>
+                        <option>В MAX</option>
+                        <option>Позвонить и обсудить стенд</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full mt-3 bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 hover:opacity-95 text-white font-black uppercase tracking-wider py-4 rounded-xl transition text-xs sm:text-sm shadow-xl shadow-purple-600/30 cursor-pointer">
+                    Получить презентацию и условия
+                </button>
+            </form>
+        </div>
+
+        <div id="presentationSuccessContainer" class="hidden text-center py-6">
+            <div class="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-3">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <h4 class="text-xl font-bold font-['Oswald'] uppercase text-white mb-2">Презентация отправляется!</h4>
+            <p class="text-gray-300 text-xs sm:text-sm mb-4">Бот София направил материалы в выбранный канал.</p>
+            <button onclick="closeModal('presentationModal')" class="bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs py-2.5 px-6 rounded-xl transition">
+                Понятно
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ======================================================= -->
+<!-- МОДАЛЬНОЕ ОКНО 3: ВЫБОР AI-АССИСТЕНТА (ОМНИКАНАЛЬНОСТЬ)   -->
+<!-- ======================================================= -->
+<div id="assistantModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4 transition-all duration-300" onclick="if(event.target === this) closeModal('assistantModal')">
+    <div class="relative w-full max-w-lg bg-[#0c1322] border border-blue-500/50 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-blue-950/80 text-white">
+        <button onclick="closeModal('assistantModal')" class="absolute top-5 right-5 text-gray-400 hover:text-white text-2xl font-bold transition">✕</button>
+        
+        <div class="text-center mb-6">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 flex items-center justify-center mx-auto mb-3 shadow-lg shadow-blue-500/30">
+                <span class="text-2xl">⚡</span>
+            </div>
+            <h3 class="text-2xl font-black uppercase font-['Oswald'] text-white">
+                AI-АССИСТЕНТ СОФИЯ
+            </h3>
+            <p class="text-gray-300 text-xs sm:text-sm mt-1">
+                Выберите удобный мессенджер для моментального ответа на любые вопросы по саммиту, спикерам и тарифам:
+            </p>
+        </div>
+
+        <div class="space-y-3">
+            <!-- Telegram -->
+            <a href="https://t.me/andreydereev" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3.5 bg-[#080e1c] hover:bg-sky-500/10 border border-indigo-900/60 hover:border-sky-400 rounded-2xl transition group shadow-md">
+                <div class="flex items-center gap-3">
+                    <img src="png-transparent-telegram-macos-bigsur-icon.png" alt="Telegram" class="w-10 h-10 object-contain">
+                    <div class="text-left">
+                        <div class="font-bold text-sm text-white group-hover:text-sky-300">Telegram Бот София</div>
+                        <div class="text-[11px] text-gray-400">Мгновенный ответ 24/7</div>
+                    </div>
+                </div>
+                <span class="text-xs text-sky-400 font-bold group-hover:translate-x-1 transition-transform">Открыть ➔</span>
+            </a>
+
+            <!-- ВКонтакте -->
+            <a href="https://vk.ru/territoryup" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3.5 bg-[#080e1c] hover:bg-blue-600/10 border border-indigo-900/60 hover:border-blue-500 rounded-2xl transition group shadow-md">
+                <div class="flex items-center gap-3">
+                    <img src="vk-icon-blue-512x512.png" alt="VK" class="w-10 h-10 object-contain">
+                    <div class="text-left">
+                        <div class="font-bold text-sm text-white group-hover:text-blue-300">ВКонтакте София</div>
+                        <div class="text-[11px] text-gray-400">Диалог в официальном сообществе</div>
+                    </div>
+                </div>
+                <span class="text-xs text-blue-400 font-bold group-hover:translate-x-1 transition-transform">Открыть ➔</span>
+            </a>
+
+            <!-- MAX -->
+            <a href="https://max.ru/join/vvis7juMXRSkY_GDoM_1vIoLBhfEJEyjTaa3JucmVLo" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3.5 bg-[#080e1c] hover:bg-purple-600/10 border border-indigo-900/60 hover:border-purple-400 rounded-2xl transition group shadow-md">
+                <div class="flex items-center gap-3">
+                    <img src="Спикеры/Лого/Макс Иконка.webp" alt="MAX" class="w-10 h-10 object-contain rounded-xl">
+                    <div class="text-left">
+                        <div class="font-bold text-sm text-white group-hover:text-purple-300">Сообщество лидеров в MAX</div>
+                        <div class="text-[11px] text-gray-400">Канал участников и ассистент</div>
+                    </div>
+                </div>
+                <span class="text-xs text-purple-400 font-bold group-hover:translate-x-1 transition-transform">Открыть ➔</span>
+            </a>
+
+            <!-- На сайте -->
+            <button onclick="closeModal('assistantModal'); openChat();" class="w-full flex items-center justify-center gap-2 p-3.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl text-xs font-bold text-gray-300 hover:text-white transition">
+                <span>💬 Общаться прямо в чате на этом сайте</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ======================================================= -->
+<!-- МОДАЛЬНОЕ ОКНО 4: СИНАРА ЦЕНТР НА ЯНДЕКС.КАРТАХ          -->
+<!-- ======================================================= -->
+<div id="mapModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4 transition-all duration-300" onclick="if(event.target === this) closeModal('mapModal')">
+    <div class="relative w-full max-w-3xl bg-[#0c1322] border border-blue-500/50 rounded-3xl p-5 sm:p-7 shadow-2xl shadow-blue-950/80 text-white">
+        <button onclick="closeModal('mapModal')" class="absolute top-5 right-5 text-gray-400 hover:text-white text-2xl font-bold transition">✕</button>
+        
+        <div class="mb-4">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600/20 border border-blue-400/40 text-blue-300 text-xs font-bold uppercase tracking-wider mb-2">
+                Локация саммита
+            </span>
+            <h3 class="text-xl sm:text-2xl font-black uppercase font-['Oswald'] text-white">
+                КОНГРЕСС-ЦЕНТР «СИНАРА ЦЕНТР»
+            </h3>
+            <p class="text-gray-300 text-xs sm:text-sm mt-0.5">
+                📍 Екатеринбург, Верх-Исетский бульвар, 15/4 (Исторический центр)
+            </p>
+        </div>
+
+        <div class="w-full h-[360px] sm:h-[420px] rounded-2xl overflow-hidden border border-indigo-900/60 relative bg-[#060a14]">
+            <iframe src="https://yandex.ru/map-widget/v1/?ll=60.575020%2C56.839655&z=17&pt=60.575020,56.839655,pm2rdm" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="position:relative; border-radius: 14px;"></iframe>
+        </div>
+
+        <div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <span class="text-xs text-gray-400">Удобная парковка на территории конгресс-центра</span>
+            <a href="https://yandex.ru/maps/?rtext=~56.839655,60.575020" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-95 text-white font-bold text-xs py-2.5 px-6 rounded-xl transition text-center shadow-lg shadow-blue-600/20">
+                Построить маршрут в Яндекс.Картах ➔
+            </a>
+        </div>
+    </div>
+</div>
 </body>
 </html>
