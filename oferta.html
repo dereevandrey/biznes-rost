@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Юридический центр — ТЕРРИТОРИЯ РОСТА 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #000000; color: #f5f5f7; overflow-x: hidden; scroll-behavior: smooth; }
+        .title-massive { font-family: 'Oswald', sans-serif; text-transform: uppercase; line-height: 0.95; }
+        .text-gradient-magic {
+            background-image: 
+                linear-gradient(45deg,  #2563eb 30%, #7c3aed 45%, #db2777 50%, #7c3aed 55%, #2563eb 70%),
+                linear-gradient(135deg, #2563eb 30%, #7c3aed 45%, #db2777 50%, #7c3aed 55%, #2563eb 70%);
+            background-size: 300% 51%;
+            background-position: 100% 0%, 100% 100%;
+            background-repeat: no-repeat;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textShineWedge 4s linear infinite;
+        }
+        @keyframes textShineWedge {
+            0% { background-position: 100% 0%, 100% 100%; }
+            100% { background-position: 0% 0%, 0% 100%; }
+        }
+        .legal-card {
+            background: linear-gradient(135deg, #0c1322 0%, #101b30 50%, #080d1a 100%);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 24px;
+        }
+        .legal-menu-btn.active {
+            background-color: rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.5);
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- НАВИГАЦИЯ -->
+    <nav class="fixed top-0 w-full z-50 bg-[#070b14]/95 backdrop-blur-md border-b border-indigo-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between text-sm font-medium tracking-wide text-gray-300">
+            <a href="index.html" class="flex items-center gap-3 text-white hover:opacity-90 transition flex-shrink-0">
+                <img src="ЛОГО ТР.png" alt="Территория Роста" class="h-8 sm:h-9 w-auto object-contain flex-shrink-0">
+                <span class="font-black text-sm sm:text-base tracking-wider uppercase font-['Oswald'] text-white whitespace-nowrap">ТЕРРИТОРИЯ РОСТА</span>
+            </a>
+
+            <div class="hidden md:flex items-center space-x-5 lg:space-x-7 text-[12px] lg:text-[13px] font-semibold text-gray-300 uppercase tracking-wider whitespace-nowrap">
+                <a href="index.html" class="hover:text-white transition">Главная</a>
+                <a href="index.html#program" class="hover:text-white transition">Программа</a>
+                <a href="speakers.html" class="hover:text-white transition">Эксперты</a>
+                <a href="index.html#locations" class="hover:text-white transition">Локации</a>
+                <a href="index.html#pricing" class="hover:text-white transition">Билеты</a>
+                <a href="index.html#consortium" class="hover:text-white transition">Организаторы</a>
+                <a href="sponsors.html" class="hover:text-white transition">Партнеры</a>
+            </div>
+
+            <div class="flex items-center flex-shrink-0">
+                <a href="index.html#tripwire" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-black px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm tracking-wide whitespace-nowrap shadow-md shadow-sky-500/25 transition transform hover:scale-[1.02]">
+                    Обсудить задачу
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <section class="relative pt-32 pb-12 bg-black border-b border-indigo-950/50">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-bold uppercase tracking-widest mb-6">
+                Юридическая чистота и прозрачность
+            </div>
+            <h1 class="title-massive text-4xl sm:text-6xl font-black tracking-tight mb-4 text-white">
+                ПРАВОВОЙ КОНТУР <br>
+                <span class="text-gradient-magic">ТЕРРИТОРИИ РОСТА 2026</span>
+            </h1>
+            <p class="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+                Документы, регламентирующие участие в бизнес-интенсиве, обработку персональных данных, проведение фото- и видеосъемки и правила использования сервисов технологических партнеров.
+            </p>
+        </div>
+    </section>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <section class="py-12 bg-[#040711]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-8">
+            
+            <!-- Левое боковое меню (для десктопа) -->
+            <div class="w-full lg:w-1/4 shrink-0">
+                <div class="sticky top-24 space-y-2 bg-[#080d1a]/80 p-4 rounded-3xl border border-indigo-950/60 backdrop-blur-md">
+                    <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest px-3 mb-2">Разделы правового центра</p>
+                    <button onclick="showDoc('offer')" class="legal-menu-btn w-full text-left px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-transparent hover:bg-white/5 text-gray-300 hover:text-white transition active flex items-center justify-between" id="btn-offer">
+                        <span>1. Публичная оферта</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                    <button onclick="showDoc('privacy')" class="legal-menu-btn w-full text-left px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-transparent hover:bg-white/5 text-gray-300 hover:text-white transition flex items-center justify-between" id="btn-privacy">
+                        <span>2. Политика обработки ПД</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                    <button onclick="showDoc('consent')" class="legal-menu-btn w-full text-left px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-transparent hover:bg-white/5 text-gray-300 hover:text-white transition flex items-center justify-between" id="btn-consent">
+                        <span>3. Согласие на обработку ПД</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                    <button onclick="showDoc('media')" class="legal-menu-btn w-full text-left px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-transparent hover:bg-white/5 text-gray-300 hover:text-white transition flex items-center justify-between" id="btn-media">
+                        <span>4. Согласие на съемку</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                    <button onclick="showDoc('cookie')" class="legal-menu-btn w-full text-left px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-transparent hover:bg-white/5 text-gray-300 hover:text-white transition flex items-center justify-between" id="btn-cookie">
+                        <span>5. Файлы Cookie</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                    
+                    <div class="border-t border-indigo-950/80 my-4 pt-4 px-3 text-xs text-gray-500 leading-relaxed">
+                        <p class="font-bold text-[10px] text-indigo-400 uppercase tracking-wider mb-1">Обратная связь</p>
+                        По всем вопросам отзыва согласий и изменения данных пишите хозяйственному оператору (ООО «Метаполис»): <a href="mailto:pr@predprinimy-consortium.ru" class="text-sky-500 underline">pr@predprinimy-consortium.ru</a>.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая часть - Контент документов -->
+            <div class="w-full lg:w-3/4">
+                
+                <!-- 1. ПУБЛИЧНАЯ ОФЕРТА -->
+                <div id="doc-offer" class="legal-doc-container space-y-6">
+                    <div class="legal-card p-6 sm:p-10">
+                        <div class="flex justify-between items-start border-b border-indigo-950/60 pb-6 mb-6">
+                            <div>
+                                <span class="text-xs font-bold text-sky-400 uppercase tracking-wider">Раздел 1</span>
+                                <h2 class="title-massive text-2xl sm:text-3xl font-bold text-white mt-1">Публичная оферта на оказание услуг</h2>
+                            </div>
+                            <div class="text-right text-xs text-gray-500">
+                                <div>Версия 2.1</div>
+                                <div>Действует с: 30.08.2026</div>
+                            </div>
+                        </div>
+                        <div class="text-xs sm:text-sm text-gray-300 space-y-4 leading-relaxed font-normal">
+                            <p class="font-semibold text-white">1. Общие положения и стороны договора</p>
+                            <p>1.1. Настоящий документ представляет собой официальное публичное предложение (публичную оферту) Общества с ограниченной ответственностью «Метаполис» (ОГРН 1156658079633, ИНН 6685102534, зарегистрированного по адресу: г. Екатеринбург, далее — «Исполнитель»), выступающего в роли хозяйственного оператора проекта, адресованное любому дееспособному физическому лицу, индивидуальному предпринимателю или юридическому лицу (далее — «Заказчик» или «Участник»).</p>
+                            <p>1.2. В соответствии со статьей 438 Гражданского кодекса Российской Федерации (ГК РФ) полным и безоговорочным акцептом настоящей оферты является оплата Заказчиком услуг Исполнителя в соответствии с выбранным тарифным пакетом на сайте <a href="https://бизнес-рост.рф/" class="text-sky-500 hover:underline">бизнес-рост.рф</a>.</p>
+                            <p>1.3. Консорциум «ПРЕДПРИНИМАЙ» выступает в качестве организующего и управляющего контура проекта, объединяющего ресурсы сторон для проведения мероприятия, но не является стороной финансовых взаимоотношений по настоящему договору.</p>
+
+                            <p class="font-semibold text-white mt-6">2. Предмет договора</p>
+                            <p>2.1. Исполнитель обязуется оказать Заказчику услуги по организации и проведению семидневного бизнес-интенсива «Территория Роста 2026» (далее — «Программа» или «Событие»), который проводится в период с 5 по 11 октября 2026 года в комбинированном формате (5–9 октября — онлайн-встречи с 16:00 до 19:00 по местному времени; 10–11 октября — очные дни в г. Екатеринбург), а Заказчик обязуется оплатить эти услуги.</p>
+                            <p>2.2. Содержимое пакетов участия («Стандарт», «Бизнес», «Премиум») подробно описано в действующем тарификаторе на сайте.</p>
+
+                            <p class="font-semibold text-white mt-6">3. Механика командного участия и игрового зачета</p>
+                            <p>3.1. К командному игровому зачету допускаются компании, заявившие команды численностью от 4 до 8 человек.</p>
+                            <p>3.2. Каждая команда обязана выбрать Капитана. В тарифные пакеты «Бизнес» и «Премиум» включено одно очное место для Капитана на развивающей деловой игре «Эмпатиум» 10 октября 2026 года. Остальные члены команды могут приобрести билеты на игру «Эмпатиум» отдельно при наличии свободных мест.</p>
+                            <p>3.3. Индивидуальные участники («Стандарт») или малые группы (2–3 человека) принимают полноценное участие в Программе, но не включаются в общий командный игровой зачет.</p>
+
+                            <p class="font-semibold text-white mt-6">4. Доступ к инструментам искусственного интеллекта (ИИ)</p>
+                            <p>4.1. Каждому участнику События предоставляется доступ к специализированным рабочим ИИ-инструментам на один месяц с момента активации.</p>
+                            <p>4.2. Технологическим провайдером ИИ-инструментов выступает независимая платформа Komanda.ai. Исполнитель обеспечивает интеграцию участников на платформу партнера, однако условия конфиденциальности, безопасности хранения данных и технические лимиты определяются правилами платформы Komanda.ai и отдельным соглашением.</p>
+
+                            <p class="font-semibold text-white mt-6">5. Интеллектуальная собственность и правила защит</p>
+                            <p>5.1. Участники и их компании полностью сохраняют права на все свои презентации, оригинальные тексты, фотографии и иные материалы, подготовленные в рамках События.</p>
+                            <p>5.2. Публичные защиты стратегий команд проходят очно 11 октября в присутствии жюри и других участников. Во избежание раскрытия коммерческой тайны и чувствительных финансовых сведений Участникам строго рекомендуется не включать банковские реквизиты, персональные данные клиентов или секреты производства в открытые слайды презентаций.</p>
+                            <p>5.3. Исполнитель не несет ответственности за случайное раскрытие чувствительных данных Участниками в ходе публичных презентаций.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. ПОЛИТИКА ОБРАБОТКИ ПЕРСОНАЛЬНЫХ ДАННЫХ -->
+                <div id="doc-privacy" class="legal-doc-container space-y-6 hidden">
+                    <div class="legal-card p-6 sm:p-10">
+                        <div class="flex justify-between items-start border-b border-indigo-950/60 pb-6 mb-6">
+                            <div>
+                                <span class="text-xs font-bold text-sky-400 uppercase tracking-wider">Раздел 2</span>
+                                <h2 class="title-massive text-2xl sm:text-3xl font-bold text-white mt-1">Политика обработки персональных данных</h2>
+                            </div>
+                            <div class="text-right text-xs text-gray-500">
+                                <div>Версия 2.1</div>
+                                <div>Действует с: 30.08.2026</div>
+                            </div>
+                        </div>
+                        <div class="text-xs sm:text-sm text-gray-300 space-y-4 leading-relaxed font-normal">
+                            <p class="font-semibold text-white">1. Общие положения</p>
+                            <p>1.1. Настоящая Политика составлена в соответствии с требованиями Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных, предпринимаемые оператором — ООО «Метаполис» (далее — «Оператор»).</p>
+                            <p>1.2. Органы и лица, осуществляющие надзор, а также субъекты персональных данных признают, что Оператор ставит своей важнейшей целью соблюдение прав и свобод человека при обработке данных.</p>
+
+                            <p class="font-semibold text-white mt-6">2. Цели обработки персональных данных</p>
+                            <p>2.1. Персональные данные Пользователей обрабатываются исключительно в целях:</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Регистрации на бизнес-интенсив «Территория Роста 2026»;</li>
+                                <li>Оформления платежных документов и выставления счетов;</li>
+                                <li>Предоставления доступов к видеозаписям на платформе FaceCast и ИИ-инструментам на платформе Komanda.ai;</li>
+                                <li>Обеспечения обратной связи по задачам команд;</li>
+                                <li>Направления информационных и рекламных материалов (при наличии отдельного согласия).</li>
+                            </ul>
+
+                            <p class="font-semibold text-white mt-6">3. Объем обрабатываемых персональных данных</p>
+                            <p>3.1. На сайте могут обрабатываться следующие данные:</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Имя, фамилия, отчество;</li>
+                                <li>Контактный номер телефона;</li>
+                                <li>Адрес электронной почты (e-mail);</li>
+                                <li>Никнейм в мессенджере Telegram (@username);</li>
+                                <li>Название компании, ИНН, сфера деятельности и объем выручки (для квиза и экспресс-анализа).</li>
+                            </ul>
+
+                            <p class="font-semibold text-white mt-6">4. Порядок сбора, хранения и уничтожения данных</p>
+                            <p>4.1. Обработка персональных данных осуществляется на законной и справедливой основе, конфиденциально и безопасно.</p>
+                            <p>4.2. Персональные данные хранятся на серверах, расположенных на территории Российской Федерации.</p>
+                            <p>4.3. Данные уничтожаются Оператором автоматически при достижении целей их обработки, по истечении срока действия согласия, либо по письменному запросу субъекта персональных данных на адрес <a href="mailto:pr@predprinimy-consortium.ru" class="text-sky-500 hover:underline">pr@predprinimy-consortium.ru</a>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. СОГЛАСИЕ НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ -->
+                <div id="doc-consent" class="legal-doc-container space-y-6 hidden">
+                    <div class="legal-card p-6 sm:p-10">
+                        <div class="flex justify-between items-start border-b border-indigo-950/60 pb-6 mb-6">
+                            <div>
+                                <span class="text-xs font-bold text-sky-400 uppercase tracking-wider">Раздел 3</span>
+                                <h2 class="title-massive text-2xl sm:text-3xl font-bold text-white mt-1">Согласие на обработку персональных данных</h2>
+                            </div>
+                            <div class="text-right text-xs text-gray-500">
+                                <div>Версия 2.1</div>
+                                <div>Действует с: 30.08.2026</div>
+                            </div>
+                        </div>
+                        <div class="text-xs sm:text-sm text-gray-300 space-y-4 leading-relaxed font-normal">
+                            <p>Настоящим я, свободно, своей волей и в своем интересе даю конкретное, информированное и сознательное согласие Обществу с ограниченной ответственностью «Метаполис» (ОГРН 1156658079633, ИНН 6685102534) на автоматизированную и неавтоматизированную обработку моих персональных данных в соответствии со статьей 9 Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных».</p>
+                            
+                            <p class="font-semibold text-white mt-4">1. Перечень данных, на обработку которых дается согласие:</p>
+                            <p>ФИО, номер телефона, адрес электронной почты, логин мессенджера Telegram, место работы, ИНН компании, должность, а также технические данные (IP-адрес, тип устройства, куки-файлы, геолокация).</p>
+
+                            <p class="font-semibold text-white mt-4">2. Согласие дается на выполнение следующих действий:</p>
+                            <p>Сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передача технологическим партнерам (FaceCast — для трансляций, Komanda.ai — для доступа к ИИ), блокирование, удаление, уничтожение персональных данных.</p>
+
+                            <p class="font-semibold text-white mt-4">3. Срок действия согласия:</p>
+                            <p>Настоящее согласие действует с момента его предоставления на сайте (путем проставления флажка активности) и в течение всего периода проведения мероприятия, а также 3 лет после его окончания, если иное не установлено законодательством РФ. Согласие может быть отозвано в любой момент путем отправки заявления на e-mail Оператора: <a href="mailto:pr@predprinimy-consortium.ru" class="text-sky-500 hover:underline">pr@predprinimy-consortium.ru</a>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. СОГЛАСИЕ НА ФОТО-, ВИДЕОСЪЕМКУ И ИСПОЛЬЗОВАНИЕ ИЗОБРАЖЕНИЯ И ГОЛОСА -->
+                <div id="doc-media" class="legal-doc-container space-y-6 hidden">
+                    <div class="legal-card p-6 sm:p-10">
+                        <div class="flex justify-between items-start border-b border-indigo-950/60 pb-6 mb-6">
+                            <div>
+                                <span class="text-xs font-bold text-sky-400 uppercase tracking-wider">Раздел 4</span>
+                                <h2 class="title-massive text-2xl sm:text-3xl font-bold text-white mt-1">Согласие на съемку и использование изображения</h2>
+                            </div>
+                            <div class="text-right text-xs text-gray-500">
+                                <div>Версия 2.1</div>
+                                <div>Действует с: 30.08.2026</div>
+                            </div>
+                        </div>
+                        <div class="text-xs sm:text-sm text-gray-300 space-y-4 leading-relaxed font-normal">
+                            <p class="font-semibold text-white">1. Правовое основание (ст. 152.1 ГК РФ)</p>
+                            <p>1.1. В соответствии со статьей 152.1 Гражданского кодекса РФ (Охрана изображения гражданина) Участник, проходя индивидуальную регистрацию и принимая условия участия, выражает свое полное согласие на проведение в отношении него фото- и видеосъемки в ходе мероприятий бизнес-интенсива «Территория Роста 2026» (как онлайн, так и очно в Синара Центре).</p>
+                            <p>1.2. Корпоративная покупка билетов юридическим лицом не заменяет необходимость предоставления индивидуального согласия каждым конкретным человеком (сотрудником компании), присутствующим на Событии.</p>
+
+                            <p class="font-semibold text-white mt-6">2. Способы использования контента</p>
+                            <p>2.1. Настоящим Участник предоставляет Организатору и хозяйственному оператору (ООО «Метаполис») право безвозмездно, на условиях неисключительной лицензии использовать созданные фото- и видеоматериалы (включая изображение, голос, выступления и презентации) следующими способами:</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Воспроизведение, копирование и хранение на любых цифровых носителях;</li>
+                                <li>Размещение на официальном сайте проекта и в социальных сетях экосистемы ПРЕДПРИНИМАЙ;</li>
+                                <li>Размещение трансляций и записей выступлений на платформе FaceCast со сроком доступа участников до 6 месяцев;</li>
+                                <li>Техническое редактирование и ретушь материалов, не искажающие исходный смысл выступлений.</li>
+                            </ul>
+
+                            <p class="font-semibold text-white mt-6">3. Ограничения</p>
+                            <p>3.1. Съемка и публикация материалов осуществляются исключительно в информационных, просветительских и рекламных целях проекта. Запрещается использование материалов способами, порочащими честь, достоинство или деловую репутацию Участника.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. ПОЛИТИКА ФАЙЛОВ COOKIE -->
+                <div id="doc-cookie" class="legal-doc-container space-y-6 hidden">
+                    <div class="legal-card p-6 sm:p-10">
+                        <div class="flex justify-between items-start border-b border-indigo-950/60 pb-6 mb-6">
+                            <div>
+                                <span class="text-xs font-bold text-sky-400 uppercase tracking-wider">Раздел 5</span>
+                                <h2 class="title-massive text-2xl sm:text-3xl font-bold text-white mt-1">Политика использования файлов Cookie</h2>
+                            </div>
+                            <div class="text-right text-xs text-gray-500">
+                                <div>Версия 2.1</div>
+                                <div>Действует с: 30.08.2026</div>
+                            </div>
+                        </div>
+                        <div class="text-xs sm:text-sm text-gray-300 space-y-4 leading-relaxed font-normal">
+                            <p>1. Наш сайт использует файлы cookie (мелкие текстовые файлы, сохраняемые на вашем устройстве) для обеспечения корректной технической работы интерфейса, сбора аналитических показателей посещаемости и сохранения настроек пользователя.</p>
+                            <p>2. Мы используем сессионные и постоянные файлы cookie. Никакие собираемые куки-файлы не позволяют напрямую установить личность конкретного человека или собрать его паспортные данные.</p>
+                            <p>3. Вы можете заблокировать или удалить файлы cookie в настройках вашего веб-браузера в любой момент. Однако обратите внимание, что это может привести к некорректной работе отдельных элементов сайта (квиза, чат-ассистента Софии или форм заявок).</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+<!-- ЕДИНЫЙ МАСТЕР-ФУТЕР ТМ «ПРЕДПРИНИМАЙ» 2026 -->
+<!-- ========================================== -->
+<footer class="bg-gradient-to-b from-black via-[#070b14] to-[#04070d] text-white pt-20 sm:pt-24 pb-10 sm:pb-12 border-t border-indigo-900/40 relative overflow-hidden">
+    <!-- Фоновые градиентные свечения -->
+    <div class="absolute top-0 left-1/4 w-[600px] h-[300px] bg-blue-600/10 rounded-full filter blur-[140px] pointer-events-none -z-10"></div>
+    <div class="absolute bottom-10 right-10 w-[500px] h-[300px] bg-purple-600/10 rounded-full filter blur-[140px] pointer-events-none -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+        <!-- ======================================================= -->
+        <!-- СЕКЦИЯ 1: ОРГАНИЗАТОР КОНСОРЦИУМ И ФОРМА ОБРАТНОЙ СВЯЗИ -->
+        <!-- ======================================================= -->
+        <div id="consortium" class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 mb-16 sm:mb-20 items-stretch">
+            
+            <!-- Левая колонка: Об организаторе (Консорциум Предпринимай) -->
+            <div class="lg:col-span-6 flex flex-col justify-between">
+                <div>
+                    <!-- Верхний бейдж и ссылка на сайт экосистемы -->
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/15 border border-blue-400/30 text-blue-300 text-xs font-bold uppercase tracking-wider">
+                            <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+                            Организатор проекта
+                        </span>
+                        <a href="https://predprinimy.ru" target="_blank" rel="noopener noreferrer" class="text-xs text-sky-400 hover:text-sky-300 transition font-semibold flex items-center gap-1">
+                            predprinimy.ru
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+
+                    <!-- Крупный брендовый блок с оригинальным белым логотипом Консорциума -->
+                    <div class="mb-4 flex items-center">
+                        <a href="https://predprinimy.ru" target="_blank" rel="noopener noreferrer" class="hover:opacity-90 transition">
+                            <img src="Спикеры/Лого/Предпринимай Лого.png" alt="Консорциум ПРЕДПРИНИМАЙ" class="h-12 sm:h-14 w-auto object-contain">
+                        </a>
+                    </div>
+
+                    <!-- Доктринальное смысловое ядро (Смысловая Конституция v3.0) -->
+                    <p class="text-white text-base sm:text-lg font-bold leading-snug mb-3">
+                        Национальная экосистема развития человеческого капитала и созидательного предпринимательства
+                    </p>
+                    <p class="text-gray-300 text-xs sm:text-sm leading-relaxed mb-4">
+                        Соединяем людей, управленческие команды, передовую экспертизу и технологии искусственного интеллекта, превращая внутренний потенциал лидеров в овеществленные экономические результаты для бизнеса и территорий России.
+                    </p>
+
+                    <!-- Сквозная формула движения v3.0 -->
+                    <div class="mb-5 p-2.5 rounded-xl bg-[#080e1c] border border-indigo-900/60 flex items-center justify-between text-[11px] font-semibold text-gray-300">
+                        <div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span><span class="text-sky-300">Человек</span></div>
+                        <span class="text-indigo-400 font-bold">➔</span>
+                        <div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span><span class="text-blue-300">Команда</span></div>
+                        <span class="text-indigo-400 font-bold">➔</span>
+                        <div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span><span class="text-indigo-300">Результат</span></div>
+                        <span class="text-indigo-400 font-bold">➔</span>
+                        <div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span><span class="text-purple-300">Ресурс</span></div>
+                        <span class="text-indigo-400 font-bold">➔</span>
+                        <div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span><span class="text-emerald-300">Территория</span></div>
+                    </div>
+                </div>
+                
+                <!-- 4 канонических контура действия экосистемы (Bento-карточки) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                    <!-- 1. Предпринимательский контур -->
+                    <div class="bg-gradient-to-br from-[#0c1322] via-[#101b30] to-[#080d1a] p-4 rounded-2xl border border-indigo-900/50 hover:border-blue-500/60 transition-all duration-300 shadow-lg flex flex-col justify-between group hover:-translate-y-0.5">
+                        <div>
+                            <div class="flex items-center gap-2.5 mb-2">
+                                <div class="w-8 h-8 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                                </div>
+                                <div>
+                                    <div class="text-white font-bold text-xs sm:text-sm leading-tight font-['Oswald'] uppercase tracking-wide">Предпринимательский контур</div>
+                                    <div class="text-[10px] text-blue-400 font-medium">Собственники & Команды</div>
+                                </div>
+                            </div>
+                            <div class="text-gray-300 text-xs leading-relaxed">
+                                Практикум «Территория Роста», трансформация бизнес-модели, снятие рутины через защищенный AI-контур и стратегия роста.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Молодёжный контур -->
+                    <div class="bg-gradient-to-br from-[#0c1322] via-[#101b30] to-[#080d1a] p-4 rounded-2xl border border-indigo-900/50 hover:border-purple-500/60 transition-all duration-300 shadow-lg flex flex-col justify-between group hover:-translate-y-0.5">
+                        <div>
+                            <div class="flex items-center gap-2.5 mb-2">
+                                <div class="w-8 h-8 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-purple-500 group-hover:text-white transition">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
+                                </div>
+                                <div>
+                                    <div class="text-white font-bold text-xs sm:text-sm leading-tight font-['Oswald'] uppercase tracking-wide">Молодёжный контур</div>
+                                    <div class="text-[10px] text-purple-400 font-medium">Юниоры & Студенты</div>
+                                </div>
+                            </div>
+                            <div class="text-gray-300 text-xs leading-relaxed">
+                                Общероссийские хакатоны «ПРЕДПРИНИМАЙ», проектные мастерские и стажировки в реальном секторе.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Экспертный контур -->
+                    <div class="bg-gradient-to-br from-[#0c1322] via-[#101b30] to-[#080d1a] p-4 rounded-2xl border border-indigo-900/50 hover:border-emerald-500/60 transition-all duration-300 shadow-lg flex flex-col justify-between group hover:-translate-y-0.5">
+                        <div>
+                            <div class="flex items-center gap-2.5 mb-2">
+                                <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                                </div>
+                                <div>
+                                    <div class="text-white font-bold text-xs sm:text-sm leading-tight font-['Oswald'] uppercase tracking-wide">Экспертный контур</div>
+                                    <div class="text-[10px] text-emerald-400 font-medium">Витальность & Здоровье</div>
+                                </div>
+                            </div>
+                            <div class="text-gray-300 text-xs leading-relaxed">
+                                «Неделя благополучия», лаборатории витальности и культура высокой результативности без выгорания команд.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Территориальный эффект -->
+                    <div class="bg-gradient-to-br from-[#0c1322] via-[#101b30] to-[#080d1a] p-4 rounded-2xl border border-indigo-900/50 hover:border-cyan-500/60 transition-all duration-300 shadow-lg flex flex-col justify-between group hover:-translate-y-0.5">
+                        <div>
+                            <div class="flex items-center gap-2.5 mb-2">
+                                <div class="w-8 h-8 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-cyan-500 group-hover:text-white transition">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </div>
+                                <div>
+                                    <div class="text-white font-bold text-xs sm:text-sm leading-tight font-['Oswald'] uppercase tracking-wide">Территориальный эффект</div>
+                                    <div class="text-[10px] text-cyan-400 font-medium">Бизнес + Власть + Общество</div>
+                                </div>
+                            </div>
+                            <div class="text-gray-300 text-xs leading-relaxed">
+                                Федеральные бизнес-миссии, технологический суверенитет и овеществленный вклад в качество жизни регионов РФ.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Правая колонка: Единая форма «Бизнес-разбор» -->
+            <div id="tripwire" class="lg:col-span-6 bg-gradient-to-b from-[#0c1322] via-[#101b30] to-[#070b14] rounded-3xl p-6 sm:p-8 border border-indigo-500/40 shadow-2xl shadow-indigo-950/60 relative flex flex-col justify-between">
+                <div class="mb-5">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600/20 border border-blue-400/40 text-blue-300 text-xs font-bold uppercase tracking-wider">
+                            <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span> Бизнес-разбор
+                        </span>
+                        <span class="text-[11px] text-emerald-400 font-medium">Бесплатно • Эксперты саммита</span>
+                    </div>
+
+                    <h3 class="text-xl sm:text-2xl lg:text-3xl font-black uppercase font-['Oswald'] text-white mb-2 leading-tight">
+                        ОБСУДИМ ЗАДАЧИ ВАШЕГО БИЗНЕСА?
+                    </h3>
+                    <p class="text-gray-300 text-xs sm:text-sm font-medium leading-relaxed">
+                        Оставьте контакты для бесплатного разбора бизнес-процессов и подбора оптимального формата участия в «Территории Роста» от экспертов.
+                    </p>
+                </div>
+
+                <!-- ЕДИНАЯ ФОРМА БИЗНЕС-РАЗБОРА -->
+                <form id="businessAnalysisForm" onsubmit="handleBusinessAnalysisSubmit(event)" class="flex flex-col gap-3.5">
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Ваше имя *</label>
+                        <input id="analysisName" type="text" placeholder="Иван Иванов" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Телефон / Telegram *</label>
+                            <input id="analysisContact" type="text" placeholder="+7 (999) 000-00-00 / @username" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Название компании</label>
+                            <input id="analysisCompany" type="text" placeholder="ООО «Компания»" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Формат участия / Разбор</label>
+                        <select id="analysisInterest" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
+                            <option value="analysis" selected>Записаться на Бизнес-разбор (20 минут с экспертом)</option>
+                        </select>
+                    </div>
+
+                    <button id="analysisSubmitBtn" type="submit" class="w-full mt-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase tracking-wider py-4 rounded-xl transition text-xs sm:text-sm shadow-xl shadow-blue-600/30 cursor-pointer flex items-center justify-center gap-2">
+                        <span>ЗАПИСАТЬСЯ НА БИЗНЕС-РАЗБОР</span>
+                    </button>
+                    
+                    <div class="space-y-2.5 mt-2 mb-1 text-left">
+                        <label class="flex items-start gap-2.5 cursor-pointer">
+                            <input type="checkbox" required class="mt-1 w-4 h-4 rounded border-indigo-900/60 text-blue-600 focus:ring-blue-500 bg-[#060a14]">
+                            <span class="text-[10px] sm:text-[11px] text-gray-400 leading-tight">
+                                Я выражаю согласие на обработку моих персональных данных в соответствии с <a href="oferta.html#consent" target="_blank" class="text-sky-400 underline hover:text-sky-300">Согласием на обработку ПД</a>. *
+                            </span>
+                        </label>
+                        <label class="flex items-start gap-2.5 cursor-pointer">
+                            <input type="checkbox" required class="mt-1 w-4 h-4 rounded border-indigo-900/60 text-blue-600 focus:ring-blue-500 bg-[#060a14]">
+                            <span class="text-[10px] sm:text-[11px] text-gray-400 leading-tight">
+                                Я ознакомлен и принимаю условия <a href="oferta.html#privacy" target="_blank" class="text-sky-400 underline hover:text-sky-300">Политики конфиденциальности</a> и <a href="oferta.html#offer" target="_blank" class="text-sky-400 underline hover:text-sky-300">Публичной оферты</a>. *
+                            </span>
+                        </label>
+                    </div>
+                </form>
+
+                <!-- Сообщение об успешной отправке -->
+                <div id="analysisSuccessBox" class="hidden text-center py-6">
+                    <div class="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-3">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold font-['Oswald'] uppercase text-white mb-1">Заявка принята!</h4>
+                    <p class="text-gray-300 text-xs">Эксперт консорциума свяжется с вами в течение 15 минут.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======================================================= -->
+        <!-- СЕКЦИЯ 2: ФЕДЕРАЛЬНЫЕ СМИ С ОРИГИНАЛЬНЫМИ ЛОГОТИПАМИ    -->
+        <!-- ======================================================= -->
+        <div class="mb-16 sm:mb-20 pt-8 border-t border-indigo-900/40">
+            <div class="text-center w-full mx-auto mb-8">
+                <h3 class="text-xs sm:text-sm md:text-base lg:text-lg font-bold uppercase tracking-wider text-gray-200 font-['Oswald'] whitespace-normal">
+                    ФЕДЕРАЛЬНЫЕ СМИ О КЛЮЧЕВЫХ ИНИЦИАТИВАХ И ПРАКТИЧЕСКИХ РЕЗУЛЬТАТАХ КОНСОРЦИУМА «ПРЕДПРИНИМАЙ»
+                </h3>
+            </div>
+
+            <!-- Сетка 6 СМИ с оригинальными логотипами -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-5 items-stretch">
+                
+                <!-- 1. Росмолодёжь -->
+                <a href="https://fadm.gov.ru/news/v-arteke-zavershilsya-final-shestogo-sezona-bolshoy-peremeny-sredi-starsheklassnikov/" target="_blank" rel="noopener noreferrer" class="bg-[#0b1120] border border-indigo-900/50 hover:border-blue-500 rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
+                    <div class="h-14 w-full flex items-center justify-center p-1">
+                        <img src="Спикеры/Лого/Росмолодежь.png" alt="Росмолодёжь" class="max-h-full max-w-[130px] object-contain filter group-hover:brightness-110 transition">
+                    </div>
+                    <span class="text-[11px] font-semibold text-gray-300 group-hover:text-blue-400 mt-2 transition">Росмолодёжь</span>
+                </a>
+
+                <!-- 2. Lenta.ru -->
+                <a href="https://lenta.ru/" target="_blank" rel="noopener noreferrer" class="bg-[#0b1120] border border-indigo-900/50 hover:border-blue-500 rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
+                    <div class="h-14 w-full flex items-center justify-center p-1">
+                        <svg class="h-8 w-auto text-white group-hover:text-blue-400 transition" viewBox="0 0 120 30" fill="currentColor">
+                            <text x="0" y="22" font-family="'Oswald', sans-serif" font-weight="900" font-size="22" letter-spacing="2">LENTA·RU</text>
+                        </svg>
+                    </div>
+                    <span class="text-[11px] font-semibold text-gray-300 group-hover:text-blue-400 mt-2 transition">Lenta.ru</span>
+                </a>
+
+                <!-- 3. Комсомольская правда -->
+                <a href="https://www.ural.kp.ru/" target="_blank" rel="noopener noreferrer" class="bg-[#0b1120] border border-indigo-900/50 hover:border-blue-500 rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
+                    <div class="h-14 w-full flex items-center justify-center p-1 bg-white rounded-lg">
+                        <img src="Спикеры/Лого/Комсомольскакя правда.jpg" alt="Комсомольская правда" class="max-h-full max-w-[120px] object-contain">
+                    </div>
+                    <span class="text-[11px] font-semibold text-gray-300 group-hover:text-blue-400 mt-2 transition">Комсомольская правда</span>
+                </a>
+
+                <!-- 4. Добро.live -->
+                <a href="https://dobro.live/" target="_blank" rel="noopener noreferrer" class="bg-[#0b1120] border border-indigo-900/50 hover:border-blue-500 rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
+                    <div class="h-14 w-full flex items-center justify-center p-1">
+                        <svg class="h-8 w-auto text-emerald-400 group-hover:text-emerald-300 transition" viewBox="0 0 130 30" fill="currentColor">
+                            <circle cx="12" cy="15" r="8" fill="#10b981"/>
+                            <text x="26" y="21" font-family="sans-serif" font-weight="800" font-size="16" fill="#ffffff">ДОБРО<tspan fill="#10b981">.LIVE</tspan></text>
+                        </svg>
+                    </div>
+                    <span class="text-[11px] font-semibold text-gray-300 group-hover:text-blue-400 mt-2 transition">Добро.live</span>
+                </a>
+
+                <!-- 5. Росатом / Atom Media -->
+                <a href="https://rosatom.ru/" target="_blank" rel="noopener noreferrer" class="bg-[#0b1120] border border-indigo-900/50 hover:border-blue-500 rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
+                    <div class="h-14 w-full flex items-center justify-center p-1">
+                        <img src="Спикеры/Лого/Рос Атом Медиа.svg" alt="Atom Media" class="max-h-full max-w-[120px] object-contain filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition">
+                    </div>
+                    <span class="text-[11px] font-semibold text-gray-300 group-hover:text-blue-400 mt-2 transition">Росатом / Atom Media</span>
+                </a>
+
+                <!-- 6. Выставка Россия / Нац. Центр -->
+                <a href="https://russia.ru/" target="_blank" rel="noopener noreferrer" class="bg-[#0b1120] border border-indigo-900/50 hover:border-blue-500 rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
+                    <div class="h-14 w-full flex items-center justify-center p-1">
+                        <img src="Спикеры/Лого/Россия Нац центр.svg" alt="Национальный центр «Россия»" class="max-h-full max-w-[120px] object-contain filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition">
+                    </div>
+                    <span class="text-[11px] font-semibold text-gray-300 group-hover:text-blue-400 mt-2 transition">Выставка «Россия»</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ======================================================= -->
+        <!-- СЕКЦИЯ 3: НАВИГАЦИЯ, ДОКУМЕНТЫ В 2 КОЛОНКИ И СОЦСЕТИ     -->
+        <!-- ======================================================= -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-12 border-t border-indigo-900/40 pt-10">
+            
+            <!-- Колонка 1: О проекте -->
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-wider text-blue-400 mb-4 font-['Oswald']">
+                    О ПРОЕКТЕ
+                </h4>
+                <ul class="space-y-2.5 text-xs text-gray-300">
+                    <li><a href="index.html#context" class="hover:text-white transition">Миссия и три интеллекта</a></li>
+                    <li><a href="index.html#program" class="hover:text-white transition">Программа бизнес-интенсива</a></li>
+                    <li><a href="speakers.html" target="_blank" class="hover:text-white transition">Эксперты и спикеры</a></li>
+                    <li><a href="index.html#locations" class="hover:text-white transition">Синара Центр (Локация)</a></li>
+                    <li><a href="index.html#pricing" class="hover:text-white transition">Тарифы и форматы</a></li>
+                </ul>
+            </div>
+
+            <!-- Колонка 2: Участникам и сервисы -->
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-wider text-blue-400 mb-4 font-['Oswald']">
+                    УЧАСТНИКАМ
+                </h4>
+                <ul class="space-y-2.5 text-xs text-gray-300">
+                    <li><a href="#tripwire" class="hover:text-white transition">Бизнес-разбор</a></li>
+                    <li><a href="sponsors.html#matrix" target="_blank" class="hover:text-white transition">Бизнес-галерея (Выставка)</a></li>
+                    <li><a href="#quiz" class="hover:text-white transition">Экспресс-аудит</a></li>
+                    <li><a href="https://max.ru/join/vvis7juMXRSkY_GDoM_1vIoLBhfEJEyjTaa3JucmVLo" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Сообщество лидеров в MAX</a></li>
+                    <li><a href="https://t.me/andreydereev" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Telegram: @andreydereev</a></li>
+                </ul>
+            </div>
+
+            <!-- Колонка 3: B2B Партнёрство -->
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-wider text-blue-400 mb-4 font-['Oswald']">
+                    ПАРТНЁРСТВО B2B
+                </h4>
+                <ul class="space-y-2.5 text-xs text-gray-300">
+                    <li><a href="sponsors.html#packages" target="_blank" class="hover:text-white transition">Генеральный партнёр</a></li>
+                    <li><a href="sponsors.html#packages" target="_blank" class="hover:text-white transition">Официальный партнёр</a></li>
+                    <li><a href="sponsors.html#packages" target="_blank" class="hover:text-white transition">Технологический AI-партнёр</a></li>
+                    <li><a href="sponsors.html#matrix" target="_blank" class="hover:text-white transition">Стенд в Бизнес-галерее</a></li>
+                    <li><a href="sponsors.html#leadform" target="_blank" class="hover:text-white transition">Скачать презентацию спонсора</a></li>
+                </ul>
+            </div>
+
+            <!-- Колонка 4: Соцсети и быстрые контакты с Pro-иконками -->
+            <div>
+                <h4 class="text-sm font-bold uppercase tracking-wider text-blue-400 mb-4 font-['Oswald']">
+                    МЫ В СОЦСЕТЯХ
+                </h4>
+                <p class="text-xs text-gray-400 mb-3">Официальные каналы и прямая связь:</p>
+                <div class="flex items-center gap-3 mb-5">
+                    <!-- Telegram Pro Icon -->
+                    <a href="https://t.me/andreydereev" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-2xl bg-[#0c1322] border border-indigo-900/60 hover:border-sky-400 p-2 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-sky-500/20 hover:scale-105 group" title="Telegram: Служба экспертного сопровождения">
+                        <svg class="w-full h-full" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="12" fill="#24A1DE"/>
+                            <path d="M16.64 8.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.05-.48-.83-.27-1.49-.42-1.43-.88.03-.24.38-.49 1.04-.75 4.07-1.77 6.78-2.94 8.14-3.51 3.87-1.62 4.67-1.9 5.2-1.91.12 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.18-.04.34z" fill="white"/>
+                        </svg>
+                    </a>
+                    <!-- ВКонтакте Pro Icon -->
+                    <a href="https://vk.ru/territoryup" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-2xl bg-[#0c1322] border border-indigo-900/60 hover:border-blue-500 p-2 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-blue-500/20 hover:scale-105 group" title="ВКонтакте: «Территория Роста»">
+                        <img src="vk-icon-blue-512x512.png" alt="ВКонтакте" class="w-full h-full object-contain">
+                    </a>
+                    <!-- MAX Pro Icon -->
+                    <a href="https://max.ru/join/vvis7juMXRSkY_GDoM_1vIoLBhfEJEyjTaa3JucmVLo" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-2xl bg-[#0c1322] border border-indigo-900/60 hover:border-purple-400 p-2 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-purple-500/20 hover:scale-105 group overflow-hidden" title="Сообщество лидеров в MAX">
+                        <img src="Спикеры/Лого/Макс Иконка.webp" alt="MAX" class="w-full h-full object-contain rounded-xl scale-150">
+                    </a>
+                </div>
+                <div class="text-xs text-gray-300 space-y-1">
+                    <div><a href="tel:+79826844399" class="hover:text-blue-400 transition font-semibold">+7 (982) 684-43-99</a></div>
+                    <div><a href="mailto:pr@predprinimy-consortium.ru" class="hover:text-blue-400 transition font-semibold">pr@predprinimy-consortium.ru</a></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ======================================================= -->
+        <!-- СЕКЦИЯ 4: ПРАВОВЫЕ ДОКУМЕНТЫ В 2 ПАРАЛЛЕЛЬНЫЕ КОЛОНКИ     -->
+        <!-- ======================================================= -->
+        <div class="border-t border-indigo-900/40 pt-6 pb-6">
+            <div class="text-[11px] font-bold uppercase tracking-widest text-gray-400 mb-3">
+                Правовые документы и соглашения
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-xs text-gray-400">
+                <div class="flex flex-col space-y-2">
+                    <a href="oferta.html#offer" target="_blank" class="hover:text-blue-400 transition flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500/70"></span>
+                        Публичная оферта на оказание услуг
+                    </a>
+                    <a href="oferta.html#privacy" target="_blank" class="hover:text-blue-400 transition flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500/70"></span>
+                        Политика в отношении обработки персональных данных
+                    </a>
+                    <a href="oferta.html#consent" target="_blank" class="hover:text-blue-400 transition flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500/70"></span>
+                        Согласие на обработку персональных данных
+                    </a>
+                </div>
+                <div class="flex flex-col space-y-2">
+                    <a href="oferta.html#consent" target="_blank" class="hover:text-blue-400 transition flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-purple-500/70"></span>
+                        Согласие на распространение персональных данных
+                    </a>
+                    <a href="oferta.html#consent" target="_blank" class="hover:text-blue-400 transition flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-purple-500/70"></span>
+                        Согласие на получение рекламной рассылки
+                    </a>
+                    <a href="oferta.html#cookie" target="_blank" class="hover:text-blue-400 transition flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-purple-500/70"></span>
+                        Политика использования файлов cookie
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======================================================= -->
+        <!-- СЕКЦИЯ 5: ФИНАЛЬНАЯ СТРОКА С РЕКВИЗИТАМИ И СТРЕЛКОЙ НАВЕРХ -->
+        <!-- ======================================================= -->
+        <div class="border-t border-indigo-900/40 pt-5 mt-2 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-gray-400">
+            <div class="leading-relaxed text-center md:text-left">
+                © 2026 «ТЕРРИТОРИЯ РОСТА» • ® ТМ «ПРЕДПРИНИМАЙ» • ООО «Метаполис» • ИНН 6685102534 | ОГРН 1156658079633 • Юр. адрес: 197022, г. Санкт-Петербург, Каменноостровский пр-кт, дом 26-28, литера А, пом. 12-Н • Тел.: <a href="tel:+79826844399" class="hover:text-blue-400 transition underline">+7 (982) 684-43-99</a>, E-mail: <a href="mailto:pr@predprinimy-consortium.ru" class="hover:text-blue-400 transition underline">pr@predprinimy-consortium.ru</a>
+            </div>
+            
+            <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="flex-shrink-0 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 hover:text-white transition" title="Вернуться к началу страницы">
+                <span>Наверх</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+            </a>
+        </div>
+
+    </div>
+</footer>
+
+    <!-- СКРИПТ ПЕРЕКЛЮЧЕНИЯ ДОКУМЕНТОВ И АВТО-ПЕРЕХОДА ПО ЯКОРЮ -->
+    <script>
+        function showDoc(docId) {
+            // Скрыть все документы
+            const docs = document.querySelectorAll('.legal-doc-container');
+            docs.forEach(doc => doc.classList.add('hidden'));
+            
+            // Снять активный класс со всех кнопок меню
+            const buttons = document.querySelectorAll('.legal-menu-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Показать выбранный документ
+            const targetDoc = document.getElementById('doc-' + docId);
+            if (targetDoc) {
+                targetDoc.classList.remove('hidden');
+            }
+            
+            // Подсветить кнопку меню
+            const targetBtn = document.getElementById('btn-' + docId);
+            if (targetBtn) {
+                targetBtn.classList.add('active');
+            }
+        }
+
+        // Авто-переключение при загрузке страницы по хэшу
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && ['offer', 'privacy', 'consent', 'media', 'cookie'].includes(hash)) {
+                showDoc(hash);
+                // Плавная прокрутка к блоку
+                const docElement = document.getElementById('doc-' + hash);
+                if (docElement) {
+                    docElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            } else {
+                // По умолчанию показываем оферту
+                showDoc('offer');
+            }
+        });
+
+        // Слушатель смены хэша в URL
+        window.addEventListener('hashchange', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && ['offer', 'privacy', 'consent', 'media', 'cookie'].includes(hash)) {
+                showDoc(hash);
+            }
+        });
+    </script>
+</body>
+</html>
