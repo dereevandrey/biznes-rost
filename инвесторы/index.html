@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Инвесторы — Территория Роста 2026</title>
+  <meta name="description" content="Интерактивная веб-презентация «Территория Роста 2026» в стиле бизнес-рост.рф">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="icon" type="image/png" href="../assets/img/TR_MASTER_FINAL_WHITE.png">
+</head>
+<body>
+  <!-- Ambient Orbs -->
+  <div class="orb-container">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  
+  <!-- Модальное окно ввода пароля (VIP Access) -->
+  <div class="password-modal-overlay" id="passwordModal">
+    <div class="password-modal">
+      <div class="password-icon">🔒</div>
+      <h2 class="password-title">МАТЕРИАЛ ДЛЯ ИНВЕСТОРОВ</h2>
+      <p class="password-desc">
+        Данная презентация содержит финансовую модель, параметры доходности и условия входа. Доступ предоставляется индивидуально.
+      </p>
+      <div class="password-input-row">
+        <input type="password" id="investorPassInput" class="password-input" placeholder="ВВЕДИТЕ ПАРОЛЬ" onkeydown="if(event.key==='Enter') checkInvestorPasscode()">
+        <button class="nav-btn primary" onclick="checkInvestorPasscode()">Войти</button>
+      </div>
+      <div class="password-error" id="passError">Неверный пароль. Попробуйте снова.</div>
+      <div style="margin-top: 20px; border-top: 1px solid var(--glass-border); padding-top: 16px;">
+        <a href="https://t.me/dereev_life" target="_blank" class="contact-btn-link telegram" style="width: 100%; justify-content: center; font-size: 14.5px;">
+          ✈️ Запросить пароль у Андрея Дереева
+        </a>
+      </div>
+    </div>
+  </div>
+  <script>
+    if (sessionStorage.getItem('investor_auth') === 'true') {
+      document.getElementById('passwordModal').style.display = 'none';
+    }
+  </script>
+
+
+  <!-- Top Navigation Header -->
+  <header class="top-nav">
+    <div class="brand-left">
+      <a href="../index.html" style="display: flex; align-items: center; gap: 14px; text-decoration: none;">
+        <img src="../assets/img/consortium_logo_dark.png" alt="Консорциум" class="brand-logo-consortium" data-prefix="../">
+        <img src="../assets/img/TR_MASTER_FINAL_WHITE.png" alt="Территория Роста" class="brand-logo-tr" data-prefix="../">
+      </a>
+      <span class="deck-title-badge">Инвестиционная возможность (VIP)</span>
+    </div>
+
+    <div class="nav-controls">
+      <button class="nav-btn" id="modeToggle" title="Переключить вид для смартфона">📱 Лента</button>
+      <button class="nav-btn" id="themeToggle" title="Переключить тему">☀️ Светлая</button>
+      <button class="nav-btn" id="shareBtn" title="Поделиться ссылкой">🔗 Поделиться</button>
+      <a href="../index.html" class="nav-btn primary">📁 Все презентации</a>
+    </div>
+  </header>
+
+  <!-- Presentation Main Viewport -->
+  <main class="presentation-container">
+    <div class="deck-viewport">
+      
+      <!-- Slide 1 -->
+      <section class="slide-frame cover-slide active">
+        <div class="cover-logos">
+          <img src="../assets/img/consortium_logo_dark.png" alt="Консорциум" class="brand-logo-consortium" data-prefix="../" style="height: 48px;">
+          <img src="../assets/img/TR_MASTER_FINAL_WHITE.png" alt="Территория Роста" class="brand-logo-tr" data-prefix="../" style="height: 64px;">
+        </div>
+        <h1 class="cover-manifesto">
+          БИЗНЕС-ПРАКТИКУМ, ГДЕ ВАША КОМАНДА С ПОМОЩЬЮ ЭКСПЕРТОВ И ИСКУССТВЕННОГО ИНТЕЛЛЕКТА ПРЕВРАТИТ РЕАЛЬНЫЕ ЗАДАЧИ БИЗНЕСА В СОГЛАСОВАННУЮ СТРАТЕГИЮ НА 6–12 МЕСЯЦЕВ
+        </h1>
+        <div class="cover-track-badge">— ИНВЕСТИЦИОННАЯ ВОЗМОЖНОСТЬ (VIP) —</div>
+      </section>
+
+      <!-- Slide 2 -->
+      <section class="slide-frame">
+        <div class="slide-header">
+          <h2 class="slide-title">ПОЧЕМУ СЕЙЧАС: ТРАНСФОРМАЦИЯ РЫНКА B2B И ИИ</h2>
+          <p class="slide-subtitle">«Территория Роста» занимает уникальную нишу прикладной бизнес-акселерации полного цикла.</p>
+        </div>
+        <div class="cards-grid-3">
+          <div class="glass-card"><div class="card-top"><span class="tag-pill">СПРОС НА РОСТ</span><h3 class="card-title">Запрос на эффективность</h3><p class="card-desc">Компании переходят от хаотичного развития к выверенным стратегиям с оцифрованными метриками.</p></div></div>
+          <div class="glass-card highlight"><div class="card-top"><span class="tag-pill active">БУМ ИИ-ТЕХНОЛОГИЙ</span><h3 class="card-title">Новый уклад</h3><p class="card-desc">Бизнесу нужны не теоретические курсы, а готовые конвейеры внедрения ИИ-агентов в процессы.</p></div></div>
+          <div class="glass-card"><div class="card-top"><span class="tag-pill">РЕГИОНАЛЬНЫЙ ФОКУС</span><h3 class="card-title">Энергия территорий</h3><p class="card-desc">Урал — мощнейший промышленный хаб с колоссальной концентрацией платежеспособных бизнесов.</p></div></div>
+        </div>
+      </section>
+
+      <!-- Slide 3 -->
+      <section class="slide-frame">
+        <div class="slide-header">
+          <h2 class="slide-title">ФИНАНСОВЫЕ ОРИЕНТИРЫ: МАСШТАБ ОДНОГО СОБЫТИЯ</h2>
+          <p class="slide-subtitle">Экономика одного запуска демонстрирует устойчивую инвестиционную привлекательность.</p>
+        </div>
+        <div class="cards-grid-3">
+          <div class="glass-card highlight"><div class="card-top"><span class="tag-pill active">ОБОРОТ СОБЫТИЯ</span><h3 class="card-title">15–25 млн ₽</h3><p class="card-desc">Плановый объем совокупной выручки одного флагманского запуска в регионе.</p></div></div>
+          <div class="glass-card"><div class="card-top"><span class="tag-pill">ЧИСТАЯ ПРИБЫЛЬ</span><h3 class="card-title">6–10 млн ₽</h3><p class="card-desc">Расчетная чистая прибыль проекта после покрытия всех прямых расходов.</p></div></div>
+          <div class="glass-card"><div class="card-top"><span class="tag-pill">ОКУПАЕМОСТЬ</span><h3 class="card-title">До 3 месяцев</h3><p class="card-desc">Полный возврат инвестиций инвестора по итогам проведения саммита.</p></div></div>
+        </div>
+      </section>
+
+      <!-- Slide 4 -->
+      <section class="slide-frame">
+        <div class="slide-header">
+          <h2 class="slide-title">ЗАПРОС НА ИНВЕСТИЦИИ: ПАРАМЕТРЫ ПРЕДЛОЖЕНИЯ</h2>
+          <p class="slide-subtitle">Мы привлекаем смарт-инвестиции для финансирования оборотного капитала и масштабирования.</p>
+        </div>
+        <div class="cards-grid-3">
+          <div class="glass-card highlight"><div class="card-top"><span class="tag-pill active">ОБЪЕМ ИНВЕСТИЦИЙ</span><h3 class="card-title">3 – 5 млн ₽</h3><p class="card-desc">Транши на маркетинг, раннее бронирование Синара Центра и упаковку продукта.</p></div></div>
+          <div class="glass-card"><div class="card-top"><span class="tag-pill">ДОХОДНОСТЬ</span><h3 class="card-title">30 – 50% годовых</h3><p class="card-desc">Фиксированный процент или участие в чистой прибыли с приоритетным возвратом тела.</p></div></div>
+          <div class="glass-card"><div class="card-top"><span class="tag-pill">ГАРАНТИИ</span><h3 class="card-title">Прозрачный контроль</h3><p class="card-desc">Доступ к сквозной CRM-аналитике, движению средств по счетам и еженедельным отчетам.</p></div></div>
+        </div>
+      </section>
+
+      <!-- Slide 5: Contacts -->
+      <section class="slide-frame">
+        <div class="slide-header">
+          <h2 class="slide-title">СЛЕДУЮЩИЙ ШАГ: ОБСУДИМ ИНВЕСТИЦИОННУЮ МОДЕЛЬ</h2>
+          <p class="slide-subtitle">На встрече разберем подробную финансовую модель, план продаж и сценарии доходности.</p>
+        </div>
+        <div class="contact-container">
+          <div class="glass-card highlight contact-card-inner">
+            <span class="tag-pill active">ОРГАНИЗАЦИОННЫЙ КОМИТЕТ</span>
+            <div class="contact-person-name">Андрей Дереев</div>
+            <div class="contact-person-role">Основатель консорциума «ПРЕДПРИНИМАЙ»</div>
+            <div class="contact-links-row">
+              <a href="https://t.me/dereev_life" target="_blank" class="contact-btn-link telegram">✈️ Telegram: @dereev_life</a>
+              <a href="https://бизнес-рост.рф" target="_blank" class="contact-btn-link">🌐 бизнес-рост.рф</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Bottom Interactive Bar -->
+  <nav class="bottom-bar">
+    <button class="nav-btn" id="prevBtn" title="Предыдущий слайд (←)">← Назад</button>
+    <div class="slide-dots" id="slideDots"></div>
+    <span class="progress-counter" id="progressCounter">1 / 1</span>
+    <button class="nav-btn primary" id="nextBtn" title="Следующий слайд (→ / Пробел)">Вперёд →</button>
+  </nav>
+
+  <script src="../assets/presentation.js"></script>
+</body>
+</html>

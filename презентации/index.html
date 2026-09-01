@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Территория Роста 2026 — Каталог интерактивных презентаций</title>
+  <meta name="description" content="Официальный каталог презентаций бизнес-практикума «Территория Роста 2026».">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="icon" type="image/png" href="../assets/img/TR_MASTER_FINAL_WHITE.png">
+  <style>
+    .hub-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 100px 24px 60px 24px;
+      position: relative;
+      z-index: 10;
+    }
+    .hub-hero {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .hub-title {
+      font-family: var(--font-title);
+      font-size: 48px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 14px;
+      color: var(--text-main);
+    }
+    .hub-subtitle {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 820px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    .decks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 28px;
+      margin-top: 40px;
+    }
+    .deck-hub-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(28px) saturate(180%);
+      -webkit-backdrop-filter: blur(28px) saturate(180%);
+      border-radius: 22px;
+      padding: 32px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+      color: var(--text-main);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    .deck-hub-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-cyan);
+      box-shadow: 0 15px 45px rgba(37, 99, 235, 0.35);
+      background: var(--glass-active-bg);
+    }
+    .deck-hub-card.locked {
+      border-color: rgba(239, 68, 68, 0.35);
+    }
+    .deck-hub-card.locked:hover {
+      border-color: #ef4444;
+      box-shadow: 0 15px 45px rgba(239, 68, 68, 0.3);
+    }
+    .deck-num-tag {
+      font-family: var(--font-title);
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--accent-cyan);
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    .deck-num-tag.vip {
+      color: #f59e0b;
+    }
+    .deck-hub-title {
+      font-family: var(--font-title);
+      font-size: 30px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .deck-hub-desc {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+    .deck-hub-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--glass-border);
+    }
+    .deck-hub-slides-count {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .deck-open-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent-cyan);
+    }
+  </style>
+</head>
+<body>
+  <!-- Ambient Orbs -->
+  <div class="orb-container">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <header class="top-nav">
+    <div class="brand-left">
+      <img src="../assets/img/consortium_logo_dark.png" alt="Консорциум" class="brand-logo-consortium" data-prefix="../">
+      <img src="../assets/img/TR_MASTER_FINAL_WHITE.png" alt="Территория Роста" class="brand-logo-tr" data-prefix="../">
+    </div>
+    <div class="nav-controls">
+      <button class="nav-btn" id="themeToggle" title="Переключить тему">☀️ Светлая</button>
+      <a href="https://t.me/dereev_life" target="_blank" class="nav-btn primary">✈️ Связаться в Telegram</a>
+    </div>
+  </header>
+
+  <main class="hub-container">
+    <div class="hub-hero">
+      <h1 class="hub-title">ИНТЕРАКТИВНЫЕ ВЕБ-ПРЕЗЕНТАЦИИ</h1>
+      <p class="hub-subtitle">
+        Официальные материалы бизнес-практикума «Территория Роста 2026». Адаптированы для комфортного чтения на смартфонах и демонстрации на экранах.
+      </p>
+    </div>
+
+    <div class="decks-grid">
+      <!-- 01 -->
+      <a href="../галерея/index.html" class="deck-hub-card">
+        <div>
+          <span class="deck-num-tag">ПРЕЗЕНТАЦИЯ № 01</span>
+          <h2 class="deck-hub-title">Бизнес-галерея решений</h2>
+          <p class="deck-hub-desc">Предложение для сервисных B2B-компаний, экспонентов и поставщиков IT/финансовых/HR решений.</p>
+        </div>
+        <div class="deck-hub-footer">
+          <span class="deck-hub-slides-count">📄 11 слайдов • 16:9 & Mobile</span>
+          <span class="deck-open-btn">Смотреть презентацию →</span>
+        </div>
+      </a>
+
+      <!-- 02 -->
+      <a href="../участники/index.html" class="deck-hub-card">
+        <div>
+          <span class="deck-num-tag">ПРЕЗЕНТАЦИЯ № 02</span>
+          <h2 class="deck-hub-title">Участники бизнес-интенсива</h2>
+          <p class="deck-hub-desc">Программа для собственников и управленческих команд: решение реальных задач компании с помощью ИИ и экспертов.</p>
+        </div>
+        <div class="deck-hub-footer">
+          <span class="deck-hub-slides-count">📄 14 слайдов • 16:9 & Mobile</span>
+          <span class="deck-open-btn">Смотреть презентацию →</span>
+        </div>
+      </a>
+
+      <!-- 03 -->
+      <a href="../эксперты/index.html" class="deck-hub-card">
+        <div>
+          <span class="deck-num-tag">ПРЕЗЕНТАЦИЯ № 03</span>
+          <h2 class="deck-hub-title">Эксперты и спикеры</h2>
+          <p class="deck-hub-desc">Условия сотрудничества для хедлайнеров, трекеров, наставников и членов судейской коллегии.</p>
+        </div>
+        <div class="deck-hub-footer">
+          <span class="deck-hub-slides-count">📄 18 слайдов • 16:9 & Mobile</span>
+          <span class="deck-open-btn">Смотреть презентацию →</span>
+        </div>
+      </a>
+
+      <!-- 04 -->
+      <a href="../партнеры/index.html" class="deck-hub-card">
+        <div>
+          <span class="deck-num-tag">ПРЕЗЕНТАЦИЯ № 04</span>
+          <h2 class="deck-hub-title">Партнёры и спонсоры</h2>
+          <p class="deck-hub-desc">Пакеты генерального и отраслевого спонсорства, статус стратегического партнера и доступ к ЛПР.</p>
+        </div>
+        <div class="deck-hub-footer">
+          <span class="deck-hub-slides-count">📄 14 слайдов • 16:9 & Mobile</span>
+          <span class="deck-open-btn">Смотреть презентацию →</span>
+        </div>
+      </a>
+
+      <!-- 06 -->
+      <a href="../консорциум/index.html" class="deck-hub-card">
+        <div>
+          <span class="deck-num-tag">ПРЕЗЕНТАЦИЯ № 05</span>
+          <h2 class="deck-hub-title">Консорциум «ПРЕДПРИНИМАЙ»</h2>
+          <p class="deck-hub-desc">Масштабная экосистема созидания: бизнес-акселерация, wellbeing-контур и молодежные инициативы.</p>
+        </div>
+        <div class="deck-hub-footer">
+          <span class="deck-hub-slides-count">📄 23 слайда • 16:9 & Mobile</span>
+          <span class="deck-open-btn">Смотреть презентацию →</span>
+        </div>
+      </a>
+
+      <!-- 05: ИНВЕСТОРЫ (ПОД ПАРОЛЕМ) -->
+      <a href="../инвесторы/index.html" class="deck-hub-card locked">
+        <div>
+          <span class="deck-num-tag vip">🔒 ЗАКРЫТЫЙ МАТЕРИАЛ (VIP)</span>
+          <h2 class="deck-hub-title">Инвесторы</h2>
+          <p class="deck-hub-desc">Инвестиционная модель масштабирования проекта, юнит-экономика, доходность и гарантии (доступ по паролю).</p>
+        </div>
+        <div class="deck-hub-footer">
+          <span class="deck-hub-slides-count">📄 15 слайдов • Доступ по PIN</span>
+          <span class="deck-open-btn" style="color: #f59e0b;">Ввести пароль 🔒 →</span>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <script src="../assets/presentation.js"></script>
+</body>
+</html>
