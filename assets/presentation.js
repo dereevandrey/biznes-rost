@@ -186,14 +186,16 @@ function checkInvestorPasscode() {
   const error = document.getElementById('passError');
   const modal = document.getElementById('passwordModal');
   
-  const val = input ? input.value.trim().toUpperCase() : '';
-  if (val === '2026' || val === 'GROWTH2026' || val === 'ИНВЕСТОР') {
+  const rawVal = input ? input.value.trim().toUpperCase() : '';
+  const cleanVal = rawVal.replace(/\s+/g, '');
+  
+  if (cleanVal === 'РОСТ2026' || cleanVal === 'РОСТ 2026' || cleanVal === 'ROST2026' || cleanVal === '2026' || cleanVal === 'GROWTH2026' || cleanVal === 'ИНВЕСТОР') {
     sessionStorage.setItem('investor_auth', 'true');
     if (modal) modal.style.display = 'none';
   } else {
     if (error) {
       error.style.display = 'block';
-      error.textContent = 'Неверный пароль. Запросите доступ у организаторов.';
+      error.textContent = 'Неверный пароль. Получите пароль у организаторов.';
     }
     if (input) {
       input.value = '';
