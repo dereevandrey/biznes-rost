@@ -21,18 +21,28 @@
   <!-- Top Navigation Header -->
   <header class="top-nav">
     <div class="brand-left">
-      <a href="../index.html" style="display: flex; align-items: center; gap: 14px; text-decoration: none;">
+      <!-- Логотипы со ссылкой на главный сайт бизнес-рост.рф -->
+      <a href="https://бизнес-рост.рф/" target="_blank" title="Перейти на официальный сайт бизнес-рост.рф" style="display: flex; align-items: center; gap: 14px; text-decoration: none;">
         <img src="../assets/img/consortium_logo_dark.png" alt="Консорциум" class="brand-logo-consortium" data-prefix="../">
         <img src="../assets/img/TR_MASTER_FINAL_WHITE.png" alt="Территория Роста" class="brand-logo-tr" data-prefix="../">
       </a>
+
+      <!-- Кнопка возврата в общий каталог презентаций -->
+      <a href="../презентации/index.html" class="nav-btn" style="font-weight: 700; background: var(--glass-active-bg); border-color: var(--accent-cyan); color: #ffffff;" title="Вернуться к списку всех презентаций">
+        <span style="font-size: 16px;">←</span> Все презентации
+      </a>
+
+      <!-- Бейдж названия текущей открытой презентации -->
       <span class="deck-title-badge">Партнёры и спонсоры</span>
+
+      <!-- Переключатель режима для мобильного / ленты -->
+      <button class="nav-btn" id="modeToggle" title="Переключить вертикальную ленту для телефона">📱 Лента</button>
     </div>
 
     <div class="nav-controls">
-      <button class="nav-btn" id="modeToggle" title="Переключить вид для смартфона">📱 Лента</button>
-      <button class="nav-btn" id="themeToggle" title="Переключить тему">☀️ Светлая</button>
-      <button class="nav-btn" id="shareBtn" title="Поделиться ссылкой">🔗 Поделиться</button>
-      <a href="../index.html" class="nav-btn primary">📁 Все презентации</a>
+      <button class="nav-btn" id="themeToggle" title="Переключить светлую/тёмную тему">☀️ Светлая</button>
+      <button class="nav-btn" id="shareBtn" title="Скопировать ссылку на презентацию">🔗 Поделиться</button>
+      <a href="https://t.me/andreydereev" target="_blank" class="nav-btn primary" title="Написать организаторам в Telegram">✈️ Оргкомитет</a>
     </div>
   </header>
 
