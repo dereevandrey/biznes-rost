@@ -750,3 +750,22 @@ body.feed-mode .cards-grid-6 {
   .top-nav { padding: 0 16px; }
   .deck-title-badge { display: none; }
 }
+
+
+.contact-btn-link.telegram:hover {
+  border-color: #229ED9;
+  background: rgba(34, 158, 217, 0.18);
+  box-shadow: 0 0 20px rgba(34, 158, 217, 0.35);
+}
+
+.contact-btn-link.max-link:hover {
+  border-color: #8B5CF6;
+  background: rgba(139, 92, 246, 0.18);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.35);
+}
+
+.contact-btn-link.email:hover {
+  border-color: var(--accent-gold);
+  background: rgba(255, 184, 0, 0.18);
+  box-shadow: 0 0 20px rgba(255, 184, 0, 0.35);
+}
