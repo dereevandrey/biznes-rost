@@ -1,71 +1,186 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="dark">
+<html lang="ru" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Эксперты и спикеры — Территория Роста 2026</title>
-  <meta name="description" content="Интерактивная веб-презентация «Территория Роста 2026» в стиле бизнес-рост.рф">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/styles.css">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <style>
+    body {
+      background: var(--bg-primary, #ffffff);
+      color: var(--text-primary, #0f172a);
+      font-family: 'Manrope', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .slides-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .slide-frame {
+      background: var(--bg-secondary, #f8fafc);
+      border: 1px solid var(--border-color, #e2e8f0);
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+    .tag-pill {
+      display: inline-block;
+      background: rgba(37, 99, 235, 0.1);
+      color: #2563eb;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 6px 16px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .slide-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-primary, #0f172a);
+      margin: 15px 0 10px 0;
+      line-height: 1.2;
+    }
+    .slide-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary, #475569);
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    .cards-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .cards-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 20px;
+    }
+    .glass-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+    }
+    .glass-card.highlight {
+      border: 2px solid #2563eb;
+      background: #f0f6ff;
+    }
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 12px 0 8px 0;
+    }
+    .card-desc {
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .card-icon-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(37, 99, 235, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2563eb;
+    }
+    .card-icon-badge svg {
+      width: 22px;
+      height: 22px;
+      stroke: #2563eb;
+    }
+    .contact-container {
+      width: 100%;
+    }
+    .contact-card-inner {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 32px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .contact-links-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .btn-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-email { background: #2563eb; color: #ffffff; }
+    .btn-email:hover { background: #1d4ed8; }
+    .btn-tg { background: #0088cc; color: #ffffff; }
+    .btn-tg:hover { background: #0077b5; }
+    .btn-max { background: #7c3aed; color: #ffffff; }
+    .btn-max:hover { background: #6d28d9; }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .metric-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+    }
+    .metric-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #2563eb;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .metric-label {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+    .metric-sub {
+      font-size: 0.85rem;
+      color: #64748b;
+      line-height: 1.4;
+    }
+  </style>
 </head>
 <body>
-  <!-- Ambient Orbs -->
-  <div class="orb-container">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-  </div>
-
-  
-
-  <!-- Top Navigation Header -->
-  <header class="top-nav">
-    <div class="brand-left">
-      <!-- Логотипы со ссылкой на главный сайт бизнес-рост.рф -->
-      <a href="https://xn----9sbmhe5ajphdl.xn--p1ai/" target="_blank" title="Перейти на официальный сайт бизнес-рост.рф" style="display: flex; align-items: center; gap: 14px; text-decoration: none;">
-        <img src="../assets/img/consortium_logo_dark.png" alt="Консорциум" class="brand-logo-consortium" data-prefix="../">
-        <img src="../assets/img/TR_MASTER_FINAL_WHITE.png" alt="Территория Роста" class="brand-logo-tr" data-prefix="../">
-      </a>
-
-      <!-- Кнопка возврата в общий каталог презентаций -->
-      <a href="../презентации/index.html" class="nav-btn" style="font-weight: 700; background: var(--glass-active-bg); border-color: var(--accent-cyan); color: #ffffff;" title="Вернуться к списку всех презентаций">
-        <span style="font-size: 16px;">←</span> Все презентации
-      </a>
-
-      <!-- Бейдж названия текущей открытой презентации -->
-      <span class="deck-title-badge">Эксперты и спикеры</span>
-
-      <!-- Переключатель режима для мобильного / ленты -->
-      <button class="nav-btn" id="modeToggle" title="Переключить вертикальную ленту для телефона">📱 Лента</button>
-    </div>
-
-    <div class="nav-controls">
-      <button class="nav-btn" id="themeToggle" title="Переключить светлую/тёмную тему">☀️ Светлая</button>
-      <button class="nav-btn" id="shareBtn" title="Скопировать ссылку на презентацию">🔗 Поделиться</button>
-      <a href="https://t.me/andreydereev" target="_blank" class="nav-btn primary" title="Написать организаторам в Telegram">✈️ Оргкомитет</a>
-    </div>
-  </header>
-
-  <!-- Presentation Main Viewport -->
-  <main class="presentation-container">
-    <div class="deck-viewport">
-      
-      <!-- Slide 1 -->
-      <section class="slide-frame cover-slide active">
-        <div class="cover-logos">
-          <img src="../assets/img/consortium_logo_dark.png" alt="Консорциум" class="brand-logo-consortium" data-prefix="../" style="height: 48px;">
-          <img src="../assets/img/TR_MASTER_FINAL_WHITE.png" alt="Территория Роста" class="brand-logo-tr" data-prefix="../" style="height: 64px;">
-        </div>
-        <div class="cover-track-badge">— ПРИГЛАШЕНИЕ ЭКСПЕРТУ —</div>
-        <h1 class="cover-manifesto">ТЕРРИТОРИЯ РОСТА</h1>
-        <p class="slide-subtitle" style="text-align: center; max-width: 900px; margin: 0 auto; font-size: 26px; line-height: 1.5; color: var(--text-muted);">Семидневная среда, где сильная экспертиза становится действием команд и новым сотрудничеством.</p>
-        <div class="tag-pill active" style="font-size: 16px; padding: 12px 28px; align-self: center;">📍 5–11 октября 2026  •  Екатеринбург  •  Синара Центр</div>
+  <div class="slides-container">
+    
+      <section class="slide-frame cover-frame">
+        <div class="tag-pill" style="margin-bottom: 20px;">— ПРИГЛАШЕНИЕ ЭКСПЕРТУ —</div>
+        <h1 class="slide-title" style="font-size: 3rem; margin-bottom: 20px;">ТЕРРИТОРИЯ РОСТА</h1>
+        <p class="slide-subtitle" style="font-size: 1.3rem; max-width: 800px; margin-bottom: 30px;">Семидневная среда, где сильная экспертиза становится действием команд и новым сотрудничеством.</p>
+        <div style="font-size: 0.9rem; color: #64748b; font-weight: 600;">📍 5–11 октября 2026  •  Екатеринбург  •  Синара Центр</div>
       </section>
-
-      <!-- Slide 2 -->
+        
       <section class="slide-frame">
         <div class="slide-header">
-          <span class="tag-pill" style="margin-bottom: 10px;">КОНТЕКСТ</span><br><h2 class="slide-title">БОЛЬШЕ, ЧЕМ ОДНО СОБЫТИЕ</h2>
+          <span class="tag-pill" style="margin-bottom: 10px;">КОНТЕКСТ</span><br>
+          <h2 class="slide-title">БОЛЬШЕ, ЧЕМ ОДНО СОБЫТИЕ</h2>
           <p class="slide-subtitle">ПРЕДПРИНИМАЙ — экосистема развития человеческого капитала. Мы соединяем человека, команду и территорию, чтобы профессиональная сила превращалась в устойчивые результаты для организаций и среды.</p>
         </div>
         <div class="cards-grid-3">
@@ -73,116 +188,68 @@
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ЧЕЛОВЕК</h3>
               <p class="card-desc">Раскрывает потенциал, устойчивость и профессиональную силу в реальной работе.</p>
             </div>
           </div>
+            
           <div class="glass-card highlight">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">КОМАНДА</h3>
               <p class="card-desc">Превращает индивидуальные таланты в синергичный и устойчивый общий результат.</p>
             </div>
           </div>
+            
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ТЕРРИТОРИЯ</h3>
               <p class="card-desc">Получает новые проекты, крепкие связи и дополнительную экономическую энергию.</p>
             </div>
           </div>
+            
         </div>
       </section>
-
-      <!-- Slide 3 -->
+        
       <section class="slide-frame">
         <div class="slide-header">
           <h2 class="slide-title">ОПЫТНАЯ КОМАНДА ОРГАНИЗАТОРОВ</h2>
           <p class="slide-subtitle">Мы умеем собирать людей вокруг реальной деловой повестки. «Территория Роста» опирается на опыт Недели благополучия (Wellbeing SPACE Week).</p>
         </div>
-        <div class="cards-grid-4-metrics">
+        <div class="metrics-grid">
           
-          <div class="glass-card">
-            <div class="metric-number">200+</div>
-            <div class="metric-label">участников офлайн</div>
-            <div class="metric-sub">Очные деловые контакты</div>
-            <div style="margin-top: 16px; display: flex; justify-content: flex-end;">
-              <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-        </svg></div>
-            </div>
-          </div>
-          <div class="glass-card highlight">
-            <div class="metric-number">600+</div>
-            <div class="metric-label">участников онлайн</div>
-            <div class="metric-sub">Трансляция по всей России</div>
-            <div style="margin-top: 16px; display: flex; justify-content: flex-end;">
-              <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-        </svg></div>
-            </div>
-          </div>
-          <div class="glass-card">
+          <div class="metric-card">
             <div class="metric-number">30+</div>
-            <div class="metric-label">экспертов</div>
-            <div class="metric-sub">Сильные спикеры</div>
-            <div style="margin-top: 16px; display: flex; justify-content: flex-end;">
-              <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-            <path d="M19 10v1a7 7 0 0 1-14 0v-1"></path>
-            <line x1="12" y1="19" x2="12" y2="23"></line>
-            <line x1="8" y1="23" x2="16" y2="23"></line>
-        </svg></div>
-            </div>
+            <div class="metric-label">ЭКСПЕРТЫ ФЕДЕРАЛЬНОГО УРОВНЯ</div>
+            <div class="metric-sub">в сферах финансов, здоровья, саморазвития и корпоративного благополучия</div>
           </div>
-          <div class="glass-card highlight">
-            <div class="metric-number">17</div>
-            <div class="metric-label">стран участников</div>
-            <div class="metric-sub">Из 51 региона России</div>
-            <div style="margin-top: 16px; display: flex; justify-content: flex-end;">
-              <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-        </svg></div>
-            </div>
+            
+          <div class="metric-card">
+            <div class="metric-number">600+</div>
+            <div class="metric-label">УЧАСТНИКИ ИЗ 51 РЕГИОНА РФ</div>
+            <div class="metric-sub">предприниматели и топы, а также представители 17 стран в онлайн-трансляции</div>
           </div>
+            
+          <div class="metric-card">
+            <div class="metric-number">10+</div>
+            <div class="metric-label">ПРОЕКТЫ РАЗВИТИЯ</div>
+            <div class="metric-sub">созданные решения и совместные партнерские инициативы</div>
+          </div>
+            
         </div>
       </section>
-
-      <!-- Slide 4 -->
+        
       <section class="slide-frame">
         <div class="slide-header">
-          <span class="tag-pill" style="margin-bottom: 10px;">ЗАЧЕМ СОБИРАЕМСЯ</span><br><h2 class="slide-title">ЗАДАЧА НЕ В ЗНАНИЯХ</h2>
+          <span class="tag-pill" style="margin-bottom: 10px;">ЗАЧЕМ СОБИРАЕМСЯ</span><br>
+          <h2 class="slide-title">ЗАДАЧА НЕ В ЗНАНИЯХ</h2>
           <p class="slide-subtitle">Бизнесу нужен не еще один спикер. Ему нужен путь к решению. Собственники и команды приходят с конкретными управленческими задачами: нужно увидеть узкие места, договориться о действиях и начать применять изменения.</p>
         </div>
         <div class="cards-grid-3">
@@ -190,50 +257,40 @@
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
-            <line x1="4" y1="22" x2="4" y2="15"></line>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ЗАДАЧА</h3>
               <p class="card-desc">Команда формулирует, что именно мешает ей двигаться дальше в бизнесе прямо сейчас.</p>
             </div>
           </div>
+            
           <div class="glass-card highlight">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-            <path d="M19 10v1a7 7 0 0 1-14 0v-1"></path>
-            <line x1="12" y1="19" x2="12" y2="23"></line>
-            <line x1="8" y1="23" x2="16" y2="23"></line>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ЭКСПЕРТИЗА</h3>
               <p class="card-desc">Появляется точечно в тот момент, когда она необходима для выбора точного решения.</p>
             </div>
           </div>
+            
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-    </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ПРИМЕНЕНИЕ</h3>
               <p class="card-desc">Идея переводится в конкретные измеримые действия и понятный следующий шаг.</p>
             </div>
           </div>
+            
         </div>
       </section>
-
-      <!-- Slide 5 -->
+        
       <section class="slide-frame">
         <div class="slide-header">
-          <span class="tag-pill" style="margin-bottom: 10px;">МОДЕЛЬ РАБОТЫ</span><br><h2 class="slide-title">ТРИ ИНТЕЛЛЕКТА</h2>
+          <span class="tag-pill" style="margin-bottom: 10px;">МОДЕЛЬ РАБОТЫ</span><br>
+          <h2 class="slide-title">ТРИ ИНТЕЛЛЕКТА</h2>
           <p class="slide-subtitle">Три интеллекта — один результат для команды. Мы собираем не лекционный блок, а рабочую связку: сильная экспертиза, искусственный интеллект и действия самой команды.</p>
         </div>
         <div class="cards-grid-3">
@@ -241,54 +298,40 @@
           <div class="glass-card highlight">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-            <path d="M19 10v1a7 7 0 0 1-14 0v-1"></path>
-            <line x1="12" y1="19" x2="12" y2="23"></line>
-            <line x1="8" y1="23" x2="16" y2="23"></line>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ЭКСПЕРТНЫЙ ИНТЕЛЛЕКТ</h3>
               <p class="card-desc">Ваша практика, профессиональный взгляд и язык решения сложных бизнес-проблем.</p>
             </div>
           </div>
+            
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="4" y="4" width="16" height="16" rx="2"></rect>
-            <rect x="9" y="9" width="6" height="6"></rect>
-            <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"></path>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ</h3>
               <p class="card-desc">Совместно усиливаем подготовку, глубокую работу с материалами и варианты применения.</p>
             </div>
           </div>
+            
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">КОМАНДНЫЙ ИНТЕЛЛЕКТ</h3>
               <p class="card-desc">Участники проверяют предложенный подход в своей ситуации и собирают план действий.</p>
             </div>
           </div>
+            
         </div>
       </section>
-
-      <!-- Slide 6 -->
+        
       <section class="slide-frame">
         <div class="slide-header">
-          <span class="tag-pill" style="margin-bottom: 10px;">РОЛЬ ЭКСПЕРТА</span><br><h2 class="slide-title">СОПРОВОЖДЕНИЕ ПУТИ</h2>
+          <span class="tag-pill" style="margin-bottom: 10px;">РОЛЬ ЭКСПЕРТА</span><br>
+          <h2 class="slide-title">СОПРОВОЖДЕНИЕ ПУТИ</h2>
           <p class="slide-subtitle">Не прочитать лекцию. Помочь командам пройти важный участок пути. Эксперт занимает в программе роль человека, который помогает точнее увидеть ситуацию, выбрать подход и назвать следующий шаг.</p>
         </div>
         <div class="cards-grid-3">
@@ -296,47 +339,40 @@
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-    </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ДИАГНОСТИРОВАТЬ</h3>
               <p class="card-desc">Помочь увидеть реальную ситуацию без самообмана и лишней теоретической сложности.</p>
             </div>
           </div>
+            
           <div class="glass-card highlight">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-    </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ПОКАЗАТЬ</h3>
               <p class="card-desc">Дать применимый практический подход, наглядный пример, инструмент или точный вопрос.</p>
             </div>
           </div>
+            
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">СВЯЗАТЬ</h3>
               <p class="card-desc">Открыть путь к дальнейшей совместной работе, первому пилоту или партнерству.</p>
             </div>
           </div>
+            
         </div>
       </section>
-
-      <!-- Slide 7 -->
+        
       <section class="slide-frame">
         <div class="slide-header">
-          <span class="tag-pill" style="margin-bottom: 10px;">ПУТЬ К ПРИМЕНЕНИЮ</span><br><h2 class="slide-title">ЭКСПЕРТНЫЙ МАРШРУТ</h2>
+          <span class="tag-pill" style="margin-bottom: 10px;">ПУТЬ К ПРИМЕНЕНИЮ</span><br>
+          <h2 class="slide-title">ЭКСПЕРТНЫЙ МАРШРУТ</h2>
           <p class="slide-subtitle">Экспертная сессия не заканчивается аплодисментами. Мы заранее собираем контекст, во время работы фиксируем полезный материал, а после события оставляем участнику понятный маршрут для продолжения.</p>
         </div>
         <div class="cards-grid-3">
@@ -344,49 +380,40 @@
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">01 ДО СОБЫТИЯ</h3>
               <p class="card-desc">Совместно с оргкомитетом согласуем тему, задачу и точный образ целевого участника.</p>
             </div>
           </div>
+            
           <div class="glass-card highlight">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">02 ВО ВРЕМЯ</h3>
               <p class="card-desc">Интегрируем содержание выступления с актуальными вопросами и решениями команд.</p>
             </div>
           </div>
+            
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">03 ПОСЛЕ СОБЫТИЯ</h3>
               <p class="card-desc">Даем участникам удобный способ вернуться к теме, скачать материалы и продолжить разговор.</p>
             </div>
           </div>
+            
         </div>
       </section>
-
-      <!-- Slide 8 -->
+        
       <section class="slide-frame">
         <div class="slide-header">
-          <span class="tag-pill" style="margin-bottom: 10px;">АУДИТОРИЯ</span><br><h2 class="slide-title">ЛЮДИ, ПРИНИМАЮЩИЕ РЕШЕНИЯ</h2>
+          <span class="tag-pill" style="margin-bottom: 10px;">АУДИТОРИЯ</span><br>
+          <h2 class="slide-title">ЛЮДИ, ПРИНИМАЮЩИЕ РЕШЕНИЯ</h2>
           <p class="slide-subtitle">Ваша аудитория — не слушатели в залах. Это собственники и управленческие команды. Им важны управляемость, цифровые процессы, продажи, ресурсы и способность команды проводить изменения.</p>
         </div>
         <div class="cards-grid-3">
@@ -394,54 +421,40 @@
           <div class="glass-card highlight">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">СОБСТВЕННИК</h3>
               <p class="card-desc">Ищет ясность, устойчивость и масштабирование, не завязанное только на его личном участии.</p>
             </div>
           </div>
+            
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ТОП-КОМАНДА</h3>
               <p class="card-desc">Сверяет роли, ключевые решения и взаимную ответственность за изменения.</p>
             </div>
           </div>
+            
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="4" y="4" width="16" height="16" rx="2"></rect>
-            <rect x="9" y="9" width="6" height="6"></rect>
-            <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"></path>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">РУКОВОДИТЕЛЬ ФУНКЦИИ</h3>
               <p class="card-desc">Ищет конкретный работающий инструмент для качественного улучшения своей зоны работы.</p>
             </div>
           </div>
+            
         </div>
       </section>
-
-      <!-- Slide 9 -->
+        
       <section class="slide-frame">
         <div class="slide-header">
-          <span class="tag-pill" style="margin-bottom: 10px;">ЦЕННОСТЬ ДЛЯ ЭКСПЕРТА</span><br><h2 class="slide-title">НОВАЯ ДЕЛОВАЯ СРЕДА</h2>
+          <span class="tag-pill" style="margin-bottom: 10px;">ЦЕННОСТЬ ДЛЯ ЭКСПЕРТА</span><br>
+          <h2 class="slide-title">НОВАЯ ДЕЛОВАЯ СРЕДА</h2>
           <p class="slide-subtitle">Здесь можно не только выступить. Можно занять свое прочное место в новой деловой экосистеме. Мы создаем условия для результатов, которые редко соединяются в одном событии.</p>
         </div>
         <div class="cards-grid-3">
@@ -449,48 +462,40 @@
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="8" r="7"></circle>
-            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">СТАТУС</h3>
               <p class="card-desc">Присутствие в сильной программе и среди экспертов, работающих с реальной повесткой бизнеса.</p>
             </div>
           </div>
+            
           <div class="glass-card highlight">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M22 12h-4M6 12H2M12 6V2M12 22v-4"></path>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">НОВЫЕ КЛИЕНТЫ</h3>
               <p class="card-desc">Прямой содержательный разговор с людьми, которым ваша тема жизненно необходима прямо сейчас.</p>
             </div>
           </div>
+            
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-    </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ПРОДОЛЖЕНИЕ</h3>
               <p class="card-desc">Основа для консалтинговых консультаций, пилотов, совместных продуктов и партнерских проектов.</p>
             </div>
           </div>
+            
         </div>
       </section>
-
-      <!-- Slide 10 -->
+        
       <section class="slide-frame">
         <div class="slide-header">
-          <span class="tag-pill" style="margin-bottom: 10px;">ИНФРАСТРУКТУРА СОБЫТИЯ</span><br><h2 class="slide-title">БИЗНЕС-ГАЛЕРЕЯ РЕШЕНИЙ</h2>
+          <span class="tag-pill" style="margin-bottom: 10px;">ИНФРАСТРУКТУРА СОБЫТИЯ</span><br>
+          <h2 class="slide-title">БИЗНЕС-ГАЛЕРЕЯ РЕШЕНИЙ</h2>
           <p class="slide-subtitle">Внутри саммита работает Бизнес-галерея — среда деловых решений. Это не ярмарка и не случайный поток стендов. Здесь собраны отобранные качественные сервисы для бизнеса.</p>
         </div>
         <div class="cards-grid-3">
@@ -498,49 +503,40 @@
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">15–20 мест</h3>
               <p class="card-desc">Для компаний, закрывающих реальные боли и задачи регионального бизнеса.</p>
             </div>
           </div>
+            
           <div class="glass-card highlight">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="4" y="4" width="16" height="16" rx="2"></rect>
-            <rect x="9" y="9" width="6" height="6"></rect>
-            <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"></path>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">1–2 в категории</h3>
               <p class="card-desc">Чтобы строго сохранять качество контактов и не создавать лишний шум.</p>
             </div>
           </div>
+            
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-    </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">Два потока</h3>
               <p class="card-desc">Участники очного интенсива и приглашенные предприниматели региона.</p>
             </div>
           </div>
+            
         </div>
       </section>
-
-      <!-- Slide 11 -->
+        
       <section class="slide-frame">
         <div class="slide-header">
-          <span class="tag-pill" style="margin-bottom: 10px;">СЦЕНАРИЙ СОБЫТИЯ</span><br><h2 class="slide-title">СЕМЬ ДНЕЙ СИНХРОНИЗАЦИИ</h2>
+          <span class="tag-pill" style="margin-bottom: 10px;">СЦЕНАРИЙ СОБЫТИЯ</span><br>
+          <h2 class="slide-title">СЕМЬ ДНЕЙ СИНХРОНИЗАЦИИ</h2>
           <p class="slide-subtitle">Семь дней — один непрерывный контекст работы. Экспертная роль размещается там, где она максимально усиливает движение команды: от диагностики до финала.</p>
         </div>
         <div class="cards-grid-3">
@@ -548,55 +544,40 @@
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y2="10"></line>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">5–9 ОКТЯБРЯ</h3>
               <p class="card-desc">ОНЛАЙН-ЛАБОРАТОРИЯ: Аудит бизнес-процессов, работа с базой знаний и прикладными инструментами.</p>
             </div>
           </div>
+            
           <div class="glass-card highlight">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y2="10"></line>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">10 ОКТЯБРЯ</h3>
               <p class="card-desc">«ЭМПАТИУМ»: Очная командная работа с эмоциональным интеллектом, доверием и синхронизацией.</p>
             </div>
           </div>
+            
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y2="10"></line>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">11 ОКТЯБРЯ</h3>
               <p class="card-desc">САММИТ: Защита разработанных стратегий, Бизнес-галерея, экспертные сессии и новые деловые знакомства.</p>
             </div>
           </div>
+            
         </div>
       </section>
-
-      <!-- Slide 12 -->
+        
       <section class="slide-frame">
         <div class="slide-header">
-          <span class="tag-pill" style="margin-bottom: 10px;">ФОРМАТЫ УЧАСТИЯ</span><br><h2 class="slide-title">ТОЧКА ВКЛЮЧЕНИЯ</h2>
+          <span class="tag-pill" style="margin-bottom: 10px;">ФОРМАТЫ УЧАСТИЯ</span><br>
+          <h2 class="slide-title">ТОЧКА ВКЛЮЧЕНИЯ</h2>
           <p class="slide-subtitle">Роль собирается вокруг вашей сильной стороны и конкретной задачи программы. Мы не предлагаем одинаковый сценарий всем. Важнее определить точку, где ваш опыт действительно нужен.</p>
         </div>
         <div class="cards-grid-3">
@@ -604,51 +585,40 @@
           <div class="glass-card highlight">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-            <path d="M19 10v1a7 7 0 0 1-14 0v-1"></path>
-            <line x1="12" y1="19" x2="12" y2="23"></line>
-            <line x1="8" y1="23" x2="16" y2="23"></line>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ЭКСПЕРТНАЯ СЕССИЯ</h3>
               <p class="card-desc">Выступление, разбор кейсов или практический практикум по конкретной деловой теме.</p>
             </div>
           </div>
+            
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ЭКСПЕРТНЫЙ ПАРТНЁР</h3>
               <p class="card-desc">Глубокая предварительная диагностика, полезный методический материал и дальнейшая программа.</p>
             </div>
           </div>
+            
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ПАРТНЁР-ОРГАНИЗАТОР</h3>
               <p class="card-desc">Совместная сборка крупного блока программы или курирование отдельного направления.</p>
             </div>
           </div>
+            
         </div>
       </section>
-
-      <!-- Slide 13 -->
+        
       <section class="slide-frame">
         <div class="slide-header">
-          <span class="tag-pill" style="margin-bottom: 10px;">КРИТЕРИИ ОТБОРА</span><br><h2 class="slide-title">КОГО МЫ ИЩЕМ</h2>
+          <span class="tag-pill" style="margin-bottom: 10px;">КРИТЕРИИ ОТБОРА</span><br>
+          <h2 class="slide-title">КОГО МЫ ИЩЕМ</h2>
           <p class="slide-subtitle">Нас интересует не ваша известность, а практический опыт, который команда сможет применить и проверить. В проекте особенно ценны эксперты, говорящие с первыми лицами на равных.</p>
         </div>
         <div class="cards-grid-3">
@@ -656,49 +626,40 @@
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ПРАКТИКА</h3>
               <p class="card-desc">Есть подтвержденный реальный опыт работы с бизнес-задачами и управленческими командами.</p>
             </div>
           </div>
+            
           <div class="glass-card highlight">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-    </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ЯСНОСТЬ</h3>
               <p class="card-desc">Есть редкая способность объяснять сложное простыми словами без профессионального тумана.</p>
             </div>
           </div>
+            
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-    </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">СОВМЕСТНОСТЬ</h3>
               <p class="card-desc">Есть искренний интерес работать в связке с другими экспертами и технологиями.</p>
             </div>
           </div>
+            
         </div>
       </section>
-
-      <!-- Slide 14 -->
+        
       <section class="slide-frame">
         <div class="slide-header">
-          <span class="tag-pill" style="margin-bottom: 10px;">СОТРУДНИЧЕСТВО</span><br><h2 class="slide-title">ЧЕСТНАЯ МОДЕЛЬ</h2>
+          <span class="tag-pill" style="margin-bottom: 10px;">СОТРУДНИЧЕСТВО</span><br>
+          <h2 class="slide-title">ЧЕСТНАЯ МОДЕЛЬ</h2>
           <p class="slide-subtitle">Сначала — общая задача и ваш вклад. Затем — честная модель монетизации. Мы не зовем эксперта «просто выступить». На встрече определяем тему, подготовку и форматы продолжения.</p>
         </div>
         <div class="cards-grid-3">
@@ -706,46 +667,40 @@
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-    </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">СОДЕРЖАНИЕ</h3>
               <p class="card-desc">Тема, практическая задача, формат и ожидаемый полезный материал на выходе.</p>
             </div>
           </div>
+            
           <div class="glass-card highlight">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-    </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">АУДИТОРИЯ</h3>
               <p class="card-desc">Кому из команд это действительно нужно и как мы готовим контекст до встречи.</p>
             </div>
           </div>
+            
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-    </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ПРОДОЛЖЕНИЕ</h3>
               <p class="card-desc">Как корректно организовать следующий контакт с заинтересовавшимися — строго по взаимному интересу.</p>
             </div>
           </div>
+            
         </div>
       </section>
-
-      <!-- Slide 15 -->
+        
       <section class="slide-frame">
         <div class="slide-header">
-          <span class="tag-pill" style="margin-bottom: 10px;">ФОРМАТЫ ЭФФЕКТА</span><br><h2 class="slide-title">ВЫБЕРИТЕ УРОВЕНЬ УЧАСТИЯ</h2>
+          <span class="tag-pill" style="margin-bottom: 10px;">ФОРМАТЫ ЭФФЕКТА</span><br>
+          <h2 class="slide-title">ВЫБЕРИТЕ УРОВЕНЬ УЧАСТИЯ</h2>
           <p class="slide-subtitle">Выберите формат, который соответствует вашему уровню участия. Оба варианта строятся вокруг вашей темы и могут продолжиться совместной работой с «Территорией Роста».</p>
         </div>
         <div class="cards-grid-3">
@@ -753,46 +708,40 @@
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-    </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ДИСТАНЦИОННОЕ</h3>
               <p class="card-desc">Прямой эфир, структурированная теория, советы по внедрению и электронный сертификат.</p>
             </div>
           </div>
+            
           <div class="glass-card highlight">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-    </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ЛИЧНОЕ</h3>
               <p class="card-desc">Очный блок в Екатеринбурге, практикум, живые встречи, диплом и признание на сцене.</p>
             </div>
           </div>
+            
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-    </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ОБЪЕДИНЁННОЕ</h3>
               <p class="card-desc">При необходимости соединяем оба формата для максимального эффекта для участников.</p>
             </div>
           </div>
+            
         </div>
       </section>
-
-      <!-- Slide 16 -->
+        
       <section class="slide-frame">
         <div class="slide-header">
-          <span class="tag-pill" style="margin-bottom: 10px;">ДИСТАНЦИОННОЕ УЧАСТИЕ</span><br><h2 class="slide-title">СИЛЬНЫЙ КОНТЕКСТ БЕЗ ПОЕЗДКИ</h2>
+          <span class="tag-pill" style="margin-bottom: 10px;">ДИСТАНЦИОННОЕ УЧАСТИЕ</span><br>
+          <h2 class="slide-title">СИЛЬНЫЙ КОНТЕКСТ БЕЗ ПОЕЗДКИ</h2>
           <p class="slide-subtitle">Вы выходите в прямой эфир, раскрываете теорию и смысл темы. Команда переводит это в практику вместе с искусственным интеллектом — при вашей экспертной поддержке.</p>
         </div>
         <div class="cards-grid-3">
@@ -800,47 +749,40 @@
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M23 7l-7 5 7 5V7z"></path>
-            <rect x="1" y="5" width="15" height="14" rx="2"></rect>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ЗАПИСЬ И СЕРТИФИКАТ</h3>
               <p class="card-desc">Качественный видеоматериал и официальный электронный сертификат эксперта «Территории Роста».</p>
             </div>
           </div>
+            
           <div class="glass-card highlight">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-    </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">НАТИВНАЯ ИНТЕГРАЦИЯ</h3>
               <p class="card-desc">Естественное знакомство участников с вашими дополнительными услугами, книгами и продуктами.</p>
             </div>
           </div>
+            
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-    </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ПРЕДСТАВИТЕЛЬСТВО</h3>
               <p class="card-desc">«Территория Роста» может продвигать ваши продукты в экосистеме по согласованной партнерской модели.</p>
             </div>
           </div>
+            
         </div>
       </section>
-
-      <!-- Slide 17 -->
+        
       <section class="slide-frame">
         <div class="slide-header">
-          <span class="tag-pill" style="margin-bottom: 10px;">ЛИЧНОЕ УЧАСТИЕ</span><br><h2 class="slide-title">ЖИВАЯ ПРАКТИКА ЭКСПЕРТИЗЫ</h2>
+          <span class="tag-pill" style="margin-bottom: 10px;">ЛИЧНОЕ УЧАСТИЕ</span><br>
+          <h2 class="slide-title">ЖИВАЯ ПРАКТИКА ЭКСПЕРТИЗЫ</h2>
           <p class="slide-subtitle">В воскресенье вы приезжаете в Екатеринбург, ведете собственный блок, сопровождаете практикум и отвечаете на вопросы команд по внедрению прямо на площадке.</p>
         </div>
         <div class="cards-grid-3">
@@ -848,75 +790,55 @@
           <div class="glass-card highlight">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M22 12h-4M6 12H2M12 6V2M12 22v-4"></path>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">ГЛУБИНА И КЛИЕНТЫ</h3>
               <p class="card-desc">Живой глубокий диалог с командами и дополнительные продажи через представительство.</p>
             </div>
           </div>
+            
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="8" r="7"></circle>
-            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">СТАТУС И ПАНЕЛИ</h3>
               <p class="card-desc">Участие в панельных дискуссиях, встречи с властью, благодарность со сцены и диплом.</p>
             </div>
           </div>
+            
           <div class="glass-card">
             <div class="card-top">
               <div class="card-header-row">
-                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M23 7l-7 5 7 5V7z"></path>
-            <rect x="1" y="5" width="15" height="14" rx="2"></rect>
-        </svg></div>
-                
+                <div class="card-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
               </div>
               <h3 class="card-title">КОНТЕНТ</h3>
               <p class="card-desc">Качественные фото и видеоматериалы с живого события для ваших коммуникаций.</p>
             </div>
           </div>
+            
         </div>
       </section>
-
-      <!-- Slide 18 -->
+        
       <section class="slide-frame">
-        <div class="slide-header" style="text-align: left; align-items: flex-start;">
-          <h2 class="slide-title">СВЯЗАТЬСЯ С ОРГКОМИТЕТОМ</h2>
-          <p class="slide-subtitle">Выберите удобный способ связи для обсуждения формата участия, партнерства или индивидуального разбора задач вашей компании.</p>
+        <div class="slide-header">
+          <span class="tag-pill" style="margin-bottom: 10px;">ОСНОВАТЕЛЬ КОНСОРЦИУМА</span><br>
+          <h2 class="slide-title">ДАВАЙТЕ ОБСУДИМ СОВМЕСТНУЮ РАБОТУ</h2>
+          <p class="slide-subtitle">Дистанционный, личный или объединенный формат: на первой встрече согласуем тему, роль, аудиторию, модель представительства и условия сотрудничества.</p>
         </div>
         <div class="contact-container">
-          <div class="glass-card highlight contact-card-inner">
-            <span class="tag-pill active">ОРГАНИЗАЦИОННЫЙ КОМИТЕТ</span>
-            <div class="contact-person-name">Оргкомитет «Территория Роста»</div>
-            <div class="contact-person-role">Прямой контакт с командой организаторов</div>
+          <div class="contact-card-inner">
+            <h3 style="font-size: 1.4rem; font-weight: 800; color: #0f172a; margin: 0 0 6px 0;">Андрей Дереев</h3>
+            <p style="font-size: 1rem; color: #475569; margin: 0 0 20px 0;">Основатель консорциума «ПРЕДПРИНИМАЙ»</p>
             <div class="contact-links-row">
-              <a href="mailto:producer@wellbeingweek.ru" class="contact-btn-link email">✉️ Почта</a>
-              <a href="https://t.me/andreydereev" target="_blank" class="contact-btn-link telegram">✈️ Telegram</a>
-              <a href="https://max.ru/u/f9LHodD0cOJ8IJ3MsBL9EZPyUpS0Zum30RtNCoW1159NZtVxh1R4jq5jk7I" target="_blank" class="contact-btn-link max-link">🌐 МАКС</a>
+              <a href="mailto:producer@wellbeingweek.ru" target="_blank" rel="noopener noreferrer" class="btn-contact btn-email">✉️ Почта (producer@wellbeingweek.ru)</a>
+              <a href="https://t.me/andreydereev" target="_blank" rel="noopener noreferrer" class="btn-contact btn-tg">✈️ Telegram (@andreydereev)</a>
+              <a href="https://max.ru/u/f9LHodD0cOJ8IJ3MsBL9EZPyUpS0Zum30RtNCoW1159NZtVxh1R4jq5jk7I" target="_blank" rel="noopener noreferrer" class="btn-contact btn-max">🌐 МАКС (Видеовстреча)</a>
             </div>
           </div>
         </div>
       </section>
-    </div>
-  </main>
-
-  <!-- Bottom Interactive Bar -->
-  <nav class="bottom-bar">
-    <button class="nav-btn" id="prevBtn" title="Предыдущий слайд (←)">← Назад</button>
-    <div class="slide-dots" id="slideDots"></div>
-    <span class="progress-counter" id="progressCounter">1 / 18</span>
-    <button class="nav-btn primary" id="nextBtn" title="Следующий слайд (→ / Пробел)">Вперёд →</button>
-  </nav>
-
-  <script src="../assets/presentation.js"></script>
+        
+  </div>
 </body>
 </html>
