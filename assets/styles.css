@@ -969,3 +969,62 @@ body.feed-mode .cards-grid-6 {
   color: #2563eb;
   flex-shrink: 0;
 }
+
+
+/* Компактная сетка для слайдов с 5-6 карточками (Территория Роста 2026) */
+.cards-grid-compact {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  flex: 1;
+  align-items: stretch;
+}
+
+.cards-grid-compact .glass-card {
+  padding: 16px 20px;
+}
+
+.cards-grid-compact .card-title {
+  font-size: 20px;
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+.cards-grid-compact .card-desc {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.cards-grid-compact .card-icon-badge {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+}
+
+.cards-grid-compact .card-icon-badge svg {
+  width: 18px;
+  height: 18px;
+}
+
+.cards-grid-compact .card-header-row {
+  margin-bottom: 8px;
+}
+
+/* Безопасная прокрутка для слайда */
+.slide-frame {
+  max-height: calc(100vh - 160px) !important;
+  overflow-y: auto !important;
+  padding: 32px 44px !important;
+}
+
+.slide-frame::-webkit-scrollbar {
+  width: 6px;
+}
+.slide-frame::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+.slide-frame::-webkit-scrollbar-thumb {
+  background: var(--accent-cyan);
+  border-radius: 10px;
+}
