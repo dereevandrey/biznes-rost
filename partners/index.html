@@ -1,180 +1,54 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="light">
+<html lang="ru" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Партнёры и спонсоры — Территория Роста 2026</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Интерактивная веб-презентация «Территория Роста 2026»">
   <link rel="stylesheet" href="../assets/styles.css">
-  <style>
-    body {
-      background: var(--bg-primary, #ffffff);
-      color: var(--text-primary, #0f172a);
-      font-family: 'Manrope', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    .slides-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    .slide-frame {
-      background: var(--bg-secondary, #f8fafc);
-      border: 1px solid var(--border-color, #e2e8f0);
-      border-radius: 20px;
-      padding: 40px;
-      margin-bottom: 40px;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-    }
-    .tag-pill {
-      display: inline-block;
-      background: rgba(37, 99, 235, 0.1);
-      color: #2563eb;
-      font-weight: 700;
-      font-size: 0.85rem;
-      padding: 6px 16px;
-      border-radius: 20px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .slide-title {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--text-primary, #0f172a);
-      margin: 15px 0 10px 0;
-      line-height: 1.2;
-    }
-    .slide-subtitle {
-      font-size: 1.1rem;
-      color: var(--text-secondary, #475569);
-      margin-bottom: 30px;
-      line-height: 1.6;
-    }
-    .cards-grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 20px;
-    }
-    .cards-grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-      gap: 20px;
-    }
-    .glass-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
-    }
-    .glass-card.highlight {
-      border: 2px solid #2563eb;
-      background: #f0f6ff;
-    }
-    .card-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #0f172a;
-      margin: 12px 0 8px 0;
-    }
-    .card-desc {
-      font-size: 0.95rem;
-      color: #475569;
-      line-height: 1.5;
-      margin: 0;
-    }
-    .card-icon-badge {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: rgba(37, 99, 235, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #2563eb;
-    }
-    .card-icon-badge svg {
-      width: 22px;
-      height: 22px;
-      stroke: #2563eb;
-    }
-    .contact-container {
-      width: 100%;
-    }
-    .contact-card-inner {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 16px;
-      padding: 32px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    .contact-links-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 20px;
-    }
-    .btn-contact {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 24px;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-    .btn-email { background: #2563eb; color: #ffffff; }
-    .btn-email:hover { background: #1d4ed8; }
-    .btn-tg { background: #0088cc; color: #ffffff; }
-    .btn-tg:hover { background: #0077b5; }
-    .btn-max { background: #7c3aed; color: #ffffff; }
-    .btn-max:hover { background: #6d28d9; }
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-    .metric-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 16px;
-      padding: 28px;
-      text-align: center;
-    }
-    .metric-number {
-      font-size: 3rem;
-      font-weight: 800;
-      color: #2563eb;
-      line-height: 1;
-      margin-bottom: 10px;
-    }
-    .metric-label {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 6px;
-    }
-    .metric-sub {
-      font-size: 0.85rem;
-      color: #64748b;
-      line-height: 1.4;
-    }
-  </style>
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
 </head>
 <body>
-  <div class="slides-container">
-    
-      <section class="slide-frame cover-frame">
-        <div class="tag-pill" style="margin-bottom: 20px;">— ПРЕДЛОЖЕНИЕ ПАРТНЁРСТВА —</div>
-        <h1 class="slide-title" style="font-size: 3rem; margin-bottom: 20px;">ТЕРРИТОРИЯ РОСТА</h1>
-        <p class="slide-subtitle" style="font-size: 1.3rem; max-width: 800px; margin-bottom: 30px;">Партнёрство вокруг общей задачи, содержательной интеграции и измеримого результата.</p>
-        <div style="font-size: 0.9rem; color: #64748b; font-weight: 600;">📍 11 октября 2026  •  Екатеринбург  •  Синара Центр</div>
+  <!-- Ambient Orbs -->
+  <div class="orb-container">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Top Navigation Header -->
+  <header class="top-nav">
+    <div class="brand-left">
+      <a href="https://xn----9sbmhe5ajphdl.xn--p1ai/" target="_blank" title="Перейти на официальный сайт бизнес-рост.рф" style="display: flex; align-items: center; gap: 14px; text-decoration: none;">
+        <img src="../assets/img/consortium_logo_dark.png" alt="Консорциум" class="brand-logo-consortium" data-prefix="../">
+        <img src="../assets/img/TR_MASTER_FINAL_WHITE.png" alt="Территория Роста" class="brand-logo-tr" data-prefix="../">
+      </a>
+      <a href="../презентации/index.html" class="nav-btn" style="font-weight: 700; background: var(--glass-active-bg); border-color: var(--accent-cyan); color: #ffffff;" title="Вернуться к списку всех презентаций">
+        <span style="font-size: 16px;">←</span> Все презентации
+      </a>
+      <span class="deck-title-badge">Партнёры и спонсоры</span>
+      <button class="nav-btn" id="modeToggle" title="Переключить вертикальную ленту для телефона">📱 Лента</button>
+    </div>
+    <div class="nav-controls">
+      <button class="nav-btn" id="themeToggle" title="Переключить светлую/тёмную тему">☀️ Светлая</button>
+      <button class="nav-btn" id="shareBtn" title="Скопировать ссылку на презентацию">🔗 Поделиться</button>
+      <a href="https://t.me/andreydereev" target="_blank" class="nav-btn primary" title="Написать организаторам в Telegram">✈️ Оргкомитет</a>
+    </div>
+  </header>
+
+  <!-- Presentation Main Viewport -->
+  <main class="presentation-container">
+    <div class="deck-viewport">
+      
+      <section class="slide-frame cover-slide active">
+        <div class="cover-logos">
+          <img src="../assets/img/consortium_logo_dark.png" alt="Консорциум" class="brand-logo-consortium" data-prefix="../" style="height: 48px;">
+          <img src="../assets/img/TR_MASTER_FINAL_WHITE.png" alt="Территория Роста" class="brand-logo-tr" data-prefix="../" style="height: 64px;">
+        </div>
+        <div class="cover-track-badge">— ПРЕДЛОЖЕНИЕ ПАРТНЁРСТВА —</div>
+        <h1 class="cover-manifesto">ТЕРРИТОРИЯ РОСТА</h1>
+        <p class="slide-subtitle" style="text-align: center; max-width: 900px; margin: 0 auto; font-size: 26px; line-height: 1.5; color: var(--text-muted);">Партнёрство вокруг общей задачи, содержательной интеграции и измеримого результата.</p>
+        <div class="tag-pill active" style="font-size: 16px; padding: 12px 28px; align-self: center;">📍 11 октября 2026  •  Екатеринбург  •  Синара Центр</div>
       </section>
         
       <section class="slide-frame">
@@ -223,21 +97,21 @@
           <h2 class="slide-title">ОПЫТНАЯ КОМАНДА ОРГАНИЗАТОРОВ</h2>
           <p class="slide-subtitle">Мы умеем собирать людей вокруг реальной деловой повестки. «Территория Роста» опирается на опыт Недели благополучия (Wellbeing SPACE Week).</p>
         </div>
-        <div class="metrics-grid">
+        <div class="cards-grid-4-metrics">
           
-          <div class="metric-card">
+          <div class="glass-card">
             <div class="metric-number">30+</div>
             <div class="metric-label">ЭКСПЕРТЫ ФЕДЕРАЛЬНОГО УРОВНЯ</div>
             <div class="metric-sub">в сферах финансов, здоровья, саморазвития и корпоративного благополучия</div>
           </div>
             
-          <div class="metric-card">
+          <div class="glass-card">
             <div class="metric-number">600+</div>
             <div class="metric-label">УЧАСТНИКИ ИЗ 51 РЕГИОНА РФ</div>
             <div class="metric-sub">предприниматели и топы, а также представители 17 стран в онлайн-трансляции</div>
           </div>
             
-          <div class="metric-card">
+          <div class="glass-card">
             <div class="metric-number">10+</div>
             <div class="metric-label">ПРОЕКТЫ РАЗВИТИЯ</div>
             <div class="metric-sub">созданные решения и совместные партнерские инициативы</div>
@@ -524,24 +398,37 @@
       </section>
         
       <section class="slide-frame">
-        <div class="slide-header">
-          <span class="tag-pill" style="margin-bottom: 10px;">ОРГАНИЗАЦИОННЫЙ КОМИТЕТ</span><br>
+        <div class="slide-header" style="text-align: left; align-items: flex-start;">
           <h2 class="slide-title">СВЯЗАТЬСЯ С ОРГКОМИТЕТОМ</h2>
           <p class="slide-subtitle">Обсудим вашу задачу, формат участия, роль в событии и возможный маршрут совместной работы.</p>
         </div>
         <div class="contact-container">
-          <div class="contact-card-inner">
-            <h3 style="font-size: 1.4rem; font-weight: 800; color: #0f172a; margin: 0 0 6px 0;">Оргкомитет «Территория Роста»</h3>
-            <p style="font-size: 1rem; color: #475569; margin: 0 0 20px 0;">Прямой контакт с командой организаторов</p>
+          <div class="glass-card highlight contact-card-inner">
+            <span class="tag-pill active">ОРГАНИЗАЦИОННЫЙ КОМИТЕТ</span>
+            <div class="contact-person-name">Оргкомитет «Территория Роста»</div>
+            <div class="contact-person-role">Прямой контакт с командой организаторов</div>
             <div class="contact-links-row">
-              <a href="mailto:producer@wellbeingweek.ru" target="_blank" rel="noopener noreferrer" class="btn-contact btn-email">✉️ Почта (producer@wellbeingweek.ru)</a>
-              <a href="https://t.me/andreydereev" target="_blank" rel="noopener noreferrer" class="btn-contact btn-tg">✈️ Telegram (@andreydereev)</a>
-              <a href="https://max.ru/u/f9LHodD0cOJ8IJ3MsBL9EZPyUpS0Zum30RtNCoW1159NZtVxh1R4jq5jk7I" target="_blank" rel="noopener noreferrer" class="btn-contact btn-max">🌐 МАКС (Видеовстреча)</a>
+              <a href="mailto:producer@wellbeingweek.ru" target="_blank" rel="noopener noreferrer" class="contact-btn-link email">✉️ Почта (producer@wellbeingweek.ru)</a>
+              <a href="https://t.me/andreydereev" target="_blank" rel="noopener noreferrer" class="contact-btn-link telegram">✈️ Telegram (@andreydereev)</a>
+              <a href="https://max.ru/u/f9LHodD0cOJ8IJ3MsBL9EZPyUpS0Zum30RtNCoW1159NZtVxh1R4jq5jk7I" target="_blank" rel="noopener noreferrer" class="contact-btn-link max-link">🌐 МАКС (Видеовстреча)</a>
             </div>
           </div>
         </div>
       </section>
         
-  </div>
+    </div>
+  </main>
+
+  <!-- Bottom Interactive Bar -->
+  <nav class="bottom-bar">
+    <button class="nav-btn" id="prevBtn" title="Предыдущий слайд (←)">← Назад</button>
+    <div class="slide-dots" id="slideDots"></div>
+    <span class="progress-counter" id="progressCounter">1 / 11</span>
+    <button class="nav-btn primary" id="nextBtn" title="Следующий слайд (→ / Пробел)">Вперёд →</button>
+  </nav>
+
+  
+
+  <script src="../assets/presentation.js"></script>
 </body>
 </html>
