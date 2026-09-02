@@ -769,3 +769,139 @@ body.feed-mode .cards-grid-6 {
   background: rgba(255, 184, 0, 0.18);
   box-shadow: 0 0 20px rgba(255, 184, 0, 0.35);
 }
+
+
+/* LIGHT THEME UI OVERRIDES & VISIBILITY FIXES */
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-gradient: radial-gradient(circle at 50% 10%, #ffffff 0%, #eef2f8 50%, #cbd5e1 100%);
+  --text-main: #0f172a;
+  --text-muted: #334155;
+  --text-sub: #2563eb;
+  --accent-blue: #2563eb;
+}
+
+[data-theme="light"] .nav-btn,
+[data-theme="light"] .back-btn {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(15, 23, 42, 0.2);
+  color: #0f172a !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .nav-btn:hover,
+[data-theme="light"] .back-btn:hover {
+  background: #ffffff;
+  border-color: #2563eb;
+  color: #2563eb !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
+}
+
+.card-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.card-icon-badge svg {
+  width: 22px;
+  height: 22px;
+  stroke: #2563eb !important;
+}
+
+[data-theme="light"] .card-icon-badge {
+  background: rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.35);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+}
+
+[data-theme="light"] .card-icon-badge svg {
+  stroke: #2563eb !important;
+  color: #2563eb !important;
+}
+
+.contact-container {
+  max-width: 960px;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.contact-card-inner {
+  padding: 40px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  text-align: left;
+}
+
+[data-theme="light"] .contact-card-inner {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(37, 99, 235, 0.3);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .contact-person-name {
+  color: #0f172a;
+}
+
+[data-theme="light"] .contact-person-role {
+  color: #334155;
+}
+
+.contact-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 16px;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+[data-theme="light"] .contact-btn-link {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  color: #0f172a !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+[data-theme="light"] .tag-pill {
+  background: rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  color: #0f172a;
+}
+
+[data-theme="light"] .tag-pill.active {
+  background: linear-gradient(135deg, #2563eb 0%, #0284c7 100%);
+  color: #ffffff;
+}
+
+.contact-btn-link.telegram:hover {
+  border-color: #229ED9;
+  background: rgba(34, 158, 217, 0.18);
+  color: #229ED9 !important;
+  box-shadow: 0 0 20px rgba(34, 158, 217, 0.35);
+}
+
+.contact-btn-link.max-link:hover {
+  border-color: #8B5CF6;
+  background: rgba(139, 92, 246, 0.18);
+  color: #8B5CF6 !important;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.35);
+}
+
+.contact-btn-link.email:hover {
+  border-color: #d97706;
+  background: rgba(217, 119, 6, 0.18);
+  color: #d97706 !important;
+  box-shadow: 0 0 20px rgba(217, 119, 6, 0.35);
+}
