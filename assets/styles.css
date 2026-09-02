@@ -905,3 +905,67 @@ body.feed-mode .cards-grid-6 {
   color: #d97706 !important;
   box-shadow: 0 0 20px rgba(217, 119, 6, 0.35);
 }
+
+
+/* SLIDE 11 & METRICS UNIFORM LAYOUT FIXES */
+.contact-container {
+  max-width: 100% !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+.contact-card-inner {
+  padding: 36px 44px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 16px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.contact-links-row {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 16px !important;
+  margin-top: 20px !important;
+  width: 100% !important;
+  flex-wrap: nowrap !important;
+}
+
+.contact-btn-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 14px 32px !important;
+  border-radius: 12px !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  white-space: nowrap !important;
+  transition: all 0.2s ease !important;
+}
+
+/* Metrics card icon uniform bottom-right placement */
+.cards-grid-4-metrics .glass-card,
+.cards-grid-3 .glass-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.card-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  flex-shrink: 0;
+}
