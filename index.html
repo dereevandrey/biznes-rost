@@ -1773,127 +1773,97 @@
                     </div>
                     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 items-center justify-center">
                         <div class="h-16 sm:h-20 bg-white rounded-2xl flex items-center justify-center p-3 border border-gray-200 shadow-sm overflow-hidden hover:border-gray-300 transition">
-                            <img src="Спикеры/Лого/Сбер лого 2.png" alt="СБЕР" class="h-full w-full object-contain">
+                                    <!-- Левая колонка: Об организаторе (Консорциум Предпринимай) -->
+            <div class="lg:col-span-6 flex flex-col justify-between">
+                <div class="mb-5">
+                    <!-- Верхний бейдж и ссылка на сайт экосистемы -->
+                    <div class="flex items-center justify-between mb-3 pb-1">
+                        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/15 border border-blue-400/30 text-blue-300 text-xs font-bold uppercase tracking-wider">
+                            <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+                            Организатор проекта
+                        </span>
+                        <a href="https://predprinimy.ru" target="_blank" rel="noopener noreferrer" class="text-xs text-sky-400 hover:text-sky-300 transition font-semibold flex items-center gap-1">
+                            predprinimy.ru
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+
+                    <!-- Крупный брендовый блок с оригинальным белым логотипом Консорциума -->
+                    <div class="mb-3.5 flex items-center">
+                        <a href="https://predprinimy.ru" target="_blank" rel="noopener noreferrer" class="hover:opacity-90 transition">
+                            <img src="Спикеры/Лого/Предпринимай Лого.png" alt="Консорциум ПРЕДПРИНИМАЙ" class="h-12 sm:h-14 w-auto object-contain">
+                        </a>
+                    </div>
+
+                    <!-- Опорное определение организатора -->
+                    <p class="text-gray-200 text-sm sm:text-base leading-relaxed">
+                        <strong class="text-white font-bold">Консорциум «ПРЕДПРИНИМАЙ»</strong> объединяет государство, бизнес и общество вокруг проектов, которые помогают людям раскрывать способности, создавать команды и достигать практических результатов, создавая актуальную среду развития человека.
+                    </p>
+                </div>
+                
+                <!-- 4 чистые карточки ключевых направлений Консорциума -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                    <!-- 1. Молодёжное направление -->
+                    <div class="bg-gradient-to-br from-[#0c1322] via-[#101b30] to-[#080d1a] p-4 sm:p-5 rounded-2xl border border-indigo-900/50 hover:border-purple-500/60 transition-all duration-300 shadow-lg flex flex-col justify-start group hover:-translate-y-0.5">
+                        <div class="flex items-center gap-3 mb-2.5">
+                            <div class="w-8 h-8 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-purple-500 group-hover:text-white transition">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
+                            </div>
+                            <h4 class="text-white font-bold text-sm sm:text-base font-['Oswald'] uppercase tracking-wide">
+                                Молодёжное направление
+                            </h4>
                         </div>
-                        <div class="h-16 sm:h-20 bg-white rounded-2xl flex items-center justify-center p-3 border border-gray-200 shadow-sm overflow-hidden hover:border-gray-300 transition">
-                            <img src="Спикеры/Лого/Ростех Лого.jpg" alt="РОСТЕХ" class="h-full w-full object-contain">
+                        <p class="text-gray-300 text-xs sm:text-[13px] leading-relaxed">
+                            Организация общероссийских хакатонов «ПРЕДПРИНИМАЙ», молодёжных форумов и проектных мастерских. Помогаем молодым талантам раскрыть способности, собрать первые команды и запустить реальные проекты в экономике.
+                        </p>
+                    </div>
+
+                    <!-- 2. Экспертное направление -->
+                    <div class="bg-gradient-to-br from-[#0c1322] via-[#101b30] to-[#080d1a] p-4 sm:p-5 rounded-2xl border border-indigo-900/50 hover:border-emerald-500/60 transition-all duration-300 shadow-lg flex flex-col justify-start group hover:-translate-y-0.5">
+                        <div class="flex items-center gap-3 mb-2.5">
+                            <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                            </div>
+                            <h4 class="text-white font-bold text-sm sm:text-base font-['Oswald'] uppercase tracking-wide">
+                                Экспертное направление
+                            </h4>
                         </div>
-                        <div class="h-16 sm:h-20 bg-white rounded-2xl flex items-center justify-center p-3 border border-gray-200 shadow-sm overflow-hidden hover:border-gray-300 transition">
-                            <img src="Спикеры/Лого/Альфа лого.jpg" alt="АльфаСтрахование" class="h-full w-full object-contain">
+                        <p class="text-gray-300 text-xs sm:text-[13px] leading-relaxed">
+                            Федеральный проект «Неделя благополучия» (Wellbeing SPACE). Соединяем доказательную медицину, витальность и психологию с задачами бизнеса, формируя культуру высокой результативности без выгорания.
+                        </p>
+                    </div>
+
+                    <!-- 3. Предпринимательское направление -->
+                    <div class="bg-gradient-to-br from-[#0c1322] via-[#101b30] to-[#080d1a] p-4 sm:p-5 rounded-2xl border border-indigo-900/50 hover:border-blue-500/60 transition-all duration-300 shadow-lg flex flex-col justify-start group hover:-translate-y-0.5">
+                        <div class="flex items-center gap-3 mb-2.5">
+                            <div class="w-8 h-8 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                            </div>
+                            <h4 class="text-white font-bold text-sm sm:text-base font-['Oswald'] uppercase tracking-wide">
+                                Предпринимательское
+                            </h4>
                         </div>
-                        <div class="h-16 sm:h-20 bg-white rounded-2xl flex items-center justify-center p-3 border border-gray-200 shadow-sm overflow-hidden hover:border-gray-300 transition">
-                            <img src="Спикеры/Лого/Гаспром банк.jpg" alt="ГАЗПРОМБАНК" class="h-full w-full object-contain">
+                        <p class="text-gray-300 text-xs sm:text-[13px] leading-relaxed">
+                            Практикум и 7-дневный спринт «Территория Роста». Помогаем действующим предпринимателям пересобрать модель роста, автоматизировать рутину через AI-инструменты и запустить масштабирование.
+                        </p>
+                    </div>
+
+                    <!-- 4. Партнёрское и региональное -->
+                    <div class="bg-gradient-to-br from-[#0c1322] via-[#101b30] to-[#080d1a] p-4 sm:p-5 rounded-2xl border border-indigo-900/50 hover:border-cyan-500/60 transition-all duration-300 shadow-lg flex flex-col justify-start group hover:-translate-y-0.5">
+                        <div class="flex items-center gap-3 mb-2.5">
+                            <div class="w-8 h-8 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-cyan-500 group-hover:text-white transition">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <h4 class="text-white font-bold text-sm sm:text-base font-['Oswald'] uppercase tracking-wide">
+                                Партнёрское и регионы
+                            </h4>
                         </div>
-                        <div class="h-16 sm:h-20 bg-white rounded-2xl flex items-center justify-center p-3 border border-gray-200 shadow-sm overflow-hidden hover:border-gray-300 transition">
-                            <img src="Спикеры/Лого/НЛМК лого.jpg" alt="НЛМК" class="h-full w-full object-contain">
-                        </div>
-                        <div class="h-16 sm:h-20 bg-white rounded-2xl flex items-center justify-center p-3 border border-gray-200 shadow-sm overflow-hidden hover:border-gray-300 transition">
-                            <img src="Спикеры/Лого/Росатом лого.jpg" alt="РОСАТОМ" class="h-full w-full object-contain">
-                        </div>
+                        <p class="text-gray-300 text-xs sm:text-[13px] leading-relaxed">
+                            Отраслевые форумы, пилотные проекты и региональные программы развития. Объединяем бизнес, власть и общество, масштабируя лучшие практики для роста качества жизни в регионах России.
+                        </p>
                     </div>
                 </div>
-            </div>
-
-            <!-- ТРЕК 3: ПАРТНЕРЫ ПРОЕКТА (Кнопка «Стать партнером» в едином цвете и размере) -->
-            <div class="mb-20">
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4 pb-3">
-                    <div>
-                        <div class="inline-flex items-center gap-2 text-xs font-bold text-gray-600 uppercase tracking-widest mb-1">
-                            Экспертиза & Локации
-                        </div>
-                        <h3 class="text-2xl sm:text-3xl font-black font-['Oswald'] uppercase text-gray-900">
-                            ПАРТНЕРЫ <span class="text-gradient-magic">ПРОЕКТА</span>
-                        </h3>
-                    </div>
-                    <!-- Единая крупная кнопка с градиентом как в других блоках -->
-                    <a href="sponsors.html" class="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-95 text-white font-black uppercase text-xs tracking-wider transition shadow-lg flex items-center gap-2">
-                        <span>Стать партнером</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </a>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    
-                    <!-- 1. ФЕРРУМ / Юлия Веде (Крупный логотип h-32 sm:h-36) -->
-                    <div class="bg-white rounded-3xl p-6 border border-gray-200 shadow-md hover:shadow-xl hover:border-blue-500 transition flex flex-col justify-between group">
-                        <div>
-                            <div class="h-32 sm:h-36 bg-white rounded-2xl flex items-center justify-center p-4 mb-5 border border-gray-200 shadow-sm group-hover:border-blue-400 group-hover:shadow-md transition overflow-hidden">
-                                <img src="Спикеры/Лого/Лого Феррум.png" alt="ФЕРРУМ / VEDE" class="h-full w-full object-contain filter invert transition group-hover:scale-105 duration-300">
-                            </div>
-                            <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest block mb-1">Юридическая защита</span>
-                            <h4 class="text-base font-black font-['Oswald'] uppercase text-gray-900 mb-2">
-                                ФЕРРУМ / ЮЛИЯ ВЕДЕ
-                            </h4>
-                            <p class="text-gray-600 text-xs leading-relaxed mb-4">
-                                Более 10 лет развития прозрачной и устойчивой правовой среды. >100 лицензированных образовательных центров по всей РФ, защита бизнеса и договоров.
-                            </p>
-                        </div>
-                        <div class="pt-3 border-t border-gray-100 text-[11px] text-gray-400 font-medium">
-                            Правовой партнер
-                        </div>
-                    </div>
-
-                    <!-- 2. Новая Формация (Крупный логотип h-32 sm:h-36) -->
-                    <div class="bg-white rounded-3xl p-6 border border-gray-200 shadow-md hover:shadow-xl hover:border-indigo-500 transition flex flex-col justify-between group">
-                        <div>
-                            <div class="h-32 sm:h-36 bg-white rounded-2xl flex items-center justify-center p-2 mb-5 border border-gray-200 shadow-sm group-hover:border-indigo-400 group-hover:shadow-md transition overflow-hidden">
-                                <img src="Спикеры/Лого/Лого Новая Формация.jpg" alt="Новая Формация" class="h-full w-full object-contain transition group-hover:scale-105 duration-300">
-                            </div>
-                            <span class="text-[10px] font-bold text-indigo-600 uppercase tracking-widest block mb-1">Общероссийская организация</span>
-                            <h4 class="text-base font-black font-['Oswald'] uppercase text-gray-900 mb-2">
-                                НОВАЯ ФОРМАЦИЯ
-                            </h4>
-                            <p class="text-gray-600 text-xs leading-relaxed mb-4">
-                                Площадка эффективного профессионального диалога владельцев МСП и органов власти. Представлена в 61 регионе России и 39 странах мира.
-                            </p>
-                        </div>
-                        <div class="pt-3 border-t border-gray-100 text-[11px] text-gray-400 font-medium">
-                            Ассоциация МСП
-                        </div>
-                    </div>
-
-                    <!-- 3. Синара Центр (Крупный логотип h-32 sm:h-36) -->
-                    <div class="bg-white rounded-3xl p-6 border border-gray-200 shadow-md hover:shadow-xl hover:border-amber-500 transition flex flex-col justify-between group">
-                        <div>
-                            <div class="h-32 sm:h-36 bg-white rounded-2xl flex items-center justify-center p-2 mb-5 border border-gray-200 shadow-sm group-hover:border-amber-400 group-hover:shadow-md transition overflow-hidden">
-                                <img src="Спикеры/Лого/Синара центр лого.png" alt="Синара Центр" class="h-full w-full object-contain transition group-hover:scale-105 duration-300">
-                            </div>
-                            <span class="text-[10px] font-bold text-amber-600 uppercase tracking-widest block mb-1">Главная сцена финала</span>
-                            <h4 class="text-base font-black font-['Oswald'] uppercase text-gray-900 mb-2">
-                                СИНАРА ЦЕНТР
-                            </h4>
-                            <p class="text-gray-600 text-xs leading-relaxed mb-4">
-                                Культурно-деловой конгресс-комплекс в историческом центре Екатеринбурга. Флагманская офлайн-площадка финала бизнес-саммита (День 7).
-                            </p>
-                        </div>
-                        <div class="pt-3 border-t border-gray-100 text-[11px] text-gray-400 font-medium">
-                            Офлайн-площадка финала
-                        </div>
-                    </div>
-
-                    <!-- 4. SOK Екатеринбург (Крупный логотип h-32 sm:h-36) -->
-                    <div class="bg-white rounded-3xl p-6 border border-gray-200 shadow-md hover:shadow-xl hover:border-cyan-500 transition flex flex-col justify-between group">
-                        <div>
-                            <div class="h-32 sm:h-36 bg-white rounded-2xl flex items-center justify-center p-3 mb-5 border border-gray-200 shadow-sm group-hover:border-cyan-400 group-hover:shadow-md transition overflow-hidden">
-                                <img src="Спикеры/Лого/сок лого 2.png" alt="SOK Екатеринбург" class="h-full w-full object-contain transition group-hover:scale-105 duration-300">
-                            </div>
-                            <span class="text-[10px] font-bold text-cyan-600 uppercase tracking-widest block mb-1">Смарт-пространство</span>
-                            <h4 class="text-base font-black font-['Oswald'] uppercase text-gray-900 mb-2">
-                                SOK ЕКАТЕРИНБУРГ
-                            </h4>
-                            <p class="text-gray-600 text-xs leading-relaxed mb-4">
-                                Премиальное смарт-пространство для проведения очного практикума, стратегических сессий и командных тренингов (День 6).
-                            </p>
-                        </div>
-                        <div class="pt-3 border-t border-gray-100 text-[11px] text-gray-400 font-medium">
-                            Площадка практикума
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- ТРЕК 4: ОФИЦИАЛЬНЫЕ МЕДИА-ПАРТНЕРЫ (Экстра-крупные плашки логотипов h-36 sm:h-44) -->
+            </div>и логотипов h-36 sm:h-44) -->
             <div>
                 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4 pb-3">
                     <div>
@@ -2004,7 +1974,7 @@
             
             <!-- Левая колонка: Об организаторе (Консорциум Предпринимай) -->
             <div class="lg:col-span-6 flex flex-col justify-between">
-                <div class="mb-5">
+                <div>
                     <!-- Верхний бейдж и ссылка на сайт экосистемы -->
                     <div class="flex items-center justify-between mb-3 pb-1">
                         <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/15 border border-blue-400/30 text-blue-300 text-xs font-bold uppercase tracking-wider">
@@ -2025,71 +1995,101 @@
                     </div>
 
                     <!-- Опорное определение организатора -->
-                    <p class="text-gray-200 text-sm sm:text-base leading-relaxed">
+                    <p class="text-gray-200 text-xs sm:text-sm leading-relaxed mb-3">
                         <strong class="text-white font-bold">Консорциум «ПРЕДПРИНИМАЙ»</strong> объединяет государство, бизнес и общество вокруг проектов, которые помогают людям раскрывать способности, создавать команды и достигать практических результатов, создавая актуальную среду развития человека.
                     </p>
+
+                    <!-- Продуктовый портфель и сквозная связка (не конкурируют, точки входа) -->
+                    <div class="mb-3.5 p-2 rounded-xl bg-[#080e1c] border border-indigo-900/60 flex items-center gap-2 text-[11px] text-gray-300">
+                        <span class="w-1.5 h-1.5 rounded-full bg-sky-400 flex-shrink-0"></span>
+                        <span class="leading-tight"><strong class="text-sky-300">Продуктовый портфель:</strong> проекты создают последовательные точки входа в экосистему без взаимной конкуренции.</span>
+                    </div>
                 </div>
                 
-                <!-- 4 чистые карточки ключевых направлений Консорциума -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <!-- 4 продуктовых блока Консорциума -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                     <!-- 1. Молодёжное направление -->
-                    <div class="bg-gradient-to-br from-[#0c1322] via-[#101b30] to-[#080d1a] p-4 sm:p-5 rounded-2xl border border-indigo-900/50 hover:border-purple-500/60 transition-all duration-300 shadow-lg flex flex-col justify-start group hover:-translate-y-0.5">
-                        <div class="flex items-center gap-3 mb-2.5">
-                            <div class="w-8 h-8 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-purple-500 group-hover:text-white transition">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
+                    <div class="bg-gradient-to-br from-[#0c1322] via-[#101b30] to-[#080d1a] p-3.5 rounded-2xl border border-indigo-900/50 hover:border-purple-500/60 transition-all duration-300 shadow-lg flex flex-col justify-between group hover:-translate-y-0.5">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1.5">
+                                <div class="w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-purple-500 group-hover:text-white transition">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
+                                </div>
+                                <div>
+                                    <div class="text-white font-bold text-xs leading-tight font-['Oswald'] uppercase tracking-wide">Молодёжное направление</div>
+                                    <div class="text-[9px] text-purple-400 font-medium">Хакатон • Форум • Мастерская</div>
+                                </div>
                             </div>
-                            <h4 class="text-white font-bold text-sm sm:text-base font-['Oswald'] uppercase tracking-wide">
-                                Молодёжное направление
-                            </h4>
+                            <div class="text-[11px] text-gray-300 leading-snug mb-1.5">
+                                <span class="text-gray-400">Продукты:</span> Хакатон «ПРЕДПРИНИМАЙ», Форум молодых предпринимателей, Проектная мастерская.
+                            </div>
+                            <div class="text-[10px] text-purple-300/90 font-medium bg-purple-950/40 px-2 py-1 rounded-md border border-purple-800/30">
+                                💡 Способности становятся первым практическим результатом
+                            </div>
                         </div>
-                        <p class="text-gray-300 text-xs sm:text-[13px] leading-relaxed">
-                            Организация общероссийских хакатонов «ПРЕДПРИНИМАЙ», молодёжных форумов и проектных мастерских. Помогаем молодым талантам раскрыть способности, собрать первые команды и запустить реальные проекты в экономике.
-                        </p>
                     </div>
 
                     <!-- 2. Экспертное направление -->
-                    <div class="bg-gradient-to-br from-[#0c1322] via-[#101b30] to-[#080d1a] p-4 sm:p-5 rounded-2xl border border-indigo-900/50 hover:border-emerald-500/60 transition-all duration-300 shadow-lg flex flex-col justify-start group hover:-translate-y-0.5">
-                        <div class="flex items-center gap-3 mb-2.5">
-                            <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    <div class="bg-gradient-to-br from-[#0c1322] via-[#101b30] to-[#080d1a] p-3.5 rounded-2xl border border-indigo-900/50 hover:border-emerald-500/60 transition-all duration-300 shadow-lg flex flex-col justify-between group hover:-translate-y-0.5">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1.5">
+                                <div class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                                </div>
+                                <div>
+                                    <div class="text-white font-bold text-xs leading-tight font-['Oswald'] uppercase tracking-wide">Экспертное направление</div>
+                                    <div class="text-[9px] text-emerald-400 font-medium">Wellbeing & Витальность</div>
+                                </div>
                             </div>
-                            <h4 class="text-white font-bold text-sm sm:text-base font-['Oswald'] uppercase tracking-wide">
-                                Экспертное направление
-                            </h4>
+                            <div class="text-[11px] text-gray-300 leading-snug mb-1.5">
+                                <span class="text-gray-400">Продукт:</span> «Неделя благополучия» (Wellbeing SPACE).
+                            </div>
+                            <div class="text-[10px] text-emerald-300/90 font-medium bg-emerald-950/40 px-2 py-1 rounded-md border border-emerald-800/30">
+                                💡 Экспертиза соединяется с реальными задачами человека и компании
+                            </div>
                         </div>
-                        <p class="text-gray-300 text-xs sm:text-[13px] leading-relaxed">
-                            Федеральный проект «Неделя благополучия» (Wellbeing SPACE). Соединяем доказательную медицину, витальность и психологию с задачами бизнеса, формируя культуру высокой результативности без выгорания.
-                        </p>
                     </div>
 
                     <!-- 3. Предпринимательское направление -->
-                    <div class="bg-gradient-to-br from-[#0c1322] via-[#101b30] to-[#080d1a] p-4 sm:p-5 rounded-2xl border border-indigo-900/50 hover:border-blue-500/60 transition-all duration-300 shadow-lg flex flex-col justify-start group hover:-translate-y-0.5">
-                        <div class="flex items-center gap-3 mb-2.5">
-                            <div class="w-8 h-8 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    <div class="bg-gradient-to-br from-[#0c1322] via-[#101b30] to-[#080d1a] p-3.5 rounded-2xl border border-indigo-900/50 hover:border-blue-500/60 transition-all duration-300 shadow-lg flex flex-col justify-between group hover:-translate-y-0.5">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1.5">
+                                <div class="w-7 h-7 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                                </div>
+                                <div>
+                                    <div class="text-white font-bold text-xs leading-tight font-['Oswald'] uppercase tracking-wide">Предпринимательское</div>
+                                    <div class="text-[9px] text-blue-400 font-medium">Бизнес-спринт & Стратегия</div>
+                                </div>
                             </div>
-                            <h4 class="text-white font-bold text-sm sm:text-base font-['Oswald'] uppercase tracking-wide">
-                                Предпринимательское
-                            </h4>
+                            <div class="text-[11px] text-gray-300 leading-snug mb-1.5">
+                                <span class="text-gray-400">Продукт:</span> Практикум «Территория Роста» (7-дневный бизнес-спринт).
+                            </div>
+                            <div class="text-[10px] text-blue-300/90 font-medium bg-blue-950/40 px-2 py-1 rounded-md border border-blue-800/30">
+                                💡 Команда пересобирает модель роста и начинает внедрение
+                            </div>
                         </div>
-                        <p class="text-gray-300 text-xs sm:text-[13px] leading-relaxed">
-                            Практикум и 7-дневный спринт «Территория Роста». Помогаем действующим предпринимателям пересобрать модель роста, автоматизировать рутину через AI-инструменты и запустить масштабирование.
-                        </p>
                     </div>
 
-                    <!-- 4. Партнёрское и региональное -->
-                    <div class="bg-gradient-to-br from-[#0c1322] via-[#101b30] to-[#080d1a] p-4 sm:p-5 rounded-2xl border border-indigo-900/50 hover:border-cyan-500/60 transition-all duration-300 shadow-lg flex flex-col justify-start group hover:-translate-y-0.5">
-                        <div class="flex items-center gap-3 mb-2.5">
-                            <div class="w-8 h-8 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-cyan-500 group-hover:text-white transition">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <!-- 4. Партнёрское / Территориальное -->
+                    <div class="bg-gradient-to-br from-[#0c1322] via-[#101b30] to-[#080d1a] p-3.5 rounded-2xl border border-indigo-900/50 hover:border-cyan-500/60 transition-all duration-300 shadow-lg flex flex-col justify-between group hover:-translate-y-0.5">
+                        <div>
+                            <div class="flex items-center gap-2 mb-1.5">
+                                <div class="w-7 h-7 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-cyan-500 group-hover:text-white transition">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </div>
+                                <div>
+                                    <div class="text-white font-bold text-xs leading-tight font-['Oswald'] uppercase tracking-wide">Партнёрское / Регионы</div>
+                                    <div class="text-[9px] text-cyan-400 font-medium">Форумы • Пилоты • Программы</div>
+                                </div>
                             </div>
-                            <h4 class="text-white font-bold text-sm sm:text-base font-['Oswald'] uppercase tracking-wide">
-                                Партнёрское и регионы
-                            </h4>
+                            <div class="text-[11px] text-gray-300 leading-snug mb-1.5">
+                                <span class="text-gray-400">Продукты:</span> Федеральные форумы, пилоты, региональные программы.
+                            </div>
+                            <div class="text-[10px] text-cyan-300/90 font-medium bg-cyan-950/40 px-2 py-1 rounded-md border border-cyan-800/30">
+                                💡 Лучшие практики соотносятся с метриками и масштабируются
+                            </div>
                         </div>
-                        <p class="text-gray-300 text-xs sm:text-[13px] leading-relaxed">
-                            Отраслевые форумы, пилотные проекты и региональные программы развития. Объединяем бизнес, власть и общество, масштабируя лучшие практики для роста качества жизни в регионах России.
-                        </p>
                     </div>
                 </div>
             </div>

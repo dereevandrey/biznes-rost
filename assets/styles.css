@@ -253,17 +253,17 @@ body {
 
 .slide-title {
   font-family: var(--font-title);
-  font-size: 38px;
+  font-size: 46px;
   font-weight: 800;
   line-height: 1.15;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   color: var(--text-main);
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .slide-subtitle {
-  font-size: 16.5px;
+  font-size: 26px;
   line-height: 1.45;
   color: var(--text-muted);
   max-width: 1100px;
@@ -310,13 +310,12 @@ body {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 18px;
-  padding: 26px 28px;
+  padding: 28px 32px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
-  overflow: hidden;
 }
 
 .glass-card.highlight {
@@ -331,22 +330,70 @@ body {
   box-shadow: 0 12px 35px var(--glass-glow);
 }
 
+.card-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.card-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.28);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-cyan);
+  flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover .card-icon-badge {
+  background: rgba(37, 99, 235, 0.25);
+  border-color: var(--accent-cyan);
+  color: #ffffff;
+  box-shadow: 0 0 16px rgba(37, 99, 235, 0.45);
+  transform: scale(1.08);
+}
+
+.glass-card.highlight .card-icon-badge {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+.glass-card.highlight:hover .card-icon-badge {
+  background: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.5);
+}
+
+.card-icon-badge svg {
+  width: 22px;
+  height: 22px;
+}
+
 .card-top {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .card-title {
   font-family: var(--font-title);
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.25;
   color: var(--text-main);
+  margin-bottom: 4px;
 }
 
 .card-desc {
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.5;
   color: var(--text-muted);
 }
@@ -355,17 +402,17 @@ body {
   display: inline-flex;
   align-items: center;
   align-self: flex-start;
-  padding: 6px 14px;
+  padding: 8px 18px;
   border-radius: 100px;
   font-family: var(--font-title);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   background: var(--pill-bg);
   border: 1px solid var(--pill-border);
   color: var(--text-sub);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .tag-pill.active {
@@ -386,39 +433,39 @@ body {
 .bullet-item {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  font-size: 15px;
-  line-height: 1.45;
+  gap: 12px;
+  font-size: 21px;
+  line-height: 1.5;
   color: var(--text-main);
 }
 
 .bullet-icon {
   color: var(--accent-cyan);
   font-weight: 800;
-  font-size: 16px;
+  font-size: 22px;
 }
 
 /* Метрики */
 .metric-number {
   font-family: var(--font-title);
-  font-size: 58px;
+  font-size: 72px;
   font-weight: 900;
   line-height: 1;
   color: var(--accent-cyan);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .metric-label {
   font-family: var(--font-title);
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--text-main);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .metric-sub {
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: 19px;
+  line-height: 1.45;
   color: var(--text-muted);
 }
 
@@ -472,13 +519,13 @@ body {
 
 .contact-person-name {
   font-family: var(--font-title);
-  font-size: 44px;
+  font-size: 52px;
   font-weight: 800;
   color: var(--text-main);
 }
 
 .contact-person-role {
-  font-size: 17px;
+  font-size: 24px;
   color: var(--text-muted);
 }
 
@@ -486,20 +533,20 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  margin-top: 12px;
+  margin-top: 16px;
 }
 
 .contact-btn-link {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
-  padding: 14px 24px;
+  padding: 18px 30px;
   border-radius: 14px;
   color: var(--text-main);
   text-decoration: none;
-  font-size: 16.5px;
+  font-size: 22px;
   font-weight: 600;
   transition: all 0.2s ease;
 }
