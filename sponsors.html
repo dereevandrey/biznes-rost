@@ -1420,7 +1420,7 @@
 
                 <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
 
-                    <a href="https://predprinimay.timepad.ru/" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold uppercase text-xs tracking-wider px-6 py-3.5 rounded-xl transition text-center whitespace-nowrap">
+                    <a href="https://territoryup.timepad.ru/" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold uppercase text-xs tracking-wider px-6 py-3.5 rounded-xl transition text-center whitespace-nowrap">
 
                         Билет гостя на Timepad ➔
 
@@ -3276,7 +3276,7 @@
 <script>
     // ГЛОБАЛЬНЫЙ ID СОБЫТИЯ TIMEPAD
     // Когда вы создадите событие в Timepad, замените 'YOUR_EVENT_ID' на реальный числовой ID события (например, '2984532')
-    window.TIMEPAD_EVENT_ID = 'YOUR_EVENT_ID';
+    window.TIMEPAD_EVENT_ID = '4189737';
 
     document.addEventListener('DOMContentLoaded', function() {
         if (window.TIMEPAD_EVENT_ID && window.TIMEPAD_EVENT_ID !== 'YOUR_EVENT_ID') {
@@ -3286,7 +3286,7 @@
             const timepadLinks = document.querySelectorAll('a[href*="timepad.ru"]');
             timepadLinks.forEach(function(link) {
                 // Меняем ссылку на конкретное событие
-                link.href = 'https://predprinimay.timepad.ru/event/' + eventId + '/';
+                link.href = 'https://territoryup.timepad.ru/event/' + eventId + '/';
                 link.setAttribute('data-twf-placeholder', 'yes');
             });
 
