@@ -4196,9 +4196,11 @@
 
                     </div>
 
-                    <h4 class="text-xl font-bold font-['Oswald'] uppercase text-white mb-1">Заявка принята!</h4>
+                    <h4 class="text-xl font-bold font-['Oswald'] uppercase text-white mb-1">Заявка принята в работу!</h4>
 
-                    <p class="text-gray-300 text-xs">Эксперт консорциума свяжется с вами в течение 15 минут.</p>
+                    <p class="text-gray-300 text-xs mb-1.5">Ответственный менеджер: <b class="text-white">Светлана Королева</b> (+7 922 221-50-39).</p>
+
+                    <p class="text-sky-400 text-[11px]">Свяжемся с вами в течение 15 минут (звонок / MAX / Telegram).</p>
 
                 </div>
 
@@ -4878,27 +4880,39 @@ function sendAiQuick(text) {
 
 
 
-// Сохранение лида в локальное хранилище и логи
+// Сохранение лида в локальное хранилище и прямая синхронизация с YouGile CRM (Светлана Королева)
 
 function saveLead(name, niche, contact, details) {
+
+    var leadObj = {
+
+        name: name || 'Гость',
+
+        phone: contact || 'В диалоге',
+
+        company: niche || 'Не указана',
+
+        details: details || '',
+
+        source: 'Сайт бизнес-рост.рф',
+
+        url: window.location.href,
+
+        referrer: document.referrer || '',
+
+        date: new Date().toISOString()
+
+    };
+
+
+
+    // 1. Обязательный локальный буфер на случай оффлайна
 
     try {
 
         var leads = JSON.parse(localStorage.getItem('TR_LEADS') || '[]');
 
-        leads.push({
-
-            date: new Date().toISOString(),
-
-            name: name || 'Гость',
-
-            niche: niche || 'Не указана',
-
-            contact: contact || 'В диалоге',
-
-            details: details
-
-        });
+        leads.push(leadObj);
 
         localStorage.setItem('TR_LEADS', JSON.stringify(leads));
 
@@ -4907,6 +4921,44 @@ function saveLead(name, niche, contact, details) {
     } catch (e) {
 
         console.warn('Storage error:', e);
+
+    }
+
+
+
+    // 2. Отправка на боевой шлюз Cloud.ru (YouGile CRM + MAX / Telegram менеджеру Светлане)
+
+    try {
+
+        fetch('https://predprinimy.ru/api/tr/lead', {
+
+            method: 'POST',
+
+            headers: {
+
+                'Content-Type': 'application/json'
+
+            },
+
+            body: JSON.stringify(leadObj)
+
+        }).then(function(res) {
+
+            return res.json();
+
+        }).then(function(data) {
+
+            console.log('🚀 Лид успешно передан в YouGile CRM Светлане Королевой:', data);
+
+        }).catch(function(err) {
+
+            console.warn('Network sync notice (saved locally):', err);
+
+        });
+
+    } catch (netErr) {
+
+        console.warn('Dispatch error:', netErr);
 
     }
 
@@ -6052,6 +6104,20 @@ function handleBusinessAnalysisSubmit(e) {
 
     e.preventDefault();
 
+    const name = document.getElementById('analysisName')?.value || '';
+
+    const contact = document.getElementById('analysisContact')?.value || '';
+
+    const company = document.getElementById('analysisCompany')?.value || '';
+
+    const interest = document.getElementById('analysisInterest')?.value || 'Бизнес-разбор';
+
+
+
+    saveLead(name, company, contact, 'Запись на бизнес-разбор (20 минут с экспертом). Интерес: ' + interest);
+
+
+
     document.getElementById('businessAnalysisForm').classList.add('hidden');
 
     document.getElementById('analysisSuccessBox').classList.remove('hidden');
@@ -6091,43 +6157,63 @@ function handleTariffSubmit(e) {
 
 
 function handlePresentationSubmit(e) {
-
     e.preventDefault();
 
-    
-
     const name = document.getElementById('pres-name')?.value || '';
-
     const phone = document.getElementById('pres-phone')?.value || '';
-
     const company = document.getElementById('pres-company')?.value || '';
-
     const pkg = document.getElementById('modalPresentationPackage')?.value || 'Спонсорский пакет';
-
     const channel = document.getElementById('pres-channel')?.value || 'telegram';
-
-    
 
     saveLead(name, company, phone, 'Запрос презентации: ' + pkg + ' (канал: ' + channel + ')');
 
-    
+    let downloadUrl = 'presentations/sponsor-deck.pdf';
+    let downloadFileName = 'Презентация_Партнёры_и_спонсоры.pdf';
+    let deckTitle = 'Презентация: Спонсорские пакеты и партнерство';
+    let tgParam = 'sponsor';
 
-    document.getElementById('presentationFormContainer').classList.add('hidden');
-
-    document.getElementById('presentationSuccessContainer').classList.remove('hidden');
-
-    
-
-    if (channel === 'telegram') {
-
-        window.open('https://t.me/Sofiya_TR_bot', '_blank');
-
-    } else if (channel === 'vk') {
-
-        window.open('https://vk.ru/territoryup', '_blank');
-
+    const pkgLower = pkg.toLowerCase();
+    if (pkgLower.includes('галере') || pkgLower.includes('стенд')) {
+        downloadUrl = 'presentations/expo-gallery-deck.pdf';
+        downloadFileName = 'Презентация_Бизнес_галерея.pdf';
+        deckTitle = 'Презентация: Стенды Бизнес-галереи и Лаунж';
+        tgParam = 'expo';
+    } else if (pkgLower.includes('участник') || pkgLower.includes('интенсив') || pkgLower.includes('спринт')) {
+        downloadUrl = 'presentations/sprint-participants-deck.pdf';
+        downloadFileName = 'Презентация_Участники_бизнес_интенсива.pdf';
+        deckTitle = 'Презентация: 7-дневный бизнес-интенсив';
+        tgParam = 'sprint';
+    } else if (pkgLower.includes('спикер') || pkgLower.includes('эксперт')) {
+        downloadUrl = 'presentations/speakers-experts-deck.pdf';
+        downloadFileName = 'Презентация_Эксперты_и_спикеры.pdf';
+        deckTitle = 'Презентация: Эксперты и спикеры Саммита';
+        tgParam = 'experts';
     }
 
+    const titleEl = document.getElementById('presDeckTitle');
+    if (titleEl) {
+        titleEl.textContent = deckTitle;
+    }
+
+    const directBtn = document.getElementById('presDirectDownloadBtn');
+    if (directBtn) {
+        directBtn.href = downloadUrl;
+        directBtn.setAttribute('download', downloadFileName);
+    }
+
+    const tgBtn = document.getElementById('presTgBtn');
+    if (tgBtn) {
+        tgBtn.href = 'https://t.me/Sofiya_TR_bot?start=' + tgParam;
+    }
+
+    document.getElementById('presentationFormContainer').classList.add('hidden');
+    document.getElementById('presentationSuccessContainer').classList.remove('hidden');
+
+    try {
+        window.open(downloadUrl, '_blank');
+    } catch(err) {
+        console.log('Popup blocked, button is available');
+    }
 }
 
 
@@ -6364,13 +6450,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             </div>
 
-            <h4 class="text-xl font-bold font-['Oswald'] uppercase text-white mb-2">Заявка успешно отправлена!</h4>
+            <h4 class="text-xl font-bold font-['Oswald'] uppercase text-white mb-2">Бронь тарифа зафиксирована!</h4>
 
-            <p class="text-gray-300 text-xs sm:text-sm mb-4">AI-ассистент София и наш эксперт свяжутся с вами для фиксации спецусловий.</p>
+            <p class="text-gray-300 text-xs sm:text-sm mb-2">Ответственный менеджер: <b class="text-white">Светлана Королева</b> (+7 922 221-50-39).</p>
+
+            <p class="text-sky-400 text-xs mb-4">Свяжемся с вами в течение 15 минут для подтверждения спецусловий.</p>
 
             <a href="https://t.me/Sofiya_TR_bot" target="_blank" class="inline-block bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs py-2.5 px-6 rounded-xl transition">
 
-                Перейти в диалог с Софией в Telegram ➔
+                Задать вопрос Софии в Telegram ➔
 
             </a>
 
@@ -6547,45 +6635,46 @@ document.addEventListener('DOMContentLoaded', () => {
         <div id="presentationSuccessContainer" class="hidden text-center py-6">
 
             <div class="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-3">
-
                 <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-
             </div>
 
-            <h4 class="text-xl font-bold font-['Oswald'] uppercase text-white mb-2">Заявка на презентацию принята!</h4>
+            <h4 class="text-xl font-bold font-['Oswald'] uppercase text-white mb-1">Ваша презентация готова!</h4>
+            <div id="presDeckTitle" class="text-amber-400 font-bold text-sm mb-3">Презентация спонсорского партнёрства</div>
 
-            <p class="text-gray-300 text-xs sm:text-sm mb-5">
-
-                Материалы по выбранному пакету сформированы. Нажмите кнопку ниже, чтобы моментально забрать презентацию:
-
-            </p>
-
-            
-
-            <div class="flex flex-col gap-3 max-w-xs mx-auto mb-6">
-
-                <!-- Telegram Button -->
-
-                <a href="https://t.me/Sofiya_TR_bot" target="_blank" class="flex items-center justify-center gap-2.5 py-3.5 px-5 bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition shadow-lg shadow-sky-500/20">
-
-                    <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.05-.48-.83-.27-1.49-.42-1.43-.88.03-.24.38-.49 1.04-.75 4.07-1.77 6.78-2.94 8.14-3.51 3.87-1.62 4.67-1.9 5.2-1.91.12 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.18-.04.34z"/></svg>
-
-                    <span>Забрать в Telegram-боте</span>
-
+            <!-- Главная кнопка прямого скачивания -->
+            <div class="max-w-sm mx-auto mb-5">
+                <a id="presDirectDownloadBtn" href="presentations/sponsor-deck.pdf" download="Презентация_Партнёры_и_спонсоры.pdf" target="_blank" class="flex items-center justify-center gap-3 py-4 px-6 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:opacity-95 text-white font-extrabold text-sm uppercase tracking-wider rounded-xl transition shadow-xl shadow-emerald-500/30 cursor-pointer">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    <span>Скачать PDF прямо сейчас</span>
                 </a>
+            </div>
 
-                
+            <div class="bg-purple-950/40 border border-purple-800/40 rounded-xl p-3.5 max-w-sm mx-auto mb-5 text-left">
+                <div class="text-[11px] uppercase font-bold text-purple-300 tracking-wider mb-1">Ваш персональный куратор:</div>
+                <div class="text-white font-bold text-sm">Светлана Королева</div>
+                <div class="text-gray-300 text-xs mt-1">Ответит на любые вопросы по условиям участия и интеграциям:</div>
+                <div class="flex items-center gap-3 mt-2.5">
+                    <a href="tel:+79222215039" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold hover:bg-emerald-500/30 transition">
+                        📞 +7 922 221-50-39
+                    </a>
+                    <a href="https://t.me/koroleva_tr" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-500/20 text-sky-300 border border-sky-500/30 text-xs font-bold hover:bg-sky-500/30 transition">
+                        ✈️ Telegram куратора
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-2.5 max-w-sm mx-auto mb-5">
+                <!-- Telegram Bot Button -->
+                <a id="presTgBtn" href="https://t.me/Sofiya_TR_bot?start=sponsor" target="_blank" class="flex-1 flex items-center justify-center gap-2 py-3 px-3 bg-sky-500/20 hover:bg-sky-500/30 border border-sky-500/40 text-sky-300 font-bold text-xs uppercase tracking-wider rounded-xl transition">
+                    <svg class="w-4 h-4 fill-sky-400" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.05-.48-.83-.27-1.49-.42-1.43-.88.03-.24.38-.49 1.04-.75 4.07-1.77 6.78-2.94 8.14-3.51 3.87-1.62 4.67-1.9 5.2-1.91.12 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.18-.04.34z"/></svg>
+                    <span>Бот София</span>
+                </a>
 
                 <!-- VK Button -->
-
-                <a href="https://vk.ru/territoryup" target="_blank" class="flex items-center justify-center gap-2.5 py-3.5 px-5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition shadow-lg shadow-blue-500/20">
-
+                <a href="https://vk.ru/territoryup" target="_blank" class="flex-1 flex items-center justify-center gap-2 py-3 px-3 bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/40 text-blue-300 font-bold text-xs uppercase tracking-wider rounded-xl transition">
                     <img src="vk-icon-blue-512x512.png" alt="VK" class="w-4 h-4 object-contain brightness-0 invert">
-
-                    <span>Забрать во ВКонтакте</span>
-
+                    <span>ВКонтакте</span>
                 </a>
-
             </div>
 
 
