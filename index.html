@@ -2390,7 +2390,7 @@
 
                                 <svg class="w-4 h-4 text-purple-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
 
-                                <span><b>Заметка о вашей компании</b> в изданиях «Регионы России» и других партнерских СМИ</span>
+                                <span><b>Публикация о компании</b> в деловом издании «National Business» и журнале «PEOPLE»</span>
 
                             </li>
 
@@ -3658,17 +3658,17 @@
 
                     
 
-                    <!-- 1. Федеральный медиа-холдинг «Регионы России» (Экстра-крупный h-36 sm:h-44) -->
+                    <!-- 1. Деловой журнал «PEOPLE» (Экстра-крупный h-36 sm:h-44) -->
 
-                    <div class="bg-white rounded-3xl p-7 border border-gray-200 shadow-lg hover:shadow-2xl hover:border-blue-500 transition flex flex-col justify-between group">
+                    <div class="bg-white rounded-3xl p-7 border border-gray-200 shadow-lg hover:shadow-2xl hover:border-orange-500 transition flex flex-col justify-between group">
 
                         <div>
 
                             <!-- Экстра-крупная плашка логотипа -->
 
-                            <a href="https://gosrf.ru/" target="_blank" class="h-36 sm:h-44 bg-white rounded-2xl flex items-center justify-center p-3 mb-6 border border-gray-200 shadow-sm group-hover:border-blue-400 group-hover:shadow-md transition overflow-hidden">
+                            <a href="https://ra-people.ru/" target="_blank" class="h-36 sm:h-44 bg-white rounded-2xl flex items-center justify-center p-3 mb-6 border border-gray-200 shadow-sm group-hover:border-orange-400 group-hover:shadow-md transition overflow-hidden">
 
-                                <img src="Спикеры/Лого/Лого Регионы России.jpg" alt="Регионы России" class="h-full w-full object-contain transition group-hover:scale-105 duration-300">
+                                <img src="Спикеры/Лого/Лого Журнал PEOPLE.png" alt="Журнал PEOPLE" class="h-full w-full object-contain transition group-hover:scale-105 duration-300">
 
                             </a>
 
@@ -3676,17 +3676,17 @@
 
                             <div class="flex items-center justify-between mb-2">
 
-                                <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest">Национальные приоритеты</span>
+                                <span class="text-[10px] font-bold text-orange-600 uppercase tracking-widest">Бизнес и лидеры мнений</span>
 
-                                <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold">20 лет на рынке</span>
+                                <span class="px-3 py-1 rounded-full bg-orange-50 text-orange-700 text-xs font-bold">Глянцевый журнал</span>
 
                             </div>
 
 
 
-                            <h4 class="text-xl font-black font-['Oswald'] uppercase text-gray-900 mb-2 group-hover:text-blue-600 transition">
+                            <h4 class="text-xl font-black font-['Oswald'] uppercase text-gray-900 mb-2 group-hover:text-orange-600 transition">
 
-                                РЕГИОНЫ РОССИИ
+                                ЖУРНАЛ PEOPLE
 
                             </h4>
 
@@ -3694,13 +3694,13 @@
 
                             <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
 
-                                Федеральный медиа-холдинг и журнал для политической и деловой элиты страны.
+                                Полноцветный глянцевый журнал о людях и для людей: всё, что нужно знать о бизнесе.
 
                             </p>
 
                             <p class="text-gray-500 text-xs leading-relaxed mb-6">
 
-                                Более 20 лет журнал адресной рассылкой доставляется в <b>Администрацию Президента РФ</b>, правительства всех субъектов РФ, директорам крупнейших корпораций и союзам предпринимателей России.
+                                Объединяет деловое сообщество Екатеринбурга и Москвы. Федеральная площадка для обмена практическим опытом собственников бизнеса, топ-менеджеров и лидеров отраслей.
 
                             </p>
 
@@ -3712,9 +3712,9 @@
 
                             <span class="text-xs text-gray-400 font-medium">Официальный медиа-партнер</span>
 
-                            <a href="https://gosrf.ru/" target="_blank" class="text-xs font-bold text-blue-600 hover:text-blue-800 transition flex items-center gap-1">
+                            <a href="https://ra-people.ru/" target="_blank" class="text-xs font-bold text-orange-600 hover:text-orange-800 transition flex items-center gap-1">
 
-                                <span>gosrf.ru ↗</span>
+                                <span>ra-people.ru ↗</span>
 
                             </a>
 
@@ -4882,13 +4882,15 @@ function sendAiQuick(text) {
 
 // Сохранение лида в локальное хранилище и прямая синхронизация с YouGile CRM (Светлана Королева)
 
-function saveLead(name, niche, contact, details) {
+function saveLead(name, niche, contact, details, email) {
 
     var leadObj = {
 
         name: name || 'Гость',
 
         phone: contact || 'В диалоге',
+
+        email: email || '',
 
         company: niche || 'Не указана',
 
@@ -6134,6 +6136,8 @@ function handleTariffSubmit(e) {
 
     const contact = document.getElementById('modalTariffContact')?.value || '';
 
+    const email = document.getElementById('modalTariffEmail')?.value || '';
+
     const company = document.getElementById('modalTariffCompany')?.value || '';
 
     const tariffName = document.getElementById('modalTariffHidden')?.value || '';
@@ -6144,7 +6148,7 @@ function handleTariffSubmit(e) {
 
 
 
-    saveLead(name, company, contact, 'Бронь тарифа: ' + tariffName + ' | Роль: ' + role + ' | Участников: ' + qty);
+    saveLead(name, company, contact, 'Бронь тарифа: ' + tariffName + ' | Роль: ' + role + ' | Участников: ' + qty, email);
 
 
 
@@ -6157,63 +6161,33 @@ function handleTariffSubmit(e) {
 
 
 function handlePresentationSubmit(e) {
+
     e.preventDefault();
 
+
+
     const name = document.getElementById('pres-name')?.value || '';
+
     const phone = document.getElementById('pres-phone')?.value || '';
+
+    const email = document.getElementById('pres-email')?.value || '';
+
     const company = document.getElementById('pres-company')?.value || '';
+
     const pkg = document.getElementById('modalPresentationPackage')?.value || 'Спонсорский пакет';
+
     const channel = document.getElementById('pres-channel')?.value || 'telegram';
 
-    saveLead(name, company, phone, 'Запрос презентации: ' + pkg + ' (канал: ' + channel + ')');
 
-    let downloadUrl = 'presentations/sponsor-deck.pdf';
-    let downloadFileName = 'Презентация_Партнёры_и_спонсоры.pdf';
-    let deckTitle = 'Презентация: Спонсорские пакеты и партнерство';
-    let tgParam = 'sponsor';
 
-    const pkgLower = pkg.toLowerCase();
-    if (pkgLower.includes('галере') || pkgLower.includes('стенд')) {
-        downloadUrl = 'presentations/expo-gallery-deck.pdf';
-        downloadFileName = 'Презентация_Бизнес_галерея.pdf';
-        deckTitle = 'Презентация: Стенды Бизнес-галереи и Лаунж';
-        tgParam = 'expo';
-    } else if (pkgLower.includes('участник') || pkgLower.includes('интенсив') || pkgLower.includes('спринт')) {
-        downloadUrl = 'presentations/sprint-participants-deck.pdf';
-        downloadFileName = 'Презентация_Участники_бизнес_интенсива.pdf';
-        deckTitle = 'Презентация: 7-дневный бизнес-интенсив';
-        tgParam = 'sprint';
-    } else if (pkgLower.includes('спикер') || pkgLower.includes('эксперт')) {
-        downloadUrl = 'presentations/speakers-experts-deck.pdf';
-        downloadFileName = 'Презентация_Эксперты_и_спикеры.pdf';
-        deckTitle = 'Презентация: Эксперты и спикеры Саммита';
-        tgParam = 'experts';
-    }
+    saveLead(name, company, phone, 'Запрос презентации: ' + pkg + ' (канал: ' + channel + ')', email);
 
-    const titleEl = document.getElementById('presDeckTitle');
-    if (titleEl) {
-        titleEl.textContent = deckTitle;
-    }
 
-    const directBtn = document.getElementById('presDirectDownloadBtn');
-    if (directBtn) {
-        directBtn.href = downloadUrl;
-        directBtn.setAttribute('download', downloadFileName);
-    }
-
-    const tgBtn = document.getElementById('presTgBtn');
-    if (tgBtn) {
-        tgBtn.href = 'https://t.me/Sofiya_TR_bot?start=' + tgParam;
-    }
 
     document.getElementById('presentationFormContainer').classList.add('hidden');
+
     document.getElementById('presentationSuccessContainer').classList.remove('hidden');
 
-    try {
-        window.open(downloadUrl, '_blank');
-    } catch(err) {
-        console.log('Popup blocked, button is available');
-    }
 }
 
 
@@ -6354,11 +6328,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     <div>
 
-                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Телефон / TG *</label>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Мобильный телефон *</label>
 
-                        <input type="text" id="modalTariffContact" placeholder="+7 (999) 000-00-00" required class="w-full bg-[#060a14] border border-indigo-900/70 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm">
+                        <input type="tel" id="modalTariffContact" placeholder="+7 (999) 000-00-00" required class="w-full bg-[#060a14] border border-indigo-900/70 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm">
 
                     </div>
+
+                    <div>
+
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Электронная почта (Email) *</label>
+
+                        <input type="email" id="modalTariffEmail" placeholder="name@company.ru" required class="w-full bg-[#060a14] border border-indigo-900/70 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm">
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
 
                     <div>
 
@@ -6368,13 +6356,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     </div>
 
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-
                     <div>
 
-                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Количество участников *</label>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Участников *</label>
 
                         <input type="number" id="modalTariffQty" value="1" min="1" required class="w-full bg-[#060a14] border border-indigo-900/70 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm">
 
@@ -6382,7 +6366,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     <div>
 
-                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Роль в компании *</label>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Роль *</label>
 
                         <select id="modalTariffRole" required class="w-full bg-[#060a14] border border-indigo-900/70 text-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm">
 
@@ -6432,7 +6416,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 <button type="submit" class="w-full mt-3 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase tracking-wider py-4 rounded-xl transition text-xs sm:text-sm shadow-xl shadow-blue-600/30 cursor-pointer">
 
-                    Отправить заявку менеджеру
+                    Отправить заявку
 
                 </button>
 
@@ -6444,23 +6428,69 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <div id="tariffSuccessContainer" class="hidden text-center py-6">
 
-            <div class="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-3">
+            <div class="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-3 border border-emerald-500/30">
 
                 <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
 
             </div>
 
-            <h4 class="text-xl font-bold font-['Oswald'] uppercase text-white mb-2">Бронь тарифа зафиксирована!</h4>
 
-            <p class="text-gray-300 text-xs sm:text-sm mb-2">Ответственный менеджер: <b class="text-white">Светлана Королева</b> (+7 922 221-50-39).</p>
 
-            <p class="text-sky-400 text-xs mb-4">Свяжемся с вами в течение 15 минут для подтверждения спецусловий.</p>
+            <h4 class="text-xl sm:text-2xl font-bold font-['Oswald'] uppercase text-white mb-2">Спасибо, ваша заявка принята!</h4>
 
-            <a href="https://t.me/Sofiya_TR_bot" target="_blank" class="inline-block bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs py-2.5 px-6 rounded-xl transition">
+            
 
-                Задать вопрос Софии в Telegram ➔
+            <p class="text-gray-200 text-xs sm:text-sm leading-relaxed max-w-sm mx-auto mb-5">
 
-            </a>
+                В ближайшее время с вами свяжется персональный менеджер Светлана Королева (+7 922 221-50-39).
+
+            </p>
+
+
+
+            <div class="bg-gradient-to-r from-indigo-950/60 to-purple-950/60 border border-indigo-500/30 rounded-2xl p-4 max-w-sm mx-auto mb-5 text-left">
+
+                <div class="flex items-start gap-3">
+
+                    <div class="w-9 h-9 rounded-xl bg-indigo-600/30 flex items-center justify-center shrink-0 border border-indigo-400/30">
+
+                        <span class="text-lg">✨</span>
+
+                    </div>
+
+                    <div>
+
+                        <div class="text-[11px] uppercase font-bold text-sky-300 tracking-wider mb-1">AI-ассистент София</div>
+
+                        <p class="text-gray-300 text-xs leading-relaxed">
+
+                            На любые другие ваши вопросы прямо сейчас может ответить искусственный интеллект AI-ассистент София.
+
+                        </p>
+
+                        <div class="mt-2.5 flex items-center gap-2">
+
+                            <button type="button" onclick="openAssistantModal()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600/30 text-indigo-200 border border-indigo-500/40 text-xs font-bold hover:bg-indigo-600/50 transition cursor-pointer">
+
+                                💬 Задать вопрос Софии
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <button onclick="closeModal('tariffModal')" type="button" class="text-xs text-gray-400 hover:text-white underline transition cursor-pointer">
+
+                Закрыть окно
+
+            </button>
 
         </div>
 
@@ -6520,79 +6550,99 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 </div>
 
+
+
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
 
                     <div>
 
-                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Телефон / TG *</label>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Мобильный телефон *</label>
 
-                        <input type="text" id="pres-phone" placeholder="+7 (999) 000-00-00" required class="w-full bg-[#060a14] border border-purple-900/70 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 text-sm">
+                        <input type="tel" id="pres-phone" placeholder="+7 (999) 000-00-00" required class="w-full bg-[#060a14] border border-purple-900/70 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 text-sm">
 
                     </div>
 
                     <div>
 
-                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Компания</label>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Электронная почта (Email) *</label>
+
+                        <input type="email" id="pres-email" placeholder="name@company.ru" required class="w-full bg-[#060a14] border border-purple-900/70 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 text-sm">
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+                    <div>
+
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Компания / Проект</label>
 
                         <input type="text" id="pres-company" placeholder="Название бренда" class="w-full bg-[#060a14] border border-purple-900/70 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 text-sm">
 
                     </div>
 
+                    <div>
+
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Интересующий пакет *</label>
+
+                        <select id="modalPresentationPackage" required class="w-full bg-[#060a14] border border-purple-900/70 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 text-sm">
+
+                            <option value="Спонсорский пакет">Общий спонсорский пакет</option>
+
+                            <option value="Генеральный партнёр">Генеральный партнёр</option>
+
+                            <option value="Официальный партнёр">Официальный партнёр</option>
+
+                            <option value="Партнёр проекта">Партнёр проекта</option>
+
+                            <option value="Технологический AI-партнёр">Технологический AI-партнёр</option>
+
+                            <option value="Партнёр кофе-брейка">Партнёр кофе-брейка</option>
+
+                            <option value="Медиа-партнёр">Медиа-партнёр</option>
+
+                            <option value="Малый стенд (4 м²)">Малый стенд (4 м²)</option>
+
+                            <option value="Стандартный стенд (8 м²)">Стандартный стенд (8 м²)</option>
+
+                            <option value="Эксклюзивный Бизнес-Лаунж (до 60 человек)">Эксклюзивный Бизнес-Лаунж (до 60 человек)</option>
+
+                            <option value="Стенд в Бизнес-галерее">Стенд в Бизнес-галерее</option>
+
+                            <option value="Презентация партнёрства">Презентация спонсорского партнёрства</option>
+
+                        </select>
+
+                    </div>
+
                 </div>
+
+
 
                 <div>
 
-                    <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Интересующий пакет участия *</label>
+                    <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Куда вам удобно получить презентацию? *</label>
 
-                    <select id="modalPresentationPackage" required class="w-full bg-[#060a14] border border-purple-900/70 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 text-sm">
+                    <select id="pres-channel" required class="w-full bg-[#060a14] border border-purple-900/70 text-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 text-sm">
 
-                        <option value="Спонсорский пакет">Общий спонсорский пакет</option>
-
-                        <option value="Генеральный партнёр">Генеральный партнёр</option>
-
-                        <option value="Официальный партнёр">Официальный партнёр</option>
-
-                        <option value="Партнёр проекта">Партнёр проекта</option>
-
-                        <option value="Технологический AI-партнёр">Технологический AI-партнёр</option>
-
-                        <option value="Партнёр кофе-брейка">Партнёр кофе-брейка</option>
-
-                        <option value="Медиа-партнёр">Медиа-партнёр</option>
-
-                        <option value="Малый стенд (4 м²)">Малый стенд (4 м²)</option>
-
-                        <option value="Стандартный стенд (8 м²)">Стандартный стенд (8 м²)</option>
-
-                        <option value="Эксклюзивный Бизнес-Лаунж (до 60 человек)">Эксклюзивный Бизнес-Лаунж (до 60 человек)</option>
-
-                        <option value="Стенд в Бизнес-галерее">Стенд в Бизнес-галерее</option>
-
-                        <option value="Презентация партнёрства">Презентация спонсорского партнёрства</option>
-
-                    </select>
-
-                </div>
-
-                <div>
-
-                    <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Куда прислать презентацию? *</label>
-
-                    <select id="pres-channel" class="w-full bg-[#060a14] border border-purple-900/70 text-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 text-sm">
-
-                        <option value="direct">⚡ Скачать PDF сразу на сайте (Рекомендуется)</option>
-
-                        <option value="telegram">В Telegram (София-Бот / куратор)</option>
+                        <option value="telegram">В Telegram (куратор / бот София)</option>
 
                         <option value="max">В мессенджер MAX</option>
 
-                        <option value="vk">В ВКонтакте</option>
+                        <option value="email">На электронную почту (Email)</option>
 
-                        <option value="call">Позвонить Светлане Королевой</option>
+                        <option value="whatsapp">В WhatsApp</option>
+
+                        <option value="call">Позвонить куратору (Светлана Королева)</option>
 
                     </select>
 
                 </div>
+
+
 
                 <div class="space-y-2.5 mt-2 mb-3 text-left">
 
@@ -6622,9 +6672,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 </div>
 
+
+
                 <button type="submit" class="w-full mt-3 bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 hover:opacity-95 text-white font-black uppercase tracking-wider py-4 rounded-xl transition text-xs sm:text-sm shadow-xl shadow-purple-600/30 cursor-pointer">
 
-                    Получить презентацию и условия
+                    Отправить заявку
 
                 </button>
 
@@ -6636,52 +6688,91 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <div id="presentationSuccessContainer" class="hidden text-center py-6">
 
-            <div class="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-3">
+            <div class="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-3 border border-emerald-500/30">
+
                 <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+
             </div>
 
-            <h4 class="text-xl font-bold font-['Oswald'] uppercase text-white mb-1">Ваша презентация готова!</h4>
-            <div id="presDeckTitle" class="text-amber-400 font-bold text-sm mb-3">Презентация спонсорского партнёрства</div>
 
-            <!-- Главная кнопка прямого скачивания -->
-            <div class="max-w-sm mx-auto mb-5">
-                <a id="presDirectDownloadBtn" href="presentations/sponsor-deck.pdf" download="Презентация_Партнёры_и_спонсоры.pdf" target="_blank" class="flex items-center justify-center gap-3 py-4 px-6 bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:opacity-95 text-white font-extrabold text-sm uppercase tracking-wider rounded-xl transition shadow-xl shadow-emerald-500/30 cursor-pointer">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                    <span>Скачать PDF прямо сейчас</span>
-                </a>
+
+            <h4 class="text-xl sm:text-2xl font-bold font-['Oswald'] uppercase text-white mb-2">Спасибо, ваша заявка принята!</h4>
+
+            
+
+            <p class="text-gray-200 text-xs sm:text-sm leading-relaxed max-w-sm mx-auto mb-5">
+
+                С вами свяжется в ближайшее время менеджер и направит презентацию в выбранный вами канал связи.
+
+            </p>
+
+
+
+            <div class="bg-gradient-to-r from-purple-950/60 to-indigo-950/60 border border-purple-500/30 rounded-2xl p-4 max-w-sm mx-auto mb-5 text-left">
+
+                <div class="flex items-start gap-3">
+
+                    <div class="w-9 h-9 rounded-xl bg-purple-600/30 flex items-center justify-center shrink-0 border border-purple-400/30">
+
+                        <span class="text-lg">✨</span>
+
+                    </div>
+
+                    <div>
+
+                        <div class="text-[11px] uppercase font-bold text-purple-300 tracking-wider mb-1">AI-ассистент София</div>
+
+                        <p class="text-gray-300 text-xs leading-relaxed">
+
+                            На любые другие ваши вопросы сейчас может ответить искусственный интеллект AI-ассистент София.
+
+                        </p>
+
+                        <div class="mt-2.5 flex items-center gap-2">
+
+                            <button type="button" onclick="openAssistantModal()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-purple-600/30 text-purple-200 border border-purple-500/40 text-xs font-bold hover:bg-purple-600/50 transition cursor-pointer">
+
+                                💬 Задать вопрос Софии
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
+
+
 
             <div class="bg-purple-950/40 border border-purple-800/40 rounded-xl p-3.5 max-w-sm mx-auto mb-5 text-left">
-                <div class="text-[11px] uppercase font-bold text-purple-300 tracking-wider mb-1">Ваш персональный куратор:</div>
+
+                <div class="text-[11px] uppercase font-bold text-purple-300 tracking-wider mb-1">Персональный куратор:</div>
+
                 <div class="text-white font-bold text-sm">Светлана Королева</div>
-                <div class="text-gray-300 text-xs mt-1">Ответит на любые вопросы по условиям участия и интеграциям:</div>
-                <div class="flex items-center gap-3 mt-2.5">
+
+                <div class="flex items-center gap-3 mt-2">
+
                     <a href="tel:+79222215039" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold hover:bg-emerald-500/30 transition">
+
                         📞 +7 922 221-50-39
+
                     </a>
+
                     <a href="https://t.me/koroleva_tr" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-500/20 text-sky-300 border border-sky-500/30 text-xs font-bold hover:bg-sky-500/30 transition">
-                        ✈️ Telegram куратора
+
+                        ✈️ @koroleva_tr
+
                     </a>
+
                 </div>
-            </div>
 
-            <div class="flex flex-col sm:flex-row gap-2.5 max-w-sm mx-auto mb-5">
-                <!-- Telegram Bot Button -->
-                <a id="presTgBtn" href="https://t.me/Sofiya_TR_bot?start=sponsor" target="_blank" class="flex-1 flex items-center justify-center gap-2 py-3 px-3 bg-sky-500/20 hover:bg-sky-500/30 border border-sky-500/40 text-sky-300 font-bold text-xs uppercase tracking-wider rounded-xl transition">
-                    <svg class="w-4 h-4 fill-sky-400" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.05-.48-.83-.27-1.49-.42-1.43-.88.03-.24.38-.49 1.04-.75 4.07-1.77 6.78-2.94 8.14-3.51 3.87-1.62 4.67-1.9 5.2-1.91.12 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.18-.04.34z"/></svg>
-                    <span>Бот София</span>
-                </a>
-
-                <!-- VK Button -->
-                <a href="https://vk.ru/territoryup" target="_blank" class="flex-1 flex items-center justify-center gap-2 py-3 px-3 bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/40 text-blue-300 font-bold text-xs uppercase tracking-wider rounded-xl transition">
-                    <img src="vk-icon-blue-512x512.png" alt="VK" class="w-4 h-4 object-contain brightness-0 invert">
-                    <span>ВКонтакте</span>
-                </a>
             </div>
 
 
 
-            <button onclick="closeModal('presentationModal')" class="text-xs text-gray-400 hover:text-white underline transition">
+            <button onclick="closeModal('presentationModal')" type="button" class="text-xs text-gray-400 hover:text-white underline transition cursor-pointer">
 
                 Закрыть окно
 
@@ -7040,38 +7131,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 <!-- ======================================================= -->
-<!-- ИНТЕГРАЦИЯ С БИЛЕТНОЙ СИСТЕМОЙ TIMEPAD                  -->
+<!-- ПРЯМАЯ ССЫЛКА НА БИЛЕТНУЮ СИСТЕМУ TIMEPAD               -->
 <!-- ======================================================= -->
 <script>
-    // ГЛОБАЛЬНЫЙ ID СОБЫТИЯ TIMEPAD
-    // Когда вы создадите событие в Timepad, замените 'YOUR_EVENT_ID' на реальный числовой ID события (например, '2984532')
-    window.TIMEPAD_EVENT_ID = '4189737';
-
     document.addEventListener('DOMContentLoaded', function() {
-        if (window.TIMEPAD_EVENT_ID && window.TIMEPAD_EVENT_ID !== 'YOUR_EVENT_ID') {
-            const eventId = window.TIMEPAD_EVENT_ID;
-            
-            // Находим все ссылки на Timepad и преобразуем их для открытия во всплывающем виджете
-            const timepadLinks = document.querySelectorAll('a[href*="timepad.ru"]');
-            timepadLinks.forEach(function(link) {
-                // Меняем ссылку на конкретное событие
-                link.href = 'https://territoryup.timepad.ru/event/' + eventId + '/';
-                link.setAttribute('data-twf-placeholder', 'yes');
-            });
-
-            // Динамически загружаем асинхронный скрипт Timepad Loader
-            const script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.defer = true;
-            script.src = 'https://timepad.ru/js/tpwf/loader/min/loader.js';
-            script.setAttribute('data-twf2s-event--id', eventId);
-            script.setAttribute('data-timepad-widget-v2', 'event_register');
-            
-            document.body.appendChild(script);
-            console.log('Timepad widget successfully initialized for Event ID:', eventId);
-        } else {
-            console.log('Timepad widget is in fallback mode (Event ID is not configured yet). Links point to organization profile.');
-        }
+        const timepadLinks = document.querySelectorAll('a[href*="timepad.ru"]');
+        timepadLinks.forEach(function(link) {
+            link.href = 'https://territoryup.timepad.ru/event/4189737/';
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+        });
     });
 </script>
 </body>
