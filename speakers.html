@@ -133,15 +133,13 @@
                 Синтез предпринимательского опыта, корпоративной психологии и прикладных AI-технологий от признанных лидеров отраслей.
             </p>
             <!-- Унифицированные кнопки действия -->
-            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center items-center">
-                <button onclick="openPresentationModal('Презентация для спикеров')" type="button" class="bg-white text-black font-black uppercase tracking-wider py-2.5 px-6 rounded-2xl hover:bg-gray-200 transition shadow-[0_0_30px_rgba(255,255,255,0.2)] cursor-pointer flex flex-col items-center justify-center min-h-[56px] w-full sm:w-64">
-                    <span class="text-xs sm:text-sm tracking-wide leading-none mb-0.5">Скачать презентацию</span>
-                    <span class="text-[10px] text-gray-500 font-bold lowercase tracking-wider leading-none">для спикеров</span>
-                </button>
-                <a href="#tripwire" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-black uppercase tracking-wider py-2.5 px-6 rounded-2xl shadow-lg shadow-sky-500/25 transition transform hover:scale-[1.02] cursor-pointer flex flex-col items-center justify-center min-h-[56px] w-full sm:w-64">
-                    <span class="text-xs sm:text-sm tracking-wide leading-none mb-0.5">Обсудить экспертную роль</span>
-                    <span class="text-[10px] text-sky-200/90 font-bold lowercase tracking-wider leading-none">подать заявку</span>
-                </a>
+            <div class="flex flex-col sm:flex-row gap-4 w-full justify-center items-center">
+                <button onclick="openPresentationModal('Презентация для спикеров')" type="button" class="bg-white text-black font-black uppercase tracking-wider py-4 px-8 rounded-full hover:bg-gray-200 transition shadow-[0_0_30px_rgba(255,255,255,0.2)] cursor-pointer flex items-center justify-center text-xs sm:text-sm w-full sm:w-72 text-center">
+                    Скачать презентацию
+                </button>
+                <a href="#tripwire" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-black uppercase tracking-wider py-4 px-8 rounded-full shadow-lg shadow-sky-500/25 transition transform hover:scale-[1.02] cursor-pointer flex items-center justify-center text-xs sm:text-sm w-full sm:w-72 text-center">
+                    Обсудить экспертную роль
+                </a>
             </div>
         </div>
     </section>
@@ -442,15 +440,14 @@
             <!-- Правая колонка: Кастомизированная форма подачи заявки спикера -->
             <div id="tripwire" class="lg:col-span-6 bg-gradient-to-b from-[#0c1322] via-[#101b30] to-[#070b14] rounded-3xl p-6 sm:p-8 border border-indigo-500/40 shadow-2xl shadow-indigo-950/60 relative flex flex-col justify-between">
                 <div class="mb-5">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600/20 border border-blue-400/40 text-blue-300 text-xs font-bold uppercase tracking-wider">
-                            <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span> Заявка эксперта
-                        </span>
-                        <span class="text-[11px] text-emerald-400 font-medium">Рассмотрение до 24 часов</span>
-                    </div>
-
-                    <h3 class="text-xl sm:text-2xl lg:text-3xl font-black uppercase font-['Oswald'] text-white mb-2 leading-tight">
-                        ПОДАТЬ ЗАЯВКУ НА УЧАСТИЕ В СОБЫТИИ
+                    <div class="mb-3">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600/20 border border-blue-400/40 text-blue-300 text-xs font-bold uppercase tracking-wider">
+                            <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span> Заявка эксперта
+                        </span>
+                    </div>
+
+                    <h3 class="text-base sm:text-lg md:text-xl font-bold uppercase font-['Oswald'] text-white mb-2 leading-snug">
+                        ПОДАТЬ ЗАЯВКУ НА УЧАСТИЕ В СОБЫТИИ
                     </h3>
                     <p class="text-gray-300 text-xs sm:text-sm font-medium leading-relaxed">
                         Оставьте контакты для рассмотрения вашей кандидатуры в качестве спикера, эксперта или трекера на мероприятиях консорциума «ПРЕДПРИНИМАЙ».

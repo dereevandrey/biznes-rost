@@ -309,21 +309,13 @@
 
 
             <p class="text-gray-300 text-base sm:text-lg max-w-3xl leading-relaxed mb-10 font-medium">
-
-                Интегрируйте ваш бренд в эпицентр главного делового события Урала. 300+ собственников и генеральных директоров, 100+ B2B-компаний, федеральный охват в деловых СМИ и прямой контакт с лицами, принимающими решения.
-
+                Интегрируйте ваш бренд в эпицентр ключевого делового события Урала: 200+ руководителей и предпринимательских команд, 30–40 ведущих компаний региона, освещение в деловых СМИ и прямой контакт с лицами, принимающими решения.
             </p>
 
-
-
             <!-- Унифицированные кнопки действия -->
-
             <div class="flex flex-col sm:flex-row gap-4 mb-16 w-full sm:w-auto justify-center">
-
-                <button onclick="openPresentationModal('Презентация партнёрства')" class="bg-white text-black font-black uppercase tracking-wider px-8 py-4 rounded-full text-xs sm:text-sm hover:bg-gray-200 transition shadow-[0_0_30px_rgba(255,255,255,0.2)] text-center cursor-pointer">
-
-                    Запросить партнёрский пакет
-
+                <button onclick="openPresentationModal('Предложить сотрудничество')" class="bg-white text-black font-black uppercase tracking-wider px-8 py-4 rounded-full text-xs sm:text-sm hover:bg-gray-200 transition shadow-[0_0_30px_rgba(255,255,255,0.2)] text-center cursor-pointer">
+                    Предложить сотрудничество
                 </button>
 
                 <a href="#packages" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold uppercase tracking-wider px-8 py-4 rounded-full text-xs sm:text-sm shadow-lg shadow-sky-500/25 transition transform hover:scale-[1.02] text-center">
@@ -1754,7 +1746,7 @@
 
                     <div>
 
-                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Ваше имя *</label>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Имя и фамилия *</label>
 
                         <input id="analysisName" type="text" placeholder="Иван Иванов" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
 
@@ -1774,9 +1766,9 @@
 
                         <div>
 
-                            <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Название компании</label>
+                            <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Электронная почта (Email) *</label>
 
-                            <input id="analysisCompany" type="text" placeholder="ООО «Компания»" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
+                            <input id="analysisEmail" type="email" placeholder="name@company.ru" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
 
                         </div>
 
@@ -1786,11 +1778,37 @@
 
                     <div>
 
-                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Формат участия / Разбор</label>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Название компании и сфера деятельности</label>
 
-                        <select id="analysisInterest" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
+                        <input id="analysisCompany" type="text" placeholder="ООО «Компания» / Отрасль" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
 
-                            <option value="analysis" selected>Записаться на Бизнес-разбор (20 минут с экспертом)</option>
+                    </div>
+
+
+
+                    <div>
+
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Главный запрос или задача для разбора</label>
+
+                        <textarea id="analysisQuery" rows="2" placeholder="Опишите текущий блокер, узкое место в продажах, процессах или задачу внедрения AI" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-2.5 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner resize-none"></textarea>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Куда удобно получить материалы разбора? *</label>
+
+                        <select id="analysisChannel" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
+
+                            <option value="telegram" selected>В Telegram</option>
+
+                            <option value="max">В мессенджер MAX</option>
+
+                            <option value="email">На электронную почту (Email)</option>
+
+                            <option value="call">Звонок менеджера</option>
 
                         </select>
 
@@ -2654,13 +2672,29 @@
 
                 <form onsubmit="handlePresentationSubmit(event)" class="space-y-3.5">
 
-                    <div>
+                    <!-- Бейдж выбранного формата (без необходимости повторного выбора) -->
 
-                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Ваше имя *</label>
+                    <div id="modalSelectedFormatBox" class="bg-gradient-to-r from-purple-950/70 to-indigo-950/70 border border-purple-500/40 rounded-xl p-3 flex items-center justify-between">
 
-                        <input type="text" id="pres-name" placeholder="Иван" required class="w-full bg-[#060a14] border border-purple-900/70 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 text-sm">
+                        <span class="text-[11px] uppercase font-bold text-purple-300">Формат:</span>
+
+                        <span id="modalSelectedFormatBadge" class="text-xs sm:text-sm font-black uppercase text-white font-['Oswald'] tracking-wide">ПАКЕТ СТАНДАРТ</span>
 
                     </div>
+
+                    <input type="hidden" id="modalPresentationPackage" value="Спонсорский пакет">
+
+
+
+                    <div>
+
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Ваше имя и фамилия *</label>
+
+                        <input type="text" id="pres-name" placeholder="Иван Иванов" required class="w-full bg-[#060a14] border border-purple-900/70 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 text-sm">
+
+                    </div>
+
+
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
 
@@ -2692,41 +2726,15 @@
 
                     <div>
 
-                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Интересующий пакет участия *</label>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Краткое описание вашего предложения / пожелания</label>
 
-                        <select id="modalPresentationPackage" required class="w-full bg-[#060a14] border border-purple-900/70 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 text-sm">
-
-                            <option value="Спонсорский пакет">Общий спонсорский пакет</option>
-
-                            <option value="Генеральный партнёр">Генеральный партнёр</option>
-
-                            <option value="Официальный партнёр">Официальный партнёр</option>
-
-                            <option value="Партнёр проекта">Партнёр проекта</option>
-
-                            <option value="Технологический AI-партнёр">Технологический AI-партнёр</option>
-
-                            <option value="Партнёр кофе-брейка">Партнёр кофе-брейка</option>
-
-                            <option value="Медиа-партнёр">Медиа-партнёр</option>
-
-                            <option value="Малый стенд (4 м²)">Малый стенд (4 м²) — 100 000 ₽</option>
-
-                            <option value="Стандартный стенд (8 м²)">Стандартный стенд (8 м²) — 200 000 ₽</option>
-
-                            <option value="Эксклюзивный Бизнес-Лаунж (до 60 человек)">Эксклюзивный Бизнес-Лаунж (до 60 человек)</option>
-
-                            <option value="Стенд в Бизнес-галерее">Стенд в Бизнес-галерее</option>
-
-                            <option value="Презентация партнёрства">Презентация спонсорского партнёрства</option>
-
-                        </select>
+                        <textarea id="pres-proposal" rows="2" placeholder="Опишите ваше видение сотрудничества, задачи интеграции или формат участия" class="w-full bg-[#060a14] border border-purple-900/70 text-white placeholder-gray-500 rounded-xl px-4 py-2.5 focus:outline-none focus:border-purple-500 text-sm resize-none"></textarea>
 
                     </div>
 
                     <div>
 
-                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Куда удобно получить презентацию? *</label>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Куда удобно получить информацию? *</label>
 
                         <select id="pres-channel" required class="w-full bg-[#060a14] border border-purple-900/70 text-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 text-sm">
 
@@ -2736,9 +2744,7 @@
 
                             <option value="email">На электронную почту (Email)</option>
 
-                            <option value="whatsapp">В WhatsApp</option>
-
-                            <option value="call">Звонок куратора (обсудить индивидуальные условия)</option>
+                            <option value="call">Звонок менеджера</option>
 
                         </select>
 
@@ -2800,7 +2806,7 @@
 
                 <p class="text-gray-200 text-xs sm:text-sm leading-relaxed max-w-sm mx-auto mb-5">
 
-                    С вами свяжется в ближайшее время персональный менеджер Светлана Королева (+7 922 221-50-39) и направит презентацию в выбранный вами канал связи.
+                    С вами свяжется в ближайшее время персональный менеджер Светлана Королева (+7 922 221-50-39) и направит подробную информацию в выбранный вами канал связи.
 
                 </p>
 
@@ -3126,19 +3132,45 @@
 
         const titleEl = document.getElementById('modalPresentationTitle');
 
+        const badgeEl = document.getElementById('modalSelectedFormatBadge');
+
         const pkgEl = document.getElementById('modalPresentationPackage');
 
-        if (titleEl && pkgName) {
+        const proposalEl = document.getElementById('pres-proposal');
 
-            titleEl.innerText = pkgName.toUpperCase();
+        if (proposalEl) proposalEl.value = '';
+
+
+
+        const cleanPkg = pkgName || 'Спонсорский пакет';
+
+        if (titleEl) {
+
+            if (cleanPkg === 'Предложить сотрудничество') {
+
+                titleEl.innerText = 'ПРЕДЛОЖИТЬ СОТРУДНИЧЕСТВО';
+
+            } else {
+
+                titleEl.innerText = 'ЗАПРОС УСЛОВИЙ: ' + cleanPkg.toUpperCase();
+
+            }
 
         }
 
-        if (pkgEl && pkgName) {
+        if (badgeEl) {
 
-            pkgEl.value = pkgName;
+            badgeEl.innerText = cleanPkg.toUpperCase();
 
         }
+
+        if (pkgEl) {
+
+            pkgEl.value = cleanPkg;
+
+        }
+
+
 
         document.getElementById('presentationFormContainer').classList.remove('hidden');
 
@@ -3176,13 +3208,45 @@
 
 
 
-    function handleSponsorsAnalysisSubmit(e) {
+    function handleBusinessAnalysisSubmit(e) {
 
         e.preventDefault();
 
-        document.getElementById('sponsorsAnalysisForm').classList.add('hidden');
+        const name = document.getElementById('analysisName')?.value || '';
 
-        document.getElementById('sponsorsAnalysisSuccessBox').classList.remove('hidden');
+        const contact = document.getElementById('analysisContact')?.value || '';
+
+        const email = document.getElementById('analysisEmail')?.value || '';
+
+        const company = document.getElementById('analysisCompany')?.value || '';
+
+        const query = document.getElementById('analysisQuery')?.value || '';
+
+        const channel = document.getElementById('analysisChannel')?.value || 'telegram';
+
+
+
+        let details = 'Канал: ' + channel;
+
+        if (query.trim()) {
+
+            details += ' | Запрос на разбор: ' + query.trim();
+
+        }
+
+
+
+        saveLead(name, company, contact, 'Запись на Бизнес-разбор (' + details + ')', email);
+
+
+
+        const formEl = document.getElementById('businessAnalysisForm');
+
+        const successBox = document.getElementById('analysisSuccessBox');
+
+        if (formEl) formEl.classList.add('hidden');
+
+        if (successBox) successBox.classList.remove('hidden');
 
     }
 
@@ -3236,11 +3300,23 @@
 
         const pkg = document.getElementById('modalPresentationPackage')?.value || 'Спонсорский пакет';
 
+        const proposal = document.getElementById('pres-proposal')?.value || '';
+
         const channel = document.getElementById('pres-channel')?.value || 'telegram';
 
         
 
-        saveLead(name, company, phone, 'Запрос презентации: ' + pkg + ' (канал: ' + channel + ')', email);
+        let details = 'Формат: ' + pkg + ' | Канал связи: ' + channel;
+
+        if (proposal.trim()) {
+
+            details += ' | Предложение / пожелание: ' + proposal.trim();
+
+        }
+
+
+
+        saveLead(name, company, phone, 'Заявка партнёра: ' + pkg + ' (' + details + ')', email);
 
         
 

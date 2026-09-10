@@ -4099,57 +4099,44 @@
                 <!-- ЕДИНАЯ ФОРМА БИЗНЕС-РАЗБОРА -->
 
                 <form id="businessAnalysisForm" onsubmit="handleBusinessAnalysisSubmit(event)" class="flex flex-col gap-3.5">
-
                     <div>
-
-                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Ваше имя *</label>
-
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Имя и фамилия *</label>
                         <input id="analysisName" type="text" placeholder="Иван Иванов" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
-
                     </div>
-
                     
-
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-
                         <div>
-
                             <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Телефон / Telegram *</label>
-
                             <input id="analysisContact" type="text" placeholder="+7 (999) 000-00-00 / @username" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
-
                         </div>
-
                         <div>
-
-                            <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Название компании</label>
-
-                            <input id="analysisCompany" type="text" placeholder="ООО «Компания»" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
-
+                            <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Электронная почта (Email) *</label>
+                            <input id="analysisEmail" type="email" placeholder="name@company.ru" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
                         </div>
-
                     </div>
-
-
 
                     <div>
-
-                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Формат участия / Разбор</label>
-
-                        <select id="analysisInterest" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
-
-                            <option value="analysis" selected>Записаться на Бизнес-разбор (20 минут с экспертом)</option>
-
-                        </select>
-
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Название компании и сфера деятельности</label>
+                        <input id="analysisCompany" type="text" placeholder="ООО «Компания» / Отрасль" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
                     </div>
 
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Главный запрос или задача для разбора</label>
+                        <textarea id="analysisQuery" rows="2" placeholder="Опишите текущий блокер, узкое место в продажах, процессах или задачу внедрения AI" class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-2.5 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner resize-none"></textarea>
+                    </div>
 
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Куда удобно получить материалы разбора? *</label>
+                        <select id="analysisChannel" required class="w-full bg-[#060a14]/90 border border-indigo-900/60 text-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm transition shadow-inner">
+                            <option value="telegram" selected>В Telegram</option>
+                            <option value="max">В мессенджер MAX</option>
+                            <option value="email">На электронную почту (Email)</option>
+                            <option value="call">Звонок менеджера</option>
+                        </select>
+                    </div>
 
                     <button id="analysisSubmitBtn" type="submit" class="w-full mt-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase tracking-wider py-4 rounded-xl transition text-xs sm:text-sm shadow-xl shadow-blue-600/30 cursor-pointer flex items-center justify-center gap-2">
-
                         <span>ЗАПИСАТЬСЯ НА БИЗНЕС-РАЗБОР</span>
-
                     </button>
 
                     
@@ -6110,13 +6097,27 @@ function handleBusinessAnalysisSubmit(e) {
 
     const contact = document.getElementById('analysisContact')?.value || '';
 
+    const email = document.getElementById('analysisEmail')?.value || '';
+
     const company = document.getElementById('analysisCompany')?.value || '';
 
-    const interest = document.getElementById('analysisInterest')?.value || 'Бизнес-разбор';
+    const query = document.getElementById('analysisQuery')?.value || '';
+
+    const channel = document.getElementById('analysisChannel')?.value || 'telegram';
 
 
 
-    saveLead(name, company, contact, 'Запись на бизнес-разбор (20 минут с экспертом). Интерес: ' + interest);
+    let details = 'Канал: ' + channel;
+
+    if (query.trim()) {
+
+        details += ' | Запрос на разбор: ' + query.trim();
+
+    }
+
+
+
+    saveLead(name, company, contact, 'Запись на Бизнес-разбор (' + details + ')', email);
 
 
 
