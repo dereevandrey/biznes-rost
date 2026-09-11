@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>Территория Роста 2026 — Материалы и скрипты</title>
-  <meta name="description" content="База готовых скриптов, сообщений и материалов бизнес-саммита «Территория Роста 2026» для партнеров.">
+  <title>Территория Роста 2026 — Материалы для партнеров и амбассадоров</title>
+  <meta name="description" content="Материалы и скрипты для партнеров, амбассадоров и проводников бизнес-саммита «Территория Роста 2026».">
   <link rel="icon" type="image/png" href="../favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,7 +51,6 @@
       padding-bottom: 80px;
     }
 
-    /* Container: Wide & responsive */
     .app-shell {
       max-width: 1420px;
       margin: 0 auto;
@@ -59,15 +58,11 @@
     }
 
     @media (min-width: 768px) {
-      .app-shell {
-        padding: 0 24px;
-      }
+      .app-shell { padding: 0 24px; }
     }
 
     @media (min-width: 1024px) {
-      .app-shell {
-        padding: 0 32px;
-      }
+      .app-shell { padding: 0 32px; }
     }
 
     /* Header */
@@ -88,10 +83,7 @@
     }
 
     @media (min-width: 768px) {
-      .header-inner {
-        height: 64px;
-        gap: 16px;
-      }
+      .header-inner { height: 64px; gap: 16px; }
     }
 
     .header-logo {
@@ -121,25 +113,21 @@
     }
 
     @media (min-width: 768px) {
-      .logo-badge {
-        font-size: 11px;
-        padding: 4px 8px;
-      }
-      .logo-title {
-        font-size: 18px;
-      }
+      .logo-badge { font-size: 11px; padding: 4px 8px; }
+      .logo-title { font-size: 18px; }
     }
 
     .header-info-tag {
-      font-size: 12px;
+      font-size: 11.5px;
       color: var(--text-sub);
       font-weight: 500;
-      white-space: nowrap;
+      text-align: right;
+      line-height: 1.25;
     }
-
-    @media (max-width: 540px) {
+    @media (max-width: 520px) {
       .header-info-tag {
-        font-size: 11px;
+        font-size: 10px;
+        max-width: 130px;
       }
     }
 
@@ -152,10 +140,7 @@
     }
 
     @media (min-width: 768px) {
-      .summary-strip {
-        padding: 16px 0;
-        margin-bottom: 24px;
-      }
+      .summary-strip { padding: 16px 0; margin-bottom: 24px; }
     }
 
     .summary-grid {
@@ -193,12 +178,8 @@
     }
 
     @media (min-width: 768px) {
-      .summary-label {
-        font-size: 11px;
-      }
-      .summary-value {
-        font-size: 15px;
-      }
+      .summary-label { font-size: 11px; }
+      .summary-value { font-size: 15px; }
     }
 
     /* Search Bar */
@@ -225,7 +206,7 @@
       box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
     }
 
-    /* Tabs Bar (Wrapping Cleanly on Mobile & Desktop) */
+    /* Tabs Bar */
     .tabs-strip {
       background: var(--bg-page);
       padding: 4px 0 12px 0;
@@ -235,15 +216,13 @@
 
     .tabs-scroller {
       display: flex;
-      flex-wrap: wrap; /* Allows wrapping into neat rows so buttons NEVER clip! */
+      flex-wrap: wrap;
       gap: 6px;
       align-items: center;
     }
 
     @media (min-width: 768px) {
-      .tabs-scroller {
-        gap: 8px;
-      }
+      .tabs-scroller { gap: 8px; }
     }
 
     .nav-tab-btn {
@@ -263,10 +242,7 @@
     }
 
     @media (min-width: 768px) {
-      .nav-tab-btn {
-        padding: 8px 14px;
-        font-size: 13.5px;
-      }
+      .nav-tab-btn { padding: 8px 14px; font-size: 13.5px; }
     }
 
     .nav-tab-btn:hover {
@@ -280,6 +256,63 @@
       border-color: var(--accent-blue);
       color: #ffffff;
       box-shadow: 0 2px 4px rgba(29, 78, 216, 0.2);
+    }
+
+    /* Instruction Box (Guide for ambassadors) */
+    .guide-banner {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-left: 4px solid var(--accent-blue);
+      border-radius: 4px;
+      padding: 20px 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .guide-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .guide-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .guide-item {
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--text-muted);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .guide-num {
+      flex-shrink: 0;
+      background: var(--accent-blue-subtle);
+      color: var(--accent-blue);
+      font-weight: 800;
+      font-size: 11.5px;
+      width: 22px;
+      height: 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3px;
+      border: 1px solid var(--accent-blue-border);
+      margin-top: 1px;
+    }
+
+    .guide-item b {
+      color: var(--text-main);
     }
 
     /* Content Layout */
@@ -326,9 +359,7 @@
     }
 
     @media (min-width: 768px) {
-      .card-header-block {
-        padding: 16px 20px;
-      }
+      .card-header-block { padding: 16px 20px; }
     }
 
     .card-meta-line {
@@ -361,12 +392,9 @@
     }
 
     @media (min-width: 768px) {
-      .card-main-title {
-        font-size: 16px;
-      }
+      .card-main-title { font-size: 16px; }
     }
 
-    /* Product Parameters Table (Что / Для кого / Зачем / Как) */
     .card-props-table {
       padding: 10px 16px;
       border-bottom: 1px solid var(--border-light);
@@ -397,7 +425,6 @@
       font-weight: 500;
     }
 
-    /* Script Content Box */
     .card-body-block {
       padding: 14px 16px;
       flex-grow: 1;
@@ -406,9 +433,7 @@
     }
 
     @media (min-width: 768px) {
-      .card-body-block {
-        padding: 16px 20px;
-      }
+      .card-body-block { padding: 16px 20px; }
     }
 
     .script-text-box {
@@ -444,7 +469,6 @@
       border: 1px solid #fde68a;
     }
 
-    /* Rectangular Cut Buttons with Sheen */
     .card-button-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -480,7 +504,6 @@
       }
     }
 
-    /* On mobile, primary copy button is prominent on top */
     @media (max-width: 639px) {
       .btn-copy-primary {
         grid-column: 1 / -1;
@@ -489,7 +512,6 @@
       }
     }
 
-    /* Shadow Shimmer / Edge Effect */
     .btn-action::after {
       content: "";
       position: absolute;
@@ -545,7 +567,7 @@
       color: #4338ca;
     }
 
-    /* Tab: О ПРОЕКТЕ (Dedicated View) */
+    /* Tab: О ПРОЕКТЕ */
     .about-view {
       background: #ffffff;
       border: 1px solid var(--border-light);
@@ -555,9 +577,7 @@
     }
 
     @media (min-width: 768px) {
-      .about-view {
-        padding: 32px 28px;
-      }
+      .about-view { padding: 32px 28px; }
     }
 
     .about-lead {
@@ -569,10 +589,7 @@
     }
 
     @media (min-width: 768px) {
-      .about-lead {
-        font-size: 19px;
-        margin-bottom: 20px;
-      }
+      .about-lead { font-size: 19px; margin-bottom: 20px; }
     }
 
     .about-text {
@@ -583,11 +600,7 @@
     }
 
     @media (min-width: 768px) {
-      .about-text {
-        font-size: 15px;
-        line-height: 1.7;
-        margin-bottom: 28px;
-      }
+      .about-text { font-size: 15px; line-height: 1.7; margin-bottom: 28px; }
     }
 
     .triad-grid {
@@ -645,9 +658,7 @@
     }
 
     @media (min-width: 768px) {
-      .tariffs-container {
-        padding: 24px;
-      }
+      .tariffs-container { padding: 24px; }
     }
 
     .tariffs-title {
@@ -658,10 +669,7 @@
     }
 
     @media (min-width: 768px) {
-      .tariffs-title {
-        font-size: 18px;
-        margin-bottom: 16px;
-      }
+      .tariffs-title { font-size: 18px; margin-bottom: 16px; }
     }
 
     .pricing-grid {
@@ -701,10 +709,47 @@
     }
 
     @media (min-width: 768px) {
-      .price-tag {
-        font-size: 24px;
-        margin: 8px 0 12px 0;
+      .price-tag { font-size: 24px; margin: 8px 0 12px 0; }
+    }
+
+    /* Lead Transfer Bar */
+    .lead-transfer-dock {
+      background: #ffffff;
+      border: 1px solid var(--border-strong);
+      border-radius: 4px;
+      padding: 16px;
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+
+    @media (min-width: 768px) {
+      .lead-transfer-dock {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 24px;
       }
+    }
+
+    .transfer-info-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .transfer-info-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .transfer-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
     }
 
     /* Toast Notification */
@@ -765,11 +810,11 @@
       <div class="summary-grid">
         <div class="summary-cell">
           <div class="summary-label">Формат</div>
-          <div class="summary-value">5 дн онлайн + 2 дн офлайн</div>
+          <div class="summary-value">6 дн онлайн + 1 дн офлайн</div>
         </div>
         <div class="summary-cell">
           <div class="summary-label">Локация финала</div>
-          <div class="summary-value">МВЦ «Синара Центр»</div>
+          <div class="summary-value">МВЦ «Синара Центр», Екб</div>
         </div>
         <div class="summary-cell">
           <div class="summary-label">Аудитория</div>
@@ -786,19 +831,48 @@
   <!-- Main Work Area -->
   <main class="app-shell">
 
-    <!-- Search Input -->
-    <div class="search-wrapper">
-      <input type="text" id="searchInput" class="search-input-field" placeholder="Поиск: партнер, клуб, встреча, звонок, возражение..." autocomplete="off">
+    <!-- Guide for Ambassadors -->
+    <div class="guide-banner">
+      <div class="guide-title">
+        <span>🧭 Инструкция для амбассадора: как это работает</span>
+      </div>
+      <div class="guide-list">
+        <div class="guide-item">
+          <span class="guide-num">1</span>
+          <div><b>Ты не продаешь и не проводишь встречи:</b> Твоя главная сила — доверие твоей аудитории к тебе.</div>
+        </div>
+        <div class="guide-item">
+          <span class="guide-num">2</span>
+          <div><b>Отправляешь готовый текст:</b> Выбираешь нужный формат ниже и пересылаешь тем предпринимателям, кому это реально принесет пользу.</div>
+        </div>
+        <div class="guide-item">
+          <span class="guide-num">3</span>
+          <div><b>При интересе — переводишь контакт:</b> Если человек отвечает «Да, интересно» или задает вопросы, ты отвечаешь: <i>«Супер! Чтобы не искажать информацию, я передам твой контакт Светлане (руководитель по работе с партнерами) или Андрею (главный организатор). Они проведут короткую встречу, ответят на вопросы и подберут формат»</i>.</div>
+        </div>
+        <div class="guide-item">
+          <span class="guide-num">4</span>
+          <div><b>Дальше работает Оргкомитет:</b> Светлана Королева закрывает стандартные пакеты, а для сложных команд и индивидуальных запросов подключает основателя Андрея Дереева.</div>
+        </div>
+        <div class="guide-item">
+          <span class="guide-num">5</span>
+          <div><b>Твоя выгода:</b> Статус официального куратора/трекера, усиление личного бренда и оговоренное вознаграждение за приведенные команды — <b>без затрат времени на долгие переговоры и документооборот</b>.</div>
+        </div>
+      </div>
     </div>
 
-    <!-- Navigation Tabs (Wrapping into tidy rows on mobile) -->
+    <!-- Search Input -->
+    <div class="search-wrapper">
+      <input type="text" id="searchInput" class="search-input-field" placeholder="Поиск: коллега, чат клуба, встреча, звонок, возражение..." autocomplete="off">
+    </div>
+
+    <!-- Navigation Tabs -->
     <div class="tabs-strip">
       <div class="tabs-scroller">
         <button class="nav-tab-btn active" data-tab="all">Все материалы</button>
         <button class="nav-tab-btn" data-tab="about">О проекте</button>
         <button class="nav-tab-btn" data-tab="messenger">Мессенджеры</button>
         <button class="nav-tab-btn" data-tab="meeting">Личная встреча</button>
-        <button class="nav-tab-btn" data-tab="sales">Отдел продаж</button>
+        <button class="nav-tab-btn" data-tab="sales">Звонок ассистента</button>
         <button class="nav-tab-btn" data-tab="social">Пост в канал</button>
         <button class="nav-tab-btn" data-tab="video">Видео / Reels</button>
         <button class="nav-tab-btn" data-tab="expo">Стенды</button>
@@ -844,7 +918,8 @@
 
       <div style="border-top: 1px solid var(--border-light); padding-top: 16px; font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">
         <b>Организатор:</b> Консорциум «ПРЕДПРИНИМАЙ» (Президент — Андрей Дереев).<br>
-        <b>Финал:</b> 10–11 октября, Екатеринбург, Конгресс-центр «Синара Центр» (200+ собственников и генеральных директоров).
+        <b>Руководитель направления по работе с партнерами:</b> Светлана Королева.<br>
+        <b>Даты и локация:</b> 5–10 октября (онлайн-практикум внедрения) + 11 октября (финал в Екатеринбурге, МВЦ «Синара Центр», 200+ первых лиц бизнеса).
       </div>
     </div>
 
@@ -862,7 +937,7 @@
         </div>
         <div class="card-props-table">
           <div class="prop-name">Что:</div>
-          <div class="prop-val">Приглашение на бизнес-спринт и финал в Синара Центре</div>
+          <div class="prop-val">Приглашение на бизнес-саммит и финал в Синара Центре</div>
           <div class="prop-name">Для кого:</div>
           <div class="prop-val">Собственник бизнеса, партнер, знакомый предприниматель</div>
           <div class="prop-name">Зачем:</div>
@@ -873,7 +948,7 @@
         <div class="card-body-block">
           <div class="script-text-box" id="t_msg_friend">Привет, <span class="var-mark">[Имя]</span>! Помнишь, обсуждали нехватку людей и как автоматизировать процессы без раздувания штата?
 
-5–11 октября в Екатеринбурге проходит Всероссийский бизнес-саммит «Территория Роста 2026». Это не лекции: первые 5 дней в онлайне команды собирают свой Цифровой офис из 6 AI-агентов (аналитика, маркетинг, финансы, стратегия) на защищенной платформе KOMANDA.AI, а 10–11 октября — очный финал в «Синара Центре» с тренингом команды и защитой стратегий.
+5–11 октября в Екатеринбурге проходит бизнес-саммит «Территория Роста 2026». Это не лекции: первые 6 дней в онлайне команды собирают свой Цифровой офис из 6 AI-агентов (аналитика, маркетинг, финансы, стратегия) на защищенной платформе KOMANDA.AI, а 11 октября — очный финал в «Синара Центре» с тренингом команды и защитой стратегий.
 
 Мы с коллегами идем столом. Сейчас открыта ранняя цена — от 15 000 ₽ за человека или 18 000 ₽/чел за командный стол с персональным трекером.
 
@@ -893,7 +968,7 @@
             <span class="badge-label">Мессенджер</span>
             <span class="badge-timing">Охватное</span>
           </div>
-          <h3 class="card-main-title">Сообщение в чат бизнес-клуба / синдиката</h3>
+          <h3 class="card-main-title">Сообщение в чат бизнес-клуба</h3>
         </div>
         <div class="card-props-table">
           <div class="prop-name">Что:</div>
@@ -911,9 +986,9 @@
 5–11 октября в Екатеринбурге пройдет Бизнес-Саммит «Территория Роста 2026» (организатор — Консорциум «ПРЕДПРИНИМАЙ», Андрей Дереев).
 
 Главная фишка — симбиоз команды и нейросетей без отрыва от операционки:
-• 5 дней онлайн (по вечерам): внедряем в бизнес 6 AI-агентов на защищенной платформе KOMANDA.AI;
-• 10 октября: очный практикум лаборатории «Empatium» (убираем скрытый саботаж сотрудников);
-• 11 октября: Гранд-Саммит в «Синара Центре» на 200+ собственников и выставка технологий.
+• 6 дней онлайн (по вечерам): внедряем в бизнес 6 AI-агентов на защищенной платформе KOMANDA.AI;
+• 10 октября: очный тренинг лаборатории «Empatium» (убираем скрытый саботаж сотрудников);
+• 11 октября: Саммит в «Синара Центре» на 200+ собственников и выставка технологий.
 
 Очень рекомендую заходить сразу управленческой командой. Ранний тариф командного стола — 18 000 ₽/чел.
 
@@ -950,7 +1025,7 @@
 «Слушай, ты сейчас как решаешь вопрос с перегрузом топов и дефицитом кадров? Все сейчас кинулись в нейросети, но у большинства это заканчивается баловством в ChatGPT, а в реальные процессы ничего не встроено.»
 
 2. Решение и суть (25 сек):
-«5–11 октября в Екатеринбурге проходит бизнес-лаборатория «Территория Роста». Смысл в том, что ты садишься со своими ключевыми людьми, и за неделю вам ставят корпоративный контур из 6 обученных AI-агентов на защищенном софте KOMANDA.AI — под твои финансы, воронки и аналитику. А в субботу и воскресенье — очный интенсив в Синара Центре на 200+ собственников.»
+«5–11 октября в Екатеринбурге проходит бизнес-лаборатория «Территория Роста». Смысл в том, что ты садишься со своими ключевыми людьми, и за неделю вам ставят корпоративный контур из 6 обученных AI-агентов на защищенном софте KOMANDA.AI — под твои финансы, воронки и аналитику. А 11 октября — очный финал в Синара Центре на 200+ собственников.»
 
 3. Действие (20 сек):
 «Цена вопроса на раннем этапе — 18 000 ₽ за человека за командный стол с трекером. Это дешевле, чем один раз в ресторан команду сводить, а эффект на весь год. Давай скину презентацию в Telegram, посмотришь?»</div>
@@ -962,18 +1037,18 @@
         </div>
       </article>
 
-      <!-- CARD 4: Отдел продаж / Менеджеру -->
+      <!-- CARD 4: Отдел продаж / Звонок ассистента -->
       <article class="product-card" data-cat="sales">
         <div class="card-header-block">
           <div class="card-meta-line">
-            <span class="badge-label">Отдел продаж</span>
+            <span class="badge-label">Звонок</span>
             <span class="badge-timing">2 минуты</span>
           </div>
-          <h3 class="card-main-title">Регламент звонка по клиентской и партнерской базе</h3>
+          <h3 class="card-main-title">Регламент звонка ассистента партнера</h3>
         </div>
         <div class="card-props-table">
           <div class="prop-name">Что:</div>
-          <div class="prop-val">Скрипт телефонного звонка от лица руководителя</div>
+          <div class="prop-val">Скрипт телефонного звонка от лица руководителя-партнера</div>
           <div class="prop-name">Для кого:</div>
           <div class="prop-val">Помощник руководителя, РОП, менеджеры по работе с клиентами</div>
           <div class="prop-name">Зачем:</div>
@@ -986,10 +1061,10 @@
 «Добрый день, <span class="var-mark">[Имя клиента]</span>! Меня зовут <span class="var-mark">[Имя сотрудника]</span>, я от <span class="var-mark">[ФИО руководителя / Компания]</span>. Звоню по личному поручению руководителя. Есть пара минут?»
 
 2. Контекст:
-«<span class="var-mark">[ФИО руководителя]</span> сейчас входит в оргкомитет Всероссийского бизнес-саммита «Территория Роста 2026», который пройдет 5–11 октября в Синара Центре в Екатеринбурге. Мы персонально приглашаем дружественные компании и ключевых партнеров присоединиться.»
+«<span class="var-mark">[ФИО руководителя / Наша компания]</span> является официальным партнером бизнес-саммита «Территория Роста 2026», который пройдет 5–11 октября в Синара Центре в Екатеринбурге. Мы персонально приглашаем дружественные компании присоединиться.»
 
 3. Ценность:
-«Саммит посвящен практической автоматизации бизнеса: за 5 дней онлайн-практики и 2 дня в Синара Центре команды собственников запускают у себя Цифровой офис из 6 AI-агентов на российской платформе KOMANDA.AI. Это закрывает рутину по аналитике, маркетингу и финансам.
+«Саммит посвящен практической автоматизации бизнеса: за 6 дней онлайн-практики и 1 день в Синара Центре команды собственников запускают у себя Цифровой офис из 6 AI-агентов на российской платформе KOMANDA.AI. Это закрывает рутину по аналитике, маркетингу и финансам.
 Для наших партнеров сейчас действует закрытая стоимость ранней брони — от 15 000 ₽ за участника или 18 000 ₽ за командный стол.
 <span class="var-mark">[Имя клиента]</span>, давайте я отправлю вам официальное приглашение и программу в мессенджер, чтобы вы с руководителями обсудили?»
 
@@ -1034,8 +1109,8 @@
 
 Именно поэтому мне близок формат саммита «Территория Роста 2026» (5–11 октября, Екатеринбург).
 
-Это не очередные доклады. Это 7-дневный спринт внедрения:
-• Сначала 5 дней онлайн (по вечерам) команды развертывают свой Цифровой офис из 6 AI-агентов на российской платформе KOMANDA.AI;
+Это не очередные доклады. Это спринт практического внедрения:
+• 6 дней онлайн (по вечерам) команды развертывают свой Цифровой офис из 6 AI-агентов на российской платформе KOMANDA.AI;
 • 10 октября — очный тренинг эмоционального интеллекта «Empatium» (снятие саботажа в коллективе);
 • 11 октября — финал в МВЦ «Синара Центр», где 200+ лидеров бизнеса защищают свои стратегии.
 
@@ -1108,14 +1183,14 @@
           <div class="prop-name">Для кого:</div>
           <div class="prop-val">IT-компании, интеграторы, банки, сервисы для бизнеса</div>
           <div class="prop-name">Зачем:</div>
-          <div class="prop-val">Прямой доступ к 200+ первым лицам и ЛПР с оборотами от 50 млн ₽</div>
+          <div class="prop-val">Прямой доступ к 200+ первым лицам и ЛПР с оборотом от 50 до 800 млн руб.</div>
           <div class="prop-name">Как:</div>
           <div class="prop-val">Отправить коммерческому директору или собственнику B2B-компании</div>
         </div>
         <div class="card-body-block">
           <div class="script-text-box" id="t_expo"><span class="var-mark">[Имя]</span>, добрый день! Если у вас в планах на осень выход на первых лиц реального сектора — обратите внимание:
 
-11 октября в Екатеринбурге в МВЦ «Синара Центр» в рамках Саммита «Территория Роста» открывается Деловая Галерея технологий. В зале будет 200+ собственников производств, девелопмента, ритейла с оборотом от 50 млн до нескольких миллиардов.
+11 октября в Екатеринбурге в МВЦ «Синара Центр» в рамках Саммита «Территория Роста» открывается Деловая Галерея технологий. В зале будет 200+ собственников производств, девелопмента, ритейла с оборотом от 50 до 800 млн руб.
 
 Формат не про раздачу буклетов в пустых углах: стенды интегрированы в бизнес-квест, участников целенаправленно ведут к экспонентам.
 • Стенд «Стандарт» — 100 000 ₽;
@@ -1130,7 +1205,7 @@
         </div>
       </article>
 
-      <!-- CARD 8: Возражения -->
+      <!-- CARD 8: Возражения (Для амбассадора) -->
       <article class="product-card" data-cat="objections">
         <div class="card-header-block">
           <div class="card-meta-line">
@@ -1151,7 +1226,7 @@
         </div>
         <div class="card-body-block">
           <div class="script-text-box" id="t_obj">«<span class="var-mark">[Имя]</span>, именно поэтому формат такой жестко сжатый. Это НЕ теория с домашними заданиями. 
-Первые 5 дней проходят онлайн всего по 2 часа вечером. Вы в реальном времени собираете AI-агентов под свои рабочие таблицы и задачи. Если не автоматизировать эти процессы сейчас — в следующем году операционка просто удвоится из-за растущего дефицита кадров.»</div>
+Первые 6 дней проходят онлайн всего по 2 часа вечером. Вы в реальном времени собираете AI-агентов под свои рабочие таблицы и задачи. Если не автоматизировать эти процессы сейчас — в следующем году операционка просто удвоится из-за растущего дефицита кадров.»</div>
           <div class="card-button-row">
             <button class="btn-action btn-copy-primary" onclick="copyText('t_obj', this)">Скопировать текст</button>
             <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('t_obj', event)">В Telegram</a>
@@ -1171,9 +1246,9 @@
           <h3 style="font-size: 16px; font-weight: 700; margin-top: 4px;">«Стандарт»</h3>
           <div class="price-tag">15 000 ₽</div>
           <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px; flex-grow: 1;">
-            5 дней онлайн-практикума, настройка 6 AI-агентов на KOMANDA.AI, билет на саммит 11 октября в Синара Центре, Деловая Галерея и нетворкинг.
+            6 дней онлайн-практикума, настройка 6 AI-агентов на KOMANDA.AI, билет на саммит 11 октября в Синара Центре, кофе-брейк, Деловая Галерея и нетворкинг.
           </p>
-          <button class="btn-action btn-copy-primary" onclick="directCopy('Тариф «Стандарт» — 15 000 ₽. Входит 5 дней онлайн-сборки 6 AI-агентов на KOMANDA.AI + билет в Синара Центр 11 октября.')">Скопировать условия</button>
+          <button class="btn-action btn-copy-primary" onclick="directCopy('Тариф «Стандарт» — 15 000 ₽. Входит: 6 дней онлайн-сборки 6 AI-агентов на KOMANDA.AI + билет в Синара Центр 11 октября + кофе-брейк.')">Скопировать условия</button>
         </div>
 
         <div class="price-box featured">
@@ -1181,9 +1256,9 @@
           <h3 style="font-size: 16px; font-weight: 700; margin-top: 4px;">«Бизнес» (от 4 чел)</h3>
           <div class="price-tag">18 000 ₽ <span style="font-size: 13px; font-weight: 500; color: var(--text-sub);">/ чел</span></div>
           <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px; flex-grow: 1;">
-            Выделенный командный стол с персональным трекером на 7 дней, очный тренинг лаборатории «Empatium» 10 октября, командная защита стратегии.
+            Всё, что в «Стандарте» + очный тренинг лаборатории «Empatium» 10 октября + командная защита стратегии + специальные условия на доступ к федеральной программе лояльности для сотрудников «Добросервис».
           </p>
-          <button class="btn-action btn-copy-primary" onclick="directCopy('Тариф «Бизнес» (Командный стол от 4 чел) — 18 000 ₽/чел. Включает личного трекера на 7 дней, очный тренинг «Эмпатиум» 10 октября и командный стол в Синара Центре.')">Скопировать условия</button>
+          <button class="btn-action btn-copy-primary" onclick="directCopy('Тариф «Бизнес» (Командный стол от 4 чел) — 18 000 ₽/чел. Входит: всё из Стандарта + очный тренинг «Эмпатиум» 10 октября + защита стратегии + спец.условия на программу лояльности «Добросервис».')">Скопировать условия</button>
         </div>
 
         <div class="price-box">
@@ -1191,12 +1266,25 @@
           <h3 style="font-size: 16px; font-weight: 700; margin-top: 4px;">«Премиум / VIP»</h3>
           <div class="price-tag">25 000 ₽ <span style="font-size: 13px; font-weight: 500; color: var(--text-sub);">/ чел</span></div>
           <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px; flex-grow: 1;">
-            Первые ряды партера, охраняемая парковка, закрытый гала-ужин со спикерами, инвесторами и Президентом Консорциума Андреем Дереевым.
+            Всё, что в «Бизнесе» + VIP-размещение (первые ряды), публикация в деловом издании «National Business» и журнале «PEOPLE», Обед + закрытый VIP-ужин со спикерами и экспертами, возможность подключить удаленно сотрудников и клиентов к цифровой программе «Неделя благополучия».
           </p>
-          <button class="btn-action btn-copy-primary" onclick="directCopy('Тариф «Премиум / VIP» — 25 000 ₽/чел. Первые ряды Синара Центра, закрытый VIP-ужин со спикерами и инвесторами, закрытый нетворкинг.')">Скопировать условия</button>
+          <button class="btn-action btn-copy-primary" onclick="directCopy('Тариф «Премиум / VIP» — 25 000 ₽/чел. Входит: всё из Бизнеса + VIP размещение + публикации в National Business и PEOPLE + Обед и закрытый VIP-ужин со спикерами + программа «Неделя благополучия».')">Скопировать условия</button>
         </div>
       </div>
     </div>
+
+    <!-- LEAD TRANSFER BAR (Bottom Action) -->
+    <section class="lead-transfer-dock">
+      <div>
+        <div class="transfer-info-title">Лид проявил интерес или задал вопросы?</div>
+        <div class="transfer-info-desc">Передай контакт в Оргкомитет — Светлана Королева и Андрей Дереев проведут встречу и закроют сделку.</div>
+      </div>
+      <div class="transfer-actions">
+        <button class="btn-action btn-copy-primary" onclick="copyLeadTransferTemplate()">📋 Скопировать сообщение для передачи лида</button>
+        <a href="https://t.me/share/url?url=&text=%D0%A1%D0%B2%D0%B5%D1%82%D0%BB%D0%B0%D0%BD%D0%B0%2C+%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D1%83%D1%8E!+%D0%9F%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D1%8E+%D0%BA%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82+%D0%BF%D0%BE%D1%82%D0%B5%D0%BD%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE+%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%B0+%D1%81%D0%B0%D0%BC%D0%BC%D0%B8%D1%82%D0%B0%3A%0A%D0%98%D0%BC%D1%8F%3A+%0A%D0%9A%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F%3A+%0A%D0%A2%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%2FTG%3A+%0A%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82+%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%3A+" target="_blank" class="btn-action btn-channel-tg">✈️ В Telegram Светлане</a>
+        <button class="btn-action btn-channel-max" onclick="copyMaxTransferTemplate()">💬 Для MAX</button>
+      </div>
+    </section>
 
   </main>
 
@@ -1231,6 +1319,28 @@
       navigator.clipboard.writeText(text).then(() => {
         showToast('Условия тарифа скопированы');
       }).catch(() => fallbackCopy(text));
+    }
+
+    function copyLeadTransferTemplate() {
+      const t = "Светлана, приветствую! Передаю контакт потенциального участника саммита «Территория Роста 2026»:
+Имя: 
+Компания: 
+Телефон/Telegram: 
+Интересует формат (Стандарт / Стол / Стенд): ";
+      navigator.clipboard.writeText(t).then(() => {
+        showToast('Шаблон передачи лида скопирован');
+      }).catch(() => fallbackCopy(t));
+    }
+
+    function copyMaxTransferTemplate() {
+      const t = "Светлана, приветствую! Передаю контакт потенциального участника саммита «Территория Роста 2026»:
+Имя: 
+Компания: 
+Телефон/MAX: 
+Интересует формат: ";
+      navigator.clipboard.writeText(t).then(() => {
+        showToast('Шаблон скопирован! Вставьте в MAX');
+      }).catch(() => fallbackCopy(t));
     }
 
     function fallbackCopy(text) {
