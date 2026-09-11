@@ -542,7 +542,249 @@
     .hidden {
       display: none !important;
     }
-  </style>
+  
+    /* Tariffs & Gallery Styles */
+    .tariffs-container, .presentations-container {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      padding: 20px 16px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      margin-bottom: 24px;
+    }
+    @media (min-width: 768px) {
+      .tariffs-container, .presentations-container {
+        padding: 32px 28px;
+      }
+    }
+    .tariffs-header-box {
+      text-align: center;
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 20px;
+    }
+    .tariffs-kicker {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-blue);
+      margin-bottom: 6px;
+    }
+    .tariffs-main-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    @media (min-width: 768px) {
+      .tariffs-main-title { font-size: 26px; }
+    }
+    .tariffs-subtitle {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .section-divider-title {
+      font-size: 12.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-sub);
+      background: #f1f5f9;
+      padding: 8px 14px;
+      border-radius: 3px;
+      margin: 20px 0 16px 0;
+      border-left: 3px solid var(--accent-blue);
+    }
+    .tariffs-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    @media (min-width: 900px) {
+      .tariffs-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .tariffs-grid.gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .tariff-card {
+      background: #fafbfc;
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      padding: 20px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+    .tariff-card:hover {
+      border-color: #94a3b8;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+    .tariff-card.featured {
+      background: #ffffff;
+      border: 2px solid var(--accent-blue);
+      box-shadow: 0 6px 16px rgba(29, 78, 216, 0.09);
+    }
+    .tariff-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 2px;
+      margin-bottom: 12px;
+      align-self: flex-start;
+    }
+    .tariff-badge.standard { background: #e2e8f0; color: #334155; }
+    .tariff-badge.hit { background: #dbeafe; color: #1d4ed8; font-weight: 800; }
+    .tariff-badge.vip { background: #fef3c7; color: #92400e; }
+    .tariff-name {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+    .tariff-price {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+    .price-sub {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-sub);
+    }
+    .tariff-desc {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .tariff-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #334155;
+      flex-grow: 1;
+    }
+    .tariff-features li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 8px;
+    }
+    .tariff-features li::before {
+      content: "•";
+      position: absolute;
+      left: 4px;
+      color: var(--accent-blue);
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 1;
+    }
+    .tariff-card-footer {
+      padding-top: 12px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    /* Presentations Styles */
+    .decks-interactive-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 768px) {
+      .decks-interactive-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+    .deck-box-card {
+      background: #fafbfc;
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      padding: 20px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+    .deck-box-card:hover {
+      border-color: #94a3b8;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .deck-tag {
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent-blue);
+      margin-bottom: 6px;
+    }
+    .deck-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+    .deck-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 14px;
+      flex-grow: 1;
+    }
+    .deck-links-block {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: 3px;
+      padding: 10px 12px;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+    .deck-link-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .deck-link-row:last-child { margin-bottom: 0; }
+    .link-label { font-weight: 600; color: var(--text-sub); white-space: nowrap; }
+    .deck-url-link { color: var(--accent-blue); text-decoration: none; font-weight: 600; }
+    .deck-url-link:hover { text-decoration: underline; }
+    .text-truncate {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .w-full { width: 100%; }
+    .mb-2 { margin-bottom: 8px; }
+    .mt-3 { margin-top: 12px; }
+
+    /* Success Button States */
+    .btn-success-state {
+      background: #16a34a !important;
+      color: #ffffff !important;
+      border-color: #15803d !important;
+    }
+
+</style>
 </head>
 <body>
 
@@ -576,7 +818,7 @@
         </div>
         <div class="summary-cell">
           <div class="summary-label">Формат финала</div>
-          <div class="summary-value">11 окт • МВЦ «Синара Центр»</div>
+          <div class="summary-value">11 окт • КВК «Синара Центр»</div>
         </div>
         <div class="summary-cell">
           <div class="summary-label">Флагманский оффер</div>
@@ -602,6 +844,8 @@
     <div class="tabs-strip">
       <div class="tabs-scroller">
         <button class="nav-tab-btn active" data-tab="all">Все скрипты</button>
+        <button class="nav-tab-btn" data-tab="tariffs">🎟️ Пакеты и тарифы</button>
+        <button class="nav-tab-btn" data-tab="presentations">📊 4 Презентации</button>
         <button class="nav-tab-btn" data-tab="qualify">Квалификация лида</button>
         <button class="nav-tab-btn" data-tab="objections">Возражения (Жёсткие)</button>
         <button class="nav-tab-btn" data-tab="close">Закрытие & Договор</button>
@@ -612,6 +856,295 @@
     </div>
 
     <!-- CARDS CONTAINER (Grid) -->
+    
+    <!-- TAB VIEW: ПАКЕТЫ И ТАРИФЫ (Интенсив & Галерея) -->
+    <div id="tariffsView" class="hidden">
+      
+<div class="tariffs-container">
+  <div class="tariffs-header-box">
+    <div class="tariffs-kicker">ОФИЦИАЛЬНЫЙ ПРАЙС-ЛИСТ И НАПОЛНЕНИЕ</div>
+    <h2 class="tariffs-main-title">Пакеты Бизнес-Интенсива и Деловой Галереи 2026</h2>
+    <p class="tariffs-subtitle">5–9 октября: 5 дней онлайн • 10 октября: очный тренинг «Empatium» • 11 октября: Саммит и Выставка в КВК «Синара Центр»</p>
+  </div>
+
+  <!-- РАЗДЕЛ 1: ПАКЕТЫ УЧАСТИЯ В БИЗНЕС-ИНТЕНСИВЕ -->
+  <div class="section-divider-title">
+    <span>ЧАСТЬ 1. ТАРИФЫ БИЗНЕС-ИНТЕНСИВА «ТЕРРИТОРИЯ РОСТА»</span>
+  </div>
+
+  <div class="tariffs-grid">
+    <!-- ПАКЕТ 1: СТАНДАРТ -->
+    <div class="tariff-card">
+      <div class="tariff-badge standard">ИНДИВИДУАЛЬНЫЙ БИЛЕТ</div>
+      <div class="tariff-name">Тариф «Стандарт»</div>
+      <div class="tariff-price">15 000 ₽ <span class="price-sub">/ участник</span></div>
+      <div class="tariff-desc">Для индивидуальных предпринимателей, руководителей отделов и специалистов.</div>
+      <ul class="tariff-features">
+        <li><strong>5 дней онлайн-интенсива (5–9 октября):</strong> практические вечерние сессии по внедрению нейросетей в операционку;</li>
+        <li><strong>Развертывание 6 AI-агентов</strong> на российской защищенной платформе KOMANDA.AI;</li>
+        <li><strong>Билет на Саммит 11 октября</strong> в культурно-выставочном комплексе «Синара Центр»;</li>
+        <li><strong>Кофе-брейк</strong> в зоне нетворкинга;</li>
+        <li><strong>Посещение Деловой Галереи</strong> технологий и решений;</li>
+        <li><strong>Доступ к базе знаний:</strong> шаблоны промптов, регламенты и записи онлайн-сессий на 3 месяца.</li>
+      </ul>
+      <div class="tariff-card-footer">
+        <button class="btn-action btn-copy-primary w-full mb-2" onclick="copySnippet('tariff_std_text', this)">Скопировать условия тарифа</button>
+        <div class="card-button-row">
+          <button class="btn-action btn-channel-tg" onclick="sendCustomTg('tariff_std_text', this)">В Telegram</button>
+          <button class="btn-action btn-channel-max" onclick="copyCustomMax('tariff_std_text', this)">Для MAX</button>
+        </div>
+      </div>
+      <div id="tariff_std_text" style="display:none;">
+Тариф «Стандарт» бизнес-интенсива «Территория Роста 2026» (15 000 ₽):
+• 5 дней онлайн (5–9 октября по вечерам): внедрение 6 AI-агентов на защищенной платформе KOMANDA.AI;
+• 11 октября: очный билет на Саммит в КВК «Синара Центр» (Екатеринбург);
+• Кофе-брейк, посещение Деловой Галереи технологий и нетворкинг на 200+ собственников;
+• Полный комплект шаблонов, промптов и регламентов внедрения.
+Подробности и бронь: https://бизнес-рост.рф
+      </div>
+    </div>
+
+    <!-- ПАКЕТ 2: БИЗНЕС (КОМАНДНЫЙ СТОЛ) — ХИТ ПРОДАЖ -->
+    <div class="tariff-card featured">
+      <div class="tariff-badge hit">ХИТ • КОМАНДНЫЙ СТОЛ ОТ 4 ЧЕЛОВЕК</div>
+      <div class="tariff-name">Тариф «Бизнес» (Командный)</div>
+      <div class="tariff-price">18 000 ₽ <span class="price-sub">/ чел (стол 72 000 ₽ за 4 чел)</span></div>
+      <div class="tariff-desc">Флагманский формат для собственника и его ключевой команды (топ-менеджеры, РОП, финдиректор, HRD).</div>
+      <ul class="tariff-features">
+        <li><strong>Всё, что входит в тариф «Стандарт»</strong> для каждого члена команды;</li>
+        <li><strong>10 октября (суббота): очный тренинг «Empatium»</strong> — лаборатория эмоционального интеллекта для лидеров (диагностика ролей, снятие скрытого саботажа и страха перед ИИ);</li>
+        <li><strong>Персональный командный трекер</strong> на все дни онлайн-практикума;</li>
+        <li><strong>Фирменный отдельный стол</strong> команды в зале КВК «Синара Центр» 11 октября;</li>
+        <li><strong>Очная защита AI-стратегии</strong> компании перед экспертным жюри и Советом инвесторов;</li>
+        <li><strong>Специальные условия и тестовый доступ</strong> к корпоративной программе лояльности и ментального здоровья «Добросервис».</li>
+      </ul>
+      <div class="tariff-card-footer">
+        <button class="btn-action btn-copy-primary w-full mb-2" onclick="copySnippet('tariff_biz_text', this)">Скопировать условия тарифа</button>
+        <div class="card-button-row">
+          <button class="btn-action btn-channel-tg" onclick="sendCustomTg('tariff_biz_text', this)">В Telegram</button>
+          <button class="btn-action btn-channel-max" onclick="copyCustomMax('tariff_biz_text', this)">Для MAX</button>
+        </div>
+      </div>
+      <div id="tariff_biz_text" style="display:none;">
+Тариф «Бизнес» (Командный стол от 4 чел) «Территория Роста 2026» (18 000 ₽/чел):
+• 5 дней онлайн (5–9 октября): командное внедрение 6 AI-агентов на защищенной платформе KOMANDA.AI под кураторством трекера;
+• 10 октября: очный тренинг эмоционального интеллекта «Empatium» (снятие саботажа команды);
+• 11 октября: отдельный командный стол в КВК «Синара Центр», защита стратегии компании перед жюри;
+• Кофе-брейк, тест-драйв решений в Деловой Галерее и доступ к платформе «Добросервис».
+Бронирование стола: https://бизнес-рост.рф
+      </div>
+    </div>
+
+    <!-- ПАКЕТ 3: ПРЕМИУМ / VIP -->
+    <div class="tariff-card">
+      <div class="tariff-badge vip">VIP • СТРАТЕГИЧЕСКИЙ</div>
+      <div class="tariff-name">Тариф «Премиум / VIP»</div>
+      <div class="tariff-price">25 000 ₽ <span class="price-sub">/ чел (стол 100 000 ₽ за 4 чел)</span></div>
+      <div class="tariff-desc">Максимальное погружение для лидеров рынка, ищущих стратегические альянсы, инвестиции и медийность.</div>
+      <ul class="tariff-features">
+        <li><strong>Всё, что входит в тариф «Бизнес»</strong> для всей команды;</li>
+        <li><strong>Стратегический аудит бизнес-модели</strong> и персональное кураторство от основателя Андрея Дереева;</li>
+        <li><strong>VIP-размещение</strong> в первом ряду перед главной сценой КВК «Синара Центр»;</li>
+        <li><strong>Публикации о кейсе компании</strong> в деловом издании «National Business» и глянцевом журнале «PEOPLE»;</li>
+        <li><strong>Корпоративная цифровая программа «Неделя благополучия»</strong> для коллектива компании;</li>
+        <li><strong>Закрытый VIP-ужин</strong> с хедлайнерами, ключевыми спикерами и членами Совета инвесторов 11 октября.</li>
+      </ul>
+      <div class="tariff-card-footer">
+        <button class="btn-action btn-copy-primary w-full mb-2" onclick="copySnippet('tariff_vip_text', this)">Скопировать условия тарифа</button>
+        <div class="card-button-row">
+          <button class="btn-action btn-channel-tg" onclick="sendCustomTg('tariff_vip_text', this)">В Telegram</button>
+          <button class="btn-action btn-channel-max" onclick="copyCustomMax('tariff_vip_text', this)">Для MAX</button>
+        </div>
+      </div>
+      <div id="tariff_vip_text" style="display:none;">
+Тариф «Премиум / VIP» «Территория Роста 2026» (25 000 ₽/чел):
+• Вся программа интенсива: 5 дней онлайн + очный тренинг «Empatium» (10 октября) + финал в Синара Центре;
+• Персональный аудит от основателя Андрея Дереева;
+• VIP-размещение в первом ряду и закрытый VIP-ужин со спикерами и инвесторами;
+• Публикация кейса в журналах «National Business» и «PEOPLE», корпоративная «Неделя благополучия».
+Бронирование VIP: https://бизнес-рост.рф
+      </div>
+    </div>
+  </div>
+
+  <!-- РАЗДЕЛ 2: ПАКЕТЫ ДЕЛОВОЙ ГАЛЕРЕИ (ЭКСПОНЕНТЫ) -->
+  <div class="section-divider-title" style="margin-top: 40px;">
+    <span>ЧАСТЬ 2. ПАКЕТЫ ЭКСПОНЕНТОВ ДЕЛОВОЙ ГАЛЕРЕИ (КВК «СИНАРА ЦЕНТР», 11 ОКТЯБРЯ)</span>
+  </div>
+
+  <div class="tariffs-grid gallery-grid">
+    <!-- СТЕНД СТАНДАРТ -->
+    <div class="tariff-card">
+      <div class="tariff-badge standard">ЭКСПОНЕНТ • 10 МЕСТ</div>
+      <div class="tariff-name">Стенд «Стандарт» (Деловая Галерея)</div>
+      <div class="tariff-price">90 000 ₽ <span class="price-sub">/ стенд</span></div>
+      <div class="tariff-desc">Для поставщиков B2B-сервисов, CRM, IT-решений, банковских и консалтинговых услуг.</div>
+      <ul class="tariff-features">
+        <li><strong>Оборудованное стенд-место 4 кв.м</strong> в КВК «Синара Центр» (стол, 2 стула, подключение 220V, брендированная табличка, место под ролл-ап);</li>
+        <li><strong>Размещение логотипа компании</strong> на главном Прессволе (Press Wall) и в печатном путеводителе события;</li>
+        <li><strong>2 билета категории VIP</strong> на всю программу саммита 11 октября;</li>
+        <li><strong>Вложение рекламных буклетов/сертификатов</strong> в приветственный пакет каждого из 200+ собственников;</li>
+        <li><strong>Интеграция в интерактивный квест саммита:</strong> участники спринта целенаправленно подходят к стенду для решения задач своих кейсов;</li>
+        <li><strong>Цифровой сбор контактов:</strong> выгрузка базы лидов через Telegram-бота выставки + официальный фотоотчет.</li>
+      </ul>
+      <div class="tariff-card-footer">
+        <button class="btn-action btn-copy-primary w-full mb-2" onclick="copySnippet('stand_std_text', this)">Скопировать условия стенда</button>
+        <div class="card-button-row">
+          <button class="btn-action btn-channel-tg" onclick="sendCustomTg('stand_std_text', this)">В Telegram</button>
+          <button class="btn-action btn-channel-max" onclick="copyCustomMax('stand_std_text', this)">Для MAX</button>
+        </div>
+      </div>
+      <div id="stand_std_text" style="display:none;">
+Стенд «Стандарт» в Деловой Галерее «Территория Роста» (11 октября, КВК «Синара Центр», 90 000 ₽):
+• Оборудованный стенд 4 кв.м (стол, стулья, 220V, ролл-ап);
+• Логотип на Прессволе и 2 VIP-билета на саммит;
+• Вложение ваших материалов в пакеты 200+ собственников с оборотом 50–800 млн руб.;
+• Интеграция в бизнес-квест: участники приходят к стенду с готовыми техзаданиями;
+• Выгрузка контактов через бота.
+Бронь стенда (лимит 2 на нишу): https://бизнес-рост.рф/галерея/
+      </div>
+    </div>
+
+    <!-- СТЕНД БИЗНЕС-ЭКСПОНЕНТ -->
+    <div class="tariff-card featured">
+      <div class="tariff-badge hit">ХИТ ДЛЯ B2B • ВСЕГО 5 МЕСТ</div>
+      <div class="tariff-name">Стенд «Бизнес — Экспонент»</div>
+      <div class="tariff-price">200 000 ₽ <span class="price-sub">/ стенд</span></div>
+      <div class="tariff-desc">Премиум-застройка в атриуме, сцена и прямое позиционирование на аудиторию 200+ лиц, принимающих решения.</div>
+      <ul class="tariff-features">
+        <li><strong>Центральная премиум-локация 8 кв.м</strong> в атриуме КВК «Синара Центр» с максимальной проходимостью;</li>
+        <li><strong>Выступление на главной сцене (15 минут)</strong> с разбором кейса компании перед 200+ собственниками;</li>
+        <li><strong>4 билета категории VIP</strong> на все дни саммита;</li>
+        <li><strong>Профессиональное интервью эксперта компании на стенде</strong> с публикацией в официальных СМИ;</li>
+        <li><strong>Приоритетный экспертный лонгрид</strong> о решениях компании в официальном Telegram-канале до события;</li>
+        <li><strong>Трансляция логотипа</strong> на экранах главной сцены во время пленарных заседаний;</li>
+        <li><strong>Участие в закрытом VIP-ужине</strong> со спикерами, хедлайнерами и инвесторами.</li>
+      </ul>
+      <div class="tariff-card-footer">
+        <button class="btn-action btn-copy-primary w-full mb-2" onclick="copySnippet('stand_biz_text', this)">Скопировать условия стенда</button>
+        <div class="card-button-row">
+          <button class="btn-action btn-channel-tg" onclick="sendCustomTg('stand_biz_text', this)">В Telegram</button>
+          <button class="btn-action btn-channel-max" onclick="copyCustomMax('stand_biz_text', this)">Для MAX</button>
+        </div>
+      </div>
+      <div id="stand_biz_text" style="display:none;">
+Стенд «Бизнес — Экспонент» в Деловой Галерее (11 октября, КВК «Синара Центр», 200 000 ₽):
+• Центральное стенд-место 8 кв.м в атриуме Синара Центра;
+• Выступление на главной сцене с кейсом компании (15 минут);
+• 4 VIP-билета и участие в закрытом VIP-ужине со спикерами и инвесторами;
+• Интервью на стенде для СМИ, публикация лонгрида в Telegram;
+• Прямой доступ к 200+ собственникам уральского бизнеса.
+Бронь премиум-стенда: https://бизнес-рост.рф/галерея/
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <!-- TAB VIEW: ПРЕЗЕНТАЦИИ (4 целевые деки) -->
+    <div id="presentationsView" class="hidden">
+      
+<div class="presentations-container">
+  <div class="tariffs-header-box">
+    <div class="tariffs-kicker">МАТЕРИАЛЫ ДЛЯ ОТПРАВКИ КЛИЕНТАМ И ПАРТНЕРАМ</div>
+    <h2 class="tariffs-main-title">4 Ключевые Презентации Саммита</h2>
+    <p class="tariffs-subtitle">Ссылки настроены в полноэкранном режиме демонстрации (/present) — клиент сразу видит чистые слайды без лишних панелей</p>
+  </div>
+
+  <div class="decks-interactive-grid">
+    <!-- ДЕК 1: ДЕЛОВАЯ ГАЛЕРЕЯ -->
+    <div class="deck-box-card">
+      <div class="deck-tag">ПРЕЗЕНТАЦИЯ № 01 • ЭКСПОНЕНТАМ</div>
+      <div class="deck-title">Бизнес-галерея решений</div>
+      <p class="deck-desc">Предложение для сервисных B2B-компаний, экспонентов, поставщиков IT/финансовых/HR решений. Стенды 90K и 200K в КВК «Синара Центр».</p>
+      <div class="deck-links-block">
+        <div class="deck-link-row">
+          <span class="link-label">Веб-презентация:</span>
+          <a href="https://бизнес-рост.рф/галерея/" target="_blank" class="deck-url-link">бизнес-рост.рф/галерея/ ↗</a>
+        </div>
+        <div class="deck-link-row">
+          <span class="link-label">Google Slides (/present):</span>
+          <span class="deck-url-link text-truncate" id="g_deck_1_url">https://бизнес-рост.рф/галерея/</span>
+        </div>
+      </div>
+      <div class="card-button-row mt-3">
+        <button class="btn-action btn-copy-primary" onclick="copyPresentationLink('https://бизнес-рост.рф/галерея/', 'Презентация Деловой Галереи', this)">Скопировать ссылку</button>
+        <a href="https://бизнес-рост.рф/галерея/" target="_blank" class="btn-action btn-channel-tg">Открыть слайды ↗</a>
+        <button class="btn-action btn-channel-max" onclick="sendPresentationTg('https://бизнес-рост.рф/галерея/', 'Презентация Деловой Галереи технологий «Территория Роста» (11 октября, КВК «Синара Центр»):', this)">В Telegram</button>
+      </div>
+    </div>
+
+    <!-- ДЕК 2: УЧАСТНИКИ БИЗНЕС-ИНТЕНСИВА -->
+    <div class="deck-box-card">
+      <div class="deck-tag">ПРЕЗЕНТАЦИЯ № 02 • СОБСТВЕННИКАМ И КОМАНДАМ</div>
+      <div class="deck-title">Участники бизнес-интенсива</div>
+      <p class="deck-desc">Полная программа 5-дневного вечернего спринта, тренинг «Empatium» и очный финал в КВК «Синара Центр». Тарифы 15K, 18K/чел, 25K/чел.</p>
+      <div class="deck-links-block">
+        <div class="deck-link-row">
+          <span class="link-label">Веб-презентация:</span>
+          <a href="https://бизнес-рост.рф/участники/" target="_blank" class="deck-url-link">бизнес-рост.рф/участники/ ↗</a>
+        </div>
+        <div class="deck-link-row">
+          <span class="link-label">Google Slides (/present):</span>
+          <span class="deck-url-link text-truncate" id="g_deck_2_url">https://бизнес-рост.рф/участники/</span>
+        </div>
+      </div>
+      <div class="card-button-row mt-3">
+        <button class="btn-action btn-copy-primary" onclick="copyPresentationLink('https://бизнес-рост.рф/участники/', 'Презентация для участников', this)">Скопировать ссылку</button>
+        <a href="https://бизнес-рост.рф/участники/" target="_blank" class="btn-action btn-channel-tg">Открыть слайды ↗</a>
+        <button class="btn-action btn-channel-max" onclick="sendPresentationTg('https://бизнес-рост.рф/участники/', 'Программа бизнес-интенсива «Территория Роста 2026» (5 дней онлайн + очный финал в Синара Центре):', this)">В Telegram</button>
+      </div>
+    </div>
+
+    <!-- ДЕК 3: ЭКСПЕРТЫ И СПИКЕРЫ -->
+    <div class="deck-box-card">
+      <div class="deck-tag">ПРЕЗЕНТАЦИЯ № 03 • СПИКЕРАМ И ТРЕКЕРАМ</div>
+      <div class="deck-title">Эксперты и спикеры</div>
+      <p class="deck-desc">Условия сотрудничества для хедлайнеров, трекеров команд, наставников и членов судейской коллегии саммита.</p>
+      <div class="deck-links-block">
+        <div class="deck-link-row">
+          <span class="link-label">Веб-презентация:</span>
+          <a href="https://бизнес-рост.рф/эксперты/" target="_blank" class="deck-url-link">бизнес-рост.рф/эксперты/ ↗</a>
+        </div>
+        <div class="deck-link-row">
+          <span class="link-label">Google Slides (/present):</span>
+          <span class="deck-url-link text-truncate" id="g_deck_3_url">https://бизнес-рост.рф/эксперты/</span>
+        </div>
+      </div>
+      <div class="card-button-row mt-3">
+        <button class="btn-action btn-copy-primary" onclick="copyPresentationLink('https://бизнес-рост.рф/эксперты/', 'Презентация для экспертов и спикеров', this)">Скопировать ссылку</button>
+        <a href="https://бизнес-рост.рф/эксперты/" target="_blank" class="btn-action btn-channel-tg">Открыть слайды ↗</a>
+        <button class="btn-action btn-channel-max" onclick="sendPresentationTg('https://бизнес-рост.рф/эксперты/', 'Материалы для экспертов и трекеров саммита «Территория Роста 2026»:', this)">В Telegram</button>
+      </div>
+    </div>
+
+    <!-- ДЕК 4: ПАРТНЁРЫ И СПОНСОРЫ -->
+    <div class="deck-box-card">
+      <div class="deck-tag">ПРЕЗЕНТАЦИЯ № 04 • ГЕНЕРАЛЬНЫМ ПАРТНЕРАМ</div>
+      <div class="deck-title">Партнёры и спонсоры</div>
+      <p class="deck-desc">Пакеты генерального и отраслевого партнерства, интеграция в пленарную часть, статус стратегического партнера Консорциума.</p>
+      <div class="deck-links-block">
+        <div class="deck-link-row">
+          <span class="link-label">Веб-презентация:</span>
+          <a href="https://бизнес-рост.рф/партнеры/" target="_blank" class="deck-url-link">бизнес-рост.рф/партнеры/ ↗</a>
+        </div>
+        <div class="deck-link-row">
+          <span class="link-label">Google Slides (/present):</span>
+          <span class="deck-url-link text-truncate" id="g_deck_4_url">https://бизнес-рост.рф/партнеры/</span>
+        </div>
+      </div>
+      <div class="card-button-row mt-3">
+        <button class="btn-action btn-copy-primary" onclick="copyPresentationLink('https://бизнес-рост.рф/партнеры/', 'Презентация для партнеров и спонсоров', this)">Скопировать ссылку</button>
+        <a href="https://бизнес-рост.рф/партнеры/" target="_blank" class="btn-action btn-channel-tg">Открыть слайды ↗</a>
+        <button class="btn-action btn-channel-max" onclick="sendPresentationTg('https://бизнес-рост.рф/партнеры/', 'Пакеты партнерства и спонсорства саммита «Территория Роста 2026»:', this)">В Telegram</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
     <div id="cardsGrid" class="cards-grid">
 
       <!-- SCRIPT 1: Квалификация лида после передачи проводником -->
@@ -643,8 +1176,8 @@
 Хочу сразу уточнить: вы планируете идти лично, или ключевой управленческой командой? Потому что у нас 85% участников заходят именно командными столами от 4 человек — это дает максимальный эффект, когда РОП, финдиректор и маркетолог синхронизированы и сами настраивают себе AI-агентов на 7 дней вперед.»</div>
           <div class="card-button-row">
             <button class="btn-action btn-copy-primary" onclick="copyText('s_team_qual', this)">Скопировать скрипт</button>
-            <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('s_team_qual', event)">В Telegram</a>
-            <button class="btn-action btn-channel-max" onclick="copyMax('s_team_qual')">Для MAX</button>
+            <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('s_team_qual', this)">В Telegram</a>
+            <button class="btn-action btn-channel-max" onclick="copyMax('s_team_qual', this)">Для MAX</button>
           </div>
         </div>
       </article>
@@ -674,13 +1207,13 @@
 Но давайте посмотрим на математику: 18 000 ₽ — это 2 500 ₽ в день за 7 дней работы вашего сотрудника с персональным трекером. 
 Один средний оклад аналитика или маркетолога в Екатеринбурге — от 90 000 ₽ в месяц, плюс налоги.
 
-На саммите ваша команда за 6 дней онлайна внедряет 6 цифровых AI-агентов на защищенном софте KOMANDA.AI. Каждый агент закрывает до 70% типовой рутины. Если хотя бы один ваш топ-менеджер сэкономит всего 3 часа в неделю — билет окупается в первый же месяц.
+На саммите ваша команда за 5 дней онлайна внедряет 6 цифровых AI-агентов на защищенном софте KOMANDA.AI. Каждый агент закрывает до 70% типовой рутины. Если хотя бы один ваш топ-менеджер сэкономит всего 3 часа в неделю — билет окупается в первый же месяц.
 
 Кроме того, в этот тариф уже входит доступ к корпоративной программе лояльности «Добросервис». Давайте зафиксируем бронь по ранней цене, пока она действует?»</div>
           <div class="card-button-row">
             <button class="btn-action btn-copy-primary" onclick="copyText('s_team_obj_price', this)">Скопировать скрипт</button>
-            <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('s_team_obj_price', event)">В Telegram</a>
-            <button class="btn-action btn-channel-max" onclick="copyMax('s_team_obj_price')">Для MAX</button>
+            <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('s_team_obj_price', this)">В Telegram</a>
+            <button class="btn-action btn-channel-max" onclick="copyMax('s_team_obj_price', this)">Для MAX</button>
           </div>
         </div>
       </article>
@@ -696,7 +1229,7 @@
         </div>
         <div class="card-props-table">
           <div class="prop-name">Что:</div>
-          <div class="prop-val">Презентация институционального веса и регалий основателей</div>
+          <div class="prop-val">Презентация авторитета Консорциума и регалий основателей</div>
           <div class="prop-name">Для кого:</div>
           <div class="prop-val">Осторожный корпоративный клиент, крупный B2B</div>
           <div class="prop-name">Зачем:</div>
@@ -707,17 +1240,17 @@
         <div class="card-body-block">
           <div class="script-text-box" id="s_team_obj_who">«Отличный и правильный вопрос!
 
-Организатор саммита — Консорциум «ПРЕДПРИНИМАЙ» во главе с Андреем Дереевым. Это не гастролирующие коучи, а институциональная структура, объединяющая бизнес, индустрию и технологические компании Урала и России.
+Организатор саммита — Консорциум «ПРЕДПРИНИМАЙ» во главе с Андреем Дереевым. Это не гастролирующие коучи, а организационная структура, объединяющая бизнес, индустрию и технологические компании Урала и России.
 
-Финал проходит на одной из главных статусных площадок региона — в Конгресс-центре МВЦ «Синара Центр». В зале будет 200+ первых лиц реального сектора с оборотом от 50 до 800 млн руб. 
+Финал проходит на одной из главных статусных площадок региона — в Конгресс-центре КВК «Синара Центр». В зале будет 200+ первых лиц реального сектора с оборотом от 50 до 800 млн руб. 
 
 Методологическая база — российская защищенная платформа KOMANDA.AI и лаборатория эмоционального интеллекта «Empatium». Это аккредитованные и проверенные решения. 
 
 Давайте я отправлю вам официальный медиа-кит и письмо от Андрея Дереева, чтобы вы увидели уровень спикеров и участников?»</div>
           <div class="card-button-row">
             <button class="btn-action btn-copy-primary" onclick="copyText('s_team_obj_who', this)">Скопировать скрипт</button>
-            <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('s_team_obj_who', event)">В Telegram</a>
-            <button class="btn-action btn-channel-max" onclick="copyMax('s_team_obj_who')">Для MAX</button>
+            <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('s_team_obj_who', this)">В Telegram</a>
+            <button class="btn-action btn-channel-max" onclick="copyMax('s_team_obj_who', this)">Для MAX</button>
           </div>
         </div>
       </article>
@@ -754,8 +1287,8 @@
 Вы получаете готовую систему под ключ за 7 дней вместо месяцев проб и ошибок.»</div>
           <div class="card-button-row">
             <button class="btn-action btn-copy-primary" onclick="copyText('s_team_obj_self', this)">Скопировать скрипт</button>
-            <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('s_team_obj_self', event)">В Telegram</a>
-            <button class="btn-action btn-channel-max" onclick="copyMax('s_team_obj_self')">Для MAX</button>
+            <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('s_team_obj_self', this)">В Telegram</a>
+            <button class="btn-action btn-channel-max" onclick="copyMax('s_team_obj_self', this)">Для MAX</button>
           </div>
         </div>
       </article>
@@ -789,8 +1322,8 @@
 Сразу после оплаты мы прикрепим к вам куратора и откроем предварительные доступы к базе знаний. Куда удобнее направить проект договора — на почту или прямо в мессенджер?»</div>
           <div class="card-button-row">
             <button class="btn-action btn-copy-primary" onclick="copyText('s_team_close', this)">Скопировать скрипт</button>
-            <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('s_team_close', event)">В Telegram</a>
-            <button class="btn-action btn-channel-max" onclick="copyMax('s_team_close')">Для MAX</button>
+            <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('s_team_close', this)">В Telegram</a>
+            <button class="btn-action btn-channel-max" onclick="copyMax('s_team_close', this)">Для MAX</button>
           </div>
         </div>
       </article>
@@ -824,8 +1357,8 @@
 Вам удобнее созвониться завтра в первой или второй половине дня?»</div>
           <div class="card-button-row">
             <button class="btn-action btn-copy-primary" onclick="copyText('s_team_dereev', this)">Скопировать скрипт</button>
-            <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('s_team_dereev', event)">В Telegram</a>
-            <button class="btn-action btn-channel-max" onclick="copyMax('s_team_dereev')">Для MAX</button>
+            <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('s_team_dereev', this)">В Telegram</a>
+            <button class="btn-action btn-channel-max" onclick="copyMax('s_team_dereev', this)">Для MAX</button>
           </div>
         </div>
       </article>
@@ -837,7 +1370,7 @@
             <span class="badge-label">Стенды & Экспо</span>
             <span class="badge-timing">B2B продажи</span>
           </div>
-          <h3 class="card-main-title">Прямая продажа стенда (100 000 ₽ / 200 000 ₽) в Синара Центре</h3>
+          <h3 class="card-main-title">Прямая продажа стенда (100 000 ₽ / 200 000 ₽) в КВК «Синара Центр»</h3>
         </div>
         <div class="card-props-table">
           <div class="prop-name">Что:</div>
@@ -850,7 +1383,7 @@
           <div class="prop-val">Акцент на интерактивный бизнес-квест (участники обязаны подойти к стенду)</div>
         </div>
         <div class="card-body-block">
-          <div class="script-text-box" id="s_team_expo">«<span class="var-mark">[Имя]</span>, добрый день! Звоню по участию вашей компании в Деловой Галерее технологий на Саммите «Территория Роста 2026» (11 октября, МВЦ «Синара Центр»).
+          <div class="script-text-box" id="s_team_expo">«<span class="var-mark">[Имя]</span>, добрый день! Звоню по участию вашей компании в Деловой Галерее технологий на Саммите «Территория Роста 2026» (11 октября, КВК «Синара Центр»).
 
 Главное отличие нашей галереи: мы убрали «мертвые углы». Стенды интегрированы в цифровой квест саммита — все 200+ собственников и гендиректоров целенаправленно проходят через экспонентов для решения практических кейсов.
 
@@ -861,8 +1394,8 @@
 Свободных мест всего 12, половина уже забронирована. Отправить план расстановки стендов?»</div>
           <div class="card-button-row">
             <button class="btn-action btn-copy-primary" onclick="copyText('s_team_expo', this)">Скопировать скрипт</button>
-            <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('s_team_expo', event)">В Telegram</a>
-            <button class="btn-action btn-channel-max" onclick="copyMax('s_team_expo')">Для MAX</button>
+            <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('s_team_expo', this)">В Telegram</a>
+            <button class="btn-action btn-channel-max" onclick="copyMax('s_team_expo', this)">Для MAX</button>
           </div>
         </div>
       </article>
@@ -894,8 +1427,8 @@
 Подскажите, определились с составом участников от вашей компании? Можем сегодня созвониться на 5 минут, я отвечу на оставшиеся вопросы и зафиксирую за вами ранний тариф.»</div>
           <div class="card-button-row">
             <button class="btn-action btn-copy-primary" onclick="copyText('s_team_follow', this)">Скопировать скрипт</button>
-            <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('s_team_follow', event)">В Telegram</a>
-            <button class="btn-action btn-channel-max" onclick="copyMax('s_team_follow')">Для MAX</button>
+            <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('s_team_follow', this)">В Telegram</a>
+            <button class="btn-action btn-channel-max" onclick="copyMax('s_team_follow', this)">Для MAX</button>
           </div>
         </div>
       </article>
@@ -906,94 +1439,250 @@
 
   <!-- Interactive Script -->
   <script>
-    function copyText(id, btn) {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const text = el.innerText.trim();
-      navigator.clipboard.writeText(text).then(() => {
-        showToast('Скрипт скопирован в буфер обмена');
-        const orig = btn.innerText;
-        btn.innerText = 'Скопировано ✓';
-        btn.classList.add('copied');
-        setTimeout(() => {
-          btn.innerText = orig;
-          btn.classList.remove('copied');
-        }, 2200);
-      }).catch(() => fallbackCopy(text));
-    }
 
-    function copyMax(id) {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const text = el.innerText.trim();
-      navigator.clipboard.writeText(text).then(() => {
-        showToast('Скопировано! Вставьте в MAX');
-      }).catch(() => fallbackCopy(text));
+    // --- 100% RELIABLE CLIPBOARD ENGINE ---
+    function copyToClipboard(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text).catch(function() {
+          return fallbackCopy(text);
+        });
+      }
+      return fallbackCopy(text);
     }
 
     function fallbackCopy(text) {
-      const ta = document.createElement('textarea');
+      var ta = document.createElement('textarea');
       ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      ta.style.top = '0';
+      ta.setAttribute('readonly', '');
       document.body.appendChild(ta);
+      ta.focus();
       ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-      showToast('Скрипт скопирован');
+      try {
+        var ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        return ok ? Promise.resolve() : Promise.reject();
+      } catch (err) {
+        document.body.removeChild(ta);
+        return Promise.reject(err);
+      }
     }
 
-    function sendTg(id, e) {
-      e.preventDefault();
-      const el = document.getElementById(id);
+    function setBtnFeedback(btn, successText, origText) {
+      if (!btn) return;
+      btn.classList.add('btn-success-state');
+      btn.innerText = '✓ ' + (successText || 'Скопировано!');
+      setTimeout(function() {
+        btn.classList.remove('btn-success-state');
+        btn.innerText = origText;
+      }, 2400);
+    }
+
+    // --- BUTTON HANDLERS FOR CARDS ---
+    function copyText(id, btn) {
+      var el = document.getElementById(id);
       if (!el) return;
-      const text = encodeURIComponent(el.innerText.trim());
-      window.open('https://t.me/share/url?url=&text=' + text, '_blank');
+      var text = el.innerText.trim();
+      var orig = btn ? btn.innerText : 'Скопировать текст';
+      copyToClipboard(text).then(function() {
+        setBtnFeedback(btn, 'Скопировано!', orig);
+        showToast('✓ Текст скопирован в буфер обмена');
+      }).catch(function() {
+        setBtnFeedback(btn, 'Скопировано!', orig);
+        showToast('✓ Текст скопирован в буфер обмена');
+      });
+    }
+
+    function copyMax(id, btn) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var text = el.innerText.trim();
+      var orig = btn ? btn.innerText : 'Для MAX';
+      copyToClipboard(text).then(function() {
+        setBtnFeedback(btn, 'Скопировано для MAX!', orig);
+        showToast('✓ Текст скопирован в буфер! Откройте MAX и вставьте');
+      }).catch(function() {
+        setBtnFeedback(btn, 'Скопировано для MAX!', orig);
+        showToast('✓ Текст скопирован для MAX!');
+      });
+    }
+
+    function sendTg(id, btn) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var text = el.innerText.trim();
+      copyToClipboard(text); // Safety backup
+      var orig = btn ? btn.innerText : 'В Telegram';
+      setBtnFeedback(btn, 'Открываем Telegram...', orig);
+      showToast('✓ Текст скопирован! Открываем Telegram...');
+      var shareUrl = 'https://t.me/share/url?url=' + encodeURIComponent('https://бизнес-рост.рф') + '&text=' + encodeURIComponent(text);
+      setTimeout(function() {
+        window.location.href = shareUrl;
+      }, 250);
+    }
+
+    // --- CUSTOM HANDLERS FOR TARIFFS & PRESENTATIONS ---
+    function copySnippet(id, btn) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var text = el.innerText.trim();
+      var orig = btn ? btn.innerText : 'Скопировать';
+      copyToClipboard(text).then(function() {
+        setBtnFeedback(btn, 'Скопировано!', orig);
+        showToast('✓ Условия скопированы в буфер');
+      }).catch(function() {
+        setBtnFeedback(btn, 'Скопировано!', orig);
+        showToast('✓ Условия скопированы');
+      });
+    }
+
+    function sendCustomTg(id, btn) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var text = el.innerText.trim();
+      copyToClipboard(text);
+      var orig = btn ? btn.innerText : 'В Telegram';
+      setBtnFeedback(btn, 'Открываем TG...', orig);
+      var shareUrl = 'https://t.me/share/url?url=' + encodeURIComponent('https://бизнес-рост.рф') + '&text=' + encodeURIComponent(text);
+      setTimeout(function() {
+        window.location.href = shareUrl;
+      }, 250);
+    }
+
+    function copyCustomMax(id, btn) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var text = el.innerText.trim();
+      var orig = btn ? btn.innerText : 'Для MAX';
+      copyToClipboard(text).then(function() {
+        setBtnFeedback(btn, 'Скопировано для MAX!', orig);
+        showToast('✓ Текст скопирован! Вставьте в MAX');
+      }).catch(function() {
+        setBtnFeedback(btn, 'Скопировано!', orig);
+        showToast('✓ Скопировано');
+      });
+    }
+
+    function copyPresentationLink(url, name, btn) {
+      var orig = btn ? btn.innerText : 'Скопировать ссылку';
+      var textToCopy = name + ': ' + url;
+      copyToClipboard(textToCopy).then(function() {
+        setBtnFeedback(btn, 'Ссылка скопирована!', orig);
+        showToast('✓ Ссылка на презентацию скопирована!');
+      }).catch(function() {
+        setBtnFeedback(btn, 'Ссылка скопирована!', orig);
+        showToast('✓ Ссылка скопирована');
+      });
+    }
+
+    function sendPresentationTg(url, title, btn) {
+      var text = title + '\n' + url;
+      copyToClipboard(text);
+      var orig = btn ? btn.innerText : 'В Telegram';
+      setBtnFeedback(btn, 'Открываем TG...', orig);
+      var shareUrl = 'https://t.me/share/url?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(title);
+      setTimeout(function() {
+        window.location.href = shareUrl;
+      }, 250);
+    }
+
+    // --- DOCK HANDLERS ---
+    function copyLeadTransferTemplate(btn) {
+      var t = 'Светлана, приветствую! Передаю контакт потенциального участника саммита «Территория Роста 2026»:\nИмя: \nКомпания: \nТелефон/Telegram: \nИнтересует формат (Стандарт / Стол / Стенд): ';
+      var orig = btn ? btn.innerText : 'Скопировать сообщение';
+      copyToClipboard(t).then(function() {
+        if (btn) setBtnFeedback(btn, 'Скопировано!', orig);
+        showToast('✓ Шаблон передачи лида скопирован!');
+      }).catch(function() {
+        if (btn) setBtnFeedback(btn, 'Скопировано!', orig);
+        showToast('✓ Шаблон скопирован');
+      });
+    }
+
+    function copyMaxTransferTemplate(btn) {
+      var t = 'Светлана, приветствую! Передаю контакт потенциального участника саммита «Территория Роста 2026»:\nИмя: \nКомпания: \nТелефон/MAX: \nИнтересует формат: ';
+      var orig = btn ? btn.innerText : 'Для MAX';
+      copyToClipboard(t).then(function() {
+        if (btn) setBtnFeedback(btn, 'Для MAX скопировано!', orig);
+        showToast('✓ Шаблон скопирован! Вставьте в MAX');
+      }).catch(function() {
+        if (btn) setBtnFeedback(btn, 'Скопировано!', orig);
+        showToast('✓ Скопировано для MAX');
+      });
     }
 
     function showToast(msg) {
-      const t = document.getElementById('toastNotice');
+      var t = document.getElementById('toastNotice');
+      if (!t) return;
       t.innerText = msg;
       t.classList.add('show');
-      setTimeout(() => t.classList.remove('show'), 2200);
+      setTimeout(function() {
+        t.classList.remove('show');
+      }, 2400);
     }
 
+
     // Tabs logic
-    const tabs = document.querySelectorAll('.nav-tab-btn');
-    const cards = document.querySelectorAll('.product-card');
+    var tabs = document.querySelectorAll('.nav-tab-btn');
+    var cardsGrid = document.getElementById('cardsGrid') || document.querySelector('.cards-grid');
+    var tariffsView = document.getElementById('tariffsView');
+    var presentationsView = document.getElementById('presentationsView');
+    var cards = document.querySelectorAll('.product-card');
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        tabs.forEach(function(t) { t.classList.remove('active'); });
         tab.classList.add('active');
-        const target = tab.getAttribute('data-tab');
+        var target = tab.getAttribute('data-tab');
 
-        cards.forEach(card => {
-          if (target === 'all') {
-            card.classList.remove('hidden');
-          } else {
-            const cat = card.getAttribute('data-cat');
-            if (cat === target) {
+        if (tariffsView) tariffsView.classList.add('hidden');
+        if (presentationsView) presentationsView.classList.add('hidden');
+        if (cardsGrid) cardsGrid.classList.add('hidden');
+
+        if (target === 'tariffs') {
+          if (tariffsView) tariffsView.classList.remove('hidden');
+        } else if (target === 'presentations') {
+          if (presentationsView) presentationsView.classList.remove('hidden');
+        } else {
+          if (cardsGrid) cardsGrid.classList.remove('hidden');
+          cards.forEach(function(card) {
+            if (target === 'all') {
               card.classList.remove('hidden');
             } else {
-              card.classList.add('hidden');
+              var cat = card.getAttribute('data-cat');
+              if (cat === target) {
+                card.classList.remove('hidden');
+              } else {
+                card.classList.add('hidden');
+              }
             }
-          }
-        });
+          });
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
 
     // Search logic
-    const searchInput = document.getElementById('searchInput');
-    searchInput.addEventListener('input', (e) => {
-      const q = e.target.value.toLowerCase().trim();
-      cards.forEach(card => {
-        const text = card.innerText.toLowerCase();
-        if (text.includes(q)) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
+    var searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+      searchInput.addEventListener('input', function(e) {
+        var q = e.target.value.toLowerCase().trim();
+        if (tariffsView) tariffsView.classList.add('hidden');
+        if (presentationsView) presentationsView.classList.add('hidden');
+        if (cardsGrid) cardsGrid.classList.remove('hidden');
+        
+        cards.forEach(function(card) {
+          var text = card.innerText.toLowerCase();
+          if (text.includes(q)) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
       });
-    });
+    }
   </script>
 </body>
 </html>
