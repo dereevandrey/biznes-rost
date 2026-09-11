@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Партнёрский Пакет & Скрипты | «Территория Роста 2026»</title>
+  <meta name="description" content="Интерактивный кабинет амбассадора и партнера Саммита «Территория Роста 2026»: готовые сообщения, скрипты звонков, посты, видео и тарифы.">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-main: #090b0e;
+      --bg-card: rgba(18, 22, 29, 0.85);
+      --bg-card-hover: rgba(26, 32, 42, 0.95);
+      --border-card: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(59, 130, 246, 0.35);
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-dim: #6b7280;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --emerald: #10b981;
+      --emerald-glow: rgba(16, 185, 129, 0.2);
+      --amber: #f59e0b;
+      --cyan: #06b6d4;
+      --purple: #8b5cf6;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      padding-bottom: 90px;
+      overflow-x: hidden;
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(37, 99, 235, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(16, 185, 129, 0.06) 0%, transparent 50%);
+      background-attachment: fixed;
+    }
+
+    /* Container */
+    .app-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* Header */
+    .app-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(9, 11, 14, 0.88);
+      border-bottom: 1px solid var(--border-card);
+      padding: 12px 0;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand-block {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #93c5fd;
+    }
+
+    .brand-title {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+
+    .brand-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: none;
+    }
+
+    @media (min-width: 640px) {
+      .brand-sub { display: inline; }
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 13px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-contact:hover {
+      background: rgba(16, 185, 129, 0.25);
+      transform: translateY(-1px);
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      margin-top: 18px;
+      margin-bottom: 20px;
+      padding: 20px 22px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-banner::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 140px;
+      height: 100%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #60a5fa;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-h1 {
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.25;
+      color: #ffffff;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-desc {
+      font-size: 13.5px;
+      color: #cbd5e1;
+      line-height: 1.5;
+      max-width: 680px;
+    }
+
+    /* Quick Stats Grid */
+    .quick-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    @media (min-width: 640px) {
+      .quick-stats { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .stat-pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 12px;
+      padding: 9px 12px;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .stat-val {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-top: 2px;
+    }
+
+    /* Search Bar */
+    .search-box {
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      background: rgba(18, 22, 29, 0.9);
+      border: 1px solid var(--border-card);
+      border-radius: 14px;
+      padding: 13px 16px 13px 44px;
+      color: #ffffff;
+      font-size: 14px;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      font-size: 16px;
+      pointer-events: none;
+    }
+
+    /* Filter Tabs (Horizontal Scrollable) */
+    .filter-tabs-wrapper {
+      position: sticky;
+      top: 57px;
+      z-index: 40;
+      background: rgba(9, 11, 14, 0.95);
+      backdrop-filter: blur(12px);
+      padding: 8px 0;
+      margin-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: 2px 2px;
+    }
+
+    .filter-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab-btn {
+      flex-shrink: 0;
+      padding: 8px 14px;
+      font-size: 12.5px;
+      font-weight: 600;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .tab-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+    }
+
+    .tab-btn.active {
+      background: #2563eb;
+      border-color: #3b82f6;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+    }
+
+    /* Script Card */
+    .script-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: 18px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .script-card:hover {
+      border-color: rgba(255, 255, 255, 0.16);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .card-badges {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .badge-category {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.25);
+    }
+
+    .badge-audience {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(245, 158, 11, 0.15);
+      color: #fcd34d;
+      border: 1px solid rgba(245, 158, 11, 0.25);
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.35;
+      margin-top: 4px;
+    }
+
+    .card-meta-timing {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Content Box */
+    .content-box {
+      background: rgba(10, 13, 18, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #e2e8f0;
+      white-space: pre-wrap;
+      position: relative;
+      margin-bottom: 14px;
+      font-family: var(--font-sans);
+    }
+
+    .content-box .var-tag {
+      background: rgba(59, 130, 246, 0.2);
+      color: #93c5fd;
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 12.5px;
+      border: 1px dashed rgba(59, 130, 246, 0.4);
+    }
+
+    /* Card Action Buttons */
+    .card-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    @media (min-width: 520px) {
+      .card-actions {
+        grid-template-columns: 2fr 1fr 1fr;
+      }
+    }
+
+    .btn-copy {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      padding: 11px 16px;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-copy:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    .btn-copy.copied {
+      background: #10b981 !important;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4) !important;
+    }
+
+    .btn-share-tg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #38bdf8;
+      border-radius: 10px;
+      padding: 11px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-share-tg:hover {
+      background: rgba(56, 189, 248, 0.22);
+    }
+
+    .btn-share-wa {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: #4ade80;
+      border-radius: 10px;
+      padding: 11px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-share-wa:hover {
+      background: rgba(34, 197, 94, 0.22);
+    }
+
+    /* Tariff Cards Grid */
+    .tariff-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 640px) {
+      .tariff-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .tariff-card {
+      background: rgba(18, 22, 29, 0.9);
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .tariff-card.featured {
+      border-color: rgba(59, 130, 246, 0.5);
+      background: linear-gradient(180deg, rgba(37, 99, 235, 0.12) 0%, rgba(18, 22, 29, 0.95) 100%);
+    }
+
+    .tariff-badge {
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      align-self: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .tb-std { background: rgba(100, 116, 139, 0.2); color: #94a3b8; }
+    .tb-biz { background: rgba(59, 130, 246, 0.25); color: #60a5fa; }
+    .tb-vip { background: rgba(245, 158, 11, 0.25); color: #fbbf24; }
+
+    .tariff-name {
+      font-size: 15px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .tariff-price {
+      font-size: 20px;
+      font-weight: 800;
+      color: #ffffff;
+      font-family: var(--font-mono);
+      margin-bottom: 8px;
+    }
+
+    .tariff-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin-bottom: 12px;
+      flex-grow: 1;
+    }
+
+    /* Fixed Bottom Action Dock (Mobile First) */
+    .bottom-dock {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 60;
+      background: rgba(9, 11, 14, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid var(--border-card);
+      padding: 10px 16px env(safe-area-inset-bottom, 10px);
+    }
+
+    .dock-content {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .dock-text {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.25;
+    }
+
+    .dock-text strong {
+      color: #ffffff;
+      font-size: 13px;
+    }
+
+    .dock-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      background: #10b981;
+      color: #ffffff;
+      font-size: 13.5px;
+      font-weight: 700;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .dock-btn:hover {
+      background: #059669;
+      transform: translateY(-1px);
+    }
+
+    /* Toast Notification */
+    #toast {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100px);
+      z-index: 999;
+      background: #10b981;
+      color: #ffffff;
+      padding: 12px 22px;
+      border-radius: 9999px;
+      font-size: 13.5px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.5);
+      opacity: 0;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+
+    #toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toast -->
+  <div id="toast">
+    <span>✓</span> Скопировано в буфер обмена!
+  </div>
+
+  <!-- Top Sticky Header -->
+  <header class="app-header">
+    <div class="app-container">
+      <div class="header-content">
+        <div class="brand-block">
+          <div class="brand-badge">⚡ PARTNER KIT</div>
+          <span class="brand-title">Территория Роста</span>
+          <span class="brand-sub">• Консорциум «ПРЕДПРИНИМАЙ»</span>
+        </div>
+        <div class="header-actions">
+          <a href="https://t.me/svetlanakoroleva" target="_blank" class="btn-contact">
+            <span>✈️</span> Куратор
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <!-- Hero Card -->
+    <section class="hero-banner">
+      <div class="hero-tag">🏛️ РАБОЧИЙ ПАКЕТ АМБАССАДОРА И ПАРТНЁРА</div>
+      <h1 class="hero-h1">Инструменты рекомендации & скрипты 2026</h1>
+      <p class="hero-desc">
+        Готовая библиотека выверенных сообщений для мессенджеров, сценариев встреч, постов и видео. Нажмите <b>«Скопировать»</b>, чтобы отправить коллеге в 1 клик.
+      </p>
+
+      <div class="quick-stats">
+        <div class="stat-pill">
+          <div class="stat-label">Даты спринта</div>
+          <div class="stat-val">5–11 Октября</div>
+        </div>
+        <div class="stat-pill">
+          <div class="stat-label">Площадка</div>
+          <div class="stat-val">Синара Центр (Екб)</div>
+        </div>
+        <div class="stat-pill">
+          <div class="stat-label">Аудитория</div>
+          <div class="stat-val">200+ ЛПР бизнеса</div>
+        </div>
+        <div class="stat-pill">
+          <div class="stat-label">Ранний вход</div>
+          <div class="stat-val">от 15 000 ₽</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search Input -->
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" class="search-input" placeholder="Поиск по скриптам: мессенджер, звонок, стенд, клуб, возражение..." autocomplete="off">
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="filter-tabs-wrapper">
+      <div class="filter-tabs">
+        <button class="tab-btn active" data-filter="all">🌟 Все форматы</button>
+        <button class="tab-btn" data-filter="messenger">📲 Мессенджеры</button>
+        <button class="tab-btn" data-filter="meeting">🗣️ Личная встреча</button>
+        <button class="tab-btn" data-filter="call">📞 Отдел продаж</button>
+        <button class="tab-btn" data-filter="social">📝 Пост в канал</button>
+        <button class="tab-btn" data-filter="video">🎬 Видео / Reels</button>
+        <button class="tab-btn" data-filter="expo">🏢 Стенды и Спонсоры</button>
+        <button class="tab-btn" data-filter="objection">🛡️ Возражения</button>
+      </div>
+    </div>
+
+    <!-- CARDS CONTAINER -->
+    <div id="cardsContainer">
+
+      <!-- ITEM 1: Собственнику в TG -->
+      <div class="script-card" data-category="messenger">
+        <div class="card-top">
+          <div>
+            <div class="card-badges">
+              <span class="badge-category">📲 Мессенджер</span>
+              <span class="badge-audience">Собственнику / Другу</span>
+            </div>
+            <h3 class="card-title">Личное сообщение коллеге-предпринимателю</h3>
+          </div>
+          <div class="card-meta-timing">⏱ 30 сек на чтение</div>
+        </div>
+        <div class="content-box" id="text_msg_friend">Привет, <span class="var-tag">[Имя]</span>! Помнишь, обсуждали нехватку людей и как автоматизировать процессы без раздувания штата?
+
+Мои партнеры из Консорциума «ПРЕДПРИНИМАЙ» 5–11 октября проводят Всероссийский бизнес-саммит «Территория Роста 2026». Это не лекции: первые 5 дней в онлайне команды собирают свой Цифровой офис из 6 AI-агентов (аналитика, маркетинг, финансы, стратегия) на защищенной российской платформе KOMANDA.AI, а 10–11 октября — очный финал в Екатеринбурге в «Синара Центре» с тренингом команды и защитой стратегий.
+
+Мы с коллегами идем столом. Сейчас открыта ранняя цена — от 15 000 ₽ за человека или 18 000 ₽/чел за командный стол с персональным трекером.
+
+Скинуть короткий PDF с программой?</div>
+        <div class="card-actions">
+          <button class="btn-copy" onclick="copySnippet('text_msg_friend', this)">📋 Скопировать текст</button>
+          <a href="#" class="btn-share-tg" onclick="shareTG('text_msg_friend', event)">✈️ В Telegram</a>
+          <a href="#" class="btn-share-wa" onclick="shareWA('text_msg_friend', event)">💬 В WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- ITEM 2: В закрытый чат клуба -->
+      <div class="script-card" data-category="messenger">
+        <div class="card-top">
+          <div>
+            <div class="card-badges">
+              <span class="badge-category">📲 Мессенджер</span>
+              <span class="badge-audience">Чат бизнес-клуба / Синдикат</span>
+            </div>
+            <h3 class="card-title">Пост в закрытый чат предпринимательского сообщества</h3>
+          </div>
+          <div class="card-meta-timing">⏱ Охватное</div>
+        </div>
+        <div class="content-box" id="text_msg_club">Коллеги, приветствую! Делюсь сильным практическим событием для тех, кто планирует масштабирование на 2027 год.
+
+5–11 октября в Екатеринбурге пройдет Бизнес-Саммит «Территория Роста 2026» (организатор — Консорциум «ПРЕДПРИНИМАЙ», Андрей Дереев).
+
+Главная фишка — симбиоз команды и нейросетей без отрыва от операционки:
+• 5 дней онлайн (по вечерам): внедряем в бизнес 6 AI-агентов на защищенной платформе KOMANDA.AI;
+• 10 октября: очный практикум лаборатории «Empatium» (убираем скрытый саботаж сотрудников);
+• 11 октября: Гранд-Саммит в «Синара Центре» на 200+ собственников и выставка технологий.
+
+Очень рекомендую заходить сразу управленческой командой. Ранний тариф командного стола — 18 000 ₽/чел.
+
+Если кому актуально — маякните в личку, поделюсь материалами и помогу зафиксировать спец-условия.</div>
+        <div class="card-actions">
+          <button class="btn-copy" onclick="copySnippet('text_msg_club', this)">📋 Скопировать текст</button>
+          <a href="#" class="btn-share-tg" onclick="shareTG('text_msg_club', event)">✈️ В Telegram</a>
+          <a href="#" class="btn-share-wa" onclick="shareWA('text_msg_club', event)">💬 В WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- ITEM 3: B2B стенд -->
+      <div class="script-card" data-category="expo">
+        <div class="card-top">
+          <div>
+            <div class="card-badges">
+              <span class="badge-category">🏢 Выставка / Экспо</span>
+              <span class="badge-audience">B2B-компании / Подрядчики</span>
+            </div>
+            <h3 class="card-title">Предложение стенда в Деловой Галерее технологий</h3>
+          </div>
+          <div class="card-meta-timing">⏱ Продажа стенда</div>
+        </div>
+        <div class="content-box" id="text_msg_expo"><span class="var-tag">[Имя]</span>, добрый день! Если у вас в планах на осень выход на первых лиц реального сектора — обратите внимание:
+
+11 октября в Екатеринбурге в МВЦ «Синара Центр» в рамках Саммита «Территория Роста» открывается Деловая Галерея технологий. В зале будет 200+ собственников производств, девелопмента, ритейла с оборотом от 50 млн до нескольких миллиардов.
+
+Формат не про раздачу буклетов в пустых углах: стенды интегрированы в бизнес-квест, участников целенаправленно ведут к экспонентам.
+• Стенд «Стандарт» — 100 000 ₽;
+• Стенд «Бизнес» с правом 10-минутного питча на Главной сцене — 200 000 ₽.
+
+Направить презентацию и схему размещения стендов?</div>
+        <div class="card-actions">
+          <button class="btn-copy" onclick="copySnippet('text_msg_expo', this)">📋 Скопировать текст</button>
+          <a href="#" class="btn-share-tg" onclick="shareTG('text_msg_expo', event)">✈️ В Telegram</a>
+          <a href="#" class="btn-share-wa" onclick="shareWA('text_msg_expo', event)">💬 В WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- ITEM 4: Питч на встрече -->
+      <div class="script-card" data-category="meeting">
+        <div class="card-top">
+          <div>
+            <div class="card-badges">
+              <span class="badge-category">🗣️ Личный питч</span>
+              <span class="badge-audience">На кофе / Завтрак / Клуб</span>
+            </div>
+            <h3 class="card-title">Разговорный питч на 60 секунд своими словами</h3>
+          </div>
+          <div class="card-meta-timing">⏱ 60 секунд</div>
+        </div>
+        <div class="content-box" id="text_pitch">1. Заход (15 сек):
+«Слушай, ты сейчас как решаешь вопрос с перегрузом топов и дефицитом кадров? Все сейчас кинулись в нейросети, но у большинства это заканчивается баловством в ChatGPT, а в реальные процессы ничего не встроено.»
+
+2. Решение (25 сек):
+«Консорциум «ПРЕДПРИНИМАЙ» 5–11 октября делает в Екатеринбурге бизнес-лабораторию «Территория Роста». Смысл в том, что ты садишься со своими ключевыми людьми, и за неделю вам ставят корпоративный контур из 6 обученных AI-агентов на защищенном софте KOMANDA.AI — под твои финансы, воронки и аналитику. А в субботу и воскресенье — очный интенсив в Синара Центре на 200+ собственников.»
+
+3. Призыв к действию (20 сек):
+«Цена вопроса на раннем этапе — 18 000 ₽ за человека за командный стол с трекером. Это дешевле, чем один раз в ресторан команду сводить, а эффект на весь год. Давай скину презентацию в Telegram, посмотришь?»</div>
+        <div class="card-actions">
+          <button class="btn-copy" onclick="copySnippet('text_pitch', this)">📋 Скопировать шпаргалку</button>
+          <a href="#" class="btn-share-tg" onclick="shareTG('text_pitch', event)">✈️ Отправить себе в Избранное</a>
+        </div>
+      </div>
+
+      <!-- ITEM 5: Скрипт отдела продаж -->
+      <div class="script-card" data-category="call">
+        <div class="card-top">
+          <div>
+            <div class="card-badges">
+              <span class="badge-category">📞 Отдел продаж</span>
+              <span class="badge-audience">Менеджерам / Ассистенту</span>
+            </div>
+            <h3 class="card-title">Регламент звонка по теплой базе партнеров и клиентов</h3>
+          </div>
+          <div class="card-meta-timing">⏱ 2 минуты</div>
+        </div>
+        <div class="content-box" id="text_call_script">1. Приветствие:
+«Добрый день, <span class="var-tag">[Имя клиента]</span>! Меня зовут <span class="var-tag">[Имя сотрудника]</span>, я от <span class="var-tag">[ФИО руководителя / Компания]</span>. Звоню по личному поручению руководителя. Есть пара минут?»
+
+2. Контекст:
+«<span class="var-tag">[ФИО руководителя]</span> сейчас входит в оргкомитет Всероссийского бизнес-саммита «Территория Роста 2026», который пройдет 5–11 октября в Синара Центре в Екатеринбурге. Мы персонально приглашаем дружественные компании и ключевых партнеров присоединиться.»
+
+3. Ценность:
+«Саммит посвящен практической автоматизации бизнеса: за 5 дней онлайн-практики и 2 дня в Синара Центре команды собственников запускают у себя Цифровой офис из 6 AI-агентов на российской платформе KOMANDA.AI. Это закрывает рутину по аналитике, маркетингу и финансам.
+Для наших партнеров сейчас действует закрытая стоимость ранней брони — от 15 000 ₽ за участника или 18 000 ₽ за командный стол.
+<span class="var-tag">[Имя клиента]</span>, давайте я отправлю вам официальное приглашение и программу в WhatsApp или Telegram, чтобы вы с руководителями обсудили?»
+
+4. Фиксация:
+«Отправил(а)! Завтра во второй половине дня наберу вам на пару минут узнать решение, хорошо? Спасибо, отличного дня!»</div>
+        <div class="card-actions">
+          <button class="btn-copy" onclick="copySnippet('text_call_script', this)">📋 Скопировать сценарий звонка</button>
+          <a href="#" class="btn-share-tg" onclick="shareTG('text_call_script', event)">✈️ В Telegram РОПу</a>
+        </div>
+      </div>
+
+      <!-- ITEM 6: Пост для Telegram-канала / соцсетей -->
+      <div class="script-card" data-category="social">
+        <div class="card-top">
+          <div>
+            <div class="card-badges">
+              <span class="badge-category">📝 Соцсети / TG</span>
+              <span class="badge-audience">Личный канал / TenChat / VK</span>
+            </div>
+            <h3 class="card-title">Экспертный лонгрид от лица лидера бизнеса</h3>
+          </div>
+          <div class="card-meta-timing">⏱ Лонгрид</div>
+        </div>
+        <div class="content-box" id="text_social_post">Почему я не верю в «хайп вокруг ИИ», но отправляю команду на «Территорию Роста»
+
+Каждый второй бизнес-спикер сейчас кричит: «Внедряйте нейросети, или ваш бизнес умрет!». 
+
+Но когда собственник пытается это сделать на практике, он сталкивается с тремя стенами:
+1. Сотрудники тихо саботируют, боясь, что их заменят;
+2. Бесплатные боты выдают невнятные тексты, неприменимые в реальном B2B;
+3. Времени разбираться в технологиях у первого лица просто нет — операционка съедает всё.
+
+Именно поэтому мне импонирует подход Андрея Дереева и Консорциума «ПРЕДПРИНИМАЙ». С 5 по 11 октября они проводят Всероссийский саммит «Территория Роста 2026».
+
+Это не лекции в душном зале. Это 7-дневный спринт:
+🔹 Сначала 5 дней онлайн по вечерам команды собственников развертывают свой закрытый Цифровой офис из 6 AI-агентов на отечественной платформе KOMANDA.AI;
+🔹 10 октября в Екатеринбурге — очный тренинг эмоционального интеллекта «Empatium», который снимает саботаж в головах сотрудников;
+🔹 11 октября — Гранд-Саммит в «Синара Центре», где 200+ лидеров бизнеса защищают свои стратегии и обмениваются практиками.
+
+Я считаю, что расти в 2027 году будут те, кто научит людей работать в симбиозе с технологиями. 
+
+Сейчас открыто раннее бронирование (участие от 15 000 ₽, командные столы — 18 000 ₽/чел). 
+
+Кому интересно пойти вместе или отправить команду — пишите в комментарии или мне в личку, поделюсь ссылкой и материалами!</div>
+        <div class="card-actions">
+          <button class="btn-copy" onclick="copySnippet('text_social_post', this)">📋 Скопировать текст поста</button>
+          <a href="#" class="btn-share-tg" onclick="shareTG('text_social_post', event)">✈️ Опубликовать в Telegram</a>
+        </div>
+      </div>
+
+      <!-- ITEM 7: Видео / Reels -->
+      <div class="script-card" data-category="video">
+        <div class="card-top">
+          <div>
+            <div class="card-badges">
+              <span class="badge-category">🎬 Видео / Reels</span>
+              <span class="badge-audience">Shorts / Клипы / Кружок TG</span>
+            </div>
+            <h3 class="card-title">Сценарий Reels «Сколько стоит нанять 6 директоров?»</h3>
+          </div>
+          <div class="card-meta-timing">⏱ 40 секунд</div>
+        </div>
+        <div class="content-box" id="text_reels">Хук на экране: «Сколько стоит нанять 6 директоров? 💸»
+
+[00:00 - 00:08] (Крупный план):
+«Если вы решите нанять сильного финдиректора, маркетолога, стратега и аналитика — ваш ФОТ вырастет минимум на миллион рублей в месяц. А людей на рынке сейчас просто нет.»
+
+[00:08 - 00:22] (Смена ракурса):
+«Что делают умные собственники? Они создают цифровых двойников. С 5 по 11 октября на бизнес-лаборатории «Территория Роста» в Синара Центре участники собирают свой Цифровой офис из 6 AI-агентов на защищенном российском софте.»
+
+[00:22 - 00:32] (Динамичный кадр):
+«Они забирают до 70% рутины: считают финмодели, готовят отчеты и собирают B2B-воронки 24/7. А ваши люди наконец-то занимаются развитием.»
+
+[00:32 - 00:40] (Призыв):
+«Билет стоит от 15 000 рублей. Подробности и регистрация — по ссылке в шапке профиля или пиши слово САММИТ в директ!»</div>
+        <div class="card-actions">
+          <button class="btn-copy" onclick="copySnippet('text_reels', this)">📋 Скопировать сценарий видео</button>
+          <a href="#" class="btn-share-tg" onclick="shareTG('text_reels', event)">✈️ В Telegram себе</a>
+        </div>
+      </div>
+
+      <!-- ITEM 8: Возражения -->
+      <div class="script-card" data-category="objection">
+        <div class="card-top">
+          <div>
+            <div class="card-badges">
+              <span class="badge-category">🛡️ Возражение</span>
+              <span class="badge-audience">«Нет времени на учебу»</span>
+            </div>
+            <h3 class="card-title">Отработка: «Я завален операционкой, мне некогда учиться»</h3>
+          </div>
+          <div class="card-meta-timing">⏱ Ответ в диалоге</div>
+        </div>
+        <div class="content-box" id="text_obj_time">«<span class="var-tag">[Имя]</span>, именно поэтому формат такой жестко выверенный. Это НЕ учеба с домашними заданиями. 
+Первые 5 дней проходят онлайн всего по 2 часа вечером (19:00–21:30). Вы в реальном времени собираете AI-агентов под свои таблицы и файлы. Если вы не высвободите это время сейчас — в следующем году операционка просто умножится на два из-за нехватки людей на рынке.»</div>
+        <div class="card-actions">
+          <button class="btn-copy" onclick="copySnippet('text_obj_time', this)">📋 Скопировать ответ</button>
+          <a href="#" class="btn-share-tg" onclick="shareTG('text_obj_time', event)">✈️ В Telegram</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TARIFFS BLOCK -->
+    <section style="margin-top: 36px; margin-bottom: 24px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+        <h2 style="font-size: 18px; font-weight: 800; color: #ffffff;">📊 Утвержденная матрица тарифов</h2>
+        <span style="font-size: 12px; color: #10b981; font-weight: 700; background: rgba(16,185,129,0.15); padding: 3px 10px; border-radius: 9999px;">Ранняя бронь активна</span>
+      </div>
+
+      <div class="tariff-grid">
+        <div class="tariff-card">
+          <div class="tariff-badge tb-std">Индивидуально</div>
+          <div class="tariff-name">«Стандарт»</div>
+          <div class="tariff-price">15 000 ₽</div>
+          <div class="tariff-desc">5 дней онлайн-интенсива, сборка 6 AI-агентов на KOMANDA.AI, билет на Гранд-Саммит 11 октября в Синара Центре, Деловая Галерея и кофе-брейки.</div>
+          <button class="btn-copy" style="font-size: 12px; padding: 8px 12px;" onclick="copyDirect('Тариф «Стандарт» на Саммит «Территория Роста» — 15 000 ₽. Входит 5 дней онлайн-сборки 6 AI-агентов + билет в Синара Центр 11 октября.')">Скопировать условия</button>
+        </div>
+
+        <div class="tariff-card featured">
+          <div class="tariff-badge tb-biz">Хит продаж • Для команд</div>
+          <div class="tariff-name">«Бизнес» (от 4 чел)</div>
+          <div class="tariff-price">18 000 ₽ <span style="font-size: 13px; font-weight: 500; color: var(--text-muted);">/ чел</span></div>
+          <div class="tariff-desc">Выделенный командный стол с персональным трекером на 7 дней, очный практикум лаборатории «Empatium» 10 октября, общий стол в Синара Центре.</div>
+          <button class="btn-copy" style="font-size: 12px; padding: 8px 12px;" onclick="copyDirect('Тариф «Бизнес» (Командный стол от 4 человек) — 18 000 ₽/чел. Включает персонального трекера на все 7 дней, очный тренинг «Эмпатиум» 10 октября и стол в Синара Центре.')">Скопировать условия</button>
+        </div>
+
+        <div class="tariff-card">
+          <div class="tariff-badge tb-vip">VIP Статус</div>
+          <div class="tariff-name">«Премиум / VIP»</div>
+          <div class="tariff-price">25 000 ₽ <span style="font-size: 13px; font-weight: 500; color: var(--text-muted);">/ чел</span></div>
+          <div class="tariff-desc">Первые ряды партера, персональная охраняемая парковка, закрытый гала-ужин со спикерами, инвесторами и Президентом Консорциума Андреем Дереевым.</div>
+          <button class="btn-copy" style="font-size: 12px; padding: 8px 12px;" onclick="copyDirect('Тариф «Премиум / VIP» — 25 000 ₽/чел. Первые ряды Синара Центра, закрытый VIP-ужин со спикерами и инвесторами, парковка и приоритетный нетворкинг.')">Скопировать условия</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Fixed Dock -->
+  <aside class="bottom-dock">
+    <div class="dock-content">
+      <div class="dock-text">
+        <strong>Есть готовый лид или вопрос?</strong><br>
+        Передайте контакт куратору оргкомитета
+      </div>
+      <a href="https://t.me/svetlanakoroleva" target="_blank" class="dock-btn">
+        <span>✈️</span> Написать Светлане
+      </a>
+    </div>
+  </aside>
+
+  <!-- Interactive Logic -->
+  <script>
+    // Copy function with haptic feedback & toast
+    function copySnippet(elementId, btnElement) {
+      const el = document.getElementById(elementId);
+      if (!el) return;
+      const cleanText = el.innerText.trim();
+      navigator.clipboard.writeText(cleanText).then(() => {
+        showToast();
+        const origText = btnElement.innerHTML;
+        btnElement.innerHTML = '✓ Скопировано!';
+        btnElement.classList.add('copied');
+        setTimeout(() => {
+          btnElement.innerHTML = origText;
+          btnElement.classList.remove('copied');
+        }, 2500);
+      }).catch(err => {
+        fallbackCopy(cleanText);
+      });
+    }
+
+    function copyDirect(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast();
+      }).catch(err => {
+        fallbackCopy(text);
+      });
+    }
+
+    function fallbackCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast();
+    }
+
+    function showToast() {
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2300);
+    }
+
+    // Direct Telegram Sharing
+    function shareTG(elementId, e) {
+      e.preventDefault();
+      const el = document.getElementById(elementId);
+      if (!el) return;
+      const text = encodeURIComponent(el.innerText.trim());
+      window.open(`https://t.me/share/url?url=&text=${text}`, '_blank');
+    }
+
+    // Direct WhatsApp Sharing
+    function shareWA(elementId, e) {
+      e.preventDefault();
+      const el = document.getElementById(elementId);
+      if (!el) return;
+      const text = encodeURIComponent(el.innerText.trim());
+      window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+    }
+
+    // Filtering Tabs
+    const filterTabs = document.querySelectorAll('.tab-btn');
+    const cards = document.querySelectorAll('.script-card');
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        filterTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const filter = tab.getAttribute('data-filter');
+
+        cards.forEach(card => {
+          if (filter === 'all') {
+            card.classList.remove('hidden');
+          } else {
+            const cat = card.getAttribute('data-category');
+            if (cat === filter) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          }
+        });
+      });
+    });
+
+    // Live Search
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        if (text.includes(q)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
