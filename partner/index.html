@@ -55,7 +55,13 @@
     .app-shell {
       max-width: 1420px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 16px;
+    }
+
+    @media (min-width: 768px) {
+      .app-shell {
+        padding: 0 24px;
+      }
     }
 
     @media (min-width: 1024px) {
@@ -77,14 +83,21 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 64px;
-      gap: 16px;
+      height: 56px;
+      gap: 12px;
+    }
+
+    @media (min-width: 768px) {
+      .header-inner {
+        height: 64px;
+        gap: 16px;
+      }
     }
 
     .header-logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       text-decoration: none;
       color: var(--text-main);
     }
@@ -92,75 +105,105 @@
     .logo-badge {
       background: var(--text-main);
       color: #ffffff;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 800;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      padding: 4px 8px;
+      padding: 3px 6px;
       border-radius: 3px;
     }
 
     .logo-title {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 800;
       letter-spacing: -0.02em;
       color: var(--text-main);
     }
 
-    .header-info-tag {
-      font-size: 13px;
-      color: var(--text-sub);
-      font-weight: 500;
-      display: none;
+    @media (min-width: 768px) {
+      .logo-badge {
+        font-size: 11px;
+        padding: 4px 8px;
+      }
+      .logo-title {
+        font-size: 18px;
+      }
     }
 
-    @media (min-width: 768px) {
-      .header-info-tag { display: block; }
+    .header-info-tag {
+      font-size: 12px;
+      color: var(--text-sub);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 540px) {
+      .header-info-tag {
+        font-size: 11px;
+      }
     }
 
     /* Top Summary Bar */
     .summary-strip {
       background: #ffffff;
       border-bottom: 1px solid var(--border-light);
-      padding: 16px 0;
-      margin-bottom: 24px;
+      padding: 12px 0;
+      margin-bottom: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .summary-strip {
+        padding: 16px 0;
+        margin-bottom: 24px;
+      }
     }
 
     .summary-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+      gap: 10px;
     }
 
     @media (min-width: 768px) {
       .summary-grid {
         grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
       }
     }
 
     .summary-cell {
       border-left: 3px solid var(--accent-blue);
-      padding-left: 12px;
+      padding-left: 10px;
     }
 
     .summary-label {
-      font-size: 11px;
-      font-weight: 600;
+      font-size: 10px;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: var(--text-sub);
     }
 
     .summary-value {
-      font-size: 15px;
+      font-size: 13.5px;
       font-weight: 700;
       color: var(--text-main);
       margin-top: 2px;
+      line-height: 1.25;
+    }
+
+    @media (min-width: 768px) {
+      .summary-label {
+        font-size: 11px;
+      }
+      .summary-value {
+        font-size: 15px;
+      }
     }
 
     /* Search Bar */
     .search-wrapper {
-      margin-bottom: 20px;
+      margin-bottom: 14px;
     }
 
     .search-input-field {
@@ -168,8 +211,8 @@
       background: #ffffff;
       border: 1px solid var(--border-strong);
       border-radius: 4px;
-      padding: 13px 18px;
-      font-size: 15px;
+      padding: 11px 16px;
+      font-size: 14px;
       color: var(--text-main);
       font-family: inherit;
       outline: none;
@@ -182,42 +225,48 @@
       box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
     }
 
-    /* Tabs Bar */
+    /* Tabs Bar (Wrapping Cleanly on Mobile & Desktop) */
     .tabs-strip {
-      position: sticky;
-      top: 64px;
-      z-index: 40;
       background: var(--bg-page);
-      padding: 8px 0 14px 0;
-      margin-bottom: 8px;
+      padding: 4px 0 12px 0;
+      margin-bottom: 12px;
       border-bottom: 1px solid var(--border-light);
     }
 
     .tabs-scroller {
       display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      scrollbar-width: none;
-      padding-bottom: 2px;
+      flex-wrap: wrap; /* Allows wrapping into neat rows so buttons NEVER clip! */
+      gap: 6px;
+      align-items: center;
     }
 
-    .tabs-scroller::-webkit-scrollbar {
-      display: none;
+    @media (min-width: 768px) {
+      .tabs-scroller {
+        gap: 8px;
+      }
     }
 
     .nav-tab-btn {
-      flex-shrink: 0;
+      flex: 0 0 auto;
       background: #ffffff;
       border: 1px solid var(--border-strong);
       border-radius: 4px;
-      padding: 9px 16px;
-      font-size: 13.5px;
+      padding: 7px 11px;
+      font-size: 12.5px;
       font-weight: 600;
       color: var(--text-muted);
       cursor: pointer;
       transition: all 0.15s ease;
-      white-space: nowrap;
+      line-height: 1.2;
+      text-align: center;
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    }
+
+    @media (min-width: 768px) {
+      .nav-tab-btn {
+        padding: 8px 14px;
+        font-size: 13.5px;
+      }
     }
 
     .nav-tab-btn:hover {
@@ -237,19 +286,20 @@
     .cards-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 20px;
-      margin-top: 16px;
+      gap: 16px;
     }
 
-    @media (min-width: 840px) {
+    @media (min-width: 860px) {
       .cards-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
       }
     }
 
-    @media (min-width: 1240px) {
+    @media (min-width: 1300px) {
       .cards-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
       }
     }
 
@@ -270,9 +320,15 @@
     }
 
     .card-header-block {
-      padding: 16px 20px;
+      padding: 14px 16px;
       border-bottom: 1px solid var(--border-light);
       background: #fafbfc;
+    }
+
+    @media (min-width: 768px) {
+      .card-header-block {
+        padding: 16px 20px;
+      }
     }
 
     .card-meta-line {
@@ -280,11 +336,11 @@
       align-items: center;
       justify-content: space-between;
       gap: 8px;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .badge-label {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
@@ -292,29 +348,43 @@
     }
 
     .badge-timing {
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 500;
       color: var(--text-sub);
     }
 
     .card-main-title {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       color: var(--text-main);
       line-height: 1.35;
     }
 
+    @media (min-width: 768px) {
+      .card-main-title {
+        font-size: 16px;
+      }
+    }
+
     /* Product Parameters Table (Что / Для кого / Зачем / Как) */
     .card-props-table {
-      padding: 12px 20px;
+      padding: 10px 16px;
       border-bottom: 1px solid var(--border-light);
       background: #ffffff;
-      font-size: 12.5px;
+      font-size: 12px;
       display: grid;
-      grid-template-columns: 100px 1fr;
-      row-gap: 6px;
-      column-gap: 10px;
+      grid-template-columns: 80px 1fr;
+      row-gap: 5px;
+      column-gap: 8px;
       color: var(--text-muted);
+    }
+
+    @media (min-width: 768px) {
+      .card-props-table {
+        padding: 12px 20px;
+        grid-template-columns: 90px 1fr;
+        font-size: 12.5px;
+      }
     }
 
     .prop-name {
@@ -329,25 +399,40 @@
 
     /* Script Content Box */
     .card-body-block {
-      padding: 16px 20px;
+      padding: 14px 16px;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
+    }
+
+    @media (min-width: 768px) {
+      .card-body-block {
+        padding: 16px 20px;
+      }
     }
 
     .script-text-box {
       background: #f8fafc;
       border: 1px solid var(--border-light);
       border-radius: 3px;
-      padding: 14px 16px;
-      font-size: 13.5px;
-      line-height: 1.6;
+      padding: 12px 14px;
+      font-size: 13px;
+      line-height: 1.55;
       color: #1e293b;
       white-space: pre-wrap;
       font-family: var(--font-base);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       flex-grow: 1;
       user-select: text;
+    }
+
+    @media (min-width: 768px) {
+      .script-text-box {
+        padding: 14px 16px;
+        font-size: 13.5px;
+        line-height: 1.6;
+        margin-bottom: 14px;
+      }
     }
 
     .var-mark {
@@ -362,14 +447,8 @@
     /* Rectangular Cut Buttons with Sheen */
     .card-button-row {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 8px;
-    }
-
-    @media (min-width: 480px) {
-      .card-button-row {
-        grid-template-columns: 1.6fr 1fr 1fr;
-      }
     }
 
     .btn-action {
@@ -378,8 +457,8 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      padding: 10px 14px;
-      font-size: 13px;
+      padding: 9px 12px;
+      font-size: 12.5px;
       font-weight: 600;
       border-radius: 3px;
       cursor: pointer;
@@ -388,6 +467,26 @@
       transition: all 0.2s ease;
       overflow: hidden;
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+
+    @media (min-width: 640px) {
+      .card-button-row {
+        grid-template-columns: 1.5fr 1fr 1fr;
+      }
+      .btn-action {
+        padding: 10px 14px;
+        font-size: 13px;
+      }
+    }
+
+    /* On mobile, primary copy button is prominent on top */
+    @media (max-width: 639px) {
+      .btn-copy-primary {
+        grid-column: 1 / -1;
+        padding: 11px 14px;
+        font-size: 13.5px;
+      }
     }
 
     /* Shadow Shimmer / Edge Effect */
@@ -451,36 +550,58 @@
       background: #ffffff;
       border: 1px solid var(--border-light);
       border-radius: 4px;
-      padding: 32px 28px;
-      margin-top: 16px;
+      padding: 20px 18px;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     }
 
+    @media (min-width: 768px) {
+      .about-view {
+        padding: 32px 28px;
+      }
+    }
+
     .about-lead {
-      font-size: 19px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--text-main);
       line-height: 1.45;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .about-lead {
+        font-size: 19px;
+        margin-bottom: 20px;
+      }
     }
 
     .about-text {
-      font-size: 15px;
-      line-height: 1.7;
+      font-size: 14px;
+      line-height: 1.65;
       color: var(--text-muted);
-      margin-bottom: 28px;
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .about-text {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 28px;
+      }
     }
 
     .triad-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 16px;
-      margin-bottom: 32px;
+      gap: 12px;
+      margin-bottom: 24px;
     }
 
     @media (min-width: 768px) {
       .triad-grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-bottom: 32px;
       }
     }
 
@@ -488,12 +609,12 @@
       background: #f8fafc;
       border: 1px solid var(--border-light);
       border-top: 3px solid var(--accent-blue);
-      padding: 18px 20px;
+      padding: 16px 18px;
       border-radius: 3px;
     }
 
     .triad-number {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 800;
       color: var(--accent-blue);
       letter-spacing: 0.08em;
@@ -502,51 +623,64 @@
     }
 
     .triad-title {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       color: var(--text-main);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .triad-desc {
-      font-size: 13.5px;
+      font-size: 13px;
       color: var(--text-muted);
-      line-height: 1.55;
+      line-height: 1.5;
     }
 
     /* Tariff Table */
     .tariffs-container {
-      margin-top: 24px;
       background: #ffffff;
       border: 1px solid var(--border-light);
       border-radius: 4px;
-      padding: 24px;
+      padding: 18px 16px;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     }
 
+    @media (min-width: 768px) {
+      .tariffs-container {
+        padding: 24px;
+      }
+    }
+
     .tariffs-title {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 800;
       color: var(--text-main);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .tariffs-title {
+        font-size: 18px;
+        margin-bottom: 16px;
+      }
     }
 
     .pricing-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 16px;
+      gap: 14px;
     }
 
     @media (min-width: 768px) {
       .pricing-grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
       }
     }
 
     .price-box {
       border: 1px solid var(--border-strong);
       border-radius: 3px;
-      padding: 18px;
+      padding: 16px;
       background: #ffffff;
       display: flex;
       flex-direction: column;
@@ -559,11 +693,18 @@
     }
 
     .price-tag {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 800;
       color: var(--text-main);
       font-family: var(--font-mono);
-      margin: 8px 0 12px 0;
+      margin: 6px 0 10px 0;
+    }
+
+    @media (min-width: 768px) {
+      .price-tag {
+        font-size: 24px;
+        margin: 8px 0 12px 0;
+      }
     }
 
     /* Toast Notification */
@@ -575,14 +716,15 @@
       z-index: 999;
       background: var(--text-main);
       color: #ffffff;
-      padding: 10px 20px;
+      padding: 10px 18px;
       border-radius: 3px;
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 600;
       box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
       opacity: 0;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       pointer-events: none;
+      white-space: nowrap;
     }
 
     #toastNotice.show {
@@ -611,7 +753,7 @@
           <span class="logo-title">Территория Роста</span>
         </a>
         <div class="header-info-tag">
-          5–11 октября • Екатеринбург • Синара Центр
+          5–11 октября • Синара Центр
         </div>
       </div>
     </div>
@@ -623,11 +765,11 @@
       <div class="summary-grid">
         <div class="summary-cell">
           <div class="summary-label">Формат</div>
-          <div class="summary-value">5 дней онлайн + 2 дня офлайн</div>
+          <div class="summary-value">5 дн онлайн + 2 дн офлайн</div>
         </div>
         <div class="summary-cell">
           <div class="summary-label">Локация финала</div>
-          <div class="summary-value">МВЦ «Синара Центр», Екб</div>
+          <div class="summary-value">МВЦ «Синара Центр»</div>
         </div>
         <div class="summary-cell">
           <div class="summary-label">Аудитория</div>
@@ -635,7 +777,7 @@
         </div>
         <div class="summary-cell">
           <div class="summary-label">Ранняя бронь</div>
-          <div class="summary-value">от 15 000 ₽ за участника</div>
+          <div class="summary-value">от 15 000 ₽ / чел</div>
         </div>
       </div>
     </div>
@@ -646,10 +788,10 @@
 
     <!-- Search Input -->
     <div class="search-wrapper">
-      <input type="text" id="searchInput" class="search-input-field" placeholder="Поиск по базе: партнер, клуб, встреча, звонок, возражение, стенд..." autocomplete="off">
+      <input type="text" id="searchInput" class="search-input-field" placeholder="Поиск: партнер, клуб, встреча, звонок, возражение..." autocomplete="off">
     </div>
 
-    <!-- Navigation Tabs -->
+    <!-- Navigation Tabs (Wrapping into tidy rows on mobile) -->
     <div class="tabs-strip">
       <div class="tabs-scroller">
         <button class="nav-tab-btn active" data-tab="all">Все материалы</button>
@@ -659,7 +801,7 @@
         <button class="nav-tab-btn" data-tab="sales">Отдел продаж</button>
         <button class="nav-tab-btn" data-tab="social">Пост в канал</button>
         <button class="nav-tab-btn" data-tab="video">Видео / Reels</button>
-        <button class="nav-tab-btn" data-tab="expo">Стенды и Спонсоры</button>
+        <button class="nav-tab-btn" data-tab="expo">Стенды</button>
         <button class="nav-tab-btn" data-tab="objections">Возражения</button>
         <button class="nav-tab-btn" data-tab="tariffs">Тарифы</button>
       </div>
@@ -700,7 +842,7 @@
         </div>
       </div>
 
-      <div style="border-top: 1px solid var(--border-light); padding-top: 20px; font-size: 14px; color: var(--text-muted);">
+      <div style="border-top: 1px solid var(--border-light); padding-top: 16px; font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">
         <b>Организатор:</b> Консорциум «ПРЕДПРИНИМАЙ» (Президент — Андрей Дереев).<br>
         <b>Финал:</b> 10–11 октября, Екатеринбург, Конгресс-центр «Синара Центр» (200+ собственников и генеральных директоров).
       </div>
@@ -737,7 +879,7 @@
 
 Скинуть короткий PDF с программой?</div>
           <div class="card-button-row">
-            <button class="btn-action btn-copy-primary" onclick="copyText('t_msg_friend', this)">Скопировать</button>
+            <button class="btn-action btn-copy-primary" onclick="copyText('t_msg_friend', this)">Скопировать текст</button>
             <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('t_msg_friend', event)">В Telegram</a>
             <button class="btn-action btn-channel-max" onclick="copyMax('t_msg_friend')">Для MAX</button>
           </div>
@@ -777,7 +919,7 @@
 
 Если кому актуально — маякните в личку, поделюсь материалами и помогу зафиксировать спец-условия.</div>
           <div class="card-button-row">
-            <button class="btn-action btn-copy-primary" onclick="copyText('t_msg_club', this)">Скопировать</button>
+            <button class="btn-action btn-copy-primary" onclick="copyText('t_msg_club', this)">Скопировать текст</button>
             <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('t_msg_club', event)">В Telegram</a>
             <button class="btn-action btn-channel-max" onclick="copyMax('t_msg_club')">Для MAX</button>
           </div>
@@ -813,7 +955,7 @@
 3. Действие (20 сек):
 «Цена вопроса на раннем этапе — 18 000 ₽ за человека за командный стол с трекером. Это дешевле, чем один раз в ресторан команду сводить, а эффект на весь год. Давай скину презентацию в Telegram, посмотришь?»</div>
           <div class="card-button-row">
-            <button class="btn-action btn-copy-primary" onclick="copyText('t_pitch', this)">Скопировать</button>
+            <button class="btn-action btn-copy-primary" onclick="copyText('t_pitch', this)">Скопировать текст</button>
             <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('t_pitch', event)">В Telegram</a>
             <button class="btn-action btn-channel-max" onclick="copyMax('t_pitch')">Для MAX</button>
           </div>
@@ -833,7 +975,7 @@
           <div class="prop-name">Что:</div>
           <div class="prop-val">Скрипт телефонного звонка от лица руководителя</div>
           <div class="prop-name">Для кого:</div>
-          <div class="prop-val">Помощник руководителя, РОП, ведущие менеджеры по работе с клиентами</div>
+          <div class="prop-val">Помощник руководителя, РОП, менеджеры по работе с клиентами</div>
           <div class="prop-name">Зачем:</div>
           <div class="prop-val">Пригласить дружественные компании от имени первого лица</div>
           <div class="prop-name">Как:</div>
@@ -854,7 +996,7 @@
 4. Фиксация:
 «Отправил(а)! Завтра во второй половине дня наберу вам на пару минут узнать решение, хорошо? Спасибо, отличного дня!»</div>
           <div class="card-button-row">
-            <button class="btn-action btn-copy-primary" onclick="copyText('t_sales', this)">Скопировать</button>
+            <button class="btn-action btn-copy-primary" onclick="copyText('t_sales', this)">Скопировать текст</button>
             <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('t_sales', event)">В Telegram</a>
             <button class="btn-action btn-channel-max" onclick="copyMax('t_sales')">Для MAX</button>
           </div>
@@ -872,7 +1014,7 @@
         </div>
         <div class="card-props-table">
           <div class="prop-name">Что:</div>
-          <div class="prop-val">Осознанный лонгрид без дешевого инфобизнесового пафоса</div>
+          <div class="prop-val">Осознанный лонгрид без дешевого пафоса</div>
           <div class="prop-name">Для кого:</div>
           <div class="prop-val">Telegram-канал собственника, TenChat, блог компании, VK</div>
           <div class="prop-name">Зачем:</div>
@@ -903,7 +1045,7 @@
 
 Кому актуально пойти вместе или отправить команду — напишите мне в личные сообщения, поделюсь деталями!</div>
           <div class="card-button-row">
-            <button class="btn-action btn-copy-primary" onclick="copyText('t_social', this)">Скопировать</button>
+            <button class="btn-action btn-copy-primary" onclick="copyText('t_social', this)">Скопировать текст</button>
             <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('t_social', event)">В Telegram</a>
             <button class="btn-action btn-channel-max" onclick="copyMax('t_social')">Для MAX</button>
           </div>
@@ -921,7 +1063,7 @@
         </div>
         <div class="card-props-table">
           <div class="prop-name">Что:</div>
-          <div class="prop-val">Динамичный сценарий короткого ролика или видеокружка в TG</div>
+          <div class="prop-val">Динамичный сценарий короткого ролика или кружка в TG</div>
           <div class="prop-name">Для кого:</div>
           <div class="prop-val">Reels, Shorts, Клипы VK, кружочек в рабочий чат</div>
           <div class="prop-name">Зачем:</div>
@@ -944,7 +1086,7 @@
 [00:32 - 00:40] (Призыв):
 «Билет стоит от 15 000 рублей. Подробности и регистрация — по ссылке в описании или пишите в личные сообщения!»</div>
           <div class="card-button-row">
-            <button class="btn-action btn-copy-primary" onclick="copyText('t_video', this)">Скопировать</button>
+            <button class="btn-action btn-copy-primary" onclick="copyText('t_video', this)">Скопировать текст</button>
             <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('t_video', event)">В Telegram</a>
             <button class="btn-action btn-channel-max" onclick="copyMax('t_video')">Для MAX</button>
           </div>
@@ -981,7 +1123,7 @@
 
 Направить презентацию и схему размещения стендов?</div>
           <div class="card-button-row">
-            <button class="btn-action btn-copy-primary" onclick="copyText('t_expo', this)">Скопировать</button>
+            <button class="btn-action btn-copy-primary" onclick="copyText('t_expo', this)">Скопировать текст</button>
             <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('t_expo', event)">В Telegram</a>
             <button class="btn-action btn-channel-max" onclick="copyMax('t_expo')">Для MAX</button>
           </div>
@@ -1003,7 +1145,7 @@
           <div class="prop-name">Для кого:</div>
           <div class="prop-val">Перегруженный собственник, погруженный в рутину</div>
           <div class="prop-name">Зачем:</div>
-          <div class="prop-val">Показать, что саммит — это инструмент освобождения времени, а не учеба</div>
+          <div class="prop-val">Показать, что саммит — инструмент освобождения времени, а не учеба</div>
           <div class="prop-name">Как:</div>
           <div class="prop-val">Ответить в переписке или телефонном разговоре</div>
         </div>
@@ -1011,7 +1153,7 @@
           <div class="script-text-box" id="t_obj">«<span class="var-mark">[Имя]</span>, именно поэтому формат такой жестко сжатый. Это НЕ теория с домашними заданиями. 
 Первые 5 дней проходят онлайн всего по 2 часа вечером. Вы в реальном времени собираете AI-агентов под свои рабочие таблицы и задачи. Если не автоматизировать эти процессы сейчас — в следующем году операционка просто удвоится из-за растущего дефицита кадров.»</div>
           <div class="card-button-row">
-            <button class="btn-action btn-copy-primary" onclick="copyText('t_obj', this)">Скопировать</button>
+            <button class="btn-action btn-copy-primary" onclick="copyText('t_obj', this)">Скопировать текст</button>
             <a href="#" class="btn-action btn-channel-tg" onclick="sendTg('t_obj', event)">В Telegram</a>
             <button class="btn-action btn-channel-max" onclick="copyMax('t_obj')">Для MAX</button>
           </div>
