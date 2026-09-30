@@ -3031,6 +3031,11 @@
 
         };
 
+        // Обогащение реферальными данными и UTM-метками
+        if (window.TR_REF && typeof window.TR_REF.enrichLead === 'function') {
+            leadObj = window.TR_REF.enrichLead(leadObj);
+        }
+
 
 
         try {

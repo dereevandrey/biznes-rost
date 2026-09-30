@@ -125,16 +125,30 @@
         updateExternalLinks(activeRef);
     }
 
-    // Получить активный реферальный код из любого доступного хранилища
+    // Получить активный реферальный код из любого доступного источника (URL, LocalStorage, SessionStorage, Cookie)
     function getActiveRefCode() {
+        // 1. Приоритет прямого URL параметра в текущей сессии
+        var urlParams = parseUrlParams();
+        var fromUrl = urlParams.ref || urlParams.partner || urlParams.partner_id || urlParams.agent || urlParams.from || urlParams.p || null;
+        if (fromUrl) {
+            return fromUrl;
+        }
+
+        // 2. Хранилища браузера (LocalStorage / SessionStorage / Cookies)
         try {
-            return localStorage.getItem(STORAGE_KEY_REF) ||
-                   sessionStorage.getItem(STORAGE_KEY_REF) ||
-                   getCookie('tr_ref_code') ||
-                   '';
+            var val = localStorage.getItem(STORAGE_KEY_REF) ||
+                      localStorage.getItem('tr_ref_partner') ||
+                      localStorage.getItem('tr_ref_code') ||
+                      sessionStorage.getItem(STORAGE_KEY_REF) ||
+                      sessionStorage.getItem('tr_ref_code') ||
+                      getCookie('tr_ref_code') ||
+                      getCookie('TR_REF_CODE') ||
+                      '';
+            if (val) return val;
         } catch (e) {
             return getCookie('tr_ref_code') || '';
         }
+        return '';
     }
 
     // Получить сохраненные UTM метки
