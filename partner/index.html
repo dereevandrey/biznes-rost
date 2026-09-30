@@ -15,6 +15,7 @@
     <link rel="apple-touch-icon" href="../favicon.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../ref-tracker.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
@@ -2538,6 +2539,16 @@
 
 
 
+        // Обогащение реферальными данными и UTM-метками
+
+        if (window.TR_REF && typeof window.TR_REF.enrichLead === 'function') {
+
+            leadObj = window.TR_REF.enrichLead(leadObj);
+
+        }
+
+
+
         try {
 
             var leads = JSON.parse(localStorage.getItem('TR_LEADS') || '[]');
@@ -2546,7 +2557,7 @@
 
             localStorage.setItem('TR_LEADS', JSON.stringify(leads));
 
-            console.log('✅ Лид сохранен локально:', contact);
+            console.log('✅ Лид сохранен локально:', contact, leadObj.ref ? ('(Партнёр: ' + leadObj.ref + ')') : '');
 
         } catch (e) {
 
@@ -2558,7 +2569,9 @@
 
         try {
 
-            fetch('https://predprinimy.ru/api/tr/lead', {
+            var gatewayUrl = (window.location.hostname.indexOf('rost-ural.ru') !== -1 || window.location.hostname.indexOf('predprinimy.ru') !== -1) ? '/api/tr/lead' : 'https://predprinimy.ru/api/tr/lead';
+
+            fetch(gatewayUrl, {
 
                 method: 'POST',
 
@@ -2576,7 +2589,7 @@
 
             }).then(function(data) {
 
-                console.log('🚀 Лид успешно передан в YouGile CRM Светлане Королевой:', data);
+                console.log('🚀 Лид успешно передан в YouGile CRM:', data);
 
             }).catch(function(err) {
 

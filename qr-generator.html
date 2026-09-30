@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ГЕНЕРАТОР РЕФЕРАЛЬНЫХ QR-КОДОВ И ССЫЛОК | ТЕРРИТОРИЯ РОСТА</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #070c18; color: #f8fafc; }
+        .font-oswald { font-family: 'Oswald', sans-serif; }
+    </style>
+</head>
+<body class="min-h-screen p-4 sm:p-8 flex flex-col justify-between">
+    <div class="max-w-5xl mx-auto w-full">
+        <!-- Шапка -->
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 mb-8 border-b border-indigo-950 gap-4">
+            <div>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600/20 border border-blue-400/40 text-blue-300 text-xs font-bold uppercase tracking-wider mb-2">
+                    Внутренний инструмент РОП и Аппарата CEO
+                </span>
+                <h1 class="text-2xl sm:text-4xl font-black uppercase font-oswald text-white tracking-wide">
+                    ГЕНЕРАТОР РЕФЕРАЛЬНЫХ QR И ССЫЛОК
+                </h1>
+                <p class="text-gray-400 text-xs sm:text-sm mt-1">
+                    Сквозной трекинг партнёров, спикеров, агентов и рекламных каналов проекта «Территория Роста 2026»
+                </p>
+            </div>
+            <a href="https://predprinimy.ru/api/tr/ref-stats" target="_blank" class="px-4 py-2.5 rounded-xl bg-indigo-950 border border-indigo-700/60 hover:bg-indigo-900 text-indigo-300 font-bold text-xs uppercase tracking-wider transition flex items-center gap-2">
+                📊 Статистика переходов CRM ➔
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Левая колонка: Форма генератора -->
+            <div class="lg:col-span-7 bg-[#0d1527] border border-indigo-900/60 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-5">
+                <h2 class="text-xl font-bold uppercase font-oswald text-white flex items-center gap-2">
+                    ⚙️ Параметры ссылки партнёра
+                </h2>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-1.5">
+                        1. Идентификатор (Реферальный код / ID) *
+                    </label>
+                    <input type="text" id="partnerId" placeholder="Например: ivanov, skoroleva, media_ekb" value="partner_01" oninput="updateLink()" class="w-full bg-[#060a14] border border-indigo-800 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm font-mono">
+                    <p class="text-[11px] text-gray-500 mt-1">Используйте латинские буквы, цифры и знаки подчеркивания</p>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-1.5">
+                        2. Имя / Название партнёра или компании
+                    </label>
+                    <input type="text" id="partnerName" placeholder="Например: Иван Иванов / Альфа-Банк" value="Партнёрский Контакт" oninput="updateLink()" class="w-full bg-[#060a14] border border-indigo-800 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 text-sm">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-1.5">
+                            3. Домен назначения
+                        </label>
+                        <select id="domainSelect" onchange="updateLink()" class="w-full bg-[#060a14] border border-indigo-800 text-gray-200 rounded-xl px-3.5 py-3 focus:outline-none focus:border-blue-500 text-sm">
+                            <option value="https://rost-ural.ru" selected>rost-ural.ru (Главный)</option>
+                            <option value="https://бизнес-рост.рф">бизнес-рост.рф (Зеркало)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-1.5">
+                            4. Целевая страница
+                        </label>
+                        <select id="pageSelect" onchange="updateLink()" class="w-full bg-[#060a14] border border-indigo-800 text-gray-200 rounded-xl px-3.5 py-3 focus:outline-none focus:border-blue-500 text-sm">
+                            <option value="" selected>Главная страница (Билеты / Программа)</option>
+                            <option value="partner/">B2B-Партнёрство и Стенды (partner/)</option>
+                            <option value="#pricing">Блок тарифов (#pricing)</option>
+                            <option value="#speakers">Блок спикеров (#speakers)</option>
+                            <option value="#analysis">Запись на Разбор (#analysis)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">
+                            UTM Medium
+                        </label>
+                        <input type="text" id="utmMedium" value="qr_offline" oninput="updateLink()" class="w-full bg-[#060a14] border border-indigo-900/70 text-gray-300 rounded-xl px-3.5 py-2.5 text-xs font-mono">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">
+                            UTM Source
+                        </label>
+                        <input type="text" id="utmSource" placeholder="Автоматически из ID" oninput="updateLink()" class="w-full bg-[#060a14] border border-indigo-900/70 text-gray-300 rounded-xl px-3.5 py-2.5 text-xs font-mono">
+                    </div>
+                </div>
+
+                <!-- Быстрые пресеты -->
+                <div class="pt-2">
+                    <span class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">Быстрые шаблоны:</span>
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="applyPreset('skoroleva', 'Светлана Королева (Куратор)', '', 'manager')" class="px-3 py-1.5 bg-indigo-950/70 hover:bg-indigo-800 border border-indigo-800/60 rounded-lg text-xs font-medium text-indigo-200 transition">Светлана Королева</button>
+                        <button onclick="applyPreset('maxim_rop', 'Максим (РОП)', '', 'manager')" class="px-3 py-1.5 bg-indigo-950/70 hover:bg-indigo-800 border border-indigo-800/60 rounded-lg text-xs font-medium text-indigo-200 transition">Максим РОП</button>
+                        <button onclick="applyPreset('lovyagina', 'Елизавета Ловягина', '', 'speaker')" class="px-3 py-1.5 bg-indigo-950/70 hover:bg-indigo-800 border border-indigo-800/60 rounded-lg text-xs font-medium text-indigo-200 transition">Елизавета Ловягина</button>
+                        <button onclick="applyPreset('sinara_b2b', 'Конгресс-центр Синара', 'partner/', 'sponsor')" class="px-3 py-1.5 bg-indigo-950/70 hover:bg-indigo-800 border border-indigo-800/60 rounded-lg text-xs font-medium text-indigo-200 transition">Синара Партнёрство</button>
+                        <button onclick="applyPreset('media_ural', 'СМИ и Медиа Урала', '', 'media')" class="px-3 py-1.5 bg-indigo-950/70 hover:bg-indigo-800 border border-indigo-800/60 rounded-lg text-xs font-medium text-indigo-200 transition">Медиа Урала</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая колонка: Превью QR-кода и готовой ссылки -->
+            <div class="lg:col-span-5 flex flex-col gap-6">
+                <!-- Карточка QR-кода для скачивания -->
+                <div class="bg-[#0d1527] border border-indigo-900/60 rounded-3xl p-6 shadow-2xl flex flex-col items-center text-center">
+                    <div id="qrCardBox" class="bg-white p-5 rounded-2xl shadow-xl w-full max-w-[280px] flex flex-col items-center border border-gray-200">
+                        <div class="w-full h-1.5 bg-blue-600 rounded-full mb-3"></div>
+                        <div id="qrcode" class="flex justify-center p-1"></div>
+                        <div class="mt-3 text-center">
+                            <div class="text-[11px] font-black uppercase text-gray-900 tracking-wider">ТЕРРИТОРИЯ РОСТА 2026</div>
+                            <div id="qrPartnerLabel" class="text-xs font-bold text-blue-600 truncate max-w-[220px]">Партнёрский Контакт</div>
+                            <div id="qrCodeLabel" class="text-[10px] text-gray-500 font-mono mt-0.5">Код: partner_01</div>
+                        </div>
+                    </div>
+
+                    <button onclick="downloadQR()" class="w-full mt-5 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-bold text-xs uppercase tracking-wider py-3.5 rounded-xl transition shadow-lg shadow-blue-600/20 cursor-pointer flex items-center justify-center gap-2">
+                        📥 Скачать QR-код (PNG)
+                    </button>
+                </div>
+
+                <!-- Готовая ссылка -->
+                <div class="bg-[#0d1527] border border-indigo-900/60 rounded-3xl p-6 shadow-2xl space-y-3">
+                    <span class="block text-xs font-bold text-gray-300 uppercase tracking-wider">
+                        🔗 Сформированная реферальная ссылка:
+                    </span>
+                    <div class="p-3.5 bg-[#060a14] border border-indigo-950 rounded-xl break-all text-xs font-mono text-sky-400 select-all" id="finalUrlText">
+                        https://rost-ural.ru/?ref=partner_01
+                    </div>
+                    <button onclick="copyLink()" id="copyBtn" class="w-full bg-indigo-950 hover:bg-indigo-900 border border-indigo-700/60 text-white font-bold text-xs uppercase tracking-wider py-3 rounded-xl transition cursor-pointer flex items-center justify-center gap-2">
+                        📋 Скопировать ссылку в буфер
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Справочник механики -->
+        <div class="mt-8 bg-[#091020] border border-indigo-950/80 rounded-2xl p-5 text-xs text-gray-400 leading-relaxed">
+            <h4 class="text-white font-bold mb-1.5 uppercase text-xs">💡 Как работает сквозная атрибуция:</h4>
+            <ul class="list-disc list-inside space-y-1">
+                <li>Клиент переходит по ссылке или сканирует QR-код ➔ шлюз фиксирует факт визита (Ref Hit).</li>
+                <li>Реферальный код автоматически сохраняется на 90 дней в LocalStorage и защищенных Cookies.</li>
+                <li>При отправке любой заявки (билет, разбор, квиз, партнёрство, чат) код партнера автоматически прикрепляется к лиду.</li>
+                <li>В YouGile CRM создается карточка с тегом <code>[РЕФ: {id}]</code>, а в Telegram/MAX менеджеру приходит уведомление с указанием партнёра.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        var qrcodeInstance = null;
+
+        function updateLink() {
+            var rawId = document.getElementById('partnerId').value.trim() || 'direct';
+            var cleanId = rawId.toLowerCase().replace(/\s+/g, '_');
+            var name = document.getElementById('partnerName').value.trim() || cleanId;
+            var domain = document.getElementById('domainSelect').value;
+            var page = document.getElementById('pageSelect').value;
+            var medium = document.getElementById('utmMedium').value.trim() || 'qr_offline';
+            var customSource = document.getElementById('utmSource').value.trim();
+            var source = customSource || ('partner_' + cleanId);
+
+            var baseUrl = domain + (page.startsWith('#') ? ('/' + page) : (page ? ('/' + page) : '/'));
+            var separator = baseUrl.includes('?') ? '&' : '?';
+
+            // Если страница содержит хэш #...
+            var hash = '';
+            if (baseUrl.includes('#')) {
+                var parts = baseUrl.split('#');
+                baseUrl = parts[0];
+                hash = '#' + parts[1];
+            }
+
+            var query = 'ref=' + encodeURIComponent(cleanId) +
+                        '&utm_source=' + encodeURIComponent(source) +
+                        '&utm_medium=' + encodeURIComponent(medium) +
+                        '&utm_campaign=' + encodeURIComponent(cleanId);
+
+            var finalUrl = baseUrl + separator + query + hash;
+
+            document.getElementById('finalUrlText').innerText = finalUrl;
+            document.getElementById('qrPartnerLabel').innerText = name;
+            document.getElementById('qrCodeLabel').innerText = 'Код: ' + cleanId;
+
+            renderQR(finalUrl);
+        }
+
+        function renderQR(text) {
+            var qrContainer = document.getElementById('qrcode');
+            qrContainer.innerHTML = '';
+            qrcodeInstance = new QRCode(qrContainer, {
+                text: text,
+                width: 190,
+                height: 190,
+                colorDark: "#002b66",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        }
+
+        function applyPreset(id, name, page, medium) {
+            document.getElementById('partnerId').value = id;
+            document.getElementById('partnerName').value = name;
+            document.getElementById('pageSelect').value = page;
+            document.getElementById('utmMedium').value = medium;
+            document.getElementById('utmSource').value = '';
+            updateLink();
+        }
+
+        function copyLink() {
+            var text = document.getElementById('finalUrlText').innerText;
+            navigator.clipboard.writeText(text).then(function() {
+                var btn = document.getElementById('copyBtn');
+                var oldHtml = btn.innerHTML;
+                btn.innerHTML = '✅ Ссылка скопирована!';
+                btn.classList.add('bg-emerald-700');
+                setTimeout(function() {
+                    btn.innerHTML = oldHtml;
+                    btn.classList.remove('bg-emerald-700');
+                }, 2000);
+            });
+        }
+
+        function downloadQR() {
+            var img = document.querySelector('#qrcode img');
+            if (!img || !img.src) {
+                var canvas = document.querySelector('#qrcode canvas');
+                if (canvas) {
+                    var link = document.createElement('a');
+                    link.download = 'QR_' + (document.getElementById('partnerId').value.trim() || 'code') + '.png';
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                }
+                return;
+            }
+            var link = document.createElement('a');
+            link.download = 'QR_' + (document.getElementById('partnerId').value.trim() || 'code') + '.png';
+            link.href = img.src;
+            link.click();
+        }
+
+        // Первичная инициализация
+        window.addEventListener('DOMContentLoaded', function() {
+            updateLink();
+        });
+    </script>
+</body>
+</html>
