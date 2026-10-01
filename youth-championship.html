@@ -1134,20 +1134,88 @@
             }
         });
 
+        // URL веб-хука Google Apps Script для таблицы участников
+        var YOUTH_SHEET_WEBHOOK = window.YOUTH_SHEET_WEBHOOK || 'https://script.google.com/macros/s/AKfycby-YOUTH_CHAMPIONSHIP/exec';
+
         // Отправка формы регистрации
         function handleRegistrationSubmit(e) {
             e.preventDefault();
-            const name = document.getElementById('participantName').value;
-            const phone = document.getElementById('participantPhone').value;
-            const age = document.getElementById('participantAge').value;
-            const school = document.getElementById('participantSchool').value;
-            const role = document.getElementById('participantRole').value;
-            const mentor = document.getElementById('participantMentor').value;
+            const submitBtn = document.getElementById('participantSubmitBtn');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span>ОТПРАВКА ЗАЯВКИ...</span>';
+            }
 
+            const name = document.getElementById('participantName').value.trim();
+            const phone = document.getElementById('participantPhone').value.trim();
+            const age = document.getElementById('participantAge').value;
+            const school = document.getElementById('participantSchool').value.trim();
+            const roleSelect = document.getElementById('participantRole');
+            const roleText = roleSelect ? roleSelect.options[roleSelect.selectedIndex].text : '';
+            const mentor = document.getElementById('participantMentor').value.trim();
+            const now = new Date().toLocaleString('ru-RU', { timeZone: 'Asia/Yekaterinburg' });
+
+            const payload = {
+                date: now,
+                source: 'Сайт (Кейс-чемпионат)',
+                name: name,
+                phone: phone,
+                age: age + ' лет',
+                school: school,
+                role: roleText,
+                mentor: mentor,
+                status: '🟢 Новая заявка',
+                notes: 'Зарегистрирован через форму youth-championship.html'
+            };
+
+            // 1. Всегда сохраняем локально в браузер (Zero Data Loss)
+            try {
+                const storedLeads = JSON.parse(localStorage.getItem('YOUTH_CHAMPIONSHIP_LEADS') || '[]');
+                storedLeads.push(payload);
+                localStorage.setItem('YOUTH_CHAMPIONSHIP_LEADS', JSON.stringify(storedLeads));
+                console.log('✅ Заявка сохранена локально:', payload);
+            } catch (err) {
+                console.warn('LocalStorage error:', err);
+            }
+
+            // 2. Отправка на Google Apps Script Webhook (Google Sheets)
+            if (YOUTH_SHEET_WEBHOOK && !YOUTH_SHEET_WEBHOOK.includes('AKfycby-YOUTH_CHAMPIONSHIP')) {
+                fetch(YOUTH_SHEET_WEBHOOK, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                }).then(() => {
+                    console.log('🚀 Заявка отправлена в Google Таблицу');
+                }).catch(err => {
+                    console.warn('Google Sheets sync warning:', err);
+                });
+            }
+
+            // 3. Отправка в YouGile CRM / шлюз проекта
+            try {
+                const gatewayUrl = (window.location.hostname.indexOf('rost-ural.ru') !== -1 || window.location.hostname.indexOf('predprinimy.ru') !== -1) ? '/api/tr/lead' : 'https://predprinimy.ru/api/tr/lead';
+                fetch(gatewayUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: name,
+                        phone: phone,
+                        email: '',
+                        company: 'Кейс-чемпионат 14-17 (' + school + ')',
+                        details: 'Возраст: ' + age + ', Роль: ' + roleText + ', Наставник/Родитель: ' + mentor,
+                        source: 'Сайт youth-championship',
+                        url: window.location.href,
+                        date: new Date().toISOString()
+                    })
+                }).catch(e => console.warn('CRM gateway notice:', e));
+            } catch (e) {
+                console.warn(e);
+            }
+
+            // Показываем подтверждение пользователю
             document.getElementById('hackathonRegistrationForm').classList.add('hidden');
             document.getElementById('participantSuccessBox').classList.remove('hidden');
-
-            console.log('Registration submitted:', { name, phone, age, school, role, mentor });
         }
     </script>
 </body>
