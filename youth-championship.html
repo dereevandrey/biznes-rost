@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ОСЕННИЙ КЕЙС-ЧЕМПИОНАТ «ЗВУКИ УРАЛА» | 7–11 октября · Синара Центр, Екатеринбург</title>
-    <meta name="description" content="Осенний кейс-чемпионат «Звуки Урала». 7–11 октября, Синара Центр, Екатеринбург. Практическая проектная деятельность, создание арт-объектов из вторсырья и цифровых аудиогидов для территории Урала.">
+    <meta name="description" content="Осенний кейс-чемпионат «Звуки Урала». 7–11 октября, Синара Центр, Екатеринбург. Практическая проектная деятельность, создание арт-объектов из вторсырья и цифровых аудиогидов для территории Урала">
     <link rel="icon" type="image/png" href="favicon.png">
 
     <!-- Трекер рефералов и UTM -->
@@ -119,11 +119,12 @@
             box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.8);
         }
 
-        /* Табы галереи */
-        .gallery-tab.active {
-            background: rgba(245, 158, 11, 0.2);
+        .event-tile {
+            transition: all 0.25s ease;
+        }
+        .event-tile.active {
             border-color: #f59e0b;
-            color: #fbbf24;
+            background: rgba(245, 158, 11, 0.15);
         }
 
         /* Плавная кнопка наверх */
@@ -137,7 +138,7 @@
     <!-- ======================================================= -->
     <!-- НАВИГАЦИЯ                                               -->
     <!-- ======================================================= -->
-    <nav class="fixed top-0 w-full z-50 bg-[#030d07]/95 backdrop-blur-md border-b border-emerald-950/80">
+    <nav class="fixed top-0 w-full z-50 bg-[#030d07]/95 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between text-sm font-medium tracking-wide text-gray-300">
             
             <!-- Логотип бренда -->
@@ -169,7 +170,7 @@
         </div>
 
         <!-- Мобильное меню -->
-        <div id="mobileMenu" class="hidden md:hidden bg-[#030d07] border-b border-emerald-950 px-4 py-4 space-y-3 text-xs uppercase font-semibold">
+        <div id="mobileMenu" class="hidden md:hidden bg-[#030d07] px-4 py-4 space-y-3 text-xs uppercase font-semibold">
             <a href="#about" class="block text-gray-300 hover:text-emerald-400">О чемпионате</a>
             <a href="#region" class="block text-gray-300 hover:text-amber-400">Территория Урала</a>
             <a href="#program" class="block text-gray-300 hover:text-emerald-400">Программа</a>
@@ -194,7 +195,7 @@
 
         <div class="z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 flex flex-col items-center">
             
-            <!-- Чистая плашка локации и даты (без точек и мигалок) -->
+            <!-- Чистая плашка локации и даты -->
             <div class="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-300 mb-4">
                 ЕКАТЕРИНБУРГ · 7–11 ОКТЯБРЯ · СИНАРА ЦЕНТР
             </div>
@@ -223,7 +224,7 @@
             </div>
 
             <!-- 4 ключевых показателя -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 w-full max-w-4xl text-left border-t border-emerald-950/80 pt-6">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 w-full max-w-4xl text-left pt-6">
                 <div class="border-l-2 border-emerald-400 pl-3">
                     <div class="text-xl sm:text-2xl font-black font-['Oswald'] text-white">100 УЧАСТНИКОВ</div>
                     <div class="text-[11px] text-gray-400">Школьники и студенты Урала</div>
@@ -279,7 +280,7 @@
                     СОЗИДАНИЕ И ПРАКТИЧЕСКИЙ РЕЗУЛЬТАТ <span class="text-gradient-autumn">ДЛЯ ГОРОДОВ УРАЛА</span>
                 </h2>
                 <p class="text-gray-300 text-sm sm:text-base mt-3 leading-relaxed">
-                    Школьники и студенты создают реальные городские объекты и цифровые аудиогиды, которые будут служить жителям и гостям региона.
+                    Школьники и студенты создают реальные городские объекты и цифровые аудиогиды, которые будут служить жителям и гостям региона
                 </p>
             </div>
 
@@ -288,15 +289,15 @@
                     <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black text-xl">01</div>
                     <h3 class="font-bold text-white text-base uppercase font-['Oswald']">Проектный опыт и командная работа</h3>
                     <p class="text-xs text-gray-300 leading-relaxed">
-                        Практические навыки разработки концепций, работы в команде и защиты проектов перед экспертами.
+                        Практические навыки разработки концепций, командного взаимодействия и защиты решений перед жюри
                     </p>
                 </div>
 
                 <div class="card-amber rounded-2xl p-6 space-y-3">
                     <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-black text-xl">02</div>
-                    <h3 class="font-bold text-white text-base uppercase font-['Oswald']">Вторая жизнь пластика и польза городу</h3>
+                    <h3 class="font-bold text-white text-base uppercase font-['Oswald']">Вторая жизнь пластика и польза</h3>
                     <p class="text-xs text-gray-300 leading-relaxed">
-                        Сбор пластиковых крышек и вторсырья, создание удобных уличных лавочек, арт-объектов и полезных малых архитектурных форм.
+                        Сбор пластиковых крышек и вторсырья, создание уличных лавочек, арт-объектов и полезных малых архитектурных форм
                     </p>
                 </div>
 
@@ -304,7 +305,7 @@
                     <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black text-xl">03</div>
                     <h3 class="font-bold text-white text-base uppercase font-['Oswald']">Диалог с бизнесом и экспертами</h3>
                     <p class="text-xs text-gray-300 leading-relaxed">
-                        Презентация идей топ-менеджерам уральских предприятий, получение обратной связи от реальных предпринимателей.
+                        Презентация идей топ-менеджерам уральских предприятий, получение живой обратной связи от реальных предпринимателей
                     </p>
                 </div>
 
@@ -312,7 +313,7 @@
                     <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-black text-xl">04</div>
                     <h3 class="font-bold text-white text-base uppercase font-['Oswald']">Результат, которым можно гордиться</h3>
                     <p class="text-xs text-gray-300 leading-relaxed">
-                        Установка созданных арт-объектов и запуск аудиогидов на набережных, в парках и знаковых местах Урала к 1 мая 2027 года.
+                        Установка созданных арт-объектов и запуск аудиогидов на набережных, в парках и знаковых местах Урала к 1 мая 2027 года
                     </p>
                 </div>
             </div>
@@ -321,6 +322,7 @@
 
     <!-- ======================================================= -->
     <!-- СЕКЦИЯ 2: ТЕРРИТОРИЯ УРАЛА (СВЕРДЛОВСКАЯ ОБЛАСТЬ)       -->
+    <!-- Соразмерные блоки равной высоты, связный текст без плашек -->
     <!-- ======================================================= -->
     <section id="region" class="py-20 sm:py-24 relative z-10 bg-[#020904]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -329,34 +331,35 @@
                     ТЕРРИТОРИЯ УРАЛА: <span class="text-gradient-autumn">ПРИРОДА, ИСТОРИЯ И МОЛОДЫЕ ТАЛАНТЫ</span>
                 </h2>
                 <p class="text-gray-300 text-sm sm:text-base mt-3 leading-relaxed">
-                    Оживление индустриального наследия и создание новых туристических и культурных маршрутов силами молодых лидеров.
+                    Оживление индустриального наследия и создание новых туристических и культурных маршрутов силами молодых лидеров
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                 <!-- Фотография спортивного кластера в осеннем лесу -->
-                <div class="lg:col-span-6 rounded-3xl overflow-hidden shadow-2xl border border-emerald-900/60 group">
-                    <div class="relative h-72 sm:h-96 overflow-hidden">
+                <div class="lg:col-span-6 rounded-3xl overflow-hidden shadow-2xl group flex">
+                    <div class="relative w-full h-80 sm:h-96 lg:h-full min-h-[380px] overflow-hidden rounded-3xl">
                         <img src="assets/youth/autumn_ural_sport.jpg" alt="Осенний спортивный кластер Урала" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#020904] via-transparent to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#020904]/80 via-transparent to-transparent"></div>
                     </div>
                 </div>
 
-                <!-- Текстовый смысловой блок -->
-                <div class="lg:col-span-6 space-y-6">
-                    <div class="card-green rounded-2xl p-6 sm:p-8 space-y-4">
-                        <h3 class="text-2xl font-black uppercase font-['Oswald'] text-white">
-                            Екатеринбург и Свердловская область
-                        </h3>
-                        <p class="text-sm text-gray-300 leading-relaxed">
-                            Урал — край сильных людей, заводов-гигантов и богатейшей природы. В рамках кейс-чемпионата команды изучают историю уральских мастеров, исследуют заводские династии и создают современные культурные объекты.
-                        </p>
-                        <p class="text-sm text-gray-300 leading-relaxed">
-                            Каждый проект связывает историю трудового подвига с бережным отношением к экологии и современными цифровыми форматами (аудиоспектакли, QR-навигация, саунд-дизайн).
-                        </p>
-                        <div class="pt-2 flex flex-wrap gap-3 text-xs font-semibold text-emerald-400">
-                            <span class="px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/30">✓ Реальные городские пространства</span>
-                            <span class="px-3 py-1 rounded-full bg-amber-950/80 border border-amber-500/30">✓ Эксперты-наставники</span>
+                <!-- Текстовый смысловой блок (соразмерный, связный текст без плашек) -->
+                <div class="lg:col-span-6 flex">
+                    <div class="card-green rounded-3xl p-6 sm:p-8 lg:p-10 space-y-5 flex flex-col justify-between w-full">
+                        <div>
+                            <h3 class="text-2xl sm:text-3xl font-black uppercase font-['Oswald'] text-white mb-4">
+                                Екатеринбург и Свердловская область
+                            </h3>
+                            <p class="text-sm text-gray-200 leading-relaxed mb-4">
+                                Урал — край сильных людей, заводов-гигантов и богатейшей природы. В рамках кейс-чемпионата команды изучают историю уральских мастеров, исследуют заводские династии и создают современные культурные объекты.
+                            </p>
+                            <p class="text-sm text-gray-200 leading-relaxed mb-4">
+                                Каждый проект связывает историю трудового подвига с бережным отношением к экологии и современными цифровыми форматами в виде аудиоспектаклей, QR-навигации и саунд-дизайна.
+                            </p>
+                            <p class="text-sm text-amber-300 font-medium leading-relaxed">
+                                Эксперты и наставники помогают командам пройти весь путь от концепции до очной защиты, а практические задания разрабатываются для реальных общественных пространств Екатеринбурга и муниципалитетов Свердловской области
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -374,7 +377,7 @@
                     ОТ ИДЕИ ДО <span class="text-gradient-autumn">ПЕРВОГО РЕЗУЛЬТАТА</span>
                 </h2>
                 <p class="text-gray-300 text-sm sm:text-base mt-3 leading-relaxed">
-                    Обучающие онлайн-модули и кейс-чемпионат для школьников и студентов.
+                    Обучающие онлайн-модули и кейс-чемпионат для школьников и студентов
                 </p>
             </div>
 
@@ -384,7 +387,7 @@
                     <div class="space-y-1">
                         <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider">7 октября · Онлайн-модуль</div>
                         <h4 class="text-lg font-bold text-white uppercase font-['Oswald']">Модуль 1. Индустриальная история и выбор объекта</h4>
-                        <p class="text-xs text-gray-300">Погружение в историю заводов и знаковых мест Урала, знакомство команд и выбор темы проекта.</p>
+                        <p class="text-xs text-gray-300">Погружение в историю заводов и знаковых мест Урала, знакомство команд и выбор темы проекта</p>
                     </div>
                 </div>
 
@@ -393,7 +396,7 @@
                     <div class="space-y-1">
                         <div class="text-xs font-bold text-amber-400 uppercase tracking-wider">8 октября · Онлайн-модуль</div>
                         <h4 class="text-lg font-bold text-white uppercase font-['Oswald']">Модуль 2. Экология и городская среда</h4>
-                        <p class="text-xs text-gray-300">Основы переработки пластика, проектирование арт-объектов и малых архитектурных форм из вторсырья.</p>
+                        <p class="text-xs text-gray-300">Основы переработки пластика, проектирование арт-объектов и малых архитектурных форм из вторсырья</p>
                     </div>
                 </div>
 
@@ -402,7 +405,7 @@
                     <div class="space-y-1">
                         <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider">9 октября · Онлайн-модуль</div>
                         <h4 class="text-lg font-bold text-white uppercase font-['Oswald']">Модуль 3. Саунд-дизайн и цифровые аудиогиды</h4>
-                        <p class="text-xs text-gray-300">Создание драматургии сценария, запись голоса, мастеринг звука и публикация на цифровой платформе.</p>
+                        <p class="text-xs text-gray-300">Создание драматургии сценария, запись голоса, мастеринг звука и публикация на цифровой платформе</p>
                     </div>
                 </div>
 
@@ -411,26 +414,26 @@
                     <div class="space-y-1">
                         <div class="text-xs font-bold text-amber-400 uppercase tracking-wider">10 октября · Командный практикум</div>
                         <h4 class="text-lg font-bold text-white uppercase font-['Oswald']">Эмоциональный интеллект и командное взаимодействие «Импатиум»</h4>
-                        <p class="text-xs text-gray-300">Практикум по коммуникации: распределение ролей в команде, слаженная работа, генерация решений и подготовка к защите.</p>
+                        <p class="text-xs text-gray-300">Практикум по коммуникации: распределение ролей в команде, слаженная работа, генерация решений и подготовка к защите</p>
                     </div>
                 </div>
 
                 <!-- Шаг 5: 11 октября -->
-                <div class="card-amber rounded-2xl p-6 sm:p-8 border border-amber-400/60 shadow-2xl space-y-4">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-amber-500/30 pb-3">
+                <div class="card-amber rounded-2xl p-6 sm:p-8 space-y-4 shadow-2xl">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3">
                         <span class="text-sm font-bold text-amber-300 uppercase font-['Oswald']">11 ОКТЯБРЯ · ДЕНЬ КЕЙС-ЧЕМПИОНАТА</span>
                         <span class="text-xs text-gray-400">Синара Центр, Екатеринбург</span>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-                        <div class="bg-black/40 p-3 rounded-xl border border-amber-500/20">
+                        <div class="bg-black/40 p-4 rounded-xl">
                             <strong class="text-white block mb-1">Регистрация и выставка</strong>
                             Сбор участников, выставка проектных макетов, нетворкинг с экспертами
                         </div>
-                        <div class="bg-black/40 p-3 rounded-xl border border-amber-500/20">
+                        <div class="bg-black/40 p-4 rounded-xl">
                             <strong class="text-white block mb-1">Защита решений</strong>
                             Презентация проектов перед экспертным жюри предпринимателей
                         </div>
-                        <div class="bg-black/40 p-3 rounded-xl border border-amber-500/20">
+                        <div class="bg-black/40 p-4 rounded-xl">
                             <strong class="text-white block mb-1">Итоги и признание</strong>
                             Подведение итогов, награждение победителей и вручение сертификатов
                         </div>
@@ -451,112 +454,170 @@
                     ТВОЁ МЕСТО <span class="text-gradient-autumn">В КОМАНДЕ</span>
                 </h2>
                 <p class="text-gray-300 text-sm sm:text-base mt-3 leading-relaxed">
-                    Команда состоит из 5–8 человек. Каждый участник развивает профессиональные навыки и получает сертификат участника.
+                    Команда состоит из 5–8 человек. Каждый участник развивает профессиональные навыки и получает сертификат участника
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- 1. Продюсер -->
                 <div class="card-green rounded-2xl p-6 space-y-3">
-                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                     </div>
                     <h3 class="text-amber-400 font-bold text-lg font-['Oswald'] uppercase">Продюсер проекта</h3>
-                    <p class="text-xs text-gray-300 leading-relaxed">Лидерство, координация команды, управление сроками и защита проекта перед экспертами.</p>
+                    <p class="text-xs text-gray-300 leading-relaxed">Лидерство, координация команды, управление сроками и защита проекта перед экспертами</p>
                 </div>
 
                 <!-- 2. Сценарист -->
                 <div class="card-green rounded-2xl p-6 space-y-3">
-                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
                     </div>
                     <h3 class="text-emerald-400 font-bold text-lg font-['Oswald'] uppercase">Сценарист и исследователь</h3>
-                    <p class="text-xs text-gray-300 leading-relaxed">Работа с историческими фактами, краеведческими архивами и создание драматургии аудиогида.</p>
+                    <p class="text-xs text-gray-300 leading-relaxed">Работа с историческими фактами, краеведческими архивами и создание драматургии аудиогида</p>
                 </div>
 
                 <!-- 3. Креатор -->
                 <div class="card-green rounded-2xl p-6 space-y-3">
-                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4 5 5 0 014-5h10a4 4 0 014 4 5 5 0 01-4 5H7z M9 9l3-6 3 6"></path></svg>
                     </div>
                     <h3 class="text-amber-400 font-bold text-lg font-['Oswald'] uppercase">Креатор</h3>
-                    <p class="text-xs text-gray-300 leading-relaxed">Творческая концепция, визуальный образ арт-объекта, дизайн-оформление и саунд-атмосфера.</p>
+                    <p class="text-xs text-gray-300 leading-relaxed">Творческая концепция, визуальный образ арт-объекта, дизайн-оформление и саунд-атмосфера</p>
                 </div>
 
                 <!-- 4. Проектный менеджер -->
                 <div class="card-green rounded-2xl p-6 space-y-3">
-                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
                     </div>
                     <h3 class="text-emerald-400 font-bold text-lg font-['Oswald'] uppercase">Проектный менеджер</h3>
-                    <p class="text-xs text-gray-300 leading-relaxed">Планирование ресурсов, расчет необходимых материалов и смета реализации арт-объекта.</p>
+                    <p class="text-xs text-gray-300 leading-relaxed">Планирование ресурсов, расчет необходимых материалов и смета реализации арт-объекта</p>
                 </div>
 
                 <!-- 5. Менеджер по медиа -->
                 <div class="card-green rounded-2xl p-6 space-y-3">
-                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
                     </div>
                     <h3 class="text-amber-400 font-bold text-lg font-['Oswald'] uppercase">Менеджер по работе с медиа</h3>
-                    <p class="text-xs text-gray-300 leading-relaxed">Освещение работы команды, фото- и видеодневник, публикации в социальных сетях.</p>
+                    <p class="text-xs text-gray-300 leading-relaxed">Освещение работы команды, фото- и видеодневник, публикации в социальных сетях</p>
                 </div>
 
                 <!-- 6. Лидер-исследователь -->
-                <div class="card-amber rounded-2xl p-6 space-y-3 border-emerald-400/40">
-                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-300">
+                <div class="card-amber rounded-2xl p-6 space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </div>
                     <h3 class="text-emerald-300 font-bold text-lg font-['Oswald'] uppercase">Лидер-исследователь</h3>
-                    <p class="text-xs text-gray-300 leading-relaxed">Индивидуальный формат участия: мы подберем для вас сильную сборную команду единомышленников.</p>
+                    <p class="text-xs text-gray-300 leading-relaxed">Индивидуальный формат участия: мы подберем для вас сильную сборную команду единомышленников</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ======================================================= -->
-    <!-- СЕКЦИЯ 5: КАК ПРОХОДЯТ НАШИ МЕРОПРИЯТИЯ (ИНТЕРАКТИВНЫЕ АЛЬБОМЫ) -->
+    <!-- СЕКЦИЯ 5: КАК ПРОХОДЯТ НАШИ МЕРОПРИЯТИЯ (ВИДЕО + ПЛИТКИ) -->
+    <!-- Левая половина: Видеоплеер. Правая половина: Плитки событий -->
     <!-- ======================================================= -->
     <section id="gallery" class="py-20 sm:py-24 relative z-10 bg-[#030d07]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
+            <div class="text-center max-w-3xl mx-auto mb-14">
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase font-['Oswald'] text-white">
                     КАК ПРОХОДЯТ <span class="text-gradient-autumn">НАШИ МЕРОПРИЯТИЯ</span>
                 </h2>
                 <p class="text-gray-300 text-sm sm:text-base mt-3 leading-relaxed">
-                    Реализованные кейс-чемпионаты, форумы и проектные интенсивы Консорциума «ПРЕДПРИНИМАЙ».
+                    Реализованные кейс-чемпионаты, форумы и проектные интенсивы Консорциума «ПРЕДПРИНИМАЙ»
                 </p>
             </div>
 
-            <!-- Вкладки-события -->
-            <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 max-w-5xl mx-auto">
-                <button onclick="switchAlbum('event_spb')" id="tab_event_spb" class="gallery-tab active px-4 py-2 rounded-xl border border-emerald-900/60 bg-[#061a0e] text-xs font-semibold text-gray-300 hover:text-amber-400 transition cursor-pointer">
-                    Кейс-чемпионаты
-                </button>
-                <button onclick="switchAlbum('event_forum')" id="tab_event_forum" class="gallery-tab px-4 py-2 rounded-xl border border-emerald-900/60 bg-[#061a0e] text-xs font-semibold text-gray-300 hover:text-amber-400 transition cursor-pointer">
-                    Форумы и открытый диалог
-                </button>
-                <button onclick="switchAlbum('event_workshop')" id="tab_event_workshop" class="gallery-tab px-4 py-2 rounded-xl border border-emerald-900/60 bg-[#061a0e] text-xs font-semibold text-gray-300 hover:text-amber-400 transition cursor-pointer">
-                    Проектные мастерские
-                </button>
-                <button onclick="switchAlbum('event_exhibition')" id="tab_event_exhibition" class="gallery-tab px-4 py-2 rounded-xl border border-emerald-900/60 bg-[#061a0e] text-xs font-semibold text-gray-300 hover:text-amber-400 transition cursor-pointer">
-                    Выставка арт-объектов
-                </button>
-                <button onclick="switchAlbum('event_awards')" id="tab_event_awards" class="gallery-tab px-4 py-2 rounded-xl border border-emerald-900/60 bg-[#061a0e] text-xs font-semibold text-gray-300 hover:text-amber-400 transition cursor-pointer">
-                    Награждение победителей
-                </button>
+            <!-- Двухколоночный макет: Видео слева + Плитки альбомов справа -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
+                
+                <!-- Левая колонка: Видеоплеер событий -->
+                <div class="lg:col-span-7 flex flex-col space-y-4">
+                    <div class="relative w-full rounded-3xl overflow-hidden bg-black/60 shadow-2xl aspect-video">
+                        <video id="eventVideoPlayer" controls playsinline preload="metadata" class="w-full h-full object-cover rounded-3xl" poster="assets/youth/events/event_spb/photo_1.jpg">
+                            <source src="hero.mp4" type="video/mp4">
+                            Ваш браузер не поддерживает воспроизведение видео
+                        </video>
+                    </div>
+                    <div class="flex items-center justify-between text-xs text-gray-400 px-2">
+                        <span id="videoTitle" class="font-bold text-amber-400 uppercase font-['Oswald']">Атмосфера защиты проектов и кейс-чемпионатов</span>
+                        <span>Консорциум «ПРЕДПРИНИМАЙ»</span>
+                    </div>
+                </div>
+
+                <!-- Правая колонка: 5 плиток событий на одном уровне -->
+                <div class="lg:col-span-5 flex flex-col space-y-3">
+                    
+                    <!-- Плитка 1 -->
+                    <div onclick="selectEvent('event_spb', 'Кейс-чемпионаты', 'assets/youth/events/event_spb/photo_1.jpg')" id="tile_event_spb" class="event-tile active card-green rounded-2xl p-3 sm:p-3.5 flex items-center gap-3.5 cursor-pointer">
+                        <img src="assets/youth/events/event_spb/photo_1.jpg" alt="Кейс-чемпионаты" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
+                        <div class="flex-grow">
+                            <h4 class="text-sm font-bold text-white uppercase font-['Oswald']">Кейс-чемпионаты</h4>
+                            <p class="text-[11px] text-gray-300">Очные защиты решений перед экспертами</p>
+                        </div>
+                    </div>
+
+                    <!-- Плитка 2 -->
+                    <div onclick="selectEvent('event_forum', 'Форумы и открытый диалог', 'assets/youth/events/event_forum/photo_1.jpg')" id="tile_event_forum" class="event-tile card-green rounded-2xl p-3 sm:p-3.5 flex items-center gap-3.5 cursor-pointer">
+                        <img src="assets/youth/events/event_forum/photo_1.jpg" alt="Форумы" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
+                        <div class="flex-grow">
+                            <h4 class="text-sm font-bold text-white uppercase font-['Oswald']">Форумы и открытый диалог</h4>
+                            <p class="text-[11px] text-gray-300">Встречи со спикерами и наставниками</p>
+                        </div>
+                    </div>
+
+                    <!-- Плитка 3 -->
+                    <div onclick="selectEvent('event_workshop', 'Проектные мастерские', 'assets/youth/events/event_workshop/photo_1.jpg')" id="tile_event_workshop" class="event-tile card-green rounded-2xl p-3 sm:p-3.5 flex items-center gap-3.5 cursor-pointer">
+                        <img src="assets/youth/events/event_workshop/photo_1.jpg" alt="Мастерские" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
+                        <div class="flex-grow">
+                            <h4 class="text-sm font-bold text-white uppercase font-['Oswald']">Проектные мастерские</h4>
+                            <p class="text-[11px] text-gray-300">Командная работа и макетирование</p>
+                        </div>
+                    </div>
+
+                    <!-- Плитка 4 -->
+                    <div onclick="selectEvent('event_exhibition', 'Выставка арт-объектов', 'assets/youth/events/event_exhibition/photo_1.jpg')" id="tile_event_exhibition" class="event-tile card-green rounded-2xl p-3 sm:p-3.5 flex items-center gap-3.5 cursor-pointer">
+                        <img src="assets/youth/events/event_exhibition/photo_1.jpg" alt="Выставка" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
+                        <div class="flex-grow">
+                            <h4 class="text-sm font-bold text-white uppercase font-['Oswald']">Выставка арт-объектов</h4>
+                            <p class="text-[11px] text-gray-300">Презентация макетов и аудиогидов</p>
+                        </div>
+                    </div>
+
+                    <!-- Плитка 5 -->
+                    <div onclick="selectEvent('event_awards', 'Награждение победителей', 'assets/youth/events/event_awards/photo_1.jpg')" id="tile_event_awards" class="event-tile card-green rounded-2xl p-3 sm:p-3.5 flex items-center gap-3.5 cursor-pointer">
+                        <img src="assets/youth/events/event_awards/photo_1.jpg" alt="Награждение" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
+                        <div class="flex-grow">
+                            <h4 class="text-sm font-bold text-white uppercase font-['Oswald']">Награждение победителей</h4>
+                            <p class="text-[11px] text-gray-300">Вручение дипломов и сертификатов</p>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
-            <!-- Сетка фотоальбома -->
-            <div id="albumGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                <!-- Заполняется динамически JS -->
+            <!-- Раскрывающаяся фотогалерея выбранного альбома -->
+            <div class="mt-8">
+                <div class="flex items-center justify-between mb-4">
+                    <span id="activeAlbumLabel" class="text-xs uppercase font-bold text-emerald-400 tracking-wider">Фотоотчёт: Кейс-чемпионаты</span>
+                    <span class="text-[11px] text-gray-400">Нажмите на фото для просмотра</span>
+                </div>
+                <div id="albumGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5">
+                    <!-- Заполняется JS -->
+                </div>
             </div>
+
         </div>
     </section>
 
     <!-- ======================================================= -->
     <!-- ЭТАЛОННЫЙ ФУТЕР                                         -->
     <!-- ======================================================= -->
-    <footer class="bg-gradient-to-b from-[#030d07] via-[#020804] to-[#010402] text-white pt-20 sm:pt-24 pb-10 sm:pb-12 border-t border-emerald-950/80 relative overflow-hidden">
+    <footer class="bg-gradient-to-b from-[#030d07] via-[#020804] to-[#010402] text-white pt-20 sm:pt-24 pb-12 relative overflow-hidden">
         
         <div class="absolute top-0 left-1/4 w-[600px] h-[300px] bg-emerald-600/10 rounded-full filter blur-[140px] pointer-events-none -z-10"></div>
         <div class="absolute bottom-10 right-10 w-[500px] h-[300px] bg-amber-600/10 rounded-full filter blur-[140px] pointer-events-none -z-10"></div>
@@ -567,10 +628,10 @@
             <div id="consortium" class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 mb-16 sm:mb-20 items-stretch">
                 
                 <!-- Левая колонка: О Консорциуме «ПРЕДПРИНИМАЙ» (ОРГАНИЗАТОРЫ) -->
-                <div class="lg:col-span-6 flex flex-col justify-between bg-gradient-to-b from-[#061a0e] via-[#082012] to-[#041208] rounded-2xl p-6 sm:p-8 border border-emerald-900/60 shadow-2xl shadow-emerald-950/40">
+                <div class="lg:col-span-6 flex flex-col justify-between bg-gradient-to-b from-[#061a0e] via-[#082012] to-[#041208] rounded-2xl p-6 sm:p-8 shadow-2xl shadow-emerald-950/40">
                     <div>
                         <div class="mb-4">
-                            <span class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-600/20 border border-emerald-400/40 text-emerald-300 text-xs font-bold uppercase tracking-wider">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-600/20 text-emerald-300 text-xs font-bold uppercase tracking-wider">
                                 ОРГАНИЗАТОРЫ
                             </span>
                         </div>
@@ -589,47 +650,47 @@
                             Экосистема развития человеческого капитала
                         </p>
 
-                        <div class="text-xs sm:text-sm font-bold uppercase tracking-wide text-white mb-3 pt-2.5 border-t border-emerald-900/40 font-['Oswald']">
+                        <div class="text-xs sm:text-sm font-bold uppercase tracking-wide text-white mb-3 pt-2.5 font-['Oswald']">
                             Консолидация усилий бизнеса, власти и общества
                         </div>
 
                         <!-- 4 сферы -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
-                            <div class="bg-[#030d07]/90 border border-emerald-900/60 rounded-xl p-3 flex flex-col justify-start hover:border-emerald-500/50 transition">
-                                <span class="px-2 py-0.5 rounded-full bg-emerald-600/20 border border-emerald-400/30 text-[9px] font-extrabold uppercase tracking-wider text-emerald-300 w-max mb-1">
+                            <div class="bg-[#030d07]/90 rounded-xl p-3 flex flex-col justify-start">
+                                <span class="px-2 py-0.5 rounded-full bg-emerald-600/20 text-[9px] font-extrabold uppercase tracking-wider text-emerald-300 w-max mb-1">
                                     ГОСУДАРСТВО
                                 </span>
                                 <h4 class="text-xs font-bold text-white mb-1 leading-tight">Государственные ориентиры</h4>
-                                <p class="text-[11px] text-gray-400 leading-relaxed">Синхронизация с Указами Президента РФ № 809 и № 309, закрепление талантов в регионах.</p>
+                                <p class="text-[11px] text-gray-400 leading-relaxed">Синхронизация с Указами Президента РФ № 809 и № 309, закрепление талантов в регионах</p>
                             </div>
 
-                            <div class="bg-[#030d07]/90 border border-emerald-900/60 rounded-xl p-3 flex flex-col justify-start hover:border-amber-500/50 transition">
-                                <span class="px-2 py-0.5 rounded-full bg-amber-600/20 border border-amber-400/30 text-[9px] font-extrabold uppercase tracking-wider text-amber-300 w-max mb-1">
+                            <div class="bg-[#030d07]/90 rounded-xl p-3 flex flex-col justify-start">
+                                <span class="px-2 py-0.5 rounded-full bg-amber-600/20 text-[9px] font-extrabold uppercase tracking-wider text-amber-300 w-max mb-1">
                                     БИЗНЕС
                                 </span>
                                 <h4 class="text-xs font-bold text-white mb-1 leading-tight">Кадровый заказ индустрии</h4>
-                                <p class="text-[11px] text-gray-400 leading-relaxed">Решение практических задач предприятий через проектные мастерские и кейсы.</p>
+                                <p class="text-[11px] text-gray-400 leading-relaxed">Решение практических задач предприятий через проектные мастерские и кейсы</p>
                             </div>
 
-                            <div class="bg-[#030d07]/90 border border-emerald-900/60 rounded-xl p-3 flex flex-col justify-start hover:border-emerald-500/50 transition">
-                                <span class="px-2 py-0.5 rounded-full bg-emerald-600/20 border border-emerald-400/30 text-[9px] font-extrabold uppercase tracking-wider text-emerald-300 w-max mb-1">
+                            <div class="bg-[#030d07]/90 rounded-xl p-3 flex flex-col justify-start">
+                                <span class="px-2 py-0.5 rounded-full bg-emerald-600/20 text-[9px] font-extrabold uppercase tracking-wider text-emerald-300 w-max mb-1">
                                     ОБЩЕСТВО
                                 </span>
                                 <h4 class="text-xs font-bold text-white mb-1 leading-tight">Традиционные ценности</h4>
-                                <p class="text-[11px] text-gray-400 leading-relaxed">Культура созидательного труда, наставничество и преемственность поколений.</p>
+                                <p class="text-[11px] text-gray-400 leading-relaxed">Культура созидательного труда, наставничество и преемственность поколений</p>
                             </div>
 
-                            <div class="bg-[#030d07]/90 border border-emerald-900/60 rounded-xl p-3 flex flex-col justify-start hover:border-amber-500/50 transition">
-                                <span class="px-2 py-0.5 rounded-full bg-amber-600/20 border border-amber-400/30 text-[9px] font-extrabold uppercase tracking-wider text-amber-300 w-max mb-1">
+                            <div class="bg-[#030d07]/90 rounded-xl p-3 flex flex-col justify-start">
+                                <span class="px-2 py-0.5 rounded-full bg-amber-600/20 text-[9px] font-extrabold uppercase tracking-wider text-amber-300 w-max mb-1">
                                     ПРЕДПРИНИМАЙ
                                 </span>
                                 <h4 class="text-xs font-bold text-white mb-1 leading-tight">Эксперты и лидеры</h4>
-                                <p class="text-[11px] text-gray-400 leading-relaxed">Междисциплинарные команды и региональные лидеры, создающие проекты развития.</p>
+                                <p class="text-[11px] text-gray-400 leading-relaxed">Междисциплинарные команды и региональные лидеры, создающие проекты развития</p>
                             </div>
                         </div>
 
                         <!-- Сквозная формула -->
-                        <div class="mb-4 p-2.5 rounded-xl bg-[#030d07] border border-emerald-900/60 flex items-center justify-between text-[11px] font-semibold text-gray-300">
+                        <div class="mb-4 p-2.5 rounded-xl bg-[#030d07] flex items-center justify-between text-[11px] font-semibold text-gray-300">
                             <span class="text-amber-300">Человек</span>
                             <span class="text-emerald-400 font-bold">➔</span>
                             <span class="text-emerald-300">Команда</span>
@@ -642,9 +703,9 @@
                         </div>
                     </div>
 
-                    <div class="pt-3 border-t border-emerald-900/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-gray-400">
+                    <div class="pt-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-gray-400">
                         <div>
-                            Официальный портал: <a href="https://predprinimy.ru" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline font-bold">predprinimy.ru ↗</a>
+                            Официальный портал: <a href="https://predprinimy.ru" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline font-bold">predprinimy.ru</a>
                         </div>
                         <div class="text-[11px] text-gray-500">
                             ® ТМ «ПРЕДПРИНИМАЙ» 2026
@@ -653,7 +714,7 @@
                 </div>
 
                 <!-- Правая колонка: Форма регистрации участника -->
-                <div id="registrationForm" class="lg:col-span-6 bg-gradient-to-b from-[#061a0e] via-[#082012] to-[#041208] rounded-2xl p-6 sm:p-8 border border-amber-500/40 shadow-2xl shadow-emerald-950/60 relative flex flex-col justify-between">
+                <div id="registrationForm" class="lg:col-span-6 bg-gradient-to-b from-[#061a0e] via-[#082012] to-[#041208] rounded-2xl p-6 sm:p-8 shadow-2xl shadow-emerald-950/60 relative flex flex-col justify-between">
                     
                     <div class="mb-4">
                         <h3 class="text-xl sm:text-2xl lg:text-3xl font-black uppercase font-['Oswald'] text-white mb-1.5 leading-tight">
@@ -661,25 +722,25 @@
                         </h3>
 
                         <p class="text-gray-300 text-xs font-medium leading-relaxed">
-                            Индивидуальная или командная заявка на участие в кейс-чемпионате «Звуки Урала» для школьников и студентов (14–17 лет).
+                            Индивидуальная или командная заявка на участие в кейс-чемпионате «Звуки Урала» для школьников и студентов (14–17 лет)
                         </p>
                     </div>
 
                     <!-- Форма -->
                     <form id="hackathonRegistrationForm" onsubmit="handleRegistrationSubmit(event)" class="flex flex-col gap-3">
                         <div>
-                            <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">ФИО Участника *</label>
-                            <input id="participantName" type="text" placeholder="Иванов Даниил Алексеевич" required class="w-full bg-[#020804]/90 border border-emerald-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-2.5 focus:outline-none focus:border-amber-500 text-sm transition shadow-inner">
+                            <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">ФИО Участника</label>
+                            <input id="participantName" type="text" placeholder="Иванов Даниил Алексеевич" required class="w-full bg-[#020804]/90 text-white placeholder-gray-500 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-amber-500 text-sm transition">
                         </div>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
-                                <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Телефон участника *</label>
-                                <input id="participantPhone" type="tel" placeholder="+7 (999) 000-00-00" required class="w-full bg-[#020804]/90 border border-emerald-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-2.5 focus:outline-none focus:border-amber-500 text-sm transition shadow-inner">
+                                <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Телефон участника</label>
+                                <input id="participantPhone" type="tel" placeholder="+7 (999) 000-00-00" required class="w-full bg-[#020804]/90 text-white placeholder-gray-500 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-amber-500 text-sm transition">
                             </div>
                             <div>
-                                <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Возраст (14–17 лет) *</label>
-                                <select id="participantAge" required class="w-full bg-[#020804]/90 border border-emerald-900/60 text-white rounded-xl px-4 py-2.5 focus:outline-none focus:border-amber-500 text-sm transition shadow-inner">
+                                <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Возраст (14–17 лет)</label>
+                                <select id="participantAge" required class="w-full bg-[#020804]/90 text-white rounded-xl px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-amber-500 text-sm transition">
                                     <option value="14">14 лет</option>
                                     <option value="15">15 лет</option>
                                     <option value="16" selected>16 лет</option>
@@ -690,12 +751,12 @@
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
-                                <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Город и Школа / Колледж *</label>
-                                <input id="participantSchool" type="text" placeholder="г. Екатеринбург, Гимназия №9" required class="w-full bg-[#020804]/90 border border-emerald-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-2.5 focus:outline-none focus:border-amber-500 text-sm transition shadow-inner">
+                                <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Город и Школа / Колледж</label>
+                                <input id="participantSchool" type="text" placeholder="г. Екатеринбург, Гимназия №9" required class="w-full bg-[#020804]/90 text-white placeholder-gray-500 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-amber-500 text-sm transition">
                             </div>
                             <div>
-                                <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Желаемая роль *</label>
-                                <select id="participantRole" class="w-full bg-[#020804]/90 border border-emerald-900/60 text-white rounded-xl px-4 py-2.5 focus:outline-none focus:border-amber-500 text-sm transition shadow-inner">
+                                <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Желаемая роль</label>
+                                <select id="participantRole" class="w-full bg-[#020804]/90 text-white rounded-xl px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-amber-500 text-sm transition">
                                     <option value="producer">Продюсер проекта</option>
                                     <option value="writer">Сценарист и исследователь</option>
                                     <option value="creator">Креатор</option>
@@ -707,8 +768,8 @@
                         </div>
 
                         <div>
-                            <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">ФИО и телефон Наставника / Педагога / Родителя *</label>
-                            <input id="participantMentor" type="text" placeholder="Петрова Елена Викторовна, +7 (900) 123-45-67" required class="w-full bg-[#020804]/90 border border-emerald-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-2.5 focus:outline-none focus:border-amber-500 text-sm transition shadow-inner">
+                            <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">ФИО и телефон Наставника / Педагога / Родителя</label>
+                            <input id="participantMentor" type="text" placeholder="Петрова Елена Викторовна, +7 (900) 123-45-67" required class="w-full bg-[#020804]/90 text-white placeholder-gray-500 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-amber-500 text-sm transition">
                         </div>
 
                         <button id="participantSubmitBtn" type="submit" class="w-full mt-2 bg-gradient-to-r from-amber-500 via-emerald-600 to-teal-600 hover:opacity-95 text-slate-950 font-black uppercase tracking-wider py-3.5 rounded-xl transition text-xs sm:text-sm shadow-xl shadow-amber-500/25 cursor-pointer flex items-center justify-center gap-2">
@@ -717,15 +778,15 @@
 
                         <div class="space-y-2 mt-2 text-left">
                             <label class="flex items-start gap-2.5 cursor-pointer">
-                                <input type="checkbox" required class="mt-0.5 w-3.5 h-3.5 rounded border-emerald-900/60 text-amber-500 focus:ring-amber-500 bg-[#020804]">
+                                <input type="checkbox" required class="mt-0.5 w-3.5 h-3.5 rounded text-amber-500 focus:ring-amber-500 bg-[#020804]">
                                 <span class="text-[10px] text-gray-400 leading-tight">
-                                    Я выражаю согласие на обработку персональных данных в соответствии с <a href="oferta.html#consent" target="_blank" class="text-amber-400 underline hover:text-amber-300">Согласием на обработку ПД</a>. *
+                                    Я выражаю согласие на обработку персональных данных в соответствии с <a href="oferta.html#consent" target="_blank" class="text-amber-400 underline hover:text-amber-300">Согласием на обработку ПД</a>
                                 </span>
                             </label>
                             <label class="flex items-start gap-2.5 cursor-pointer">
-                                <input type="checkbox" required class="mt-0.5 w-3.5 h-3.5 rounded border-emerald-900/60 text-amber-500 focus:ring-amber-500 bg-[#020804]">
+                                <input type="checkbox" required class="mt-0.5 w-3.5 h-3.5 rounded text-amber-500 focus:ring-amber-500 bg-[#020804]">
                                 <span class="text-[10px] text-gray-400 leading-tight">
-                                    Я ознакомлен и принимаю условия <a href="oferta.html#privacy" target="_blank" class="text-amber-400 underline hover:text-amber-300">Политики конфиденциальности</a> и <a href="oferta.html#offer" target="_blank" class="text-amber-400 underline hover:text-amber-300">Регламента участия</a>. *
+                                    Я ознакомлен и принимаю условия <a href="oferta.html#privacy" target="_blank" class="text-amber-400 underline hover:text-amber-300">Политики конфиденциальности</a> и <a href="oferta.html#offer" target="_blank" class="text-amber-400 underline hover:text-amber-300">Регламента участия</a>
                                 </span>
                             </label>
                         </div>
@@ -736,8 +797,8 @@
                         <div class="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-2">
                             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
                         </div>
-                        <h4 class="text-xl font-bold font-['Oswald'] uppercase text-white">Заявка принята!</h4>
-                        <p class="text-gray-300 text-xs">Добро пожаловать в команду осеннего кейс-чемпионата «Звуки Урала».</p>
+                        <h4 class="text-xl font-bold font-['Oswald'] uppercase text-white">Заявка принята</h4>
+                        <p class="text-gray-300 text-xs">Добро пожаловать в команду осеннего кейс-чемпионата «Звуки Урала»</p>
                         <p class="text-amber-400 text-xs font-semibold">Организационный комитет свяжется с вами</p>
                     </div>
 
@@ -746,7 +807,7 @@
             </div>
 
             <!-- СЕКЦИЯ 2: ФЕДЕРАЛЬНЫЕ СМИ -->
-            <div class="mb-16 sm:mb-20 pt-8 border-t border-emerald-950/80">
+            <div class="mb-16 sm:mb-20 pt-8">
                 <div class="text-center w-full mx-auto mb-8">
                     <h3 class="text-xs sm:text-sm md:text-base font-bold uppercase tracking-wider text-gray-200 font-['Oswald']">
                         ФЕДЕРАЛЬНЫЕ СМИ О КЛЮЧЕВЫХ ИНИЦИАТИВАХ И ПРАКТИЧЕСКИХ РЕЗУЛЬТАТАХ КОНСОРЦИУМА «ПРЕДПРИНИМАЙ»
@@ -755,7 +816,7 @@
 
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-5 items-stretch">
                     <!-- 1. Росмолодёжь -->
-                    <a href="https://fadm.gov.ru" target="_blank" rel="noopener noreferrer" class="bg-[#030d07] border border-emerald-900/50 hover:border-amber-500 rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
+                    <a href="https://fadm.gov.ru" target="_blank" rel="noopener noreferrer" class="bg-[#030d07] rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
                         <div class="h-14 w-full flex items-center justify-center p-1">
                             <img src="Спикеры/Лого/Росмолодежь.png" alt="Росмолодёжь" class="max-h-full max-w-[130px] object-contain filter group-hover:brightness-110 transition">
                         </div>
@@ -763,7 +824,7 @@
                     </a>
 
                     <!-- 2. Lenta.ru -->
-                    <a href="https://lenta.ru/" target="_blank" rel="noopener noreferrer" class="bg-[#030d07] border border-emerald-900/50 hover:border-amber-500 rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
+                    <a href="https://lenta.ru/" target="_blank" rel="noopener noreferrer" class="bg-[#030d07] rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
                         <div class="h-14 w-full flex items-center justify-center p-1">
                             <svg class="h-8 w-auto text-white group-hover:text-amber-400 transition" viewBox="0 0 120 30" fill="currentColor">
                                 <text x="0" y="22" font-family="'Oswald', sans-serif" font-weight="900" font-size="22" letter-spacing="2">LENTA·RU</text>
@@ -773,7 +834,7 @@
                     </a>
 
                     <!-- 3. Комсомольская правда -->
-                    <a href="https://www.ural.kp.ru/" target="_blank" rel="noopener noreferrer" class="bg-[#030d07] border border-emerald-900/50 hover:border-amber-500 rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
+                    <a href="https://www.ural.kp.ru/" target="_blank" rel="noopener noreferrer" class="bg-[#030d07] rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
                         <div class="h-14 w-full flex items-center justify-center p-1 bg-white rounded-lg">
                             <img src="Спикеры/Лого/Комсомольскакя правда.jpg" alt="Комсомольская правда" class="max-h-full max-w-[120px] object-contain">
                         </div>
@@ -781,7 +842,7 @@
                     </a>
 
                     <!-- 4. Добро.live -->
-                    <a href="https://dobro.live/" target="_blank" rel="noopener noreferrer" class="bg-[#030d07] border border-emerald-900/50 hover:border-amber-500 rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
+                    <a href="https://dobro.live/" target="_blank" rel="noopener noreferrer" class="bg-[#030d07] rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
                         <div class="h-14 w-full flex items-center justify-center p-1">
                             <svg class="h-8 w-auto text-emerald-400 group-hover:text-emerald-300 transition" viewBox="0 0 130 30" fill="currentColor">
                                 <circle cx="12" cy="15" r="8" fill="#10b981"/>
@@ -792,7 +853,7 @@
                     </a>
 
                     <!-- 5. Росатом / Atom Media -->
-                    <a href="https://rosatom.ru/" target="_blank" rel="noopener noreferrer" class="bg-[#030d07] border border-emerald-900/50 hover:border-amber-500 rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
+                    <a href="https://rosatom.ru/" target="_blank" rel="noopener noreferrer" class="bg-[#030d07] rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
                         <div class="h-14 w-full flex items-center justify-center p-1">
                             <img src="Спикеры/Лого/Рос Атом Медиа.svg" alt="Atom Media" class="max-h-full max-w-[120px] object-contain filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition">
                         </div>
@@ -800,7 +861,7 @@
                     </a>
 
                     <!-- 6. Выставка Россия -->
-                    <a href="https://russia.ru/" target="_blank" rel="noopener noreferrer" class="bg-[#030d07] border border-emerald-900/50 hover:border-amber-500 rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
+                    <a href="https://russia.ru/" target="_blank" rel="noopener noreferrer" class="bg-[#030d07] rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
                         <div class="h-14 w-full flex items-center justify-center p-1">
                             <img src="Спикеры/Лого/Россия Нац центр.svg" alt="Национальный центр «Россия»" class="max-h-full max-w-[120px] object-contain filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition">
                         </div>
@@ -810,7 +871,7 @@
             </div>
 
             <!-- СЕКЦИЯ 3: НАВИГАЦИЯ И ПРАВОВЫЕ ДОКУМЕНТЫ -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-12 border-t border-emerald-950/80 pt-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-12 pt-10">
                 <div>
                     <h4 class="text-sm font-bold uppercase tracking-wider text-emerald-400 mb-4 font-['Oswald']">
                         ПРАВОВЫЕ ДОКУМЕНТЫ
@@ -857,7 +918,7 @@
                         <li>
                             <a href="https://конкурсы.рф" target="_blank" class="hover:text-white transition flex items-center gap-2 text-sky-400">
                                 <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
-                                Официальный верификатор: Конкурсы.рф ↗
+                                Официальный верификатор: Конкурсы.рф
                             </a>
                         </li>
                     </ul>
@@ -884,28 +945,33 @@
                 </div>
             </div>
 
-            <!-- Копирайт -->
-            <div class="border-t border-emerald-950/80 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-3">
-                <div>© 2026 Консорциум «ПРЕДПРИНИМАЙ» × Бизнес-событие «Территория Роста». Все права защищены.</div>
-                <div class="flex items-center gap-4 text-gray-400">
-                    <a href="index.html" class="hover:text-white transition">Главный сайт «Территория Роста»</a>
-                </div>
+            <!-- Эталонный низ футера с кнопкой «Подняться вверх» -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <div>© 2026 Консорциум «ПРЕДПРИНИМАЙ» × Бизнес-событие «Территория Роста»</div>
+                
+                <!-- Кнопка «Подняться вверх» -->
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-950/80 hover:bg-emerald-900/90 text-emerald-300 hover:text-white transition text-xs font-bold uppercase font-['Oswald'] tracking-wider cursor-pointer shadow-lg shadow-emerald-950/40">
+                    <span>Подняться вверх</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+                </button>
             </div>
 
         </div>
     </footer>
 
     <!-- ПЛАВАЮЩАЯ КНОПКА «НАВЕРХ» -->
-    <button id="backToTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-6 z-40 bg-emerald-600/90 hover:bg-emerald-500 text-white p-3 rounded-full shadow-2xl backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300 border border-emerald-400/40" aria-label="Наверх">
+    <button id="backToTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-6 z-40 bg-emerald-600/90 hover:bg-emerald-500 text-white p-3 rounded-full shadow-2xl backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300" aria-label="Наверх">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
     </button>
 
     <!-- JS Скрипты -->
     <script>
-        // База фотоальбомов
-        const albumsData = {
+        // База фотоальбомов и видео
+        const eventsData = {
             'event_spb': {
                 name: 'Кейс-чемпионаты',
+                videoTitle: 'Атмосфера защиты проектов и кейс-чемпионатов',
+                poster: 'assets/youth/events/event_spb/photo_1.jpg',
                 photos: [
                     'assets/youth/events/event_spb/photo_1.jpg',
                     'assets/youth/events/event_spb/photo_2.jpg',
@@ -916,6 +982,8 @@
             },
             'event_forum': {
                 name: 'Форумы и открытый диалог',
+                videoTitle: 'Пленарные сессии с федеральными экспертами и наставниками',
+                poster: 'assets/youth/events/event_forum/photo_1.jpg',
                 photos: [
                     'assets/youth/events/event_forum/photo_1.jpg',
                     'assets/youth/events/event_forum/photo_2.jpg',
@@ -926,6 +994,8 @@
             },
             'event_workshop': {
                 name: 'Проектные мастерские',
+                videoTitle: 'Командные проектные спринты и создание макетов',
+                poster: 'assets/youth/events/event_workshop/photo_1.jpg',
                 photos: [
                     'assets/youth/events/event_workshop/photo_1.jpg',
                     'assets/youth/events/event_workshop/photo_2.jpg',
@@ -936,6 +1006,8 @@
             },
             'event_exhibition': {
                 name: 'Выставка арт-объектов',
+                videoTitle: 'Экспозиция решений из эко-полимеров и презентация аудиогидов',
+                poster: 'assets/youth/events/event_exhibition/photo_1.jpg',
                 photos: [
                     'assets/youth/events/event_exhibition/photo_1.jpg',
                     'assets/youth/events/event_exhibition/photo_2.jpg',
@@ -946,6 +1018,8 @@
             },
             'event_awards': {
                 name: 'Награждение победителей',
+                videoTitle: 'Торжественное награждение и вручение сертификатов победителям',
+                poster: 'assets/youth/events/event_awards/photo_1.jpg',
                 photos: [
                     'assets/youth/events/event_awards/photo_1.jpg',
                     'assets/youth/events/event_awards/photo_2.jpg',
@@ -956,28 +1030,45 @@
             }
         };
 
-        function renderAlbum(albumKey) {
+        function selectEvent(eventKey, title, poster) {
+            // Переключение активной плитки
+            document.querySelectorAll('.event-tile').forEach(t => t.classList.remove('active'));
+            const activeTile = document.getElementById('tile_' + eventKey);
+            if (activeTile) activeTile.classList.add('active');
+
+            const ev = eventsData[eventKey] || eventsData['event_spb'];
+
+            // Обновление заголовка видео
+            const videoTitleEl = document.getElementById('videoTitle');
+            if (videoTitleEl) videoTitleEl.textContent = ev.videoTitle;
+
+            // Обновление постера видео
+            const videoPlayer = document.getElementById('eventVideoPlayer');
+            if (videoPlayer) {
+                videoPlayer.poster = ev.poster;
+            }
+
+            // Обновление метки фотоотчета
+            const label = document.getElementById('activeAlbumLabel');
+            if (label) label.textContent = 'Фотоотчёт: ' + ev.name;
+
+            // Рендер сетки фотографий
+            renderAlbumPhotos(ev);
+        }
+
+        function renderAlbumPhotos(album) {
             const grid = document.getElementById('albumGrid');
             if (!grid) return;
-            const album = albumsData[albumKey] || albumsData['event_spb'];
-            
             grid.innerHTML = album.photos.map(p => `
-                <div class="rounded-2xl overflow-hidden shadow-lg border border-emerald-900/40 group h-48 sm:h-60 bg-[#061a0e]">
+                <div class="rounded-2xl overflow-hidden shadow-lg group h-44 sm:h-52 bg-[#061a0e]">
                     <img src="${p}" alt="${album.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer">
                 </div>
             `).join('');
         }
 
-        function switchAlbum(albumKey) {
-            document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
-            const activeTab = document.getElementById('tab_' + albumKey);
-            if (activeTab) activeTab.classList.add('active');
-            renderAlbum(albumKey);
-        }
-
-        // Инициализация
+        // Инициализация по умолчанию
         document.addEventListener('DOMContentLoaded', () => {
-            renderAlbum('event_spb');
+            selectEvent('event_spb', 'Кейс-чемпионаты', 'assets/youth/events/event_spb/photo_1.jpg');
         });
 
         // Мобильное меню
