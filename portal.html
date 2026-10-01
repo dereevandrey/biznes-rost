@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПОРТАЛ ПРЕДПРИНИМАЙ — Цифровая акселерационная среда и Хакатон-платформа</title>
+    <meta name="description" content="Единая цифровая акселерационная платформа экосистемы ПРЕДПРИНИМАЙ и ТЕРРИТОРИЯ РОСТА: пошаговый конструктор проектов, автосборка презентаций, кабинет жюри, живой рейтинг и генерация сертификатов.">
+    
+    <!-- Шрифты Google Fonts: Oswald + Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#05070d',
+                        darker: '#020306',
+                        glass: 'rgba(13, 20, 36, 0.75)',
+                        borderGlass: 'rgba(59, 130, 246, 0.25)',
+                        brandSky: '#38bdf8',
+                        brandBlue: '#2563eb',
+                        brandPurple: '#8b5cf6',
+                        brandGold: '#f59e0b',
+                        brandEmerald: '#10b981'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Oswald', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #03050a;
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(37, 99, 235, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(139, 92, 246, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.05) 0%, transparent 60%);
+            background-attachment: fixed;
+        }
+
+        .glass-panel {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(10, 15, 30, 0.75) 100%);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-hover:hover {
+            transform: translateY(-2px);
+            border-color: rgba(56, 189, 248, 0.45);
+            box-shadow: 0 15px 35px -10px rgba(37, 99, 235, 0.25);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff 20%, #93c5fd 60%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-purple {
+            background: linear-gradient(135deg, #c084fc 0%, #818cf8 50%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.4)); }
+            50% { filter: drop-shadow(0 0 24px rgba(139, 92, 246, 0.7)); }
+        }
+        .pulse-glow {
+            animation: pulseGlow 4s ease-in-out infinite;
+        }
+
+        /* Сертификат стили для печати */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #certificatePrintArea, #certificatePrintArea * {
+                visibility: visible;
+            }
+            #certificatePrintArea {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                background: white !important;
+                color: black !important;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-sky-500 selection:text-white">
+
+    <!-- ВЕРХНЯЯ НАВИГАЦИОННАЯ ПАНЕЛЬ -->
+    <header class="sticky top-0 z-50 bg-[#040711]/90 backdrop-blur-md border-b border-sky-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            
+            <!-- Ко-брендинг Логотипов -->
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="flex items-center gap-2 hover:opacity-90 transition group">
+                    <img src="ЛОГО ТР.png" alt="Территория Роста" class="h-8 sm:h-9 w-auto object-contain pulse-glow">
+                    <span class="font-heading font-black text-xs sm:text-sm tracking-wider uppercase text-white whitespace-nowrap hidden sm:inline">ТЕРРИТОРИЯ РОСТА</span>
+                </a>
+                <span class="text-gray-500 font-light text-base">✕</span>
+                <a href="youth-championship.html" class="flex items-center gap-2 hover:opacity-90 transition">
+                    <div class="h-6 w-6 rounded bg-gradient-to-tr from-purple-600 to-sky-400 flex items-center justify-center text-white font-black text-[10px]">П</div>
+                    <span class="font-heading font-bold text-xs sm:text-sm tracking-widest uppercase text-sky-400 whitespace-nowrap">ПРЕДПРИНИМАЙ</span>
+                </a>
+            </div>
+
+            <!-- Переключатель 3 ключевых режимов портала -->
+            <div class="flex items-center bg-slate-900/90 border border-slate-800 p-1 rounded-xl shadow-inner text-xs sm:text-sm font-medium">
+                <button onclick="switchPortalTab('builder')" id="tabBtn-builder" class="tab-btn px-3.5 py-1.5 rounded-lg transition font-semibold text-white bg-gradient-to-r from-sky-500 to-blue-600 shadow-md">
+                    🚀 Конструктор проекта
+                </button>
+                <button onclick="switchPortalTab('jury')" id="tabBtn-jury" class="tab-btn px-3.5 py-1.5 rounded-lg transition text-gray-400 hover:text-white">
+                    ⚖️ Пульт жюри
+                </button>
+                <button onclick="switchPortalTab('leaderboard')" id="tabBtn-leaderboard" class="tab-btn px-3.5 py-1.5 rounded-lg transition text-gray-400 hover:text-white">
+                    🏆 Лидерборд & Дипломы
+                </button>
+            </div>
+
+            <!-- Кнопка возврата на лендинг -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="youth-championship.html" class="text-xs text-gray-400 hover:text-white flex items-center gap-1 transition">
+                    ← К лендингу хакатона
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ОСНОВНОЙ КОНТЕЙНЕР ПЛАТФОРМЫ -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8">
+
+        <!-- ========================================== -->
+        <!-- РЕЖИМ 1: КОНСТРУКТОР ПРОЕКТА (УЧАСТНИК) -->
+        <!-- ========================================== -->
+        <section id="view-builder" class="portal-view block space-y-6">
+            
+            <!-- Информационный баннер команды -->
+            <div class="glass-panel rounded-2xl p-6 sm:p-8 relative overflow-hidden border-sky-500/30">
+                <div class="absolute -right-16 -top-16 w-64 h-64 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                    <div>
+                        <div class="flex items-center gap-3 flex-wrap">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                Акселератор активен
+                            </span>
+                            <span class="text-xs text-gray-400 font-mono">Команда: <strong class="text-white" id="teamDisplayCode">URAL-INNO-04</strong></span>
+                            <span class="text-xs bg-purple-500/20 text-purple-300 border border-purple-500/30 px-2.5 py-0.5 rounded-md">Кейс «Звуки Урала»</span>
+                        </div>
+                        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-heading font-black tracking-wide uppercase text-white mt-2">
+                            Конструктор проекта: <span class="text-gradient" id="projectTitleHeader">КиберГид: Заводской Пульс Урала</span>
+                        </h1>
+                        <p class="text-sm text-gray-300 mt-1 max-w-3xl leading-relaxed">
+                            Методология BusinessChain: проходите пошаговые этапы, вводите фактуру — движок автоматически соберет презентацию слайд за слайдом без PowerPoint.
+                        </p>
+                    </div>
+
+                    <!-- Быстрые действия: Предпросмотр слайдов и Сдача на проверку -->
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <button onclick="openLiveDeckModal()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-sky-400 border border-sky-500/30 font-semibold text-xs sm:text-sm flex items-center gap-2 transition shadow">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            Live-Презентация
+                        </button>
+                        <button onclick="submitProjectToJury()" id="btnSubmitToJury" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold text-xs sm:text-sm flex items-center gap-2 transition shadow-lg shadow-emerald-500/25">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            Сдать проект жюри
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Прогресс-бар заполнения этапов -->
+                <div class="mt-6 pt-6 border-t border-slate-800">
+                    <div class="flex items-center justify-between text-xs mb-2">
+                        <span class="text-gray-400 font-medium">Готовность проекта к питчингу:</span>
+                        <span class="font-bold text-sky-400" id="progressPercentLabel">85% (6 из 7 шагов)</span>
+                    </div>
+                    <div class="w-full bg-slate-800/80 rounded-full h-2.5 overflow-hidden">
+                        <div id="projectProgressBar" class="bg-gradient-to-r from-sky-500 via-blue-500 to-emerald-400 h-2.5 rounded-full transition-all duration-500" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Сетка: 7 шагов (Табы слева) + Интерактивная форма шага (Справа) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                
+                <!-- Левая колонка: Список 7 шагов -->
+                <div class="lg:col-span-4 space-y-2">
+                    <h3 class="text-xs uppercase tracking-wider font-semibold text-gray-400 px-2 mb-3">7 этапов сборки проекта</h3>
+                    
+                    <button onclick="selectStep(1)" id="stepTab-1" class="step-nav-btn w-full text-left p-3.5 rounded-xl glass-panel glass-card-hover border-sky-500/50 flex items-center gap-3">
+                        <span class="w-7 h-7 rounded-lg bg-sky-500 text-white font-bold text-xs flex items-center justify-center">1</span>
+                        <div class="flex-grow min-w-0">
+                            <div class="text-xs text-sky-400 font-semibold">Шаг 1 · Старт</div>
+                            <div class="text-sm font-bold text-white truncate">Идея, локация и манифест</div>
+                        </div>
+                        <span class="text-emerald-400 text-xs">✓</span>
+                    </button>
+
+                    <button onclick="selectStep(2)" id="stepTab-2" class="step-nav-btn w-full text-left p-3.5 rounded-xl glass-panel glass-card-hover border-slate-800 flex items-center gap-3">
+                        <span class="w-7 h-7 rounded-lg bg-slate-800 text-gray-300 font-bold text-xs flex items-center justify-center">2</span>
+                        <div class="flex-grow min-w-0">
+                            <div class="text-xs text-gray-400 font-semibold">Шаг 2 · Исследование</div>
+                            <div class="text-sm font-bold text-white truncate">Индустриальный код завода</div>
+                        </div>
+                        <span class="text-emerald-400 text-xs">✓</span>
+                    </button>
+
+                    <button onclick="selectStep(3)" id="stepTab-3" class="step-nav-btn w-full text-left p-3.5 rounded-xl glass-panel glass-card-hover border-slate-800 flex items-center gap-3">
+                        <span class="w-7 h-7 rounded-lg bg-slate-800 text-gray-300 font-bold text-xs flex items-center justify-center">3</span>
+                        <div class="flex-grow min-w-0">
+                            <div class="text-xs text-gray-400 font-semibold">Шаг 3 · Экология</div>
+                            <div class="text-sm font-bold text-white truncate">Арт-объект из полимеров</div>
+                        </div>
+                        <span class="text-emerald-400 text-xs">✓</span>
+                    </button>
+
+                    <button onclick="selectStep(4)" id="stepTab-4" class="step-nav-btn w-full text-left p-3.5 rounded-xl glass-panel glass-card-hover border-slate-800 flex items-center gap-3">
+                        <span class="w-7 h-7 rounded-lg bg-slate-800 text-gray-300 font-bold text-xs flex items-center justify-center">4</span>
+                        <div class="flex-grow min-w-0">
+                            <div class="text-xs text-gray-400 font-semibold">Шаг 4 · Цифра и Саунд</div>
+                            <div class="text-sm font-bold text-white truncate">Аудиогид и нейро-саунд</div>
+                        </div>
+                        <span class="text-emerald-400 text-xs">✓</span>
+                    </button>
+
+                    <button onclick="selectStep(5)" id="stepTab-5" class="step-nav-btn w-full text-left p-3.5 rounded-xl glass-panel glass-card-hover border-slate-800 flex items-center gap-3">
+                        <span class="w-7 h-7 rounded-lg bg-slate-800 text-gray-300 font-bold text-xs flex items-center justify-center">5</span>
+                        <div class="flex-grow min-w-0">
+                            <div class="text-xs text-gray-400 font-semibold">Шаг 5 · Команда</div>
+                            <div class="text-sm font-bold text-white truncate">Роли и участники (5+1)</div>
+                        </div>
+                        <span class="text-emerald-400 text-xs">✓</span>
+                    </button>
+
+                    <button onclick="selectStep(6)" id="stepTab-6" class="step-nav-btn w-full text-left p-3.5 rounded-xl glass-panel glass-card-hover border-slate-800 flex items-center gap-3">
+                        <span class="w-7 h-7 rounded-lg bg-slate-800 text-gray-300 font-bold text-xs flex items-center justify-center">6</span>
+                        <div class="flex-grow min-w-0">
+                            <div class="text-xs text-gray-400 font-semibold">Шаг 6 · Экономика</div>
+                            <div class="text-sm font-bold text-white truncate">Смета и план к 1 мая 2027</div>
+                        </div>
+                        <span class="text-emerald-400 text-xs">✓</span>
+                    </button>
+
+                    <button onclick="selectStep(7)" id="stepTab-7" class="step-nav-btn w-full text-left p-3.5 rounded-xl glass-panel glass-card-hover border-purple-500/40 bg-purple-950/20 flex items-center gap-3">
+                        <span class="w-7 h-7 rounded-lg bg-gradient-to-tr from-purple-500 to-sky-400 text-white font-bold text-xs flex items-center justify-center">7</span>
+                        <div class="flex-grow min-w-0">
+                            <div class="text-xs text-purple-400 font-semibold">Шаг 7 · Питч-защита</div>
+                            <div class="text-sm font-bold text-white truncate">Автосборка и 60-сек питч</div>
+                        </div>
+                        <span class="text-sky-400 text-xs font-mono">LIVE</span>
+                    </button>
+                </div>
+
+                <!-- Правая колонка: Форма активного шага -->
+                <div class="lg:col-span-8 glass-panel rounded-2xl p-6 sm:p-8 space-y-6">
+                    
+                    <!-- Шаг 1: Контент -->
+                    <div id="stepContent-1" class="step-form-block block space-y-5">
+                        <div class="border-b border-slate-800 pb-4">
+                            <span class="text-xs text-sky-400 font-bold uppercase tracking-wider">Шаг 1 из 7</span>
+                            <h2 class="text-xl sm:text-2xl font-heading font-black text-white mt-1">Идея, выбор локации и манифест проекта</h2>
+                            <p class="text-xs text-gray-400 mt-1">Определите фокус: какой уральский завод, сквер или индустриальное место станет героем вашего маршрута.</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1.5">Название проекта *</label>
+                                <input type="text" id="inp_title" oninput="updateDeckPreview()" value="КиберГид: Заводской Пульс Урала" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1.5">Город / Муниципалитет *</label>
+                                <select id="inp_city" onchange="updateDeckPreview()" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500">
+                                    <option value="Екатеринбург (Уралмаш / ВИЗ)">Екатеринбург (Уралмаш / ВИЗ)</option>
+                                    <option value="Челябинск (ЧТЗ / ЧТПЗ)">Челябинск (ЧТЗ / ЧТПЗ)</option>
+                                    <option value="Нижний Тагил (НТМК)">Нижний Тагил (НТМК)</option>
+                                    <option value="Первоуральск / Верхняя Пышма">Первоуральск / Верхняя Пышма</option>
+                                    <option value="Каменск-Уральский / Ревда">Каменск-Уральский / Ревда</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1.5">Конкретная локация / Исторический объект *</label>
+                            <input type="text" id="inp_location" oninput="updateDeckPreview()" value="Площадь Первой Пятилетки и Белая Башня Уралмаша" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1.5">Манифест / Главная идея (1-2 предложения) *</label>
+                            <textarea id="inp_manifest" oninput="updateDeckPreview()" rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500">Оживить историю завода через объединение реальных индустриальных звуков станочного цеха, голосов ветеранов труда и экологичного арт-объекта из переработанных крышек.</textarea>
+                        </div>
+                    </div>
+
+                    <!-- Шаг 2: Контент -->
+                    <div id="stepContent-2" class="step-form-block hidden space-y-5">
+                        <div class="border-b border-slate-800 pb-4">
+                            <span class="text-xs text-sky-400 font-bold uppercase tracking-wider">Шаг 2 из 7</span>
+                            <h2 class="text-xl sm:text-2xl font-heading font-black text-white mt-1">Индустриальный код и исследование истории</h2>
+                            <p class="text-xs text-gray-400 mt-1">Исследуйте трудовую династию или событие завода. В чем гордость и культурный код этой точки?</p>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1.5">Историческая фактура и подвиг мастеров *</label>
+                            <textarea id="inp_history" oninput="updateDeckPreview()" rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500">Строительство Завода Заводов в 1933 году, выпуск тяжелых шагающих экскаваторов и бронекорпусов Т-34. Династия Петровых отдала заводу суммарно 140 лет стажа.</textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1.5">Цитата ветерана / ключевой тезис исследования *</label>
+                            <input type="text" id="inp_quote" oninput="updateDeckPreview()" value="«Когда гудит заводской гудок — город просыпается. Металл помнит тепло рук каждого мастера»" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500">
+                        </div>
+                    </div>
+
+                    <!-- Шаг 3: Контент -->
+                    <div id="stepContent-3" class="step-form-block hidden space-y-5">
+                        <div class="border-b border-slate-800 pb-4">
+                            <span class="text-xs text-emerald-400 font-bold uppercase tracking-wider">Шаг 3 из 7</span>
+                            <h2 class="text-xl sm:text-2xl font-heading font-black text-white mt-1">Эко-Арт объект из 50 кг переработанного пластика</h2>
+                            <p class="text-xs text-gray-400 mt-1">Опишите концепт арт-объекта, создаваемого совместно с эко-заводом «Умная Среда».</p>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1.5">Название и форма арт-объекта *</label>
+                            <input type="text" id="inp_art_name" oninput="updateDeckPreview()" value="Интерактивная скульптура «Стальное Эхо» с полимерными звуковыми трубками" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1.5">Эко-вклад и материалы *</label>
+                            <textarea id="inp_art_eco" oninput="updateDeckPreview()" rows="2" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500">Использование 50 кг переработанных крышечек и бутылок (HDPE/PP), устойчивость к морозу до -40°C, антивандальное полимерпесчаное основание.</textarea>
+                        </div>
+                    </div>
+
+                    <!-- Шаг 4: Контент -->
+                    <div id="stepContent-4" class="step-form-block hidden space-y-5">
+                        <div class="border-b border-slate-800 pb-4">
+                            <span class="text-xs text-sky-400 font-bold uppercase tracking-wider">Шаг 4 из 7</span>
+                            <h2 class="text-xl sm:text-2xl font-heading font-black text-white mt-1">Цифра и Саунд-дизайн (Платформа «КиберГид»)</h2>
+                            <p class="text-xs text-gray-400 mt-1">Аудиодорожка, звуковые эффекты нейросетей и QR-слой безопасности.</p>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1.5">Сценарий 3-минутного аудиогида *</label>
+                            <textarea id="inp_sound_script" oninput="updateDeckPreview()" rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500">0:00–0:30 — атмосферный гул мартеновской печи и ритм ударов молота; 0:30–1:45 — голос молодого инженера 1941 года о ночной смене; 1:45–3:00 — футуристичный синтезатор и призыв к будущему поколению.</textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1.5">Ссылка на сгенерированную аудиодорожку / MP3 *</label>
+                            <input type="text" id="inp_sound_url" oninput="updateDeckPreview()" value="https://cloud.ru/sounds-of-ural/team04_uralmash_soundscape.mp3" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500">
+                        </div>
+                    </div>
+
+                    <!-- Шаг 5: Контент -->
+                    <div id="stepContent-5" class="step-form-block hidden space-y-5">
+                        <div class="border-b border-slate-800 pb-4">
+                            <span class="text-xs text-purple-400 font-bold uppercase tracking-wider">Шаг 5 из 7</span>
+                            <h2 class="text-xl sm:text-2xl font-heading font-black text-white mt-1">Командный профиль и распределение ролей</h2>
+                            <p class="text-xs text-gray-400 mt-1">Укажите всех участников команды. По этим данным будут сгенерированы персональные дипломы.</p>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-[11px] font-semibold text-gray-400">👑 Капитан / Продюсер:</label>
+                                <input type="text" id="role_lead" oninput="updateDeckPreview()" value="Дереев Даниил Андреевич" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-semibold text-gray-400">📖 Сценарист / Краевед:</label>
+                                <input type="text" id="role_writer" oninput="updateDeckPreview()" value="Смирнова Анна Сергеевна" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-semibold text-gray-400">🎧 Саунд-дизайнер / Голос:</label>
+                                <input type="text" id="role_sound" oninput="updateDeckPreview()" value="Иванов Кирилл Павлович" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-semibold text-gray-400">🎨 Дизайнер / Архитектор:</label>
+                                <input type="text" id="role_design" oninput="updateDeckPreview()" value="Кузнецова Елена Дмитриевна" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-semibold text-gray-400">📱 Медийщик / SMM:</label>
+                                <input type="text" id="role_smm" oninput="updateDeckPreview()" value="Попов Артём Максимович" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-semibold text-gray-400">🔍 Наставник / Педагог:</label>
+                                <input type="text" id="role_mentor" oninput="updateDeckPreview()" value="Петрова Елена Викторовна (МАОУ Гимназия №9)" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Шаг 6: Контент -->
+                    <div id="stepContent-6" class="step-form-block hidden space-y-5">
+                        <div class="border-b border-slate-800 pb-4">
+                            <span class="text-xs text-emerald-400 font-bold uppercase tracking-wider">Шаг 6 из 7</span>
+                            <h2 class="text-xl sm:text-2xl font-heading font-black text-white mt-1">Экономика, смета и план к 1 мая 2027</h2>
+                            <p class="text-xs text-gray-400 mt-1">Партнёры проекта и график запуска арт-объекта к весеннему городскому сезону.</p>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1.5">Смета производства и монтажа *</label>
+                                <input type="text" id="inp_budget" oninput="updateDeckPreview()" value="150 000 ₽ (покрывается грантом партнёров ТР)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1.5">Срок готовности к открытию *</label>
+                                <input type="text" id="inp_deadline" oninput="updateDeckPreview()" value="1 мая 2027 г. (Торжественное открытие)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Шаг 7: Контент (Автосборка и Питч) -->
+                    <div id="stepContent-7" class="step-form-block hidden space-y-5">
+                        <div class="border-b border-slate-800 pb-4">
+                            <span class="text-xs text-purple-400 font-bold uppercase tracking-wider">Шаг 7 из 7 · Финиш</span>
+                            <h2 class="text-xl sm:text-2xl font-heading font-black text-white mt-1">Автосборка презентации и 60-секундный питч</h2>
+                            <p class="text-xs text-gray-400 mt-1">Все 6 предыдущих этапов скомпилированы в интерактивный слайд-дек. Защита перед жюри директоров!</p>
+                        </div>
+
+                        <!-- Окно предпросмотра сгенерированных слайдов -->
+                        <div class="p-5 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
+                            <div class="flex items-center justify-between text-xs text-gray-400">
+                                <span>Готовая питч-колода (7 слайдов):</span>
+                                <span class="text-emerald-400 font-semibold">● Автоматически синхронизирована</span>
+                            </div>
+                            <div class="aspect-video bg-gradient-to-br from-slate-900 to-slate-950 rounded-lg border border-slate-800 p-6 flex flex-col justify-between shadow-inner">
+                                <div class="flex justify-between items-start">
+                                    <span class="font-heading font-bold text-sky-400 text-xs uppercase tracking-widest">ТЕРРИТОРИЯ РОСТА · ХАКАТОН 2026</span>
+                                    <span class="text-[10px] text-gray-500 font-mono">Слайд 1/7</span>
+                                </div>
+                                <div class="space-y-1">
+                                    <div class="text-xs text-emerald-400 font-bold" id="prevCity">Екатеринбург (Уралмаш / ВИЗ)</div>
+                                    <h3 class="text-lg sm:text-2xl font-heading font-black text-white uppercase" id="prevTitle">КиберГид: Заводской Пульс Урала</h3>
+                                    <p class="text-xs text-gray-300 line-clamp-2" id="prevManifest">Оживить историю завода через объединение реальных индустриальных звуков станочного цеха...</p>
+                                </div>
+                                <div class="flex justify-between items-center text-[10px] text-gray-400 border-t border-slate-800 pt-2">
+                                    <span id="prevLead">Капитан: Дереев Даниил</span>
+                                    <span class="text-purple-400 font-semibold">100% готов к защите</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                            <button onclick="openLiveDeckModal()" class="w-full py-3 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold text-sm shadow-lg shadow-sky-500/25 transition">
+                                📽️ Открыть полноэкранную презентацию
+                            </button>
+                            <button onclick="submitProjectToJury()" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold text-sm shadow-lg shadow-emerald-500/25 transition">
+                                📤 Отправить проект на оценку жюри
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Навигационные кнопки Вперёд / Назад -->
+                    <div class="flex items-center justify-between border-t border-slate-800 pt-4">
+                        <button onclick="prevStep()" id="btnPrevStep" class="px-4 py-2 rounded-lg bg-slate-800 text-gray-300 hover:text-white text-xs font-semibold disabled:opacity-30 disabled:pointer-events-none">
+                            ← Назад
+                        </button>
+                        <button onclick="nextStep()" id="btnNextStep" class="px-5 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-white text-xs font-bold transition">
+                            Далее →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- РЕЖИМ 2: ПУЛЬТ ЖЮРИ И СУДЕЙСТВО (MOBILE-READY) -->
+        <!-- ========================================== -->
+        <section id="view-jury" class="portal-view hidden space-y-6">
+            
+            <div class="glass-panel rounded-2xl p-6 sm:p-8">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                                ⚖️ Экспертная панель
+                            </span>
+                            <span class="text-xs text-gray-400">Синара Центр, 1 этаж</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-heading font-black uppercase text-white mt-1">
+                            Мобильный пульт оценки жюри
+                        </h2>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-1">
+                            Выставляйте баллы по 5 критериям от 1 до 10. Оценки мгновенно агрегируются в общий лидерборд.
+                        </p>
+                    </div>
+
+                    <!-- Селектор оцениваемой команды -->
+                    <div class="min-w-[260px]">
+                        <label class="block text-xs font-semibold text-gray-400 mb-1">Выберите команду для оценки:</label>
+                        <select id="juryTeamSelect" onchange="loadJuryTeamData()" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500 font-semibold">
+                            <option value="0">Команда #04: КиберГид: Пульс Уралмаша</option>
+                            <option value="1">Команда #01: Эхо Чусовой: Голоса Мастеров</option>
+                            <option value="2">Команда #02: Тагильская Сталь: Нейро-Саунд</option>
+                            <option value="3">Команда #03: Челябинский Тракторный: Путь Титанов</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка материалов команды и Форма оценки -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                
+                <!-- Левая колонка: Материалы команды -->
+                <div class="lg:col-span-5 glass-panel rounded-2xl p-6 space-y-4">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                        <span class="text-xs font-bold uppercase tracking-wider text-sky-400">Материалы проекта</span>
+                        <button onclick="openLiveDeckModal()" class="text-xs text-sky-400 hover:underline flex items-center gap-1">
+                            Посмотреть слайды ↗
+                        </button>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div>
+                            <div class="text-[11px] text-gray-400 uppercase font-semibold">Проект и Локация:</div>
+                            <div class="text-sm font-bold text-white" id="juryCardTitle">КиберГид: Заводской Пульс Урала (Екатеринбург)</div>
+                        </div>
+
+                        <div>
+                            <div class="text-[11px] text-gray-400 uppercase font-semibold">Арт-объект из полимеров:</div>
+                            <div class="text-xs text-gray-300" id="juryCardArt">Скульптура «Стальное Эхо» из 50 кг переработанного пластика.</div>
+                        </div>
+
+                        <div>
+                            <div class="text-[11px] text-gray-400 uppercase font-semibold">Аудиогид:</div>
+                            <div class="mt-1 p-2 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between">
+                                <span class="text-xs text-gray-300 truncate max-w-[200px]">🎧 team04_uralmash_soundscape.mp3</span>
+                                <button onclick="alert('Воспроизведение демо-аудиогида Звуки Урала')" class="px-2.5 py-1 rounded bg-sky-500/20 text-sky-300 text-xs font-bold hover:bg-sky-500/30">
+                                    Слушать ▶
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-[11px] text-gray-400 uppercase font-semibold">Состав команды:</div>
+                            <div class="text-xs text-gray-300" id="juryCardTeam">5 участников (МАОУ Гимназия №9) · Капитан: Даниил Дереев</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Правая колонка: 5 слайдеров оценки -->
+                <div class="lg:col-span-7 glass-panel rounded-2xl p-6 sm:p-8 space-y-5">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                        <span class="text-xs font-bold uppercase tracking-wider text-purple-400">Критерии судейства (1–10 баллов)</span>
+                        <div class="text-right">
+                            <span class="text-xs text-gray-400">Итоговый балл:</span>
+                            <span class="text-xl font-heading font-black text-emerald-400 ml-1" id="juryTotalScore">47 / 50</span>
+                        </div>
+                    </div>
+
+                    <!-- Критерий 1 -->
+                    <div class="space-y-1">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span class="text-gray-300">1. Индустриальная идентичность и история завода</span>
+                            <span class="text-sky-400 font-bold" id="scoreVal-1">10</span>
+                        </div>
+                        <input type="range" min="1" max="10" value="10" id="scoreInp-1" oninput="calcJuryScore()" class="w-full accent-sky-400 cursor-pointer">
+                    </div>
+
+                    <!-- Критерий 2 -->
+                    <div class="space-y-1">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span class="text-gray-300">2. Эко-Арт концепт (50 кг переработки полимеров)</span>
+                            <span class="text-sky-400 font-bold" id="scoreVal-2">9</span>
+                        </div>
+                        <input type="range" min="1" max="10" value="9" id="scoreInp-2" oninput="calcJuryScore()" class="w-full accent-sky-400 cursor-pointer">
+                    </div>
+
+                    <!-- Критерий 3 -->
+                    <div class="space-y-1">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span class="text-gray-300">3. Цифра, Саунд-дизайн и нейросети</span>
+                            <span class="text-sky-400 font-bold" id="scoreVal-3">10</span>
+                        </div>
+                        <input type="range" min="1" max="10" value="10" id="scoreInp-3" oninput="calcJuryScore()" class="w-full accent-sky-400 cursor-pointer">
+                    </div>
+
+                    <!-- Критерий 4 -->
+                    <div class="space-y-1">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span class="text-gray-300">4. Практичность сметы и план к 1 мая 2027</span>
+                            <span class="text-sky-400 font-bold" id="scoreVal-4">9</span>
+                        </div>
+                        <input type="range" min="1" max="10" value="9" id="scoreInp-4" oninput="calcJuryScore()" class="w-full accent-sky-400 cursor-pointer">
+                    </div>
+
+                    <!-- Критерий 5 -->
+                    <div class="space-y-1">
+                        <div class="flex justify-between text-xs font-semibold">
+                            <span class="text-gray-300">5. Качество питчинга и командная защита</span>
+                            <span class="text-sky-400 font-bold" id="scoreVal-5">9</span>
+                        </div>
+                        <input type="range" min="1" max="10" value="9" id="scoreInp-5" oninput="calcJuryScore()" class="w-full accent-sky-400 cursor-pointer">
+                    </div>
+
+                    <!-- Отзыв жюри -->
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-400 mb-1">Обратная связь эксперта команде:</label>
+                        <textarea id="juryComment" rows="2" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-sky-500" placeholder="Отличная проработка саунд-сцены и четкая смета. Рекомендуем усилить безопасность арт-объекта..."></textarea>
+                    </div>
+
+                    <button onclick="saveJuryEvaluation()" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold text-sm shadow-lg shadow-emerald-500/25 transition">
+                        ✓ Зафиксировать оценку в лидерборде
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- РЕЖИМ 3: ЛИДЕРБОРД И ЦИФРОВЫЕ СЕРТИФИКАТЫ -->
+        <!-- ========================================== -->
+        <section id="view-leaderboard" class="portal-view hidden space-y-6">
+            
+            <div class="glass-panel rounded-2xl p-6 sm:p-8">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                        <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                            🏆 Финал Хакатона
+                        </span>
+                        <h2 class="text-2xl sm:text-3xl font-heading font-black uppercase text-white mt-1">
+                            Живой рейтинг команд и выдача дипломов
+                        </h2>
+                        <p class="text-xs sm:text-sm text-gray-300 mt-1">
+                            Рейтинг обновляется в реальном времени. Нажмите «Сертификат», чтобы открыть именной диплом любого участника с печатью.
+                        </p>
+                    </div>
+                    
+                    <button onclick="exportLeaderboardCSV()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-gray-300 flex items-center gap-2 self-start sm:self-auto transition">
+                        📥 Экспорт протокола (CSV/Excel)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Таблица лидеров -->
+            <div class="glass-panel rounded-2xl overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs sm:text-sm">
+                        <thead class="bg-slate-900/90 text-gray-400 uppercase font-semibold text-[11px] border-b border-slate-800">
+                            <tr>
+                                <th class="py-3.5 px-4">Место</th>
+                                <th class="py-3.5 px-4">Команда и Проект</th>
+                                <th class="py-3.5 px-4 hidden md:table-cell">Город / Локация</th>
+                                <th class="py-3.5 px-4 text-center">Балл жюри</th>
+                                <th class="py-3.5 px-4 text-center">Статус</th>
+                                <th class="py-3.5 px-4 text-right">Дипломы</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/60 font-medium" id="leaderboardTableBody">
+                            <!-- Рендерится через JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================== -->
+    <!-- МОДАЛЬНОЕ ОКНО: ПОЛНОЭКРАННАЯ ПРЕЗЕНТАЦИЯ -->
+    <!-- ========================================== -->
+    <div id="modalLiveDeck" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl hidden flex items-center justify-center p-4 sm:p-6">
+        <div class="w-full max-w-5xl bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden flex flex-col shadow-2xl relative max-h-[90vh]">
+            
+            <!-- Шапка модалки -->
+            <div class="px-6 py-4 bg-slate-900/80 border-b border-slate-800 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span class="font-heading font-bold text-xs uppercase tracking-widest text-sky-400">Питч-презентация проекта</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="text-xs text-gray-400 font-mono" id="modalSlideCounter">Слайд 1 из 7</span>
+                    <button onclick="closeLiveDeckModal()" class="text-gray-400 hover:text-white text-lg font-bold">✕</button>
+                </div>
+            </div>
+
+            <!-- Тело активного слайда -->
+            <div class="p-8 sm:p-12 flex-grow overflow-y-auto flex flex-col justify-center min-h-[380px]" id="modalSlideContent">
+                <!-- Контент слайда рендерится динамически -->
+            </div>
+
+            <!-- Панель управления слайдами -->
+            <div class="px-6 py-4 bg-slate-900/80 border-t border-slate-800 flex items-center justify-between">
+                <button onclick="prevDeckSlide()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-white transition">
+                    ← Предыдущий слайд
+                </button>
+                <div class="flex gap-1.5" id="slideDotsContainer">
+                    <!-- Точки слайдов -->
+                </div>
+                <button onclick="nextDeckSlide()" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-400 text-xs font-bold text-white transition">
+                    Следующий слайд →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- МОДАЛЬНОЕ ОКНО: ИМЕННОЙ ЦИФРОВОЙ СЕРТИФИКАТ -->
+    <!-- ========================================== -->
+    <div id="modalCertificate" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl hidden flex items-center justify-center p-4">
+        <div class="w-full max-w-4xl bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden flex flex-col shadow-2xl relative max-h-[95vh]">
+            
+            <div class="px-6 py-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
+                <span class="font-heading font-bold text-xs uppercase tracking-widest text-amber-400">Цифровой верифицированный сертификат</span>
+                <div class="flex items-center gap-3">
+                    <button onclick="window.print()" class="px-3 py-1.5 rounded-lg bg-sky-500/20 text-sky-300 hover:bg-sky-500/30 text-xs font-semibold flex items-center gap-1.5 transition">
+                        🖨️ Печать / PDF
+                    </button>
+                    <button onclick="closeCertModal()" class="text-gray-400 hover:text-white text-lg font-bold">✕</button>
+                </div>
+            </div>
+
+            <!-- Бланк сертификата (Печатная область) -->
+            <div class="p-6 sm:p-10 flex-grow overflow-y-auto flex items-center justify-center" id="certificatePrintArea">
+                <div class="w-full max-w-2xl bg-gradient-to-b from-[#0b101d] to-[#040711] border-4 border-amber-500/60 rounded-xl p-8 sm:p-10 text-center relative shadow-2xl space-y-6">
+                    
+                    <!-- Декоративные уголки -->
+                    <div class="absolute top-2 left-2 w-6 h-6 border-t-2 border-l-2 border-amber-400"></div>
+                    <div class="absolute top-2 right-2 w-6 h-6 border-t-2 border-r-2 border-amber-400"></div>
+                    <div class="absolute bottom-2 left-2 w-6 h-6 border-b-2 border-l-2 border-amber-400"></div>
+                    <div class="absolute bottom-2 right-2 w-6 h-6 border-b-2 border-r-2 border-amber-400"></div>
+
+                    <!-- Шапка сертификата -->
+                    <div class="space-y-1">
+                        <div class="text-[11px] font-heading tracking-widest uppercase text-amber-400 font-bold">КОНСОРЦИУМ «ПРЕДПРИНИМАЙ» · ДЕЛОВОЙ САММИТ «ТЕРРИТОРИЯ РОСТА»</div>
+                        <h1 class="text-2xl sm:text-4xl font-heading font-black uppercase text-gradient-gold tracking-wider" id="certDegreeTitle">
+                            ДИПЛОМ ПОБЕДИТЕЛЯ I СТЕПЕНИ
+                        </h1>
+                        <div class="text-xs text-gray-300">Открытый региональный молодёжный кейс-чемпионат «Звуки Урала»</div>
+                    </div>
+
+                    <!-- Кому выдан -->
+                    <div class="py-2 space-y-1 border-y border-amber-500/20">
+                        <div class="text-xs text-gray-400">Настоящим подтверждается, что:</div>
+                        <div class="text-xl sm:text-2xl font-bold text-white uppercase tracking-wide" id="certPersonName">
+                            Дереев Даниил Андреевич
+                        </div>
+                        <div class="text-xs text-sky-400 font-medium" id="certPersonRole">
+                            Капитан команды «URAL-INNO-04» (МАОУ Гимназия №9)
+                        </div>
+                    </div>
+
+                    <!-- Описание проекта -->
+                    <div class="text-xs text-gray-300 max-w-lg mx-auto leading-relaxed">
+                        За разработку и успешную защиту проекта <strong class="text-white" id="certProjectName">«КиберГид: Заводской Пульс Урала»</strong> перед экспертным жюри топ-менеджеров и предпринимателей Большого Урала.
+                    </div>
+
+                    <!-- Подписи и печати -->
+                    <div class="pt-4 flex items-center justify-between text-left text-xs border-t border-slate-800">
+                        <div>
+                            <div class="text-gray-400 text-[10px]">Председатель Оргкомитета:</div>
+                            <div class="font-bold text-white">А. А. Дереев</div>
+                            <div class="text-[10px] text-gray-500">11 ноября 2026 г. · Екатеринбург</div>
+                        </div>
+
+                        <!-- QR-верификатор и печать -->
+                        <div class="flex items-center gap-3">
+                            <div class="text-right">
+                                <div class="text-[9px] text-emerald-400 font-mono">VERIFIED ID:</div>
+                                <div class="text-[10px] font-mono text-gray-300" id="certVerifyCode">PRM-CERT-2026-9941</div>
+                            </div>
+                            <div class="w-12 h-12 rounded-full border border-amber-400/40 bg-amber-500/10 flex items-center justify-center text-[8px] font-bold text-amber-300 text-center leading-tight">
+                                ПРЕДПРИ<br>НИМАЙ
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ФУТЕР ПОРТАЛА -->
+    <footer class="mt-auto border-t border-slate-900 bg-[#020409] py-6 text-center text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div>© 2026 Консорциум «ПРЕДПРИНИМАЙ» × Бизнес-событие «Территория Роста». Все права защищены.</div>
+            <div class="flex items-center gap-4 text-gray-400">
+                <a href="https://конкурсы.рф" target="_blank" class="hover:text-white transition">Партнёр: Конкурсы.рф</a>
+                <a href="youth-championship.html" class="hover:text-white transition">Регламент хакатона</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ЛОГИКА ПОРТАЛА (JavaScript) -->
+    <script>
+        // База данных команд
+        let teamsDatabase = [
+            {
+                id: "URAL-INNO-04",
+                title: "КиберГид: Заводской Пульс Урала",
+                city: "Екатеринбург (Уралмаш / ВИЗ)",
+                location: "Площадь Первой Пятилетки и Белая Башня",
+                manifest: "Оживить историю завода через объединение реальных индустриальных звуков станочного цеха, голосов ветеранов труда и экологичного арт-объекта из переработанных крышек.",
+                history: "Строительство Завода Заводов в 1933 году, выпуск тяжелых шагающих экскаваторов и бронекорпусов Т-34. Династия Петровых отдала заводу суммарно 140 лет стажа.",
+                art: "Интерактивная скульптура «Стальное Эхо» из 50 кг переработанного пластика (HDPE/PP).",
+                sound: "Аудиоспектакль с гулом мартена и голосом инженера 1941 года.",
+                lead: "Дереев Даниил Андреевич",
+                members: [
+                    { name: "Дереев Даниил Андреевич", role: "Капитан / Продюсер" },
+                    { name: "Смирнова Анна Сергеевна", role: "Сценарист / Краевед" },
+                    { name: "Иванов Кирилл Павлович", role: "Саунд-дизайнер / Голос" },
+                    { name: "Кузнецова Елена Дмитриевна", role: "Дизайнер / Архитектор" },
+                    { name: "Попов Артём Максимович", role: "Медийщик / SMM" }
+                ],
+                school: "МАОУ Гимназия №9 (г. Екатеринбург)",
+                score: 47,
+                status: "Защищен (I место)"
+            },
+            {
+                id: "URAL-INNO-01",
+                title: "Эхо Чусовой: Голоса Мастеров",
+                city: "Первоуральск / Ревда",
+                location: "Набережная Новотрубного завода",
+                manifest: "Создание аудио-маршрута по точкам сплава железных караванов Чусовой с арт-объектом «Мастеровой компас».",
+                history: "История демидовских заводов и сплавщиков барок XVIII–XIX веков.",
+                art: "Световой полимерный маяк с QR-кодами историй сплавщиков.",
+                sound: "Звуки реки Чусовой, плеск весел и перезвон кузницы.",
+                lead: "Васильев Максим Игоревич",
+                members: [
+                    { name: "Васильев Максим Игоревич", role: "Капитан" },
+                    { name: "Белова София Романовна", role: "Саунд-дизайнер" },
+                    { name: "Ковалев Денис Олегович", role: "Инженер-эколог" }
+                ],
+                school: "Лицей №21 (г. Первоуральск)",
+                score: 45,
+                status: "Защищен (II место)"
+            },
+            {
+                id: "URAL-INNO-02",
+                title: "Тагильская Сталь: Нейро-Саунд",
+                city: "Нижний Тагил (НТМК)",
+                location: "Музей-завод истории развития черной металлургии",
+                manifest: "Синтез исторических звуков доменного цеха с нейросетевой электронной музыкой для молодежи.",
+                history: "Старейший заводской комплекс России, основанный в 1725 году.",
+                art: "Стенд «Трансформация металла» из полимерпесчаного композита.",
+                sound: "ИИ-саундтрек на основе архивных записей прокатных станов.",
+                lead: "Морозов Илья Андреевич",
+                members: [
+                    { name: "Морозов Илья Андреевич", role: "Капитан" },
+                    { name: "Новикова Дарья Павловна", role: "Дизайнер" }
+                ],
+                school: "Политехническая гимназия (г. Нижний Тагил)",
+                score: 44,
+                status: "Защищен (III место)"
+            },
+            {
+                id: "URAL-INNO-03",
+                title: "Челябинский Тракторный: Путь Титанов",
+                city: "Челябинск (ЧТЗ)",
+                location: "Сквер первостроителей ЧТЗ",
+                manifest: "Аудиогид о легендарном Танкограде и памятная стела из переработанного пластика.",
+                history: "Трудовой героизм Танкограда в годы Великой Отечественной войны.",
+                art: "Модель бронированного трака из 50 кг вторсырья.",
+                sound: "Ритм гусениц и воспоминания женщин-механиков.",
+                lead: "Семенов Егор Дмитриевич",
+                members: [
+                    { name: "Семенов Егор Дмитриевич", role: "Капитан" },
+                    { name: "Тимофеева Ольга Сергеевна", role: "Сценарист" }
+                ],
+                school: "Лицей №11 (г. Челябинск)",
+                score: 42,
+                status: "Финалист"
+            }
+        ];
+
+        let currentStep = 1;
+        let currentModalSlide = 1;
+
+        // Переключение основных вкладок портала
+        function switchPortalTab(tabName) {
+            document.querySelectorAll('.portal-view').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-gradient-to-r', 'from-sky-500', 'to-blue-600', 'text-white', 'shadow-md');
+                btn.classList.add('text-gray-400');
+            });
+
+            const activeView = document.getElementById('view-' + tabName);
+            const activeBtn = document.getElementById('tabBtn-' + tabName);
+            if (activeView) activeView.classList.remove('hidden');
+            if (activeBtn) {
+                activeBtn.classList.add('bg-gradient-to-r', 'from-sky-500', 'to-blue-600', 'text-white', 'shadow-md');
+                activeBtn.classList.remove('text-gray-400');
+            }
+
+            if (tabName === 'leaderboard') renderLeaderboard();
+        }
+
+        // Переключение 7 шагов конструктора
+        function selectStep(stepNum) {
+            currentStep = stepNum;
+            document.querySelectorAll('.step-form-block').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.step-nav-btn').forEach(btn => {
+                btn.classList.remove('border-sky-500/50', 'bg-sky-950/20');
+                btn.classList.add('border-slate-800');
+            });
+
+            const targetContent = document.getElementById('stepContent-' + stepNum);
+            const targetBtn = document.getElementById('stepTab-' + stepNum);
+            if (targetContent) targetContent.classList.remove('hidden');
+            if (targetBtn) {
+                targetBtn.classList.add('border-sky-500/50', 'bg-sky-950/20');
+                targetBtn.classList.remove('border-slate-800');
+            }
+
+            document.getElementById('btnPrevStep').disabled = (stepNum === 1);
+            const btnNext = document.getElementById('btnNextStep');
+            if (stepNum === 7) {
+                btnNext.innerText = 'Завершить сборку ✓';
+                btnNext.className = 'px-5 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-white text-xs font-bold transition';
+            } else {
+                btnNext.innerText = 'Далее →';
+                btnNext.className = 'px-5 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-white text-xs font-bold transition';
+            }
+        }
+
+        function nextStep() {
+            if (currentStep < 7) {
+                selectStep(currentStep + 1);
+            } else {
+                openLiveDeckModal();
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                selectStep(currentStep - 1);
+            }
+        }
+
+        // Обновление живого превью в конструкторе
+        function updateDeckPreview() {
+            const title = document.getElementById('inp_title').value;
+            const city = document.getElementById('inp_city').value;
+            const manifest = document.getElementById('inp_manifest').value;
+            const lead = document.getElementById('role_lead').value;
+
+            document.getElementById('projectTitleHeader').innerText = title;
+            document.getElementById('prevTitle').innerText = title;
+            document.getElementById('prevCity').innerText = city;
+            document.getElementById('prevManifest').innerText = manifest;
+            document.getElementById('prevLead').innerText = 'Капитан: ' + lead;
+        }
+
+        // Модальное окно Live-Презентации (7 слайдов)
+        function openLiveDeckModal() {
+            currentModalSlide = 1;
+            renderModalSlide();
+            document.getElementById('modalLiveDeck').classList.remove('hidden');
+        }
+
+        function closeLiveDeckModal() {
+            document.getElementById('modalLiveDeck').classList.add('hidden');
+        }
+
+        function renderModalSlide() {
+            const title = document.getElementById('inp_title').value;
+            const city = document.getElementById('inp_city').value;
+            const location = document.getElementById('inp_location').value;
+            const manifest = document.getElementById('inp_manifest').value;
+            const history = document.getElementById('inp_history').value;
+            const quote = document.getElementById('inp_quote').value;
+            const artName = document.getElementById('inp_art_name').value;
+            const artEco = document.getElementById('inp_art_eco').value;
+            const soundScript = document.getElementById('inp_sound_script').value;
+            const lead = document.getElementById('role_lead').value;
+            const budget = document.getElementById('inp_budget').value;
+            const deadline = document.getElementById('inp_deadline').value;
+
+            document.getElementById('modalSlideCounter').innerText = `Слайд ${currentModalSlide} из 7`;
+            const container = document.getElementById('modalSlideContent');
+
+            let html = '';
+            if (currentModalSlide === 1) {
+                html = `
+                    <div class="text-center space-y-4 max-w-2xl mx-auto">
+                        <span class="inline-block px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20 text-xs font-semibold uppercase">${city} · ${location}</span>
+                        <h1 class="text-3xl sm:text-5xl font-heading font-black text-white uppercase tracking-wide text-gradient">${title}</h1>
+                        <p class="text-sm sm:text-base text-gray-300 leading-relaxed italic">"${manifest}"</p>
+                        <div class="pt-4 text-xs text-gray-400">Команда: Даниил Дереев, Анна Смирнова, Кирилл Иванов, Елена Кузнецова, Артём Попов</div>
+                    </div>
+                `;
+            } else if (currentModalSlide === 2) {
+                html = `
+                    <div class="space-y-4 max-w-3xl mx-auto">
+                        <span class="text-xs text-sky-400 font-bold uppercase">Слайд 2 · Индустриальный код</span>
+                        <h2 class="text-2xl sm:text-4xl font-heading font-black text-white uppercase">История завода и трудовой подвиг</h2>
+                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-sm text-gray-200 leading-relaxed">${history}</div>
+                        <div class="p-4 rounded-xl bg-purple-950/30 border border-purple-500/30 text-sm text-purple-200 italic">${quote}</div>
+                    </div>
+                `;
+            } else if (currentModalSlide === 3) {
+                html = `
+                    <div class="space-y-4 max-w-3xl mx-auto">
+                        <span class="text-xs text-emerald-400 font-bold uppercase">Слайд 3 · Экология и Арт</span>
+                        <h2 class="text-2xl sm:text-4xl font-heading font-black text-white uppercase">${artName}</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+                                <div class="text-xs text-gray-400 font-semibold mb-1">Экологический вклад:</div>
+                                <div class="text-xs text-gray-200">${artEco}</div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+                                <div class="text-xs text-gray-400 font-semibold mb-1">Партнёр переработки:</div>
+                                <div class="text-xs text-emerald-400 font-bold">Эко-завод полимеров «Умная Среда»</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (currentModalSlide === 4) {
+                html = `
+                    <div class="space-y-4 max-w-3xl mx-auto">
+                        <span class="text-xs text-sky-400 font-bold uppercase">Слайд 4 · Саунд-дизайн и Платформа КиберГид</span>
+                        <h2 class="text-2xl sm:text-4xl font-heading font-black text-white uppercase">Аудиоспектакль с нейрозвуками</h2>
+                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs text-gray-300 leading-relaxed font-mono">${soundScript}</div>
+                        <div class="p-3 rounded-xl bg-sky-950/30 border border-sky-500/30 flex items-center justify-between text-xs">
+                            <span class="text-sky-300">🎧 Аудиодорожка готова к трансляции на платформе</span>
+                            <span class="text-emerald-400 font-bold">100% Quality</span>
+                        </div>
+                    </div>
+                `;
+            } else if (currentModalSlide === 5) {
+                html = `
+                    <div class="space-y-4 max-w-3xl mx-auto">
+                        <span class="text-xs text-purple-400 font-bold uppercase">Слайд 5 · Команда</span>
+                        <h2 class="text-2xl sm:text-4xl font-heading font-black text-white uppercase">5 ролей в команде</h2>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
+                            <div class="p-3 rounded-lg bg-slate-900 border border-slate-800"><div class="text-gray-400">Капитан:</div><div class="font-bold text-white">${lead}</div></div>
+                            <div class="p-3 rounded-lg bg-slate-900 border border-slate-800"><div class="text-gray-400">Сценарист:</div><div class="font-bold text-white">Анна Смирнова</div></div>
+                            <div class="p-3 rounded-lg bg-slate-900 border border-slate-800"><div class="text-gray-400">Саунд:</div><div class="font-bold text-white">Кирилл Иванов</div></div>
+                            <div class="p-3 rounded-lg bg-slate-900 border border-slate-800"><div class="text-gray-400">Дизайн:</div><div class="font-bold text-white">Елена Кузнецова</div></div>
+                            <div class="p-3 rounded-lg bg-slate-900 border border-slate-800"><div class="text-gray-400">SMM/PR:</div><div class="font-bold text-white">Артём Попов</div></div>
+                            <div class="p-3 rounded-lg bg-slate-900 border border-slate-800"><div class="text-gray-400">Наставник:</div><div class="font-bold text-emerald-400">Елена Петрова</div></div>
+                        </div>
+                    </div>
+                `;
+            } else if (currentModalSlide === 6) {
+                html = `
+                    <div class="space-y-4 max-w-3xl mx-auto">
+                        <span class="text-xs text-emerald-400 font-bold uppercase">Слайд 6 · Дорожная карта и Бюджет</span>
+                        <h2 class="text-2xl sm:text-4xl font-heading font-black text-white uppercase">План реализации к 1 мая 2027 г.</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800"><div class="text-xs text-gray-400 mb-1">Бюджет проекта:</div><div class="text-base font-bold text-emerald-400">${budget}</div></div>
+                            <div class="p-4 rounded-xl bg-slate-900 border border-slate-800"><div class="text-xs text-gray-400 mb-1">Срок открытия:</div><div class="text-base font-bold text-sky-400">${deadline}</div></div>
+                        </div>
+                    </div>
+                `;
+            } else if (currentModalSlide === 7) {
+                html = `
+                    <div class="text-center space-y-4 max-w-2xl mx-auto">
+                        <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold uppercase">Финальный слайд</span>
+                        <h1 class="text-3xl sm:text-5xl font-heading font-black text-white uppercase">Мы готовы менять Урал!</h1>
+                        <p class="text-sm text-gray-300">Приглашаем партнёров и инвесторов форума «Территория Роста» поддержать проект.</p>
+                        <div class="pt-4 inline-block px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 font-bold text-white text-xs">
+                            Спасибо за внимание! Вопросы жюри.
+                        </div>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = html;
+
+            // Рендер точек навигации
+            let dots = '';
+            for (let i = 1; i <= 7; i++) {
+                dots += `<button onclick="goToDeckSlide(${i})" class="w-2.5 h-2.5 rounded-full transition ${i === currentModalSlide ? 'bg-sky-400 scale-125' : 'bg-slate-700 hover:bg-slate-500'}"></button>`;
+            }
+            document.getElementById('slideDotsContainer').innerHTML = dots;
+        }
+
+        function nextDeckSlide() {
+            if (currentModalSlide < 7) {
+                currentModalSlide++;
+                renderModalSlide();
+            }
+        }
+
+        function prevDeckSlide() {
+            if (currentModalSlide > 1) {
+                currentModalSlide--;
+                renderModalSlide();
+            }
+        }
+
+        function goToDeckSlide(n) {
+            currentModalSlide = n;
+            renderModalSlide();
+        }
+
+        // Сдача проекта жюри
+        function submitProjectToJury() {
+            alert('🎉 Проект успешно отправлен в экспертную комиссию жюри! Эксперты форума видят ваши слайды в мобильном пульте.');
+            switchPortalTab('jury');
+        }
+
+        // Логика Жюри
+        function calcJuryScore() {
+            let total = 0;
+            for (let i = 1; i <= 5; i++) {
+                const val = parseInt(document.getElementById('scoreInp-' + i).value);
+                document.getElementById('scoreVal-' + i).innerText = val;
+                total += val;
+            }
+            document.getElementById('juryTotalScore').innerText = `${total} / 50`;
+        }
+
+        function loadJuryTeamData() {
+            const idx = parseInt(document.getElementById('juryTeamSelect').value);
+            const team = teamsDatabase[idx];
+            document.getElementById('juryCardTitle').innerText = `${team.title} (${team.city})`;
+            document.getElementById('juryCardArt').innerText = team.art;
+            document.getElementById('juryCardTeam').innerText = `${team.members.length} участников (${team.school}) · Капитан: ${team.lead}`;
+        }
+
+        function saveJuryEvaluation() {
+            const idx = parseInt(document.getElementById('juryTeamSelect').value);
+            const total = parseInt(document.getElementById('juryTotalScore').innerText);
+            teamsDatabase[idx].score = total;
+            alert(`✓ Оценка для команды «${teamsDatabase[idx].title}» (${total} баллов) успешно зафиксирована!`);
+            switchPortalTab('leaderboard');
+        }
+
+        // Рендер Лидерборда
+        function renderLeaderboard() {
+            // Сортировка по баллам
+            teamsDatabase.sort((a, b) => b.score - a.score);
+
+            const tbody = document.getElementById('leaderboardTableBody');
+            let html = '';
+
+            teamsDatabase.forEach((t, idx) => {
+                let badge = `<span class="text-gray-400 font-bold">${idx + 1}</span>`;
+                let medalClass = '';
+                if (idx === 0) {
+                    badge = `<span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold text-xs border border-amber-500/30">🥇 1 место</span>`;
+                    medalClass = 'bg-amber-500/5';
+                } else if (idx === 1) {
+                    badge = `<span class="px-2 py-0.5 rounded bg-slate-500/20 text-slate-300 font-bold text-xs border border-slate-500/30">🥈 2 место</span>`;
+                } else if (idx === 2) {
+                    badge = `<span class="px-2 py-0.5 rounded bg-orange-500/20 text-orange-300 font-bold text-xs border border-orange-500/30">🥉 3 место</span>`;
+                }
+
+                html += `
+                    <tr class="hover:bg-slate-900/50 transition ${medalClass}">
+                        <td class="py-4 px-4 whitespace-nowrap">${badge}</td>
+                        <td class="py-4 px-4">
+                            <div class="font-bold text-white text-sm sm:text-base">${t.title}</div>
+                            <div class="text-[11px] text-gray-400">Капитан: ${t.lead} · ${t.school}</div>
+                        </td>
+                        <td class="py-4 px-4 text-xs text-gray-300 hidden md:table-cell">${t.city}</td>
+                        <td class="py-4 px-4 text-center whitespace-nowrap">
+                            <span class="text-base font-heading font-black text-emerald-400">${t.score}</span>
+                            <span class="text-[10px] text-gray-500">/ 50</span>
+                        </td>
+                        <td class="py-4 px-4 text-center whitespace-nowrap">
+                            <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">${t.status}</span>
+                        </td>
+                        <td class="py-4 px-4 text-right whitespace-nowrap">
+                            <button onclick="openCertificateModal(${idx})" class="px-3 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-bold transition">
+                                🎓 Сертификат
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+
+            tbody.innerHTML = html;
+        }
+
+        // Модальное окно Сертификата
+        function openCertificateModal(teamIdx) {
+            const team = teamsDatabase[teamIdx];
+            let degree = 'ДИПЛОМ ПОБЕДИТЕЛЯ I СТЕПЕНИ';
+            if (teamIdx === 1) degree = 'ДИПЛОМ ЛАУРЕАТА II СТЕПЕНИ';
+            if (teamIdx === 2) degree = 'ДИПЛОМ ЛАУРЕАТА III СТЕПЕНИ';
+            if (teamIdx > 2) degree = 'СЕРТИФИКАТ УЧАСТНИКА ЧЕМПИОНАТА';
+
+            document.getElementById('certDegreeTitle').innerText = degree;
+            document.getElementById('certPersonName').innerText = team.lead;
+            document.getElementById('certPersonRole').innerText = `Капитан команды «${team.id}» (${team.school})`;
+            document.getElementById('certProjectName').innerText = `«${team.title}»`;
+            document.getElementById('certVerifyCode').innerText = `PRM-CERT-2026-00${teamIdx + 1}${Math.floor(Math.random() * 899 + 100)}`;
+
+            document.getElementById('modalCertificate').classList.remove('hidden');
+        }
+
+        function closeCertModal() {
+            document.getElementById('modalCertificate').classList.add('hidden');
+        }
+
+        function exportLeaderboardCSV() {
+            let csv = "Место;Команда;Проект;Город;Школа;Капитан;Баллы;Статус\n";
+            teamsDatabase.forEach((t, i) => {
+                csv += `${i + 1};${t.id};"${t.title}";"${t.city}";"${t.school}";"${t.lead}";${t.score};"${t.status}"\n`;
+            });
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "leaderboard_sounds_of_ural_2026.csv";
+            link.click();
+        }
+
+        // Инициализация при загрузке
+        document.addEventListener('DOMContentLoaded', () => {
+            renderLeaderboard();
+            calcJuryScore();
+        });
+    </script>
+</body>
+</html>
