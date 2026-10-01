@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хакатон-Портал «Звуки Урала» — Кабинет команд и Онлайн-судейство</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #030712; 
+            color: #f5f5f7; 
+            overflow-x: hidden; 
+        }
+        .font-oswald { font-family: 'Oswald', sans-serif; }
+        
+        .glass-dark { 
+            background: rgba(11, 17, 32, 0.85); 
+            backdrop-filter: blur(20px); 
+            -webkit-backdrop-filter: blur(20px); 
+            border: 1px solid rgba(59, 130, 246, 0.2); 
+        }
+
+        .text-gradient-fast {
+            background-image: linear-gradient(90deg, #38bdf8 0%, #818cf8 35%, #ec4899 65%, #f97316 85%, #f59e0b 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textShine 3s linear infinite;
+        }
+
+        @keyframes textShine {
+            0% { background-position: 200% center; }
+            100% { background-position: 0% center; }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-sky-500 selection:text-white">
+
+    <!-- ШАПКА -->
+    <header class="bg-[#070b14]/95 border-b border-indigo-900/40 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-18 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="youth-championship.html" class="flex items-center gap-2 group">
+                    <img src="ЛОГО ТР.png" alt="ТР" class="h-8 w-auto">
+                    <span class="font-oswald font-black text-sm uppercase text-white tracking-wider">ХАКАТОН-ПОРТАЛ «ЗВУКИ УРАЛА»</span>
+                </a>
+                <span class="px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-400 text-[11px] font-bold border border-sky-400/30">PRO-Модуль</span>
+            </div>
+
+            <!-- ПЕРЕКЛЮЧАТЕЛЬ РЕЖИМА -->
+            <div class="flex items-center gap-2 bg-slate-900 p-1 rounded-xl border border-white/10 text-xs">
+                <button id="tabTeamBtn" onclick="switchTab('team')" class="px-3.5 py-1.5 rounded-lg bg-sky-500 text-black font-black transition">
+                    <i class="fa-solid fa-users mr-1.5"></i> Кабинет команды
+                </button>
+                <button id="tabJuryBtn" onclick="switchTab('jury')" class="px-3.5 py-1.5 rounded-lg text-gray-400 hover:text-white font-bold transition">
+                    <i class="fa-solid fa-gavel mr-1.5"></i> Панель жюри и Рейтинг
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-grow">
+        
+        <!-- ВКЛАДКА 1: КАБИНЕТ КОМАНДЫ (СДАЧА РЕШЕНИЙ) -->
+        <div id="teamTab" class="space-y-8">
+            
+            <!-- ХЕДЕР КОМАНДЫ -->
+            <div class="glass-dark p-6 sm:p-8 rounded-3xl border-sky-500/30 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div>
+                    <span class="px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-bold uppercase tracking-wider border border-sky-400/30">Спринт 11 Ноября · Синара Центр</span>
+                    <h1 class="font-oswald text-2xl sm:text-4xl font-black uppercase text-white mt-2">
+                        СДАЧА ПРОЕКТА: <span class="text-gradient-fast">«ЗВУКИ УРАЛА»</span>
+                    </h1>
+                    <p class="text-xs sm:text-sm text-gray-300 mt-1">Загрузите ссылки на презентацию, аудиодорожку и концепт арт-объекта до 16:30 для допуска к очному питчингу.</p>
+                </div>
+                
+                <div class="flex items-center gap-3 shrink-0">
+                    <div class="p-3.5 rounded-2xl bg-black/60 border border-white/10 text-center min-w-[110px]">
+                        <div class="text-xl font-oswald font-black text-amber-400" id="timerDisplay">16:30:00</div>
+                        <div class="text-[10px] text-gray-400 uppercase font-semibold">Дедлайн сдачи</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ФОРМА СДАЧИ МАТЕРИАЛОВ КОМАНДЫ -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <div class="lg:col-span-2 glass-dark p-6 sm:p-8 rounded-3xl border-white/10 space-y-6">
+                    <h3 class="font-oswald text-xl font-bold uppercase text-white flex items-center gap-2">
+                        <i class="fa-solid fa-cloud-arrow-up text-sky-400"></i> Пакет материалов проекта
+                    </h3>
+
+                    <form id="submissionForm" onsubmit="handleProjectSubmit(event)" class="space-y-5">
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Название команды / Город *</label>
+                                <input type="text" id="subTeamName" required placeholder="Например: Уральские КиберГиды (Екб)" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Тематическая локация / Завод *</label>
+                                <input type="text" id="subLocation" required placeholder="Например: Уралмаш / ВИЗ / ЧТЗ..." class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">1. Ссылка на питч-презентацию (PDF / Яндекс Диск / Ссылка) *</label>
+                            <input type="url" id="subDeckUrl" required placeholder="https://disk.yandex.ru/..." class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">2. Ссылка на аудиодорожку / саундтрек гида (MP3 / Облако) *</label>
+                            <input type="url" id="subAudioUrl" required placeholder="https://disk.yandex.ru/... (демо аудиогида 1-3 мин)" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">3. Описание концепта арт-объекта (переработка пластика)</label>
+                            <textarea id="subObjectDesc" rows="3" placeholder="Форма объекта, сколько кг пластика требуется, где устанавливается в городе, как интегрирован QR-код..." class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400"></textarea>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">ФИО Капитана команды *</label>
+                                <input type="text" id="subCaptain" required placeholder="ФИО капитана" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Телефон капитана *</label>
+                                <input type="tel" id="subPhone" required placeholder="+7 (___) ___-__-__" class="w-full bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-2xl bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 hover:from-sky-400 hover:to-blue-500 text-white font-black text-sm uppercase tracking-wider shadow-lg shadow-sky-500/25 transition">
+                            Зафиксировать и отправить проект в жюри
+                        </button>
+                    </form>
+                </div>
+
+                <!-- ЧЕКЛИСТ КОМАНДЫ -->
+                <div class="glass-dark p-6 sm:p-8 rounded-3xl border-white/10 space-y-5">
+                    <h3 class="font-oswald text-xl font-bold uppercase text-white flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-emerald-400"></i> Критерии оценки жюри
+                    </h3>
+                    
+                    <div class="space-y-4 text-xs text-gray-300">
+                        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-white/5">
+                            <div class="font-bold text-white mb-1">1. Индустриальный код (1–10 баллов)</div>
+                            <div class="text-gray-400">Глубина краеведческого исследования, историческая достоверность и драматургия.</div>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-white/5">
+                            <div class="font-bold text-white mb-1">2. Эко-концепт арт-объекта (1–10 баллов)</div>
+                            <div class="text-gray-400">Продуманность переработки 50 кг пластика, эстетика, вандалоустойчивость и безопасность.</div>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-white/5">
+                            <div class="font-bold text-white mb-1">3. Качество саунд-дизайна и ИИ (1–10 баллов)</div>
+                            <div class="text-gray-400">Чистота звука, эмоциональность голоса, применение нейросетей для эффектов.</div>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-white/5">
+                            <div class="font-bold text-white mb-1">4. Питчинг и презентация (1–10 баллов)</div>
+                            <div class="text-gray-400">Убедительность 3-минутной защиты, ответы на вопросы инвесторов и директоров.</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-amber-500/10 border border-amber-400/30 text-[11px] text-amber-200">
+                        ⚡ <strong>Главный приз:</strong> Финансирование установки арт-объекта с QR-панелью «КиберГид» к 1 мая 2027 г. в родном городе команды!
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ВКЛАДКА 2: ПАНЕЛЬ ЖЮРИ И ЖИВОЙ РЕЙТИНГ -->
+        <div id="juryTab" class="hidden space-y-8">
+            
+            <div class="glass-dark p-6 sm:p-8 rounded-3xl border-purple-500/30 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div>
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-bold uppercase tracking-wider border border-purple-400/30">Панель Экспертов и Инвесторов</span>
+                    <h2 class="font-oswald text-2xl sm:text-4xl font-black uppercase text-white mt-2">
+                        ОНЛАЙН-ТАБЛО ОЦЕНОК И <span class="text-gradient-fast">РЕЙТИНГ ЖЮРИ</span>
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-300 mt-1">Автоматический расчёт баллов команд по 4 критериям в режиме реального времени.</p>
+                </div>
+            </div>
+
+            <!-- ТАБЛИЦА РЕЙТИНГА КОМАНД -->
+            <div class="glass-dark rounded-3xl border-white/10 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs text-gray-300">
+                        <thead class="bg-slate-900 text-[11px] uppercase tracking-wider text-gray-400 border-b border-white/10">
+                            <tr>
+                                <th class="p-4">Место</th>
+                                <th class="p-4">Команда / Город</th>
+                                <th class="p-4">Локация / Кейс</th>
+                                <th class="p-4 text-center">История (10)</th>
+                                <th class="p-4 text-center">Эко-Арт (10)</th>
+                                <th class="p-4 text-center">Саунд/ИИ (10)</th>
+                                <th class="p-4 text-center">Питч (10)</th>
+                                <th class="p-4 text-center font-bold text-white">Итого</th>
+                                <th class="p-4 text-right">Материалы</th>
+                            </tr>
+                        </thead>
+                        <tbody id="juryTableBody" class="divide-y divide-white/5 font-medium">
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-4 font-black font-oswald text-amber-400 text-base">🥇 1</td>
+                                <td class="p-4 font-bold text-white">Уральские КиберГиды (Екатеринбург)</td>
+                                <td class="p-4 text-sky-400">Завод Уралмаш: История стального гиганта</td>
+                                <td class="p-4 text-center">9.8</td>
+                                <td class="p-4 text-center">9.5</td>
+                                <td class="p-4 text-center">9.9</td>
+                                <td class="p-4 text-center">9.7</td>
+                                <td class="p-4 text-center font-black font-oswald text-emerald-400 text-base">38.9</td>
+                                <td class="p-4 text-right space-x-2">
+                                    <span class="px-2 py-1 rounded bg-sky-500/20 text-sky-300 text-[10px]">PDF</span>
+                                    <span class="px-2 py-1 rounded bg-purple-500/20 text-purple-300 text-[10px]">MP3</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-4 font-black font-oswald text-slate-300 text-base">🥈 2</td>
+                                <td class="p-4 font-bold text-white">Эко-Звук 74 (Челябинск)</td>
+                                <td class="p-4 text-sky-400">ЧТЗ Танкоград: Голос Победы</td>
+                                <td class="p-4 text-center">9.6</td>
+                                <td class="p-4 text-center">9.7</td>
+                                <td class="p-4 text-center">9.2</td>
+                                <td class="p-4 text-center">9.5</td>
+                                <td class="p-4 text-center font-black font-oswald text-emerald-400 text-base">38.0</td>
+                                <td class="p-4 text-right space-x-2">
+                                    <span class="px-2 py-1 rounded bg-sky-500/20 text-sky-300 text-[10px]">PDF</span>
+                                    <span class="px-2 py-1 rounded bg-purple-500/20 text-purple-300 text-[10px]">MP3</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-4 font-black font-oswald text-amber-600 text-base">🥉 3</td>
+                                <td class="p-4 font-bold text-white">Тагильский Молот (Нижний Тагил)</td>
+                                <td class="p-4 text-sky-400">Старый Демидовский завод</td>
+                                <td class="p-4 text-center">9.4</td>
+                                <td class="p-4 text-center">9.1</td>
+                                <td class="p-4 text-center">9.4</td>
+                                <td class="p-4 text-center">9.3</td>
+                                <td class="p-4 text-center font-black font-oswald text-emerald-400 text-base">37.2</td>
+                                <td class="p-4 text-right space-x-2">
+                                    <span class="px-2 py-1 rounded bg-sky-500/20 text-sky-300 text-[10px]">PDF</span>
+                                    <span class="px-2 py-1 rounded bg-purple-500/20 text-purple-300 text-[10px]">MP3</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- ПОДВАЛ -->
+    <footer class="bg-black border-t border-white/10 py-6 text-center text-xs text-gray-500">
+        © 2026 Хакатон-Портал «Звуки Урала» · Территория Роста × ПРЕДПРИНИМАЙ
+    </footer>
+
+    <script>
+        function switchTab(tab) {
+            if (tab === 'team') {
+                document.getElementById('teamTab').classList.remove('hidden');
+                document.getElementById('juryTab').classList.add('hidden');
+                document.getElementById('tabTeamBtn').className = 'px-3.5 py-1.5 rounded-lg bg-sky-500 text-black font-black transition';
+                document.getElementById('tabJuryBtn').className = 'px-3.5 py-1.5 rounded-lg text-gray-400 hover:text-white font-bold transition';
+            } else {
+                document.getElementById('teamTab').classList.add('hidden');
+                document.getElementById('juryTab').classList.remove('hidden');
+                document.getElementById('tabTeamBtn').className = 'px-3.5 py-1.5 rounded-lg text-gray-400 hover:text-white font-bold transition';
+                document.getElementById('tabJuryBtn').className = 'px-3.5 py-1.5 rounded-lg bg-purple-500 text-white font-black transition';
+            }
+        }
+
+        function handleProjectSubmit(e) {
+            e.preventDefault();
+            alert('Материалы команды успешно зафиксированы в базе хакатона и переданы жюри!');
+        }
+    </script>
+</body>
+</html>
