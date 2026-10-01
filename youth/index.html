@@ -1,53 +1,82 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Молодёжный кейс-чемпионат «Звуки Урала» — ТЕРРИТОРИЯ РОСТА × ПРЕДПРИНИМАЙ</title>
-    <link rel="icon" type="image/png" href="../favicon.png">
-    <link rel="apple-touch-icon" href="../favicon.png">
+    <title>ОСЕННИЙ ХАКАТОН «ЗВУКИ УРАЛА» 2026 | Молодёжный кейс-чемпионат 14–17 лет · Синара Центр</title>
+    <meta name="description" content="Ежегодный открытый молодёжный кейс-чемпионат и хакатон 14–17 лет «Звуки Урала». 7–11 ноября 2026, Конгресс-центр «Синара Центр», Екатеринбург. Проектная деятельность, арт-объекты из переработанных полимеров и аудиогиды.">
+    <link rel="icon" type="image/png" href="favicon.png">
 
-    <script src="../ref-tracker.js"></script>
+    <!-- Трекер рефералов и UTM -->
+    <script src="/ref-tracker.js"></script>
+    <script src="ref-tracker.js"></script>
+
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Шрифты Google Fonts: Oswald (Заголовки ALL CAPS) + Inter (Основной текст) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #000000; 
-            color: #f5f5f7; 
-            overflow-x: hidden; 
-            scroll-behavior: smooth; 
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030605;
+            color: #f3f4f6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            background-image: 
+                radial-gradient(circle at 10% 15%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(234, 88, 12, 0.04) 0%, transparent 60%);
+            background-attachment: fixed;
         }
-        .font-oswald { font-family: 'Oswald', sans-serif; }
-        
-        .title-massive { 
-            font-family: 'Oswald', sans-serif; 
-            text-transform: uppercase; 
-            line-height: 0.98; 
+
+        .title-massive {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            line-height: 0.95;
+        }
+
+        /* Осенние градиенты «Звуки Урала» */
+        .text-gradient-autumn {
+            background-image: 
+                linear-gradient(45deg, #10b981 15%, #f59e0b 40%, #fbbf24 50%, #f97316 60%, #10b981 85%),
+                linear-gradient(135deg, #10b981 15%, #f59e0b 40%, #fbbf24 50%, #f97316 60%, #10b981 85%);
+            background-size: 300% 51%;
+            background-position: 100% 0%, 100% 100%;
+            background-repeat: no-repeat;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textShineWedge 4s linear infinite;
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #ffffff 10%, #fef08a 40%, #f59e0b 70%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-emerald {
+            background: linear-gradient(135deg, #a7f3d0 0%, #34d399 50%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .text-gradient-fast {
-            background-image: linear-gradient(90deg, #38bdf8 0%, #818cf8 35%, #ec4899 65%, #f97316 85%, #f59e0b 100%);
+            background-image: 
+                linear-gradient(90deg, #10b981 10%, #f59e0b 30%, #f97316 45%, #ef4444 52%, #fbbf24 58%, #34d399 75%, #10b981 90%);
             background-size: 200% auto;
             background-repeat: repeat;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: textShineArrow 3s linear infinite;
+            animation: textShineArrow 1.8s linear infinite;
         }
 
-        .text-coral-fire {
-            background: linear-gradient(135deg, #ff4d4d 0%, #f97316 50%, #ec4899 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .text-gradient-cyan {
-            background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 50%, #3b82f6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        @keyframes textShineWedge {
+            0% { background-position: 100% 0%, 100% 100%; }
+            100% { background-position: 0% 0%, 0% 100%; }
         }
 
         @keyframes textShineArrow {
@@ -55,917 +84,876 @@
             100% { background-position: 0% center; }
         }
 
-        .glass-dark { 
-            background: rgba(11, 17, 32, 0.75); 
-            backdrop-filter: blur(20px); 
-            -webkit-backdrop-filter: blur(20px); 
-            border: 1px solid rgba(59, 130, 246, 0.2); 
+        /* Бегущая строка */
+        .marquee-container {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        .marquee-track {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            min-width: max-content;
+            animation: marqueeSeamless 28s linear infinite;
+        }
+
+        @keyframes marqueeSeamless {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Стекло и карточки в осенней палитре */
+        .glass-autumn {
+            background: linear-gradient(135deg, rgba(8, 16, 12, 0.85) 0%, rgba(12, 22, 16, 0.75) 100%);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-autumn-amber {
+            background: linear-gradient(135deg, rgba(20, 16, 8, 0.85) 0%, rgba(28, 20, 10, 0.75) 100%);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(245, 158, 11, 0.28);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.08);
         }
 
         .glass-card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .glass-card-hover:hover {
-            transform: translateY(-4px);
-            border-color: rgba(56, 189, 248, 0.45);
-            box-shadow: 0 20px 40px -15px rgba(56, 189, 248, 0.2);
+            transform: translateY(-3px);
+            border-color: rgba(245, 158, 11, 0.5);
+            box-shadow: 0 15px 35px -10px rgba(16, 185, 129, 0.25);
         }
 
+        /* Анимация пульса стрелки */
         @keyframes logoArrowPulse {
-            0%, 100% { filter: brightness(1) drop-shadow(0 0 5px rgba(239,68,68,0.3)); transform: scale(1); }
-            50% { filter: brightness(1.4) drop-shadow(0 0 20px rgba(239,68,68,0.75)); transform: scale(1.03); }
+            0%, 100% {
+                filter: brightness(1) drop-shadow(0 0 5px rgba(239, 68, 68, 0.3));
+                transform: scale(1);
+            }
+            50% {
+                filter: brightness(1.6) drop-shadow(0 0 25px rgba(239, 68, 68, 0.85));
+                transform: scale(1.04);
+            }
         }
         .logo-arrow-pulse {
             animation: logoArrowPulse 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            transform-origin: center;
         }
 
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #000000; }
-        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+        .tag-pill-autumn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #f3f4f6;
+            backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, rgba(6, 20, 14, 0.9) 0%, rgba(10, 30, 20, 0.85) 100%);
+            transition: all 0.3s;
+        }
+        .tag-pill-autumn:hover {
+            background: rgba(245, 158, 11, 0.15);
+            border-color: rgba(245, 158, 11, 0.6);
+        }
     </style>
 </head>
-<body class="selection:bg-sky-500 selection:text-white antialiased">
+<body class="antialiased selection:bg-amber-500 selection:text-black">
 
-    <!-- ФОНОВЫЕ СВЕТОВЫЕ ОРБЫ -->
-    <div class="fixed top-0 left-1/4 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
-    <div class="fixed top-1/3 right-10 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
-    <div class="fixed bottom-10 left-10 w-[600px] h-[600px] bg-sky-600/10 rounded-full blur-[150px] pointer-events-none -z-10"></div>
-
-    <!-- ВЕРХНЯЯ НАВИГАЦИЯ -->
-    <nav class="sticky top-0 z-50 bg-[#070b14]/95 backdrop-blur-md border-b border-indigo-900/40">
+    <!-- ======================================================= -->
+    <!-- НАВИГАЦИЯ (Идентична главному сайту «Территория Роста»)   -->
+    <!-- ======================================================= -->
+    <nav class="fixed top-0 w-full z-50 bg-[#040806]/95 backdrop-blur-md border-b border-emerald-950/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between text-sm font-medium tracking-wide text-gray-300">
             
-            <!-- ОФИЦИАЛЬНЫЙ КО-БРЕНДИНГ В ШАПКЕ -->
-            <a href="../index.html" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-                <img src="../ЛОГО ТР.png" alt="Территория Роста" class="h-8 sm:h-9 w-auto object-contain logo-arrow-pulse">
-                <span class="font-black text-xs sm:text-sm tracking-wider uppercase font-['Oswald'] text-white whitespace-nowrap hidden sm:inline-block">ТЕРРИТОРИЯ РОСТА</span>
-                <span class="text-gray-600 text-xs sm:text-sm font-light">✕</span>
-                <img src="../Спикеры/Лого/Предпринимай Лого.png" alt="ПРЕДПРИНИМАЙ" class="h-5 sm:h-6 w-auto object-contain brightness-110">
+            <!-- Логотип бренда -->
+            <a href="index.html" class="flex items-center gap-3 text-white hover:opacity-90 transition flex-shrink-0">
+                <img src="ЛОГО ТР.png" alt="Территория Роста" class="h-8 sm:h-9 w-auto object-contain flex-shrink-0">
+                <span class="font-black text-sm sm:text-base tracking-wider uppercase font-['Oswald'] text-white whitespace-nowrap">ТЕРРИТОРИЯ РОСТА</span>
             </a>
 
-            <!-- ЛАКОНИЧНОЕ МЕНЮ ДЕСКТОП -->
-            <div class="hidden xl:flex items-center space-x-5 text-[12px] font-semibold text-gray-300 uppercase tracking-wider whitespace-nowrap">
-                <a href="#about" class="hover:text-white transition">О чемпионате</a>
-                <a href="#case" class="hover:text-white transition">Кейс «Звуки Урала»</a>
-                <a href="#goals" class="hover:text-white transition">Цели и задачи</a>
-                <a href="#program" class="hover:text-white transition">Программа 7–11 ноября</a>
-                <a href="#roles" class="hover:text-white transition">Роли</a>
-                <a href="workspace.html" class="hover:text-sky-300 transition text-sky-400 font-bold">Хакатон-Портал ↗</a>
+            <!-- Меню навигации хакатона -->
+            <div id="navMenuLinks" class="hidden md:flex items-center space-x-3 lg:space-x-5 text-[11px] lg:text-[12px] font-semibold text-gray-300 uppercase tracking-wider whitespace-nowrap">
+                <a href="#about" class="hover:text-emerald-400 transition">О хакатоне</a>
+                <a href="#goals" class="hover:text-amber-400 transition">Цели и задачи</a>
+                <a href="#tracks" class="hover:text-emerald-400 transition">Кейсы</a>
+                <a href="#regions" class="hover:text-amber-400 transition">Большой Урал</a>
+                <a href="#program" class="hover:text-emerald-400 transition">Программа</a>
+                <a href="#roles" class="hover:text-amber-400 transition">Роли 14–17</a>
+                <a href="portal.html" target="_blank" class="text-amber-400 hover:text-amber-300 font-bold transition flex items-center gap-1">
+                    🚀 Портал проекта ↗
+                </a>
             </div>
 
-            <!-- КНОПКИ ДЕЙСТВИЯ -->
-            <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-                <a href="../index.html" class="hidden md:inline-flex text-xs font-semibold text-gray-400 hover:text-white transition px-3 py-2 rounded-full border border-white/10 hover:border-white/20 whitespace-nowrap">
-                    ← Главный форум
+            <!-- Правая часть: Кнопка действия + Бургер -->
+            <div class="flex items-center gap-3 sm:gap-4 flex-shrink-0">
+                <a href="#registrationForm" class="hidden sm:inline-block bg-gradient-to-r from-amber-500 to-emerald-600 hover:from-amber-400 hover:to-emerald-500 text-slate-950 font-black px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm tracking-wide whitespace-nowrap shadow-md shadow-amber-500/20 transition transform hover:scale-[1.02]">
+                    Подать заявку
                 </a>
-                <a href="#register" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-black px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm tracking-wide shadow-md shadow-sky-500/25 transition transform hover:scale-[1.02] whitespace-nowrap">
-                    Регистрация
-                </a>
+                
+                <button id="mobileMenuBtn" type="button" class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/20 hover:text-white transition cursor-pointer" aria-label="Открыть меню">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
             </div>
+        </div>
+
+        <!-- Мобильное меню -->
+        <div id="mobileMenu" class="hidden md:hidden bg-[#040806] border-b border-emerald-950/80 px-4 py-4 space-y-3 text-xs uppercase font-semibold">
+            <a href="#about" class="block text-gray-300 hover:text-emerald-400">О хакатоне</a>
+            <a href="#goals" class="block text-gray-300 hover:text-amber-400">Цели и задачи</a>
+            <a href="#tracks" class="block text-gray-300 hover:text-emerald-400">Кейсы</a>
+            <a href="#regions" class="block text-gray-300 hover:text-amber-400">Большой Урал</a>
+            <a href="#program" class="block text-gray-300 hover:text-emerald-400">Программа</a>
+            <a href="#roles" class="block text-gray-300 hover:text-amber-400">Роли 14–17</a>
+            <a href="portal.html" target="_blank" class="block text-amber-400 font-bold">🚀 Портал проекта ↗</a>
+            <a href="#registrationForm" class="block text-center py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-emerald-600 text-black font-black">Подать заявку</a>
         </div>
     </nav>
 
-    <!-- ГЛАВНЫЙ ЭКРАН (HERO) -->
-    <section id="about" class="relative pt-12 pb-20 sm:pt-20 sm:pb-28 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <!-- ======================================================= -->
+    <!-- ГЛАВНЫЙ ЭКРАН (HERO) — ТОЧНО ПО СТРУКТУРЕ INDEX.HTML    -->
+    <!-- Фоновая осенняя аэрофотография уральского парка         -->
+    <!-- ======================================================= -->
+    <section class="relative min-h-[100vh] flex flex-col justify-center items-center text-center pt-24 pb-28 overflow-hidden bg-black">
+        
+        <!-- Осенняя аэрофотография на фоне -->
+        <img src="assets/youth/autumn_ural_park.jpg" alt="Осенний Урал Аэрофотосъемка" class="absolute inset-0 w-full h-full object-cover opacity-35 z-0 scale-105 transition-transform duration-1000">
+
+        <!-- Кинематографичный градиентный оверлей -->
+        <div class="absolute inset-0 bg-gradient-to-t from-[#030605] via-[#030605]/70 to-[#030605]/40 z-0"></div>
+        <div class="absolute inset-0 bg-radial-gradient from-emerald-500/10 via-transparent to-transparent z-0 pointer-events-none"></div>
+
+        <div class="z-10 w-full max-w-5xl mx-auto px-6 flex flex-col items-center">
             
-            <div class="max-w-4xl mx-auto text-center">
+            <!-- Плашка даты и статуса -->
+            <div class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-xs sm:text-sm font-bold uppercase tracking-widest mb-6 backdrop-blur-md shadow-lg shadow-emerald-950/50">
+                <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                ЕКАТЕРИНБУРГ • 7–11 НОЯБРЯ 2026 • СИНАРА ЦЕНТР
+            </div>
+
+            <!-- Блок главного заголовка с составным логотипом -->
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-8 select-none">
                 
-                <!-- БЕЙДЖ СТАТУСА И ЛОКАЦИИ -->
-                <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-dark border-sky-500/40 text-sky-300 text-xs font-bold uppercase tracking-wider mb-6 shadow-lg shadow-sky-500/10">
-                    <span class="w-2 h-2 rounded-full bg-sky-400 animate-ping"></span>
-                    <span>7–11 Ноября 2026 · Большой Урал · Финал: Екатеринбург («Синара Центр», 1 этаж)</span>
+                <!-- Составной логотип ТР со светящейся стрелкой -->
+                <div class="relative w-[110px] h-[110px] sm:w-[150px] sm:h-[150px] md:w-[180px] md:h-[180px] lg:w-[210px] lg:h-[210px] shrink-0">
+                    <img src="ЛОГО_ТР_пин.png" alt="Территория Роста Пин" class="absolute inset-0 w-full h-full object-contain filter drop-shadow(0 0 15px rgba(16,185,129,0.3))">
+                    <img src="ЛОГО_ТР_стрелка_ток.png" alt="Территория Роста Стрелка" class="absolute inset-0 w-full h-full object-contain logo-arrow-pulse">
                 </div>
 
-                <!-- НАДЗАГОЛОВОК -->
-                <div class="text-xs sm:text-sm font-black uppercase tracking-[0.25em] text-sky-400 mb-3">
-                    Открытый региональный молодёжный кейс-чемпионат и хакатон
+                <div class="text-center md:text-left">
+                    <div class="text-xs sm:text-sm uppercase tracking-widest font-black text-amber-400 mb-1 font-['Oswald']">
+                        ЕЖЕГОДНЫЙ ОСЕННИЙ ХАКАТОН 14–17 ЛЕТ
+                    </div>
+                    <h1 class="title-massive text-[48px] sm:text-[75px] md:text-[95px] lg:text-[115px] font-black tracking-tighter text-white leading-none">
+                        ЗВУКИ<br>
+                        <span class="text-gradient-autumn">УРАЛА 2026</span>
+                    </h1>
                 </div>
+            </div>
 
-                <!-- ГЛАВНЫЙ ЗАГОЛОВОК С ЭТАЛОННОЙ ПОДСВЕТКОЙ -->
-                <h1 class="title-massive text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight text-white mb-6">
-                    ХАКАТОН <span class="text-gradient-fast">«ЗВУКИ УРАЛА»</span>:<br>
-                    <span class="text-gray-200">ОТ ИСТОРИИ И ЭКОЛОГИИ К ТЕХНОЛОГИЯМ БУДУЩЕГО</span>
-                </h1>
+            <!-- УТП (Caps, отцентровано, осенняя специфика) -->
+            <p class="text-gray-200 text-xs sm:text-sm md:text-base lg:text-lg font-semibold uppercase tracking-wider max-w-5xl leading-relaxed mb-10">
+                <span class="block lg:whitespace-nowrap">МОЛОДЁЖНЫЙ КЕЙС-ЧЕМПИОНАТ, ГДЕ 100 ЛИДЕРОВ С ПОМОЩЬЮ НАСТАВНИКОВ И НЕЙРОСЕТЕЙ</span>
+                <span class="block lg:whitespace-nowrap">СОЗДАДУТ АРТ-ОБЪЕКТЫ ИЗ 50 КГ ПЕРЕРАБОТАННЫХ ПОЛИМЕРОВ И ЦИФРОВЫЕ САУНД-ГИДЫ</span>
+                <span class="block lg:whitespace-nowrap">ДЛЯ ГОРОДОВ БОЛЬШОГО УРАЛА С ОТКРЫТИЕМ К 1 МАЯ 2027 ГОДА</span>
+            </p>
 
-                <!-- ПОДЗАГОЛОВОК -->
-                <p class="text-base sm:text-lg text-gray-300 leading-relaxed font-normal max-w-3xl mx-auto mb-10">
-                    5-дневный образовательно-практический трек в рамках делового события <strong class="text-white">«Территория Роста»</strong> для активных школьников 8–11 классов и студентов СПО (14–17 лет). 3 вводных онлайн-вебинара, участие в масштабной игре <strong>«Импатиум»</strong> и очный кейс-хакатон с прямой защитой проектов перед топ-бизнесом Большого Урала.
-                </p>
+            <!-- Кнопки действия -->
+            <div class="flex flex-col sm:flex-row gap-4 w-full max-w-lg justify-center">
+                <a href="#registrationForm" class="flex-1 text-center text-xs sm:text-sm bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black uppercase tracking-wider py-4 px-8 rounded-full transition shadow-[0_0_30px_rgba(245,158,11,0.3)] whitespace-nowrap transform hover:scale-[1.02]">
+                    Принять участие (14–17)
+                </a>
+                <a href="portal.html" target="_blank" class="flex-1 text-center text-xs sm:text-sm bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-bold uppercase tracking-wider py-4 px-8 rounded-full shadow-lg shadow-emerald-900/40 transition transform hover:scale-[1.02] whitespace-nowrap">
+                    Портал и Питч-сборщик ↗
+                </a>
+            </div>
 
-                <!-- КНОПКИ ДЕЙСТВИЯ -->
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 mb-16">
-                    <a href="#register" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 hover:from-sky-400 hover:to-blue-500 text-white font-black text-sm uppercase tracking-wider shadow-xl shadow-blue-500/30 transition-all hover:scale-[1.03] text-center">
-                        <i class="fa-solid fa-bolt mr-2 text-sky-300"></i> Подать заявку на участие
-                    </a>
-                    <a href="https://конкурсы.рф/cabinet/contests" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-4 rounded-2xl glass-dark hover:bg-white/10 text-white font-bold text-xs uppercase tracking-wider transition border border-sky-400/30 text-center flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-award text-amber-400"></i> Витрина «Конкурсы.рф» ↗
-                    </a>
-                    <a href="workspace.html" class="w-full sm:w-auto px-6 py-4 rounded-2xl glass-dark hover:bg-sky-500/20 text-sky-300 font-bold text-xs uppercase tracking-wider transition border border-sky-500/40 text-center flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-laptop-code text-sky-400"></i> Кабинет команд ↗
-                    </a>
+            <!-- 4 ключевых показателя хакатона -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 mt-12 w-full max-w-4xl text-left border-t border-emerald-950/80 pt-8">
+                <div class="border-l-2 border-emerald-400 pl-3">
+                    <div class="text-xl sm:text-2xl font-black font-['Oswald'] text-white">100 ЛИДЕРОВ</div>
+                    <div class="text-[11px] text-gray-400">Школьники и студенты 14–17 лет</div>
                 </div>
-
-                <!-- 4 КЛЮЧЕВЫХ МЕТРИКИ В СТИЛЕ ТЕРРИТОРИИ РОСТА -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto text-left">
-                    <div class="glass-dark p-4 sm:p-5 rounded-2xl border-blue-500/20">
-                        <div class="text-2xl sm:text-3xl font-black font-oswald text-sky-400 mb-1">14–17 ЛЕТ</div>
-                        <div class="text-xs text-gray-300 leading-snug">Школьники 8–11 классов и студенты колледжей/СПО</div>
-                    </div>
-                    <div class="glass-dark p-4 sm:p-5 rounded-2xl border-purple-500/20">
-                        <div class="text-2xl sm:text-3xl font-black font-oswald text-purple-400 mb-1">100 ЛИДЕРОВ</div>
-                        <div class="text-xs text-gray-300 leading-snug">80 очно в Екатеринбурге + онлайн-участники городов Урала</div>
-                    </div>
-                    <div class="glass-dark p-4 sm:p-5 rounded-2xl border-pink-500/20">
-                        <div class="text-2xl sm:text-3xl font-black font-oswald text-pink-400 mb-1">5 ДНЕЙ</div>
-                        <div class="text-xs text-gray-300 leading-snug">7–11 ноября: Вебинары + Игра «Импатиум» + Финал</div>
-                    </div>
-                    <div class="glass-dark p-4 sm:p-5 rounded-2xl border-emerald-500/20">
-                        <div class="text-2xl sm:text-3xl font-black font-oswald text-emerald-400 mb-1">0 ₽ / БЕСПЛАТНО</div>
-                        <div class="text-xs text-gray-300 leading-snug">Участие по итогам конкурсного отбора анкет</div>
-                    </div>
+                <div class="border-l-2 border-amber-400 pl-3">
+                    <div class="text-xl sm:text-2xl font-black font-['Oswald'] text-amber-400">5 ДНЕЙ</div>
+                    <div class="text-[11px] text-gray-400">7–11 ноября (Вебинары + Очно)</div>
                 </div>
-
+                <div class="border-l-2 border-emerald-400 pl-3">
+                    <div class="text-xl sm:text-2xl font-black font-['Oswald'] text-white">50 КГ ЭКО-АРТ</div>
+                    <div class="text-[11px] text-gray-400">Вторсырье на команду</div>
+                </div>
+                <div class="border-l-2 border-amber-400 pl-3">
+                    <div class="text-xl sm:text-2xl font-black font-['Oswald'] text-amber-400">1 МАЯ 2027</div>
+                    <div class="text-[11px] text-gray-400">Установка в городах Урала</div>
+                </div>
             </div>
 
         </div>
+
+        <!-- Бегущая строка (осенний градиент) -->
+        <div class="z-10 absolute bottom-4 w-full marquee-container">
+            <div class="marquee-track font-['Oswald'] uppercase text-xl md:text-2xl font-black tracking-widest text-gradient-fast">
+                <span class="mx-8">ОСЕННИЙ ХАКАТОН</span>
+                <span class="mx-8">ЗВУКИ УРАЛА</span>
+                <span class="mx-8">ЭКОЛОГИЯ ПОЛИМЕРОВ</span>
+                <span class="mx-8">ИНДУСТРИАЛЬНЫЙ КОД</span>
+                <span class="mx-8">ЦИФРОВЫЕ САУНД-ГИДЫ</span>
+                <span class="mx-8">БОЛЬШОЙ УРАЛ</span>
+                <span class="mx-8">НЕЙРОСЕТИ И ИИ</span>
+                <span class="mx-8">СИНАРА ЦЕНТР</span>
+            </div>
+            <div class="marquee-track font-['Oswald'] uppercase text-xl md:text-2xl font-black tracking-widest text-gradient-fast" aria-hidden="true">
+                <span class="mx-8">ОСЕННИЙ ХАКАТОН</span>
+                <span class="mx-8">ЗВУКИ УРАЛА</span>
+                <span class="mx-8">ЭКОЛОГИЯ ПОЛИМЕРОВ</span>
+                <span class="mx-8">ИНДУСТРИАЛЬНЫЙ КОД</span>
+                <span class="mx-8">ЦИФРОВЫЕ САУНД-ГИДЫ</span>
+                <span class="mx-8">БОЛЬШОЙ УРАЛ</span>
+                <span class="mx-8">НЕЙРОСЕТИ И ИИ</span>
+                <span class="mx-8">СИНАРА ЦЕНТР</span>
+            </div>
+        </div>
     </section>
 
-    <!-- БЛОК: ЦЕЛИ И ЗАДАЧИ ХАКАТОНА (НОВЫЙ) -->
-    <section id="goals" class="py-16 sm:py-24 relative border-t border-indigo-950/60 bg-gradient-to-b from-[#000000] via-[#070e1e] to-[#000000]">
+    <!-- ======================================================= -->
+    <!-- СЕКЦИЯ 1: ЦЕЛИ И ЗАДАЧИ ХАКАТОНА                        -->
+    <!-- ======================================================= -->
+    <section id="goals" class="py-20 sm:py-24 relative z-10 border-t border-emerald-950/60 bg-[#040806]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center max-w-3xl mx-auto mb-14">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-300 text-xs font-bold uppercase tracking-wider mb-3">
-                    <i class="fa-solid fa-bullseye"></i> Смысловой фундамент
-                </div>
-                <h2 class="title-massive text-3xl sm:text-5xl font-black uppercase text-white mb-4">
-                    ЦЕЛИ И ЗАДАЧИ <span class="text-gradient-fast">ХАКАТОНА</span>
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-900/40 border border-emerald-400/40 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-3">
+                    Миссия хакатона
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase font-['Oswald'] text-white">
+                    ЗАЧЕМ МЫ ПРОВОДИМ <span class="text-gradient-autumn">ОСЕННИЙ ХАКАТОН?</span>
                 </h2>
-                <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-                    Хакатон «Звуки Урала» спроектирован как среда быстрого взросления и практического освоения компетенций XXI века.
+                <p class="text-gray-300 text-sm sm:text-base mt-3 leading-relaxed">
+                    «Звуки Урала» — это ежегодная точка сборки юных инженеров, экологов, сценаристов и креаторов. Мы не пишем проекты «в стол», а создаем реальные городские арт-объекты.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <div class="glass-dark glass-card-hover p-6 rounded-3xl border-sky-500/30 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-2xl bg-sky-500/20 border border-sky-400/30 text-sky-400 flex items-center justify-center text-xl mb-5">
-                            <i class="fa-solid fa-diagram-project"></i>
-                        </div>
-                        <h3 class="font-oswald text-lg font-bold uppercase text-white mb-2">1. Проектная деятельность</h3>
-                        <p class="text-gray-300 text-xs leading-relaxed">
-                            Освоение полного цикла: от формулирования гипотезы и сбора фактуры до создания прототипа, медиа-плана и расчёта ресурсов.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-sky-300 font-semibold">Hard Skills & Практика</div>
+                <div class="glass-autumn rounded-2xl p-6 glass-card-hover space-y-3">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black text-xl">01</div>
+                    <h3 class="font-bold text-white text-base uppercase font-['Oswald']">Практическая проектная деятельность</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        Подростки осваивают методологию продуктового трекинга: от анализа исторического заводского кода до просчета реальной сметы и 3D-модели.
+                    </p>
                 </div>
 
-                <div class="glass-dark glass-card-hover p-6 rounded-3xl border-purple-500/30 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-2xl bg-purple-500/20 border border-purple-400/30 text-purple-400 flex items-center justify-center text-xl mb-5">
-                            <i class="fa-solid fa-users-viewfinder"></i>
-                        </div>
-                        <h3 class="font-oswald text-lg font-bold uppercase text-white mb-2">2. Командный интеллект</h3>
-                        <p class="text-gray-300 text-xs leading-relaxed">
-                            Навык эффективного распределения ролей, управления временем в режиме жесткого спринта и совместного преодоления неопределенности.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-purple-300 font-semibold">Soft Skills & Лидерство</div>
+                <div class="glass-autumn-amber rounded-2xl p-6 glass-card-hover space-y-3">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-black text-xl">02</div>
+                    <h3 class="font-bold text-white text-base uppercase font-['Oswald']">Экология и Вторая Жизнь Пластика</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        Каждая команда направляет в производство 50 кг переработанных крышечек и бутылок, создавая антивандальную малую архитектурную форму.
+                    </p>
                 </div>
 
-                <div class="glass-dark glass-card-hover p-6 rounded-3xl border-pink-500/30 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-2xl bg-pink-500/20 border border-pink-400/30 text-pink-400 flex items-center justify-center text-xl mb-5">
-                            <i class="fa-solid fa-handshake-angle"></i>
-                        </div>
-                        <h3 class="font-oswald text-lg font-bold uppercase text-white mb-2">3. Диалог с бизнесом и властью</h3>
-                        <p class="text-gray-300 text-xs leading-relaxed">
-                            Прямой контакт с топ-менеджерами промышленных корпораций, IT-лидерами и экспертами региона. Умение аргументировать и защищать идеи перед первыми лицами.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-pink-300 font-semibold">Нетворкинг & Менторство</div>
+                <div class="glass-autumn rounded-2xl p-6 glass-card-hover space-y-3">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black text-xl">03</div>
+                    <h3 class="font-bold text-white text-base uppercase font-['Oswald']">Диалог с Бизнесом и Властью</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        11 ноября в Синара Центре на 1 этаже школьники защищают свои идеи перед топ-менеджерами заводов и инвесторами делового саммита «Территория Роста».
+                    </p>
                 </div>
 
-                <div class="glass-dark glass-card-hover p-6 rounded-3xl border-emerald-500/30 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 border border-emerald-400/30 text-emerald-400 flex items-center justify-center text-xl mb-5">
-                            <i class="fa-solid fa-tree-city"></i>
-                        </div>
-                        <h3 class="font-oswald text-lg font-bold uppercase text-white mb-2">4. Преображение городов Урала</h3>
-                        <p class="text-gray-300 text-xs leading-relaxed">
-                            Реальный вклад в сохранение трудового наследия региона и экологическую переработку полимеров через арт-объекты и цифровые аудиогиды.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-white/5 text-[11px] text-emerald-300 font-semibold">Импакт & Экология</div>
+                <div class="glass-autumn-amber rounded-2xl p-6 glass-card-hover space-y-3">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-black text-xl">04</div>
+                    <h3 class="font-bold text-white text-base uppercase font-['Oswald']">Наследие к 1 мая 2027</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        Лучшие арт-объекты и цифровые аудиогиды устанавливаются в парках, на набережных и заводских аллеях Екатеринбурга, Челябинска и городов-спутников.
+                    </p>
                 </div>
-
             </div>
-
         </div>
     </section>
 
-    <!-- БЛОК: СИНЕРГИЯ БОЛЬШОГО УРАЛА И ДВУХ ЭТАЖЕЙ СИНАРЫ -->
-    <section class="py-16 sm:py-24 relative border-t border-indigo-950/60 bg-[#040711]">
+    <!-- ======================================================= -->
+    <!-- СЕКЦИЯ 2: БОЛЬШОЙ УРАЛ (АЭРОФОТОГРАФИИ ОСЕНИ)            -->
+    <!-- ======================================================= -->
+    <section id="regions" class="py-20 sm:py-24 relative z-10 bg-[#020504] border-t border-emerald-950/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center max-w-3xl mx-auto mb-14">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-bold uppercase tracking-wider mb-3">
-                    <i class="fa-solid fa-mountain"></i> Большой Урал: Екатеринбург & Челябинск
-                </div>
-                <h2 class="title-massive text-3xl sm:text-5xl font-black uppercase text-white mb-4">
-                    ЕДИНОЕ ПРОСТРАНСТВО РАЗВИТИЯ: <span class="text-gradient-cyan">БИЗНЕС ⇄ МОЛОДЁЖЬ</span>
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-900/40 border border-amber-400/40 text-amber-300 text-xs font-bold uppercase tracking-wider mb-3">
+                    География хакатона
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase font-['Oswald'] text-white">
+                    БОЛЬШОЙ УРАЛ: <span class="text-gradient-autumn">ОСЕННЕЕ ПРЕОБРАЖЕНИЕ</span>
                 </h2>
-                <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-                    11 ноября в «Синара Центре» объединяются два этажа: стратегический бизнес-форум директоров и молодежный кейс-спринт.
+                <p class="text-gray-300 text-sm sm:text-base mt-3 leading-relaxed">
+                    Екатеринбург, Челябинск и города-спутники объединяются в единое креативно-индустриальное пространство.
                 </p>
             </div>
 
-            <!-- ФОТОГРАФИИ ЛОКАЦИИ И РЕГИОНА -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                <div class="relative rounded-3xl overflow-hidden glass-dark border-blue-500/30 group">
-                    <img src="../assets/youth/ekb_ural.jpg" alt="Екатеринбург и Большой Урал" class="w-full h-64 sm:h-80 object-cover transition-transform duration-500 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#040711] via-[#040711]/40 to-transparent"></div>
-                    <div class="absolute bottom-5 left-5 right-5">
-                        <span class="px-3 py-1 rounded-full bg-sky-500/90 text-black font-bold text-[11px] uppercase tracking-wider">Большой Урал</span>
-                        <h4 class="font-oswald text-xl sm:text-2xl font-bold uppercase text-white mt-1">Екатеринбург & Челябинск</h4>
-                        <p class="text-xs text-gray-300 mt-0.5">Крупнейшие индустриальные центры, объединенные общей историей и инновациями.</p>
-                    </div>
-                </div>
-
-                <div class="relative rounded-3xl overflow-hidden glass-dark border-blue-500/30 group">
-                    <img src="../assets/youth/sinara_stage.jpg" alt="Синара Центр Екатеринбург" class="w-full h-64 sm:h-80 object-cover transition-transform duration-500 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#040711] via-[#040711]/40 to-transparent"></div>
-                    <div class="absolute bottom-5 left-5 right-5">
-                        <span class="px-3 py-1 rounded-full bg-blue-500/90 text-white font-bold text-[11px] uppercase tracking-wider">Площадка событий</span>
-                        <h4 class="font-oswald text-xl sm:text-2xl font-bold uppercase text-white mt-1">Культурно-деловой «Синара Центр»</h4>
-                        <p class="text-xs text-gray-300 mt-0.5">Екатеринбург, Верх-Исетский бульвар, 15/4 — место встречи бизнеса и молодёжи.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- КАРТОЧКИ ДВУХ ЭТАЖЕЙ -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-                
-                <!-- 2 ЭТАЖ -->
-                <div class="glass-dark p-6 sm:p-8 rounded-3xl border-blue-500/30 flex flex-col justify-between relative overflow-hidden">
-                    <div>
-                        <div class="flex items-center justify-between mb-5">
-                            <span class="px-3 py-1 rounded-lg bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold uppercase">2 этаж · Главная арена</span>
-                            <i class="fa-solid fa-briefcase text-2xl text-blue-400"></i>
+                <!-- Карточка 1: Екатеринбург -->
+                <div class="glass-autumn rounded-3xl overflow-hidden flex flex-col justify-between group">
+                    <div class="relative h-64 sm:h-80 overflow-hidden">
+                        <img src="assets/youth/autumn_ural_park.jpg" alt="Осенний Екатеринбург" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#08100c] via-transparent to-transparent"></div>
+                        <div class="absolute top-4 left-4 bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 px-3 py-1 rounded-full text-xs font-bold uppercase backdrop-blur-md">
+                            📍 Свердловская область
                         </div>
-                        <h3 class="font-oswald text-2xl sm:text-3xl font-bold uppercase text-white mb-3">ФОРУМ «ТЕРРИТОРИЯ РОСТА»</h3>
-                        <p class="text-gray-300 text-sm leading-relaxed mb-6">
-                            500+ собственников бизнеса, топ-менеджеров промышленных корпораций, инвесторов и представителей органов власти решают стратегические задачи региона: внедрение AI, автоматизация, новые рынки и кадровый суверенитет.
+                    </div>
+                    <div class="p-6 sm:p-8 space-y-3">
+                        <h3 class="text-2xl font-heading font-black uppercase text-white">Екатеринбург и Города-Спутники</h3>
+                        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                            Уралмаш, ВИЗ, Химмаш, Верхняя Пышма, Первоуральск, Ревда, Каменск-Уральский и Нижний Тагил. Проектирование арт-объектов вдоль исторических плотин и парковых зон.
                         </p>
-                        <div class="space-y-2.5 mb-6 text-xs text-gray-300">
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Запрос на свежие кадры и нестандартный взгляд</div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Софинансирование социокультурных инициатив</div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Готовность быть наставниками и работодателями</div>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-emerald-400 pt-2">
+                            <span>● 50 участников очно в Синара Центре</span>
+                            <span>● 10 школьных команд</span>
                         </div>
-                    </div>
-                    <div class="p-4 rounded-2xl bg-blue-950/40 border border-blue-800/40 text-xs text-blue-200">
-                        💡 <strong>Роль предпринимателей:</strong> Эксперты с форума выступают трекерами молодежных команд, дают обратную связь и оценивают защиту проектов в жюри.
                     </div>
                 </div>
 
-                <!-- 1 ЭТАЖ -->
-                <div class="glass-dark p-6 sm:p-8 rounded-3xl border-sky-500/30 flex flex-col justify-between relative overflow-hidden">
-                    <div>
-                        <div class="flex items-center justify-between mb-5">
-                            <span class="px-3 py-1 rounded-lg bg-sky-500/20 border border-sky-400/30 text-sky-300 text-xs font-bold uppercase">1 этаж · Молодёжный хакатон</span>
-                            <i class="fa-solid fa-rocket text-2xl text-sky-400"></i>
+                <!-- Карточка 2: Челябинск -->
+                <div class="glass-autumn-amber rounded-3xl overflow-hidden flex flex-col justify-between group">
+                    <div class="relative h-64 sm:h-80 overflow-hidden">
+                        <img src="assets/youth/autumn_ural_sport.jpg" alt="Осенний Челябинск" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#141008] via-transparent to-transparent"></div>
+                        <div class="absolute top-4 left-4 bg-amber-950/80 border border-amber-500/40 text-amber-300 px-3 py-1 rounded-full text-xs font-bold uppercase backdrop-blur-md">
+                            📍 Челябинская область
                         </div>
-                        <h3 class="font-oswald text-2xl sm:text-3xl font-bold uppercase text-white mb-3">ХАКАТОН «ЗВУКИ УРАЛА»</h3>
-                        <p class="text-gray-300 text-sm leading-relaxed mb-6">
-                            100 активных ребят 14–17 лет, прошедших конкурсный отбор. В течение интенсивного спринта команды разрабатывают готовый концепт цифрового аудиомаршрута и арт-объекта из переработанного пластика.
+                    </div>
+                    <div class="p-6 sm:p-8 space-y-3">
+                        <h3 class="text-2xl font-heading font-black uppercase text-white">Челябинск и Южный Урал</h3>
+                        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                            ЧТЗ, ЧТПЗ, Магнитогорск, Златоуст и Миасс. Танкоград, металлургия и освоение природных парков. Интеграция аудиоспектаклей в современные спортивные кластеры.
                         </p>
-                        <div class="space-y-2.5 mb-6 text-xs text-gray-300">
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Работа с реальным индустриальным кейсом Урала</div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Освоение нейросетей, саунд-дизайна и питчинга</div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-400"></i> Очная защита проектов перед реальными инвесторами</div>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-amber-400 pt-2">
+                            <span>● 30 участников очно + Онлайн-филиалы</span>
+                            <span>● Сквозной телемост</span>
                         </div>
                     </div>
-                    <div class="p-4 rounded-2xl bg-sky-950/40 border border-sky-800/40 text-xs text-sky-200">
-                        🚀 <strong>Результат для участников:</strong> Проект победителей будет профинансирован бизнесом и установлен в городах Урала к 1 мая 2027 года!
-                    </div>
                 </div>
-
             </div>
-
         </div>
     </section>
 
-    <!-- БЛОК: О КЕЙСЕ «ЗВУКИ УРАЛА» -->
-    <section id="case" class="py-16 sm:py-24 relative border-t border-indigo-950/60 bg-[#000000]">
+    <!-- ======================================================= -->
+    <!-- СЕКЦИЯ 3: 5-ДНЕВНАЯ ПРОГРАММА (7–11 НОЯБРЯ)             -->
+    <!-- ======================================================= -->
+    <section id="program" class="py-20 sm:py-24 relative z-10 bg-[#040806] border-t border-emerald-950/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center max-w-3xl mx-auto mb-14">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-300 text-xs font-bold uppercase tracking-wider mb-3">
-                    <i class="fa-solid fa-headphones"></i> Реальный кейс региона
-                </div>
-                <h2 class="title-massive text-3xl sm:text-5xl font-black uppercase text-white mb-4">
-                    ЧТО ТАКОЕ ПРОЕКТ <span class="text-gradient-fast">«ЗВУКИ УРАЛА»</span>?
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-900/40 border border-emerald-400/40 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-3">
+                    Таймлайн акселерации
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase font-['Oswald'] text-white">
+                    5 ДНЕЙ ИНТЕНСИВА: <span class="text-gradient-autumn">ОТ ИДЕИ ДО ПИТЧА</span>
                 </h2>
-                <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-                    «Слышать прошлое: Урал в звуках и судьбах» — социокультурный проект создания городских аудиомаршрутов и арт-объектов из переработанного пластика с цифровым QR-слоем платформы «КиберГид».
+                <p class="text-gray-300 text-sm sm:text-base mt-3 leading-relaxed">
+                    Сбалансированный гибридный формат: 3 онлайн-вебинара, день деловой игры и кульминационный очный финал в Синара Центре.
                 </p>
             </div>
 
-            <!-- 3 ОПОРЫ КЕЙСА -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                
-                <div class="glass-dark glass-card-hover p-6 sm:p-7 rounded-3xl border-sky-500/20">
-                    <div class="w-12 h-12 rounded-2xl bg-sky-500/20 border border-sky-400/30 text-sky-400 flex items-center justify-center text-xl mb-5">
-                        <i class="fa-solid fa-landmark"></i>
+            <div class="space-y-4 max-w-4xl mx-auto">
+                <!-- День 1: 7 ноября -->
+                <div class="glass-autumn rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-l-4 border-emerald-400">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">7 ноября (Пт) · 17:00–18:30</span>
+                            <span class="text-xs text-gray-400">Онлайн (Яндекс Телемост)</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white uppercase font-['Oswald']">Старт хакатона и Исследование «Индустриальный код завода»</h4>
+                        <p class="text-xs text-gray-300">Знакомство команд, выбор заводов и памятников. Погружение в историю мастеров и династий Урала.</p>
                     </div>
-                    <h3 class="font-oswald text-xl font-bold uppercase text-white mb-2">1. ИНДУСТРИАЛЬНЫЙ КОД</h3>
-                    <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
-                        Изучение истории уральских заводов-гигантов, трудовых династий инженеров и мастеров. Трансформация архивной истории в захватывающие аудиоспектакли-технотриллеры.
-                    </p>
                 </div>
 
-                <div class="glass-dark glass-card-hover p-6 sm:p-7 rounded-3xl border-emerald-500/20">
-                    <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 border border-emerald-400/30 text-emerald-400 flex items-center justify-center text-xl mb-5">
-                        <i class="fa-solid fa-recycle"></i>
+                <!-- День 2: 8 ноября -->
+                <div class="glass-autumn rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-l-4 border-amber-400">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">8 ноября (Сб) · 15:00–16:30</span>
+                            <span class="text-xs text-gray-400">Онлайн</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white uppercase font-['Oswald']">Эко-Арт и Переработка полимеров (50 кг)</h4>
+                        <p class="text-xs text-gray-300">Мастер-класс от технологов эко-завода «Умная Среда». Создание концепта малой архитектурной формы.</p>
                     </div>
-                    <h3 class="font-oswald text-xl font-bold uppercase text-white mb-2">2. ЭКОЛОГИЯ И ГОРОД</h3>
-                    <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
-                        Сбор 500 кг пластиковых крышек и полимеров школьниками. Создание 10 всесезонных полимерпесчаных арт-объектов (по 50 кг пластика каждый) совместно с эко-заводом «Умная Среда».
-                    </p>
                 </div>
 
-                <div class="glass-dark glass-card-hover p-6 sm:p-7 rounded-3xl border-purple-500/20">
-                    <div class="w-12 h-12 rounded-2xl bg-purple-500/20 border border-purple-400/30 text-purple-400 flex items-center justify-center text-xl mb-5">
-                        <i class="fa-solid fa-microchip"></i>
+                <!-- День 3: 9 ноября -->
+                <div class="glass-autumn rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-l-4 border-emerald-400">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">9 ноября (Вс) · 15:00–16:30</span>
+                            <span class="text-xs text-gray-400">Онлайн</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white uppercase font-['Oswald']">Саунд-дизайн, Нейросети и платформа «КиберГид»</h4>
+                        <p class="text-xs text-gray-300">Сборка аудиоспектакля: полевые записи станочных цехов, генерация ИИ-голосов и саундтреков.</p>
                     </div>
-                    <h3 class="font-oswald text-xl font-bold uppercase text-white mb-2">3. ЦИФРА, ИИ И САУНД</h3>
-                    <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
-                        Лазерная гравировка антивандальных QR-кодов платформы «КиберГид». Генерация звуковых эффектов нейросетями, мобильный саунд-дизайн и интеграция контура безопасности «Добросервис».
-                    </p>
                 </div>
 
+                <!-- День 4: 10 ноября -->
+                <div class="glass-autumn rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-l-4 border-amber-400">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">10 ноября (Пн) · 16:00–18:00</span>
+                            <span class="text-xs text-gray-400">Онлайн-баттл</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white uppercase font-['Oswald']">Деловая игра «Импатиум» и Предзащита проектов</h4>
+                        <p class="text-xs text-gray-300">Тестирование командной слаженности, краш-тест гипотез трекерами и финализация питч-презентаций.</p>
+                    </div>
+                </div>
+
+                <!-- День 5: 11 ноября (Финал в Синаре) -->
+                <div class="glass-autumn-amber rounded-2xl p-6 sm:p-8 border-2 border-amber-400/60 shadow-2xl space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-amber-500/30 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 rounded-full bg-amber-500 text-black font-black text-xs uppercase">🏆 11 ноября (Вт) · ОЧНЫЙ ФИНАЛ</span>
+                            <span class="text-xs text-amber-300 font-bold">12:30 – 17:00</span>
+                        </div>
+                        <span class="text-xs text-gray-300">📍 Екатеринбург, Синара Центр, 1 этаж</span>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+                        <div class="bg-black/40 p-3 rounded-xl border border-amber-500/20">
+                            <strong class="text-white block mb-1">12:30–13:30</strong>
+                            Регистрация, выставка макетов в атриуме, нетворкинг с топ-менеджерами
+                        </div>
+                        <div class="bg-black/40 p-3 rounded-xl border border-amber-500/20">
+                            <strong class="text-white block mb-1">13:30–15:30</strong>
+                            Очные питч-сессии перед жюри инвесторов и директоров уральских холдингов
+                        </div>
+                        <div class="bg-black/40 p-3 rounded-xl border border-amber-500/20">
+                            <strong class="text-white block mb-1">15:30–17:00</strong>
+                            Награждение, гранты на реализацию, вручение верифицированных дипломов
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <!-- ЧТО РАЗРАБАТЫВАЕТ КАЖДАЯ КОМАНДА -->
-            <div class="glass-dark p-6 sm:p-8 rounded-3xl border-white/10">
-                <h3 class="font-oswald text-2xl font-bold uppercase text-white mb-6 flex items-center gap-3">
-                    <i class="fa-solid fa-list-check text-sky-400"></i>
-                    <span>Что разрабатывает каждая команда за время интенсива:</span>
-                </h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-                    <div class="p-4 rounded-2xl bg-slate-900/60 border border-white/5">
-                        <div class="font-bold text-sky-300 text-sm mb-1.5">🎙️ 1. Аудиомаршрут</div>
-                        <p class="text-gray-300">Сценарий аудиогида по выбранной локации (завод, сквер, памятник) с живыми диалогами и саундтреком.</p>
-                    </div>
-                    <div class="p-4 rounded-2xl bg-slate-900/60 border border-white/5">
-                        <div class="font-bold text-purple-300 text-sm mb-1.5">🗿 2. Концепт арт-объекта</div>
-                        <p class="text-gray-300">Визуальный образ и форма эко-объекта из переработанного пластика с размещением QR-панели.</p>
-                    </div>
-                    <div class="p-4 rounded-2xl bg-slate-900/60 border border-white/5">
-                        <div class="font-bold text-pink-300 text-sm mb-1.5">📱 3. Медиа-план</div>
-                        <p class="text-gray-300">Контент-стратегия продвижения аудиогида среди молодежи (рилсы, подкасты, челленджи в VK).</p>
-                    </div>
-                    <div class="p-4 rounded-2xl bg-slate-900/60 border border-white/5">
-                        <div class="font-bold text-emerald-300 text-sm mb-1.5">📊 4. Питч-презентация</div>
-                        <p class="text-gray-300">3-минутная защита проекта на сцене перед жюри из генеральных директоров и инвесторов.</p>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
-    <!-- БЛОК: РОЛИ В КОМАНДЕ (6 РОЛЕЙ, ВКЛЮЧАЯ АДАПТИВНУЮ) -->
-    <section id="roles" class="py-16 sm:py-24 relative border-t border-indigo-950/60 bg-[#050814]">
+    <!-- ======================================================= -->
+    <!-- СЕКЦИЯ 4: 6 РОЛЕЙ В КОМАНДЕ (14–17 ЛЕТ)                 -->
+    <!-- ======================================================= -->
+    <section id="roles" class="py-20 sm:py-24 relative z-10 bg-[#020504] border-t border-emerald-950/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center max-w-3xl mx-auto mb-14">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-300 text-xs font-bold uppercase tracking-wider mb-3">
-                    <i class="fa-solid fa-users-gear"></i> Командная архитектура
-                </div>
-                <h2 class="title-massive text-3xl sm:text-5xl font-black uppercase text-white mb-4">
-                    КЕМ ТЫ ХОЧЕШЬ БЫТЬ <span class="text-gradient-fast">В КОМАНДЕ?</span>
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-900/40 border border-emerald-400/40 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-3">
+                    Командный профиль
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase font-['Oswald'] text-white">
+                    6 РОЛЕЙ: <span class="text-gradient-autumn">ТВОЁ МЕСТО В КОМАНДЕ</span>
                 </h2>
-                <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-                    Можно подавать заявку индивидуально или мини-командой. Если еще не определился — поможем выбрать роль прямо на площадке!
+                <p class="text-gray-300 text-sm sm:text-base mt-3 leading-relaxed">
+                    Команда состоит из 5–8 человек. Каждый находит задачу под свой талант и получает персональный верифицированный сертификат с указанием роли.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                
-                <div class="glass-dark p-5 rounded-2xl border-blue-500/20 flex flex-col justify-between">
-                    <div>
-                        <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-sky-400 flex items-center justify-center text-lg mb-3">
-                            <i class="fa-solid fa-crown"></i>
-                        </div>
-                        <h4 class="font-bold text-sm text-white mb-1">Капитан / Продюсер</h4>
-                        <p class="text-xs text-gray-400 leading-relaxed">Управление командой, тайминг, сборка смыслов и финальная защита проекта перед жюри.</p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-white/5 text-[11px] font-semibold text-sky-300">Лидерство & Питчинг</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass-autumn rounded-2xl p-6 glass-card-hover space-y-2">
+                    <div class="text-amber-400 font-black text-xl font-['Oswald']">👑 1. Капитан-Продюсер</div>
+                    <p class="text-xs text-gray-300">Координация команды, соблюдение дедлайнов, финальная защита проекта перед жюри.</p>
                 </div>
-
-                <div class="glass-dark p-5 rounded-2xl border-purple-500/20 flex flex-col justify-between">
-                    <div>
-                        <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-lg mb-3">
-                            <i class="fa-solid fa-book-open"></i>
-                        </div>
-                        <h4 class="font-bold text-sm text-white mb-1">Сценарист / Краевед</h4>
-                        <p class="text-xs text-gray-400 leading-relaxed">Поиск архивной фактуры, исследование истории, создание драматургии и сторителлинга аудиогида.</p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-white/5 text-[11px] font-semibold text-purple-300">История & Тексты</div>
+                <div class="glass-autumn rounded-2xl p-6 glass-card-hover space-y-2">
+                    <div class="text-emerald-400 font-black text-xl font-['Oswald']">📖 2. Сценарист-Краевед</div>
+                    <p class="text-xs text-gray-300">Сбор архивных материалов, интервью с ветеранами завода, драматургия 3-минутного аудиогида.</p>
                 </div>
-
-                <div class="glass-dark p-5 rounded-2xl border-pink-500/20 flex flex-col justify-between">
-                    <div>
-                        <div class="w-10 h-10 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-lg mb-3">
-                            <i class="fa-solid fa-wave-square"></i>
-                        </div>
-                        <h4 class="font-bold text-sm text-white mb-1">Саунд-дизайнер / Голос</h4>
-                        <p class="text-xs text-gray-400 leading-relaxed">Запись и монтаж аудиодорожек, озвучка, подбор эффектов и генерация звуков через нейросети.</p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-white/5 text-[11px] font-semibold text-pink-300">Аудио & Нейросети</div>
+                <div class="glass-autumn rounded-2xl p-6 glass-card-hover space-y-2">
+                    <div class="text-amber-400 font-black text-xl font-['Oswald']">🎧 3. Саунд-дизайнер</div>
+                    <p class="text-xs text-gray-300">Запись звуков города, мастеринг в нейросетях, озвучка и интеграция в платформу «КиберГид».</p>
                 </div>
-
-                <div class="glass-dark p-5 rounded-2xl border-emerald-500/20 flex flex-col justify-between">
-                    <div>
-                        <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg mb-3">
-                            <i class="fa-solid fa-palette"></i>
-                        </div>
-                        <h4 class="font-bold text-sm text-white mb-1">Дизайнер / Архитектор</h4>
-                        <p class="text-xs text-gray-400 leading-relaxed">Разработка формы эко-арт-объекта, эскизы, визуализация и презентационная графика.</p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-white/5 text-[11px] font-semibold text-emerald-300">Визуал & Эко-дизайн</div>
+                <div class="glass-autumn rounded-2xl p-6 glass-card-hover space-y-2">
+                    <div class="text-emerald-400 font-black text-xl font-['Oswald']">🎨 4. Архитектор-Эколог</div>
+                    <p class="text-xs text-gray-300">3D-модель арт-объекта, расчет 50 кг полимеров и привязка к реальному городскому ландшафту.</p>
                 </div>
-
-                <div class="glass-dark p-5 rounded-2xl border-amber-500/20 flex flex-col justify-between">
-                    <div>
-                        <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg mb-3">
-                            <i class="fa-solid fa-bullhorn"></i>
-                        </div>
-                        <h4 class="font-bold text-sm text-white mb-1">Медийщик / SMM</h4>
-                        <p class="text-xs text-gray-400 leading-relaxed">Съемка контента на площадке, рилсы, сторис, план вирального продвижения среди молодежи.</p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-white/5 text-[11px] font-semibold text-amber-300">Медиа & Продвижение</div>
+                <div class="glass-autumn rounded-2xl p-6 glass-card-hover space-y-2">
+                    <div class="text-amber-400 font-black text-xl font-['Oswald']">📱 5. Медийщик / SMM</div>
+                    <p class="text-xs text-gray-300">Ведение дневника хакатона в соцсетях, вирусные Reels/Клипы, работа с медиа-партнёрами.</p>
                 </div>
-
-                <div class="glass-dark p-5 rounded-2xl border-cyan-500/30 bg-sky-950/20 flex flex-col justify-between">
-                    <div>
-                        <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-300 flex items-center justify-center text-lg mb-3">
-                            <i class="fa-solid fa-compass"></i>
-                        </div>
-                        <h4 class="font-bold text-sm text-white mb-1">Лидер-исследователь (Универсал)</h4>
-                        <p class="text-xs text-gray-300 leading-relaxed">«Я лидер, но с конкретной ролью определюсь в процессе хакатона вместе с наставниками».</p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-white/5 text-[11px] font-semibold text-cyan-300">Гибкий выбор роли</div>
+                <div class="glass-autumn rounded-2xl p-6 glass-card-hover space-y-2 border-emerald-400/40">
+                    <div class="text-emerald-400 font-black text-xl font-['Oswald']">🔍 6. Лидер-Исследователь</div>
+                    <p class="text-xs text-gray-300">Универсальный исследователь для участников без готовой команды. Мы распределим вас в сильный состав!</p>
                 </div>
-
             </div>
-
         </div>
     </section>
 
-    <!-- БЛОК: ПОЛНАЯ 5-ДНЕВНАЯ ПРОГРАММА (7–11 НОЯБРЯ 2026) -->
-    <section id="program" class="py-16 sm:py-24 relative border-t border-indigo-950/60 bg-[#000000]">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center max-w-3xl mx-auto mb-14">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-300 text-xs font-bold uppercase tracking-wider mb-3">
-                    <i class="fa-regular fa-calendar-days"></i> Календарь интенсива
-                </div>
-                <h2 class="title-massive text-3xl sm:text-5xl font-black uppercase text-white mb-4">
-                    ПРОГРАММА <span class="text-gradient-fast">7–11 НОЯБРЯ</span>
-                </h2>
-                <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-                    Полный трек развития: от вводных вебинаров и деловой игры до очного финала в «Синара Центре».
-                </p>
-            </div>
+    <!-- ======================================================= -->
+    <!-- ЭТАЛОННЫЙ ФУТЕР (100% СООТВЕТСТВИЕ INDEX.HTML С ФОРМОЙ)   -->
+    <!-- ======================================================= -->
+    <footer class="bg-gradient-to-b from-black via-[#040806] to-[#020403] text-white pt-20 sm:pt-24 pb-10 sm:pb-12 border-t border-emerald-950/60 relative overflow-hidden">
+        
+        <!-- Фоновые градиентные свечения в осенних тонах -->
+        <div class="absolute top-0 left-1/4 w-[600px] h-[300px] bg-emerald-600/10 rounded-full filter blur-[140px] pointer-events-none -z-10"></div>
+        <div class="absolute bottom-10 right-10 w-[500px] h-[300px] bg-amber-600/10 rounded-full filter blur-[140px] pointer-events-none -z-10"></div>
 
-            <!-- 5 ЭТАПОВ ПРОГРАММЫ -->
-            <div class="space-y-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+            <!-- СЕКЦИЯ 1: ОРГАНИЗАТОР КОНСОРЦИУМ И ФОРМА РЕГИСТРАЦИИ НА ХАКАТОН -->
+            <div id="consortium" class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 mb-16 sm:mb-20 items-stretch">
                 
-                <!-- 7 НОЯБРЯ -->
-                <div class="glass-dark p-5 sm:p-6 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-l-4 border-l-sky-400">
-                    <div class="flex items-start sm:items-center gap-4">
-                        <div class="shrink-0 w-32">
-                            <span class="font-oswald text-lg sm:text-xl font-bold text-sky-400 block">7 НОЯБРЯ</span>
-                            <span class="text-[11px] text-gray-400">18:00 – 19:30</span>
+                <!-- Левая колонка: О Консорциуме «ПРЕДПРИНИМАЙ» (ОРГАНИЗАТОРЫ) -->
+                <div class="lg:col-span-6 flex flex-col justify-between bg-gradient-to-b from-[#08120c] via-[#0d1a12] to-[#060c08] rounded-2xl p-6 sm:p-8 border border-emerald-900/60 shadow-2xl shadow-emerald-950/40">
+                    <div>
+                        <div class="mb-4">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-600/20 border border-emerald-400/40 text-emerald-300 text-xs font-bold uppercase tracking-wider">
+                                ОРГАНИЗАТОРЫ ХАКАТОНА
+                            </span>
                         </div>
-                        <div>
-                            <div class="font-bold text-white text-sm sm:text-base">Вводная встреча: Знакомство и регламент (Онлайн-вебинар)</div>
-                            <div class="text-xs text-gray-300">Знакомство участников, презентация экспертов и наставников, разбор регламента и критериев оценки.</div>
+
+                        <div class="mb-4 flex items-center">
+                            <a href="https://predprinimy.ru" target="_blank" rel="noopener noreferrer" class="hover:opacity-90 transition">
+                                <img src="Спикеры/Лого/Предпринимай Лого.png" alt="Консорциум ПРЕДПРИНИМАЙ" class="h-10 sm:h-12 w-auto object-contain">
+                            </a>
+                        </div>
+
+                        <h3 class="text-lg sm:text-xl font-black uppercase font-['Oswald'] text-white mb-1 leading-tight">
+                            КОНСОРЦИУМ «ПРЕДПРИНИМАЙ»
+                        </h3>
+
+                        <p class="text-emerald-300 text-xs font-semibold leading-snug mb-3">
+                            Экосистема развития молодёжного потенциала и креативной индустрии
+                        </p>
+
+                        <div class="text-xs sm:text-sm font-bold uppercase tracking-wide text-white mb-3 pt-2.5 border-t border-emerald-900/40 font-['Oswald']">
+                            Консолидация усилий бизнеса, образования и власти
+                        </div>
+
+                        <!-- 4 плашечки в сетке 2х2 по 2 в ряд -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+                            <div class="bg-[#050c08]/90 border border-emerald-900/60 rounded-xl p-3 flex flex-col justify-start hover:border-emerald-500/50 transition">
+                                <span class="px-2 py-0.5 rounded-full bg-emerald-600/20 border border-emerald-400/30 text-[9px] font-extrabold uppercase tracking-wider text-emerald-300 w-max mb-1">
+                                    ГОСУДАРСТВО
+                                </span>
+                                <h4 class="text-xs font-bold text-white mb-1 leading-tight">Поддержка талантов</h4>
+                                <p class="text-[11px] text-gray-400 leading-relaxed">Синхронизация с нацпроектом «Молодёжь и дети», закрепление кадров на Урале.</p>
+                            </div>
+
+                            <div class="bg-[#050c08]/90 border border-emerald-900/60 rounded-xl p-3 flex flex-col justify-start hover:border-amber-500/50 transition">
+                                <span class="px-2 py-0.5 rounded-full bg-amber-600/20 border border-amber-400/30 text-[9px] font-extrabold uppercase tracking-wider text-amber-300 w-max mb-1">
+                                    ИНДУСТРИЯ
+                                </span>
+                                <h4 class="text-xs font-bold text-white mb-1 leading-tight">Заказ предприятий</h4>
+                                <p class="text-[11px] text-gray-400 leading-relaxed">Реальные кейсы заводов Большого Урала и эко-производств переработки полимеров.</p>
+                            </div>
+
+                            <div class="bg-[#050c08]/90 border border-emerald-900/60 rounded-xl p-3 flex flex-col justify-start hover:border-emerald-500/50 transition">
+                                <span class="px-2 py-0.5 rounded-full bg-emerald-600/20 border border-emerald-400/30 text-[9px] font-extrabold uppercase tracking-wider text-emerald-300 w-max mb-1">
+                                    ОБЩЕСТВО
+                                </span>
+                                <h4 class="text-xs font-bold text-white mb-1 leading-tight">Трудовая гордость</h4>
+                                <p class="text-[11px] text-gray-400 leading-relaxed">Уважение к династиям мастеров, бережное отношение к экологии городов.</p>
+                            </div>
+
+                            <div class="bg-[#050c08]/90 border border-emerald-900/60 rounded-xl p-3 flex flex-col justify-start hover:border-amber-500/50 transition">
+                                <span class="px-2 py-0.5 rounded-full bg-amber-600/20 border border-amber-400/30 text-[9px] font-extrabold uppercase tracking-wider text-amber-300 w-max mb-1">
+                                    ПРЕДПРИНИМАЙ
+                                </span>
+                                <h4 class="text-xs font-bold text-white mb-1 leading-tight">Наставники и AI</h4>
+                                <p class="text-[11px] text-gray-400 leading-relaxed">Сквозной цифровой трекинг команд на платформе «Портал ПРЕДПРИНИМАЙ».</p>
+                            </div>
+                        </div>
+
+                        <!-- Сквозная формула движения -->
+                        <div class="mb-4 p-2.5 rounded-xl bg-[#050c08] border border-emerald-900/60 flex items-center justify-between text-[11px] font-semibold text-gray-300">
+                            <span class="text-amber-300">Человек</span>
+                            <span class="text-emerald-400 font-bold">➔</span>
+                            <span class="text-emerald-300">Команда</span>
+                            <span class="text-emerald-400 font-bold">➔</span>
+                            <span class="text-amber-300">Результат</span>
+                            <span class="text-emerald-400 font-bold">➔</span>
+                            <span class="text-emerald-300">Ресурс</span>
+                            <span class="text-emerald-400 font-bold">➔</span>
+                            <span class="text-amber-300">Территория</span>
                         </div>
                     </div>
-                    <span class="px-2.5 py-1 rounded-lg bg-sky-500/10 text-sky-300 text-xs font-semibold self-start sm:self-center shrink-0">Вебинар 1</span>
+
+                    <div class="pt-3 border-t border-emerald-900/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-gray-400">
+                        <div>
+                            Официальный портал: <a href="https://predprinimy.ru" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:underline font-bold">predprinimy.ru ↗</a>
+                        </div>
+                        <div class="text-[11px] text-gray-500">
+                            ® ТМ «ПРЕДПРИНИМАЙ» 2026
+                        </div>
+                    </div>
                 </div>
 
-                <!-- 8 НОЯБРЯ -->
-                <div class="glass-dark p-5 sm:p-6 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-l-4 border-l-purple-400">
-                    <div class="flex items-start sm:items-center gap-4">
-                        <div class="shrink-0 w-32">
-                            <span class="font-oswald text-lg sm:text-xl font-bold text-purple-400 block">8 НОЯБРЯ</span>
-                            <span class="text-[11px] text-gray-400">18:00 – 19:30</span>
+                <!-- Правая колонка: Форма регистрации на Осенний Хакатон -->
+                <div id="registrationForm" class="lg:col-span-6 bg-gradient-to-b from-[#08120c] via-[#0d1a12] to-[#060c08] rounded-2xl p-6 sm:p-8 border border-amber-500/40 shadow-2xl shadow-emerald-950/60 relative flex flex-col justify-between">
+                    
+                    <div class="mb-4">
+                        <div class="mb-2">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-bold uppercase tracking-wider">
+                                Заявка на хакатон
+                            </span>
                         </div>
+
+                        <h3 class="text-xl sm:text-2xl lg:text-3xl font-black uppercase font-['Oswald'] text-white mb-1.5 leading-tight">
+                            РЕГИСТРАЦИЯ УЧАСТНИКА (14–17 ЛЕТ)
+                        </h3>
+
+                        <p class="text-gray-300 text-xs font-medium leading-relaxed">
+                            Индивидуальная или командная заявка на участие в осеннем кейс-чемпионате «Звуки Урала» (7–11 ноября, Синара Центр).
+                        </p>
+                    </div>
+
+                    <!-- Форма -->
+                    <form id="hackathonRegistrationForm" onsubmit="handleHackathonSubmit(event)" class="flex flex-col gap-3">
                         <div>
-                            <div class="font-bold text-white text-sm sm:text-base">Идея и смыслы кейса «Звуки Урала» (Онлайн-вебинар)</div>
-                            <div class="text-xs text-gray-300">Погружение в индустриальный код региона, методология аудиоспектаклей и экология полимерных арт-объектов.</div>
+                            <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">ФИО Участника *</label>
+                            <input id="youthName" type="text" placeholder="Иванов Даниил Алексеевич" required class="w-full bg-[#030705]/90 border border-emerald-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-2.5 focus:outline-none focus:border-amber-500 text-sm transition shadow-inner">
                         </div>
-                    </div>
-                    <span class="px-2.5 py-1 rounded-lg bg-purple-500/10 text-purple-300 text-xs font-semibold self-start sm:self-center shrink-0">Вебинар 2</span>
-                </div>
 
-                <!-- 9 НОЯБРЯ -->
-                <div class="glass-dark p-5 sm:p-6 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-l-4 border-l-pink-400">
-                    <div class="flex items-start sm:items-center gap-4">
-                        <div class="shrink-0 w-32">
-                            <span class="font-oswald text-lg sm:text-xl font-bold text-pink-400 block">9 НОЯБРЯ</span>
-                            <span class="text-[11px] text-gray-400">15:00 – 17:00</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Телефон участника *</label>
+                                <input id="youthPhone" type="tel" placeholder="+7 (999) 000-00-00" required class="w-full bg-[#030705]/90 border border-emerald-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-2.5 focus:outline-none focus:border-amber-500 text-sm transition shadow-inner">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Возраст (14–17 лет) *</label>
+                                <select id="youthAge" required class="w-full bg-[#030705]/90 border border-emerald-900/60 text-white rounded-xl px-4 py-2.5 focus:outline-none focus:border-amber-500 text-sm transition shadow-inner">
+                                    <option value="14">14 лет</option>
+                                    <option value="15">15 лет</option>
+                                    <option value="16" selected>16 лет</option>
+                                    <option value="17">17 лет</option>
+                                </select>
+                            </div>
                         </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Город и Школа / Колледж *</label>
+                                <input id="youthSchool" type="text" placeholder="г. Екатеринбург, Гимназия №9" required class="w-full bg-[#030705]/90 border border-emerald-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-2.5 focus:outline-none focus:border-amber-500 text-sm transition shadow-inner">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Желаемая роль *</label>
+                                <select id="youthRole" class="w-full bg-[#030705]/90 border border-emerald-900/60 text-white rounded-xl px-4 py-2.5 focus:outline-none focus:border-amber-500 text-sm transition shadow-inner">
+                                    <option value="lead">👑 Капитан-Продюсер</option>
+                                    <option value="writer">📖 Сценарист-Краевед</option>
+                                    <option value="sound">🎧 Саунд-дизайнер</option>
+                                    <option value="art">🎨 Архитектор-Эколог</option>
+                                    <option value="smm">📱 Медийщик / SMM</option>
+                                    <option value="solo" selected>🔍 Лидер-Исследователь (подберите команду)</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div>
-                            <div class="font-bold text-white text-sm sm:text-base">Уроки по проектной деятельности и упаковке (Онлайн)</div>
-                            <div class="text-xs text-gray-300">Методика быстрого проектирования, распределение ролей в командах, работа с нейросетями и секреты питчинга.</div>
+                            <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">ФИО и телефон Наставника / Педагога / Родителя *</label>
+                            <input id="youthMentor" type="text" placeholder="Петрова Елена Викторовна, +7 (900) 123-45-67" required class="w-full bg-[#030705]/90 border border-emerald-900/60 text-white placeholder-gray-500 rounded-xl px-4 py-2.5 focus:outline-none focus:border-amber-500 text-sm transition shadow-inner">
                         </div>
+
+                        <button id="youthSubmitBtn" type="submit" class="w-full mt-2 bg-gradient-to-r from-amber-500 via-emerald-600 to-teal-600 hover:opacity-95 text-slate-950 font-black uppercase tracking-wider py-3.5 rounded-xl transition text-xs sm:text-sm shadow-xl shadow-amber-500/25 cursor-pointer flex items-center justify-center gap-2">
+                            <span>ОТПРАВИТЬ ЗАЯВКУ НА ХАКАТОН</span>
+                        </button>
+
+                        <div class="space-y-2 mt-2 text-left">
+                            <label class="flex items-start gap-2.5 cursor-pointer">
+                                <input type="checkbox" required class="mt-0.5 w-3.5 h-3.5 rounded border-emerald-900/60 text-amber-500 focus:ring-amber-500 bg-[#030705]">
+                                <span class="text-[10px] text-gray-400 leading-tight">
+                                    Я выражаю согласие на обработку персональных данных в соответствии с <a href="oferta.html#consent" target="_blank" class="text-amber-400 underline hover:text-amber-300">Согласием на обработку ПД</a>. *
+                                </span>
+                            </label>
+                            <label class="flex items-start gap-2.5 cursor-pointer">
+                                <input type="checkbox" required class="mt-0.5 w-3.5 h-3.5 rounded border-emerald-900/60 text-amber-500 focus:ring-amber-500 bg-[#030705]">
+                                <span class="text-[10px] text-gray-400 leading-tight">
+                                    Я ознакомлен и принимаю условия <a href="oferta.html#privacy" target="_blank" class="text-amber-400 underline hover:text-amber-300">Политики конфиденциальности</a> и <a href="oferta.html#offer" target="_blank" class="text-amber-400 underline hover:text-amber-300">Регламента хакатона</a>. *
+                                </span>
+                            </label>
+                        </div>
+                    </form>
+
+                    <!-- Сообщение об успешной отправке (БЕЗ «в течение 15 минут») -->
+                    <div id="youthSuccessBox" class="hidden text-center py-6 space-y-2">
+                        <div class="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-2">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <h4 class="text-xl font-bold font-['Oswald'] uppercase text-white">Заявка принята!</h4>
+                        <p class="text-gray-300 text-xs">Добро пожаловать в команду осеннего кейс-чемпионата «Звуки Урала».</p>
+                        <p class="text-amber-400 text-xs font-semibold">Организационный комитет свяжется с вами</p>
                     </div>
-                    <span class="px-2.5 py-1 rounded-lg bg-pink-500/10 text-pink-300 text-xs font-semibold self-start sm:self-center shrink-0">Вебинар 3</span>
-                </div>
 
-                <!-- 10 НОЯБРЯ -->
-                <div class="glass-dark p-5 sm:p-6 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-l-4 border-l-emerald-400 bg-emerald-950/20">
-                    <div class="flex items-start sm:items-center gap-4">
-                        <div class="shrink-0 w-32">
-                            <span class="font-oswald text-lg sm:text-xl font-bold text-emerald-400 block">10 НОЯБРЯ</span>
-                            <span class="text-[11px] text-gray-400">12:00 – 16:00</span>
-                        </div>
-                        <div>
-                            <div class="font-bold text-white text-sm sm:text-base">Масштабная деловая игра «Импатиум» (Impathium)</div>
-                            <div class="text-xs text-gray-300">Все участники трека погружаются в большую развивающую игру: прокачка эмоционального интеллекта, командного доверия и системного мышления.</div>
-                        </div>
-                    </div>
-                    <span class="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 text-xs font-bold self-start sm:self-center shrink-0">Игра «Импатиум»</span>
-                </div>
-
-                <!-- 11 НОЯБРЯ: ОЧНЫЙ ФИНАЛ -->
-                <div class="glass-dark p-6 sm:p-7 rounded-3xl border-2 border-sky-500/50 bg-gradient-to-r from-sky-950/30 via-[#070e1e] to-blue-950/30">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-white/10">
-                        <div>
-                            <span class="px-3 py-1 rounded-full bg-sky-500 text-black font-black text-xs uppercase tracking-wider">Очный финал-хакатон</span>
-                            <h3 class="font-oswald text-2xl sm:text-3xl font-bold uppercase text-white mt-2">11 НОЯБРЯ · СИНАРА ЦЕНТР (1 ЭТАЖ)</h3>
-                            <p class="text-xs text-gray-300">г. Екатеринбург, Верх-Исетский бульвар, 15/4</p>
-                        </div>
-                        <span class="text-sky-300 font-oswald text-xl font-bold">12:30 – 17:00</span>
-                    </div>
-
-                    <!-- ПОЧАСОВОЙ ТАЙМИНГ 11 НОЯБРЯ -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-                        <div class="p-4 rounded-2xl bg-black/50 border border-white/10">
-                            <div class="font-oswald text-sky-400 font-bold text-sm mb-1">12:30 – 13:00</div>
-                            <div class="font-bold text-white mb-1">Регистрация и сбор</div>
-                            <p class="text-gray-400">Выдача бейджей, мерча участника, распределение по столам команд.</p>
-                        </div>
-
-                        <div class="p-4 rounded-2xl bg-black/50 border border-white/10">
-                            <div class="font-oswald text-sky-400 font-bold text-sm mb-1">13:00 – 13:30</div>
-                            <div class="font-bold text-white mb-1">Торжественный старт</div>
-                            <p class="text-gray-400">Приветствие оргкомитета ТР × ПРЕДПРИНИМАЙ, установочный спринт-бриф.</p>
-                        </div>
-
-                        <div class="p-4 rounded-2xl bg-black/50 border border-white/10">
-                            <div class="font-oswald text-sky-400 font-bold text-sm mb-1">13:30 – 16:30</div>
-                            <div class="font-bold text-white mb-1">3-часовой кейс-спринт</div>
-                            <p class="text-gray-400">Разработка аудиогида, эскиза арт-объекта, консультации с трекерами бизнеса.</p>
-                        </div>
-
-                        <div class="p-4 rounded-2xl bg-black/50 border border-white/10">
-                            <div class="font-oswald text-amber-400 font-bold text-sm mb-1">16:30 – 17:00</div>
-                            <div class="font-bold text-white mb-1">Питчинг и награждение</div>
-                            <p class="text-gray-400">Защита перед жюри директоров, вручение кубков и спецпризов.</p>
-                        </div>
-                    </div>
                 </div>
 
             </div>
 
-        </div>
-    </section>
-
-    <!-- БЛОК: ЧТО ПОЛУЧАЕТ КАЖДЫЙ УЧАСТНИК -->
-    <section class="py-16 sm:py-24 relative border-t border-indigo-950/60 bg-[#050814]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center max-w-3xl mx-auto mb-14">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-3">
-                    <i class="fa-solid fa-trophy"></i> Привилегии и рост
-                </div>
-                <h2 class="title-massive text-3xl sm:text-5xl font-black uppercase text-white mb-4">
-                    ЧТО ПОЛУЧАЕТ КАЖДЫЙ <span class="text-gradient-fast">УЧАСТНИК?</span>
-                </h2>
-                <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-                    Кейс-чемпионат — это прямой социальный лифт и трамплин в профессиональное сообщество лидеров Большого Урала.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <div class="glass-dark p-6 rounded-3xl border-white/10">
-                    <div class="text-3xl mb-4">🏆</div>
-                    <h3 class="font-oswald text-lg font-bold uppercase text-white mb-2">Реализация проекта</h3>
-                    <p class="text-gray-300 text-xs leading-relaxed">Проект команды-победителя получит финансирование от бизнес-партнеров форума и будет установлен на улицах городов к 1 мая 2027 г.</p>
+            <!-- СЕКЦИЯ 2: ФЕДЕРАЛЬНЫЕ СМИ С ОРИГИНАЛЬНЫМИ ЛОГОТИПАМИ -->
+            <div class="mb-16 sm:mb-20 pt-8 border-t border-emerald-950/60">
+                <div class="text-center w-full mx-auto mb-8">
+                    <h3 class="text-xs sm:text-sm md:text-base font-bold uppercase tracking-wider text-gray-200 font-['Oswald']">
+                        ФЕДЕРАЛЬНЫЕ СМИ О КЛЮЧЕВЫХ ИНИЦИАТИВАХ И ПРАКТИЧЕСКИХ РЕЗУЛЬТАТАХ КОНСОРЦИУМА «ПРЕДПРИНИМАЙ»
+                    </h3>
                 </div>
 
-                <div class="glass-dark p-6 rounded-3xl border-white/10">
-                    <div class="text-3xl mb-4">💼</div>
-                    <h3 class="font-oswald text-lg font-bold uppercase text-white mb-2">Наставничество бизнеса</h3>
-                    <p class="text-gray-300 text-xs leading-relaxed">Прямой контакт с топ-менеджерами промышленных предприятий и IT-компаний Свердловской и Челябинской областей, стажировки и менторство.</p>
-                </div>
-
-                <div class="glass-dark p-6 rounded-3xl border-white/10">
-                    <div class="text-3xl mb-4">📜</div>
-                    <h3 class="font-oswald text-lg font-bold uppercase text-white mb-2">Официальный диплом</h3>
-                    <p class="text-gray-300 text-xs leading-relaxed">Диплом участника и победителя регионального чемпионата, усиливающий портфолио для конкурсов «Большая перемена» и вузов.</p>
-                </div>
-
-                <div class="glass-dark p-6 rounded-3xl border-white/10">
-                    <div class="text-3xl mb-4">🎁</div>
-                    <h3 class="font-oswald text-lg font-bold uppercase text-white mb-2">Ценные призы и мерч</h3>
-                    <p class="text-gray-300 text-xs leading-relaxed">Фирменный мерч форума, гаджеты и спецпризы от генеральных спонсоров и партнеров «Территории Роста».</p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- БЛОК: РЕГИСТРАЦИЯ УЧАСТНИКОВ (С ОБЯЗАТЕЛЬНЫМ НАСТАВНИКОМ И ССЫЛКОЙ НА КОНКУРСЫ.РФ) -->
-    <section id="register" class="py-20 relative border-t border-indigo-950/60 bg-gradient-to-b from-[#050814] via-[#091124] to-[#000000]">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center mb-10">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-300 text-xs font-bold uppercase tracking-wider mb-3">
-                    <i class="fa-solid fa-pen-to-square"></i> Заявка на конкурсный отбор
-                </div>
-                <h2 class="title-massive text-3xl sm:text-5xl font-black uppercase text-white mb-3">
-                    РЕГИСТРАЦИЯ <span class="text-gradient-fast">УЧАСТНИКА</span>
-                </h2>
-                <p class="text-gray-300 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto">
-                    Заполните анкету ниже для участия в 5-дневном треке (7–11 ноября). Организационный комитет свяжется с вами и вашим руководителем/родителем.
-                </p>
-
-                <!-- ОФИЦИАЛЬНАЯ ПАРТНЕРСКАЯ ПЛАШКА КОНКУРСЫ.РФ -->
-                <div class="mt-6 p-4 rounded-2xl glass-dark border border-sky-400/30 flex flex-col sm:flex-row items-center justify-between gap-3 text-left">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0">
-                            <i class="fa-solid fa-shield-halved text-lg"></i>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-5 items-stretch">
+                    <!-- 1. Росмолодёжь -->
+                    <a href="https://fadm.gov.ru" target="_blank" rel="noopener noreferrer" class="bg-[#060c08] border border-emerald-900/50 hover:border-amber-500 rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
+                        <div class="h-14 w-full flex items-center justify-center p-1">
+                            <img src="Спикеры/Лого/Росмолодежь.png" alt="Росмолодёжь" class="max-h-full max-w-[130px] object-contain filter group-hover:brightness-110 transition">
                         </div>
-                        <div>
-                            <div class="font-bold text-white text-xs">Федеральный верификатор: Платформа «Конкурсы.рф»</div>
-                            <div class="text-[11px] text-gray-400">Вы также можете подтвердить заявку через личный кабинет на Конкурсы.рф</div>
+                        <span class="text-[11px] font-semibold text-gray-300 group-hover:text-amber-400 mt-2 transition">Росмолодёжь</span>
+                    </a>
+
+                    <!-- 2. Lenta.ru -->
+                    <a href="https://lenta.ru/" target="_blank" rel="noopener noreferrer" class="bg-[#060c08] border border-emerald-900/50 hover:border-amber-500 rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
+                        <div class="h-14 w-full flex items-center justify-center p-1">
+                            <svg class="h-8 w-auto text-white group-hover:text-amber-400 transition" viewBox="0 0 120 30" fill="currentColor">
+                                <text x="0" y="22" font-family="'Oswald', sans-serif" font-weight="900" font-size="22" letter-spacing="2">LENTA·RU</text>
+                            </svg>
                         </div>
-                    </div>
-                    <a href="https://конкурсы.рф/cabinet/contests" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-sky-300 font-bold text-xs uppercase tracking-wider transition whitespace-nowrap border border-white/10">
-                        Конкурсы.рф ↗
+                        <span class="text-[11px] font-semibold text-gray-300 group-hover:text-amber-400 mt-2 transition">Lenta.ru</span>
+                    </a>
+
+                    <!-- 3. Комсомольская правда -->
+                    <a href="https://www.ural.kp.ru/" target="_blank" rel="noopener noreferrer" class="bg-[#060c08] border border-emerald-900/50 hover:border-amber-500 rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
+                        <div class="h-14 w-full flex items-center justify-center p-1 bg-white rounded-lg">
+                            <img src="Спикеры/Лого/Комсомольскакя правда.jpg" alt="Комсомольская правда" class="max-h-full max-w-[120px] object-contain">
+                        </div>
+                        <span class="text-[11px] font-semibold text-gray-300 group-hover:text-amber-400 mt-2 transition">Комсомольская правда</span>
+                    </a>
+
+                    <!-- 4. Добро.live -->
+                    <a href="https://dobro.live/" target="_blank" rel="noopener noreferrer" class="bg-[#060c08] border border-emerald-900/50 hover:border-amber-500 rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
+                        <div class="h-14 w-full flex items-center justify-center p-1">
+                            <svg class="h-8 w-auto text-emerald-400 group-hover:text-emerald-300 transition" viewBox="0 0 130 30" fill="currentColor">
+                                <circle cx="12" cy="15" r="8" fill="#10b981"/>
+                                <text x="26" y="21" font-family="sans-serif" font-weight="800" font-size="16" fill="#ffffff">ДОБРО<tspan fill="#10b981">.LIVE</tspan></text>
+                            </svg>
+                        </div>
+                        <span class="text-[11px] font-semibold text-gray-300 group-hover:text-amber-400 mt-2 transition">Добро.live</span>
+                    </a>
+
+                    <!-- 5. Росатом / Atom Media -->
+                    <a href="https://rosatom.ru/" target="_blank" rel="noopener noreferrer" class="bg-[#060c08] border border-emerald-900/50 hover:border-amber-500 rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
+                        <div class="h-14 w-full flex items-center justify-center p-1">
+                            <img src="Спикеры/Лого/Рос Атом Медиа.svg" alt="Atom Media" class="max-h-full max-w-[120px] object-contain filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition">
+                        </div>
+                        <span class="text-[11px] font-semibold text-gray-300 group-hover:text-amber-400 mt-2 transition">Росатом / Atom Media</span>
+                    </a>
+
+                    <!-- 6. Выставка Россия -->
+                    <a href="https://russia.ru/" target="_blank" rel="noopener noreferrer" class="bg-[#060c08] border border-emerald-900/50 hover:border-amber-500 rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
+                        <div class="h-14 w-full flex items-center justify-center p-1">
+                            <img src="Спикеры/Лого/Россия Нац центр.svg" alt="Национальный центр «Россия»" class="max-h-full max-w-[120px] object-contain filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition">
+                        </div>
+                        <span class="text-[11px] font-semibold text-gray-300 group-hover:text-amber-400 mt-2 transition">Выставка «Россия»</span>
                     </a>
                 </div>
             </div>
 
-            <!-- КАРТОЧКА ФОРМЫ -->
-            <div class="glass-dark p-6 sm:p-10 rounded-3xl border-sky-500/30 shadow-2xl shadow-blue-950/30 relative">
-                
-                <form id="youthRegistrationForm" onsubmit="handleYouthSubmit(event)" class="space-y-5">
-                    
-                    <!-- ФИО УЧАСТНИКА -->
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
-                            ФИО Участника <span class="text-sky-400">*</span>
-                        </label>
-                        <input type="text" id="youthName" required placeholder="Например: Иванов Иван Алексеевич" 
-                            class="w-full bg-slate-900/90 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-sky-400 transition">
-                    </div>
-
-                    <!-- ВОЗРАСТ И МУНИЦИПАЛИТЕТ -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
-                                Возраст <span class="text-sky-400">*</span>
-                            </label>
-                            <select id="youthAge" required class="w-full bg-slate-900/90 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400 transition">
-                                <option value="" disabled selected>Выберите возраст</option>
-                                <option value="14 лет">14 лет (8–9 класс)</option>
-                                <option value="15 лет">15 лет (9–10 класс)</option>
-                                <option value="16 лет">16 лет (10–11 класс / 1 курс СПО)</option>
-                                <option value="17 лет">17 лет (11 класс / 1–2 курс СПО)</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
-                                Город / Муниципалитет <span class="text-sky-400">*</span>
-                            </label>
-                            <input type="text" id="youthCity" required placeholder="Екатеринбург, Челябинск, Н. Тагил..." 
-                                class="w-full bg-slate-900/90 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-sky-400 transition">
-                        </div>
-                    </div>
-
-                    <!-- УЧЕБНОЕ ЗАВЕДЕНИЕ И АДРЕС -->
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
-                            Учебное заведение, класс / курс и адрес школы <span class="text-sky-400">*</span>
-                        </label>
-                        <input type="text" id="youthSchool" required placeholder="Например: МАОУ Гимназия №9 (ул. Ленина, 33), 10 «А» класс / Уральский политехникум, 1 курс" 
-                            class="w-full bg-slate-900/90 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-sky-400 transition">
-                    </div>
-
-                    <!-- ЖЕЛАЕМАЯ РОЛЬ -->
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
-                            Желаемая роль в команде <span class="text-sky-400">*</span>
-                        </label>
-                        <select id="youthRole" required class="w-full bg-slate-900/90 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-400 transition">
-                            <option value="" disabled selected>Выберите предпочитаемую роль</option>
-                            <option value="Капитан / Продюсер">👑 Капитан / Продюсер (лидерство, координация, питчинг)</option>
-                            <option value="Сценарист / Краевед">📜 Сценарист / Краевед (история, драматургия, сценарии)</option>
-                            <option value="Саунд-дизайнер / Голос">🎙️ Саунд-дизайнер / Голос (озвучка, саунд, нейросети)</option>
-                            <option value="Дизайнер / Архитектор">🎨 Дизайнер / Архитектор (эскиз арт-объекта, визуализация)</option>
-                            <option value="Медийщик / SMM">📱 Медийщик / SMM (рилсы, продвижение, соцсети)</option>
-                            <option value="Лидер-исследователь (Универсал)">⚡ Лидер-исследователь (определюсь с ролью в процессе хакатона)</option>
-                        </select>
-                    </div>
-
-                    <!-- ОПЫТ УЧАСТИЯ -->
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
-                            Опыт в проектах, конкурсах или олимпиадах
-                        </label>
-                        <textarea id="youthExperience" rows="2.5" placeholder="Большая перемена, Движение Первых, олимпиады, школьные медиа, волонтёрство или свои проекты..." 
-                            class="w-full bg-slate-900/90 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-sky-400 transition"></textarea>
-                    </div>
-
-                    <!-- КОНТАКТЫ УЧАСТНИКА -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
-                                Телефон участника <span class="text-sky-400">*</span>
-                            </label>
-                            <input type="tel" id="youthPhone" required placeholder="+7 (___) ___-__-__" 
-                                class="w-full bg-slate-900/90 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-sky-400 transition">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
-                                Telegram / Ссылка на VK <span class="text-sky-400">*</span>
-                            </label>
-                            <input type="text" id="youthSocial" required placeholder="@username или vk.com/id" 
-                                class="w-full bg-slate-900/90 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-sky-400 transition">
-                        </div>
-                    </div>
-
-                    <!-- ОБЯЗАТЕЛЬНЫЙ БЛОК: НАСТАВНИК / ПЕДАГОГ / РОДИТЕЛЬ -->
-                    <div class="p-4 rounded-2xl bg-sky-950/30 border border-sky-500/20">
-                        <label class="block text-xs font-bold uppercase tracking-wider text-sky-300 mb-2">
-                            ФИО и телефон педагога-наставника / руководителя группы / родителя <span class="text-sky-400">*</span>
-                        </label>
-                        <input type="text" id="youthMentor" required placeholder="Например: Петрова Елена Викторовна (учитель истории / мама), +7 (999) 123-45-67" 
-                            class="w-full bg-slate-900/90 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-sky-400 transition">
-                        <p class="text-[11px] text-gray-400 mt-2">
-                            Необходимо для координации проезда, согласования участия несовершеннолетних и выдачи благодарственных писем наставникам.
-                        </p>
-                    </div>
-
-                    <!-- СОГЛАСИЕ -->
-                    <div class="flex items-start gap-3 pt-2">
-                        <input type="checkbox" id="youthAgreement" required class="mt-1 w-4 h-4 rounded border-white/20 bg-slate-900 text-sky-500 focus:ring-0 cursor-pointer">
-                        <label for="youthAgreement" class="text-xs text-gray-400 leading-relaxed cursor-pointer">
-                            Даю согласие на обработку персональных данных и подтверждаю готовность участия в программе 7–11 ноября (включая очный финал 11 ноября в Екатеринбурге).
-                        </label>
-                    </div>
-
-                    <!-- КНОПКА ОТПРАВКИ -->
-                    <button type="submit" id="submitBtn" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 hover:from-sky-400 hover:to-blue-500 text-white font-black text-sm uppercase tracking-wider shadow-xl shadow-blue-500/25 transition-all hover:scale-[1.01] cursor-pointer mt-4">
-                        Отправить заявку на участие в кейс-чемпионате
-                    </button>
-
-                </form>
-
-                <!-- СООБЩЕНИЕ ОБ УСПЕШНОЙ ОТПРАВКЕ -->
-                <div id="youthSuccessBox" class="hidden text-center py-10">
-                    <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4 border border-emerald-500/40 text-3xl font-black">
-                        ✓
-                    </div>
-                    <h3 class="font-oswald text-2xl sm:text-3xl font-black uppercase text-white mb-3">Заявка успешно принята!</h3>
-                    <p class="text-gray-300 text-xs sm:text-sm leading-relaxed max-w-md mx-auto mb-6">
-                        Ваша анкета на участие в молодёжном кейс-чемпионате <strong class="text-white">«Звуки Урала»</strong> (7–11 ноября) зарегистрирована. Организационный комитет свяжется с вами и вашим наставником/руководителем для подтверждения и направления ссылок на вводные вебинары.
-                    </p>
-                    <button onclick="resetYouthForm()" type="button" class="px-6 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider transition border border-white/10">
-                        Понятно
-                    </button>
+            <!-- СЕКЦИЯ 3: НАВИГАЦИЯ, ПРАВОВЫЕ ДОКУМЕНТЫ В 3 КОЛОНКИ -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-12 border-t border-emerald-950/60 pt-10">
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-emerald-400 mb-4 font-['Oswald']">
+                        ПРАВОВЫЕ ДОКУМЕНТЫ
+                    </h4>
+                    <ul class="space-y-3 text-xs text-gray-300">
+                        <li>
+                            <a href="oferta.html#offer" target="_blank" class="hover:text-white transition flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                Публичная оферта на оказание услуг
+                            </a>
+                        </li>
+                        <li>
+                            <a href="oferta.html#privacy" target="_blank" class="hover:text-white transition flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                Политика конфиденциальности
+                            </a>
+                        </li>
+                        <li>
+                            <a href="oferta.html#cookie" target="_blank" class="hover:text-white transition flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                Политика файлов cookie
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ОРГАНИЗАТОРЫ И ПАРТНЁРЫ -->
-    <footer class="py-12 border-t border-indigo-950/80 bg-[#000000] text-gray-400 text-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-white/5">
-                <div class="flex items-center gap-3">
-                    <img src="../ЛОГО ТР.png" alt="Территория Роста" class="h-7 w-auto object-contain">
-                    <span class="font-bold text-white uppercase font-['Oswald'] tracking-wider">ТЕРРИТОРИЯ РОСТА</span>
-                    <span class="text-gray-600 text-sm">✕</span>
-                    <img src="../Спикеры/Лого/Предпринимай Лого.png" alt="ПРЕДПРИНИМАЙ" class="h-6 w-auto object-contain brightness-110">
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-amber-400 mb-4 font-['Oswald']">
+                        СОГЛАСИЯ И РЕГЛАМЕНТЫ
+                    </h4>
+                    <ul class="space-y-3 text-xs text-gray-300">
+                        <li>
+                            <a href="oferta.html#consent" target="_blank" class="hover:text-white transition flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                                Согласие на обработку персональных данных
+                            </a>
+                        </li>
+                        <li>
+                            <a href="oferta.html#rules" target="_blank" class="hover:text-white transition flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                                Регламент хакатона и безопасность участников
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://конкурсы.рф" target="_blank" class="hover:text-white transition flex items-center gap-2 text-sky-400">
+                                <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+                                Официальный верификатор: Конкурсы.рф ↗
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="text-center md:text-right">
-                    <div class="text-white font-bold">Организационный комитет молодёжного трека:</div>
-                    <div class="text-gray-400 mt-1">г. Екатеринбург, Верх-Исетский бульвар, 15/4 («Синара Центр»)</div>
-                    <div class="text-gray-400">Email: <a href="mailto:youth@rost-ural.ru" class="text-sky-400 hover:underline">youth@rost-ural.ru</a> · Телефон: <a href="tel:+79222215039" class="text-sky-400 hover:underline">+7 (922) 221-50-39</a></div>
+
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-emerald-400 mb-4 font-['Oswald']">
+                        ОРГКОМИТЕТ И КОНТАКТЫ
+                    </h4>
+                    <ul class="space-y-3 text-xs text-gray-300">
+                        <li class="flex items-center gap-2">
+                            <span>📞</span>
+                            <span>Телефон оргкомитета: <strong>+7 (922) 221-50-39</strong></span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span>📧</span>
+                            <span>Email: <a href="mailto:producer@rost-ural.ru" class="text-emerald-400 hover:underline">producer@rost-ural.ru</a></span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span>📍</span>
+                            <span>Екатеринбург, Верх-Исетский б-р, 15/4 (Синара Центр)</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-gray-400">
-                <div>© 2026 Деловое событие «Территория Роста» × Консорциум «ПРЕДПРИНИМАЙ». Все права защищены.</div>
-                <div class="flex gap-4">
-                    <a href="../oferta.html" class="hover:text-white transition">Публичная оферта</a>
-                    <a href="../summit-rules.html" class="hover:text-white transition">Регламент</a>
-                    <a href="https://конкурсы.рф/cabinet/contests" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Конкурсы.рф ↗</a>
-                    <a href="../index.html" class="text-sky-400 hover:underline">Главный форум</a>
+            <!-- Нижняя плашка копирайта -->
+            <div class="border-t border-emerald-950/60 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-3">
+                <div>© 2026 Консорциум «ПРЕДПРИНИМАЙ» × Бизнес-событие «Территория Роста». Все права защищены.</div>
+                <div class="flex items-center gap-4 text-gray-400">
+                    <a href="index.html" class="hover:text-white transition">Главный сайт ТР</a>
+                    <a href="portal.html" class="hover:text-white transition">Портал ПРЕДПРИНИМАЙ</a>
                 </div>
             </div>
 
         </div>
     </footer>
 
-    <!-- СКРИПТ ОБРАБОТКИ ФОРМЫ -->
+    <!-- JS Скрипты -->
     <script>
-        // Телефонная маска
-        const phoneInput = document.getElementById('youthPhone');
-        if (phoneInput) {
-            phoneInput.addEventListener('input', function (e) {
-                let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
-                if (!x[2]) {
-                    e.target.value = x[1] ? '+7 (' + (x[1] === '7' || x[1] === '8' ? '' : x[1]) : '';
-                } else {
-                    e.target.value = '+7 (' + x[2] + (x[3] ? ') ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
-                }
+        // Мобильное меню
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
             });
         }
 
-        function handleYouthSubmit(e) {
+        // Обработка отправки формы
+        function handleHackathonSubmit(e) {
             e.preventDefault();
+            const name = document.getElementById('youthName').value;
+            const phone = document.getElementById('youthPhone').value;
+            const age = document.getElementById('youthAge').value;
+            const school = document.getElementById('youthSchool').value;
+            const role = document.getElementById('youthRole').value;
+            const mentor = document.getElementById('youthMentor').value;
 
-            const name = document.getElementById('youthName')?.value || '';
-            const age = document.getElementById('youthAge')?.value || '';
-            const city = document.getElementById('youthCity')?.value || '';
-            const school = document.getElementById('youthSchool')?.value || '';
-            const role = document.getElementById('youthRole')?.value || '';
-            const experience = document.getElementById('youthExperience')?.value || 'Не указан';
-            const phone = document.getElementById('youthPhone')?.value || '';
-            const social = document.getElementById('youthSocial')?.value || '';
-            const mentor = document.getElementById('youthMentor')?.value || '';
-
-            const registrationData = {
-                timestamp: new Date().toISOString(),
-                event: 'Молодёжный кейс-чемпионат «Звуки Урала» (7–11 ноября 2026, финал Синара Центр)',
-                name: name,
-                age: age,
-                city: city,
-                school: school,
-                role: role,
-                experience: experience,
-                phone: phone,
-                social: social,
-                mentor: mentor,
-                ref: (typeof getRefSource === 'function' ? getRefSource() : 'direct_youth_page')
-            };
-
-            // Сохраняем в localStorage
-            try {
-                const existing = JSON.parse(localStorage.getItem('prm_youth_registrations') || '[]');
-                existing.push(registrationData);
-                localStorage.setItem('prm_youth_registrations', JSON.stringify(existing));
-            } catch (err) {
-                console.warn('LocalStorage save error:', err);
-            }
-
-            // Отправляем через глобальный ref-tracker / saveLead, если доступен
-            if (typeof saveLead === 'function') {
-                saveLead(
-                    name, 
-                    `${city}, ${school} [Роль: ${role}]`, 
-                    phone, 
-                    `[Молодёжный кейс-чемпионат 7-11 ноября] Возраст: ${age}, Роль: ${role}, Соцсеть: ${social}, Наставник/Педагог: ${mentor}, Опыт: ${experience}`
-                );
-            }
-
-            // Показываем контейнер успеха
-            document.getElementById('youthRegistrationForm').classList.add('hidden');
+            // Скрываем форму и показываем подтверждение
+            document.getElementById('hackathonRegistrationForm').classList.add('hidden');
             document.getElementById('youthSuccessBox').classList.remove('hidden');
-        }
 
-        function resetYouthForm() {
-            document.getElementById('youthRegistrationForm').reset();
-            document.getElementById('youthRegistrationForm').classList.remove('hidden');
-            document.getElementById('youthSuccessBox').classList.add('hidden');
+            console.log('Youth registration:', { name, phone, age, school, role, mentor });
         }
     </script>
 </body>
