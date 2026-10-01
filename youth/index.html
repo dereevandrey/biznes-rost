@@ -102,7 +102,7 @@
             transition: all 0.3s ease;
         }
         .card-green:hover {
-            border-color: rgba(245, 158, 11, 0.5);
+            border-color: rgba(245, 158, 11, 0.6);
             transform: translateY(-3px);
             box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.8);
         }
@@ -123,13 +123,18 @@
             transition: all 0.25s ease;
         }
         .event-tile.active {
-            border-color: #f59e0b;
-            background: rgba(245, 158, 11, 0.15);
+            border-color: #f59e0b !important;
+            background: rgba(245, 158, 11, 0.15) !important;
         }
 
         /* Плавная кнопка наверх */
         #backToTopBtn {
             transition: opacity 0.3s, transform 0.3s;
+        }
+
+        /* Модальное окно Lightbox */
+        #lightboxModal {
+            transition: opacity 0.25s ease, visibility 0.25s ease;
         }
     </style>
 </head>
@@ -183,7 +188,7 @@
 
     <!-- ======================================================= -->
     <!-- ГЛАВНЫЙ ЭКРАН (HERO)                                    -->
-    <!-- Заголовок ЗВУКИ УРАЛА в одну строчку, без знака ТР      -->
+    <!-- Заголовок ЗВУКИ УРАЛА в одну строчку                    -->
     <!-- ======================================================= -->
     <section class="relative min-h-[92vh] flex flex-col justify-center items-center text-center pt-24 pb-24 overflow-hidden bg-[#030d07]">
         
@@ -293,8 +298,8 @@
                     </p>
                 </div>
 
-                <div class="card-amber rounded-2xl p-6 space-y-3">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-black text-xl">02</div>
+                <div class="card-green rounded-2xl p-6 space-y-3">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black text-xl">02</div>
                     <h3 class="font-bold text-white text-base uppercase font-['Oswald']">Вторая жизнь пластика и польза</h3>
                     <p class="text-xs text-gray-300 leading-relaxed">
                         Сбор пластиковых крышек и вторсырья, создание уличных лавочек, арт-объектов и полезных малых архитектурных форм
@@ -309,8 +314,8 @@
                     </p>
                 </div>
 
-                <div class="card-amber rounded-2xl p-6 space-y-3">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-black text-xl">04</div>
+                <div class="card-green rounded-2xl p-6 space-y-3">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black text-xl">04</div>
                     <h3 class="font-bold text-white text-base uppercase font-['Oswald']">Результат, которым можно гордиться</h3>
                     <p class="text-xs text-gray-300 leading-relaxed">
                         Установка созданных арт-объектов и запуск аудиогидов на набережных, в парках и знаковых местах Урала к 1 мая 2027 года
@@ -344,7 +349,7 @@
                     </div>
                 </div>
 
-                <!-- Текстовый смысловой блок (соразмерный, связный текст без плашек) -->
+                <!-- Текстовый смысловой блок -->
                 <div class="lg:col-span-6 flex">
                     <div class="card-green rounded-3xl p-6 sm:p-8 lg:p-10 space-y-5 flex flex-col justify-between w-full">
                         <div>
@@ -368,7 +373,8 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- СЕКЦИЯ 3: ОТ ИДЕИ ДО ПЕРВОГО РЕЗУЛЬТАТА (ДОРОЖНАЯ КАРТА) -->
+    <!-- СЕКЦИЯ 3: ОТ ИДЕИ ДО ПЕРВОГО РЕЗУЛЬТАТА                 -->
+    <!-- Единый стиль green-cards, сетка 2x2 + 1 широкая внизу   -->
     <!-- ======================================================= -->
     <section id="program" class="py-20 sm:py-24 relative z-10 bg-[#030d07]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -381,71 +387,82 @@
                 </p>
             </div>
 
-            <div class="space-y-4 max-w-4xl mx-auto">
-                <!-- Шаг 1 -->
-                <div class="card-green rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-l-4 border-emerald-400">
-                    <div class="space-y-1">
-                        <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider">7 октября · Онлайн-модуль</div>
-                        <h4 class="text-lg font-bold text-white uppercase font-['Oswald']">Модуль 1. Индустриальная история и выбор объекта</h4>
-                        <p class="text-xs text-gray-300">Погружение в историю заводов и знаковых мест Урала, знакомство команд и выбор темы проекта</p>
-                    </div>
-                </div>
-
-                <!-- Шаг 2 -->
-                <div class="card-amber rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-l-4 border-amber-400">
-                    <div class="space-y-1">
-                        <div class="text-xs font-bold text-amber-400 uppercase tracking-wider">8 октября · Онлайн-модуль</div>
-                        <h4 class="text-lg font-bold text-white uppercase font-['Oswald']">Модуль 2. Экология и городская среда</h4>
-                        <p class="text-xs text-gray-300">Основы переработки пластика, проектирование арт-объектов и малых архитектурных форм из вторсырья</p>
-                    </div>
-                </div>
-
-                <!-- Шаг 3 -->
-                <div class="card-green rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-l-4 border-emerald-400">
-                    <div class="space-y-1">
-                        <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider">9 октября · Онлайн-модуль</div>
-                        <h4 class="text-lg font-bold text-white uppercase font-['Oswald']">Модуль 3. Саунд-дизайн и цифровые аудиогиды</h4>
-                        <p class="text-xs text-gray-300">Создание драматургии сценария, запись голоса, мастеринг звука и публикация на цифровой платформе</p>
-                    </div>
-                </div>
-
-                <!-- Шаг 4 -->
-                <div class="card-amber rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-l-4 border-amber-400">
-                    <div class="space-y-1">
-                        <div class="text-xs font-bold text-amber-400 uppercase tracking-wider">10 октября · Командный практикум</div>
-                        <h4 class="text-lg font-bold text-white uppercase font-['Oswald']">Эмоциональный интеллект и командное взаимодействие «Импатиум»</h4>
-                        <p class="text-xs text-gray-300">Практикум по коммуникации: распределение ролей в команде, слаженная работа, генерация решений и подготовка к защите</p>
-                    </div>
-                </div>
-
-                <!-- Шаг 5: 11 октября -->
-                <div class="card-amber rounded-2xl p-6 sm:p-8 space-y-4 shadow-2xl">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3">
-                        <span class="text-sm font-bold text-amber-300 uppercase font-['Oswald']">11 ОКТЯБРЯ · ДЕНЬ КЕЙС-ЧЕМПИОНАТА</span>
-                        <span class="text-xs text-gray-400">Синара Центр, Екатеринбург</span>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-                        <div class="bg-black/40 p-4 rounded-xl">
-                            <strong class="text-white block mb-1">Регистрация и выставка</strong>
-                            Сбор участников, выставка проектных макетов, нетворкинг с экспертами
-                        </div>
-                        <div class="bg-black/40 p-4 rounded-xl">
-                            <strong class="text-white block mb-1">Защита решений</strong>
-                            Презентация проектов перед экспертным жюри предпринимателей
-                        </div>
-                        <div class="bg-black/40 p-4 rounded-xl">
-                            <strong class="text-white block mb-1">Итоги и признание</strong>
-                            Подведение итогов, награждение победителей и вручение сертификатов
+            <div class="max-w-5xl mx-auto space-y-6">
+                
+                <!-- Сетка 2x2 (Модули 1–4) в едином благородном стиле -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Модуль 1 (Слева) -->
+                    <div class="card-green rounded-2xl p-6 sm:p-7 flex flex-col justify-between space-y-3">
+                        <div class="space-y-2">
+                            <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider">7 октября · Онлайн-модуль</div>
+                            <h4 class="text-lg sm:text-xl font-bold text-white uppercase font-['Oswald']">Модуль 1. Индустриальная история и выбор объекта</h4>
+                            <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">Погружение в историю заводов и знаковых мест Урала, знакомство команд и выбор темы проекта</p>
                         </div>
                     </div>
+
+                    <!-- Модуль 2 (Справа) -->
+                    <div class="card-green rounded-2xl p-6 sm:p-7 flex flex-col justify-between space-y-3">
+                        <div class="space-y-2">
+                            <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider">8 октября · Онлайн-модуль</div>
+                            <h4 class="text-lg sm:text-xl font-bold text-white uppercase font-['Oswald']">Модуль 2. Экология и городская среда</h4>
+                            <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">Основы переработки пластика, проектирование арт-объектов и малых архитектурных форм из вторсырья</p>
+                        </div>
+                    </div>
+
+                    <!-- Модуль 3 (Слева) -->
+                    <div class="card-green rounded-2xl p-6 sm:p-7 flex flex-col justify-between space-y-3">
+                        <div class="space-y-2">
+                            <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider">9 октября · Онлайн-модуль</div>
+                            <h4 class="text-lg sm:text-xl font-bold text-white uppercase font-['Oswald']">Модуль 3. Саунд-дизайн и цифровые аудиогиды</h4>
+                            <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">Создание драматургии сценария, запись голоса, мастеринг звука и публикация на цифровой платформе</p>
+                        </div>
+                    </div>
+
+                    <!-- Практикум (Справа) -->
+                    <div class="card-green rounded-2xl p-6 sm:p-7 flex flex-col justify-between space-y-3">
+                        <div class="space-y-2">
+                            <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider">10 октября · Командный практикум</div>
+                            <h4 class="text-lg sm:text-xl font-bold text-white uppercase font-['Oswald']">Эмоциональный интеллект «Импатиум»</h4>
+                            <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">Практикум по коммуникации: распределение ролей в команде, слаженная работа, генерация решений и подготовка к защите</p>
+                        </div>
+                    </div>
+
                 </div>
+
+                <!-- 11 октября: Широкая плитка на всю длину в едином стиле -->
+                <div class="card-green rounded-3xl p-6 sm:p-8 lg:p-10 space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2">
+                        <div>
+                            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider block mb-1">ФИНАЛЬНЫЙ ОЧНЫЙ ЭТАП</span>
+                            <h3 class="text-2xl sm:text-3xl font-black text-white uppercase font-['Oswald']">11 ОКТЯБРЯ · ДЕНЬ КЕЙС-ЧЕМПИОНАТА</h3>
+                        </div>
+                        <span class="text-xs sm:text-sm text-amber-400 font-bold uppercase tracking-wider bg-amber-500/10 px-4 py-2 rounded-xl self-start sm:self-auto">Синара Центр, Екатеринбург</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs sm:text-sm">
+                        <div class="bg-black/50 p-5 rounded-2xl space-y-2">
+                            <strong class="text-white text-sm font-bold uppercase font-['Oswald'] block">1. Регистрация и выставка</strong>
+                            <p class="text-gray-300 leading-relaxed">Сбор команд, выставка проектных макетов, экспертный нетворкинг и консультации</p>
+                        </div>
+                        <div class="bg-black/50 p-5 rounded-2xl space-y-2">
+                            <strong class="text-white text-sm font-bold uppercase font-['Oswald'] block">2. Защита решений</strong>
+                            <p class="text-gray-300 leading-relaxed">Очные питчи проектов перед экспертным жюри наставников и предпринимателей</p>
+                        </div>
+                        <div class="bg-black/50 p-5 rounded-2xl space-y-2">
+                            <strong class="text-white text-sm font-bold uppercase font-['Oswald'] block">3. Итоги и признание</strong>
+                            <p class="text-gray-300 leading-relaxed">Подведение итогов, награждение победителей и вручение сертификатов участника</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- ======================================================= -->
     <!-- СЕКЦИЯ 4: ТВОЁ МЕСТО В КОМАНДЕ                          -->
-    <!-- Контурные иконки, без эмодзи, сертификат участника      -->
+    <!-- Контурные SVG-иконки, карточка «Молодой лидер»          -->
     <!-- ======================================================= -->
     <section id="roles" class="py-20 sm:py-24 relative z-10 bg-[#020904]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -504,13 +521,13 @@
                     <p class="text-xs text-gray-300 leading-relaxed">Освещение работы команды, фото- и видеодневник, публикации в социальных сетях</p>
                 </div>
 
-                <!-- 6. Лидер-исследователь -->
-                <div class="card-amber rounded-2xl p-6 space-y-3">
+                <!-- 6. Молодой лидер -->
+                <div class="card-green rounded-2xl p-6 space-y-3">
                     <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-300">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     </div>
-                    <h3 class="text-emerald-300 font-bold text-lg font-['Oswald'] uppercase">Лидер-исследователь</h3>
-                    <p class="text-xs text-gray-300 leading-relaxed">Индивидуальный формат участия: мы подберем для вас сильную сборную команду единомышленников</p>
+                    <h3 class="text-emerald-300 font-bold text-lg font-['Oswald'] uppercase">Молодой лидер</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">Если ты ещё не определился с ролью в проекте и со своими ключевыми навыками — ты сможешь сделать это прямо на кейс-чемпионате</p>
                 </div>
             </div>
         </div>
@@ -518,7 +535,7 @@
 
     <!-- ======================================================= -->
     <!-- СЕКЦИЯ 5: КАК ПРОХОДЯТ НАШИ МЕРОПРИЯТИЯ (ВИДЕО + ПЛИТКИ) -->
-    <!-- Левая половина: Видеоплеер. Правая половина: Плитки событий -->
+    <!-- Зацикленное автоплей видео слева + 5 событий Андрея      -->
     <!-- ======================================================= -->
     <section id="gallery" class="py-20 sm:py-24 relative z-10 bg-[#030d07]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -531,68 +548,64 @@
                 </p>
             </div>
 
-            <!-- Двухколоночный макет: Видео слева + Плитки альбомов справа -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
+            <!-- Двухколоночный макет: Видео слева + 5 Плиток событий справа -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-10">
                 
-                <!-- Левая колонка: Видеоплеер событий -->
-                <div class="lg:col-span-7 flex flex-col space-y-4">
-                    <div class="relative w-full rounded-3xl overflow-hidden bg-black/60 shadow-2xl aspect-video">
-                        <video id="eventVideoPlayer" controls playsinline preload="metadata" class="w-full h-full object-cover rounded-3xl" poster="assets/youth/events/event_spb/photo_1.jpg">
-                            <source src="hero.mp4" type="video/mp4">
+                <!-- Левая колонка: Зацикленное видео мероприятий из папки Звуки Урала -->
+                <div class="lg:col-span-7 flex flex-col justify-center">
+                    <div class="relative w-full h-full min-h-[360px] sm:min-h-[420px] rounded-3xl overflow-hidden bg-black/60 shadow-2xl">
+                        <video id="eventVideoPlayer" autoplay loop muted playsinline preload="auto" class="w-full h-full object-cover rounded-3xl" poster="assets/youth/events/revin/photo_1.jpg">
+                            <source src="assets/youth/events/dom_molodezhi.mp4" type="video/mp4">
                             Ваш браузер не поддерживает воспроизведение видео
                         </video>
                     </div>
-                    <div class="flex items-center justify-between text-xs text-gray-400 px-2">
-                        <span id="videoTitle" class="font-bold text-amber-400 uppercase font-['Oswald']">Атмосфера защиты проектов и кейс-чемпионатов</span>
-                        <span>Консорциум «ПРЕДПРИНИМАЙ»</span>
-                    </div>
                 </div>
 
-                <!-- Правая колонка: 5 плиток событий на одном уровне -->
-                <div class="lg:col-span-5 flex flex-col space-y-3">
+                <!-- Правая колонка: 5 плиток событий из папок Андрея -->
+                <div class="lg:col-span-5 flex flex-col justify-between space-y-3">
                     
-                    <!-- Плитка 1 -->
-                    <div onclick="selectEvent('event_spb', 'Кейс-чемпионаты', 'assets/youth/events/event_spb/photo_1.jpg')" id="tile_event_spb" class="event-tile active card-green rounded-2xl p-3 sm:p-3.5 flex items-center gap-3.5 cursor-pointer">
-                        <img src="assets/youth/events/event_spb/photo_1.jpg" alt="Кейс-чемпионаты" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
+                    <!-- 1. Встреча с С.Н. Ревиным -->
+                    <div onclick="selectEvent('revin')" id="tile_revin" class="event-tile active card-green rounded-2xl p-3.5 flex items-center gap-3.5 cursor-pointer">
+                        <img src="assets/youth/events/revin/photo_1.jpg" alt="Встреча с С.Н. Ревиным" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
                         <div class="flex-grow">
-                            <h4 class="text-sm font-bold text-white uppercase font-['Oswald']">Кейс-чемпионаты</h4>
-                            <p class="text-[11px] text-gray-300">Очные защиты решений перед экспертами</p>
+                            <h4 class="text-sm font-bold text-white uppercase font-['Oswald'] leading-snug">Встреча с Сергеем Николаевичем Ревиным</h4>
+                            <p class="text-[11px] text-gray-300">Лётчик-космонавт РФ, диалог о технологиях и будущем</p>
                         </div>
                     </div>
 
-                    <!-- Плитка 2 -->
-                    <div onclick="selectEvent('event_forum', 'Форумы и открытый диалог', 'assets/youth/events/event_forum/photo_1.jpg')" id="tile_event_forum" class="event-tile card-green rounded-2xl p-3 sm:p-3.5 flex items-center gap-3.5 cursor-pointer">
-                        <img src="assets/youth/events/event_forum/photo_1.jpg" alt="Форумы" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
+                    <!-- 2. Стратегическая сессия Росатом -->
+                    <div onclick="selectEvent('rosatom')" id="tile_rosatom" class="event-tile card-green rounded-2xl p-3.5 flex items-center gap-3.5 cursor-pointer">
+                        <img src="assets/youth/events/rosatom/photo_1.jpg" alt="Стратегическая сессия Росатом" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
                         <div class="flex-grow">
-                            <h4 class="text-sm font-bold text-white uppercase font-['Oswald']">Форумы и открытый диалог</h4>
-                            <p class="text-[11px] text-gray-300">Встречи со спикерами и наставниками</p>
+                            <h4 class="text-sm font-bold text-white uppercase font-['Oswald'] leading-snug">Стратегическая сессия Росатом</h4>
+                            <p class="text-[11px] text-gray-300">Проектирование решений для промышленных территорий</p>
                         </div>
                     </div>
 
-                    <!-- Плитка 3 -->
-                    <div onclick="selectEvent('event_workshop', 'Проектные мастерские', 'assets/youth/events/event_workshop/photo_1.jpg')" id="tile_event_workshop" class="event-tile card-green rounded-2xl p-3 sm:p-3.5 flex items-center gap-3.5 cursor-pointer">
-                        <img src="assets/youth/events/event_workshop/photo_1.jpg" alt="Мастерские" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
+                    <!-- 3. Форум молодых предпринимателей -->
+                    <div onclick="selectEvent('forum_young')" id="tile_forum_young" class="event-tile card-green rounded-2xl p-3.5 flex items-center gap-3.5 cursor-pointer">
+                        <img src="assets/youth/events/forum_young/photo_1.jpg" alt="Форум молодых предпринимателей" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
                         <div class="flex-grow">
-                            <h4 class="text-sm font-bold text-white uppercase font-['Oswald']">Проектные мастерские</h4>
-                            <p class="text-[11px] text-gray-300">Командная работа и макетирование</p>
+                            <h4 class="text-sm font-bold text-white uppercase font-['Oswald'] leading-snug">Форум молодых предпринимателей</h4>
+                            <p class="text-[11px] text-gray-300">Питчи проектов, наставничество и живой бизнес-опыт</p>
                         </div>
                     </div>
 
-                    <!-- Плитка 4 -->
-                    <div onclick="selectEvent('event_exhibition', 'Выставка арт-объектов', 'assets/youth/events/event_exhibition/photo_1.jpg')" id="tile_event_exhibition" class="event-tile card-green rounded-2xl p-3 sm:p-3.5 flex items-center gap-3.5 cursor-pointer">
-                        <img src="assets/youth/events/event_exhibition/photo_1.jpg" alt="Выставка" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
+                    <!-- 4. Форум устойчивого развития Предпринимай -->
+                    <div onclick="selectEvent('sustainability')" id="tile_sustainability" class="event-tile card-green rounded-2xl p-3.5 flex items-center gap-3.5 cursor-pointer">
+                        <img src="assets/youth/events/sustainability/photo_1.jpg" alt="Форум устойчивого развития Предпринимай" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
                         <div class="flex-grow">
-                            <h4 class="text-sm font-bold text-white uppercase font-['Oswald']">Выставка арт-объектов</h4>
-                            <p class="text-[11px] text-gray-300">Презентация макетов и аудиогидов</p>
+                            <h4 class="text-sm font-bold text-white uppercase font-['Oswald'] leading-snug">Форум устойчивого развития Предпринимай</h4>
+                            <p class="text-[11px] text-gray-300">Экология, городская среда и созидательный труд</p>
                         </div>
                     </div>
 
-                    <!-- Плитка 5 -->
-                    <div onclick="selectEvent('event_awards', 'Награждение победителей', 'assets/youth/events/event_awards/photo_1.jpg')" id="tile_event_awards" class="event-tile card-green rounded-2xl p-3 sm:p-3.5 flex items-center gap-3.5 cursor-pointer">
-                        <img src="assets/youth/events/event_awards/photo_1.jpg" alt="Награждение" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
+                    <!-- 5. Хакатоны Предпринимай -->
+                    <div onclick="selectEvent('hackathons')" id="tile_hackathons" class="event-tile card-green rounded-2xl p-3.5 flex items-center gap-3.5 cursor-pointer">
+                        <img src="assets/youth/events/hackathons/photo_1.jpg" alt="Хакатоны Предпринимай" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
                         <div class="flex-grow">
-                            <h4 class="text-sm font-bold text-white uppercase font-['Oswald']">Награждение победителей</h4>
-                            <p class="text-[11px] text-gray-300">Вручение дипломов и сертификатов</p>
+                            <h4 class="text-sm font-bold text-white uppercase font-['Oswald'] leading-snug">Хакатоны Предпринимай</h4>
+                            <p class="text-[11px] text-gray-300">Командные спринты и создание прототипов за 48 часов</p>
                         </div>
                     </div>
 
@@ -600,19 +613,23 @@
 
             </div>
 
-            <!-- Раскрывающаяся фотогалерея выбранного альбома -->
-            <div class="mt-8">
-                <div class="flex items-center justify-between mb-4">
-                    <span id="activeAlbumLabel" class="text-xs uppercase font-bold text-emerald-400 tracking-wider">Фотоотчёт: Кейс-чемпионаты</span>
-                    <span class="text-[11px] text-gray-400">Нажмите на фото для просмотра</span>
-                </div>
-                <div id="albumGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5">
-                    <!-- Заполняется JS -->
-                </div>
+            <!-- Фотогалерея выбранного альбома (5 фото) -->
+            <div id="albumGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5">
+                <!-- Заполняется динамически через JS -->
             </div>
 
         </div>
     </section>
+
+    <!-- ======================================================= -->
+    <!-- МОДАЛЬНОЕ ОКНО LIGHTBOX (ПРОСМОТР ФОТО В ПОЛНЫЙ ЭКРАН) -->
+    <!-- ======================================================= -->
+    <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md opacity-0 pointer-events-none flex items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-amber-400 p-2 text-2xl font-bold transition cursor-pointer" aria-label="Закрыть">
+            ✕
+        </button>
+        <img id="lightboxImg" src="" alt="Просмотр фото" class="max-w-full max-h-[90vh] rounded-2xl object-contain shadow-2xl">
+    </div>
 
     <!-- ======================================================= -->
     <!-- ЭТАЛОННЫЙ ФУТЕР                                         -->
@@ -762,7 +779,7 @@
                                     <option value="creator">Креатор</option>
                                     <option value="pm">Проектный менеджер</option>
                                     <option value="media">Менеджер по работе с медиа</option>
-                                    <option value="solo" selected>Лидер-исследователь (подберите команду)</option>
+                                    <option value="solo" selected>Молодой лидер (подберите команду)</option>
                                 </select>
                             </div>
                         </div>
@@ -966,91 +983,72 @@
 
     <!-- JS Скрипты -->
     <script>
-        // База фотоальбомов и видео
+        // База 5 альбомов мероприятий из папок Андрея
         const eventsData = {
-            'event_spb': {
-                name: 'Кейс-чемпионаты',
-                videoTitle: 'Атмосфера защиты проектов и кейс-чемпионатов',
-                poster: 'assets/youth/events/event_spb/photo_1.jpg',
+            'revin': {
+                name: 'Встреча с Сергеем Николаевичем Ревиным',
+                poster: 'assets/youth/events/revin/photo_1.jpg',
                 photos: [
-                    'assets/youth/events/event_spb/photo_1.jpg',
-                    'assets/youth/events/event_spb/photo_2.jpg',
-                    'assets/youth/events/event_spb/photo_3.jpg',
-                    'assets/youth/events/event_spb/photo_4.jpg',
-                    'assets/youth/events/event_spb/photo_5.jpg'
+                    'assets/youth/events/revin/photo_1.jpg',
+                    'assets/youth/events/revin/photo_2.jpg',
+                    'assets/youth/events/revin/photo_3.jpg',
+                    'assets/youth/events/revin/photo_4.jpg',
+                    'assets/youth/events/revin/photo_5.jpg'
                 ]
             },
-            'event_forum': {
-                name: 'Форумы и открытый диалог',
-                videoTitle: 'Пленарные сессии с федеральными экспертами и наставниками',
-                poster: 'assets/youth/events/event_forum/photo_1.jpg',
+            'rosatom': {
+                name: 'Стратегическая сессия Росатом',
+                poster: 'assets/youth/events/rosatom/photo_1.jpg',
                 photos: [
-                    'assets/youth/events/event_forum/photo_1.jpg',
-                    'assets/youth/events/event_forum/photo_2.jpg',
-                    'assets/youth/events/event_forum/photo_3.jpg',
-                    'assets/youth/events/event_forum/photo_4.jpg',
-                    'assets/youth/events/event_forum/photo_5.jpg'
+                    'assets/youth/events/rosatom/photo_1.jpg',
+                    'assets/youth/events/rosatom/photo_2.jpg',
+                    'assets/youth/events/rosatom/photo_3.jpg',
+                    'assets/youth/events/rosatom/photo_4.jpg',
+                    'assets/youth/events/rosatom/photo_5.jpg'
                 ]
             },
-            'event_workshop': {
-                name: 'Проектные мастерские',
-                videoTitle: 'Командные проектные спринты и создание макетов',
-                poster: 'assets/youth/events/event_workshop/photo_1.jpg',
+            'forum_young': {
+                name: 'Форум молодых предпринимателей',
+                poster: 'assets/youth/events/forum_young/photo_1.jpg',
                 photos: [
-                    'assets/youth/events/event_workshop/photo_1.jpg',
-                    'assets/youth/events/event_workshop/photo_2.jpg',
-                    'assets/youth/events/event_workshop/photo_3.jpg',
-                    'assets/youth/events/event_workshop/photo_4.jpg',
-                    'assets/youth/events/event_workshop/photo_5.jpg'
+                    'assets/youth/events/forum_young/photo_1.jpg',
+                    'assets/youth/events/forum_young/photo_2.jpg',
+                    'assets/youth/events/forum_young/photo_3.jpg',
+                    'assets/youth/events/forum_young/photo_4.jpg',
+                    'assets/youth/events/forum_young/photo_5.jpg'
                 ]
             },
-            'event_exhibition': {
-                name: 'Выставка арт-объектов',
-                videoTitle: 'Экспозиция решений из эко-полимеров и презентация аудиогидов',
-                poster: 'assets/youth/events/event_exhibition/photo_1.jpg',
+            'sustainability': {
+                name: 'Форум устойчивого развития Предпринимай',
+                poster: 'assets/youth/events/sustainability/photo_1.jpg',
                 photos: [
-                    'assets/youth/events/event_exhibition/photo_1.jpg',
-                    'assets/youth/events/event_exhibition/photo_2.jpg',
-                    'assets/youth/events/event_exhibition/photo_3.jpg',
-                    'assets/youth/events/event_exhibition/photo_4.jpg',
-                    'assets/youth/events/event_exhibition/photo_5.jpg'
+                    'assets/youth/events/sustainability/photo_1.jpg',
+                    'assets/youth/events/sustainability/photo_2.jpg',
+                    'assets/youth/events/sustainability/photo_3.jpg',
+                    'assets/youth/events/sustainability/photo_4.jpg',
+                    'assets/youth/events/sustainability/photo_5.jpg'
                 ]
             },
-            'event_awards': {
-                name: 'Награждение победителей',
-                videoTitle: 'Торжественное награждение и вручение сертификатов победителям',
-                poster: 'assets/youth/events/event_awards/photo_1.jpg',
+            'hackathons': {
+                name: 'Хакатоны Предпринимай',
+                poster: 'assets/youth/events/hackathons/photo_1.jpg',
                 photos: [
-                    'assets/youth/events/event_awards/photo_1.jpg',
-                    'assets/youth/events/event_awards/photo_2.jpg',
-                    'assets/youth/events/event_awards/photo_3.jpg',
-                    'assets/youth/events/event_awards/photo_4.jpg',
-                    'assets/youth/events/event_awards/photo_5.jpg'
+                    'assets/youth/events/hackathons/photo_1.jpg',
+                    'assets/youth/events/hackathons/photo_2.jpg',
+                    'assets/youth/events/hackathons/photo_3.jpg',
+                    'assets/youth/events/hackathons/photo_4.jpg',
+                    'assets/youth/events/hackathons/photo_5.jpg'
                 ]
             }
         };
 
-        function selectEvent(eventKey, title, poster) {
+        function selectEvent(eventKey) {
             // Переключение активной плитки
             document.querySelectorAll('.event-tile').forEach(t => t.classList.remove('active'));
             const activeTile = document.getElementById('tile_' + eventKey);
             if (activeTile) activeTile.classList.add('active');
 
-            const ev = eventsData[eventKey] || eventsData['event_spb'];
-
-            // Обновление заголовка видео
-            const videoTitleEl = document.getElementById('videoTitle');
-            if (videoTitleEl) videoTitleEl.textContent = ev.videoTitle;
-
-            // Обновление постера видео
-            const videoPlayer = document.getElementById('eventVideoPlayer');
-            if (videoPlayer) {
-                videoPlayer.poster = ev.poster;
-            }
-
-            // Обновление метки фотоотчета
-            const label = document.getElementById('activeAlbumLabel');
-            if (label) label.textContent = 'Фотоотчёт: ' + ev.name;
+            const ev = eventsData[eventKey] || eventsData['revin'];
 
             // Рендер сетки фотографий
             renderAlbumPhotos(ev);
@@ -1060,15 +1058,40 @@
             const grid = document.getElementById('albumGrid');
             if (!grid) return;
             grid.innerHTML = album.photos.map(p => `
-                <div class="rounded-2xl overflow-hidden shadow-lg group h-44 sm:h-52 bg-[#061a0e]">
-                    <img src="${p}" alt="${album.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer">
+                <div onclick="openLightbox('${p}')" class="rounded-2xl overflow-hidden shadow-lg group h-44 sm:h-52 bg-[#061a0e] cursor-pointer">
+                    <img src="${p}" alt="${album.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </div>
             `).join('');
         }
 
+        // Lightbox
+        function openLightbox(src) {
+            const modal = document.getElementById('lightboxModal');
+            const img = document.getElementById('lightboxImg');
+            if (modal && img) {
+                img.src = src;
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modal.classList.add('opacity-100', 'pointer-events-auto');
+            }
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightboxModal');
+            if (modal) {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                modal.classList.remove('opacity-100', 'pointer-events-auto');
+            }
+        }
+
+        document.getElementById('lightboxModal')?.addEventListener('click', (e) => {
+            if (e.target.id === 'lightboxModal') {
+                closeLightbox();
+            }
+        });
+
         // Инициализация по умолчанию
         document.addEventListener('DOMContentLoaded', () => {
-            selectEvent('event_spb', 'Кейс-чемпионаты', 'assets/youth/events/event_spb/photo_1.jpg');
+            selectEvent('revin');
         });
 
         // Мобильное меню
