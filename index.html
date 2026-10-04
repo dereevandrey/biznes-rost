@@ -1472,9 +1472,9 @@
                         </ul>
                     </div>
 
-                    <a href="https://lk.pro-online.ru/predprinimay_academy/6990?payanyway_acquiring=y" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center py-4 bg-gray-900 hover:bg-black text-white font-black uppercase tracking-wider text-xs rounded-2xl transition shadow-lg cursor-pointer">
+                    <button onclick="openTariffModal('Онлайн', '10 000 ₽')" type="button" class="w-full text-center py-4 bg-gray-900 hover:bg-black text-white font-black uppercase tracking-wider text-xs rounded-2xl transition shadow-lg cursor-pointer">
                         Забронировать место
-                    </a>
+                    </button>
                 </div>
 
                 <!-- 2. Стандарт -->
@@ -1528,9 +1528,9 @@
                         </ul>
                     </div>
 
-                    <a href="https://lk.pro-online.ru/predprinimay_academy/6990?payanyway_acquiring=y" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center py-4 bg-gray-900 hover:bg-black text-white font-black uppercase tracking-wider text-xs rounded-2xl transition shadow-lg cursor-pointer">
+                    <button onclick="openTariffModal('Стандарт', '15 000 ₽')" type="button" class="w-full text-center py-4 bg-gray-900 hover:bg-black text-white font-black uppercase tracking-wider text-xs rounded-2xl transition shadow-lg cursor-pointer">
                         Забронировать место
-                    </a>
+                    </button>
                 </div>
                 
                 <!-- 3. Бизнес (ХИТ) -->
@@ -1582,9 +1582,9 @@
                         </ul>
                     </div>
 
-                    <a href="https://lk.pro-online.ru/predprinimay_academy/6990?payanyway_acquiring=y" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center py-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase tracking-wider text-xs rounded-2xl transition shadow-xl cursor-pointer">
+                    <button onclick="openTariffModal('Бизнес', '18 000 ₽')" type="button" class="w-full text-center py-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase tracking-wider text-xs rounded-2xl transition shadow-xl cursor-pointer">
                         Забронировать место
-                    </a>
+                    </button>
                 </div>
 
             </div>
@@ -4457,7 +4457,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <div id="tariffModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4 transition-all duration-300" onclick="if(event.target === this) closeModal('tariffModal')">
 
-    <div class="relative w-full max-w-lg bg-[#0c1322] border border-indigo-500/50 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-indigo-950/80 text-white">
+    <div class="relative w-full max-w-lg bg-[#0c1322] border border-indigo-500/50 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-indigo-950/80 text-white max-h-[92vh] overflow-y-auto">
 
         <button onclick="closeModal('tariffModal')" class="absolute top-5 right-5 text-gray-400 hover:text-white text-2xl font-bold transition">✕</button>
 
@@ -4481,7 +4481,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 <p class="text-gray-300 text-xs sm:text-sm mt-1">
 
-                    Стоимость: <strong id="modalTariffPrice" class="text-white text-base">15 000 ₽</strong>. Заполните форму — AI-ассистент София согласует с вами встречу с менеджером
+                    Стоимость: <strong id="modalTariffPrice" class="text-white text-base">15 000 ₽</strong>. Заполните форму для брони или оплатите участие онлайн прямо сейчас.
 
                 </p>
 
@@ -4591,13 +4591,69 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 </div>
 
-                <button type="submit" class="w-full mt-3 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase tracking-wider py-4 rounded-xl transition text-xs sm:text-sm shadow-xl shadow-blue-600/30 cursor-pointer">
+                <button type="submit" class="w-full mt-2 bg-slate-800 hover:bg-slate-700 border border-slate-600/70 text-white font-bold uppercase tracking-wider py-3.5 rounded-xl transition text-xs sm:text-sm shadow-md cursor-pointer flex items-center justify-center gap-2">
 
-                    Отправить заявку
+                    <span>Забронировать место (без оплаты)</span>
 
                 </button>
 
             </form>
+
+
+
+            <!-- РАЗДЕЛИТЕЛЬ С «ИЛИ» -->
+
+            <div class="relative flex py-4 items-center">
+
+                <div class="flex-grow border-t border-indigo-900/80"></div>
+
+                <span class="flex-shrink mx-3 text-[11px] font-bold text-gray-400 uppercase tracking-widest bg-[#0c1322] px-3 py-0.5 rounded-full border border-indigo-900/60">Или</span>
+
+                <div class="flex-grow border-t border-indigo-900/80"></div>
+
+            </div>
+
+
+
+            <!-- БЛОК МГНОВЕННОЙ ОНЛАЙН-ОПЛАТЫ -->
+
+            <div class="bg-gradient-to-br from-blue-950/90 via-indigo-950/80 to-purple-950/90 rounded-2xl p-4 sm:p-5 border border-blue-500/50 shadow-xl relative overflow-hidden">
+
+                <div class="flex items-start gap-3 mb-3.5">
+
+                    <div class="w-8 h-8 rounded-lg bg-blue-600/30 text-blue-400 flex items-center justify-center shrink-0 border border-blue-400/30 text-base">
+
+                        ⚡
+
+                    </div>
+
+                    <div>
+
+                        <div class="text-xs sm:text-sm font-black uppercase text-white font-['Oswald'] tracking-wide">
+
+                            Купить прямо сейчас онлайн
+
+                        </div>
+
+                        <p class="text-[11px] sm:text-xs text-blue-200/90 leading-relaxed mt-0.5">
+
+                            Мы переведём вас на защищённый платежный сервис, где можно мгновенно оплатить участие онлайн и гарантированно зафиксировать место на лучших условиях.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <a href="https://lk.pro-online.ru/predprinimay_academy/6990?payanyway_acquiring=y" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase tracking-wider py-4 rounded-xl transition text-xs sm:text-sm shadow-xl shadow-blue-600/40 cursor-pointer">
+
+                    <span>Оплатить онлайн прямо сейчас ➔</span>
+
+                </a>
+
+            </div>
 
         </div>
 
