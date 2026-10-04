@@ -260,69 +260,41 @@
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between text-sm font-medium tracking-wide text-gray-300">
 
-            <!-- Логотип бренда -->
-
-            <a href="#" class="flex items-center gap-3 text-white hover:opacity-90 transition flex-shrink-0">
-
-                <img src="ЛОГО ТР.png" alt="Территория Роста" class="h-8 sm:h-9 w-auto object-contain flex-shrink-0">
-
-                <span class="font-black text-sm sm:text-base tracking-wider uppercase font-['Oswald'] text-white whitespace-nowrap">ТЕРРИТОРИЯ РОСТА</span>
-
+            <!-- Фирменный логотип бренда: мерцающая красная стрелочка + надпись ТЕРРИТОРИЯ РОСТА -->
+            <a href="#" class="flex items-center gap-2.5 sm:gap-3 text-white hover:opacity-90 transition flex-shrink-0 group">
+                <img src="logo-arrow-red.png?v=12" alt="Территория Роста" class="h-6 sm:h-7 w-auto object-contain flex-shrink-0 logo-arrow-pulse">
+                <span class="font-['Oswald',sans-serif] font-bold text-sm sm:text-base lg:text-lg tracking-wider text-white uppercase whitespace-nowrap">ТЕРРИТОРИЯ РОСТА</span>
             </a>
 
-
-
             <!-- Основные пункты меню с активным скролл-шпионом -->
-
-                        <div id="navMenuLinks" class="hidden md:flex items-center space-x-4 lg:space-x-6 text-[12px] lg:text-[13px] font-semibold text-gray-300 uppercase tracking-wider whitespace-nowrap">
+            <div id="navMenuLinks" class="hidden md:flex items-center space-x-4 lg:space-x-6 text-[12px] lg:text-[13px] font-semibold text-gray-300 uppercase tracking-wider whitespace-nowrap">
                 <a href="#context" class="nav-item hover:text-white transition">О проекте</a>
                 <a href="#speakers" class="nav-item hover:text-white transition">Спикеры</a>
                 <a href="#program" class="nav-item hover:text-white transition">Программа</a>
                 <a href="#locations" class="nav-item hover:text-white transition">Локация</a>
                 <a href="#pricing" class="nav-item hover:text-white transition">Пакеты участия</a>
                 <a href="partner/" class="nav-item hover:text-white transition">Партнёрство</a>
-                <a href="youth-championship.html" class="nav-item inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-emerald-500/20 via-emerald-600/30 to-amber-500/25 border border-emerald-400/50 hover:border-amber-400 text-emerald-300 hover:text-amber-300 transition shadow-[0_0_15px_rgba(16,185,129,0.2)] font-extrabold tracking-wide hover:scale-105 transform">
-                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-                    <span>ЗВУКИ УРАЛА</span>
-                </a>
+                <a href="youth-championship.html" class="nav-item hover:text-[#a3e635] hover:drop-shadow-[0_0_8px_rgba(163,230,53,0.8)] transition">Звуки Урала</a>
             </div>
 
-
-
             <!-- Правая часть: Кнопка действия + Бургер -->
-
             <div class="flex items-center gap-3 sm:gap-4 flex-shrink-0">
-
                 <a href="#tripwire" class="hidden sm:inline-block bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-black px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm tracking-wide whitespace-nowrap shadow-md shadow-sky-500/25 transition transform hover:scale-[1.02]">
-
                     Бизнес-разбор
-
                 </a>
-
                 
-
                 <!-- Кнопка бургер-меню -->
-
                 <button id="mobileMenuBtn" type="button" class="md:hidden flex items-center justify-center w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 hover:bg-blue-500/20 hover:text-white transition cursor-pointer" aria-label="Открыть меню">
-
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
-
                     </svg>
-
                 </button>
-
             </div>
 
         </div>
-
         
-
         <!-- Мобильное меню (выпадающее / оверлей) -->
-
         <div id="mobileMenu" class="hidden md:hidden absolute top-20 left-0 w-full bg-[#070b14]/95 border-b border-blue-500/25 backdrop-blur-xl shadow-2xl transition-all duration-300 shadow-2xl z-50">
-
             <div class="px-5 pt-4 pb-6 space-y-3 text-center text-sm font-semibold tracking-wider uppercase">
                 <a href="#context" class="mobile-nav-item block py-3.5 text-gray-300 hover:text-white hover:bg-blue-500/10 rounded-xl transition">О проекте</a>
                 <a href="#speakers" class="mobile-nav-item block py-3.5 text-gray-300 hover:text-white hover:bg-blue-500/10 rounded-xl transition">Спикеры</a>
@@ -330,7 +302,7 @@
                 <a href="#locations" class="mobile-nav-item block py-3.5 text-gray-300 hover:text-white hover:bg-blue-500/10 rounded-xl transition">Локация</a>
                 <a href="#pricing" class="mobile-nav-item block py-3.5 text-gray-300 hover:text-white hover:bg-blue-500/10 rounded-xl transition">Пакеты участия</a>
                 <a href="partner/" class="mobile-nav-item block py-3.5 text-gray-300 hover:text-white hover:bg-blue-500/10 rounded-xl transition">Партнёрство</a>
-                <a href="youth-championship.html" class="mobile-nav-item block py-3.5 bg-gradient-to-r from-emerald-950/90 to-amber-950/90 border border-emerald-500/50 text-amber-300 font-extrabold rounded-xl transition shadow-lg">🌿 ЗВУКИ УРАЛА (14–17 ЛЕТ)</a>
+                <a href="youth-championship.html" class="mobile-nav-item block py-3.5 text-gray-300 hover:text-[#a3e635] hover:bg-emerald-500/10 rounded-xl transition">Звуки Урала</a>
                 <a href="#tripwire" class="sm:hidden block bg-gradient-to-r from-sky-500 to-blue-600 text-white font-black py-3.5 rounded-xl text-center shadow-md transition mt-4">Бизнес-разбор</a>
             </div>
 
@@ -420,18 +392,9 @@
 
             <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-8 select-none">
 
-                <!-- Контейнер составного логотипа -->
-
-                <div class="relative w-[120px] h-[120px] sm:w-[160px] sm:h-[160px] md:w-[190px] md:h-[190px] lg:w-[230px] lg:h-[230px] shrink-0">
-
-                    <!-- Задний фон: пин (статичный градиент/свечение) -->
-
-                    <img src="ЛОГО_ТР_пин.png" alt="Территория Роста Пин" class="absolute inset-0 w-full h-full object-contain filter drop-shadow(0 0 15px rgba(37,99,235,0.25))">
-
-                    <!-- Передний фон: стрелка (анимированная, пульсирующая насыщенным красным цветом) -->
-
-                    <img src="ЛОГО_ТР_стрелка_ток.png" alt="Территория Роста Стрелка" class="absolute inset-0 w-full h-full object-contain logo-arrow-pulse">
-
+                <!-- Контейнер эталонного логотипа брендбука -->
+                <div class="relative w-[100px] h-[135px] sm:w-[130px] sm:h-[175px] md:w-[160px] md:h-[215px] lg:w-[185px] lg:h-[250px] shrink-0 flex items-center justify-center">
+                    <img src="logo-tr-hero-master.png?v=15" alt="Территория Роста" class="w-full h-full object-contain filter drop-shadow(0 0 25px rgba(223,30,36,0.35)) select-none">
                 </div>
 
                 
@@ -761,7 +724,7 @@
                                 РОМАН КОПОСОВ
                             </h3>
                             <div class="text-blue-600 text-xs sm:text-sm font-bold uppercase tracking-wide mb-3">
-                                Директор практики «Стратегическое планирование» АРБ Про
+                                Директор практики «Стратегическое планирование» АРБ ПРО
                             </div>
                             <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
                                 16+ лет в стратегическом управлении и организационном развитии лидеров российского рынка. Эксперт по сценарному планированию, проектированию бизнес-моделей и сквозной интеграции AI-технологий в реальный сектор экономики
@@ -791,7 +754,7 @@
                                 ЗОЯ СТРЕЛКОВА
                             </h3>
                             <div class="text-indigo-600 text-xs sm:text-sm font-bold uppercase tracking-wide mb-3">
-                                Руководитель направления «Экономика компании», Партнёр АРБ Про
+                                Директор по развитию АРБ ПРО, руководитель направления «Экономика компании»
                             </div>
                             <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
                                 Ведущий финансовый аналитик и эксперт по экономическому моделированию. Специализируется на аудите маржинальности, повышении операционной эффективности и стресс-тестировании P&L/CashFlow в периоды турбулентности
@@ -809,7 +772,7 @@
                         </div>
                     </div>
 
-                    <!-- Справа: Карточка консалтинговой компании «АРБ Про» в изумрудно-зелёном стиле -->
+                    <!-- Справа: Карточка консалтинговой компании «АРБ ПРО» в изумрудно-зелёном стиле -->
                     <div class="lg:col-span-4 bg-gradient-to-br from-[#064e3b] via-[#065f46] to-[#022c22] text-white rounded-3xl p-6 sm:p-8 border border-emerald-400/40 shadow-xl flex flex-col justify-between relative overflow-hidden group">
                         <div class="absolute -top-12 -right-12 w-48 h-48 bg-emerald-400/20 rounded-full filter blur-[50px] pointer-events-none"></div>
                         
@@ -841,7 +804,7 @@
                         </div>
 
                         <div class="pt-4 border-t border-white/15 text-xs text-emerald-200/90 font-medium leading-relaxed">
-                            Эксперты «АРБ Про» Роман Копосов и Зоя Стрелкова лично проведут практический разбор и сценарное моделирование для участников саммита
+                            Эксперты «АРБ ПРО» Роман Копосов и Зоя Стрелкова лично проведут практический разбор и сценарное моделирование для участников саммита
                         </div>
                     </div>
                 </div>
@@ -1509,9 +1472,9 @@
                         </ul>
                     </div>
 
-                    <button onclick="openTariffModal('Онлайн', '10 000 ₽')" type="button" class="w-full text-center py-4 bg-gray-900 hover:bg-black text-white font-black uppercase tracking-wider text-xs rounded-2xl transition shadow-lg cursor-pointer">
+                    <a href="https://lk.pro-online.ru/predprinimay_academy/6990?payanyway_acquiring=y" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center py-4 bg-gray-900 hover:bg-black text-white font-black uppercase tracking-wider text-xs rounded-2xl transition shadow-lg cursor-pointer">
                         Забронировать место
-                    </button>
+                    </a>
                 </div>
 
                 <!-- 2. Стандарт -->
@@ -1565,9 +1528,9 @@
                         </ul>
                     </div>
 
-                    <button onclick="openTariffModal('Стандарт', '15 000 ₽')" type="button" class="w-full text-center py-4 bg-gray-900 hover:bg-black text-white font-black uppercase tracking-wider text-xs rounded-2xl transition shadow-lg cursor-pointer">
+                    <a href="https://lk.pro-online.ru/predprinimay_academy/6990?payanyway_acquiring=y" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center py-4 bg-gray-900 hover:bg-black text-white font-black uppercase tracking-wider text-xs rounded-2xl transition shadow-lg cursor-pointer">
                         Забронировать место
-                    </button>
+                    </a>
                 </div>
                 
                 <!-- 3. Бизнес (ХИТ) -->
@@ -1619,9 +1582,9 @@
                         </ul>
                     </div>
 
-                    <button onclick="openTariffModal('Бизнес', '18 000 ₽')" type="button" class="w-full text-center py-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase tracking-wider text-xs rounded-2xl transition shadow-xl cursor-pointer">
+                    <a href="https://lk.pro-online.ru/predprinimay_academy/6990?payanyway_acquiring=y" target="_blank" rel="noopener noreferrer" class="w-full inline-block text-center py-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 text-white font-black uppercase tracking-wider text-xs rounded-2xl transition shadow-xl cursor-pointer">
                         Забронировать место
-                    </button>
+                    </a>
                 </div>
 
             </div>
