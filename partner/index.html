@@ -121,6 +121,20 @@
 
         }
 
+        @keyframes logoArrowPulseRed {
+            0%, 100% {
+                filter: brightness(1) drop-shadow(0 0 5px rgba(239, 68, 68, 0.35));
+                transform: scale(1);
+            }
+            50% {
+                filter: brightness(1.25) drop-shadow(0 0 16px rgba(239, 68, 68, 0.85));
+                transform: scale(1.05);
+            }
+        }
+        .logo-arrow-pulse {
+            animation: logoArrowPulseRed 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            transform-origin: center;
+        }
     </style>
 
 </head>
@@ -133,10 +147,10 @@
 
     <nav class="fixed top-0 w-full z-50 bg-[#070b14]/95 backdrop-blur-md border-b border-indigo-900/40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between text-sm font-medium tracking-wide text-gray-300">
-            <!-- Логотип бренда -->
-            <a href="../index.html" class="flex items-center gap-3 text-white hover:opacity-90 transition flex-shrink-0">
-                <img src="../ЛОГО ТР.png" alt="Территория Роста" class="h-8 sm:h-9 w-auto object-contain flex-shrink-0">
-                <span class="font-black text-sm sm:text-base tracking-wider uppercase font-['Oswald'] text-white whitespace-nowrap">ТЕРРИТОРИЯ РОСТА</span>
+            <!-- Фирменный логотип бренда: мерцающая красная стрелочка + надпись ТЕРРИТОРИЯ РОСТА -->
+            <a href="../index.html" class="flex items-center gap-2.5 sm:gap-3 text-white hover:opacity-90 transition flex-shrink-0 group">
+                <img src="../logo-arrow-red.png?v=12" alt="Территория Роста" class="h-6 sm:h-7 w-auto object-contain flex-shrink-0 logo-arrow-pulse">
+                <span class="font-['Oswald',sans-serif] font-bold text-sm sm:text-base lg:text-lg tracking-wider text-white uppercase whitespace-nowrap">ТЕРРИТОРИЯ РОСТА</span>
             </a>
 
             <!-- Основные пункты меню -->

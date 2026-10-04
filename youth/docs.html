@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Правовой центр и Положение — Кейс-чемпионат «ЗВУКИ УРАЛА 2026»</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../ref-tracker.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="apple-touch-icon" href="../favicon.png">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020804;
+            color: #f3f4f6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .font-oswald { font-family: 'Oswald', sans-serif; }
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .legal-card {
+            background: linear-gradient(135deg, #03140a 0%, #062413 50%, #020d06 100%);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 24px;
+        }
+        .legal-menu-btn.active {
+            background-color: rgba(16, 185, 129, 0.18);
+            border-color: rgba(16, 185, 129, 0.6);
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+        }
+        @keyframes logoArrowPulseGreen {
+            0%, 100% {
+                filter: brightness(1) drop-shadow(0 0 5px rgba(16, 185, 129, 0.35));
+                transform: scale(1);
+            }
+            50% {
+                filter: brightness(1.25) drop-shadow(0 0 16px rgba(16, 185, 129, 0.85));
+                transform: scale(1.05);
+            }
+        }
+        .logo-arrow-pulse-green {
+            animation: logoArrowPulseGreen 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            transform-origin: center;
+        }
+
+        /* ПЕЧАТНЫЙ РЕЖИМ: СТРОГО 1 СТРАНИЦА А4 */
+        @page {
+            size: A4 portrait;
+            margin: 8mm 12mm 8mm 12mm;
+        }
+        @media print {
+            nav, header, footer, .no-print, .legal-menu-container {
+                display: none !important;
+            }
+            body, html {
+                background: #ffffff !important;
+                color: #000000 !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif !important;
+            }
+            main {
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .legal-card {
+                background: #ffffff !important;
+                border: none !important;
+                color: #000000 !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .doc-section:not(#doc-parent-consent) {
+                display: none !important;
+            }
+            #doc-parent-consent {
+                display: block !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            #printableConsentForm {
+                display: block !important;
+                background: #ffffff !important;
+                border: 1px solid #000000 !important;
+                color: #000000 !important;
+                padding: 14px 18px !important;
+                margin: 0 auto !important;
+                box-sizing: border-box !important;
+                page-break-inside: avoid !important;
+                font-size: 9.5pt !important;
+                line-height: 1.32 !important;
+            }
+            #printableConsentForm h4 {
+                color: #000000 !important;
+                font-size: 12pt !important;
+                margin-bottom: 2px !important;
+            }
+            #printableConsentForm p {
+                color: #111111 !important;
+                margin-bottom: 8px !important;
+            }
+            .print-border-b {
+                border-bottom: 1px solid #333333 !important;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-emerald-500 selection:text-black">
+
+    <!-- НАВИГАЦИОННАЯ ПАНЕЛЬ -->
+    <nav class="fixed top-0 w-full z-50 bg-[#020804]/95 backdrop-blur-md border-b border-emerald-900/40 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between text-sm font-medium tracking-wide text-gray-300">
+            <!-- Логотип ЗВУКИ УРАЛА -->
+            <a href="youth-championship.html" class="flex items-center gap-2.5 sm:gap-3 text-white hover:opacity-90 transition flex-shrink-0 group">
+                <img src="../logo-arrow-green.png?v=12" alt="Звуки Урала" class="h-6 sm:h-7 w-auto object-contain flex-shrink-0 logo-arrow-pulse-green">
+                <div class="flex flex-col">
+                    <span class="font-oswald font-bold text-sm sm:text-base lg:text-lg tracking-wider text-emerald-400 uppercase whitespace-nowrap">ЗВУКИ УРАЛА</span>
+                    <span class="text-[9px] uppercase tracking-widest text-gray-400 font-semibold -mt-1">МОЛОДЁЖНЫЙ КЕЙС-ЧЕМПИОНАТ</span>
+                </div>
+            </a>
+
+            <!-- Меню навигации (без временного пункта «Номинации») -->
+            <div class="hidden md:flex items-center space-x-7 text-[13px] lg:text-[14px] font-bold text-gray-200 uppercase tracking-wider whitespace-nowrap">
+                <a href="youth-championship.html#about" class="hover:text-emerald-400 transition">О чемпионате</a>
+                <a href="youth-championship.html#program" class="hover:text-emerald-400 transition">Этапы</a>
+                <a href="youth-championship.html#registrationForm" class="text-amber-400 hover:text-amber-300 transition">Подать заявку</a>
+            </div>
+
+            <!-- Правая часть: кнопка прямого перехода к форме регистрации -->
+            <div class="flex items-center gap-3">
+                <a href="youth-championship.html#registrationForm" class="bg-gradient-to-r from-amber-500 to-emerald-600 hover:opacity-95 text-slate-950 font-black px-5 py-2.5 rounded-full text-xs uppercase tracking-wider shadow-md shadow-emerald-500/20 transition transform hover:scale-[1.02]">
+                    Участвовать бесплатно
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ШАПКА РАЗДЕЛА -->
+    <header class="relative pt-32 pb-12 bg-gradient-to-b from-[#020804] via-[#04150b] to-[#020804] border-b border-emerald-950/60 no-print">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-widest mb-4">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Бесплатный образовательный проект 14–17 лет
+            </div>
+            <h1 class="font-oswald text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-4 text-white uppercase leading-tight">
+                ПРАВОВОЙ КОНТУР И ПОЛОЖЕНИЕ <br>
+                <span class="text-gradient-gold">КЕЙС-ЧЕМПИОНАТА «ЗВУКИ УРАЛА»</span>
+            </h1>
+            <p class="text-gray-300 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
+                Официальные документы, регламентирующие порядок бесплатного участия подростков, защиту персональных данных в соответствии с 152-ФЗ РФ, форму согласия родителей и правила проведения чемпионата.
+            </p>
+        </div>
+    </header>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ (МЕНЮ СЛЕВА + ДОКУМЕНТ СПРАВА) -->
+    <main class="py-12 bg-[#020804]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-8">
+            
+            <!-- Левое меню документов -->
+            <div class="w-full lg:w-1/3 shrink-0 legal-menu-container no-print">
+                <div class="sticky top-24 space-y-2.5 bg-[#03140a]/90 p-5 rounded-3xl border border-emerald-900/60 backdrop-blur-md shadow-xl">
+                    <p class="text-xs font-bold text-emerald-400 uppercase tracking-widest px-3 mb-2 font-oswald">Разделы правового центра</p>
+                    
+                    <button onclick="showDoc('polozhenie')" class="legal-menu-btn w-full text-left px-4 py-3.5 rounded-xl text-sm font-semibold border border-transparent hover:bg-emerald-500/10 text-gray-200 hover:text-white transition active flex items-center justify-between" id="btn-polozhenie">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                            1. Положение о чемпионате
+                        </span>
+                        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+
+                    <button onclick="showDoc('privacy')" class="legal-menu-btn w-full text-left px-4 py-3.5 rounded-xl text-sm font-semibold border border-transparent hover:bg-emerald-500/10 text-gray-200 hover:text-white transition flex items-center justify-between" id="btn-privacy">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                            2. Политика обработки ПДн
+                        </span>
+                        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+
+                    <button onclick="showDoc('parent-consent')" class="legal-menu-btn w-full text-left px-4 py-3.5 rounded-xl text-sm font-semibold border border-transparent hover:bg-emerald-500/10 text-gray-200 hover:text-white transition flex items-center justify-between" id="btn-parent-consent">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-2 h-2 rounded-full bg-teal-400"></span>
+                            3. Согласие родителей (14–17 лет)
+                        </span>
+                        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+
+                    <button onclick="showDoc('rules')" class="legal-menu-btn w-full text-left px-4 py-3.5 rounded-xl text-sm font-semibold border border-transparent hover:bg-emerald-500/10 text-gray-200 hover:text-white transition flex items-center justify-between" id="btn-rules">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+                            4. Правила участия и регламент
+                        </span>
+                        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+
+                    <button onclick="showDoc('media-consent')" class="legal-menu-btn w-full text-left px-4 py-3.5 rounded-xl text-sm font-semibold border border-transparent hover:bg-emerald-500/10 text-gray-200 hover:text-white transition flex items-center justify-between" id="btn-media-consent">
+                        <span class="flex items-center gap-2.5">
+                            <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
+                            5. Согласие на фото/видео и СМИ
+                        </span>
+                        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+
+                    <!-- Блок быстрой печати бланка -->
+                    <div class="pt-4 mt-4 border-t border-emerald-900/50">
+                        <button onclick="printParentConsent()" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold py-3 px-4 rounded-xl text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/30 cursor-pointer">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                            Печать бланка на 1 страницу А4
+                        </button>
+                    </div>
+
+                    <div class="p-3.5 bg-emerald-950/40 rounded-xl border border-emerald-900/40 text-xs text-gray-300 leading-relaxed mt-3">
+                        <span class="text-amber-400 font-bold block mb-1">💡 Внимание родителям и наставникам:</span>
+                        Участие в кейс-чемпионате «Звуки Урала» на всех этапах является 100% бесплатным.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая колонка: Тексты документов с улучшенной читаемостью -->
+            <div class="w-full lg:w-2/3">
+                <div class="legal-card p-6 sm:p-10 shadow-2xl relative">
+                    
+                    <!-- 1. ПОЛОЖЕНИЕ О КЕЙС-ЧЕМПИОНАТЕ -->
+                    <div id="doc-polozhenie" class="doc-section space-y-6">
+                        <div class="border-b border-emerald-900/60 pb-5">
+                            <span class="text-xs font-bold text-amber-400 uppercase tracking-widest font-oswald">Официальный документ</span>
+                            <h2 class="text-2xl sm:text-3xl font-black font-oswald text-white uppercase mt-1 leading-snug">
+                                ПОЛОЖЕНИЕ О ПРОВЕДЕНИИ МОЛОДЁЖНОГО КЕЙС-ЧЕМПИОНАТА «ЗВУКИ УРАЛА 2026»
+                            </h2>
+                            <p class="text-xs text-gray-400 mt-2">Утверждено Оргкомитетом Консорциума «ПРЕДПРИНИМАЙ» | Редакция 2026 г.</p>
+                        </div>
+
+                        <div class="space-y-6 text-sm sm:text-base text-gray-200 leading-relaxed">
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-emerald-300 font-oswald uppercase mb-2">1. Общие положения и статус мероприятия</h3>
+                                <p class="mb-2">1.1. Настоящее Положение определяет цели, задачи, порядок организации, проведения, судейства и подведения итогов Молодёжного кейс-чемпионата «ЗВУКИ УРАЛА 2026» (далее — «Кейс-чемпионат»).</p>
+                                <p class="mb-2">1.2. <strong>Бесплатный статус:</strong> Кейс-чемпионат является некоммерческим социально-образовательным и профориентационным проектом. Участие в Кейс-чемпионате на всех этапах является <strong>полностью бесплатным</strong> для всех зарегистрированных участников, наставников и образовательных организаций. Взимание любых организационных взносов строго запрещено.</p>
+                                <p>1.3. <strong>Организатор:</strong> Ассоциация развития предпринимательства и технологических инициатив «Консорциум ПРЕДПРИНИМАЙ» совместно с экспертным пулом консалтинговой компании «АРБ ПРО» и индустриальными партнёрами Уральского региона.</p>
+                            </div>
+
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-emerald-300 font-oswald uppercase mb-2">2. Цели и задачи Кейс-чемпионата</h3>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li>Ранняя профориентация подростков и молодёжи 14–17 лет в сфере технологического и креативного предпринимательства, аналитики данных и прикладного применения искусственного интеллекта.</li>
+                                    <li>Обучение методологии сценарного планирования, маркетинга и проектирования продуктов на базе реальных производственных и креативных кейсов Урала.</li>
+                                    <li>Формирование связки «Школьник / Студент — Наставник — Индустриальное предприятие» с возможностью последующих стажировок.</li>
+                                    <li>Развитие навыков командной работы, публичных выступлений и проектной защиты перед топ-менеджерами и основателями бизнеса.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-emerald-300 font-oswald uppercase mb-2">3. Участники и возрастные категории</h3>
+                                <p class="mb-2">3.1. К участию приглашаются школьники 8–11 классов общеобразовательных учреждений, учащиеся лицеев, гимназий и студенты 1–2 курсов учреждений среднего профессионального образования (СПО) в возрасте <strong>от 14 до 17 лет включительно</strong>.</p>
+                                <p class="mb-2">3.2. Участие может быть как индивидуальным (с последующим объединением в команды на образовательном треке), так и в составе сформированных команд от 3 до 5 человек.</p>
+                                <p>3.3. Каждую команду может сопровождать педагог-наставник или куратор от образовательной организации.</p>
+                            </div>
+
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-emerald-300 font-oswald uppercase mb-2">4. Этапы и формат проведения</h3>
+                                <div class="space-y-3 mt-2">
+                                    <div class="p-4 rounded-xl bg-black/50 border border-emerald-900/50">
+                                        <span class="text-amber-400 font-bold block text-sm uppercase font-oswald">Этап 1: Регистрация и вводный онлайн-интенсив</span>
+                                        Подача заявок на сайте <a href="youth-championship.html" class="text-emerald-400 underline">звуки-урала.рф</a>, доступ к вводным образовательным модулям по ИИ, генерации гипотез и аналитике.
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-black/50 border border-emerald-900/50">
+                                        <span class="text-emerald-400 font-bold block text-sm uppercase font-oswald">Этап 2: Решение кейсов предприятий и менторские сессии</span>
+                                        Работа над практическими заданиями от индустриальных партнёров, консультации с экспертами «АРБ ПРО» и трекерами проекта.
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-black/50 border border-emerald-900/50">
+                                        <span class="text-teal-400 font-bold block text-sm uppercase font-oswald">Этап 3: Очный финал и питчинг проектов</span>
+                                        Публичная защита решений в Екатеринбурге перед экспертным жюри и представителями работодателей.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-emerald-300 font-oswald uppercase mb-2">5. Оценивание и награждение</h3>
+                                <p class="mb-2">5.1. Оценивание решений осуществляется Оргкомитетом и независимым Экспертным жюри на основе комплексной оценки практической применимости, экономической логики, использования ИИ-инструментов и качества презентации.</p>
+                                <p>5.2. Победители и призеры Кейс-чемпионата награждаются дипломами, кубками, памятными призами от партнеров и возможностью прохождения менторских стажировок в ведущих компаниях региона.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. ПОЛИТИКА ОБРАБОТКИ ПДН -->
+                    <div id="doc-privacy" class="doc-section hidden space-y-6">
+                        <div class="border-b border-emerald-900/60 pb-5">
+                            <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest font-oswald">Федеральный закон № 152-ФЗ</span>
+                            <h2 class="text-2xl sm:text-3xl font-black font-oswald text-white uppercase mt-1 leading-snug">
+                                ПОЛИТИКА ОБРАБОТКИ И ЗАЩИТЫ ПЕРСОНАЛЬНЫХ ДАННЫХ НЕСОВЕРШЕННОЛЕТНИХ УЧАСТНИКОВ
+                            </h2>
+                            <p class="text-xs text-gray-400 mt-2">Применяется к сайту звуки-урала.рф и мероприятиям кейс-чемпионата</p>
+                        </div>
+
+                        <div class="space-y-6 text-sm sm:text-base text-gray-200 leading-relaxed">
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-emerald-300 font-oswald uppercase mb-2">1. Назначение и правовые основания</h3>
+                                <p class="mb-2">1.1. Настоящая Политика определяет порядок обработки и меры по обеспечению безопасности персональных данных участников Кейс-чемпионата «ЗВУКИ УРАЛА» в соответствии с Федеральным законом РФ от 27.07.2006 № 152-ФЗ «О персональных данных», ст. 26 Гражданского кодекса РФ и иными нормативными актами РФ.</p>
+                                <p>1.2. Оператором персональных данных является Ассоциация «Консорциум ПРЕДПРИНИМАЙ» (далее — «Оператор»).</p>
+                            </div>
+
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-emerald-300 font-oswald uppercase mb-2">2. Категории субъектов и состав обрабатываемых данных</h3>
+                                <p class="mb-2">Оператор обрабатывает данные следующих категорий субъектов:</p>
+                                <ul class="list-disc pl-5 space-y-2 mb-3">
+                                    <li><strong>Несовершеннолетние участники (14–17 лет):</strong> Фамилия, имя, отчество, дата рождения/возраст, наименование образовательного учреждения, класс/курс, город проживания, номер мобильного телефона, адрес электронной почты, ссылка на профиль в мессенджере.</li>
+                                    <li><strong>Родители (законные представители):</strong> Фамилия, имя, отчество, контактный телефон, адрес электронной почты (для подтверждения участия и оперативной связи).</li>
+                                    <li><strong>Педагоги-наставники:</strong> Фамилия, имя, отчество, должность, место работы, контактный телефон, email.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-emerald-300 font-oswald uppercase mb-2">3. Цели сбора и обработки данных</h3>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li>Регистрация и идентификация участников в информационной системе кейс-чемпионата;</li>
+                                    <li>Формирование команд, выдача заданий и организация взаимодействия с менторами;</li>
+                                    <li>Оформление сертификатов участников, дипломов победителей и призеров;</li>
+                                    <li>Оповещение участников и законных представителей о расписании, трансляциях и очных мероприятиях;</li>
+                                    <li>Обеспечение безопасности и пропускного режима на очных площадках проведения финала.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-emerald-300 font-oswald uppercase mb-2">4. Принципы защиты и сроки хранения</h3>
+                                <p class="mb-2">4.1. Все персональные данные обрабатываются и хранятся исключительно на серверах, расположенных на территории Российской Федерации, с применением современных средств криптографической защиты (SSL/TLS).</p>
+                                <p class="mb-2">4.2. Оператор не осуществляет трансграничную передачу данных и не передает данные третьим лицам в коммерческих или рекламных целях.</p>
+                                <p>4.3. Персональные данные хранятся в течение срока проведения кейс-чемпионата и архивного учета выданных дипломов, либо до момента отзыва согласия субъектом или его законным представителем.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. СОГЛАСИЕ РОДИТЕЛЕЙ (ОПТИМИЗИРОВАНО СТРОГО НА 1 СТРАНИЦУ А4) -->
+                    <div id="doc-parent-consent" class="doc-section hidden space-y-6">
+                        <div class="border-b border-emerald-900/60 pb-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 no-print">
+                            <div>
+                                <span class="text-xs font-bold text-teal-400 uppercase tracking-widest font-oswald">Для участников 14–17 лет</span>
+                                <h2 class="text-2xl sm:text-3xl font-black font-oswald text-white uppercase mt-1 leading-snug">
+                                    СОГЛАСИЕ РОДИТЕЛЯ (ЗАКОННОГО ПРЕДСТАВИТЕЛЯ)
+                                </h2>
+                                <p class="text-xs text-gray-300 mt-1">На участие несовершеннолетнего в кейс-чемпионате и обработку персональных данных</p>
+                            </div>
+                            <button onclick="printParentConsent()" class="shrink-0 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black px-5 py-3 rounded-xl text-xs uppercase tracking-wider transition flex items-center gap-2 cursor-pointer shadow-lg shadow-emerald-500/20">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                                Распечатать бланк (1 страница А4)
+                            </button>
+                        </div>
+
+                        <!-- ПЕЧАТНЫЙ БЛАНК ДЛЯ РОДИТЕЛЕЙ: ИДЕАЛЬНАЯ КОМПОНОВКА НА 1 СТРАНИЦУ А4 -->
+                        <div id="printableConsentForm" class="p-6 sm:p-7 rounded-2xl bg-black/60 border border-emerald-800/40 text-gray-100 text-xs sm:text-sm space-y-3.5">
+                            <div class="text-center border-b border-gray-600 pb-2.5 print-border-b">
+                                <h4 class="font-oswald text-base sm:text-lg font-bold uppercase text-emerald-400 tracking-wide">
+                                    СОГЛАСИЕ РОДИТЕЛЯ (ЗАКОННОГО ПРЕДСТАВИТЕЛЯ)
+                                </h4>
+                                <p class="text-[11px] text-gray-300">На участие несовершеннолетнего (14–17 лет) в молодёжном кейс-чемпионате «Звуки Урала 2026»</p>
+                            </div>
+
+                            <p class="leading-relaxed">
+                                Я, __________________________________________________________________________________ (Ф.И.О. родителя / опекуна / попечителя),<br>
+                                Паспорт: серия ________ № ______________, выдан ___________________________________________________________________<br>
+                                «____» ________________ ______ г., проживающий(ая): _____________________________________________________________,<br>
+                                телефон: ________________________, e-mail: ____________________________________,
+                            </p>
+
+                            <p class="leading-relaxed">
+                                являясь законным представителем несовершеннолетнего:<br>
+                                <strong>Ф.И.О. ребёнка:</strong> ____________________________________________________________________________________,<br>
+                                <strong>Дата рождения:</strong> «____» ________________ ______ г., класс/курс: ____________, школа/колледж: _____________________,
+                            </p>
+
+                            <p class="leading-relaxed">
+                                <strong>1. Даю согласие</strong> на участие моего несовершеннолетнего ребёнка во всех этапах бесплатного Молодёжного кейс-чемпионата «ЗВУКИ УРАЛА 2026» (включая онлайн-занятия, работу в проектных группах и очный финал).
+                            </p>
+
+                            <p class="leading-relaxed">
+                                <strong>2. Даю согласие Оператору</strong> (Ассоциация «Консорциум ПРЕДПРИНИМАЙ») на обработку персональных данных моего ребёнка и моих персональных данных (сбор, запись, систематизацию, хранение, уточнение, использование, обезличивание, уничтожение) в целях организации кейс-чемпионата, подведения итогов и выдачи наградных документов в соответствии с 152-ФЗ РФ.
+                            </p>
+
+                            <p class="leading-relaxed">
+                                <strong>3. Даю согласие</strong> на проведение открытой фото- и видеосъёмки моего ребёнка в ходе мероприятий кейс-чемпионата и публикацию материалов в официальных СМИ и ресурсах проекта (ст. 152.1 ГК РФ).
+                            </p>
+
+                            <p class="leading-relaxed">
+                                <strong>4. Подтверждаю</strong>, что ознакомлен(а) с Положением о кейс-чемпионате и правилами участия.
+                            </p>
+
+                            <div class="pt-4 mt-3 border-t border-gray-600 flex justify-between items-center print-border-b text-xs sm:text-sm">
+                                <div>
+                                    <p>«____» _________________ 2026 г.</p>
+                                </div>
+                                <div>
+                                    <p>Подпись законного представителя: _________________ / _________________ /</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-emerald-950/40 border border-emerald-800/40 text-xs text-gray-300 leading-relaxed no-print">
+                            <span class="text-amber-400 font-bold block mb-1">📌 Порядок предоставления согласия:</span>
+                            1) При онлайн-регистрации участник и законный представитель подтверждают согласие электронной отметкой в форме;<br>
+                            2) Для участников, прошедших в очный финал в Екатеринбурге, распечатанный и подписанный родителем бланк сдается при очной регистрации на площадке.
+                        </div>
+                    </div>
+
+                    <!-- 4. ПРАВИЛА УЧАСТИЯ, ОБЪЕКТИВНОСТЬ ОЦЕНИВАНИЯ И ИНТЕЛЛЕКТУАЛЬНЫЕ ПРАВА -->
+                    <div id="doc-rules" class="doc-section hidden space-y-6">
+                        <div class="border-b border-emerald-900/60 pb-5">
+                            <span class="text-xs font-bold text-sky-400 uppercase tracking-widest font-oswald">Регламент и стандарты</span>
+                            <h2 class="text-2xl sm:text-3xl font-black font-oswald text-white uppercase mt-1 leading-snug">
+                                ПРАВИЛА УЧАСТИЯ, ОБЪЕКТИВНОСТЬ ОЦЕНИВАНИЯ И ИНТЕЛЛЕКТУАЛЬНЫЕ ПРАВА
+                            </h2>
+                            <p class="text-xs text-gray-300 mt-2">Регламент взаимодействия участников, наставников и жюри</p>
+                        </div>
+
+                        <div class="space-y-6 text-sm sm:text-base text-gray-200 leading-relaxed">
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-emerald-300 font-oswald uppercase mb-2">1. Принципы участия и авторство решений</h3>
+                                <p class="mb-2">1.1. Все проектные решения, презентации, аналитические выкладки и прототипы, представляемые на кейс-чемпионате, разрабатываются непосредственно членами команды.</p>
+                                <p class="mb-2">1.2. <strong>Применение цифровых и ИИ-инструментов:</strong> Разрешается и приветствуется использование современных аналитических сервисов и искусственного интеллекта в качестве исследовательского ассистента при условии открытого указания используемых технологий в описании проекта.</p>
+                                <p>1.3. Прямой плагиат чужих готовых работ или представление чужих коммерческих разработок без авторской адаптации запрещены.</p>
+                            </div>
+
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-emerald-300 font-oswald uppercase mb-2">2. Объективность и регламент оценивания</h3>
+                                <p class="mb-2">2.1. Оценивание работ участников осуществляется Оргкомитетом и независимым Экспертным жюри на основе принципов объективности, открытости и равенства условий для всех команд.</p>
+                                <p>2.2. Экспертное жюри формируется из представителей реального сектора экономики, топ-менеджеров предприятий-партнеров и экспертов консалтинговой группы «АРБ ПРО».</p>
+                            </div>
+
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-emerald-300 font-oswald uppercase mb-2">3. Интеллектуальная собственность (РИД)</h3>
+                                <p class="mb-2">3.1. Исключительные авторские права на созданные в ходе кейс-чемпионата проекты, концепции и презентации сохраняются за их непосредственными авторами — участниками команд.</p>
+                                <p>3.2. Организаторы и компании-партнеры получают неисключительное безвозмездное право на демонстрацию решений, публикацию фрагментов в итоговых сборниках, СМИ и презентационных материалах проекта с обязательным указанием авторства участников.</p>
+                            </div>
+
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-emerald-300 font-oswald uppercase mb-2">4. Правила взаимодействия и безопасность</h3>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li>Взаимное уважение, деловой стиль общения и конструктивная культура коммуникации;</li>
+                                    <li>Категорический запрет на любые формы некорректного или деструктивного поведения;</li>
+                                    <li>Соблюдение правил противопожарной безопасности, требований площадок проведения очного финала и указаний наставников.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. СОГЛАСИЕ НА ФОТО/ВИДЕО И СМИ -->
+                    <div id="doc-media-consent" class="doc-section hidden space-y-6">
+                        <div class="border-b border-emerald-900/60 pb-5">
+                            <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest font-oswald">Статья 152.1 Гражданского кодекса РФ</span>
+                            <h2 class="text-2xl sm:text-3xl font-black font-oswald text-white uppercase mt-1 leading-snug">
+                                СОГЛАСИЕ НА ФОТО- И ВИДЕОСЪЁМКУ И ОСВЕЩЕНИЕ В СМИ
+                            </h2>
+                            <p class="text-xs text-gray-300 mt-2">Информационная открытость молодежного проекта</p>
+                        </div>
+
+                        <div class="space-y-6 text-sm sm:text-base text-gray-200 leading-relaxed">
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-emerald-300 font-oswald uppercase mb-2">1. Открытость и цели освещения</h3>
+                                <p class="mb-2">1.1. Кейс-чемпионат «ЗВУКИ УРАЛА» является открытым общественно значимым проектом, освещаемым региональными и федеральными СМИ (включая «Росмолодёжь», «Lenta.ru», «Комсомольская правда», «Добро.live» и др.).</p>
+                                <p>1.2. В соответствии со ст. 152.1 ГК РФ фото- и видеосъемка, производимая в ходе публичных мероприятий (защит, воркшопов, церемоний награждения), проводится в общественных интересах для популяризации молодежного созидательного движения и предпринимательства.</p>
+                            </div>
+
+                            <div>
+                                <h3 class="text-lg sm:text-xl font-bold text-emerald-300 font-oswald uppercase mb-2">2. Использование материалов</h3>
+                                <p>Материалы съемок могут быть использованы организаторами на безвозмездной основе для создания фотоотчетов, видеороликов, телерепортажей, публикаций на официальном сайте звуки-урала.рф и в социальных медиа проекта.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ПОДВАЛ ЮРИДИЧЕСКОГО ЦЕНТРА -->
+    <footer class="bg-[#010502] border-t border-emerald-950/80 py-10 text-gray-400 text-xs no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <img src="../logo-arrow-green.png" alt="Звуки Урала" class="h-6 w-auto object-contain">
+                <div>
+                    <p class="font-oswald text-white font-bold text-sm tracking-wide">МОЛОДЁЖНЫЙ КЕЙС-ЧЕМПИОНАТ «ЗВУКИ УРАЛА»</p>
+                    <p class="text-[11px] text-gray-400">© 2026 Консорциум «ПРЕДПРИНИМАЙ» | 100% Бесплатный проект для подростков 14–17 лет</p>
+                </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-4 text-xs font-medium">
+                <a href="youth-championship.html" class="text-emerald-400 hover:underline">Главная страница кейс-чемпионата</a>
+                <span class="text-gray-700">•</span>
+                <a href="javascript:showDoc('polozhenie')" class="hover:text-white transition">Положение</a>
+                <span class="text-gray-700">•</span>
+                <a href="javascript:showDoc('privacy')" class="hover:text-white transition">Политика ПДн</a>
+                <span class="text-gray-700">•</span>
+                <a href="javascript:showDoc('parent-consent')" class="hover:text-white transition">Согласие родителей</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- СКРИПТ ПЕРЕКЛЮЧЕНИЯ ВКЛАДОК И ПЕЧАТИ -->
+    <script>
+        function showDoc(docId) {
+            // Скрываем все разделы
+            document.querySelectorAll('.doc-section').forEach(el => el.classList.add('hidden'));
+            // Снимаем активный класс со всех кнопок
+            document.querySelectorAll('.legal-menu-btn').forEach(btn => btn.classList.remove('active'));
+
+            // Показываем нужный
+            const targetDoc = document.getElementById('doc-' + docId);
+            const targetBtn = document.getElementById('btn-' + docId);
+            if (targetDoc) {
+                targetDoc.classList.remove('hidden');
+            }
+            if (targetBtn) {
+                targetBtn.classList.add('active');
+            }
+
+            // Обновляем hash без скролла
+            if (history.pushState) {
+                history.pushState(null, null, '#' + docId);
+            } else {
+                location.hash = '#' + docId;
+            }
+            window.scrollTo({ top: 300, behavior: 'smooth' });
+        }
+
+        function printParentConsent() {
+            showDoc('parent-consent');
+            setTimeout(() => {
+                window.print();
+            }, 300);
+        }
+
+        // Авто-открытие вкладки по хешу в URL
+        document.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && document.getElementById('doc-' + hash)) {
+                showDoc(hash);
+            } else {
+                showDoc('polozhenie');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ОСЕННИЙ КЕЙС-ЧЕМПИОНАТ «ЗВУКИ УРАЛА» | 7–11 октября · Синара Центр, Екатеринбург</title>
     <meta name="description" content="Осенний кейс-чемпионат «Звуки Урала». 7–11 октября, Синара Центр, Екатеринбург. Практическая проектная деятельность, создание арт-объектов из вторсырья и цифровых аудиогидов для территории Урала">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="favicon-green.png?v=3">
+    <link rel="shortcut icon" type="image/png" href="favicon-green.png?v=3">
+    <link rel="apple-touch-icon" href="favicon-green.png?v=3">
 
     <!-- Трекер рефералов и UTM -->
     <script src="/ref-tracker.js"></script>
-    <script src="ref-tracker.js"></script>
+    <script src="../ref-tracker.js"></script>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -127,6 +129,22 @@
             background: rgba(245, 158, 11, 0.15) !important;
         }
 
+        /* Анимация пульсации зеленой стрелки логотипа */
+        @keyframes logoArrowPulse {
+            0%, 100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.6)) brightness(1);
+            }
+            50% {
+                transform: scale(1.06);
+                filter: drop-shadow(0 0 16px rgba(16, 185, 129, 0.9)) brightness(1.25);
+            }
+        }
+        .logo-arrow-pulse {
+            animation: logoArrowPulse 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            transform-origin: center;
+        }
+
         /* Плавная кнопка наверх */
         #backToTopBtn {
             transition: opacity 0.3s, transform 0.3s;
@@ -143,19 +161,19 @@
     <!-- ======================================================= -->
     <!-- НАВИГАЦИЯ                                               -->
     <!-- ======================================================= -->
-    <nav class="fixed top-0 w-full z-50 bg-[#030d07]/95 backdrop-blur-md">
+    <nav class="fixed top-0 w-full z-50 bg-[#030d07]/95 backdrop-blur-md border-b border-emerald-950/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between text-sm font-medium tracking-wide text-gray-300">
             
-            <!-- Логотип бренда -->
-            <a href="index.html" class="flex items-center gap-3 text-white hover:opacity-90 transition flex-shrink-0">
-                <img src="ЛОГО ТР.png" alt="Территория Роста" class="h-8 sm:h-9 w-auto object-contain flex-shrink-0">
-                <span class="font-black text-sm sm:text-base tracking-wider uppercase font-['Oswald'] text-white whitespace-nowrap">ТЕРРИТОРИЯ РОСТА</span>
+            <!-- Фирменный логотип бренда: мерцающая зеленая стрелочка + надпись ТЕРРИТОРИЯ РОСТА -->
+            <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 text-white hover:opacity-90 transition flex-shrink-0 group">
+                <img src="../logo-arrow-green.png?v=12" alt="Территория Роста" class="h-6 sm:h-7 w-auto object-contain flex-shrink-0 logo-arrow-pulse">
+                <span class="font-['Oswald',sans-serif] font-bold text-sm sm:text-base lg:text-lg tracking-wider text-white uppercase whitespace-nowrap">ТЕРРИТОРИЯ РОСТА</span>
             </a>
 
             <!-- Меню навигации (чистые пункты без стрелочек) -->
             <div id="navMenuLinks" class="hidden md:flex items-center space-x-4 lg:space-x-6 text-[12px] lg:text-[13px] font-semibold text-gray-300 uppercase tracking-wider whitespace-nowrap">
                 <a href="#about" class="hover:text-emerald-400 transition">О чемпионате</a>
-                <a href="#region" class="hover:text-amber-400 transition">Территория Урала</a>
+                <a href="#region" class="hover:text-amber-400 transition">Территория</a>
                 <a href="#program" class="hover:text-emerald-400 transition">Программа</a>
                 <a href="#roles" class="hover:text-amber-400 transition">Роли в команде</a>
                 <a href="#gallery" class="hover:text-emerald-400 transition">Как это проходит</a>
@@ -177,7 +195,7 @@
         <!-- Мобильное меню -->
         <div id="mobileMenu" class="hidden md:hidden bg-[#030d07] px-4 py-4 space-y-3 text-xs uppercase font-semibold">
             <a href="#about" class="block text-gray-300 hover:text-emerald-400">О чемпионате</a>
-            <a href="#region" class="block text-gray-300 hover:text-amber-400">Территория Урала</a>
+            <a href="#region" class="block text-gray-300 hover:text-amber-400">Территория</a>
             <a href="#program" class="block text-gray-300 hover:text-emerald-400">Программа</a>
             <a href="#roles" class="block text-gray-300 hover:text-amber-400">Роли в команде</a>
             <a href="#gallery" class="block text-gray-300 hover:text-emerald-400">Как это проходит</a>
@@ -193,7 +211,7 @@
     <section class="relative min-h-[92vh] flex flex-col justify-center items-center text-center pt-24 pb-24 overflow-hidden bg-[#030d07]">
         
         <!-- Осенняя аэрофотография парка на фоне -->
-        <img src="assets/youth/autumn_ural_park.jpg" alt="Осенний Урал" class="absolute inset-0 w-full h-full object-cover opacity-35 z-0 scale-105">
+        <img src="../assets/youth/autumn_ural_park.jpg" alt="Осенний Урал" class="absolute inset-0 w-full h-full object-cover opacity-35 z-0 scale-105">
 
         <!-- Мягкий градиентный оверлей для плавного перехода -->
         <div class="absolute inset-0 bg-gradient-to-t from-[#030d07] via-[#030d07]/65 to-[#030d07]/40 z-0"></div>
@@ -344,7 +362,7 @@
                 <!-- Фотография спортивного кластера в осеннем лесу -->
                 <div class="lg:col-span-6 rounded-3xl overflow-hidden shadow-2xl group flex">
                     <div class="relative w-full h-80 sm:h-96 lg:h-full min-h-[380px] overflow-hidden rounded-3xl">
-                        <img src="assets/youth/autumn_ural_sport.jpg" alt="Осенний спортивный кластер Урала" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="../assets/youth/autumn_ural_sport.jpg" alt="Осенний спортивный кластер Урала" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#020904]/80 via-transparent to-transparent"></div>
                     </div>
                 </div>
@@ -423,7 +441,7 @@
                     <div class="card-green rounded-2xl p-6 sm:p-7 flex flex-col justify-between space-y-3">
                         <div class="space-y-2">
                             <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider">10 октября · Командный практикум</div>
-                            <h4 class="text-lg sm:text-xl font-bold text-white uppercase font-['Oswald']">Эмоциональный интеллект «Импатиум»</h4>
+                            <h4 class="text-lg sm:text-xl font-bold text-white uppercase font-['Oswald']">Эмоциональный интеллект «Эмпатиум»</h4>
                             <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">Практикум по коммуникации: распределение ролей в команде, слаженная работа, генерация решений и подготовка к защите</p>
                         </div>
                     </div>
@@ -555,7 +573,7 @@
                 <div class="lg:col-span-7 flex flex-col justify-center">
                     <div class="relative w-full h-full min-h-[360px] sm:min-h-[420px] rounded-3xl overflow-hidden bg-black/60 shadow-2xl">
                         <video id="eventVideoPlayer" autoplay loop muted playsinline preload="auto" class="w-full h-full object-cover rounded-3xl" poster="assets/youth/events/revin/photo_1.jpg">
-                            <source src="assets/youth/events/dom_molodezhi.mp4" type="video/mp4">
+                            <source src="../assets/youth/events/dom_molodezhi.mp4" type="video/mp4">
                             Ваш браузер не поддерживает воспроизведение видео
                         </video>
                     </div>
@@ -566,7 +584,7 @@
                     
                     <!-- 1. Встреча с С.Н. Ревиным -->
                     <div onclick="selectEvent('revin')" id="tile_revin" class="event-tile active card-green rounded-2xl p-3.5 flex items-center gap-3.5 cursor-pointer">
-                        <img src="assets/youth/events/revin/photo_1.jpg" alt="Встреча с С.Н. Ревиным" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
+                        <img src="../assets/youth/events/revin/photo_1.jpg" alt="Встреча с С.Н. Ревиным" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
                         <div class="flex-grow">
                             <h4 class="text-sm font-bold text-white uppercase font-['Oswald'] leading-snug">Встреча с Сергеем Николаевичем Ревиным</h4>
                             <p class="text-[11px] text-gray-300">Лётчик-космонавт РФ, диалог о технологиях и будущем</p>
@@ -575,7 +593,7 @@
 
                     <!-- 2. Стратегическая сессия Росатом -->
                     <div onclick="selectEvent('rosatom')" id="tile_rosatom" class="event-tile card-green rounded-2xl p-3.5 flex items-center gap-3.5 cursor-pointer">
-                        <img src="assets/youth/events/rosatom/photo_1.jpg" alt="Стратегическая сессия Росатом" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
+                        <img src="../assets/youth/events/rosatom/photo_1.jpg" alt="Стратегическая сессия Росатом" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
                         <div class="flex-grow">
                             <h4 class="text-sm font-bold text-white uppercase font-['Oswald'] leading-snug">Стратегическая сессия Росатом</h4>
                             <p class="text-[11px] text-gray-300">Проектирование решений для промышленных территорий</p>
@@ -584,7 +602,7 @@
 
                     <!-- 3. Форум молодых предпринимателей -->
                     <div onclick="selectEvent('forum_young')" id="tile_forum_young" class="event-tile card-green rounded-2xl p-3.5 flex items-center gap-3.5 cursor-pointer">
-                        <img src="assets/youth/events/forum_young/photo_1.jpg" alt="Форум молодых предпринимателей" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
+                        <img src="../assets/youth/events/forum_young/photo_1.jpg" alt="Форум молодых предпринимателей" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
                         <div class="flex-grow">
                             <h4 class="text-sm font-bold text-white uppercase font-['Oswald'] leading-snug">Форум молодых предпринимателей</h4>
                             <p class="text-[11px] text-gray-300">Питчи проектов, наставничество и живой бизнес-опыт</p>
@@ -593,7 +611,7 @@
 
                     <!-- 4. Форум устойчивого развития Предпринимай -->
                     <div onclick="selectEvent('sustainability')" id="tile_sustainability" class="event-tile card-green rounded-2xl p-3.5 flex items-center gap-3.5 cursor-pointer">
-                        <img src="assets/youth/events/sustainability/photo_1.jpg" alt="Форум устойчивого развития Предпринимай" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
+                        <img src="../assets/youth/events/sustainability/photo_1.jpg" alt="Форум устойчивого развития Предпринимай" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
                         <div class="flex-grow">
                             <h4 class="text-sm font-bold text-white uppercase font-['Oswald'] leading-snug">Форум устойчивого развития Предпринимай</h4>
                             <p class="text-[11px] text-gray-300">Экология, городская среда и созидательный труд</p>
@@ -602,7 +620,7 @@
 
                     <!-- 5. Хакатоны Предпринимай -->
                     <div onclick="selectEvent('hackathons')" id="tile_hackathons" class="event-tile card-green rounded-2xl p-3.5 flex items-center gap-3.5 cursor-pointer">
-                        <img src="assets/youth/events/hackathons/photo_1.jpg" alt="Хакатоны Предпринимай" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
+                        <img src="../assets/youth/events/hackathons/photo_1.jpg" alt="Хакатоны Предпринимай" class="w-16 h-14 rounded-xl object-cover flex-shrink-0">
                         <div class="flex-grow">
                             <h4 class="text-sm font-bold text-white uppercase font-['Oswald'] leading-snug">Хакатоны Предпринимай</h4>
                             <p class="text-[11px] text-gray-300">Командные спринты и создание прототипов за 48 часов</p>
@@ -655,7 +673,7 @@
 
                         <div class="mb-4 flex items-center">
                             <a href="https://predprinimy.ru" target="_blank" rel="noopener noreferrer" class="hover:opacity-90 transition">
-                                <img src="Спикеры/Лого/Предпринимай Лого.png" alt="Консорциум ПРЕДПРИНИМАЙ" class="h-10 sm:h-12 w-auto object-contain">
+                                <img src="../Спикеры/Лого/Предпринимай Лого.png" alt="Консорциум ПРЕДПРИНИМАЙ" class="h-10 sm:h-12 w-auto object-contain">
                             </a>
                         </div>
 
@@ -735,45 +753,71 @@
                     
                     <div class="mb-4">
                         <h3 class="text-xl sm:text-2xl lg:text-3xl font-black uppercase font-['Oswald'] text-white mb-1.5 leading-tight">
-                            РЕГИСТРАЦИЯ УЧАСТНИКА
+                            РЕГИСТРАЦИЯ НА КЕЙС-ЧЕМПИОНАТ
                         </h3>
 
                         <p class="text-gray-300 text-xs font-medium leading-relaxed">
-                            Индивидуальная или командная заявка на участие в кейс-чемпионате «Звуки Урала» для школьников и студентов (14–17 лет)
+                            Индивидуальная или командная заявка на участие в кейс-чемпионате «Звуки Урала» для школьников и студентов (14–17 лет), а также их наставников (18+)
                         </p>
                     </div>
 
+                    <!-- Переключатель роли: Участник (14–17 лет) / Наставник (18+) -->
+                    <div class="mb-3.5">
+                        <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1.5">Категория регистрации</label>
+                        <div class="grid grid-cols-2 gap-2 p-1 bg-[#020804] rounded-xl border border-emerald-900/60">
+                            <button type="button" id="roleBtnParticipant" onclick="setRegistrationRole('participant')" class="h-11 w-full rounded-xl text-xs font-bold uppercase tracking-wider transition bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md cursor-pointer flex items-center justify-center gap-1.5">
+                                <span>🎓</span> <span>Участник (14–17 лет)</span>
+                            </button>
+                            <button type="button" id="roleBtnMentor" onclick="setRegistrationRole('mentor')" class="h-11 w-full rounded-xl text-xs font-bold uppercase tracking-wider transition text-gray-400 hover:text-white hover:bg-emerald-500/10 cursor-pointer flex items-center justify-center gap-1.5">
+                                <span>🧑‍🏫</span> <span>Наставник (18+)</span>
+                            </button>
+                        </div>
+                        <input type="hidden" id="registrationCategory" value="participant">
+                    </div>
+
                     <!-- Форма -->
-                    <form id="hackathonRegistrationForm" onsubmit="handleRegistrationSubmit(event)" class="flex flex-col gap-3">
-                        <div>
-                            <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">ФИО Участника</label>
-                            <input id="participantName" type="text" placeholder="Иванов Даниил Алексеевич" required class="w-full bg-[#020804]/90 text-white placeholder-gray-500 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-amber-500 text-sm transition">
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <form id="hackathonRegistrationForm" onsubmit="handleRegistrationSubmit(event)" class="flex flex-col gap-3.5">
+                        
+                        <!-- Строка 1: ФИО и Телефон (2 колонки) -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                             <div>
-                                <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Телефон участника</label>
-                                <input id="participantPhone" type="tel" placeholder="+7 (999) 000-00-00" required class="w-full bg-[#020804]/90 text-white placeholder-gray-500 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-amber-500 text-sm transition">
+                                <label id="nameLabel" class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1.5 min-h-[16px] truncate">ФИО Участника</label>
+                                <input id="participantName" type="text" placeholder="Иванов Даниил Алексеевич" required class="h-11 w-full bg-[#020804]/90 border border-emerald-900/60 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 text-white placeholder-gray-500 rounded-xl px-4 text-xs sm:text-sm transition">
                             </div>
                             <div>
-                                <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Возраст (14–17 лет)</label>
-                                <select id="participantAge" required class="w-full bg-[#020804]/90 text-white rounded-xl px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-amber-500 text-sm transition">
-                                    <option value="14">14 лет</option>
-                                    <option value="15">15 лет</option>
-                                    <option value="16" selected>16 лет</option>
-                                    <option value="17">17 лет</option>
-                                </select>
+                                <label id="phoneLabel" class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1.5 min-h-[16px] truncate">Телефон участника</label>
+                                <input id="participantPhone" type="tel" placeholder="+7 (999) 000-00-00" required class="h-11 w-full bg-[#020804]/90 border border-emerald-900/60 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 text-white placeholder-gray-500 rounded-xl px-4 text-xs sm:text-sm transition">
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <!-- Строка 2: Город/Организация и Возраст/Статус (2 колонки) -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                             <div>
-                                <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Город и Школа / Колледж</label>
-                                <input id="participantSchool" type="text" placeholder="г. Екатеринбург, Гимназия №9" required class="w-full bg-[#020804]/90 text-white placeholder-gray-500 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-amber-500 text-sm transition">
+                                <label id="schoolLabel" class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1.5 min-h-[16px] truncate">Город и Школа / Колледж</label>
+                                <input id="participantSchool" type="text" placeholder="г. Екатеринбург, Гимназия №9" required class="h-11 w-full bg-[#020804]/90 border border-emerald-900/60 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 text-white placeholder-gray-500 rounded-xl px-4 text-xs sm:text-sm transition">
                             </div>
                             <div>
-                                <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">Желаемая роль</label>
-                                <select id="participantRole" class="w-full bg-[#020804]/90 text-white rounded-xl px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-amber-500 text-sm transition">
+                                <label id="ageLabel" class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1.5 min-h-[16px] truncate">Возраст (14–17 лет)</label>
+                                <div class="relative">
+                                    <select id="participantAge" class="h-11 w-full bg-[#020804]/90 border border-emerald-900/60 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 text-white rounded-xl px-4 text-xs sm:text-sm transition cursor-pointer">
+                                        <option value="14">14 лет</option>
+                                        <option value="15">15 лет</option>
+                                        <option value="16" selected>16 лет</option>
+                                        <option value="17">17 лет</option>
+                                    </select>
+                                    <div id="mentorStatusBadge" class="hidden h-11 w-full bg-amber-500/10 border border-amber-500/30 text-amber-300 font-bold text-xs rounded-xl px-4 flex items-center justify-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                                        Наставник / Куратор (18+)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Строка 3: Желаемая роль и Наставник/Команда (2 колонки) -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                            <div>
+                                <label id="roleLabel" class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1.5 min-h-[16px] truncate">Желаемая роль</label>
+                                <select id="participantRole" class="h-11 w-full bg-[#020804]/90 border border-emerald-900/60 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 text-white rounded-xl px-4 text-xs sm:text-sm transition cursor-pointer">
                                     <option value="producer">Продюсер проекта</option>
                                     <option value="writer">Сценарист и исследователь</option>
                                     <option value="creator">Креатор</option>
@@ -782,28 +826,29 @@
                                     <option value="solo" selected>Молодой лидер (подберите команду)</option>
                                 </select>
                             </div>
+                            <div>
+                                <label id="mentorLabel" class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1.5 min-h-[16px] truncate">ФИО и телефон наставника</label>
+                                <input id="participantMentor" type="text" placeholder="Петрова Елена Викторовна, +7 (900) 123-45-67" required class="h-11 w-full bg-[#020804]/90 border border-emerald-900/60 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 text-white placeholder-gray-500 rounded-xl px-4 text-xs sm:text-sm transition">
+                            </div>
                         </div>
 
-                        <div>
-                            <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1">ФИО и телефон Наставника / Педагога / Родителя</label>
-                            <input id="participantMentor" type="text" placeholder="Петрова Елена Викторовна, +7 (900) 123-45-67" required class="w-full bg-[#020804]/90 text-white placeholder-gray-500 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-amber-500 text-sm transition">
-                        </div>
-
-                        <button id="participantSubmitBtn" type="submit" class="w-full mt-2 bg-gradient-to-r from-amber-500 via-emerald-600 to-teal-600 hover:opacity-95 text-slate-950 font-black uppercase tracking-wider py-3.5 rounded-xl transition text-xs sm:text-sm shadow-xl shadow-amber-500/25 cursor-pointer flex items-center justify-center gap-2">
-                            <span>ОТПРАВИТЬ ЗАЯВКУ НА КЕЙС-ЧЕМПИОНАТ</span>
+                        <!-- Кнопка отправки заявки -->
+                        <button id="participantSubmitBtn" type="submit" class="h-12 w-full mt-1 bg-gradient-to-r from-amber-500 via-emerald-600 to-teal-600 hover:opacity-95 text-slate-950 font-black uppercase tracking-wider rounded-xl transition text-xs sm:text-sm shadow-xl shadow-amber-500/25 cursor-pointer flex items-center justify-center gap-2">
+                            <span id="participantSubmitBtnText">ОТПРАВИТЬ ЗАЯВКУ НА КЕЙС-ЧЕМПИОНАТ</span>
                         </button>
 
-                        <div class="space-y-2 mt-2 text-left">
+                        <!-- Согласия и правила -->
+                        <div class="space-y-2 mt-1.5 text-left">
                             <label class="flex items-start gap-2.5 cursor-pointer">
                                 <input type="checkbox" required class="mt-0.5 w-3.5 h-3.5 rounded text-amber-500 focus:ring-amber-500 bg-[#020804]">
-                                <span class="text-[10px] text-gray-400 leading-tight">
-                                    Я выражаю согласие на обработку персональных данных в соответствии с <a href="oferta.html#consent" target="_blank" class="text-amber-400 underline hover:text-amber-300">Согласием на обработку ПД</a>
+                                <span id="consentCheckboxText" class="text-[10px] text-gray-400 leading-tight">
+                                    Я (участник 14–17 лет / родитель) выражаю согласие на обработку персональных данных в соответствии с <a href="youth-docs.html#parent-consent" target="_blank" class="text-amber-400 underline hover:text-amber-300">Согласием на обработку ПДн</a>
                                 </span>
                             </label>
                             <label class="flex items-start gap-2.5 cursor-pointer">
                                 <input type="checkbox" required class="mt-0.5 w-3.5 h-3.5 rounded text-amber-500 focus:ring-amber-500 bg-[#020804]">
                                 <span class="text-[10px] text-gray-400 leading-tight">
-                                    Я ознакомлен и принимаю условия <a href="oferta.html#privacy" target="_blank" class="text-amber-400 underline hover:text-amber-300">Политики конфиденциальности</a> и <a href="oferta.html#offer" target="_blank" class="text-amber-400 underline hover:text-amber-300">Регламента участия</a>
+                                    Я ознакомлен и принимаю условия <a href="youth-docs.html#polozhenie" target="_blank" class="text-amber-400 underline hover:text-amber-300">Положения о кейс-чемпионате</a> и <a href="youth-docs.html#privacy" target="_blank" class="text-amber-400 underline hover:text-amber-300">Политики конфиденциальности</a>
                                 </span>
                             </label>
                         </div>
@@ -815,7 +860,7 @@
                             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
                         </div>
                         <h4 class="text-xl font-bold font-['Oswald'] uppercase text-white">Заявка принята</h4>
-                        <p class="text-gray-300 text-xs">Добро пожаловать в команду осеннего кейс-чемпионата «Звуки Урала»</p>
+                        <p id="successBoxSubtitle" class="text-gray-300 text-xs">Добро пожаловать в команду осеннего кейс-чемпионата «Звуки Урала»</p>
                         <p class="text-amber-400 text-xs font-semibold">Организационный комитет свяжется с вами</p>
                     </div>
 
@@ -835,7 +880,7 @@
                     <!-- 1. Росмолодёжь -->
                     <a href="https://fadm.gov.ru" target="_blank" rel="noopener noreferrer" class="bg-[#030d07] rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
                         <div class="h-14 w-full flex items-center justify-center p-1">
-                            <img src="Спикеры/Лого/Росмолодежь.png" alt="Росмолодёжь" class="max-h-full max-w-[130px] object-contain filter group-hover:brightness-110 transition">
+                            <img src="../Спикеры/Лого/Росмолодежь.png" alt="Росмолодёжь" class="max-h-full max-w-[130px] object-contain filter group-hover:brightness-110 transition">
                         </div>
                         <span class="text-[11px] font-semibold text-gray-300 group-hover:text-amber-400 mt-2 transition">Росмолодёжь</span>
                     </a>
@@ -853,7 +898,7 @@
                     <!-- 3. Комсомольская правда -->
                     <a href="https://www.ural.kp.ru/" target="_blank" rel="noopener noreferrer" class="bg-[#030d07] rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
                         <div class="h-14 w-full flex items-center justify-center p-1 bg-white rounded-lg">
-                            <img src="Спикеры/Лого/Комсомольскакя правда.jpg" alt="Комсомольская правда" class="max-h-full max-w-[120px] object-contain">
+                            <img src="../Спикеры/Лого/Комсомольскакя правда.jpg" alt="Комсомольская правда" class="max-h-full max-w-[120px] object-contain">
                         </div>
                         <span class="text-[11px] font-semibold text-gray-300 group-hover:text-amber-400 mt-2 transition">Комсомольская правда</span>
                     </a>
@@ -872,7 +917,7 @@
                     <!-- 5. Росатом / Atom Media -->
                     <a href="https://rosatom.ru/" target="_blank" rel="noopener noreferrer" class="bg-[#030d07] rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
                         <div class="h-14 w-full flex items-center justify-center p-1">
-                            <img src="Спикеры/Лого/Рос Атом Медиа.svg" alt="Atom Media" class="max-h-full max-w-[120px] object-contain filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition">
+                            <img src="../Спикеры/Лого/Рос Атом Медиа.svg" alt="Atom Media" class="max-h-full max-w-[120px] object-contain filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition">
                         </div>
                         <span class="text-[11px] font-semibold text-gray-300 group-hover:text-amber-400 mt-2 transition">Росатом / Atom Media</span>
                     </a>
@@ -880,7 +925,7 @@
                     <!-- 6. Выставка Россия -->
                     <a href="https://russia.ru/" target="_blank" rel="noopener noreferrer" class="bg-[#030d07] rounded-2xl p-4 flex flex-col items-center justify-between text-center transition group shadow-md hover:scale-105">
                         <div class="h-14 w-full flex items-center justify-center p-1">
-                            <img src="Спикеры/Лого/Россия Нац центр.svg" alt="Национальный центр «Россия»" class="max-h-full max-w-[120px] object-contain filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition">
+                            <img src="../Спикеры/Лого/Россия Нац центр.svg" alt="Национальный центр «Россия»" class="max-h-full max-w-[120px] object-contain filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition">
                         </div>
                         <span class="text-[11px] font-semibold text-gray-300 group-hover:text-amber-400 mt-2 transition">Выставка «Россия»</span>
                     </a>
@@ -890,30 +935,31 @@
             <!-- ======================================================= -->
             <!-- СЕКЦИЯ 3: НАВИГАЦИЯ, ПРАВОВЫЕ ДОКУМЕНТЫ В 3 КОЛОНКИ       -->
             <!-- ======================================================= -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-12 border-t border-indigo-900/40 pt-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-12 pt-8">
                 
                 <!-- Колонка 1: Правовые документы -->
                 <div>
-                    <h4 class="text-sm font-bold uppercase tracking-wider text-blue-400 mb-4 font-['Oswald']">
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-amber-400 mb-4 font-['Oswald'] flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                         ПРАВОВЫЕ ДОКУМЕНТЫ
                     </h4>
                     <ul class="space-y-3 text-xs text-gray-300">
                         <li>
-                            <a href="oferta.html#offer" target="_blank" class="hover:text-white transition flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-                                Публичная оферта на оказание услуг
+                            <a href="youth-docs.html#polozhenie" target="_blank" class="hover:text-amber-400 text-gray-200 transition flex items-center gap-2.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.9)]"></span>
+                                Положение о кейс-чемпионате
                             </a>
                         </li>
                         <li>
-                            <a href="oferta.html#privacy" target="_blank" class="hover:text-white transition flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-                                Политика конфиденциальности
+                            <a href="youth-docs.html#privacy" target="_blank" class="hover:text-amber-400 text-gray-200 transition flex items-center gap-2.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.9)]"></span>
+                                Политика обработки персональных данных
                             </a>
                         </li>
                         <li>
-                            <a href="oferta.html#cookie" target="_blank" class="hover:text-white transition flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-                                Политика файлов cookie
+                            <a href="youth-docs.html#parent-consent" target="_blank" class="hover:text-amber-400 text-gray-200 transition flex items-center gap-2.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.9)]"></span>
+                                Согласие родителей (14–17 лет)
                             </a>
                         </li>
                     </ul>
@@ -921,32 +967,27 @@
 
                 <!-- Колонка 2: Согласия и регламенты -->
                 <div>
-                    <h4 class="text-sm font-bold uppercase tracking-wider text-blue-400 mb-4 font-['Oswald']">
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-amber-400 mb-4 font-['Oswald'] flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                         СОГЛАСИЯ И РЕГЛАМЕНТЫ
                     </h4>
                     <ul class="space-y-3 text-xs text-gray-300">
                         <li>
-                            <a href="oferta.html#consent" target="_blank" class="hover:text-white transition flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
-                                Согласие на обработку персональных данных
+                            <a href="youth-docs.html#rules" target="_blank" class="hover:text-amber-400 text-gray-200 transition flex items-center gap-2.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.9)]"></span>
+                                Правила участия и кодекс чести
                             </a>
                         </li>
                         <li>
-                            <a href="oferta.html#consent" target="_blank" class="hover:text-white transition flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
-                                Согласие на получение рекламной рассылки
+                            <a href="youth-docs.html#media-consent" target="_blank" class="hover:text-amber-400 text-gray-200 transition flex items-center gap-2.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.9)]"></span>
+                                Согласие на фото/видео и СМИ
                             </a>
                         </li>
                         <li>
-                            <a href="oferta.html#consent" target="_blank" class="hover:text-white transition flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
-                                Согласие на распространение ПД
-                            </a>
-                        </li>
-                        <li>
-                            <a href="oferta.html#rules" target="_blank" class="hover:text-white transition flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
-                                Регламент участия и правила безопасности
+                            <a href="youth-docs.html#parent-consent" target="_blank" class="hover:text-amber-400 text-gray-200 transition flex items-center gap-2.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(16,185,129,0.9)]"></span>
+                                Печатный бланк для очного финала
                             </a>
                         </li>
                     </ul>
@@ -954,27 +995,28 @@
 
                 <!-- Колонка 3: Мы в соцсетях и контакты -->
                 <div>
-                    <h4 class="text-sm font-bold uppercase tracking-wider text-blue-400 mb-4 font-['Oswald']">
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-amber-400 mb-4 font-['Oswald'] flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                         МЫ В СОЦСЕТЯХ И СВЯЗЬ
                     </h4>
                     <p class="text-xs text-gray-400 mb-3">Официальные каналы и прямая связь с оргкомитетом:</p>
                     <div class="flex items-center gap-3 mb-5">
-                        <a href="https://t.me/andreydereev" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-xl bg-[#0c1322] border border-indigo-900/60 hover:border-sky-400 p-2 flex items-center justify-center transition shadow-lg hover:scale-105" title="Telegram: Андрей Дереев">
+                        <a href="https://t.me/andreydereev" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-xl bg-[#061a0e] border border-emerald-900/60 hover:border-amber-400 p-2 flex items-center justify-center transition shadow-lg hover:scale-105" title="Telegram: Андрей Дереев">
                             <svg class="w-full h-full" viewBox="0 0 24 24" fill="none">
                                 <circle cx="12" cy="12" r="12" fill="#24A1DE"/>
                                 <path d="M16.64 8.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.05-.48-.83-.27-1.49-.42-1.43-.88.03-.24.38-.49 1.04-.75 4.07-1.77 6.78-2.94 8.14-3.51 3.87-1.62 4.67-1.9 5.2-1.91.12 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.18-.04.34z" fill="white"/>
                             </svg>
                         </a>
-                        <a href="https://vk.ru/territoryup" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-xl bg-[#0c1322] border border-indigo-900/60 hover:border-blue-500 p-2 flex items-center justify-center transition shadow-lg hover:scale-105" title="ВКонтакте">
-                            <img src="vk-icon-blue-512x512.png" alt="ВКонтакте" class="w-full h-full object-contain">
+                        <a href="https://vk.ru/territoryup" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-xl bg-[#061a0e] border border-emerald-900/60 hover:border-amber-400 p-2 flex items-center justify-center transition shadow-lg hover:scale-105" title="ВКонтакте">
+                            <img src="../vk-icon-blue-512x512.png" alt="ВКонтакте" class="w-full h-full object-contain">
                         </a>
-                        <a href="https://max.ru/join/vvis7juMXRSkY_GDoM_1vIoLBhfEJEyjTaa3JucmVLo" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-xl bg-[#0c1322] border border-indigo-900/60 hover:border-purple-400 p-2 flex items-center justify-center transition shadow-lg hover:scale-105 overflow-hidden" title="MAX">
-                            <img src="Спикеры/Лого/Макс Иконка.webp" alt="MAX" class="w-full h-full object-contain scale-125">
+                        <a href="https://max.ru/join/vvis7juMXRSkY_GDoM_1vIoLBhfEJEyjTaa3JucmVLo" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-xl bg-[#061a0e] border border-emerald-900/60 hover:border-amber-400 p-2 flex items-center justify-center transition shadow-lg hover:scale-105 overflow-hidden" title="MAX">
+                            <img src="../Спикеры/Лого/Макс Иконка.webp" alt="MAX" class="w-full h-full object-contain scale-125">
                         </a>
                     </div>
                     <div class="text-xs text-gray-300 space-y-1.5">
-                        <div><a href="tel:+79826844399" class="hover:text-blue-400 transition font-semibold">+7 (982) 684-43-99</a></div>
-                        <div><a href="mailto:pr@predprinimy-consortium.ru" class="hover:text-blue-400 transition font-semibold">pr@predprinimy-consortium.ru</a></div>
+                        <div><a href="tel:+79826844399" class="hover:text-amber-400 text-emerald-400 transition font-semibold">+7 (982) 684-43-99</a></div>
+                        <div><a href="mailto:pr@predprinimy-consortium.ru" class="hover:text-amber-400 text-emerald-400 transition font-semibold">pr@predprinimy-consortium.ru</a></div>
                     </div>
                 </div>
 
@@ -983,9 +1025,9 @@
             <!-- ======================================================= -->
             <!-- СЕКЦИЯ 5: ФИНАЛЬНАЯ СТРОКА С РЕКВИЗИТАМИ               -->
             <!-- ======================================================= -->
-            <div class="border-t border-indigo-900/40 pt-5 mt-2 text-center md:text-left text-[11px] text-gray-400">
+            <div class="pt-5 mt-2 text-center md:text-left text-[11px] text-gray-400">
                 <div class="leading-relaxed">
-                    ® Торговая марка «ПРЕДПРИНИМАЙ» © 2026 • ООО «Метаполис» (ИНН 6685102534, ОГРН 1156658079633) • Бизнес-саммит «Территория Роста» • Юр. адрес: 197022, г. Санкт-Петербург, Каменноостровский пр-кт, дом 26-28, литера А, пом. 12-Н • Тел.: <a href="tel:+79826844399" class="hover:text-blue-400 transition underline">+7 (982) 684-43-99</a>, E-mail: <a href="mailto:pr@predprinimy-consortium.ru" class="hover:text-blue-400 transition underline">pr@predprinimy-consortium.ru</a>
+                    ® Торговая марка «ПРЕДПРИНИМАЙ» © 2026 • ООО «Метаполис» (ИНН 6685102534, ОГРН 1156658079633) • Бизнес-саммит «Территория Роста» • Юр. адрес: 197022, г. Санкт-Петербург, Каменноостровский пр-кт, дом 26-28, литера А, пом. 12-Н • Тел.: <a href="tel:+79826844399" class="hover:text-emerald-400 transition underline">+7 (982) 684-43-99</a>, E-mail: <a href="mailto:pr@predprinimy-consortium.ru" class="hover:text-emerald-400 transition underline">pr@predprinimy-consortium.ru</a>
                 </div>
             </div>
 
@@ -993,7 +1035,7 @@
     </footer>
 
     <!-- ЛЕВАЯ ПЛАВАЮЩАЯ КНОПКА «НАВЕРХ» (АДАПТИРОВАННАЯ ПОД МОБИЛЬНЫЕ) -->
-    <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-4 sm:bottom-6 left-4 sm:left-6 z-40 hidden p-3 sm:p-3.5 rounded-full bg-[#0c1322]/90 backdrop-blur-md border border-indigo-500/40 text-white shadow-2xl hover:bg-emerald-600 hover:scale-110 transition duration-300 cursor-pointer" title="Наверх">
+    <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-4 sm:bottom-6 left-4 sm:left-6 z-40 hidden p-3 sm:p-3.5 rounded-full bg-[#061a0e]/95 backdrop-blur-md border border-emerald-500/50 text-emerald-400 shadow-2xl shadow-emerald-950/60 hover:bg-emerald-500 hover:text-black hover:scale-110 transition duration-300 cursor-pointer" title="Наверх">
         <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
     </button>
 
@@ -1134,21 +1176,101 @@
             }
         });
 
-        // URL веб-хука Google Apps Script для таблицы участников
-        var YOUTH_SHEET_WEBHOOK = window.YOUTH_SHEET_WEBHOOK || 'https://script.google.com/macros/s/AKfycby-YOUTH_CHAMPIONSHIP/exec';
+        // Переключение роли: Участник (14–17 лет) / Наставник (18+)
+        function setRegistrationRole(role) {
+            const isMentor = (role === 'mentor');
+            document.getElementById('registrationCategory').value = role;
+            
+            const btnPart = document.getElementById('roleBtnParticipant');
+            const btnMent = document.getElementById('roleBtnMentor');
+            const ageSelect = document.getElementById('participantAge');
+            const mentorBadge = document.getElementById('mentorStatusBadge');
+            
+            if (isMentor) {
+                btnMent.className = 'h-11 w-full rounded-xl text-xs font-black uppercase tracking-wider transition bg-gradient-to-r from-amber-500 to-emerald-600 text-slate-950 shadow-md cursor-pointer flex items-center justify-center gap-1.5';
+                btnPart.className = 'h-11 w-full rounded-xl text-xs font-bold uppercase tracking-wider transition text-gray-400 hover:text-white hover:bg-emerald-500/10 cursor-pointer flex items-center justify-center gap-1.5';
+                
+                document.getElementById('nameLabel').innerText = 'ФИО Наставника / Куратора';
+                document.getElementById('participantName').placeholder = 'Петрова Елена Викторовна';
+                document.getElementById('phoneLabel').innerText = 'Контактный телефон';
+                document.getElementById('schoolLabel').innerText = 'Город и организация / Вуз';
+                document.getElementById('participantSchool').placeholder = 'г. Екатеринбург, УрФУ / Школа №9';
+                document.getElementById('ageLabel').innerText = 'Возрастная категория';
+                document.getElementById('roleLabel').innerText = 'Статус наставника';
+                document.getElementById('mentorLabel').innerText = 'Курируемая команда';
+                document.getElementById('participantMentor').placeholder = 'Команда 9-10 классов (4 человека)';
+                
+                if (ageSelect) ageSelect.classList.add('hidden');
+                if (mentorBadge) mentorBadge.classList.remove('hidden');
+                
+                // Опции для наставника
+                document.getElementById('participantRole').innerHTML = `
+                    <option value="teacher" selected>Педагог / Учитель / Наставник</option>
+                    <option value="parent">Родитель / Законный представитель</option>
+                    <option value="expert">Эксперт / Ментор от компании</option>
+                    <option value="student_curator">Студент-куратор (18+)</option>
+                `;
+                
+                document.getElementById('consentCheckboxText').innerHTML = 'Я подтверждаю, что мне исполнилось 18 лет, и выражаю согласие на обработку персональных данных в соответствии с <a href="youth-docs.html#privacy" target="_blank" class="text-amber-400 underline hover:text-amber-300">Политикой обработки ПДн</a>';
+                document.getElementById('participantSubmitBtnText').innerText = 'ЗАРЕГИСТРИРОВАТЬСЯ КАК НАСТАВНИК (18+)';
+                document.getElementById('successBoxSubtitle').innerText = 'Добро пожаловать в экспертный корпус кейс-чемпионата «Звуки Урала»';
+            } else {
+                btnPart.className = 'h-11 w-full rounded-xl text-xs font-bold uppercase tracking-wider transition bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md cursor-pointer flex items-center justify-center gap-1.5';
+                btnMent.className = 'h-11 w-full rounded-xl text-xs font-bold uppercase tracking-wider transition text-gray-400 hover:text-white hover:bg-emerald-500/10 cursor-pointer flex items-center justify-center gap-1.5';
+                
+                document.getElementById('nameLabel').innerText = 'ФИО Участника';
+                document.getElementById('participantName').placeholder = 'Иванов Даниил Алексеевич';
+                document.getElementById('phoneLabel').innerText = 'Телефон участника';
+                document.getElementById('schoolLabel').innerText = 'Город и Школа / Колледж';
+                document.getElementById('participantSchool').placeholder = 'г. Екатеринбург, Гимназия №9';
+                document.getElementById('ageLabel').innerText = 'Возраст (14–17 лет)';
+                document.getElementById('roleLabel').innerText = 'Желаемая роль в проекте';
+                document.getElementById('mentorLabel').innerText = 'ФИО и телефон Наставника / Родителя';
+                document.getElementById('participantMentor').placeholder = 'Петрова Елена Викторовна, +7 (900) 123-45-67';
+                
+                if (ageSelect) ageSelect.classList.remove('hidden');
+                if (mentorBadge) mentorBadge.classList.add('hidden');
+                
+                // Опции для участника
+                document.getElementById('participantRole').innerHTML = `
+                    <option value="producer">Продюсер проекта</option>
+                    <option value="writer">Сценарист и исследователь</option>
+                    <option value="creator">Креатор</option>
+                    <option value="pm">Проектный менеджер</option>
+                    <option value="media">Менеджер по работе с медиа</option>
+                    <option value="solo" selected>Молодой лидер (подберите команду)</option>
+                `;
+                
+                document.getElementById('consentCheckboxText').innerHTML = 'Я (участник 14–17 лет / родитель) выражаю согласие на обработку персональных данных в соответствии с <a href="youth-docs.html#parent-consent" target="_blank" class="text-amber-400 underline hover:text-amber-300">Согласием на обработку ПДн</a>';
+                document.getElementById('participantSubmitBtnText').innerText = 'ОТПРАВИТЬ ЗАЯВКУ НА КЕЙС-ЧЕМПИОНАТ';
+                document.getElementById('successBoxSubtitle').innerText = 'Добро пожаловать в команду осеннего кейс-чемпионата «Звуки Урала»';
+            }
+        }
+
+        // URL веб-хука Google Apps Script для таблицы участников (Резервный канал)
+        var YOUTH_SHEET_WEBHOOK = 'https://script.google.com/macros/s/AKfycbzx-3v0mQPhgBk38J2yBYZ-lM0Q4o9s-Gnyw2iEAkuVsi_J43uZO8fhm0S0SYwSh4ourA/exec';
+        let isRegistrationSubmitting = false;
 
         // Отправка формы регистрации
-        function handleRegistrationSubmit(e) {
+        async function handleRegistrationSubmit(e) {
             e.preventDefault();
+            if (isRegistrationSubmitting) return false;
+            isRegistrationSubmitting = true;
+
             const submitBtn = document.getElementById('participantSubmitBtn');
             if (submitBtn) {
                 submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
                 submitBtn.innerHTML = '<span>ОТПРАВКА ЗАЯВКИ...</span>';
             }
 
+            const category = document.getElementById('registrationCategory').value || 'participant';
+            const isMentor = (category === 'mentor');
+
             const name = document.getElementById('participantName').value.trim();
             const phone = document.getElementById('participantPhone').value.trim();
-            const age = document.getElementById('participantAge').value;
+            const ageEl = document.getElementById('participantAge');
+            const age = isMentor ? '18+ (Наставник)' : ((ageEl ? ageEl.value : '16') + ' лет');
             const school = document.getElementById('participantSchool').value.trim();
             const roleSelect = document.getElementById('participantRole');
             const roleText = roleSelect ? roleSelect.options[roleSelect.selectedIndex].text : '';
@@ -1157,60 +1279,64 @@
 
             const payload = {
                 date: now,
-                source: 'Сайт (Кейс-чемпионат)',
+                source: isMentor ? 'Кейс-чемпионат «Звуки Урала» (Наставник 18+)' : 'Кейс-чемпионат «Звуки Урала» (Участник 14-17)',
                 name: name,
-                phone: phone,
-                age: age + ' лет',
+                phone: phone.startsWith('+') ? "'" + phone : phone,
+                age: age,
                 school: school,
-                role: roleText,
+                role: (isMentor ? '[Наставник] ' : '') + roleText,
                 mentor: mentor,
                 status: '🟢 Новая заявка',
-                notes: 'Зарегистрирован через форму youth-championship.html'
+                notes: isMentor ? 'Регистрация наставника команды (18+)' : 'Регистрация участника (14–17 лет)',
+                domain: window.location.hostname
             };
 
-            // 1. Всегда сохраняем локально в браузер (Zero Data Loss)
+            // 1. Сохраняем локально в браузере (Zero Data Loss)
             try {
                 const storedLeads = JSON.parse(localStorage.getItem('YOUTH_CHAMPIONSHIP_LEADS') || '[]');
                 storedLeads.push(payload);
                 localStorage.setItem('YOUTH_CHAMPIONSHIP_LEADS', JSON.stringify(storedLeads));
-                console.log('✅ Заявка сохранена локально:', payload);
             } catch (err) {
                 console.warn('LocalStorage error:', err);
             }
 
-            // 2. Отправка на Google Apps Script Webhook (Google Sheets)
-            if (YOUTH_SHEET_WEBHOOK && !YOUTH_SHEET_WEBHOOK.includes('AKfycby-YOUTH_CHAMPIONSHIP')) {
-                fetch(YOUTH_SHEET_WEBHOOK, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                }).then(() => {
-                    console.log('🚀 Заявка отправлена в Google Таблицу');
-                }).catch(err => {
-                    console.warn('Google Sheets sync warning:', err);
-                });
-            }
-
-            // 3. Отправка в YouGile CRM / шлюз проекта
+            // 2. Отправка на единый серверный API шлюз /api/tr/lead (автоматически пишет в CRM и Google Таблицу)
+            let serverSuccess = false;
             try {
-                const gatewayUrl = (window.location.hostname.indexOf('rost-ural.ru') !== -1 || window.location.hostname.indexOf('predprinimy.ru') !== -1) ? '/api/tr/lead' : 'https://predprinimy.ru/api/tr/lead';
-                fetch(gatewayUrl, {
+                const gatewayUrl = (window.location.hostname.indexOf('rost-ural.ru') !== -1 || window.location.hostname.indexOf('predprinimy.ru') !== -1 || window.location.hostname.indexOf('звуки-урала.рф') !== -1 || window.location.hostname.indexOf('xn----8sbafyhnl7b0ad') !== -1) ? '/api/tr/lead' : 'https://predprinimy.ru/api/tr/lead';
+                const response = await fetch(gatewayUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         name: name,
                         phone: phone,
                         email: '',
-                        company: 'Кейс-чемпионат 14-17 (' + school + ')',
-                        details: 'Возраст: ' + age + ', Роль: ' + roleText + ', Наставник/Родитель: ' + mentor,
-                        source: 'Сайт youth-championship',
-                        url: window.location.href,
+                        company: isMentor ? ('Наставник 18+ (' + school + ')') : ('Кейс-чемпионат 14-17 (' + school + ')'),
+                        details: (isMentor ? 'Категория: Наставник (18+)' : ('Возраст: ' + age)) + ', Роль: ' + roleText + ', ' + (isMentor ? 'Команда: ' : 'Наставник/Родитель: ') + mentor,
+                        source: 'Сайт Звуки Урала (' + window.location.hostname + ')',
+                        raw: payload,
                         date: new Date().toISOString()
                     })
-                }).catch(e => console.warn('CRM gateway notice:', e));
-            } catch (e) {
-                console.warn(e);
+                });
+                if (response.ok) {
+                    serverSuccess = true;
+                }
+            } catch (err) {
+                console.warn('Gateway sync notice:', err);
+            }
+
+            // 3. Резервная прямая отправка в Google Таблицу — ТОЛЬКО если серверный шлюз был недоступен
+            if (!serverSuccess && YOUTH_SHEET_WEBHOOK && YOUTH_SHEET_WEBHOOK.startsWith('https://script.google.com/')) {
+                try {
+                    await fetch(YOUTH_SHEET_WEBHOOK, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                        body: JSON.stringify({ raw: payload })
+                    });
+                } catch (err) {
+                    console.warn('Google Sheets sync notice:', err);
+                }
             }
 
             // Показываем подтверждение пользователю
